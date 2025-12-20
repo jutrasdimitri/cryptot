@@ -69,7 +69,6 @@
 
         .no-scroll { overflow: hidden; }
 
-        /* Honeypot anti-spam caché */
         .hp-field {
             position: absolute;
             left: -9999px;
@@ -450,7 +449,7 @@
             }
         }
 
-        // --- C'est ici que ça se passe ---
+        // --- ENVOI FORMSPREE SANS REDIRECTION ---
         orderForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             orderError.classList.add('hidden');
@@ -460,34 +459,41 @@
             const company = (fd.get('company') || "").toString().trim();
             if (company) { showError("Spam detected."); return; }
 
+            // 1. Génération de l'ID Unique (CT-XXXX)
+            const generatedId = "CT-" + Math.random().toString(36).substr(2, 9).toUpperCase();
+            
+            // 2. On l'ajoute au courriel
+            fd.append('Order_ID', generatedId); 
+            fd.append('Date', new Date().toLocaleString());
+
+            // 3. Info pour le reçu écran
             const payload = {
-                product: (fd.get('product') || "").toString(),
-                name: (fd.get('name') || "").toString(),
-                email: (fd.get('email') || "").toString(),
-                size: (fd.get('size') || "").toString(),
-                payment: (fd.get('payment') || "").toString(),
-                address: (fd.get('address') || "").toString(),
-                company: company
+                product: fd.get('product'),
+                size: fd.get('size'),
+                payment: fd.get('payment')
             };
 
             setLoading(true);
 
             try {
-                // Appel à ta fonction Netlify create-order
-                const res = await fetch("/.netlify/functions/create-order", {
+                // TON LIEN FORMSPREE EST ICI 👇
+                const formspreeUrl = "https://formspree.io/f/mykgkker"; 
+
+                const res = await fetch(formspreeUrl, {
                     method: 'POST',
-                    headers: { 'content-type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: fd,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
                 });
 
-                const data = await res.json().catch(() => ({}));
-
-                if (!res.ok || !data.success) {
-                    throw new Error((data && data.error) ? data.error : "Order failed");
+                if (!res.ok) {
+                    const data = await res.json();
+                    throw new Error(data.error || "Order failed");
                 }
 
-                // Succès ! On affiche le reçu
-                receiptOrderId.textContent = data.orderId || "CT-SUCCESS";
+                // SUCCÈS : On montre le reçu vert
+                receiptOrderId.textContent = generatedId;
                 receiptProduct.textContent = payload.product;
                 receiptSize.textContent = payload.size;
                 receiptPayment.textContent = payload.payment;
@@ -498,7 +504,7 @@
 
             } catch (err) {
                 console.error(err);
-                showError("Error connecting to server. Please try again.");
+                showError("Error processing order. Please try again.");
                 setLoading(false);
             }
         });
