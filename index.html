@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoT | Wear Your Assets</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            dark: '#0a0a0a',
+                            panel: '#111111',
+                            green: '#39ff14', /* Matrix Green */
+                            dim: '#1a1a1a',
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neon-green': '0 0 10px #39ff14, 0 0 20px #39ff14',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #39ff14; }
+
+        /* Glitch Effect */
+        .glitch-text:hover { text-shadow: 2px 0 #39ff14, -2px 0 #ffffff; }
+        
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(57, 255, 20, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-black text-gray-300 font-mono antialiased selection:bg-brand-green selection:text-brand-black">
+
+    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+    <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true"></div>
+
+    <nav class="sticky top-0 z-50 glass-panel w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="font-orbitron text-2xl font-bold text-white tracking-wider">
+                        CRYPTO<span class="text-brand-green">T</span>_
+                    </span>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#collection" class="hover:text-brand-green transition-colors duration-300 font-bold">THE_POWER_5</a>
+                        <button onclick="openManifesto()" class="hover:text-white text-gray-300 transition-colors duration-300 uppercase cursor-pointer bg-transparent border-none">MANIFESTO</button>
+                        <a href="#contact" class="hover:text-white transition-colors duration-300">CONTACT</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-brand-green text-2xl focus:outline-none p-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-black border-b border-brand-green/30 absolute w-full shadow-neon-green">
+            <div class="px-2 pt-2 pb-6 space-y-1 sm:px-3 text-center">
+                <a href="#collection" onclick="toggleMobileMenu()" class="block px-3 py-4 text-white hover:text-brand-green hover:bg-white/5 font-bold border-b border-white/5">THE POWER 5</a>
+                <button onclick="openManifesto(); toggleMobileMenu()" class="w-full block px-3 py-4 text-gray-300 hover:text-white hover:bg-white/5 uppercase border-b border-white/5">MANIFESTO</button>
+                <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-4 text-gray-300 hover:text-white hover:bg-white/5">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10" 
+             style="background-image: linear-gradient(#39ff14 1px, transparent 1px), linear-gradient(90deg, #39ff14 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
+        
+        <div class="relative z-10 text-center px-4 mt-[-50px]">
+            <p class="text-brand-green mb-4 tracking-[0.3em] text-xs md:text-sm uppercase animate-pulse">
+                <i class="fa-solid fa-circle text-[8px] align-middle mr-2"></i>System Online // Global Shipping
+            </p>
+            <h1 class="font-orbitron text-5xl md:text-8xl font-black text-white mb-6 glitch-text leading-tight">
+                WEAR YOUR <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-white">ASSETS</span>
+            </h1>
+            <p class="max-w-xl mx-auto text-lg mb-10 text-gray-400 font-light">
+                Premium streetwear for the decentralized generation. <br>
+                <span class="text-white">Bitcoin. Ethereum. Cardano. XRP. Solana.</span>
+            </p>
+            <a href="#collection" class="group inline-flex items-center gap-3 px-8 py-4 bg-brand-green text-black font-bold text-lg hover:bg-white hover:shadow-neon-green transition-all duration-300">
+                <span>ACCESS GALLERY</span>
+                <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="collection" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center">
+                <h2 class="font-orbitron text-3xl md:text-4xl text-white font-bold mb-2">CORE_COLLECTION</h2>
+                <div class="h-1 w-20 bg-brand-green mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
+                        <img src="btc.jpg" alt="GENESIS BTC" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#F7931A] border border-[#F7931A] font-bold">
+                            Available Now
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl text-white mb-1">GENESIS // BTC</h3>
+                        <p class="text-brand-green text-xs mb-3 font-mono uppercase">Vires in Numeris</p>
+                        <p class="text-gray-400 text-sm mb-5 h-10 line-clamp-2">The code that started it all. Premium cotton. Matrix edition.</p>
+                        
+                        <div class="pt-4 border-t border-white/10">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-white block">$35 USD</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-wider">(Worldwide Shipping Included)</span>
+                            </div>
+                            <button onclick="openModal('GENESIS // BTC')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
+                        <img src="eth.jpg" alt="EXECUTE ETH" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#00f3ff] border border-[#00f3ff] font-bold">
+                            Available Now
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl text-white mb-1">EXECUTE // ETH</h3>
+                        <p class="text-brand-green text-xs mb-3 font-mono uppercase">Smart Contracts</p>
+                        <p class="text-gray-400 text-sm mb-5 h-10 line-clamp-2">Code is Law. The World Computer. High-voltage Cyan on Black.</p>
+
+                        <div class="pt-4 border-t border-white/10">
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-white block">$35 USD</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-wider">(Worldwide Shipping Included)</span>
+                            </div>
+                            <button onclick="openModal('EXECUTE // ETH')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-brand-panel border border-white/5 hover:border-brand-green/30 transition-all duration-300 opacity-70 hover:opacity-100">
+                    <div class="w-full h-80 bg-gray-900 overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="https://placehold.co/600x600/1a1a1a/0033ad/png?text=ADA+COMING+SOON&font=roboto" alt="ADA Shirt" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-gray-500 border border-gray-500">Restocking</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl text-white mb-1">ADA // The Changemaker</h3>
+                        <p class="text-gray-500 text-xs mb-3 font-mono uppercase">Research Driven.</p>
+                        <p class="text-gray-500 text-sm mb-5 h-10">Academic rigor meets decentralized governance.</p>
+                        <div class="pt-4 border-t border-white/5">
+                            <button class="w-full py-2 bg-transparent text-gray-500 text-sm border border-gray-600 cursor-not-allowed uppercase">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-brand-panel border border-white/5 hover:border-brand-green/30 transition-all duration-300 opacity-70 hover:opacity-100">
+                    <div class="w-full h-80 bg-gray-900 overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="https://placehold.co/600x600/1a1a1a/ffffff/png?text=XRP+COMING+SOON&font=roboto" alt="XRP Shirt" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-gray-500 border border-gray-500">Restocking</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl text-white mb-1">XRP // The Standard</h3>
+                        <p class="text-gray-500 text-xs mb-3 font-mono uppercase">Bridge Asset.</p>
+                        <p class="text-gray-500 text-sm mb-5 h-10">Cross-border utility design. Zero friction.</p>
+                        <div class="pt-4 border-t border-white/5">
+                            <button class="w-full py-2 bg-transparent text-gray-500 text-sm border border-gray-600 cursor-not-allowed uppercase">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-brand-panel border border-white/5 hover:border-brand-green/30 transition-all duration-300 opacity-70 hover:opacity-100">
+                    <div class="w-full h-80 bg-gray-900 overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="https://placehold.co/600x600/1a1a1a/9945FF/png?text=SOL+COMING+SOON&font=roboto" alt="SOL Shirt" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-gray-500 border border-gray-500">Restocking</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl text-white mb-1">SOL // Speed of Light</h3>
+                        <p class="text-gray-500 text-xs mb-3 font-mono uppercase">High Performance.</p>
+                        <p class="text-gray-500 text-sm mb-5 h-10">Gradient aesthetics. Proof of History.</p>
+                        <div class="pt-4 border-t border-white/5">
+                            <button class="w-full py-2 bg-transparent text-gray-500 text-sm border border-gray-600 cursor-not-allowed uppercase">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group bg-brand-dim border border-brand-green/20 border-dashed flex flex-col items-center justify-center p-6 text-center hover:bg-brand-green/5 transition-all">
+                    <i class="fa-solid fa-layer-group text-4xl text-brand-green mb-4"></i>
+                    <h3 class="font-orbitron text-xl text-white mb-2">Have a Vision?</h3>
+                    <a href="mailto:jutrasdimitri@gmail.com?subject=Suggestion%20for%20CryptoT" class="text-gray-400 text-sm hover:text-brand-green underline decoration-brand-green/50 underline-offset-4">
+                        Drop a suggestion for a custom design
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-black border-t border-white/10 py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-orbitron text-2xl font-bold text-white mb-4">CRYPTO<span class="text-brand-green">T</span>_</p>
+            <p class="text-gray-500 text-sm mb-6">Montreal, QC // Worldwide Shipping</p>
+            
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://x.com/JutrasDimitri" target="_blank" class="text-gray-400 hover:text-white transition-transform hover:scale-110">
+                    <i class="fa-brands fa-x-twitter text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" class="text-gray-400 hover:text-[#E1306C] transition-transform hover:scale-110">
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1DZrJA2xLa/" target="_blank" class="text-gray-400 hover:text-[#1877F2] transition-transform hover:scale-110">
+                    <i class="fa-brands fa-facebook text-2xl"></i>
+                </a>
+            </div>
+            
+            <p class="text-xs text-gray-700 font-mono">
+                &copy; 2025 CryptoT. <br>
+                <span class="text-brand-green">Status: Online</span>
+            </p>
+        </div>
+    </footer>
+
+    <div id="orderModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md px-4">
+            <div class="bg-brand-panel border border-brand-green shadow-neon-green p-6 md:p-8 relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+                <h2 class="font-orbitron text-2xl text-white mb-1">SECURE CHECKOUT</h2>
+                <p class="text-xs text-brand-green mb-6 font-mono">Peer-to-Peer Transaction Initialized.</p>
+                <form action="https://formspree.io/f/mykgkker" method="POST" class="space-y-4">
+                    <div class="relative">
+                        <label class="block text-[10px] text-brand-green uppercase tracking-widest mb-1">Item Selected</label>
+                        <input type="text" id="productInput" name="Product" readonly class="w-full bg-black border border-brand-green/30 text-white px-4 py-2 font-bold text-sm tracking-wide">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Full Name</label>
+                        <input type="text" name="Name" required placeholder="Satoshi Nakamoto" class="w-full bg-brand-dark border border-white/10 text-white px-4 py-2 focus:outline-none focus:border-brand-green focus:shadow-neon-green transition-all text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Email (For Invoice)</label>
+                        <input type="email" name="Email" required placeholder="satoshin@gmx.com" class="w-full bg-brand-dark border border-white/10 text-white px-4 py-2 focus:outline-none focus:border-brand-green focus:shadow-neon-green transition-all text-sm">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Size</label>
+                            <select name="Size" class="w-full bg-brand-dark border border-white/10 text-white px-4 py-2 focus:outline-none focus:border-brand-green text-sm">
+                                <option>Small</option>
+                                <option>Medium</option>
+                                <option>Large</option>
+                                <option>X-Large</option>
+                                <option>XXL</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Payment</label>
+                            <select name="Payment" class="w-full bg-brand-dark border border-white/10 text-white px-4 py-2 focus:outline-none focus:border-brand-green text-sm">
+                                <option>Interac e-Transfer</option>
+                                <option>PayPal</option>
+                                <option>Crypto Transfer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Shipping Address</label>
+                        <textarea name="Address" rows="3" required placeholder="Street, City, Postal Code..." class="w-full bg-brand-dark border border-white/10 text-white px-4 py-2 focus:outline-none focus:border-brand-green focus:shadow-neon-green transition-all text-sm"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-green text-black font-bold py-3 hover:bg-white hover:scale-[1.02] transition-all duration-300 mt-2 font-orbitron tracking-wider">CONFIRM ORDER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="manifestoModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeManifesto()"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg px-4">
+            <div class="bg-brand-panel border border-brand-green shadow-neon-green p-8 relative text-center">
+                <button onclick="closeManifesto()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+                <h2 class="font-orbitron text-3xl text-brand-green mb-6 glitch-text tracking-widest">THE CODE IS LAW</h2>
+                <div class="space-y-4 font-mono text-gray-300 leading-relaxed">
+                    <p>We don't trust banks. We trust code.</p>
+                    <p>Fiat currency is debt. Crypto is ownership.</p>
+                    <p>We wear our assets because we believe in the future of money.</p>
+                    <hr class="border-brand-green/30 my-6 w-1/2 mx-auto">
+                    <p class="italic text-brand-green/80">"All profits on sales will be put back in the market in leverage trading... to be liquidated."</p>
+                    <div class="pt-4 mt-2">
+                        <p class="text-sm text-white font-bold">Joke apart, stay safe everybody!</p>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Not your keys, not your crypto.</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                     <button onclick="closeManifesto()" class="px-6 py-2 border border-white/20 hover:bg-brand-green hover:text-black hover:border-brand-green transition-all text-sm uppercase">Close Protocol</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ORDER MODAL LOGIC
+        const orderModal = document.getElementById('orderModal');
+        const productInput = document.getElementById('productInput');
+
+        function openModal(productName) {
+            productInput.value = productName;
+            orderModal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            orderModal.classList.add('hidden');
+        }
+
+        // MANIFESTO MODAL LOGIC
+        const manifestoModal = document.getElementById('manifestoModal');
+
+        function openManifesto() {
+            manifestoModal.classList.remove('hidden');
+        }
+
+        function closeManifesto() {
+            manifestoModal.classList.add('hidden');
+        }
+
+        // MOBILE MENU LOGIC
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMobileMenu() {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // UNIVERSAL CLOSE ON ESCAPE
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+                closeManifesto();
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
