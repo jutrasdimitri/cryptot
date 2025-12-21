@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptoT // À propos des protocoles</title>
+  <title>CryptoT // À propos d’eux</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -14,11 +14,15 @@
         extend: {
           colors: {
             "brand-green": "#39ff14",
+            "brand-black": "#0a0a0a",
             "brand-panel": "#111111",
           },
           fontFamily: {
             orbitron: ["Orbitron", "sans-serif"],
             mono: ["Share Tech Mono", "monospace"],
+          },
+          boxShadow: {
+            "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14",
           }
         }
       }
@@ -26,174 +30,443 @@
   </script>
 
   <style>
-    body { background:#050505; color:#e5e5e5; }
-    .about-btn.active {
-      color:#39ff14;
-      border-color:rgba(57,255,20,.6);
-      background:rgba(57,255,20,.08);
-      font-weight:900;
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{
+      background-image:
+        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+      background-size: 50px 50px;
     }
+    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
+
+    /* About tabs */
+    .about-btn.active{
+      color:#39ff14;
+      text-shadow: 0 0 8px rgba(57,255,20,0.5);
+      font-weight: 900;
+      border-color: rgba(57,255,20,.65) !important;
+      background: rgba(57,255,20,.08) !important;
+    }
+
+    /* (On garde le style currency-btn pour cohérence, même si pas utilisé ici) */
+    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
   </style>
+
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
 
-<body class="font-mono">
+<body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
 
-<!-- HEADER -->
-<header class="py-16 text-center border-b border-brand-green/20">
-  <h1 class="text-4xl md:text-6xl font-orbitron font-black text-white mb-4">
-    ABOUT THEM_
-  </h1>
-  <p class="text-gray-400 max-w-2xl mx-auto">
-    Choisis un protocole. Comprends sa mission. Porte le signal.  
-    <span class="text-brand-green font-bold">Tu es en avance.</span>
-  </p>
-</header>
+  <div id="coinmarketcap-widget-marquee"
+       coins="1,1027,2010,52,5426"
+       currency="USD"
+       theme="dark"
+       transparent="false"
+       show-symbol-logo="true"
+       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
-<!-- ABOUT SECTION -->
-<section class="py-20 max-w-7xl mx-auto px-4">
+  <!-- NAV (même vibe que fr.html) -->
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <!-- Sur la page about, le logo ramène à fr.html -->
+          <a href="fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
+            CRYPTO<span class="text-brand-green">T</span>
+          </a>
+        </div>
 
-  <!-- TABS -->
-  <div class="flex flex-wrap gap-3 mb-10">
-    <button class="about-btn active border px-4 py-2 uppercase text-sm" onclick="showAbout('BTC')">BTC</button>
-    <button class="about-btn border px-4 py-2 uppercase text-sm" onclick="showAbout('ETH')">ETH</button>
-    <button class="about-btn border px-4 py-2 uppercase text-sm" onclick="showAbout('ADA')">ADA</button>
-    <button class="about-btn border px-4 py-2 uppercase text-sm" onclick="showAbout('XRP')">XRP</button>
-    <button class="about-btn border px-4 py-2 uppercase text-sm" onclick="showAbout('SOL')">SOL</button>
-  </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ LES_POWER_5 ]</a>
+
+          <!-- Page courante -->
+          <a href="fr-about.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ A_PROPOS_D_EUX ]</a>
+
+          <a href="fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTE ]</a>
+          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ NOUS_CONTACTER ]</a>
+
+          <!-- Switch langue -->
+          <a href="about.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
+        </div>
+
+        <button type="button"
+                class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
+                aria-label="Ouvrir le menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                onclick="toggleMobileMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden md:hidden">
+      <div class="fixed inset-0 z-[70]" aria-hidden="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
+
+        <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-brand-panel border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
+          <div class="flex items-center justify-between mb-6">
+            <div class="text-xs text-gray-400 uppercase tracking-widest">MENU</div>
+            <button type="button" class="text-gray-400 hover:text-brand-green" aria-label="Fermer le menu" onclick="closeMobileMenu()">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <a href="fr.html#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ LES_POWER_5 ]</a>
+
+            <a href="fr-about.html" onclick="closeMobileMenu()" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm">[ A_PROPOS_D_EUX ]</a>
+
+            <a href="fr.html#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTE ]</a>
+
+            <a href="fr.html#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ NOUS_CONTACTER ]</a>
+
+            <a href="about.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">ENGLISH</a>
+          </div>
+
+          <div class="mt-8 border-t border-white/10 pt-4 text-[11px] text-gray-500">
+            Status: <span class="text-brand-green">Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="py-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+    <div class="relative z-10 px-4 max-w-5xl mx-auto">
+      <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+        À PROPOS <span class="text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.8)]">D’EUX</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
+        Choisis un protocole. Comprends la thèse. Porte le signal.
+        <br>
+        <span class="text-brand-green">Le code est froid. Les humains, moins.</span>
+      </p>
+      <div class="inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-xs h-[1px]"></div>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="fr.html#products"
+           class="px-8 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+          Retour aux chandails
+        </a>
+        <a href="fr.html"
+           class="px-8 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+          Accueil
+        </a>
+      </div>
+    </div>
+  </header>
 
   <!-- CONTENT -->
-  <div class="bg-brand-panel border border-brand-green/30 p-6 md:p-10">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
 
-    <!-- BTC -->
-    <div id="about-BTC">
-      <h2 class="font-orbitron text-3xl text-white mb-4">
-        BITCOIN — <span class="text-brand-green">VIRES IN NUMERIS</span>
-      </h2>
+    <section class="bg-brand-panel border border-brand-green/30 shadow-[0_0_18px_rgba(57,255,20,0.08)] p-6 md:p-10">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+        <div>
+          <h2 class="text-3xl font-orbitron text-white mb-3 border-l-4 border-brand-green pl-4">LES 5 PILIERS_</h2>
+          <p class="text-gray-400 max-w-4xl">
+            Ici, on fait pas du “marketing vide”. On fait du <span class="text-brand-green font-bold">signal</span>.
+            Chaque chandail représente une thèse: utilité, sécurité, vitesse, liquidité, gouvernance.
+            Tu peux aimer ou haïr — mais au moins tu comprends.
+          </p>
+        </div>
+        <div class="text-[11px] text-gray-500 leading-relaxed">
+          Éducatif seulement. Pas un conseil financier.<br>
+          <span class="text-brand-green">// Porte le signal, reste prudent.</span>
+        </div>
+      </div>
 
-      <p><strong>Argent pair-à-pair. Offre fixe. Rareté absolue.</strong></p>
+      <!-- Tabs -->
+      <div class="flex flex-wrap gap-3 mb-8">
+        <button class="about-btn active border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="BTC" onclick="showAbout('BTC')">BTC</button>
+        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="ETH" onclick="showAbout('ETH')">ETH</button>
+        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="ADA" onclick="showAbout('ADA')">ADA</button>
+        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="XRP" onclick="showAbout('XRP')">XRP</button>
+        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="SOL" onclick="showAbout('SOL')">SOL</button>
+      </div>
 
-      <p class="mt-4">
-        Bitcoin a été créé pour résoudre un problème fondamental :  
-        un argent qui peut être imprimé, censuré ou contrôlé.
-      </p>
+      <!-- Panels -->
+      <div class="bg-black/30 border border-white/10 p-5 md:p-8">
 
-      <p>
-        À la base, Bitcoin est de l’argent électronique pair-à-pair :
-        envoyer de la valeur à n’importe qui, sans banque, sans permission.
-      </p>
+        <!-- BTC -->
+        <div class="about-panel" id="about-BTC">
+          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
+                BITCOIN — <span class="text-brand-green">VIRES IN NUMERIS</span>
+              </h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest">
+                Monnaie P2P • Offre fixe • Rareté • Finalité
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <a href="fr.html#products"
+                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                Magasiner BTC
+              </a>
+              <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Whitepaper
+              </a>
+            </div>
+          </div>
 
-      <h3 class="mt-6 font-orbitron text-xl text-white">L’idée centrale</h3>
-      <ul class="list-disc pl-6">
-        <li>21 millions de BTC. Pour toujours.</li>
-        <li>Aucune autorité centrale.</li>
-        <li>Aucune impression monétaire.</li>
-      </ul>
+          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
+            <p><span class="text-brand-green font-bold">Le problème:</span> le fiat peut être imprimé, gelé, censuré, dilué. Tu “utilises” ton argent tant que quelqu’un te le permet.</p>
+            <p><span class="text-brand-green font-bold">La réponse BTC:</span> une valeur numérique sans permission, protégée par des règles + un réseau mondial.</p>
 
-      <p>
-        L’inflation n’est pas un accident : c’est une fonctionnalité du système bancaire.
-        Bitcoin corrige cela par le code.
-      </p>
+            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
+            <p><span class="text-brand-green font-bold">21 millions.</span> Pas un slogan. Un plafond codé.</p>
+            <p>Quand tout peut être imprimé… la rareté devient un superpouvoir.</p>
 
-      <h3 class="mt-6 font-orbitron text-xl text-white">Satoshi Nakamoto</h3>
-      <p>
-        Créé en 2008 par un fondateur anonyme disparu.
-        Aucun leader. Aucun PDG. Bitcoin appartient à tout le monde.
-      </p>
+            <h4 class="font-orbitron text-xl text-white pt-2">Pourquoi ça tient</h4>
+            <p><span class="text-brand-green font-bold">Proof of Work</span> = sécurité par le coût. Réécrire l’histoire coûte une fortune.</p>
+            <p><span class="text-brand-green font-bold">Finalité</span> = quand c’est réglé, c’est réglé. Pas de “chargeback”.</p>
 
-      <h3 class="mt-6 font-orbitron text-xl text-white">Conclusion</h3>
-      <p>
-        Réveille-toi. L’offre est fixe. La demande est mondiale.  
-        <span class="text-brand-green font-bold">// Tu es en avance.</span>
-      </p>
+            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
+            <p>La demande peut monter à l’infini.</p>
+            <p>La supply de BTC… non.</p>
+            <p class="text-brand-green font-bold text-xl">// Tu es tôt.</p>
+          </div>
+        </div>
+
+        <!-- ETH -->
+        <div class="about-panel hidden" id="about-ETH">
+          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
+                ETHEREUM — <span class="text-brand-green">CODE IS LAW</span>
+              </h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest">
+                Smart contracts • DeFi • Infrastructure Web3
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <a href="fr.html#products"
+                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                Magasiner ETH
+              </a>
+              <a href="https://ethereum.org/en/whitepaper/" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Whitepaper
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
+            <p>Bitcoin a prouvé qu’on peut transférer de la valeur sans permission.</p>
+            <p>Ethereum a ajouté: <span class="text-brand-green font-bold">“et si on transférait aussi des règles?”</span></p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
+            <p>Ethereum est une <span class="text-brand-green font-bold">machine mondiale</span>. Tu déploies un contrat, il tourne pareil pour tous.</p>
+            <p>Les “intermédiaires” deviennent du code — avec ses forces… et ses risques.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Ce que ça débloque</h4>
+            <p><span class="text-brand-green font-bold">DeFi</span>: échanger, prêter, emprunter sans institution.</p>
+            <p><span class="text-brand-green font-bold">Stablecoins</span>: dollars on-chain (avec tout le débat que ça implique).</p>
+            <p><span class="text-brand-green font-bold">Layer 2</span>: scaling — base solide, couches rapides.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
+            <p>BTC = l’or numérique.</p>
+            <p>ETH = la <span class="text-brand-green font-bold">logique</span> numérique.</p>
+            <p class="text-brand-green font-bold text-xl">// Tu es tôt.</p>
+          </div>
+        </div>
+
+        <!-- ADA -->
+        <div class="about-panel hidden" id="about-ADA">
+          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
+                CARDANO — <span class="text-brand-green">PEER REVIEWED</span>
+              </h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest">
+                Recherche • Méthode • Gouvernance
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <a href="fr.html#products"
+                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                Magasiner ADA
+              </a>
+              <a href="https://whitepaper.io/document/581/cardano-whitepaper" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Whitepaper
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
+            <p>Cardano joue la carte “civilisation-grade”. Moins de freestyle, plus de fondations.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
+            <p><span class="text-brand-green font-bold">Approche académique</span>: conception, validation, recherche — pour bâtir durable.</p>
+            <p><span class="text-brand-green font-bold">eUTXO</span>: héritage Bitcoin + flexibilité smart contracts.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Trade-off</h4>
+            <p>Plus rigoureux = plus lent à ship. Mais souvent: plus stable, plus cohérent.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
+            <p>Si tu veux une chaîne qui pense “long terme”:</p>
+            <p class="text-brand-green font-bold text-xl">// Tu es tôt.</p>
+          </div>
+        </div>
+
+        <!-- XRP -->
+        <div class="about-panel hidden" id="about-XRP">
+          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
+                XRP — <span class="text-brand-green">THE STANDARD</span>
+              </h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest">
+                Paiements • Liquidité • Settlement rapide
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <a href="fr.html#products"
+                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                Magasiner XRP
+              </a>
+              <a href="https://xrpl.org/docs/" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Docs XRPL
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
+            <p>Les paiements internationaux, c’est encore “fax vibe”. XRP vise le rail: vitesse + coût bas + liquidité.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
+            <p>Réduire friction, délais, liquidité immobilisée.</p>
+            <p>Focus: <span class="text-brand-green font-bold">mouvement de valeur</span>.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
+            <p>BTC = l’argent.</p>
+            <p>ETH = le code.</p>
+            <p>XRP = <span class="text-brand-green font-bold">le mouvement</span>.</p>
+            <p class="text-brand-green font-bold text-xl">// Tu es tôt.</p>
+          </div>
+        </div>
+
+        <!-- SOL -->
+        <div class="about-panel hidden" id="about-SOL">
+          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
+                SOLANA — <span class="text-brand-green">PROOF OF HISTORY</span>
+              </h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest">
+                Performance • Frais bas • UX rapide
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <a href="fr.html#products"
+                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                Magasiner SOL
+              </a>
+              <a href="https://solana.com/solana-whitepaper.pdf" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Whitepaper
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
+            <p>Solana vise l’échelle “consumer”: rapide, cheap, fluide. L’idée: que le on-chain feel comme Web2.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
+            <p><span class="text-brand-green font-bold">Proof of History</span>: une horloge cryptographique pour aider l’ordre des événements.</p>
+            <p>Perf d’abord — puis durcir le réseau au fil des stress tests.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
+            <p class="text-brand-green font-bold text-xl">// L’histoire est la preuve.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 border-t border-white/10 pt-8 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+        <div class="text-gray-400 text-sm">
+          Tu veux porter une thèse sur du tissu? <span class="text-brand-green font-bold">Wear Your Assets.</span>
+        </div>
+        <a href="fr.html#products"
+           class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+          Retour aux produits
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER (même vibe que fr.html) -->
+  <footer class="border-t border-brand-green/20 bg-black py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="mb-8">
+        <p class="font-orbitron text-2xl text-white mb-4">CONNECTE-TOI AVEC <span class="text-brand-green">NOUS</span></p>
+        <div class="flex justify-center gap-6">
+          <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
+          <a href="https://www.instagram.com/dimitrijutras?igsh=MWxyenFoNDhremRt" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+        </div>
+      </div>
+      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
+      <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
     </div>
+  </footer>
 
-    <!-- ETH -->
-    <div id="about-ETH" class="hidden">
-      <h2 class="font-orbitron text-3xl text-white mb-4">
-        ETHEREUM — <span class="text-brand-green">CODE IS LAW</span>
-      </h2>
+  <script>
+    // Tabs
+    function showAbout(symbol) {
+      document.querySelectorAll(".about-panel").forEach(p => p.classList.add("hidden"));
+      const target = document.getElementById("about-" + symbol);
+      if (target) target.classList.remove("hidden");
 
-      <p>
-        Bitcoin a prouvé l’argent décentralisé.  
-        Ethereum a posé la question suivante :  
-        <strong>et si la blockchain pouvait exécuter du code ?</strong>
-      </p>
+      document.querySelectorAll(".about-btn").forEach(btn => {
+        if (btn.getAttribute("data-about") === symbol) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+    }
 
-      <p class="mt-4">
-        Ethereum est un ordinateur mondial décentralisé
-        permettant les smart contracts, la DeFi, les NFT et les DAO.
-      </p>
+    document.addEventListener("DOMContentLoaded", () => {
+      showAbout("BTC");
+    });
 
-      <h3 class="mt-6 font-orbitron text-xl text-white">Vitalik Buterin</h3>
-      <p>
-        Proposé en 2013, Ethereum étend Bitcoin sans le remplacer.
-      </p>
-
-      <p class="text-brand-green font-bold mt-6">// Tu es en avance.</p>
-    </div>
-
-    <!-- ADA -->
-    <div id="about-ADA" class="hidden">
-      <h2 class="font-orbitron text-3xl text-white mb-4">
-        CARDANO — <span class="text-brand-green">PEER REVIEWED</span>
-      </h2>
-
-      <p>
-        Le Bitcoin des altcoins.
-        Même philosophie que Bitcoin, avec les smart contracts.
-      </p>
-
-      <p>
-        Charles Hoskinson a quitté Ethereum pour construire Cardano correctement :
-        lentement, scientifiquement, durablement.
-      </p>
-
-      <p class="text-brand-green font-bold mt-6">// Tu es en avance.</p>
-    </div>
-
-    <!-- XRP -->
-    <div id="about-XRP" class="hidden">
-      <h2 class="font-orbitron text-3xl text-white mb-4">
-        XRP — <span class="text-brand-green">THE STANDARD</span>
-      </h2>
-
-      <p>
-        XRP vise à remplacer SWIFT :
-        paiements internationaux instantanés, liquides, peu coûteux.
-      </p>
-
-      <p>
-        Après le procès contre la SEC, XRP est devenu un pilier réglementaire.
-      </p>
-
-      <p class="text-brand-green font-bold mt-6">// Tu es en avance.</p>
-    </div>
-
-    <!-- SOL -->
-    <div id="about-SOL" class="hidden">
-      <h2 class="font-orbitron text-3xl text-white mb-4">
-        SOLANA — <span class="text-brand-green">HISTORY IS THE PROOF</span>
-      </h2>
-
-      <p>
-        Solana privilégie la vitesse à la base :
-        Proof of History, débit massif, latence minimale.
-      </p>
-
-      <p class="text-brand-green font-bold mt-6">// Tu es en avance.</p>
-    </div>
-
-  </div>
-</section>
-
-<script>
-  function showAbout(sym){
-    document.querySelectorAll('[id^="about-"]').forEach(d=>d.classList.add('hidden'));
-    document.getElementById('about-'+sym).classList.remove('hidden');
-    document.querySelectorAll('.about-btn').forEach(b=>b.classList.remove('active'));
-    event.target.classList.add('active');
-  }
-</script>
-
+    // Mobile menu
+    const mobileMenuEl = document.getElementById("mobileMenu");
+    function toggleMobileMenu() {
+      const isHidden = mobileMenuEl.classList.contains("hidden");
+      mobileMenuEl.classList.toggle("hidden", !isHidden);
+      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
+      if (btn) btn.setAttribute("aria-expanded", String(isHidden));
+      if (isHidden) document.body.classList.add("overflow-hidden");
+      else document.body.classList.remove("overflow-hidden");
+    }
+    function closeMobileMenu() {
+      mobileMenuEl.classList.add("hidden");
+      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
+      if (btn) btn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("overflow-hidden");
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMobileMenu();
+    });
+  </script>
 </body>
 </html>

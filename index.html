@@ -83,7 +83,7 @@
 
           <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
           <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
-          
+
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
             <span class="text-gray-700">/</span>
@@ -130,7 +130,7 @@
 
             <a href="#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTO ]</a>
             <a href="#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
-            
+
             <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/30">
                <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
                <span class="text-gray-600">|</span>
@@ -407,7 +407,7 @@
 
     function setCurrency(curr) {
       currentCurrency = curr;
-      
+
       // Update hidden input for form
       const currInput = document.getElementById("currencyInput");
       if(currInput) currInput.value = curr;
@@ -417,7 +417,7 @@
         if (btn.getAttribute("data-currency") === curr) btn.classList.add("active");
         else btn.classList.remove("active");
       });
-      
+
       // Update prices (clean format with precision)
       document.querySelectorAll(".price-display").forEach(el => {
         const base = parseFloat(el.getAttribute("data-base"));
