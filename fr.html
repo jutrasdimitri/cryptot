@@ -1,480 +1,500 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CryptoT // Portez vos actifs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoT // Portez vos Actifs</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-green': '#39ff14',
-                        'brand-black': '#0a0a0a',
-                        'brand-panel': '#111111',
-                    },
-                    fontFamily: {
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                        'mono': ['Share Tech Mono', 'monospace'],
-                    },
-                    boxShadow: {
-                        'neon-green': '0 0 10px #39ff14, 0 0 20px #39ff14',
-                    }
-                }
-            }
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-green": "#39ff14",
+            "brand-black": "#0a0a0a",
+            "brand-panel": "#111111",
+          },
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            mono: ["Share Tech Mono", "monospace"],
+          },
+          boxShadow: {
+            "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14",
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <style>
-        body { background-color: #050505; color: #e5e5e5; }
-        .matrix-bg {
-            background-image:
-              linear-gradient(0deg, transparent 24%, rgba(57, 255, 20, .03) 25%, rgba(57, 255, 20, .03) 26%, transparent 27%, transparent 74%, rgba(57, 255, 20, .03) 75%, rgba(57, 255, 20, .03) 76%, transparent 77%, transparent),
-              linear-gradient(90deg, transparent 24%, rgba(57, 255, 20, .03) 25%, rgba(57, 255, 20, .03) 26%, transparent 27%, transparent 74%, rgba(57, 255, 20, .03) 75%, rgba(57, 255, 20, .03) 76%, transparent 77%, transparent);
-            background-size: 50px 50px;
-        }
-        .clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        html { scroll-behavior: smooth; }
-        :focus-visible { outline: 2px solid rgba(57,255,20,0.8); outline-offset: 2px; }
+  <style>
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{
+      background-image:
+        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+      background-size: 50px 50px;
+    }
+    .clamp-2{
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
+    .hp-field{
+      position:absolute; left:-9999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+  </style>
 
-        .hp-field {
-            position: absolute;
-            left: -9999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-    </style>
-
-    <!-- CoinMarketCap widget -->
-    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+  <!-- CoinMarketCap widget -->
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
 
 <body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
 
-    <!-- CMC widget bar -->
-    <div id="coinmarketcap-widget-marquee"
-         coins="1,1027,2010,52,5426"
-         currency="USD"
-         theme="dark"
-         transparent="false"
-         show-symbol-logo="true"
-         class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+  <!-- CMC widget bar -->
+  <div id="coinmarketcap-widget-marquee"
+       coins="1,1027,2010,52,5426"
+       currency="USD"
+       theme="dark"
+       transparent="false"
+       show-symbol-logo="true"
+       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
-    <!-- NAV -->
-    <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-2">
-                    <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
-                    <span class="font-orbitron font-black text-2xl tracking-widest text-white">
-                        CRYPTO<span class="text-brand-green">T</span>
-                    </span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ LE_POWER_5 ]</a>
-                    <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTE ]</a>
-                    <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ NOUS_JOINDRE ]</a>
-                    <a href="index.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ EN ]</a>
-                </div>
-            </div>
+  <!-- NAV -->
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <button type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})"
+                  class="font-orbitron font-black text-2xl tracking-widest text-white">
+            CRYPTO<span class="text-brand-green">T</span>
+          </button>
         </div>
-    </nav>
 
-    <!-- HERO -->
-    <header class="py-20 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-        <div class="relative z-10 px-4">
-            <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-                PORTEZ VOS <span class="text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.8)]">ACTIFS</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10">
-                Vêtements streetwear crypto premium. Impressions haute qualité.
-                <br>
-                <span class="text-brand-green">Le Code est la Loi. Le Style est un Choix.</span>
-            </p>
-            <div class="inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-xs h-[1px]"></div>
+        <!-- Desktop links -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ LE_POWER_5 ]</a>
+          <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTE ]</a>
+          <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ NOUS_JOINDRE ]</a>
+          <a href="index.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ EN ]</a>
         </div>
-    </header>
 
-    <!-- PRODUCTS -->
-    <main id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-10">
-        <h2 class="text-3xl font-orbitron text-white mb-8 border-l-4 border-brand-green pl-4">LE POWER 5_</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- BTC -->
-            <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-                <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-                    <img src="btc.jpg" alt="BTC CODE IS LAW" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#F7931A] border border-[#F7931A] font-bold">Disponible</div>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-orbitron text-xl text-white mb-1">BTC // CODE IS LAW</h3>
-                    <p class="text-brand-green text-xs mb-3 uppercase">Réserve de Valeur</p>
-                    <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">L’original. Décentralisé, rare et immuable. Logique Orange Pill sur noir.</p>
-                    <div class="pt-4 border-t border-white/10">
-                        <div class="mb-3">
-                            <span class="text-2xl font-bold text-white block">$35 USD</span>
-                            <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
-                        </div>
-                        <button onclick="openModal('BTC // CODE IS LAW')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ETH -->
-            <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-                <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-                    <img src="eth.jpg" alt="ETH ULTRA SOUND MONEY" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#627EEA] border border-[#627EEA] font-bold">Disponible</div>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-orbitron text-xl text-white mb-1">ETH // ULTRA SOUND</h3>
-                    <p class="text-brand-green text-xs mb-3 uppercase">Contrats Intelligents</p>
-                    <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">L’ordinateur mondial. Carburant déflationniste du futur. Bleu holographique sur noir.</p>
-                    <div class="pt-4 border-t border-white/10">
-                        <div class="mb-3">
-                            <span class="text-2xl font-bold text-white block">$35 USD</span>
-                            <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
-                        </div>
-                        <button onclick="openModal('ETH // ULTRA SOUND MONEY')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ADA -->
-            <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-                <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-                    <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#0033ad] border border-[#0033ad] font-bold">Disponible</div>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-orbitron text-xl text-white mb-1">ADA // PEER REVIEWED</h3>
-                    <p class="text-brand-green text-xs mb-3 uppercase">Fondé sur la Recherche</p>
-                    <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">La rigueur académique au service de la gouvernance décentralisée. Bleu néon électrique sur noir.</p>
-                    <div class="pt-4 border-t border-white/10">
-                        <div class="mb-3">
-                            <span class="text-2xl font-bold text-white block">$35 USD</span>
-                            <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
-                        </div>
-                        <button onclick="openModal('ADA // PEER REVIEWED')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- XRP -->
-            <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-                <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-                    <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-white border border-white font-bold">Disponible</div>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-orbitron text-xl text-white mb-1">XRP // THE STANDARD</h3>
-                    <p class="text-brand-green text-xs mb-3 uppercase">Fournisseur de Liquidité</p>
-                    <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">Le pont entre l’ancien monde et le nouveau. Énergie platine pure sur noir.</p>
-                    <div class="pt-4 border-t border-white/10">
-                        <div class="mb-3">
-                            <span class="text-2xl font-bold text-white block">$35 USD</span>
-                            <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
-                        </div>
-                        <button onclick="openModal('XRP // THE STANDARD')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SOL -->
-            <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-                <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-                    <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                    <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-[#9945FF] border border-[#14F195] font-bold">Disponible</div>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-orbitron text-xl text-white mb-1">SOL // PROOF OF HISTORY</h3>
-                    <p class="text-brand-green text-xs mb-3 uppercase">Layer 1 Haute Vitesse</p>
-                    <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">La vitesse à la vitesse de la lumière. Esthétique dégradée vaporwave sur noir.</p>
-                    <div class="pt-4 border-t border-white/10">
-                        <div class="mb-3">
-                            <span class="text-2xl font-bold text-white block">$35 USD</span>
-                            <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
-                        </div>
-                        <button onclick="openModal('SOL // PROOF OF HISTORY')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CUSTOM -->
-            <div class="group bg-gray-900/50 border border-gray-800 border-dashed hover:border-brand-green transition-all duration-300 flex flex-col justify-center items-center text-center p-8 min-h-[500px]">
-                <div class="w-20 h-20 rounded-full bg-brand-green/10 flex items-center justify-center mb-6 group-hover:bg-brand-green/20 transition-colors">
-                    <span class="text-4xl text-brand-green font-light">+</span>
-                </div>
-                <h3 class="font-orbitron text-xl text-white mb-2">COMMANDE SUR MESURE</h3>
-                <p class="text-gray-400 text-sm mb-6 max-w-xs">Vous ne voyez pas votre coin préféré ? On peut imprimer n’importe quel ticker. Écrivez-nous.</p>
-                <button onclick="openModal('DEMANDE SUR MESURE')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-                    DEMANDER
-                </button>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- MANIFESTO SECTION (kept visible on page) -->
-    <section id="manifesto" class="py-24 bg-brand-panel border-t border-brand-green/20 relative">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-5xl font-orbitron font-bold text-white mb-8">
-                MANIFESTE — <span class="text-brand-green">THE CODE IS LAW</span>
-            </h2>
-            <div class="text-gray-300 text-lg leading-relaxed space-y-6">
-                <p>Nous ne faisons pas confiance aux banques. Nous faisons confiance au code.</p>
-                <p>La monnaie fiduciaire est une dette. La crypto est la propriété.</p>
-                <p>Nous portons nos actifs car nous croyons au futur de l'argent.</p>
-
-                <div class="mt-12 pt-8 border-t border-brand-green/10">
-                    <p class="text-gray-500 italic mb-4">
-                        "Tous les profits des ventes seront remis dans le marché en leverage trading... pour être liquidés."
-                    </p>
-                    <p class="text-gray-400">Blague à part, soyez prudents !</p>
-                    <p class="text-brand-green font-bold mt-4 text-xl">// Pas vos clés, pas vos cryptos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="contact" class="border-t border-brand-green/20 bg-black py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="mb-8">
-                <p class="font-orbitron text-2xl text-white mb-4">NOUS <span class="text-brand-green">JOINDRE</span></p>
-                <div class="flex justify-center gap-6">
-                    <a href="#" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-                    <a href="#" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
-                    <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">COURRIEL</a>
-                </div>
-            </div>
-            <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
-            <p class="text-gray-500 text-xs">EST. 2025 // MONTRÉAL // MONDIAL</p>
-            <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
-        </div>
-    </footer>
-
-    <!-- MODAL -->
-    <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
-        <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)]">
-
-            <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Fermer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-
-            <h2 class="font-orbitron text-2xl text-white mb-1">COMMANDE SÉCURISÉE</h2>
-            <p class="text-brand-green text-xs mb-6">CONNEXION CHIFFRÉE //</p>
-
-            <!-- STATUS -->
-            <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
-                <div class="text-brand-green text-xs tracking-widest">COMMANDE INITIÉE // VÉRIFIEZ VOS COURRIELS</div>
-                <div class="text-gray-400 text-[11px] mt-1">Si vous ne le voyez pas, vérifiez les indésirables. Les instructions de paiement suivent séparément.</div>
-            </div>
-
-            <!-- ERROR -->
-            <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
-
-            <!-- FORM (no action/method; handled by JS) -->
-            <form id="orderForm" class="space-y-4" novalidate>
-
-                <!-- honeypot -->
-                <label class="hp-field" aria-hidden="true">
-                    Entreprise
-                    <input type="text" name="company" tabindex="-1" autocomplete="off">
-                </label>
-                <input type="hidden" name="ts" id="orderTs" value="">
-
-                <input type="hidden" id="productInput" name="Product" value="">
-
-                <div>
-                    <label class="block text-gray-400 text-xs mb-1 uppercase">Article sélectionné</label>
-                    <div id="productDisplay" class="text-white font-orbitron text-lg border-b border-gray-700 pb-2"></div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-gray-400 text-xs mb-1 uppercase">Taille</label>
-                        <select name="Size" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none">
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                            <option>2XL</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-400 text-xs mb-1 uppercase">Qté</label>
-                        <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse courriel</label>
-                    <input type="email" name="Email" required placeholder="satoshi@nakamoto.com"
-                        class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none placeholder-gray-600">
-                </div>
-
-                <div>
-                    <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse de livraison</label>
-                    <textarea name="Address" required rows="3" placeholder="Adresse complète..."
-                        class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none placeholder-gray-600"></textarea>
-                </div>
-
-                <button id="submitBtn" type="submit"
-                    class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">
-                    LANCER LA COMMANDE
-                </button>
-
-                <p class="text-center text-gray-500 text-[10px] mt-2">
-                    Les instructions de paiement (Interac/Crypto) seront envoyées par courriel immédiatement après la confirmation de la commande.
-                </p>
-            </form>
-        </div>
+        <!-- Mobile button -->
+        <button type="button"
+                class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
+                aria-label="Ouvrir le menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                onclick="toggleMobileMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <script>
-        // ====== CONFIG: Formspree endpoint (AJAX) ======
-        const FORM_ENDPOINT = "https://formspree.io/f/xblljkwg"; // <-- remplace si nécessaire
+    <!-- Mobile menu overlay + drawer -->
+    <div id="mobileMenu" class="hidden md:hidden">
+      <div class="fixed inset-0 z-[70]" aria-hidden="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
 
-        // ====== MODAL CONTROLS ======
-        function openModal(productName) {
-            const modal = document.getElementById('orderModal');
-            modal.classList.remove('hidden');
+        <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-brand-panel border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
+          <div class="flex items-center justify-between mb-6">
+            <div class="text-xs text-gray-400 uppercase tracking-widest">MENU</div>
+            <button type="button" class="text-gray-400 hover:text-brand-green" aria-label="Fermer le menu" onclick="closeMobileMenu()">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
 
-            document.getElementById('productDisplay').innerText = productName;
-            document.getElementById('productInput').value = productName;
+          <div class="flex flex-col gap-3">
+            <a href="#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ LE_POWER_5 ]</a>
+            <a href="#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTE ]</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ NOUS_JOINDRE ]</a>
+            <a href="index.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm">[ EN ]</a>
+          </div>
 
-            // reset UI
-            document.getElementById('orderStatusBox').classList.add('hidden');
-            document.getElementById('orderErrorBox').classList.add('hidden');
-            document.getElementById('orderErrorBox').textContent = '';
-            document.getElementById('orderForm').classList.remove('hidden');
+          <div class="mt-8 border-t border-white/10 pt-4 text-[11px] text-gray-500">
+            Statut : <span class="text-brand-green">En ligne</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-            const btn = document.getElementById('submitBtn');
-            btn.disabled = false;
-            btn.classList.remove('opacity-60', 'cursor-not-allowed');
-            btn.textContent = 'LANCER LA COMMANDE';
+  <!-- HERO -->
+  <header class="py-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+    <div class="relative z-10 px-4">
+      <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+        PORTEZ VOS <span class="text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.8)]">ACTIFS</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10">
+        Streetwear crypto premium. Impressions haute qualité.
+        <br>
+        <span class="text-brand-green">Le Code est la Loi. Le Style est un Choix.</span>
+      </p>
+      <div class="inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-xs h-[1px]"></div>
+    </div>
+  </header>
 
-            // anti-bot timestamp
-            document.getElementById('orderTs').value = String(Date.now());
+  <!-- PRODUCTS -->
+  <main id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-10">
+    <h2 class="text-3xl font-orbitron text-white mb-8 border-l-4 border-brand-green pl-4">LE POWER 5_</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- BTC -->
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
+        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
+          <img src="btc.jpg" alt="BTC CODE IS LAW" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#F7931A] border border-[#F7931A] font-bold">Disponible</div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-orbitron text-xl text-white mb-1">BTC // CODE IS LAW</h3>
+          <p class="text-brand-green text-xs mb-3 uppercase">Réserve de Valeur</p>
+          <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">L’original. Décentralisé, rare et immuable. Mentalité Orange Pill sur Noir.</p>
+          <div class="pt-4 border-t border-white/10">
+            <div class="mb-3">
+              <span class="text-2xl font-bold text-white block">$35 USD</span>
+              <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
+            </div>
+            <button onclick="openModal('BTC // CODE IS LAW')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ETH -->
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
+        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
+          <img src="eth.jpg" alt="ETH ULTRA SOUND MONEY" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#627EEA] border border-[#627EEA] font-bold">Disponible</div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-orbitron text-xl text-white mb-1">ETH // ULTRA SOUND</h3>
+          <p class="text-brand-green text-xs mb-3 uppercase">Contrats Intelligents</p>
+          <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">L’ordinateur mondial. Carburant déflationniste du futur. Bleu holographique sur Noir.</p>
+          <div class="pt-4 border-t border-white/10">
+            <div class="mb-3">
+              <span class="text-2xl font-bold text-white block">$35 USD</span>
+              <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
+            </div>
+            <button onclick="openModal('ETH // ULTRA SOUND MONEY')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADA -->
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
+        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
+          <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#0033ad] border border-[#0033ad] font-bold">Disponible</div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-orbitron text-xl text-white mb-1">ADA // PEER REVIEWED</h3>
+          <p class="text-brand-green text-xs mb-3 uppercase">Fondé sur la Recherche</p>
+          <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">Rigueur académique et gouvernance décentralisée. Bleu électrique néon sur Noir.</p>
+          <div class="pt-4 border-t border-white/10">
+            <div class="mb-3">
+              <span class="text-2xl font-bold text-white block">$35 USD</span>
+              <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
+            </div>
+            <button onclick="openModal('ADA // PEER REVIEWED')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- XRP -->
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
+        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
+          <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-white border border-white font-bold">Disponible</div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-orbitron text-xl text-white mb-1">XRP // THE STANDARD</h3>
+          <p class="text-brand-green text-xs mb-3 uppercase">Fournisseur de Liquidité</p>
+          <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">Le pont entre l’ancien monde et le nouveau. Énergie platine sur Noir.</p>
+          <div class="pt-4 border-t border-white/10">
+            <div class="mb-3">
+              <span class="text-2xl font-bold text-white block">$35 USD</span>
+              <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
+            </div>
+            <button onclick="openModal('XRP // THE STANDARD')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOL -->
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
+        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
+          <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-[#9945FF] border border-[#14F195] font-bold">Disponible</div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-orbitron text-xl text-white mb-1">SOL // PROOF OF HISTORY</h3>
+          <p class="text-brand-green text-xs mb-3 uppercase">Layer 1 Haute Vitesse</p>
+          <p class="text-gray-400 text-sm mb-5 h-10 clamp-2">La vitesse à la vitesse de la lumière. Aesthetic vaporwave dégradée sur Noir.</p>
+          <div class="pt-4 border-t border-white/10">
+            <div class="mb-3">
+              <span class="text-2xl font-bold text-white block">$35 USD</span>
+              <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
+            </div>
+            <button onclick="openModal('SOL // PROOF OF HISTORY')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">COMMANDER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CUSTOM -->
+      <div class="group bg-gray-900/50 border border-gray-800 border-dashed hover:border-brand-green transition-all duration-300 flex flex-col justify-center items-center text-center p-8 min-h-[500px]">
+        <div class="w-20 h-20 rounded-full bg-brand-green/10 flex items-center justify-center mb-6 group-hover:bg-brand-green/20 transition-colors">
+          <span class="text-4xl text-brand-green font-light">+</span>
+        </div>
+        <h3 class="font-orbitron text-xl text-white mb-2">COMMANDE SUR MESURE</h3>
+        <p class="text-gray-400 text-sm mb-6 max-w-xs">Tu ne vois pas ta crypto préférée ? On peut imprimer n’importe quel ticker. Demande.</p>
+        <button onclick="openModal('DEMANDE PERSONNALISÉE')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+          Demander
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MANIFESTE -->
+  <section id="manifesto" class="py-24 bg-brand-panel border-t border-brand-green/20 relative">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-orbitron font-bold text-white mb-8">
+        MANIFESTE — <span class="text-brand-green">LE CODE EST LA LOI</span>
+      </h2>
+      <div class="text-gray-300 text-lg leading-relaxed space-y-6">
+        <p>Nous ne faisons pas confiance aux banques. Nous faisons confiance au code.</p>
+        <p>La monnaie fiduciaire est une dette. La crypto est la propriété.</p>
+        <p>Nous portons nos actifs car nous croyons au futur de l'argent.</p>
+        <div class="mt-12 pt-8 border-t border-brand-green/10">
+          <p class="text-gray-500 italic mb-4">"Tous les profits des ventes seront remis dans le marché en leverage trading... pour être liquidés."</p>
+          <p class="text-gray-400">Blague à part, soyez prudents !</p>
+          <p class="text-brand-green font-bold mt-4 text-xl">// Pas vos clés, pas vos cryptos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="border-t border-brand-green/20 bg-black py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="mb-8">
+        <p class="font-orbitron text-2xl text-white mb-4">NOUS <span class="text-brand-green">JOINDRE</span></p>
+        <div class="flex justify-center gap-6">
+          <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
+          <a href="https://www.instagram.com/dimitrijutras?igsh=MWxyenFoNDhremRt" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+        </div>
+      </div>
+      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTRÉAL // MONDIAL</p>
+      <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
+    <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)]">
+      <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Fermer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <h2 class="font-orbitron text-2xl text-white mb-1">COMMANDE SÉCURISÉE</h2>
+      <p class="text-brand-green text-xs mb-6">CONNEXION CHIFFRÉE //</p>
+
+      <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
+        <div class="text-brand-green text-xs tracking-widest">COMMANDE INITIÉE // VÉRIFIEZ VOS COURRIELS</div>
+        <div class="text-gray-400 text-[11px] mt-1">Si vous ne le voyez pas, vérifiez les indésirables. Les instructions de paiement suivent séparément.</div>
+      </div>
+
+      <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
+
+      <form id="orderForm" class="space-y-4" novalidate>
+        <label class="hp-field" aria-hidden="true">
+          Entreprise
+          <input type="text" name="company" tabindex="-1" autocomplete="off">
+        </label>
+        <input type="hidden" name="ts" id="orderTs" value="">
+        <input type="hidden" id="productInput" name="Product" value="">
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Article sélectionné</label>
+          <div id="productDisplay" class="text-white font-orbitron text-lg border-b border-gray-700 pb-2"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-gray-400 text-xs mb-1 uppercase">Taille</label>
+            <select name="Size" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none">
+              <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-400 text-xs mb-1 uppercase">Qté</label>
+            <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none">
+              <option>1</option><option>2</option><option>3</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse courriel</label>
+          <input type="email" name="Email" required placeholder="satoshi@nakamoto.com"
+                 class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none placeholder-gray-600">
+        </div>
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse de livraison</label>
+          <textarea name="Address" required rows="3" placeholder="Adresse complète..."
+                    class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none placeholder-gray-600"></textarea>
+        </div>
+
+        <button id="submitBtn" type="submit"
+                class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">
+          INITIER LA COMMANDE
+        </button>
+
+        <p class="text-center text-gray-500 text-[10px] mt-2">
+          Les instructions de paiement (Interac/Crypto) seront envoyées par courriel immédiatement après la confirmation de commande.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const FORM_ENDPOINT = "https://formspree.io/f/xblljkwg";
+
+    // Mobile menu
+    const mobileMenuEl = document.getElementById("mobileMenu");
+    function toggleMobileMenu() {
+      const isHidden = mobileMenuEl.classList.contains("hidden");
+      mobileMenuEl.classList.toggle("hidden", !isHidden);
+      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
+      if (btn) btn.setAttribute("aria-expanded", String(isHidden));
+      if (isHidden) document.body.classList.add("overflow-hidden");
+      else document.body.classList.remove("overflow-hidden");
+    }
+    function closeMobileMenu() {
+      mobileMenuEl.classList.add("hidden");
+      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
+      if (btn) btn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("overflow-hidden");
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeMobileMenu();
+        closeModal();
+      }
+    });
+
+    // Modal
+    function openModal(productName) {
+      document.getElementById("orderModal").classList.remove("hidden");
+      document.getElementById("productDisplay").innerText = productName;
+      document.getElementById("productInput").value = productName;
+
+      document.getElementById("orderStatusBox").classList.add("hidden");
+      document.getElementById("orderErrorBox").classList.add("hidden");
+      document.getElementById("orderErrorBox").textContent = "";
+      document.getElementById("orderForm").classList.remove("hidden");
+
+      const btn = document.getElementById("submitBtn");
+      btn.disabled = false;
+      btn.classList.remove("opacity-60", "cursor-not-allowed");
+      btn.textContent = "INITIER LA COMMANDE";
+
+      document.getElementById("orderTs").value = String(Date.now());
+    }
+
+    function closeModal(reset = false) {
+      document.getElementById("orderModal").classList.add("hidden");
+      if (reset) document.getElementById("orderForm").reset();
+    }
+
+    document.getElementById("orderModal").addEventListener("click", function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // AJAX submit
+    const orderForm = document.getElementById("orderForm");
+    const statusBox = document.getElementById("orderStatusBox");
+    const errorBox = document.getElementById("orderErrorBox");
+    const submitBtn = document.getElementById("submitBtn");
+
+    orderForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      errorBox.classList.add("hidden");
+      errorBox.textContent = "";
+      statusBox.classList.add("hidden");
+
+      const fd = new FormData(orderForm);
+
+      const hp = (fd.get("company") || "").toString().trim();
+      if (hp) {
+        errorBox.textContent = "Spam détecté.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const ts = Number(fd.get("ts"));
+      if (!Number.isFinite(ts) || (Date.now() - ts) < 1200) {
+        errorBox.textContent = "Vérification de sécurité échouée. Attendez un instant et réessayez.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const email = (fd.get("Email") || "").toString().trim();
+      const address = (fd.get("Address") || "").toString().trim();
+      if (!email || !address) {
+        errorBox.textContent = "Champs requis manquants.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+      submitBtn.textContent = "ENVOI...";
+
+      try {
+        const payload = Object.fromEntries(fd.entries());
+        const res = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
+            ? data.errors[0].message
+            : "Échec de la commande. Réessayez.";
+          throw new Error(msg);
         }
 
-        function closeModal(reset = false) {
-            document.getElementById('orderModal').classList.add('hidden');
-            if (reset) {
-                document.getElementById('orderForm').reset();
-            }
-        }
+        orderForm.classList.add("hidden");
+        statusBox.classList.remove("hidden");
+      } catch (err) {
+        errorBox.textContent = err.message || "Erreur réseau. Réessayez.";
+        errorBox.classList.remove("hidden");
 
-        // close on overlay click
-        document.getElementById('orderModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
-
-        // close on escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeModal();
-        });
-
-        // ====== AJAX SUBMIT (no redirect) ======
-        const orderForm = document.getElementById('orderForm');
-        const statusBox = document.getElementById('orderStatusBox');
-        const errorBox = document.getElementById('orderErrorBox');
-        const submitBtn = document.getElementById('submitBtn');
-
-        orderForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            errorBox.classList.add('hidden');
-            errorBox.textContent = '';
-            statusBox.classList.add('hidden');
-
-            const fd = new FormData(orderForm);
-
-            // honeypot
-            const hp = (fd.get('company') || '').toString().trim();
-            if (hp) {
-                errorBox.textContent = "Spam détecté.";
-                errorBox.classList.remove('hidden');
-                return;
-            }
-
-            // timestamp minimum delay
-            const ts = Number(fd.get('ts'));
-            if (!Number.isFinite(ts) || (Date.now() - ts) < 1200) {
-                errorBox.textContent = "Vérification de sécurité échouée. Attendez un moment et réessayez.";
-                errorBox.classList.remove('hidden');
-                return;
-            }
-
-            // required checks (light)
-            const email = (fd.get('Email') || '').toString().trim();
-            const address = (fd.get('Address') || '').toString().trim();
-            if (!email || !address) {
-                errorBox.textContent = "Champs requis manquants.";
-                errorBox.classList.remove('hidden');
-                return;
-            }
-
-            // loading state
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
-            submitBtn.textContent = 'ENVOI...';
-
-            try {
-                // Formspree AJAX: accepts JSON and returns JSON
-                const payload = Object.fromEntries(fd.entries());
-
-                const res = await fetch(FORM_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                const data = await res.json().catch(() => ({}));
-
-                if (!res.ok) {
-                    const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
-                        ? data.errors[0].message
-                        : "Échec de la commande. Veuillez réessayer.";
-                    throw new Error(msg);
-                }
-
-                // success
-                orderForm.classList.add('hidden');
-                statusBox.classList.remove('hidden');
-
-            } catch (err) {
-                errorBox.textContent = err.message || "Erreur réseau. Veuillez réessayer.";
-                errorBox.classList.remove('hidden');
-
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
-                submitBtn.textContent = 'LANCER LA COMMANDE';
-            }
-        });
-    </script>
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+        submitBtn.textContent = "INITIER LA COMMANDE";
+      }
+    });
+  </script>
 </body>
 </html>
