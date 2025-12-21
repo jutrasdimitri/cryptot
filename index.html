@@ -106,7 +106,8 @@
 
     <div id="mobileMenu" class="hidden md:hidden">
       <div class="fixed inset-0 z-[70]" aria-hidden="true">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
+        <!-- CHANGED: was bg-black/80 backdrop-blur-sm -->
+        <div class="absolute inset-0 bg-black/95" onclick="closeMobileMenu()"></div>
 
         <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-brand-panel border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
           <div class="flex items-center justify-between mb-6">
@@ -119,11 +120,13 @@
           </div>
 
           <div class="flex flex-col gap-3">
-            <a href="#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ THE_POWER_5 ]</a>
-            <a href="#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTO ]</a>
-            <a href="#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
+            <!-- CHANGED: bg-black/30 -> bg-black/75 -->
+            <a href="#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/75 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ THE_POWER_5 ]</a>
+            <a href="#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/75 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTO ]</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/75 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
             
-            <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/30">
+            <!-- CHANGED: bg-black/30 -> bg-black/75 -->
+            <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/75">
                <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
                <span class="text-gray-600">|</span>
                <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
