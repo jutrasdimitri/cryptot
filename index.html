@@ -77,13 +77,10 @@
 
         <div class="hidden md:flex items-center space-x-6">
           <a href="#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ THE_POWER_5 ]</a>
-
-          <!-- ✅ NEW: About Them as separate page -->
-          <a href="about.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
-
+          <a href="btc.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
           <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
           <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
-
+          
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
             <span class="text-gray-700">/</span>
@@ -124,13 +121,10 @@
 
           <div class="flex flex-col gap-3">
             <a href="#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ THE_POWER_5 ]</a>
-
-            <!-- ✅ NEW: About Them as separate page -->
-            <a href="about.html" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ ABOUT_THEM ]</a>
-
+            <a href="btc.html" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ ABOUT_THEM ]</a>
             <a href="#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTO ]</a>
             <a href="#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
-
+            
             <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/30">
                <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
                <span class="text-gray-600">|</span>
@@ -407,7 +401,7 @@
 
     function setCurrency(curr) {
       currentCurrency = curr;
-
+      
       // Update hidden input for form
       const currInput = document.getElementById("currencyInput");
       if(currInput) currInput.value = curr;
@@ -417,11 +411,14 @@
         if (btn.getAttribute("data-currency") === curr) btn.classList.add("active");
         else btn.classList.remove("active");
       });
-
+      
       // Update prices (clean format with precision)
+      // Display: $50.75 CAD, $35 USD, 33.25 € EUR
       document.querySelectorAll(".price-display").forEach(el => {
         const base = parseFloat(el.getAttribute("data-base"));
         let val = base * rates[curr];
+        
+        // Remove trailing .00 if integer, keep decimals if not (e.g. 50.75)
         val = val.toFixed(2).replace('.00', '');
 
         if (curr === "EUR") el.innerText = val + " € EUR";
@@ -463,7 +460,7 @@
       document.getElementById("productDisplay").innerText = productName;
       document.getElementById("productInput").value = productName;
 
-      // Sync currency input immediately when opening
+      // FIX: Sync currency input immediately when opening
       const currInput = document.getElementById("currencyInput");
       if (currInput) currInput.value = currentCurrency;
 
@@ -484,6 +481,7 @@
       document.getElementById("orderModal").classList.add("hidden");
       if (reset) {
           document.getElementById("orderForm").reset();
+          // FIX: Re-sync currency after reset so it doesn't fall back to default HTML value
           const currInput = document.getElementById("currencyInput");
           if (currInput) currInput.value = currentCurrency;
       }

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethereum History & Meaning // Code is Law | CryptoT</title>
+  <meta name="description" content="Discover the history of Ethereum, Smart Contracts, and Vitalik Buterin. Educational streetwear by CryptoT.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-green": "#39ff14",
+            "brand-black": "#0a0a0a",
+            "brand-panel": "#111111",
+          },
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            mono: ["Share Tech Mono", "monospace"],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{
+      background-image:
+        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+      background-size: 50px 50px;
+    }
+    
+    /* Wiki Text Styles */
+    .wiki-content h2 {
+        font-family: 'Orbitron', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid #627EEA; /* ETH COLOR */
+        padding-left: 1rem;
+    }
+    .wiki-content h3 {
+        font-family: 'Orbitron', sans-serif;
+        color: #d1d5db;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .wiki-content p {
+        margin-bottom: 1.5rem;
+        color: #d1d5db;
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+    .wiki-content ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+        color: #9ca3af;
+    }
+    .wiki-content li {
+        margin-bottom: 0.5rem;
+    }
+    .wiki-content a {
+        color: #627EEA; /* ETH COLOR */
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: all 0.2s;
+    }
+    .wiki-content a:hover { color: white; }
+    .wiki-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #627EEA, transparent); /* ETH COLOR */
+        margin: 3rem 0;
+        opacity: 0.3;
+    }
+    
+    /* Nav Active State */
+    .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
+    .nav-coin-btn:hover { opacity: 1; border-color: white; }
+    .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+  </style>
+
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+</head>
+
+<body class="matrix-bg min-h-screen font-mono selection:bg-[#627EEA] selection:text-black">
+
+  <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <a href="index.html" class="font-orbitron font-black text-2xl tracking-widest text-white">CRYPTO<span class="text-brand-green">T</span></a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="index.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ THE_POWER_5 ]</a>
+          <a href="btc.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
+          <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
+          <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
+          
+          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
+             <span class="text-xs text-gray-500">DISPLAY: USD</span>
+          </div>
+          <a href="fr.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
+        </div>
+        <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-brand-green"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black/95 p-6 top-[62px]">
+        <div class="flex flex-col gap-6 text-center mt-10">
+            <a href="index.html" class="text-xl text-white font-orbitron">HOME</a>
+            <a href="btc.html" class="text-xl text-brand-green font-orbitron">ABOUT THEM</a>
+            <a href="index.html#products" class="text-xl text-white font-orbitron">SHOP</a>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10">[ CLOSE ]</button>
+        </div>
+    </div>
+  </nav>
+
+  <div class="sticky top-[142px] md:top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
+        <a href="btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
+        <a href="eth.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#627EEA]" style="border-color: #627EEA;">ETH</a>
+        <a href="ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033ad] text-sm md:text-base font-bold transition-all">ADA</a>
+        <a href="xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
+        <a href="sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <header class="text-center mb-16">
+        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#627EEA] drop-shadow-[0_0_15px_rgba(98,126,234,0.5)]">
+            ETHEREUM
+        </h1>
+        <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
+            CODE IS LAW
+        </p>
+        <div class="inline-block px-3 py-1 border border-[#627EEA] text-[#627EEA] text-xs uppercase tracking-[0.2em] mb-8">
+            Programmable Money. Programmable Trust.
+        </div>
+        
+        <div>
+            <a href="index.html#products" class="inline-block bg-[#627EEA] text-black font-bold font-orbitron px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(98,126,234,0.3)]">
+                Get The Ethereum Tee
+            </a>
+        </div>
+    </header>
+
+    <article class="wiki-content bg-brand-panel border border-[#627EEA]/20 p-6 md:p-12 relative overflow-hidden">
+        
+        <h2 style="margin-top:0;">What Ethereum Is — In One Sentence</h2>
+        <p>Ethereum is a decentralized global computing platform that allows anyone to deploy unstoppable applications and programmable money without intermediaries.</p>
+        <p>If Bitcoin proved that money can exist without banks, Ethereum proved that logic, contracts, and entire financial systems can exist without companies.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Why Ethereum Was Created</h2>
+        <p>Bitcoin solved money.</p>
+        <p>But after Bitcoin, a limitation remained:</p>
+        <ul>
+            <li>value could be transferred</li>
+            <li>but behavior could not be programmed</li>
+            <li>agreements still required trust</li>
+            <li>logic still lived outside the blockchain</li>
+        </ul>
+        <p>Ethereum was created to answer a single question:</p>
+        <p><strong class="text-white">What if the blockchain itself could run code?</strong></p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The Core Problem Ethereum Solves</h2>
+        
+        <h3>1. Trust in Institutions</h3>
+        <p>Modern systems rely on:</p>
+        <ul>
+            <li>banks</li>
+            <li>courts</li>
+            <li>corporations</li>
+            <li>centralized servers</li>
+            <li>governments</li>
+        </ul>
+        <p>These systems can:</p>
+        <ul>
+            <li>censor</li>
+            <li>freeze funds</li>
+            <li>alter rules</li>
+            <li>shut down services</li>
+        </ul>
+        <p>Ethereum replaces trust in institutions with trust in execution.</p>
+        <p>If conditions are met, the outcome happens.<br>No permission. No reversal.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h3>2. Programmable Agreements</h3>
+        <p>Before Ethereum:</p>
+        <ul>
+            <li>contracts required lawyers</li>
+            <li>enforcement required courts</li>
+            <li>execution required intermediaries</li>
+        </ul>
+        <p>Ethereum introduced smart contracts:</p>
+        <ul>
+            <li>autonomous</li>
+            <li>unstoppable</li>
+            <li>transparent</li>
+            <li>deterministic</li>
+        </ul>
+        <p>The rules are enforced by the network itself.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Smart Contracts — Explained Simply</h2>
+        <p>A smart contract is code deployed on the blockchain.</p>
+        <p>Once deployed:</p>
+        <ul>
+            <li>it cannot be altered</li>
+            <li>it cannot be stopped</li>
+            <li>it executes automatically</li>
+        </ul>
+        <p>Use cases include:</p>
+        <ul>
+            <li>decentralized exchanges</li>
+            <li>lending and borrowing protocols</li>
+            <li>stablecoins</li>
+            <li>NFTs</li>
+            <li>decentralized autonomous organizations (DAOs)</li>
+        </ul>
+        <p>Ethereum transforms the blockchain into a programmable settlement layer.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The Ethereum Virtual Machine (EVM)</h2>
+        <p>Ethereum applications run inside the Ethereum Virtual Machine.</p>
+        <p>The EVM:</p>
+        <ul>
+            <li>executes identically on thousands of nodes</li>
+            <li>guarantees the same result worldwide</li>
+            <li>removes reliance on centralized servers</li>
+        </ul>
+        <p>This makes Ethereum:</p>
+        <ul>
+            <li>censorship-resistant</li>
+            <li>globally synchronized</li>
+            <li>verifiable by anyone</li>
+        </ul>
+        <p>Ethereum is often described as <strong class="text-white">the world computer</strong>.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>ETH as Money</h2>
+        <p>ETH is the native asset of Ethereum.</p>
+        <p>ETH is used to:</p>
+        <ul>
+            <li>pay transaction fees (gas)</li>
+            <li>secure the network through staking</li>
+            <li>align economic incentives</li>
+        </ul>
+        <p>ETH is not just a currency.<br>It is productive capital inside a global execution layer.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Monetary Policy & Scarcity</h2>
+        <p>Ethereum does not use a fixed supply cap like Bitcoin.</p>
+        <p>Instead, it relies on:</p>
+        <ul>
+            <li>controlled issuance</li>
+            <li>fee burning</li>
+            <li>demand-based scarcity</li>
+        </ul>
+        
+        <h3>EIP-1559 (2021)</h3>
+        <p>A portion of transaction fees is permanently burned.</p>
+        <p>This means:</p>
+        <ul>
+            <li>ETH is removed from circulation</li>
+            <li>high usage reduces supply</li>
+            <li>ETH can become deflationary</li>
+        </ul>
+        <p>Scarcity emerges from network usage, not from an arbitrary cap.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Proof of Stake & The Merge</h2>
+        <p>Ethereum originally launched with Proof of Work.</p>
+        <p>In 2022, Ethereum completed <strong class="text-white">The Merge</strong>, transitioning to Proof of Stake.</p>
+        <p>Proof of Stake:</p>
+        <ul>
+            <li>replaces miners with validators</li>
+            <li>secures the network through staked ETH</li>
+            <li>reduces energy usage by over 99%</li>
+        </ul>
+        <p>Security is enforced by economic risk, not electricity.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Vitalik Buterin — Creator of Ethereum</h2>
+        <p>Vitalik Buterin was born in 1994 in Russia and moved to Canada as a child.</p>
+        <p>He grew up in Toronto and showed exceptional talent in mathematics and computer science.</p>
+        <p>At age 17:</p>
+        <ul>
+            <li>co-founded Bitcoin Magazine</li>
+            <li>became deeply involved in Bitcoin research</li>
+            <li>explored blockchain limitations firsthand</li>
+        </ul>
+        <p>Vitalik recognized that Bitcoin’s scripting language was intentionally limited.</p>
+        <p>At age 19:</p>
+        <ul>
+            <li>he wrote the Ethereum whitepaper (2013)</li>
+            <li>proposing a general-purpose blockchain</li>
+        </ul>
+        <p>At age 21:</p>
+        <ul>
+            <li>Ethereum launched its mainnet</li>
+        </ul>
+        <p>During the 2021 cycle, Vitalik became one of the youngest self-made billionaires.</p>
+        <p>Unlike Satoshi Nakamoto:</p>
+        <ul>
+            <li>Vitalik is public</li>
+            <li>research-driven</li>
+            <li>focused on long-term evolution over hype</li>
+        </ul>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Ethereum Co-Founders — The Origin of the Split</h2>
+        <p>Ethereum was co-founded by several key figures:</p>
+        
+        <h3>Vitalik Buterin</h3>
+        <p>Original author and architect of Ethereum.</p>
+
+        <h3>Gavin Wood</h3>
+        <ul>
+            <li>Inventor of Solidity</li>
+            <li>Author of the Ethereum Yellow Paper</li>
+            <li>Later founded Polkadot</li>
+        </ul>
+
+        <h3>Charles Hoskinson</h3>
+        <ul>
+            <li>Early CEO of Ethereum</li>
+            <li>Advocated for a for-profit structure</li>
+            <li>Later left Ethereum to build Cardano</li>
+        </ul>
+
+        <h3>Joseph Lubin</h3>
+        <ul>
+            <li>Founded ConsenSys</li>
+            <li>Built critical Ethereum infrastructure</li>
+        </ul>
+
+        <h3>Anthony Di Iorio</h3>
+        <ul>
+            <li>Early financier and contributor</li>
+        </ul>
+        <p>Internal disagreements over governance and structure shaped the entire crypto ecosystem that followed.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The Ethereum Community — Builders Over Maxis</h2>
+        <p>Ethereum’s community is fundamentally different from Bitcoin’s.</p>
+        <p>Ethereum culture values:</p>
+        <ul>
+            <li>experimentation</li>
+            <li>composability</li>
+            <li>rapid iteration</li>
+            <li>developer freedom</li>
+        </ul>
+        <p>Ethereum is driven by:</p>
+        <ul>
+            <li>builders</li>
+            <li>researchers</li>
+            <li>protocol designers</li>
+            <li>open-source contributors</li>
+        </ul>
+        <p>Rather than maximalism, Ethereum embraces:</p>
+        <ul>
+            <li>Layer 2 scaling</li>
+            <li>application diversity</li>
+            <li>constant upgrades</li>
+        </ul>
+        <p>Ethereum does not aim to be perfect.<br>It aims to evolve.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Ethereum Whitepaper</h2>
+        <p>“Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform”<br>Author: Vitalik Buterin<br>Published: 2013</p>
+        <p>Whitepaper:<br><a href="https://ethereum.org/en/whitepaper/" target="_blank">https://ethereum.org/en/whitepaper/</a></p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Ethereum Timeline — Key Events</h2>
+        <ul>
+            <li>2013 — Ethereum whitepaper published</li>
+            <li>2014 — Public crowdsale funds development</li>
+            <li>2015 — Ethereum mainnet launches</li>
+            <li>2016 — The DAO hack leads to a hard fork</li>
+            <li>2017 — ERC-20 standard enables ICO boom</li>
+            <li>2018 — Ethereum becomes foundation of DeFi</li>
+            <li>2020 — Ethereum staking begins (ETH 2.0)</li>
+            <li>2021 — EIP-1559 introduces ETH burn</li>
+            <li>2022 — The Merge — transition to Proof of Stake</li>
+            <li>2023 — ETH becomes net-deflationary during high usage</li>
+            <li>2024 — Ethereum dominates DeFi, NFTs, and Layer-2s</li>
+            <li>2025 — Ethereum deeply integrated into global finance and infrastructure</li>
+        </ul>
+
+        <div class="wiki-divider"></div>
+
+        <h2>What Ethereum Is — And Is Not</h2>
+        <p>Ethereum is:</p>
+        <ul>
+            <li>programmable</li>
+            <li>decentralized</li>
+            <li>permissionless</li>
+            <li>composable</li>
+        </ul>
+        <p>Ethereum is not:</p>
+        <ul>
+            <li>static</li>
+            <li>centrally controlled</li>
+            <li>finished</li>
+        </ul>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Final Wake-Up Call</h2>
+        <p>Bitcoin replaced money.</p>
+        <p>Ethereum replaces institutions.</p>
+        <p class="text-2xl text-[#627EEA] font-bold font-orbitron mt-4">Code is law.</p>
+    </article>
+
+    <div class="text-center mt-12">
+        <p class="text-gray-400 mb-6">You've read the thesis. Now wear the signal.</p>
+        <a href="index.html#products" class="inline-block bg-[#627EEA] text-black font-bold font-orbitron px-12 py-5 text-lg uppercase tracking-wider hover:bg-white hover:text-black transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(98,126,234,0.4)]">
+            BUY ETH T-SHIRT
+        </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-brand-green/20 bg-black py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
+      <div class="mt-6 flex justify-center gap-6 text-xs">
+        <a href="index.html" class="text-gray-500 hover:text-brand-green transition-colors">HOME</a>
+        <a href="index.html#products" class="text-gray-500 hover:text-brand-green transition-colors">SHOP</a>
+        <a href="index.html#contact" class="text-gray-500 hover:text-brand-green transition-colors">CONTACT</a>
+      </div>
+      <p class="text-gray-600 text-[10px] mt-8">ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+
+  <script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("hidden");}</script>
+</body>
+</html>

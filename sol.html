@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solana History & Meaning // Proof of History | CryptoT</title>
+  <meta name="description" content="Discover the history of Solana, Proof of History, and the vision of speed. Educational streetwear by CryptoT.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { "brand-green": "#39ff14", "brand-black": "#0a0a0a", "brand-panel": "#111111" },
+          fontFamily: { orbitron: ["Orbitron", "sans-serif"], mono: ["Share Tech Mono", "monospace"] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{ background-image: linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent), linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent); background-size: 50px 50px; }
+    
+    .wiki-content h2 { font-family: 'Orbitron', sans-serif; color: white; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; border-left: 4px solid #14F195; padding-left: 1rem; }
+    .wiki-content p { margin-bottom: 1.5rem; color: #d1d5db; line-height: 1.8; font-size: 1.05rem; }
+    .wiki-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem; color: #9ca3af; }
+    .wiki-content li { margin-bottom: 0.5rem; }
+    .wiki-content a { color: #14F195; text-decoration: underline; text-underline-offset: 4px; transition: all 0.2s; }
+    .wiki-content a:hover { color: white; }
+    .wiki-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #14F195, transparent); margin: 3rem 0; opacity: 0.3; }
+    .wiki-highlight { color: white; font-weight: bold; }
+
+    .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
+    .nav-coin-btn:hover { opacity: 1; border-color: white; }
+    .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+  </style>
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+</head>
+
+<body class="matrix-bg min-h-screen font-mono selection:bg-[#14F195] selection:text-black">
+
+  <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <a href="index.html" class="font-orbitron font-black text-2xl tracking-widest text-white">CRYPTO<span class="text-brand-green">T</span></a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="index.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ THE_POWER_5 ]</a>
+          <a href="btc.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
+          <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
+          <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
+          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2"><span class="text-xs text-gray-500">DISPLAY: USD</span></div>
+          <a href="fr.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
+        </div>
+        <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-brand-green"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black/95 p-6 top-[62px]">
+        <div class="flex flex-col gap-6 text-center mt-10">
+            <a href="index.html" class="text-xl text-white font-orbitron">HOME</a>
+            <a href="btc.html" class="text-xl text-brand-green font-orbitron">ABOUT THEM</a>
+            <a href="index.html#products" class="text-xl text-white font-orbitron">SHOP</a>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10">[ CLOSE ]</button>
+        </div>
+    </div>
+  </nav>
+
+  <div class="sticky top-[142px] md:top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
+        <a href="btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
+        <a href="eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
+        <a href="ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033ad] text-sm md:text-base font-bold transition-all">ADA</a>
+        <a href="xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
+        <a href="sol.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#14F195]" style="border-color: #14F195;">SOL</a>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="text-center mb-16">
+        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#14F195] drop-shadow-[0_0_15px_rgba(20,241,149,0.5)]">SOLANA</h1>
+        <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">PROOF OF HISTORY</p>
+        <div class="inline-block px-3 py-1 border border-[#14F195] text-[#14F195] text-xs uppercase tracking-[0.2em] mb-8">Speed as a First-Class Primitive</div>
+        <div>
+            <a href="index.html#products" class="inline-block bg-[#14F195] text-black font-bold font-orbitron px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(20,241,149,0.3)]">Get The Solana Tee</a>
+        </div>
+    </header>
+
+    <article class="wiki-content bg-brand-panel border border-[#14F195]/20 p-6 md:p-12 relative overflow-hidden">
+        <h2 style="margin-top:0;">What Solana Is — Straight to the Point</h2>
+        <p>Solana is a high-performance Layer 1 blockchain designed to scale to global usage.</p>
+        <p>Its core mission:<br>Deliver blockchain-level decentralization at internet speed.</p>
+        <p>Bitcoin introduced scarcity. Ethereum introduced programmability. Solana introduced time.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The Core Problem — Blockchains Could Not Scale</h2>
+        <p>Early blockchains faced a trilemma:</p>
+        <ul>
+            <li>decentralization</li>
+            <li>security</li>
+            <li>scalability</li>
+        </ul>
+        <p>Most networks sacrificed speed or cost.</p>
+        <p>Solana took a different approach: Instead of optimizing transactions, it optimized <span class="wiki-highlight text-[#14F195]">time</span>.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>History Is the Proof — The Key Innovation</h2>
+        <p>Solana introduced <span class="wiki-highlight">Proof of History (PoH)</span>.</p>
+        <p>PoH is not consensus. PoH is a cryptographic clock.</p>
+        <p>It allows the network to:</p>
+        <ul>
+            <li>order events before consensus</li>
+            <li>verify time without communication</li>
+            <li>drastically reduce latency</li>
+        </ul>
+        <p>This means validators do not need to constantly agree on time. Time is already proven.</p>
+        <p><span class="text-white">History becomes the proof.</span></p>
+        <p>This single innovation is what enables Solana’s speed.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Architecture — Why Solana Is Fast</h2>
+        <p>Solana combines multiple innovations:</p>
+        <ul>
+            <li>Proof of History (cryptographic time)</li>
+            <li>Tower BFT (optimized consensus)</li>
+            <li>Sealevel (parallel smart contracts)</li>
+            <li>Gulf Stream (mempool-less design)</li>
+            <li>Turbine (block propagation)</li>
+            <li>Pipelining (hardware optimization)</li>
+        </ul>
+        <p>Result:</p>
+        <ul>
+            <li>~400ms block times</li>
+            <li>tens of thousands of TPS</li>
+            <li>extremely low fees</li>
+        </ul>
+        <p>This is blockchain engineered like high-performance computing.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Founders — Who Built Solana</h2>
+        <p>Solana was founded in 2017 by:</p>
+        <ul>
+            <li><strong>Anatoly Yakovenko</strong> — former Qualcomm engineer</li>
+            <li><strong>Greg Fitzgerald</strong> — former Qualcomm engineer</li>
+            <li><strong>Stephen Akridge</strong> — former Qualcomm engineer</li>
+        </ul>
+        <p>Background:</p>
+        <ul>
+            <li>distributed systems</li>
+            <li>compression</li>
+            <li>networking</li>
+            <li>hardware-level optimization</li>
+        </ul>
+        <p>Their insight: Blockchains were slow because they ignored hardware and time.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Fixed Supply — Economic Design</h2>
+        <p>SOL has a capped supply with a declining inflation schedule.</p>
+        <p>Key points:</p>
+        <ul>
+            <li>inflation decreases over time</li>
+            <li>fees are partially burned</li>
+            <li>long-term pressure is deflationary</li>
+        </ul>
+        <p>The model favors:</p>
+        <ul>
+            <li>validators</li>
+            <li>long-term holders</li>
+            <li>network security</li>
+        </ul>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Venture Capital & Wall Street</h2>
+        <p>Solana attracted major institutional backing early:</p>
+        <ul>
+            <li>Andreessen Horowitz (a16z)</li>
+            <li>Multicoin Capital</li>
+            <li>Alameda Research (early)</li>
+            <li>Jump Crypto</li>
+        </ul>
+        <p>This brought:</p>
+        <ul>
+            <li>capital</li>
+            <li>developers</li>
+            <li>infrastructure</li>
+            <li>rapid ecosystem growth</li>
+        </ul>
+        <p>Solana became the chain institutions could actually build on at scale.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Outages — The Cost of Speed</h2>
+        <p>Solana experienced network outages in its early years.</p>
+        <p>These were caused by:</p>
+        <ul>
+            <li>extreme transaction load</li>
+            <li>bot activity</li>
+            <li>early-stage infrastructure</li>
+        </ul>
+        <p>Instead of abandoning the project:</p>
+        <ul>
+            <li>the team fixed core bottlenecks</li>
+            <li>upgraded validator software</li>
+            <li>hardened the network</li>
+        </ul>
+        <p>By 2024–2025, stability dramatically improved.</p>
+        <p>Speed was not abandoned. It was refined.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Mobile & Consumer Adoption — Solana Phone</h2>
+        <p>Solana is one of the only blockchains targeting <span class="wiki-highlight">end users</span>, not just developers.</p>
+        <p>Key initiatives:</p>
+        <ul>
+            <li>Solana Mobile</li>
+            <li>Saga phone</li>
+            <li>integrated wallet</li>
+            <li>decentralized app store</li>
+            <li>no platform fees</li>
+        </ul>
+        <p>Goal: Bring crypto to normal users, not just crypto natives.</p>
+        <p>This is a long-term consumer strategy.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Culture — Builders Over Narratives</h2>
+        <p>Solana culture is:</p>
+        <ul>
+            <li>builder-focused</li>
+            <li>performance-driven</li>
+            <li>experimental</li>
+            <li>unapologetically fast</li>
+        </ul>
+        <p>It is not academic. It is not ideological.</p>
+        <p>It ships.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Solana vs Ethereum — Different Philosophies</h2>
+        <p>Ethereum:</p>
+        <ul>
+            <li>maximum decentralization</li>
+            <li>slower, layered scaling</li>
+        </ul>
+        <p>Solana:</p>
+        <ul>
+            <li>monolithic design</li>
+            <li>hardware-optimized scaling</li>
+        </ul>
+        <p>Different paths.</p>
+        <p>Same destination: Global blockchain infrastructure.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Solana Timeline — Key Events</h2>
+        <ul>
+            <li><strong>2017</strong> — Solana founded</li>
+            <li><strong>2020</strong> — Mainnet launch</li>
+            <li><strong>2021</strong> — Explosive DeFi & NFT growth</li>
+            <li><strong>2022</strong> — Market crash & ecosystem stress</li>
+            <li><strong>2023</strong> — Network hardening & rebuild phase</li>
+            <li><strong>2024</strong> — Consumer focus, mobile, resurgence</li>
+            <li><strong>2025</strong> — Solana positioned as the fastest global execution layer</li>
+        </ul>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Final Words</h2>
+        <p>Bitcoin introduced digital scarcity. Ethereum introduced programmable trust. Solana introduced verifiable time.</p>
+        <p>Speed is not a feature. It is the foundation.</p>
+        <p class="text-2xl text-[#14F195] font-bold font-orbitron mt-4">History is the proof.</p>
+    </article>
+
+    <div class="text-center mt-12">
+        <a href="index.html#products" class="inline-block bg-[#14F195] text-black font-bold font-orbitron px-12 py-5 text-lg uppercase tracking-wider hover:bg-white hover:text-black transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(20,241,149,0.4)]">
+            BUY SOL T-SHIRT
+        </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-brand-green/20 bg-black py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
+      <p class="text-gray-600 text-[10px] mt-8">ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+  <script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("hidden");}</script>
+</body>
+</html>

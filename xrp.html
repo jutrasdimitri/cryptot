@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XRP History & Meaning // The Standard | CryptoT</title>
+  <meta name="description" content="Discover the history of XRP, the SEC Lawsuit victory, and the XRP Army. Educational streetwear by CryptoT.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { "brand-green": "#39ff14", "brand-black": "#0a0a0a", "brand-panel": "#111111" },
+          fontFamily: { orbitron: ["Orbitron", "sans-serif"], mono: ["Share Tech Mono", "monospace"] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{ background-image: linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent), linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent); background-size: 50px 50px; }
+    
+    .wiki-content h2 { font-family: 'Orbitron', sans-serif; color: white; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; border-left: 4px solid white; padding-left: 1rem; }
+    .wiki-content p { margin-bottom: 1.5rem; color: #d1d5db; line-height: 1.8; font-size: 1.05rem; }
+    .wiki-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem; color: #9ca3af; }
+    .wiki-content li { margin-bottom: 0.5rem; }
+    .wiki-content a { color: white; text-decoration: underline; text-underline-offset: 4px; transition: all 0.2s; }
+    .wiki-content a:hover { color: #ccc; }
+    .wiki-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, white, transparent); margin: 3rem 0; opacity: 0.3; }
+    .wiki-highlight { color: white; font-weight: bold; }
+
+    .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
+    .nav-coin-btn:hover { opacity: 1; border-color: white; }
+    .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+  </style>
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+</head>
+
+<body class="matrix-bg min-h-screen font-mono selection:bg-white selection:text-black">
+
+  <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <a href="index.html" class="font-orbitron font-black text-2xl tracking-widest text-white">CRYPTO<span class="text-brand-green">T</span></a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="index.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ THE_POWER_5 ]</a>
+          <a href="btc.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
+          <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
+          <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
+          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2"><span class="text-xs text-gray-500">DISPLAY: USD</span></div>
+          <a href="fr.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
+        </div>
+        <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-brand-green"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black/95 p-6 top-[62px]">
+        <div class="flex flex-col gap-6 text-center mt-10">
+            <a href="index.html" class="text-xl text-white font-orbitron">HOME</a>
+            <a href="btc.html" class="text-xl text-brand-green font-orbitron">ABOUT THEM</a>
+            <a href="index.html#products" class="text-xl text-white font-orbitron">SHOP</a>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10">[ CLOSE ]</button>
+        </div>
+    </div>
+  </nav>
+
+  <div class="sticky top-[142px] md:top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
+        <a href="btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
+        <a href="eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
+        <a href="ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033ad] text-sm md:text-base font-bold transition-all">ADA</a>
+        <a href="xrp.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-white" style="border-color: white;">XRP</a>
+        <a href="sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="text-center mb-16">
+        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">XRP</h1>
+        <p class="text-xl md:text-2xl text-gray-300 tracking-widest uppercase font-bold mb-6">THE STANDARD</p>
+        <div class="inline-block px-3 py-1 border border-white text-white text-xs uppercase tracking-[0.2em] mb-8">The New Global Settlement Layer</div>
+        <div>
+            <a href="index.html#products" class="inline-block bg-white text-black font-bold font-orbitron px-8 py-4 text-sm uppercase tracking-wider hover:bg-gray-300 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]">Get The XRP Tee</a>
+        </div>
+    </header>
+
+    <article class="wiki-content bg-brand-panel border border-white/20 p-6 md:p-12 relative overflow-hidden">
+        <h2 style="margin-top:0;">What XRP Is — Straight to the Point</h2>
+        <p>XRP is a digital asset designed for fast, low-cost, cross-border value transfer.</p>
+        <p>Its purpose is simple:<br>Move value globally, instantly, and at scale.</p>
+        <p>Bitcoin challenges money itself. XRP fixes how money moves.</p>
+        <p>XRP is not anti-bank. XRP is post-SWIFT.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The Problem — Legacy Finance Is Broken</h2>
+        <p>The global financial system still relies on SWIFT, created in the 1970s.</p>
+        <p>SWIFT:</p>
+        <ul>
+            <li>does not move money</li>
+            <li>only sends messages</li>
+            <li>requires intermediaries</li>
+            <li>takes days to settle</li>
+            <li>locks trillions in nostro/vostro accounts</li>
+        </ul>
+        <p>This creates:</p>
+        <ul>
+            <li>friction</li>
+            <li>delays</li>
+            <li>capital inefficiency</li>
+            <li>systemic risk</li>
+        </ul>
+        <p>XRP was designed specifically to replace this infrastructure.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The Founders — Who Created XRP</h2>
+        <p>XRP was created in 2012 by:</p>
+        <ul>
+            <li><strong>Jed McCaleb</strong> — cryptographer, early Bitcoin developer, Mt. Gox founder</li>
+            <li><strong>Chris Larsen</strong> — fintech entrepreneur, former CEO of Ripple</li>
+            <li><strong>Arthur Britto</strong> — software engineer and protocol architect</li>
+            <li><strong>David Schwartz</strong> — cryptographer, now CTO of Ripple (known as “JoelKatz”)</li>
+        </ul>
+        <p>Their goal:<br>Build a neutral, decentralized settlement layer for global finance.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>XRP Ledger — How It Works</h2>
+        <p>The XRP Ledger (XRPL):</p>
+        <ul>
+            <li>decentralized</li>
+            <li>open-source</li>
+            <li>no mining</li>
+            <li>no Proof of Work</li>
+            <li>no Proof of Stake</li>
+        </ul>
+        <p>Instead, it uses a <strong>consensus algorithm</strong>.</p>
+        <p>Key properties:</p>
+        <ul>
+            <li>3–5 second settlement</li>
+            <li>~1,500 transactions per second</li>
+            <li>deterministic fees</li>
+            <li>energy efficient</li>
+            <li>finality without probabilistic confirmation</li>
+        </ul>
+        <p>Once a transaction settles, it is final.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Fixed Supply — Designed Scarcity</h2>
+        <p>XRP has a fixed supply of <strong>100 billion tokens</strong>.</p>
+        <p>Important facts:</p>
+        <ul>
+            <li>no mining</li>
+            <li>no inflation</li>
+            <li>transaction fees are burned</li>
+            <li>total supply only decreases over time</li>
+        </ul>
+        <p>Scarcity is enforced by code.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Ripple — The Company (Not the Network)</h2>
+        <p>Ripple is a private company that:</p>
+        <ul>
+            <li>builds enterprise payment solutions</li>
+            <li>works with banks and institutions</li>
+            <li>integrates XRP for liquidity (ODL)</li>
+        </ul>
+        <p>Important distinction:</p>
+        <ul>
+            <li>XRP Ledger exists independently</li>
+            <li>XRP is open-source</li>
+            <li>Ripple does not control the network</li>
+        </ul>
+        <p>This distinction became critical in court.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The XRP Army — Community as a Force</h2>
+        <p>Beyond technology and institutions, XRP is backed by one of the most resilient communities in crypto: <strong>the XRP Army</strong>.</p>
+        <p>The XRP Army is:</p>
+        <ul>
+            <li>global</li>
+            <li>vocal</li>
+            <li>highly informed</li>
+            <li>deeply engaged in regulation and macro finance</li>
+        </ul>
+        <p>During the SEC lawsuit:</p>
+        <ul>
+            <li>the community stayed active</li>
+            <li>educated the public</li>
+            <li>tracked court documents</li>
+            <li>challenged misinformation</li>
+            <li>defended the distinction between XRP and Ripple</li>
+        </ul>
+        <p>XRP holders did not leave. They organized.</p>
+        <p>This level of conviction is rare in crypto.</p>
+        <p>XRP did not survive because of hype. It survived because of belief, research, and persistence.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The SEC Lawsuit — A Defining Moment</h2>
+        <p>In December 2020, the SEC sued Ripple.</p>
+        <p>Claim:<br>XRP was an unregistered security.</p>
+        <p>Impact:</p>
+        <ul>
+            <li>XRP delisted in the U.S.</li>
+            <li>price collapsed</li>
+            <li>uncertainty across the entire crypto market</li>
+        </ul>
+        <p>Ripple fought back. The XRP Army stood firm.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>The Landmark Victory</h2>
+        <p>In July 2023, the court ruled:</p>
+        <p>XRP itself is <strong>NOT a security</strong>.</p>
+        <p>Key outcome:</p>
+        <ul>
+            <li>secondary market sales are not securities</li>
+            <li>XRP is a digital asset, not an investment contract</li>
+        </ul>
+        <p>This ruling changed crypto regulation forever.</p>
+        <p>XRP survived. The precedent was set.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Why XRP Matters Now</h2>
+        <p>Post-lawsuit:</p>
+        <ul>
+            <li>regulatory clarity</li>
+            <li>renewed institutional interest</li>
+            <li>global expansion resumes</li>
+        </ul>
+        <p>XRP is positioned as:</p>
+        <ul>
+            <li>a bridge currency</li>
+            <li>a settlement layer</li>
+            <li>a liquidity engine</li>
+            <li>infrastructure for tokenized assets and CBDCs</li>
+        </ul>
+        <p>This is not speculation. This is financial plumbing.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>XRP Is Not Bitcoin — By Design</h2>
+        <p>Bitcoin:</p>
+        <ul>
+            <li>money</li>
+            <li>store of value</li>
+            <li>monetary revolution</li>
+        </ul>
+        <p>XRP:</p>
+        <ul>
+            <li>liquidity</li>
+            <li>settlement</li>
+            <li>financial infrastructure</li>
+        </ul>
+        <p>Different missions. Both essential.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>XRP Timeline — Key Events</h2>
+        <ul>
+            <li><strong>2012</strong> — XRP Ledger launched</li>
+            <li><strong>2013</strong> — Ripple Labs founded</li>
+            <li><strong>2017</strong> — XRP enters top 3 crypto assets</li>
+            <li><strong>2020</strong> — SEC lawsuit filed</li>
+            <li><strong>2023</strong> — Court ruling: XRP is not a security</li>
+            <li><strong>2024</strong> — Institutional adoption resumes</li>
+            <li><strong>2025</strong> — XRP positioned as a global settlement standard</li>
+        </ul>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Final Words</h2>
+        <p>Bitcoin fixes money. Ethereum programs logic. Cardano builds nations.</p>
+        <p>XRP moves value at global scale.</p>
+        <p>And behind it stands one of the strongest communities in crypto.</p>
+        <p class="text-2xl text-white font-bold font-orbitron mt-4">The Standard is changing.</p>
+    </article>
+
+    <div class="text-center mt-12">
+        <a href="index.html#products" class="inline-block bg-white text-black font-bold font-orbitron px-12 py-5 text-lg uppercase tracking-wider hover:bg-gray-300 transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+            BUY XRP T-SHIRT
+        </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-brand-green/20 bg-black py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
+      <p class="text-gray-600 text-[10px] mt-8">ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+  <script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("hidden");}</script>
+</body>
+</html>
