@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoT // À propos des protocoles</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-green": "#39ff14",
+            "brand-panel": "#111111",
+          },
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            mono: ["Share Tech Mono", "monospace"],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background:#050505; color:#e5e5e5; }
+    .about-btn.active {
+      color:#39ff14;
+      border-color:rgba(57,255,20,.6);
+      background:rgba(57,255,20,.08);
+      font-weight:900;
+    }
+  </style>
+</head>
+
+<body class="font-mono">
+
+<!-- HEADER -->
+<header class="py-16 text-center border-b border-brand-green/20">
+  <h1 class="text-4xl md:text-6xl font-orbitron font-black text-white mb-4">
+    ABOUT THEM_
+  </h1>
+  <p class="text-gray-400 max-w-2xl mx-auto">
+    Choisis un protocole. Comprends sa mission. Porte le signal.  
+    <span class="text-brand-green font-bold">Tu es en avance.</span>
+  </p>
+</header>
+
+<!-- ABOUT SECTION -->
+<section class="py-20 max-w-7xl mx-auto px-4">
+
+  <!-- TABS -->
+  <div class="flex flex-wrap gap-3 mb-10">
+    <button class="about-btn active border px-4 py-2 uppercase text-sm" onclick="showAbout('BTC')">BTC</button>
+    <button class="about-btn border px-4 py-2 uppercase text-sm" onclick="showAbout('ETH')">ETH</button>
+    <button class="about-btn border px-4 py-2 uppercase text-sm" onclick="showAbout('ADA')">ADA</button>
+    <button class="about-btn border px-4 py-2 uppercase text-sm" onclick="showAbout('XRP')">XRP</button>
+    <button class="about-btn border px-4 py-2 uppercase text-sm" onclick="showAbout('SOL')">SOL</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="bg-brand-panel border border-brand-green/30 p-6 md:p-10">
+
+    <!-- BTC -->
+    <div id="about-BTC">
+      <h2 class="font-orbitron text-3xl text-white mb-4">
+        BITCOIN — <span class="text-brand-green">VIRES IN NUMERIS</span>
+      </h2>
+
+      <p><strong>Argent pair-à-pair. Offre fixe. Rareté absolue.</strong></p>
+
+      <p class="mt-4">
+        Bitcoin a été créé pour résoudre un problème fondamental :  
+        un argent qui peut être imprimé, censuré ou contrôlé.
+      </p>
+
+      <p>
+        À la base, Bitcoin est de l’argent électronique pair-à-pair :
+        envoyer de la valeur à n’importe qui, sans banque, sans permission.
+      </p>
+
+      <h3 class="mt-6 font-orbitron text-xl text-white">L’idée centrale</h3>
+      <ul class="list-disc pl-6">
+        <li>21 millions de BTC. Pour toujours.</li>
+        <li>Aucune autorité centrale.</li>
+        <li>Aucune impression monétaire.</li>
+      </ul>
+
+      <p>
+        L’inflation n’est pas un accident : c’est une fonctionnalité du système bancaire.
+        Bitcoin corrige cela par le code.
+      </p>
+
+      <h3 class="mt-6 font-orbitron text-xl text-white">Satoshi Nakamoto</h3>
+      <p>
+        Créé en 2008 par un fondateur anonyme disparu.
+        Aucun leader. Aucun PDG. Bitcoin appartient à tout le monde.
+      </p>
+
+      <h3 class="mt-6 font-orbitron text-xl text-white">Conclusion</h3>
+      <p>
+        Réveille-toi. L’offre est fixe. La demande est mondiale.  
+        <span class="text-brand-green font-bold">// Tu es en avance.</span>
+      </p>
+    </div>
+
+    <!-- ETH -->
+    <div id="about-ETH" class="hidden">
+      <h2 class="font-orbitron text-3xl text-white mb-4">
+        ETHEREUM — <span class="text-brand-green">CODE IS LAW</span>
+      </h2>
+
+      <p>
+        Bitcoin a prouvé l’argent décentralisé.  
+        Ethereum a posé la question suivante :  
+        <strong>et si la blockchain pouvait exécuter du code ?</strong>
+      </p>
+
+      <p class="mt-4">
+        Ethereum est un ordinateur mondial décentralisé
+        permettant les smart contracts, la DeFi, les NFT et les DAO.
+      </p>
+
+      <h3 class="mt-6 font-orbitron text-xl text-white">Vitalik Buterin</h3>
+      <p>
+        Proposé en 2013, Ethereum étend Bitcoin sans le remplacer.
+      </p>
+
+      <p class="text-brand-green font-bold mt-6">// Tu es en avance.</p>
+    </div>
+
+    <!-- ADA -->
+    <div id="about-ADA" class="hidden">
+      <h2 class="font-orbitron text-3xl text-white mb-4">
+        CARDANO — <span class="text-brand-green">PEER REVIEWED</span>
+      </h2>
+
+      <p>
+        Le Bitcoin des altcoins.
+        Même philosophie que Bitcoin, avec les smart contracts.
+      </p>
+
+      <p>
+        Charles Hoskinson a quitté Ethereum pour construire Cardano correctement :
+        lentement, scientifiquement, durablement.
+      </p>
+
+      <p class="text-brand-green font-bold mt-6">// Tu es en avance.</p>
+    </div>
+
+    <!-- XRP -->
+    <div id="about-XRP" class="hidden">
+      <h2 class="font-orbitron text-3xl text-white mb-4">
+        XRP — <span class="text-brand-green">THE STANDARD</span>
+      </h2>
+
+      <p>
+        XRP vise à remplacer SWIFT :
+        paiements internationaux instantanés, liquides, peu coûteux.
+      </p>
+
+      <p>
+        Après le procès contre la SEC, XRP est devenu un pilier réglementaire.
+      </p>
+
+      <p class="text-brand-green font-bold mt-6">// Tu es en avance.</p>
+    </div>
+
+    <!-- SOL -->
+    <div id="about-SOL" class="hidden">
+      <h2 class="font-orbitron text-3xl text-white mb-4">
+        SOLANA — <span class="text-brand-green">HISTORY IS THE PROOF</span>
+      </h2>
+
+      <p>
+        Solana privilégie la vitesse à la base :
+        Proof of History, débit massif, latence minimale.
+      </p>
+
+      <p class="text-brand-green font-bold mt-6">// Tu es en avance.</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function showAbout(sym){
+    document.querySelectorAll('[id^="about-"]').forEach(d=>d.classList.add('hidden'));
+    document.getElementById('about-'+sym).classList.remove('hidden');
+    document.querySelectorAll('.about-btn').forEach(b=>b.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
