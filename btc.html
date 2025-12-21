@@ -36,30 +36,32 @@
       background-size: 50px 50px;
     }
     
-    /* Wiki Text Styles */
+    /* Wiki Text Styles - INCREASED SIZE */
     .wiki-content h2 {
         font-family: 'Orbitron', sans-serif;
         color: white;
-        font-size: 1.5rem;
-        margin-top: 3rem;
+        font-size: 1.8rem; /* Plus gros */
+        margin-top: 3.5rem;
         margin-bottom: 1.5rem;
-        border-left: 4px solid #F7931A; /* BTC COLOR */
-        padding-left: 1rem;
+        border-left: 5px solid #F7931A; /* BTC COLOR */
+        padding-left: 1.5rem;
     }
     .wiki-content p {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.8rem;
         color: #d1d5db;
-        line-height: 1.8;
-        font-size: 1.05rem;
+        line-height: 2; /* Plus d'espace entre les lignes */
+        font-size: 1.2rem; /* Police plus grosse */
     }
     .wiki-content ul {
         list-style-type: disc;
-        padding-left: 1.5rem;
-        margin-bottom: 2rem;
+        padding-left: 2rem;
+        margin-bottom: 2.5rem;
         color: #9ca3af;
+        font-size: 1.15rem; /* Liste plus grosse aussi */
+        line-height: 1.8;
     }
     .wiki-content li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
     }
     .wiki-content a {
         color: #F7931A; /* BTC COLOR */
@@ -72,8 +74,8 @@
         width: 100%;
         height: 1px;
         background: linear-gradient(90deg, transparent, #F7931A, transparent); /* BTC COLOR */
-        margin: 3rem 0;
-        opacity: 0.3;
+        margin: 4rem 0;
+        opacity: 0.4;
     }
     
     /* Nav Active State */
@@ -105,16 +107,20 @@
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
              <span class="text-xs text-gray-500">DISPLAY: USD</span>
           </div>
-          <a href="fr.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
+          
+          <a href="fr-btc.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
         </div>
         <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-brand-green"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black/95 p-6 top-[62px]">
+    
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black border-l border-brand-green/20 p-6 top-[62px]">
         <div class="flex flex-col gap-6 text-center mt-10">
-            <a href="index.html" class="text-xl text-white font-orbitron">HOME</a>
-            <a href="btc.html" class="text-xl text-brand-green font-orbitron">ABOUT THEM</a>
-            <a href="index.html#products" class="text-xl text-white font-orbitron">SHOP</a>
+            <a href="index.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">HOME</a>
+            <a href="btc.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THEM</a>
+            <a href="index.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
+            <a href="fr-btc.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
+            
             <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10">[ CLOSE ]</button>
         </div>
     </div>

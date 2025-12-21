@@ -13,8 +13,15 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { "brand-green": "#39ff14", "brand-black": "#0a0a0a", "brand-panel": "#111111" },
-          fontFamily: { orbitron: ["Orbitron", "sans-serif"], mono: ["Share Tech Mono", "monospace"] },
+          colors: {
+            "brand-green": "#39ff14",
+            "brand-black": "#0a0a0a",
+            "brand-panel": "#111111",
+          },
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            mono: ["Share Tech Mono", "monospace"],
+          },
         }
       }
     }
@@ -22,21 +29,69 @@
 
   <style>
     body { background-color: #050505; color: #e5e5e5; }
-    .matrix-bg{ background-image: linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent), linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent); background-size: 50px 50px; }
+    .matrix-bg{
+      background-image:
+        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+      background-size: 50px 50px;
+    }
     
-    .wiki-content h2 { font-family: 'Orbitron', sans-serif; color: white; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; border-left: 4px solid white; padding-left: 1rem; }
-    .wiki-content p { margin-bottom: 1.5rem; color: #d1d5db; line-height: 1.8; font-size: 1.05rem; }
-    .wiki-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem; color: #9ca3af; }
-    .wiki-content li { margin-bottom: 0.5rem; }
-    .wiki-content a { color: white; text-decoration: underline; text-underline-offset: 4px; transition: all 0.2s; }
+    /* Wiki Text Styles - INCREASED SIZE */
+    .wiki-content h2 {
+        font-family: 'Orbitron', sans-serif;
+        color: white;
+        font-size: 1.8rem;
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid white; /* XRP COLOR */
+        padding-left: 1.5rem;
+    }
+    .wiki-content h3 {
+        font-family: 'Orbitron', sans-serif;
+        color: #d1d5db;
+        font-size: 1.4rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .wiki-content p {
+        margin-bottom: 1.8rem;
+        color: #d1d5db;
+        line-height: 2;
+        font-size: 1.2rem;
+    }
+    .wiki-content ul {
+        list-style-type: disc;
+        padding-left: 2rem;
+        margin-bottom: 2.5rem;
+        color: #9ca3af;
+        font-size: 1.15rem;
+        line-height: 1.8;
+    }
+    .wiki-content li {
+        margin-bottom: 0.75rem;
+    }
+    .wiki-content a {
+        color: white; /* XRP COLOR */
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: all 0.2s;
+    }
     .wiki-content a:hover { color: #ccc; }
-    .wiki-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, white, transparent); margin: 3rem 0; opacity: 0.3; }
+    .wiki-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, white, transparent); /* XRP COLOR */
+        margin: 4rem 0;
+        opacity: 0.4;
+    }
     .wiki-highlight { color: white; font-weight: bold; }
 
+    /* Nav Active State */
     .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
     .nav-coin-btn:hover { opacity: 1; border-color: white; }
     .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
   </style>
+
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
 
@@ -56,17 +111,23 @@
           <a href="btc.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
           <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
           <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
-          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2"><span class="text-xs text-gray-500">DISPLAY: USD</span></div>
-          <a href="fr.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
+          
+          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
+             <span class="text-xs text-gray-500">DISPLAY: USD</span>
+          </div>
+          <a href="fr-xrp.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
         </div>
         <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-brand-green"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black/95 p-6 top-[62px]">
+    
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black border-l border-brand-green/20 p-6 top-[62px]">
         <div class="flex flex-col gap-6 text-center mt-10">
-            <a href="index.html" class="text-xl text-white font-orbitron">HOME</a>
-            <a href="btc.html" class="text-xl text-brand-green font-orbitron">ABOUT THEM</a>
-            <a href="index.html#products" class="text-xl text-white font-orbitron">SHOP</a>
+            <a href="index.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">HOME</a>
+            <a href="btc.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THEM</a>
+            <a href="index.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
+            <a href="fr-xrp.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
+            
             <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10">[ CLOSE ]</button>
         </div>
     </div>
@@ -83,16 +144,27 @@
   </div>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
     <header class="text-center mb-16">
-        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">XRP</h1>
-        <p class="text-xl md:text-2xl text-gray-300 tracking-widest uppercase font-bold mb-6">THE STANDARD</p>
-        <div class="inline-block px-3 py-1 border border-white text-white text-xs uppercase tracking-[0.2em] mb-8">The New Global Settlement Layer</div>
+        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+            XRP
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 tracking-widest uppercase font-bold mb-6">
+            THE STANDARD
+        </p>
+        <div class="inline-block px-3 py-1 border border-white text-white text-xs uppercase tracking-[0.2em] mb-8">
+            Liquidity Provider
+        </div>
+        
         <div>
-            <a href="index.html#products" class="inline-block bg-white text-black font-bold font-orbitron px-8 py-4 text-sm uppercase tracking-wider hover:bg-gray-300 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]">Get The XRP Tee</a>
+            <a href="index.html#products" class="inline-block bg-white text-black font-bold font-orbitron px-8 py-4 text-sm uppercase tracking-wider hover:bg-gray-300 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                Get The XRP Tee
+            </a>
         </div>
     </header>
 
     <article class="wiki-content bg-brand-panel border border-white/20 p-6 md:p-12 relative overflow-hidden">
+        
         <h2 style="margin-top:0;">What XRP Is — Straight to the Point</h2>
         <p>XRP is a digital asset designed for fast, low-cost, cross-border value transfer.</p>
         <p>Its purpose is simple:<br>Move value globally, instantly, and at scale.</p>
@@ -291,19 +363,27 @@
     </article>
 
     <div class="text-center mt-12">
+        <p class="text-gray-400 mb-6">You've read the thesis. Now wear the signal.</p>
         <a href="index.html#products" class="inline-block bg-white text-black font-bold font-orbitron px-12 py-5 text-lg uppercase tracking-wider hover:bg-gray-300 transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.4)]">
             BUY XRP T-SHIRT
         </a>
     </div>
+
   </main>
 
   <footer class="border-t border-brand-green/20 bg-black py-12 mt-12">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
       <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
+      <div class="mt-6 flex justify-center gap-6 text-xs">
+        <a href="index.html" class="text-gray-500 hover:text-brand-green transition-colors">HOME</a>
+        <a href="index.html#products" class="text-gray-500 hover:text-brand-green transition-colors">SHOP</a>
+        <a href="index.html#contact" class="text-gray-500 hover:text-brand-green transition-colors">CONTACT</a>
+      </div>
       <p class="text-gray-600 text-[10px] mt-8">ALL RIGHTS RESERVED.</p>
     </div>
   </footer>
+
   <script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("hidden");}</script>
 </body>
 </html>
