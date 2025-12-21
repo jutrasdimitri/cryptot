@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histoire de Cardano & Signification // Revue par les Pairs | CryptoT</title>
+  <meta name="description" content="Découvrez l'histoire de Cardano, Charles Hoskinson et la philosophie de la Revue par les Pairs. Streetwear éducatif par CryptoT.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-green": "#39ff14",
+            "brand-black": "#0a0a0a",
+            "brand-panel": "#111111",
+          },
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            mono: ["Share Tech Mono", "monospace"],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{
+      background-image:
+        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+      background-size: 50px 50px;
+    }
+    
+    /* Wiki Text Styles */
+    .wiki-content h2 {
+        font-family: 'Orbitron', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid #0033ad; /* ADA COLOR */
+        padding-left: 1rem;
+    }
+    .wiki-content h3 {
+        font-family: 'Orbitron', sans-serif;
+        color: #d1d5db;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .wiki-content p {
+        margin-bottom: 1.5rem;
+        color: #d1d5db;
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+    .wiki-content ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+        color: #9ca3af;
+    }
+    .wiki-content li {
+        margin-bottom: 0.5rem;
+    }
+    .wiki-content a {
+        color: #5aa0ff; /* ADA LIGHTER COLOR */
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: all 0.2s;
+    }
+    .wiki-content a:hover { color: white; }
+    .wiki-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #0033ad, transparent); /* ADA COLOR */
+        margin: 3rem 0;
+        opacity: 0.3;
+    }
+    
+    /* Nav Active State */
+    .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
+    .nav-coin-btn:hover { opacity: 1; border-color: white; }
+    .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+  </style>
+
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+</head>
+
+<body class="matrix-bg min-h-screen font-mono selection:bg-[#0033ad] selection:text-white">
+
+  <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <a href="fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white">CRYPTO<span class="text-brand-green">T</span></a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ LE_POWER_5 ]</a>
+          <a href="fr-btc.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ À_PROPOS_D'EUX ]</a>
+          <a href="fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTE ]</a>
+          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ NOUS_JOINDRE ]</a>
+          
+          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
+             <span class="text-xs text-gray-500">AFFICHAGE: USD</span>
+          </div>
+          <a href="ada.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
+        </div>
+        <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-brand-green"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black/95 p-6 top-[62px]">
+        <div class="flex flex-col gap-6 text-center mt-10">
+            <a href="fr.html" class="text-xl text-white font-orbitron">ACCUEIL</a>
+            <a href="fr-btc.html" class="text-xl text-brand-green font-orbitron">À PROPOS D'EUX</a>
+            <a href="fr.html#products" class="text-xl text-white font-orbitron">BOUTIQUE</a>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10">[ FERMER ]</button>
+        </div>
+    </div>
+  </nav>
+
+  <div class="sticky top-[142px] md:top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
+        <a href="fr-btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
+        <a href="fr-eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
+        <a href="fr-ada.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#0033ad]" style="border-color: #0033ad;">ADA</a>
+        <a href="fr-xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
+        <a href="fr-sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <header class="text-center mb-16">
+        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#0033ad] drop-shadow-[0_0_15px_rgba(0,51,173,0.5)]">
+            CARDANO
+        </h1>
+        <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
+            REVUE PAR LES PAIRS
+        </p>
+        <div class="inline-block px-3 py-1 border border-[#0033ad] text-[#5aa0ff] text-xs uppercase tracking-[0.2em] mb-8">
+            Le Bitcoin des Altcoins
+        </div>
+        
+        <div>
+            <a href="fr.html#products" class="inline-block bg-[#0033ad] text-white font-bold font-orbitron px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(0,51,173,0.3)]">
+                Acheter le T-Shirt ADA
+            </a>
+        </div>
+    </header>
+
+    <article class="wiki-content bg-brand-panel border border-[#0033ad]/20 p-6 md:p-12 relative overflow-hidden">
+        
+        <h2 style="margin-top:0;">Ce qu'est Cardano — Droit au but</h2>
+        <p>Cardano est une blockchain pair-à-pair avec une offre limitée, bâtie sur la même philosophie comptable de base que le Bitcoin, tout en l'étendant pour supporter les contrats intelligents, l'identité numérique et les applications à l'échelle mondiale.</p>
+        <p>À la base, Cardano n'est pas une rupture avec le Bitcoin. C'est une continuation.</p>
+        <p>Le Bitcoin a prouvé qu'une monnaie pair-à-pair avec une offre fixe pouvait exister. Cardano pose une question plus profonde : Et si cette même fondation pouvait soutenir un système financier et social mondial entier ?</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Bitcoin au Cœur — UTXO Étendu</h2>
+        <p>Cardano est construit sur un modèle UTXO Étendu (eUTXO), directement dérivé du design UTXO original du Bitcoin.</p>
+        <p>Cela compte parce que l'UTXO :</p>
+        <ul>
+            <li>applique un comportement de transaction déterministe</li>
+            <li>supprime les changements d'état cachés</li>
+            <li>augmente la sécurité et la prévisibilité</li>
+            <li>prévient des classes entières d'échecs de contrats intelligents</li>
+        </ul>
+        <p>Là où plusieurs blockchains ont abandonné le modèle du Bitcoin par commodité, Cardano a doublé la mise dessus.</p>
+        <p>C'est pourquoi Cardano est souvent décrit comme : <strong class="text-white">« Le modèle de sécurité du Bitcoin, étendu aux contrats intelligents. »</strong></p>
+        <p>Ce choix de design est ce qui vaut à Cardano le titre de : <strong class="text-[#5aa0ff]">Le Bitcoin des Altcoins.</strong></p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Pourquoi Cardano Existe</h2>
+        <p>Le Bitcoin a résolu le problème de la monnaie sans confiance :</p>
+        <ul>
+            <li>offre fixe</li>
+            <li>aucune autorité centrale</li>
+            <li>transfert de valeur pair-à-pair</li>
+        </ul>
+        <p>Ethereum a introduit la programmabilité mais aussi :</p>
+        <ul>
+            <li>une exécution imprévisible</li>
+            <li>un état global complexe</li>
+            <li>des exploits fréquents</li>
+            <li>une ambiguïté de gouvernance</li>
+        </ul>
+        <p>Cardano a été créé pour répondre à une question plus difficile : Et si nous bâtissions une blockchain comme nous bâtissons une infrastructure critique — avec des garanties mathématiques, une vérification formelle et une gouvernance à long terme ?</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>La Philosophie derrière Cardano</h2>
+        <p>Cardano est bâti sur :</p>
+        <ul>
+            <li>la recherche académique revue par les pairs</li>
+            <li>les méthodes formelles</li>
+            <li>les preuves mathématiques</li>
+            <li>une ingénierie conservatrice et délibérée</li>
+        </ul>
+        <p>Au lieu de « bouger vite et tout casser », Cardano a choisi :</p>
+        <ul>
+            <li>l'exactitude plutôt que la vitesse</li>
+            <li>la sécurité plutôt que le battage médiatique</li>
+            <li>la durabilité plutôt que les raccourcis</li>
+        </ul>
+        <p>Cette philosophie rend Cardano fondamentalement différent de la plupart des projets blockchain.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Charles Hoskinson — Du Bitcoin à Cardano</h2>
+        <p>Charles Hoskinson est impliqué dans la crypto depuis les tout débuts.</p>
+        <p>Avant Cardano :</p>
+        <ul>
+            <li>premier éducateur et défenseur du Bitcoin</li>
+            <li>profondément engagé dans les fondations économiques et philosophiques du Bitcoin</li>
+            <li>concentré sur les systèmes pair-à-pair, la rareté et la souveraineté</li>
+        </ul>
+        <p>Charles est ensuite devenu l'un des cofondateurs originaux d'Ethereum et a servi comme son premier PDG.</p>
+        <p>Une rupture philosophique a émergé.</p>
+        <p>Ethereum a choisi :</p>
+        <ul>
+            <li>l'expérimentation rapide</li>
+            <li>la gouvernance informelle</li>
+            <li>la vitesse plutôt que les garanties</li>
+        </ul>
+        <p>Charles croyait que les blockchains finiraient par :</p>
+        <ul>
+            <li>soutenir des gouvernements</li>
+            <li>gérer l'identité</li>
+            <li>sécuriser l'infrastructure nationale</li>
+            <li>servir des milliards de personnes</li>
+        </ul>
+        <p>Il croyait que cela nécessitait une certitude mathématique. Alors il a quitté Ethereum. Et ensuite est venu Charles.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>La Naissance de Cardano</h2>
+        <p>Cardano a été conçu dès le début comme un système destiné à durer des décennies.</p>
+        <p>Il est développé par trois entités indépendantes :</p>
+        <ul>
+            <li>IOHK — recherche et ingénierie</li>
+            <li>Fondation Cardano — gouvernance et standards</li>
+            <li>EMURGO — adoption et commercialisation</li>
+        </ul>
+        <p>Cette séparation empêche :</p>
+        <ul>
+            <li>le contrôle centralisé</li>
+            <li>la capture par les entreprises</li>
+            <li>la prise de décision à court terme</li>
+        </ul>
+        <p>Cardano est conçu pour survivre à ses créateurs.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Preuve d'Enjeu (Proof of Stake) — Ouroboros</h2>
+        <p>Cardano utilise Ouroboros, le premier protocole de preuve d'enjeu prouvé sécuritaire par la recherche académique revue par les pairs.</p>
+        <p>Ouroboros :</p>
+        <ul>
+            <li>est écoénergétique</li>
+            <li>est mathématiquement prouvé</li>
+            <li>maintient la décentralisation</li>
+            <li>s'adapte de manière prévisible</li>
+        </ul>
+        <p>Cardano a démontré que la Preuve d'Enjeu pouvait être sécuritaire bien avant qu'elle ne devienne courante.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Gouvernance & Souveraineté Numérique</h2>
+        <p>Cardano se gouverne lui-même via :</p>
+        <ul>
+            <li>le vote on-chain</li>
+            <li>une trésorerie financée par les frais de transaction</li>
+            <li>des propositions communautaires</li>
+            <li>des mises à jour de protocole sans hard forks</li>
+        </ul>
+        <p>Les détenteurs d'ADA ne sont pas juste des utilisateurs. Ce sont des parties prenantes. Cardano fonctionne plus comme une nation numérique que comme une startup.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Vision du Monde Réel — Identité & Afrique</h2>
+        <p>Cardano se concentre sur l'adoption dans le monde réel :</p>
+        <ul>
+            <li>systèmes d'identité numérique</li>
+            <li>crédentials d'éducation</li>
+            <li>inclusion financière</li>
+            <li>infrastructure de niveau gouvernemental</li>
+        </ul>
+        <p>L'Afrique est centrale parce que :</p>
+        <ul>
+            <li>des milliards de personnes manquent d'accès aux banques</li>
+            <li>l'identité débloque la participation économique</li>
+            <li>les économies "mobile-first" peuvent sauter les systèmes hérités</li>
+        </ul>
+        <p>Cardano est bâti pour passer à l'échelle pour des milliards de personnes.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>L'ADA comme Monnaie</h2>
+        <p>L'ADA possède :</p>
+        <ul>
+            <li>une offre maximale de 45 milliards</li>
+            <li>une émission prévisible</li>
+            <li>une politique monétaire transparente</li>
+        </ul>
+        <p>L'ADA fonctionne comme :</p>
+        <ul>
+            <li>un moyen d'échange</li>
+            <li>un actif de gouvernance</li>
+            <li>un jeton de sécurité réseau</li>
+            <li>un carburant pour contrats intelligents</li>
+        </ul>
+        <p>La rareté est appliquée par le code. L'inflation est finie. Les règles sont explicites.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Recherche & Livres Blancs</h2>
+        <p>Bibliothèque de Recherche :<br><a href="https://iohk.io/en/research/library/" target="_blank">https://iohk.io/en/research/library/</a></p>
+        <p>Papier Ouroboros :<br><a href="https://eprint.iacr.org/2016/889.pdf" target="_blank">https://eprint.iacr.org/2016/889.pdf</a></p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Source Directe — Charles Hoskinson</h2>
+        <p>YouTube Officiel :<br><a href="https://www.youtube.com/@charleshoskinsoncrypto" target="_blank">https://www.youtube.com/@charleshoskinsoncrypto</a></p>
+        <p>Pas d'équipe RP. Pas de filtres. Juste de la pensée à long terme.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>La Communauté Cardano</h2>
+        <p>La communauté Cardano est reconnue pour sa mentalité à long terme.</p>
+        <p>Contrairement à plusieurs communautés crypto guidées par la spéculation à court terme, les détenteurs de Cardano tendent à se concentrer sur :</p>
+        <ul>
+            <li>le design du protocole</li>
+            <li>la recherche et les méthodes formelles</li>
+            <li>la participation à la gouvernance</li>
+            <li>l'impact mondial à long terme</li>
+        </ul>
+        <p>Plusieurs détenteurs d'ADA ne sont pas des traders. Ce sont des bâtisseurs, des développeurs, des académiques et des penseurs de systèmes.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>L'Effet Charles Hoskinson</h2>
+        <p>Cardano est unique en ayant un fondateur hautement visible.</p>
+        <p>Charles Hoskinson communique régulièrement et directement avec la communauté via :</p>
+        <ul>
+            <li>des discussions techniques détaillées</li>
+            <li>des explications économiques et de gouvernance</li>
+            <li>des réflexions philosophiques sur la décentralisation et la souveraineté</li>
+        </ul>
+        <p>Cette transparence a créé un fort sentiment d'alignement entre le projet et ses supporters.</p>
+        <p>La communauté Cardano ne suit pas Charles pour des prédictions de prix. Ils le suivent pour la structure, la vision et la pensée à long terme.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Une Culture de Patience</h2>
+        <p>La communauté Cardano est souvent décrite comme :</p>
+        <ul>
+            <li>patiente</li>
+            <li>conservatrice</li>
+            <li>orientée vers la recherche</li>
+        </ul>
+        <p>C'est intentionnel.</p>
+        <p>La croyance est que les systèmes conçus pour soutenir des gouvernements, l'identité et des milliards d'utilisateurs doivent prioriser l'exactitude avant la vitesse.</p>
+        <p>Pour plusieurs supporters, Cardano n'est pas à propos du prochain cycle. C'est à propos de bâtir une infrastructure destinée à durer des décennies.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>« In Charles We Trust »</h2>
+        <p>Au sein de la communauté, cette phrase reflète la confiance en :</p>
+        <ul>
+            <li>la revue par les pairs</li>
+            <li>la vérification formelle</li>
+            <li>l'ingénierie délibérée</li>
+            <li>la gouvernance à long terme</li>
+        </ul>
+        <p>Ce n'est pas une foi aveugle. C'est un alignement avec une philosophie.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Chronologie Cardano — Jalons Clés</h2>
+        <ul>
+            <li><strong>2015</strong> — Début de la recherche Cardano</li>
+            <li><strong>2017</strong> — Lancement du mainnet Cardano</li>
+            <li><strong>2019</strong> — Ère Shelley — décentralisation</li>
+            <li><strong>2020</strong> — Ouroboros entièrement déployé</li>
+            <li><strong>2021</strong> — Mise à jour Alonzo — contrats intelligents</li>
+            <li><strong>2022</strong> — Mise à jour Vasil — améliorations de scalabilité</li>
+            <li><strong>2023</strong> — Les cadres de gouvernance maturent</li>
+            <li><strong>2024</strong> — Ère Voltaire — gouvernance on-chain complète</li>
+            <li><strong>2025</strong> — La chaîne privée Midnight avance avec le support d'infrastructure de Google Cloud</li>
+            <li><strong>2025</strong> — Cardano positionné comme infrastructure blockchain mondiale souveraine</li>
+        </ul>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Mots de la Fin</h2>
+        <p>Le Bitcoin nous a donné une monnaie saine.<br>Ethereum nous a donné la logique programmable.<br>Cardano nous donne un système bâti pour le monde réel.</p>
+        <p class="text-2xl text-[#5aa0ff] font-bold font-orbitron mt-4">In Charles we trust. Vous êtes tôt.</p>
+    </article>
+
+    <div class="text-center mt-12">
+        <a href="fr.html#products" class="inline-block bg-[#0033ad] text-white font-bold font-orbitron px-12 py-5 text-lg uppercase tracking-wider hover:bg-white hover:text-black transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(0,51,173,0.4)]">
+            ACHETER T-SHIRT ADA
+        </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-brand-green/20 bg-black py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTRÉAL // INTERNATIONAL</p>
+      <div class="mt-6 flex justify-center gap-6 text-xs">
+        <a href="fr.html" class="text-gray-500 hover:text-brand-green transition-colors">ACCUEIL</a>
+        <a href="fr.html#products" class="text-gray-500 hover:text-brand-green transition-colors">BOUTIQUE</a>
+        <a href="fr.html#contact" class="text-gray-500 hover:text-brand-green transition-colors">CONTACT</a>
+      </div>
+      <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
+    </div>
+  </footer>
+
+  <script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("hidden");}</script>
+</body>
+</html>
