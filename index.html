@@ -21,15 +21,6 @@
                     },
                     boxShadow: {
                         'neon-green': '0 0 10px #39ff14, 0 0 20px #39ff14',
-                    },
-                    animation: {
-                        'marquee': 'marquee 25s linear infinite',
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(100%)' },
-                            '100%': { transform: 'translateX(-100%)' },
-                        }
                     }
                 }
             }
@@ -49,16 +40,13 @@
         }
         html { scroll-behavior: smooth; }
     </style>
+    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
 <body class="matrix-bg min-h-screen font-sans selection:bg-brand-green selection:text-black">
 
-    <div class="bg-brand-green text-black overflow-hidden py-1 border-b border-black fixed w-full top-0 z-[60]">
-        <div class="whitespace-nowrap animate-marquee font-mono font-bold text-sm">
-            BTC $104,420 🚀 /// ETH $3,950 💎 /// ADA $1.25 🔵 /// XRP $2.40 ⚪ /// SOL $210 🟣 /// WEAR YOUR ASSETS /// CODE IS LAW /// DECENTRALIZE EVERYTHING ///
-        </div>
-    </div>
+    <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
-    <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[28px] z-50 mt-[28px]">
+    <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-2">
@@ -205,22 +193,29 @@
 
     <section id="manifesto" class="py-24 bg-brand-panel border-t border-brand-green/20 relative">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-5xl font-orbitron font-bold text-white mb-8">THE <span class="text-brand-green">MANIFESTO</span></h2>
+            <h2 class="text-3xl md:text-5xl font-orbitron font-bold text-white mb-8">MANIFESTO — <span class="text-brand-green">THE CODE IS LAW</span></h2>
             <div class="font-mono text-gray-300 text-lg leading-relaxed space-y-6">
                 <p>
-                    We are not here to take part. We are here to take over.
-                    In a world of fiat currency and centralized control, we choose <span class="text-brand-green">Freedom</span>.
+                    We don't trust banks. We trust code.
                 </p>
                 <p>
-                    We trust in math, not in men. We believe that <span class="text-white font-bold">Code is Law</span>.
-                    Every shirt we print is a flag planted in the digital soil.
+                    Fiat currency is debt. Crypto is ownership.
                 </p>
                 <p>
-                    Wear your assets. Signal your tribe. Be the bank.
+                    We wear our assets because we believe in the future of money.
                 </p>
-                <p class="text-brand-green font-bold mt-8 text-xl">
-                    // DECENTRALIZE EVERYTHING.
-                </p>
+                
+                <div class="mt-12 pt-8 border-t border-brand-green/10">
+                    <p class="text-gray-500 italic mb-4">
+                        "All profits on sales will be put back in the market in leverage trading... to be liquidated."
+                    </p>
+                    <p class="text-gray-400">
+                        Joke apart, stay safe everybody!
+                    </p>
+                    <p class="text-brand-green font-bold mt-4 text-xl">
+                        // Not your keys, not your crypto.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
