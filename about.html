@@ -40,11 +40,23 @@
     :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
     .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
     
+    /* Tab Button Styles */
+    .tab-btn {
+        opacity: 0.6;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
+    }
+    .tab-btn:hover { opacity: 1; }
+    .tab-btn.active-tab {
+        opacity: 1;
+        background-color: rgba(255,255,255,0.05);
+    }
+    
     /* Custom formatting for the long text blocks */
     .wiki-content h4 {
         font-family: 'Orbitron', sans-serif;
         color: white;
-        font-size: 1.125rem; /* text-lg */
+        font-size: 1.125rem;
         margin-top: 2rem;
         margin-bottom: 0.75rem;
         border-left-width: 2px;
@@ -52,28 +64,23 @@
     }
     .wiki-content p {
         margin-bottom: 1rem;
-        color: #d1d5db; /* gray-300 */
+        color: #d1d5db;
         line-height: 1.7;
     }
     .wiki-content ul {
         list-style-type: disc;
         padding-left: 1.5rem;
         margin-bottom: 1.5rem;
-        color: #9ca3af; /* gray-400 */
+        color: #9ca3af;
     }
-    .wiki-content li {
-        margin-bottom: 0.25rem;
-    }
+    .wiki-content li { margin-bottom: 0.25rem; }
     .wiki-content a {
         color: #39ff14;
         text-decoration: none;
         border-bottom: 1px dotted #39ff14;
         transition: all 0.2s;
     }
-    .wiki-content a:hover {
-        color: white;
-        border-bottom-style: solid;
-    }
+    .wiki-content a:hover { color: white; border-bottom-style: solid; }
     .wiki-divider {
         width: 100%;
         height: 1px;
@@ -81,6 +88,7 @@
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
+    .wiki-highlight { color: white; font-weight: bold; }
   </style>
 
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
@@ -195,33 +203,32 @@
       </p>
 
       <div class="mt-10 inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-md h-[1px]"></div>
-
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="#btc" class="px-6 py-3 border border-brand-green/40 text-brand-green hover:bg-brand-green/10 transition-all uppercase font-orbitron tracking-wider text-sm">
-          Explore the 5
-        </a>
-        <a href="index.html#products" class="px-6 py-3 bg-brand-green text-black font-bold hover:bg-white transition-all uppercase font-orbitron tracking-wider text-sm">
-          Back to Shop
-        </a>
-      </div>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24" id="main-content">
 
-    <section class="bg-brand-panel border border-brand-green/20 shadow-[0_0_20px_rgba(57,255,20,0.08)] p-6 md:p-10 mb-16">
-      <h2 class="font-orbitron text-2xl md:text-3xl text-white mb-4 border-l-4 border-brand-green pl-4">
-        THE IDEA_
-      </h2>
-      <div class="text-gray-300 leading-relaxed space-y-4 text-sm md:text-base">
-        <p>Crypto is not “one thing”. It’s a battlefield of design choices: decentralization vs. speed, scarcity vs. utility, neutrality vs. coordination, settlement vs. execution.</p>
-        <p>So we picked five that people actually argue about — because the arguments matter. Each tee is a flag. Each slogan is a thesis.</p>
-        <p class="text-gray-400">And yeah… the fit is clean too. (Because if you’re gonna get liquidated, at least be liquidated in style.)</p>
-        <p class="text-brand-green font-bold">// Code is law. Style is choice.</p>
-      </div>
-    </section>
+    <div class="sticky top-[82px] z-40 bg-black/80 backdrop-blur-md border-b border-white/10 mb-10 py-4 -mx-4 px-4 md:mx-0 md:px-0 md:static md:bg-transparent md:border-none">
+        <div class="flex flex-wrap justify-center gap-2 md:gap-4 font-orbitron">
+            <button onclick="openCoinTab('btc')" class="tab-btn active-tab px-4 py-2 border border-[#F7931A] text-[#F7931A] uppercase tracking-wider text-sm md:text-base font-bold" id="btn-btc">
+                BTC
+            </button>
+            <button onclick="openCoinTab('eth')" class="tab-btn px-4 py-2 border border-gray-700 text-gray-400 hover:text-[#627EEA] hover:border-[#627EEA] uppercase tracking-wider text-sm md:text-base font-bold" id="btn-eth">
+                ETH
+            </button>
+            <button onclick="openCoinTab('ada')" class="tab-btn px-4 py-2 border border-gray-700 text-gray-400 hover:text-[#0033ad] hover:border-[#0033ad] uppercase tracking-wider text-sm md:text-base font-bold" id="btn-ada">
+                ADA
+            </button>
+            <button onclick="openCoinTab('xrp')" class="tab-btn px-4 py-2 border border-gray-700 text-gray-400 hover:text-white hover:border-white uppercase tracking-wider text-sm md:text-base font-bold" id="btn-xrp">
+                XRP
+            </button>
+            <button onclick="openCoinTab('sol')" class="tab-btn px-4 py-2 border border-gray-700 text-gray-400 hover:text-[#14F195] hover:border-[#14F195] uppercase tracking-wider text-sm md:text-base font-bold" id="btn-sol">
+                SOL
+            </button>
+        </div>
+    </div>
 
-    <article id="btc" class="mb-20 bg-brand-panel border-t-2 border-[#F7931A] relative overflow-hidden">
+    <article id="btc" class="tab-content mb-20 bg-brand-panel border-t-2 border-[#F7931A] relative overflow-hidden">
         <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
             <span class="font-orbitron text-9xl font-bold text-[#F7931A]">BTC</span>
         </div>
@@ -250,46 +257,135 @@
                 <div class="wiki-divider"></div>
 
                 <h4 style="border-color: #F7931A;">The Core Problem — Infinite Money vs Finite Resources</h4>
-                <p>Traditional money is created by central banks. It has: infinite supply, political control, and hidden inflation.</p>
-                <p>Bitcoin introduced the opposite: a hard cap of 21 million, predictable issuance, and no authority capable of printing more. This transforms money from debt into property.</p>
+                <p>Traditional money is created by central banks. It has:</p>
+                <ul>
+                    <li>infinite supply</li>
+                    <li>political control</li>
+                    <li>hidden inflation</li>
+                </ul>
+                <p>Bitcoin introduced the opposite:</p>
+                <ul>
+                    <li>a hard cap of 21 million</li>
+                    <li>predictable issuance</li>
+                    <li>no authority capable of printing more</li>
+                </ul>
+                <p>This transforms money from debt into property.</p>
+
+                <div class="wiki-divider"></div>
 
                 <h4 style="border-color: #F7931A;">Byzantine Generals Problem — Solved</h4>
                 <p>Before Bitcoin, decentralized money failed because of the Byzantine Generals Problem: How do independent actors agree without trusting each other?</p>
-                <p>Bitcoin solved this with Proof of Work, economic incentives, and cryptographic verification. Consensus is not based on trust. It is based on math, energy, and game theory.</p>
+                <p>Bitcoin solved this with:</p>
+                <ul>
+                    <li>Proof of Work</li>
+                    <li>economic incentives</li>
+                    <li>cryptographic verification</li>
+                </ul>
+                <p>Consensus is not based on trust. It is based on math, energy, and game theory.</p>
+
+                <div class="wiki-divider"></div>
 
                 <h4 style="border-color: #F7931A;">Satoshi Nakamoto — The Disappearance That Mattered</h4>
                 <p>Bitcoin was introduced in 2008 by <strong class="text-white">Satoshi Nakamoto</strong>, a pseudonymous creator whose true identity remains unknown.</p>
-                <p>There was no premine, no founder allocation, and no central leadership. This anonymity is not a weakness. It is a feature. It ensures no authority figure, no single point of failure, and no one to pressure, arrest, or influence.</p>
+                <p>There was:</p>
+                <ul>
+                    <li>no premine</li>
+                    <li>no founder allocation</li>
+                    <li>no central leadership</li>
+                </ul>
+                <p>This anonymity is not a weakness. It is a feature.</p>
+                <p>It ensures:</p>
+                <ul>
+                    <li>no authority figure</li>
+                    <li>no single point of failure</li>
+                    <li>no one to pressure, arrest, or influence</li>
+                </ul>
                 <p>Bitcoin belongs to no one. And therefore, to everyone.</p>
                 <p>Original website: <a href="https://bitcoin.org" target="_blank">bitcoin.org</a></p>
 
                 <div class="wiki-divider"></div>
 
-                <h4 style="border-color: #F7931A;">The Bitcoin Community</h4>
-                <p>Bitcoin is more than software. It is a culture. The Bitcoin community is known for extreme conviction, long-term thinking, and resistance to narratives and hype.</p>
-                <p><strong class="text-white">Bitcoin Maximalists</strong> believe Bitcoin is the only truly decentralized money, everything else is either experimental or compromised, and security matters more than speed.</p>
+                <h4 style="border-color: #F7931A;">Bitcoin Whitepaper</h4>
+                <p>“Bitcoin: A Peer-to-Peer Electronic Cash System”<br>Published: October 31, 2008</p>
+                <p>Whitepaper: <a href="https://bitcoin.org/bitcoin.pdf" target="_blank">https://bitcoin.org/bitcoin.pdf</a></p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #F7931A;">The Bitcoin Community — Culture, Conviction, and Maximalism</h4>
+                <p>Bitcoin is more than software. It is a culture.</p>
+                <p>The Bitcoin community is known for:</p>
+                <ul>
+                    <li>extreme conviction</li>
+                    <li>long-term thinking</li>
+                    <li>resistance to narratives and hype</li>
+                </ul>
+                <p><span class="wiki-highlight">Bitcoin Maximalists</span> believe:</p>
+                <ul>
+                    <li>Bitcoin is the only truly decentralized money</li>
+                    <li>everything else is either experimental or compromised</li>
+                    <li>security and decentralization matter more than speed or features</li>
+                </ul>
                 <p>To outsiders, it looks like a cult. To insiders, it is discipline.</p>
+                <p>Common beliefs:</p>
+                <ul>
+                    <li>hold your own keys</li>
+                    <li>do not trust, verify</li>
+                    <li>ignore short-term noise</li>
+                    <li>think in decades, not cycles</li>
+                </ul>
+                <p>Bitcoiners do not chase trends. They wait.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #F7931A;">What Bitcoin Is — And Is Not</h4>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <p class="uppercase text-xs tracking-widest text-[#F7931A]">Bitcoin is:</p>
+                        <ul>
+                            <li>decentralized</li>
+                            <li>scarce</li>
+                            <li>censorship-resistant</li>
+                            <li>permissionless</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="uppercase text-xs tracking-widest text-[#F7931A]">Bitcoin is not:</p>
+                        <ul>
+                            <li>a company</li>
+                            <li>a stock</li>
+                            <li>centrally controlled</li>
+                            <li>inflationary</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>There is no CEO. There is no marketing team. There is no reset button.</p>
+
+                <div class="wiki-divider"></div>
 
                 <h4 style="border-color: #F7931A;">Bitcoin Timeline — Key Events</h4>
                 <ul>
-                    <li><strong>2008</strong> — Whitepaper released by Satoshi Nakamoto</li>
-                    <li><strong>2009</strong> — Genesis Block mined</li>
-                    <li><strong>2010</strong> — First purchase (10,000 BTC for pizza)</li>
-                    <li><strong>2012</strong> — First halving (50 → 25 BTC)</li>
-                    <li><strong>2017</strong> — Mainstream awareness & futures markets</li>
-                    <li><strong>2020</strong> — Institutional accumulation begins</li>
-                    <li><strong>2021</strong> — Legal tender in El Salvador</li>
-                    <li><strong>2024</strong> — Fourth halving & Spot ETFs</li>
+                    <li>2008 — Bitcoin whitepaper released by Satoshi Nakamoto</li>
+                    <li>2009 — Genesis Block mined and network launched</li>
+                    <li>2010 — First real-world purchase (10,000 BTC for pizza)</li>
+                    <li>2012 — First halving (50 → 25 BTC)</li>
+                    <li>2013 — Bitcoin gains global media attention</li>
+                    <li>2016 — Second halving (25 → 12.5 BTC)</li>
+                    <li>2017 — Bitcoin enters mainstream awareness and futures markets</li>
+                    <li>2020 — Third halving (12.5 → 6.25 BTC) Institutional accumulation begins</li>
+                    <li>2021 — Bitcoin gains stock market exposure ETFs and corporate treasury adoption Bitcoin becomes legal tender in El Salvador</li>
+                    <li>2024 — Fourth halving (6.25 → 3.125 BTC)</li>
+                    <li>2025 — Bitcoin fully integrated into global financial markets Traded alongside stocks, ETFs, and sovereign instruments</li>
                 </ul>
 
-                <p class="mt-8 text-[#F7931A] font-bold text-lg">
-                    Wake up. Bitcoin is going to infinite.
-                </p>
+                <h4 style="border-color: #F7931A;">Final Wake-Up Call</h4>
+                <p>From 0.01 to 100k<br>From an experiment to the stock market</p>
+                <p>Wake up.</p>
+                <p><span class="wiki-highlight" style="color:#F7931A;">Bitcoin is going to infinite.</span></p>
             </div>
         </div>
     </article>
 
-    <article id="eth" class="mb-20 bg-brand-panel border-t-2 border-[#627EEA] relative overflow-hidden">
+    <article id="eth" class="tab-content hidden mb-20 bg-brand-panel border-t-2 border-[#627EEA] relative overflow-hidden">
         <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
             <span class="font-orbitron text-9xl font-bold text-[#627EEA]">ETH</span>
         </div>
@@ -309,42 +405,256 @@
                 <p>Ethereum is a decentralized global computing platform that allows anyone to deploy unstoppable applications and programmable money without intermediaries.</p>
                 <p>If Bitcoin proved that money can exist without banks, Ethereum proved that logic, contracts, and entire financial systems can exist without companies.</p>
 
+                <div class="wiki-divider"></div>
+
                 <h4 style="border-color: #627EEA;">Why Ethereum Was Created</h4>
-                <p>Bitcoin solved money. But a limitation remained: value could be transferred, but behavior could not be programmed. Ethereum was created to answer a single question: <strong>What if the blockchain itself could run code?</strong></p>
+                <p>Bitcoin solved money.</p>
+                <p>But after Bitcoin, a limitation remained:</p>
+                <ul>
+                    <li>value could be transferred</li>
+                    <li>but behavior could not be programmed</li>
+                    <li>agreements still required trust</li>
+                    <li>logic still lived outside the blockchain</li>
+                </ul>
+                <p>Ethereum was created to answer a single question:</p>
+                <p><span class="wiki-highlight">What if the blockchain itself could run code?</span></p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">The Core Problem Ethereum Solves</h4>
+                <p><span class="text-white">1. Trust in Institutions</span><br>Modern systems rely on:</p>
+                <ul>
+                    <li>banks</li>
+                    <li>courts</li>
+                    <li>corporations</li>
+                    <li>centralized servers</li>
+                    <li>governments</li>
+                </ul>
+                <p>These systems can:</p>
+                <ul>
+                    <li>censor</li>
+                    <li>freeze funds</li>
+                    <li>alter rules</li>
+                    <li>shut down services</li>
+                </ul>
+                <p>Ethereum replaces trust in institutions with trust in execution.</p>
+                <p>If conditions are met, the outcome happens. No permission. No reversal.</p>
+
+                <p><span class="text-white">2. Programmable Agreements</span><br>Before Ethereum:</p>
+                <ul>
+                    <li>contracts required lawyers</li>
+                    <li>enforcement required courts</li>
+                    <li>execution required intermediaries</li>
+                </ul>
+                <p>Ethereum introduced smart contracts:</p>
+                <ul>
+                    <li>autonomous</li>
+                    <li>unstoppable</li>
+                    <li>transparent</li>
+                    <li>deterministic</li>
+                </ul>
+                <p>The rules are enforced by the network itself.</p>
 
                 <div class="wiki-divider"></div>
 
                 <h4 style="border-color: #627EEA;">Smart Contracts — Explained Simply</h4>
-                <p>A smart contract is code deployed on the blockchain. Once deployed, it cannot be altered, it cannot be stopped, and it executes automatically.</p>
-                <p>Use cases include: decentralized exchanges, lending protocols, stablecoins, NFTs, and DAOs. Ethereum transforms the blockchain into a programmable settlement layer.</p>
+                <p>A smart contract is code deployed on the blockchain.</p>
+                <p>Once deployed:</p>
+                <ul>
+                    <li>it cannot be altered</li>
+                    <li>it cannot be stopped</li>
+                    <li>it executes automatically</li>
+                </ul>
+                <p>Use cases include:</p>
+                <ul>
+                    <li>decentralized exchanges</li>
+                    <li>lending and borrowing protocols</li>
+                    <li>stablecoins</li>
+                    <li>NFTs</li>
+                    <li>decentralized autonomous organizations (DAOs)</li>
+                </ul>
+                <p>Ethereum transforms the blockchain into a programmable settlement layer.</p>
+
+                <div class="wiki-divider"></div>
 
                 <h4 style="border-color: #627EEA;">The Ethereum Virtual Machine (EVM)</h4>
-                <p>Ethereum applications run inside the EVM. It executes identically on thousands of nodes and guarantees the same result worldwide. This makes Ethereum censorship-resistant and globally synchronized. It is often described as <strong>the world computer</strong>.</p>
-
-                <h4 style="border-color: #627EEA;">Vitalik Buterin — Creator</h4>
-                <p>Vitalik Buterin grew up in Toronto. At age 19, he wrote the Ethereum whitepaper (2013) because he recognized Bitcoin’s scripting limitations. Unlike Satoshi, Vitalik is public, research-driven, and focused on long-term evolution.</p>
-
-                <h4 style="border-color: #627EEA;">The Ethereum Community</h4>
-                <p>Ethereum’s community values experimentation, composability, and developer freedom. Rather than maximalism, Ethereum embraces Layer 2 scaling and constant upgrades. Ethereum does not aim to be perfect. It aims to evolve.</p>
-
-                <h4 style="border-color: #627EEA;">Timeline</h4>
+                <p>Ethereum applications run inside the Ethereum Virtual Machine.</p>
+                <p>The EVM:</p>
                 <ul>
-                    <li><strong>2013</strong> — Whitepaper published by Vitalik</li>
-                    <li><strong>2015</strong> — Mainnet launch</li>
-                    <li><strong>2016</strong> — The DAO hack</li>
-                    <li><strong>2017</strong> — ICO Boom (ERC-20)</li>
-                    <li><strong>2020</strong> — DeFi Summer</li>
-                    <li><strong>2022</strong> — The Merge (Proof of Stake)</li>
+                    <li>executes identically on thousands of nodes</li>
+                    <li>guarantees the same result worldwide</li>
+                    <li>removes reliance on centralized servers</li>
+                </ul>
+                <p>This makes Ethereum:</p>
+                <ul>
+                    <li>censorship-resistant</li>
+                    <li>globally synchronized</li>
+                    <li>verifiable by anyone</li>
+                </ul>
+                <p>Ethereum is often described as <span class="wiki-highlight">the world computer</span>.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">ETH as Money</h4>
+                <p>ETH is the native asset of Ethereum.</p>
+                <p>ETH is used to:</p>
+                <ul>
+                    <li>pay transaction fees (gas)</li>
+                    <li>secure the network through staking</li>
+                    <li>align economic incentives</li>
+                </ul>
+                <p>ETH is not just a currency. It is productive capital inside a global execution layer.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">Monetary Policy & Scarcity</h4>
+                <p>Ethereum does not use a fixed supply cap like Bitcoin.</p>
+                <p>Instead, it relies on:</p>
+                <ul>
+                    <li>controlled issuance</li>
+                    <li>fee burning</li>
+                    <li>demand-based scarcity</li>
+                </ul>
+                <p><span class="text-white">EIP-1559 (2021)</span><br>A portion of transaction fees is permanently burned.</p>
+                <p>This means:</p>
+                <ul>
+                    <li>ETH is removed from circulation</li>
+                    <li>high usage reduces supply</li>
+                    <li>ETH can become deflationary</li>
+                </ul>
+                <p>Scarcity emerges from network usage, not from an arbitrary cap.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">Proof of Stake & The Merge</h4>
+                <p>Ethereum originally launched with Proof of Work.</p>
+                <p>In 2022, Ethereum completed <span class="wiki-highlight">The Merge</span>, transitioning to Proof of Stake.</p>
+                <p>Proof of Stake:</p>
+                <ul>
+                    <li>replaces miners with validators</li>
+                    <li>secures the network through staked ETH</li>
+                    <li>reduces energy usage by over 99%</li>
+                </ul>
+                <p>Security is enforced by economic risk, not electricity.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">Vitalik Buterin — Creator of Ethereum</h4>
+                <p>Vitalik Buterin was born in 1994 in Russia and moved to Canada as a child.</p>
+                <p>He grew up in Toronto and showed exceptional talent in mathematics and computer science.</p>
+                <p>At age 17:</p>
+                <ul>
+                    <li>co-founded Bitcoin Magazine</li>
+                    <li>became deeply involved in Bitcoin research</li>
+                    <li>explored blockchain limitations firsthand</li>
+                </ul>
+                <p>Vitalik recognized that Bitcoin’s scripting language was intentionally limited.</p>
+                <p>At age 19:</p>
+                <ul>
+                    <li>he wrote the Ethereum whitepaper (2013)</li>
+                    <li>proposing a general-purpose blockchain</li>
+                </ul>
+                <p>At age 21:</p>
+                <ul>
+                    <li>Ethereum launched its mainnet</li>
+                </ul>
+                <p>During the 2021 cycle, Vitalik became one of the youngest self-made billionaires.</p>
+                <p>Unlike Satoshi Nakamoto:</p>
+                <ul>
+                    <li>Vitalik is public</li>
+                    <li>research-driven</li>
+                    <li>focused on long-term evolution over hype</li>
                 </ul>
 
-                <p class="mt-8 text-[#627EEA] font-bold text-lg">
-                    Bitcoin replaced money. Ethereum replaces institutions.
-                </p>
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">Ethereum Co-Founders — The Origin of the Split</h4>
+                <p>Ethereum was co-founded by several key figures:</p>
+                <p><span class="text-white">Vitalik Buterin</span><br>Original author and architect of Ethereum.</p>
+                <p><span class="text-white">Gavin Wood</span><br>- Inventor of Solidity<br>- Author of the Ethereum Yellow Paper<br>- Later founded Polkadot</p>
+                <p><span class="text-white">Charles Hoskinson</span><br>- Early CEO of Ethereum<br>- Advocated for a for-profit structure<br>- Later left Ethereum to build Cardano</p>
+                <p><span class="text-white">Joseph Lubin</span><br>- Founded ConsenSys<br>- Built critical Ethereum infrastructure</p>
+                <p><span class="text-white">Anthony Di Iorio</span><br>- Early financier and contributor</p>
+                <p>Internal disagreements over governance and structure shaped the entire crypto ecosystem that followed.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">The Ethereum Community — Builders Over Maxis</h4>
+                <p>Ethereum’s community is fundamentally different from Bitcoin’s.</p>
+                <p>Ethereum culture values:</p>
+                <ul>
+                    <li>experimentation</li>
+                    <li>composability</li>
+                    <li>rapid iteration</li>
+                    <li>developer freedom</li>
+                </ul>
+                <p>Ethereum is driven by:</p>
+                <ul>
+                    <li>builders</li>
+                    <li>researchers</li>
+                    <li>protocol designers</li>
+                    <li>open-source contributors</li>
+                </ul>
+                <p>Rather than maximalism, Ethereum embraces:</p>
+                <ul>
+                    <li>Layer 2 scaling</li>
+                    <li>application diversity</li>
+                    <li>constant upgrades</li>
+                </ul>
+                <p>Ethereum does not aim to be perfect. It aims to evolve.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">Ethereum Whitepaper</h4>
+                <p>“Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform”<br>Author: Vitalik Buterin<br>Published: 2013</p>
+                <p>Whitepaper: <a href="https://ethereum.org/en/whitepaper/" target="_blank">https://ethereum.org/en/whitepaper/</a></p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">Ethereum Timeline — Key Events</h4>
+                <ul>
+                    <li>2013 — Ethereum whitepaper published</li>
+                    <li>2014 — Public crowdsale funds development</li>
+                    <li>2015 — Ethereum mainnet launches</li>
+                    <li>2016 — The DAO hack leads to a hard fork</li>
+                    <li>2017 — ERC-20 standard enables ICO boom</li>
+                    <li>2018 — Ethereum becomes foundation of DeFi</li>
+                    <li>2020 — Ethereum staking begins (ETH 2.0)</li>
+                    <li>2021 — EIP-1559 introduces ETH burn</li>
+                    <li>2022 — The Merge — transition to Proof of Stake</li>
+                    <li>2023 — ETH becomes net-deflationary during high usage</li>
+                    <li>2024 — Ethereum dominates DeFi, NFTs, and Layer-2s</li>
+                    <li>2025 — Ethereum deeply integrated into global finance and infrastructure</li>
+                </ul>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">What Ethereum Is — And Is Not</h4>
+                <p>Ethereum is:</p>
+                <ul>
+                    <li>programmable</li>
+                    <li>decentralized</li>
+                    <li>permissionless</li>
+                    <li>composable</li>
+                </ul>
+                <p>Ethereum is not:</p>
+                <ul>
+                    <li>static</li>
+                    <li>centrally controlled</li>
+                    <li>finished</li>
+                </ul>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">Final Wake-Up Call</h4>
+                <p>Bitcoin replaced money.</p>
+                <p>Ethereum replaces institutions.</p>
+                <p><span class="wiki-highlight" style="color:#627EEA;">Code is law.</span></p>
             </div>
         </div>
     </article>
 
-    <article id="ada" class="mb-20 bg-brand-panel border-t-2 border-[#0033ad] relative overflow-hidden">
+    <article id="ada" class="tab-content hidden mb-20 bg-brand-panel border-t-2 border-[#0033ad] relative overflow-hidden">
         <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
             <span class="font-orbitron text-9xl font-bold text-[#0033ad]">ADA</span>
         </div>
@@ -360,44 +670,249 @@
             </div>
 
             <div class="wiki-content" style="border-left: 4px solid #0033ad;">
-                <h4 style="border-color: #0033ad;">What Cardano Is</h4>
-                <p>Cardano is a peer-to-peer blockchain built on the same core accounting philosophy as Bitcoin (UTXO), but extending it to support smart contracts and governance. It is not a departure from Bitcoin; it is a continuation.</p>
-                <p>This is why Cardano is often called: <strong>“The Bitcoin of Altcoins.”</strong></p>
+                <h4 style="border-color: #0033ad;">What Cardano Is — Straight to the Point</h4>
+                <p>Cardano is a peer-to-peer blockchain with a limited supply, built on the same core accounting philosophy as Bitcoin, while extending it to support smart contracts, digital identity, and global-scale applications.</p>
+                <p>At its core, Cardano is not a departure from Bitcoin. It is a continuation.</p>
+                <p>Bitcoin proved that peer-to-peer money with a fixed supply could exist. Cardano asks a deeper question: What if that same foundation could support an entire global financial and social system?</p>
 
-                <h4 style="border-color: #0033ad;">The Philosophy: Measure Twice, Cut Once</h4>
-                <p>Cardano is built on peer-reviewed academic research, formal methods, and mathematical proofs. Instead of “move fast and break things,” Cardano chose correctness over speed and safety over hype.</p>
+                <div class="wiki-divider"></div>
 
-                <h4 style="border-color: #0033ad;">Charles Hoskinson</h4>
-                <p>Charles was an early Bitcoin educator and a co-founder of Ethereum. He left Ethereum due to philosophical differences regarding governance and structure. He believed blockchains should be built like critical infrastructure—meant to last decades.</p>
+                <h4 style="border-color: #0033ad;">Bitcoin at the Core — Extended UTXO</h4>
+                <p>Cardano is built on an Extended UTXO (eUTXO) model, directly derived from Bitcoin’s original UTXO design.</p>
+                <p>This matters because UTXO:</p>
+                <ul>
+                    <li>enforces deterministic transaction behavior</li>
+                    <li>removes hidden state changes</li>
+                    <li>increases security and predictability</li>
+                    <li>prevents entire classes of smart contract failures</li>
+                </ul>
+                <p>Where many blockchains abandoned Bitcoin’s model for convenience, Cardano doubled down on it.</p>
+                <p>This is why Cardano is often described as: <span class="wiki-highlight">“Bitcoin’s security model, extended to smart contracts.”</span></p>
+                <p>This design choice is what earns Cardano the title: <span class="wiki-highlight">The Bitcoin of Altcoins.</span></p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">Why Cardano Exists</h4>
+                <p>Bitcoin solved the problem of trustless money:</p>
+                <ul>
+                    <li>fixed supply</li>
+                    <li>no central authority</li>
+                    <li>peer-to-peer value transfer</li>
+                </ul>
+                <p>Ethereum introduced programmability but also:</p>
+                <ul>
+                    <li>unpredictable execution</li>
+                    <li>complex global state</li>
+                    <li>frequent exploits</li>
+                    <li>governance ambiguity</li>
+                </ul>
+                <p>Cardano was created to answer a harder question: What if we built a blockchain the way we build critical infrastructure — with mathematical guarantees, formal verification, and long-term governance?</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">The Philosophy Behind Cardano</h4>
+                <p>Cardano is built on:</p>
+                <ul>
+                    <li>peer-reviewed academic research</li>
+                    <li>formal methods</li>
+                    <li>mathematical proofs</li>
+                    <li>conservative, deliberate engineering</li>
+                </ul>
+                <p>Instead of “move fast and break things,” Cardano chose:</p>
+                <ul>
+                    <li>correctness over speed</li>
+                    <li>safety over hype</li>
+                    <li>sustainability over shortcuts</li>
+                </ul>
+                <p>This philosophy makes Cardano fundamentally different from most blockchain projects.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">Charles Hoskinson — From Bitcoin to Cardano</h4>
+                <p>Charles Hoskinson has been involved in crypto since the earliest days.</p>
+                <p>Before Cardano:</p>
+                <ul>
+                    <li>early Bitcoin educator and advocate</li>
+                    <li>deeply engaged in Bitcoin’s economic and philosophical foundations</li>
+                    <li>focused on peer-to-peer systems, scarcity, and sovereignty</li>
+                </ul>
+                <p>Charles later became one of the original co-founders of Ethereum and served as its first CEO.</p>
+                <p>A philosophical split emerged.</p>
+                <p>Ethereum chose:</p>
+                <ul>
+                    <li>rapid experimentation</li>
+                    <li>informal governance</li>
+                    <li>speed over guarantees</li>
+                </ul>
+                <p>Charles believed blockchains would eventually:</p>
+                <ul>
+                    <li>support governments</li>
+                    <li>manage identity</li>
+                    <li>secure national infrastructure</li>
+                    <li>serve billions of people</li>
+                </ul>
+                <p>He believed that required mathematical certainty. So he left Ethereum. And then came Charles.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">The Birth of Cardano</h4>
+                <p>Cardano was designed from the beginning as a system meant to last decades.</p>
+                <p>It is developed by three independent entities:</p>
+                <ul>
+                    <li>IOHK — research and engineering</li>
+                    <li>Cardano Foundation — governance and standards</li>
+                    <li>EMURGO — adoption and commercialization</li>
+                </ul>
+                <p>This separation prevents:</p>
+                <ul>
+                    <li>centralized control</li>
+                    <li>corporate capture</li>
+                    <li>short-term decision making</li>
+                </ul>
+                <p>Cardano is designed to outlive its creators.</p>
 
                 <div class="wiki-divider"></div>
 
                 <h4 style="border-color: #0033ad;">Proof of Stake — Ouroboros</h4>
-                <p>Cardano uses Ouroboros, the first Proof of Stake protocol proven secure through peer-reviewed research. It is energy efficient, mathematically proven, and maintains decentralization.</p>
-
-                <h4 style="border-color: #0033ad;">Real-World Vision</h4>
-                <p>Cardano focuses on digital identity, government-grade infrastructure, and financial inclusion (especially in Africa). It is designed to scale to billions of people who lack access to banks.</p>
-
-                <h4 style="border-color: #0033ad;">Community: "In Charles We Trust"</h4>
-                <p>The community is known for patience and a long-term mindset. They don't follow Charles Hoskinson for price predictions, but for his vision of structure and sovereignty. It isn't blind faith; it is alignment with a philosophy.</p>
-
-                <h4 style="border-color: #0033ad;">Timeline</h4>
+                <p>Cardano uses Ouroboros, the first proof-of-stake protocol proven secure through peer-reviewed academic research.</p>
+                <p>Ouroboros:</p>
                 <ul>
-                    <li><strong>2015</strong> — Research begins</li>
-                    <li><strong>2017</strong> — Mainnet launch</li>
-                    <li><strong>2020</strong> — Shelley era (Decentralization)</li>
-                    <li><strong>2021</strong> — Alonzo upgrade (Smart Contracts)</li>
-                    <li><strong>2024</strong> — Voltaire era (On-chain governance)</li>
+                    <li>is energy efficient</li>
+                    <li>is mathematically proven</li>
+                    <li>maintains decentralization</li>
+                    <li>scales predictably</li>
+                </ul>
+                <p>Cardano demonstrated that Proof of Stake could be secure long before it became mainstream.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">Governance & Digital Sovereignty</h4>
+                <p>Cardano governs itself through:</p>
+                <ul>
+                    <li>on-chain voting</li>
+                    <li>a treasury funded by transaction fees</li>
+                    <li>community proposals</li>
+                    <li>protocol upgrades without hard forks</li>
+                </ul>
+                <p>ADA holders are not just users. They are stakeholders. Cardano functions more like a digital nation than a startup.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">Real-World Vision — Identity & Africa</h4>
+                <p>Cardano focuses on real-world adoption:</p>
+                <ul>
+                    <li>digital identity systems</li>
+                    <li>education credentials</li>
+                    <li>financial inclusion</li>
+                    <li>government-grade infrastructure</li>
+                </ul>
+                <p>Africa is central because:</p>
+                <ul>
+                    <li>billions lack access to banks</li>
+                    <li>identity unlocks economic participation</li>
+                    <li>mobile-first economies can leapfrog legacy systems</li>
+                </ul>
+                <p>Cardano is built to scale to billions of people.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">ADA as Money</h4>
+                <p>ADA has:</p>
+                <ul>
+                    <li>a maximum supply of 45 billion</li>
+                    <li>predictable issuance</li>
+                    <li>transparent monetary policy</li>
+                </ul>
+                <p>ADA functions as:</p>
+                <ul>
+                    <li>a medium of exchange</li>
+                    <li>a governance asset</li>
+                    <li>a network security token</li>
+                    <li>a smart contract fuel</li>
+                </ul>
+                <p>Scarcity is enforced by code. Inflation is finite. Rules are explicit.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">Research & Whitepapers</h4>
+                <p>Research Library: <a href="https://iohk.io/en/research/library/" target="_blank">https://iohk.io/en/research/library/</a></p>
+                <p>Ouroboros Paper: <a href="https://eprint.iacr.org/2016/889.pdf" target="_blank">https://eprint.iacr.org/2016/889.pdf</a></p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">Direct Source — Charles Hoskinson</h4>
+                <p>Official YouTube: <a href="https://www.youtube.com/@charleshoskinsoncrypto" target="_blank">https://www.youtube.com/@charleshoskinsoncrypto</a></p>
+                <p>No PR team. No filters. Just long-term thinking.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">The Cardano Community</h4>
+                <p>The Cardano community is known for its long-term mindset.</p>
+                <p>Unlike many crypto communities driven by short-term speculation, Cardano holders tend to focus on:</p>
+                <ul>
+                    <li>protocol design</li>
+                    <li>research and formal methods</li>
+                    <li>governance participation</li>
+                    <li>long-term global impact</li>
+                </ul>
+                <p>Many ADA holders are not traders. They are builders, developers, academics, and system thinkers.</p>
+
+                <h4 style="border-color: #0033ad;">The Charles Hoskinson Effect</h4>
+                <p>Cardano is unique in having a highly visible founder.</p>
+                <p>Charles Hoskinson regularly communicates directly with the community through:</p>
+                <ul>
+                    <li>long-form technical discussions</li>
+                    <li>economic and governance explanations</li>
+                    <li>philosophical reflections on decentralization and sovereignty</li>
+                </ul>
+                <p>This transparency has created a strong sense of alignment between the project and its supporters.</p>
+                <p>The Cardano community does not follow Charles for price predictions. They follow him for structure, vision, and long-term thinking.</p>
+
+                <h4 style="border-color: #0033ad;">A Culture of Patience</h4>
+                <p>The Cardano community is often described as:</p>
+                <ul>
+                    <li>patient</li>
+                    <li>conservative</li>
+                    <li>research-oriented</li>
+                </ul>
+                <p>This is intentional.</p>
+                <p>The belief is that systems designed to support governments, identity, and billions of users must prioritize correctness over speed.</p>
+                <p>For many supporters, Cardano is not about the next cycle. It is about building infrastructure meant to last decades.</p>
+
+                <h4 style="border-color: #0033ad;">“In Charles We Trust”</h4>
+                <p>Within the community, this phrase reflects confidence in:</p>
+                <ul>
+                    <li>peer review</li>
+                    <li>formal verification</li>
+                    <li>deliberate engineering</li>
+                    <li>long-term governance</li>
+                </ul>
+                <p>It is not blind faith. It is alignment with a philosophy.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">Cardano Timeline — Key Milestones</h4>
+                <ul>
+                    <li>2015 — Cardano research begins</li>
+                    <li>2017 — Cardano mainnet launches</li>
+                    <li>2019 — Shelley era — decentralization</li>
+                    <li>2020 — Ouroboros fully deployed</li>
+                    <li>2021 — Alonzo upgrade — smart contracts</li>
+                    <li>2022 — Vasil upgrade — scalability improvements</li>
+                    <li>2023 — Governance frameworks mature</li>
+                    <li>2024 — Voltaire era — full on-chain governance</li>
+                    <li>2025 — Midnight privacy chain advances with Google Cloud infrastructure support</li>
+                    <li>2025 — Cardano positioned as sovereign global blockchain infrastructure</li>
                 </ul>
 
-                <p class="mt-8 text-[#5aa0ff] font-bold text-lg">
-                    In Charles we trust. You are early.
-                </p>
+                <h4 style="border-color: #0033ad;">Final Words</h4>
+                <p>Bitcoin gave us sound money. Ethereum gave us programmable logic. Cardano gives us a system built for the real world.</p>
+                <p><span class="wiki-highlight" style="color:#5aa0ff;">In Charles we trust. You are early.</span></p>
             </div>
         </div>
     </article>
 
-    <article id="xrp" class="mb-20 bg-brand-panel border-t-2 border-white relative overflow-hidden">
+    <article id="xrp" class="tab-content hidden mb-20 bg-brand-panel border-t-2 border-white relative overflow-hidden">
         <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
             <span class="font-orbitron text-9xl font-bold text-white">XRP</span>
         </div>
@@ -405,7 +920,7 @@
             <div class="flex flex-wrap justify-between items-start gap-4 mb-8 border-b border-white/10 pb-6">
                 <div>
                     <h3 class="font-orbitron text-3xl md:text-4xl text-white mb-2">XRP</h3>
-                    <p class="text-gray-300 font-bold tracking-widest uppercase">THE STANDARD // Global Settlement</p>
+                    <p class="text-gray-300 font-bold tracking-widest uppercase">THE STANDARD // The New Global Settlement Layer</p>
                 </div>
                 <a href="index.html#products" class="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition uppercase text-xs font-bold tracking-widest">
                     Get The Tee
@@ -413,43 +928,202 @@
             </div>
 
             <div class="wiki-content" style="border-left: 4px solid white;">
-                <h4 style="border-color: white;">What XRP Is</h4>
-                <p>XRP is a digital asset designed for fast, low-cost, cross-border value transfer. Its purpose is simple: Move value globally, instantly, and at scale.</p>
-                <p>Bitcoin challenges money itself. XRP fixes how money moves. XRP is not anti-bank. XRP is post-SWIFT.</p>
-
-                <h4 style="border-color: white;">The Problem: Legacy Finance</h4>
-                <p>SWIFT was created in the 1970s. It doesn't move money; it sends messages. It takes days to settle. XRP settles in 3-5 seconds with finality.</p>
-
-                <h4 style="border-color: white;">XRP Ledger vs. Ripple</h4>
-                <p>Ripple is a private company building solutions for banks. The XRP Ledger (XRPL) is decentralized and open-source. Ripple does not control the network. This distinction is critical.</p>
+                <h4 style="border-color: white;">What XRP Is — Straight to the Point</h4>
+                <p>XRP is a digital asset designed for fast, low-cost, cross-border value transfer.</p>
+                <p>Its purpose is simple: Move value globally, instantly, and at scale.</p>
+                <p>Bitcoin challenges money itself. XRP fixes how money moves.</p>
+                <p>XRP is not anti-bank. XRP is post-SWIFT.</p>
 
                 <div class="wiki-divider"></div>
 
-                <h4 style="border-color: white;">The SEC Lawsuit & Victory</h4>
-                <p>In Dec 2020, the SEC sued Ripple, claiming XRP was a security. The price collapsed, but the community ("The XRP Army") stood firm.</p>
-                <p>In July 2023, the court ruled: <strong>XRP itself is NOT a security.</strong> This was a landmark victory for the entire industry.</p>
-
-                <h4 style="border-color: white;">The XRP Army</h4>
-                <p>XRP is backed by one of the most resilient communities in crypto. They researched, they organized, and they refused to sell. XRP survived not because of hype, but because of conviction.</p>
-
-                <h4 style="border-color: white;">Timeline</h4>
+                <h4 style="border-color: white;">The Problem — Legacy Finance Is Broken</h4>
+                <p>The global financial system still relies on SWIFT, created in the 1970s.</p>
+                <p>SWIFT:</p>
                 <ul>
-                    <li><strong>2012</strong> — XRPL launched</li>
-                    <li><strong>2013</strong> — Ripple Labs founded</li>
-                    <li><strong>2017</strong> — XRP enters top 3 assets</li>
-                    <li><strong>2020</strong> — SEC Lawsuit filed</li>
-                    <li><strong>2023</strong> — Court ruling: Not a Security</li>
-                    <li><strong>2025</strong> — Global settlement standard</li>
+                    <li>does not move money</li>
+                    <li>only sends messages</li>
+                    <li>requires intermediaries</li>
+                    <li>takes days to settle</li>
+                    <li>locks trillions in nostro/vostro accounts</li>
+                </ul>
+                <p>This creates:</p>
+                <ul>
+                    <li>friction</li>
+                    <li>delays</li>
+                    <li>capital inefficiency</li>
+                    <li>systemic risk</li>
+                </ul>
+                <p>XRP was designed specifically to replace this infrastructure.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">The Founders — Who Created XRP</h4>
+                <p>XRP was created in 2012 by:</p>
+                <ul>
+                    <li><span class="text-white">Jed McCaleb</span> — cryptographer, early Bitcoin developer, Mt. Gox founder</li>
+                    <li><span class="text-white">Chris Larsen</span> — fintech entrepreneur, former CEO of Ripple</li>
+                    <li><span class="text-white">Arthur Britto</span> — software engineer and protocol architect</li>
+                    <li><span class="text-white">David Schwartz</span> — cryptographer, now CTO of Ripple (known as “JoelKatz”)</li>
+                </ul>
+                <p>Their goal: Build a neutral, decentralized settlement layer for global finance.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">XRP Ledger — How It Works</h4>
+                <p>The XRP Ledger (XRPL):</p>
+                <ul>
+                    <li>decentralized</li>
+                    <li>open-source</li>
+                    <li>no mining</li>
+                    <li>no Proof of Work</li>
+                    <li>no Proof of Stake</li>
+                </ul>
+                <p>Instead, it uses a <span class="wiki-highlight">consensus algorithm</span>.</p>
+                <p>Key properties:</p>
+                <ul>
+                    <li>3–5 second settlement</li>
+                    <li>~1,500 transactions per second</li>
+                    <li>deterministic fees</li>
+                    <li>energy efficient</li>
+                    <li>finality without probabilistic confirmation</li>
+                </ul>
+                <p>Once a transaction settles, it is final.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">Fixed Supply — Designed Scarcity</h4>
+                <p>XRP has a fixed supply of <span class="wiki-highlight">100 billion tokens</span>.</p>
+                <p>Important facts:</p>
+                <ul>
+                    <li>no mining</li>
+                    <li>no inflation</li>
+                    <li>transaction fees are burned</li>
+                    <li>total supply only decreases over time</li>
+                </ul>
+                <p>Scarcity is enforced by code.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">Ripple — The Company (Not the Network)</h4>
+                <p>Ripple is a private company that:</p>
+                <ul>
+                    <li>builds enterprise payment solutions</li>
+                    <li>works with banks and institutions</li>
+                    <li>integrates XRP for liquidity (ODL)</li>
+                </ul>
+                <p>Important distinction:</p>
+                <ul>
+                    <li>XRP Ledger exists independently</li>
+                    <li>XRP is open-source</li>
+                    <li>Ripple does not control the network</li>
+                </ul>
+                <p>This distinction became critical in court.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">The XRP Army — Community as a Force</h4>
+                <p>Beyond technology and institutions, XRP is backed by one of the most resilient communities in crypto: <span class="wiki-highlight">the XRP Army</span>.</p>
+                <p>The XRP Army is:</p>
+                <ul>
+                    <li>global</li>
+                    <li>vocal</li>
+                    <li>highly informed</li>
+                    <li>deeply engaged in regulation and macro finance</li>
+                </ul>
+                <p>During the SEC lawsuit:</p>
+                <ul>
+                    <li>the community stayed active</li>
+                    <li>educated the public</li>
+                    <li>tracked court documents</li>
+                    <li>challenged misinformation</li>
+                    <li>defended the distinction between XRP and Ripple</li>
+                </ul>
+                <p>XRP holders did not leave. They organized.</p>
+                <p>This level of conviction is rare in crypto.</p>
+                <p>XRP did not survive because of hype. It survived because of belief, research, and persistence.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">The SEC Lawsuit — A Defining Moment</h4>
+                <p>In December 2020, the SEC sued Ripple.</p>
+                <p>Claim: XRP was an unregistered security.</p>
+                <p>Impact:</p>
+                <ul>
+                    <li>XRP delisted in the U.S.</li>
+                    <li>price collapsed</li>
+                    <li>uncertainty across the entire crypto market</li>
+                </ul>
+                <p>Ripple fought back. The XRP Army stood firm.</p>
+
+                <h4 style="border-color: white;">The Landmark Victory</h4>
+                <p>In July 2023, the court ruled:</p>
+                <p>XRP itself is <span class="wiki-highlight">NOT a security</span>.</p>
+                <p>Key outcome:</p>
+                <ul>
+                    <li>secondary market sales are not securities</li>
+                    <li>XRP is a digital asset, not an investment contract</li>
+                </ul>
+                <p>This ruling changed crypto regulation forever.</p>
+                <p>XRP survived. The precedent was set.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">Why XRP Matters Now</h4>
+                <p>Post-lawsuit:</p>
+                <ul>
+                    <li>regulatory clarity</li>
+                    <li>renewed institutional interest</li>
+                    <li>global expansion resumes</li>
+                </ul>
+                <p>XRP is positioned as:</p>
+                <ul>
+                    <li>a bridge currency</li>
+                    <li>a settlement layer</li>
+                    <li>a liquidity engine</li>
+                    <li>infrastructure for tokenized assets and CBDCs</li>
+                </ul>
+                <p>This is not speculation. This is financial plumbing.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">XRP Is Not Bitcoin — By Design</h4>
+                <p>Bitcoin:</p>
+                <ul>
+                    <li>money</li>
+                    <li>store of value</li>
+                    <li>monetary revolution</li>
+                </ul>
+                <p>XRP:</p>
+                <ul>
+                    <li>liquidity</li>
+                    <li>settlement</li>
+                    <li>financial infrastructure</li>
+                </ul>
+                <p>Different missions. Both essential.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">XRP Timeline — Key Events</h4>
+                <ul>
+                    <li>2012 — XRP Ledger launched</li>
+                    <li>2013 — Ripple Labs founded</li>
+                    <li>2017 — XRP enters top 3 crypto assets</li>
+                    <li>2020 — SEC lawsuit filed</li>
+                    <li>2023 — Court ruling: XRP is not a security</li>
+                    <li>2024 — Institutional adoption resumes</li>
+                    <li>2025 — XRP positioned as a global settlement standard</li>
                 </ul>
 
-                <p class="mt-8 text-white font-bold text-lg">
-                    The Standard is changing.
-                </p>
+                <h4 style="border-color: white;">Final Words</h4>
+                <p>Bitcoin fixes money. Ethereum programs logic. Cardano builds nations.</p>
+                <p>XRP moves value at global scale.</p>
+                <p>And behind it stands one of the strongest communities in crypto.</p>
+                <p><span class="wiki-highlight">The Standard is changing.</span></p>
             </div>
         </div>
     </article>
 
-    <article id="sol" class="mb-20 bg-brand-panel border-t-2 border-[#14F195] relative overflow-hidden">
+    <article id="sol" class="tab-content hidden mb-20 bg-brand-panel border-t-2 border-[#14F195] relative overflow-hidden">
         <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
             <span class="font-orbitron text-9xl font-bold text-[#14F195]">SOL</span>
         </div>
@@ -457,7 +1131,7 @@
             <div class="flex flex-wrap justify-between items-start gap-4 mb-8 border-b border-white/10 pb-6">
                 <div>
                     <h3 class="font-orbitron text-3xl md:text-4xl text-white mb-2">SOLANA</h3>
-                    <p class="text-[#14F195] font-bold tracking-widest uppercase">PROOF OF HISTORY // Speed as Primitive</p>
+                    <p class="text-[#14F195] font-bold tracking-widest uppercase">PROOF OF HISTORY // Speed as a First-Class Primitive</p>
                 </div>
                 <a href="index.html#products" class="px-4 py-2 border border-[#14F195] text-[#14F195] hover:bg-[#14F195] hover:text-black transition uppercase text-xs font-bold tracking-widest">
                     Get The Tee
@@ -465,34 +1139,192 @@
             </div>
 
             <div class="wiki-content" style="border-left: 4px solid #14F195;">
-                <h4 style="border-color: #14F195;">What Solana Is</h4>
-                <p>Solana is a high-performance Layer 1 designed to scale to global usage. Its mission: Deliver blockchain-level decentralization at internet speed.</p>
+                <h4 style="border-color: #14F195;">What Solana Is — Straight to the Point</h4>
+                <p>Solana is a high-performance Layer 1 blockchain designed to scale to global usage.</p>
+                <p>Its core mission: Deliver blockchain-level decentralization at internet speed.</p>
                 <p>Bitcoin introduced scarcity. Ethereum introduced programmability. Solana introduced time.</p>
-
-                <h4 style="border-color: #14F195;">History Is The Proof</h4>
-                <p>Solana introduced <strong>Proof of History (PoH)</strong>. It is a cryptographic clock that allows the network to order events before consensus. This drastically reduces latency. Time is already proven.</p>
-
-                <h4 style="border-color: #14F195;">Outages & Resilience</h4>
-                <p>Solana experienced outages due to extreme load and bot activity. Instead of abandoning the project, the engineers hardened the network. By 2024, stability dramatically improved. Speed was not abandoned; it was refined.</p>
 
                 <div class="wiki-divider"></div>
 
-                <h4 style="border-color: #14F195;">Mobile & Consumer Focus</h4>
-                <p>Solana targets end users with initiatives like the Solana Phone (Saga) and an integrated mobile stack. The goal is to bring crypto to normal users, not just crypto natives.</p>
-
-                <h4 style="border-color: #14F195;">Timeline</h4>
+                <h4 style="border-color: #14F195;">The Core Problem — Blockchains Could Not Scale</h4>
+                <p>Early blockchains faced a trilemma:</p>
                 <ul>
-                    <li><strong>2017</strong> — Solana founded</li>
-                    <li><strong>2020</strong> — Mainnet launch</li>
-                    <li><strong>2021</strong> — Explosive DeFi growth</li>
-                    <li><strong>2022</strong> — Market crash & rebuild</li>
-                    <li><strong>2023</strong> — Network hardening</li>
-                    <li><strong>2024</strong> — Consumer & Mobile resurgence</li>
+                    <li>decentralization</li>
+                    <li>security</li>
+                    <li>scalability</li>
+                </ul>
+                <p>Most networks sacrificed speed or cost.</p>
+                <p>Solana took a different approach: Instead of optimizing transactions, it optimized <span class="wiki-highlight">time</span>.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">History Is the Proof — The Key Innovation</h4>
+                <p>Solana introduced <span class="wiki-highlight">Proof of History (PoH)</span>.</p>
+                <p>PoH is not consensus. PoH is a cryptographic clock.</p>
+                <p>It allows the network to:</p>
+                <ul>
+                    <li>order events before consensus</li>
+                    <li>verify time without communication</li>
+                    <li>drastically reduce latency</li>
+                </ul>
+                <p>This means validators do not need to constantly agree on time. Time is already proven.</p>
+                <p><span class="text-white">History becomes the proof.</span></p>
+                <p>This single innovation is what enables Solana’s speed.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Architecture — Why Solana Is Fast</h4>
+                <p>Solana combines multiple innovations:</p>
+                <ul>
+                    <li>Proof of History (cryptographic time)</li>
+                    <li>Tower BFT (optimized consensus)</li>
+                    <li>Sealevel (parallel smart contracts)</li>
+                    <li>Gulf Stream (mempool-less design)</li>
+                    <li>Turbine (block propagation)</li>
+                    <li>Pipelining (hardware optimization)</li>
+                </ul>
+                <p>Result:</p>
+                <ul>
+                    <li>~400ms block times</li>
+                    <li>tens of thousands of TPS</li>
+                    <li>extremely low fees</li>
+                </ul>
+                <p>This is blockchain engineered like high-performance computing.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Founders — Who Built Solana</h4>
+                <p>Solana was founded in 2017 by:</p>
+                <ul>
+                    <li><span class="text-white">Anatoly Yakovenko</span> — former Qualcomm engineer</li>
+                    <li><span class="text-white">Greg Fitzgerald</span> — former Qualcomm engineer</li>
+                    <li><span class="text-white">Stephen Akridge</span> — former Qualcomm engineer</li>
+                </ul>
+                <p>Background:</p>
+                <ul>
+                    <li>distributed systems</li>
+                    <li>compression</li>
+                    <li>networking</li>
+                    <li>hardware-level optimization</li>
+                </ul>
+                <p>Their insight: Blockchains were slow because they ignored hardware and time.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Fixed Supply — Economic Design</h4>
+                <p>SOL has a capped supply with a declining inflation schedule.</p>
+                <p>Key points:</p>
+                <ul>
+                    <li>inflation decreases over time</li>
+                    <li>fees are partially burned</li>
+                    <li>long-term pressure is deflationary</li>
+                </ul>
+                <p>The model favors:</p>
+                <ul>
+                    <li>validators</li>
+                    <li>long-term holders</li>
+                    <li>network security</li>
                 </ul>
 
-                <p class="mt-8 text-[#14F195] font-bold text-lg">
-                    Speed is not a feature. It is the foundation.
-                </p>
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Venture Capital & Wall Street</h4>
+                <p>Solana attracted major institutional backing early:</p>
+                <ul>
+                    <li>Andreessen Horowitz (a16z)</li>
+                    <li>Multicoin Capital</li>
+                    <li>Alameda Research (early)</li>
+                    <li>Jump Crypto</li>
+                </ul>
+                <p>This brought:</p>
+                <ul>
+                    <li>capital</li>
+                    <li>developers</li>
+                    <li>infrastructure</li>
+                    <li>rapid ecosystem growth</li>
+                </ul>
+                <p>Solana became the chain institutions could actually build on at scale.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Outages — The Cost of Speed</h4>
+                <p>Solana experienced network outages in its early years.</p>
+                <p>These were caused by:</p>
+                <ul>
+                    <li>extreme transaction load</li>
+                    <li>bot activity</li>
+                    <li>early-stage infrastructure</li>
+                </ul>
+                <p>Instead of abandoning the project:</p>
+                <ul>
+                    <li>the team fixed core bottlenecks</li>
+                    <li>upgraded validator software</li>
+                    <li>hardened the network</li>
+                </ul>
+                <p>By 2024–2025, stability dramatically improved.</p>
+                <p>Speed was not abandoned. It was refined.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Mobile & Consumer Adoption — Solana Phone</h4>
+                <p>Solana is one of the only blockchains targeting <span class="wiki-highlight">end users</span>, not just developers.</p>
+                <p>Key initiatives:</p>
+                <ul>
+                    <li>Solana Mobile</li>
+                    <li>Saga phone</li>
+                    <li>integrated wallet</li>
+                    <li>decentralized app store</li>
+                    <li>no platform fees</li>
+                </ul>
+                <p>Goal: Bring crypto to normal users, not just crypto natives.</p>
+                <p>This is a long-term consumer strategy.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Culture — Builders Over Narratives</h4>
+                <p>Solana culture is:</p>
+                <ul>
+                    <li>builder-focused</li>
+                    <li>performance-driven</li>
+                    <li>experimental</li>
+                    <li>unapologetically fast</li>
+                </ul>
+                <p>It is not academic. It is not ideological.</p>
+                <p>It ships.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Solana vs Ethereum — Different Philosophies</h4>
+                <p>Ethereum:</p>
+                <ul>
+                    <li>maximum decentralization</li>
+                    <li>slower, layered scaling</li>
+                </ul>
+                <p>Solana:</p>
+                <ul>
+                    <li>monolithic design</li>
+                    <li>hardware-optimized scaling</li>
+                </ul>
+                <p>Different paths.</p>
+                <p>Same destination: Global blockchain infrastructure.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Solana Timeline — Key Events</h4>
+                <ul>
+                    <li>2017 — Solana founded</li>
+                    <li>2020 — Mainnet launch</li>
+                    <li>2021 — Explosive DeFi & NFT growth</li>
+                    <li>2022 — Market crash & ecosystem stress</li>
+                    <li>2023 — Network hardening & rebuild phase</li>
+                    <li>2024 — Consumer focus, mobile, resurgence</li>
+                    <li>2025 — Solana positioned as the fastest global execution layer</li>
+                </ul>
+
+                <h4 style="border-color: #14F195;">Final Words</h4>
+                <p>Bitcoin introduced digital scarcity. Ethereum introduced programmable trust. Solana introduced verifiable time.</p>
+                <p>Speed is not a feature. It is the foundation.</p>
+                <p><span class="wiki-highlight" style="color:#14F195;">History is the proof.</span></p>
             </div>
         </div>
     </article>
@@ -542,6 +1374,40 @@
       });
     }
     document.addEventListener("DOMContentLoaded", () => setCurrency("USD"));
+
+    // Tab Logic
+    function openCoinTab(coinId) {
+        // Hide all tabs
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+        
+        // Remove active state from all buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active-tab');
+            // Reset borders to gray
+            btn.style.borderColor = 'rgb(55 65 81)'; // gray-700
+            btn.style.color = 'rgb(156 163 175)'; // gray-400
+        });
+
+        // Show selected tab
+        document.getElementById(coinId).classList.remove('hidden');
+
+        // Set active state for button with specific colors
+        const activeBtn = document.getElementById('btn-' + coinId);
+        activeBtn.classList.add('active-tab');
+        
+        // Define colors per coin
+        const colors = {
+            'btc': '#F7931A',
+            'eth': '#627EEA',
+            'ada': '#0033ad',
+            'xrp': '#ffffff',
+            'sol': '#14F195'
+        };
+        
+        // Apply color
+        activeBtn.style.borderColor = colors[coinId];
+        activeBtn.style.color = colors[coinId];
+    }
 
     // Mobile menu
     const mobileMenuEl = document.getElementById("mobileMenu");
