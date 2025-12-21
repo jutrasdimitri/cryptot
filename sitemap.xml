@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://cryptot.shop/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/index.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr.html</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://cryptot.shop/btc.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/eth.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/ada.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/xrp.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/sol.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://cryptot.shop/fr-btc.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-eth.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-ada.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-xrp.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-sol.html</loc>
+    <priority>0.90</priority>
+  </url>
+</urlset>
