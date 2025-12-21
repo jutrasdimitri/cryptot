@@ -39,6 +39,48 @@
     }
     :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
     .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
+    
+    /* Custom formatting for the long text blocks */
+    .wiki-content h4 {
+        font-family: 'Orbitron', sans-serif;
+        color: white;
+        font-size: 1.125rem; /* text-lg */
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        border-left-width: 2px;
+        padding-left: 0.75rem;
+    }
+    .wiki-content p {
+        margin-bottom: 1rem;
+        color: #d1d5db; /* gray-300 */
+        line-height: 1.7;
+    }
+    .wiki-content ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #9ca3af; /* gray-400 */
+    }
+    .wiki-content li {
+        margin-bottom: 0.25rem;
+    }
+    .wiki-content a {
+        color: #39ff14;
+        text-decoration: none;
+        border-bottom: 1px dotted #39ff14;
+        transition: all 0.2s;
+    }
+    .wiki-content a:hover {
+        color: white;
+        border-bottom-style: solid;
+    }
+    .wiki-divider {
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255,255,255,0.1);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
   </style>
 
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
@@ -46,7 +88,6 @@
 
 <body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
 
-  <!-- Same top ticker -->
   <div id="coinmarketcap-widget-marquee"
        coins="1,1027,2010,52,5426"
        currency="USD"
@@ -55,7 +96,6 @@
        show-symbol-logo="true"
        class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
-  <!-- NAV -->
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
@@ -72,7 +112,6 @@
           <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
           <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
 
-          <!-- Currency (kept for visual consistency) -->
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
             <span class="text-gray-700">/</span>
@@ -97,7 +136,6 @@
       </div>
     </div>
 
-    <!-- Mobile -->
     <div id="mobileMenu" class="hidden md:hidden">
       <div class="fixed inset-0 z-[70]" aria-hidden="true">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
@@ -137,7 +175,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="py-16 md:py-20 text-center relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
     <div class="relative z-10 px-4 max-w-5xl mx-auto">
@@ -160,7 +197,7 @@
       <div class="mt-10 inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-md h-[1px]"></div>
 
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="#coins" class="px-6 py-3 border border-brand-green/40 text-brand-green hover:bg-brand-green/10 transition-all uppercase font-orbitron tracking-wider text-sm">
+        <a href="#btc" class="px-6 py-3 border border-brand-green/40 text-brand-green hover:bg-brand-green/10 transition-all uppercase font-orbitron tracking-wider text-sm">
           Explore the 5
         </a>
         <a href="index.html#products" class="px-6 py-3 bg-brand-green text-black font-bold hover:bg-white transition-all uppercase font-orbitron tracking-wider text-sm">
@@ -170,250 +207,309 @@
     </div>
   </header>
 
-  <!-- CONTENT -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
 
-    <!-- “What we mean” section -->
-    <section class="bg-brand-panel border border-brand-green/20 shadow-[0_0_20px_rgba(57,255,20,0.08)] p-6 md:p-10 mb-10">
+    <section class="bg-brand-panel border border-brand-green/20 shadow-[0_0_20px_rgba(57,255,20,0.08)] p-6 md:p-10 mb-16">
       <h2 class="font-orbitron text-2xl md:text-3xl text-white mb-4 border-l-4 border-brand-green pl-4">
         THE IDEA_
       </h2>
-
       <div class="text-gray-300 leading-relaxed space-y-4 text-sm md:text-base">
-        <p>
-          Crypto is not “one thing”. It’s a battlefield of design choices:
-          decentralization vs. speed, scarcity vs. utility, neutrality vs. coordination,
-          settlement vs. execution.
-        </p>
-        <p>
-          So we picked five that people actually argue about — because the arguments matter.
-          Each tee is a flag. Each slogan is a thesis.
-        </p>
-        <p class="text-gray-400">
-          And yeah… the fit is clean too. (Because if you’re gonna get liquidated, at least be liquidated in style.)
-        </p>
-        <p class="text-brand-green font-bold">
-          // Code is law. Style is choice.
-        </p>
+        <p>Crypto is not “one thing”. It’s a battlefield of design choices: decentralization vs. speed, scarcity vs. utility, neutrality vs. coordination, settlement vs. execution.</p>
+        <p>So we picked five that people actually argue about — because the arguments matter. Each tee is a flag. Each slogan is a thesis.</p>
+        <p class="text-gray-400">And yeah… the fit is clean too. (Because if you’re gonna get liquidated, at least be liquidated in style.)</p>
+        <p class="text-brand-green font-bold">// Code is law. Style is choice.</p>
       </div>
     </section>
 
-    <!-- COINS -->
-    <section id="coins" class="space-y-8">
-
-      <h2 class="font-orbitron text-2xl md:text-3xl text-white mb-2 border-l-4 border-brand-green pl-4">
-        THE POWER 5 — THE BACKSTORY_
-      </h2>
-      <p class="text-gray-400 text-sm md:text-base mb-6">
-        Quick read, heavy meaning. If you’re new: this is your “why” in plain English.
-        If you’re a veteran: you’ll smirk.
-      </p>
-
-      <!-- BTC -->
-      <article class="bg-brand-panel border border-[#F7931A]/30 p-6 md:p-8">
-        <div class="flex items-start justify-between gap-6 flex-wrap">
-          <div>
-            <h3 class="font-orbitron text-xl md:text-2xl text-white">BTC // VIRES IN NUMERIS</h3>
-            <p class="text-xs uppercase tracking-widest mt-1" style="color:#F7931A;">Store of Value</p>
-          </div>
-          <a href="index.html#products" class="text-xs border border-white/10 hover:border-brand-green/40 text-gray-300 hover:text-brand-green px-3 py-2 transition uppercase tracking-wider">
-            View Tee →
-          </a>
+    <article id="btc" class="mb-20 bg-brand-panel border-t-2 border-[#F7931A] relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+            <span class="font-orbitron text-9xl font-bold text-[#F7931A]">BTC</span>
         </div>
+        <div class="p-6 md:p-10 relative z-10">
+            <div class="flex flex-wrap justify-between items-start gap-4 mb-8 border-b border-white/10 pb-6">
+                <div>
+                    <h3 class="font-orbitron text-3xl md:text-4xl text-white mb-2">BITCOIN</h3>
+                    <p class="text-[#F7931A] font-bold tracking-widest uppercase">VIRES IN NUMERIS // Strength in Numbers</p>
+                </div>
+                <a href="index.html#products" class="px-4 py-2 border border-[#F7931A] text-[#F7931A] hover:bg-[#F7931A] hover:text-black transition uppercase text-xs font-bold tracking-widest">
+                    Get The Tee
+                </a>
+            </div>
 
-        <div class="mt-5 grid md:grid-cols-3 gap-6 text-sm leading-relaxed">
-          <div class="md:col-span-2 text-gray-300 space-y-3">
-            <p>
-              Bitcoin is the “do one thing perfectly” machine: censorship-resistant, scarce, and boring on purpose.
-              It doesn’t need a marketing team — it has math, miners, and a global game theory.
-            </p>
-            <p>
-              The thesis: if money can’t be printed on demand, the world behaves differently.
-              That’s why the slogan is Latin — it feels old, like it’s been true forever.
-            </p>
-            <p class="text-gray-400">
-              Punchline: the orange pill isn’t about hype… it’s about sleeping better.
-            </p>
-          </div>
-          <div class="border border-white/10 bg-black/30 p-4">
-            <div class="text-[11px] text-gray-400 uppercase tracking-widest mb-2">What it represents</div>
-            <ul class="text-gray-300 space-y-2">
-              <li>• Digital scarcity</li>
-              <li>• Neutral settlement</li>
-              <li>• “No rulers, just rules”</li>
-            </ul>
-          </div>
+            <div class="wiki-content" style="border-left: 4px solid #F7931A;">
+                <h4 style="border-color: #F7931A;">What Bitcoin Is — Straight to the Point</h4>
+                <p>Bitcoin is a peer-to-peer electronic cash system designed to operate without trust.</p>
+                <p>Its core purpose is simple:</p>
+                <ul>
+                    <li>fixed supply</li>
+                    <li>decentralized validation</li>
+                    <li>permissionless value transfer</li>
+                </ul>
+                <p>Bitcoin exists to solve one problem: <strong class="text-white">money that cannot be inflated, censored, or controlled.</strong></p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #F7931A;">The Core Problem — Infinite Money vs Finite Resources</h4>
+                <p>Traditional money is created by central banks. It has: infinite supply, political control, and hidden inflation.</p>
+                <p>Bitcoin introduced the opposite: a hard cap of 21 million, predictable issuance, and no authority capable of printing more. This transforms money from debt into property.</p>
+
+                <h4 style="border-color: #F7931A;">Byzantine Generals Problem — Solved</h4>
+                <p>Before Bitcoin, decentralized money failed because of the Byzantine Generals Problem: How do independent actors agree without trusting each other?</p>
+                <p>Bitcoin solved this with Proof of Work, economic incentives, and cryptographic verification. Consensus is not based on trust. It is based on math, energy, and game theory.</p>
+
+                <h4 style="border-color: #F7931A;">Satoshi Nakamoto — The Disappearance That Mattered</h4>
+                <p>Bitcoin was introduced in 2008 by <strong class="text-white">Satoshi Nakamoto</strong>, a pseudonymous creator whose true identity remains unknown.</p>
+                <p>There was no premine, no founder allocation, and no central leadership. This anonymity is not a weakness. It is a feature. It ensures no authority figure, no single point of failure, and no one to pressure, arrest, or influence.</p>
+                <p>Bitcoin belongs to no one. And therefore, to everyone.</p>
+                <p>Original website: <a href="https://bitcoin.org" target="_blank">bitcoin.org</a></p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #F7931A;">The Bitcoin Community</h4>
+                <p>Bitcoin is more than software. It is a culture. The Bitcoin community is known for extreme conviction, long-term thinking, and resistance to narratives and hype.</p>
+                <p><strong class="text-white">Bitcoin Maximalists</strong> believe Bitcoin is the only truly decentralized money, everything else is either experimental or compromised, and security matters more than speed.</p>
+                <p>To outsiders, it looks like a cult. To insiders, it is discipline.</p>
+
+                <h4 style="border-color: #F7931A;">Bitcoin Timeline — Key Events</h4>
+                <ul>
+                    <li><strong>2008</strong> — Whitepaper released by Satoshi Nakamoto</li>
+                    <li><strong>2009</strong> — Genesis Block mined</li>
+                    <li><strong>2010</strong> — First purchase (10,000 BTC for pizza)</li>
+                    <li><strong>2012</strong> — First halving (50 → 25 BTC)</li>
+                    <li><strong>2017</strong> — Mainstream awareness & futures markets</li>
+                    <li><strong>2020</strong> — Institutional accumulation begins</li>
+                    <li><strong>2021</strong> — Legal tender in El Salvador</li>
+                    <li><strong>2024</strong> — Fourth halving & Spot ETFs</li>
+                </ul>
+
+                <p class="mt-8 text-[#F7931A] font-bold text-lg">
+                    Wake up. Bitcoin is going to infinite.
+                </p>
+            </div>
         </div>
-      </article>
+    </article>
 
-      <!-- ETH -->
-      <article class="bg-brand-panel border border-[#627EEA]/30 p-6 md:p-8">
-        <div class="flex items-start justify-between gap-6 flex-wrap">
-          <div>
-            <h3 class="font-orbitron text-xl md:text-2xl text-white">ETH // CODE IS LAW</h3>
-            <p class="text-xs uppercase tracking-widest mt-1 text-[#627EEA]">Smart Contracts</p>
-          </div>
-          <a href="index.html#products" class="text-xs border border-white/10 hover:border-brand-green/40 text-gray-300 hover:text-brand-green px-3 py-2 transition uppercase tracking-wider">
-            View Tee →
-          </a>
+    <article id="eth" class="mb-20 bg-brand-panel border-t-2 border-[#627EEA] relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+            <span class="font-orbitron text-9xl font-bold text-[#627EEA]">ETH</span>
         </div>
+        <div class="p-6 md:p-10 relative z-10">
+            <div class="flex flex-wrap justify-between items-start gap-4 mb-8 border-b border-white/10 pb-6">
+                <div>
+                    <h3 class="font-orbitron text-3xl md:text-4xl text-white mb-2">ETHEREUM</h3>
+                    <p class="text-[#627EEA] font-bold tracking-widest uppercase">CODE IS LAW // Programmable Money</p>
+                </div>
+                <a href="index.html#products" class="px-4 py-2 border border-[#627EEA] text-[#627EEA] hover:bg-[#627EEA] hover:text-black transition uppercase text-xs font-bold tracking-widest">
+                    Get The Tee
+                </a>
+            </div>
 
-        <div class="mt-5 grid md:grid-cols-3 gap-6 text-sm leading-relaxed">
-          <div class="md:col-span-2 text-gray-300 space-y-3">
-            <p>
-              Ethereum is the world computer. Not perfect, not finished, but it’s where builders ship.
-              DeFi, NFTs, stablecoins, DAOs — love it or hate it, this is where the experiments live.
-            </p>
-            <p>
-              The thesis: rules should be executable, not negotiable.
-              When contracts run on-chain, “trust me” becomes “verify me.”
-            </p>
-            <p class="text-gray-400">
-              Punchline: sometimes the code is law… until the gas fee reminds you who’s boss.
-            </p>
-          </div>
-          <div class="border border-white/10 bg-black/30 p-4">
-            <div class="text-[11px] text-gray-400 uppercase tracking-widest mb-2">What it represents</div>
-            <ul class="text-gray-300 space-y-2">
-              <li>• Programmable money</li>
-              <li>• Open finance</li>
-              <li>• Builder culture</li>
-            </ul>
-          </div>
+            <div class="wiki-content" style="border-left: 4px solid #627EEA;">
+                <h4 style="border-color: #627EEA;">What Ethereum Is — In One Sentence</h4>
+                <p>Ethereum is a decentralized global computing platform that allows anyone to deploy unstoppable applications and programmable money without intermediaries.</p>
+                <p>If Bitcoin proved that money can exist without banks, Ethereum proved that logic, contracts, and entire financial systems can exist without companies.</p>
+
+                <h4 style="border-color: #627EEA;">Why Ethereum Was Created</h4>
+                <p>Bitcoin solved money. But a limitation remained: value could be transferred, but behavior could not be programmed. Ethereum was created to answer a single question: <strong>What if the blockchain itself could run code?</strong></p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #627EEA;">Smart Contracts — Explained Simply</h4>
+                <p>A smart contract is code deployed on the blockchain. Once deployed, it cannot be altered, it cannot be stopped, and it executes automatically.</p>
+                <p>Use cases include: decentralized exchanges, lending protocols, stablecoins, NFTs, and DAOs. Ethereum transforms the blockchain into a programmable settlement layer.</p>
+
+                <h4 style="border-color: #627EEA;">The Ethereum Virtual Machine (EVM)</h4>
+                <p>Ethereum applications run inside the EVM. It executes identically on thousands of nodes and guarantees the same result worldwide. This makes Ethereum censorship-resistant and globally synchronized. It is often described as <strong>the world computer</strong>.</p>
+
+                <h4 style="border-color: #627EEA;">Vitalik Buterin — Creator</h4>
+                <p>Vitalik Buterin grew up in Toronto. At age 19, he wrote the Ethereum whitepaper (2013) because he recognized Bitcoin’s scripting limitations. Unlike Satoshi, Vitalik is public, research-driven, and focused on long-term evolution.</p>
+
+                <h4 style="border-color: #627EEA;">The Ethereum Community</h4>
+                <p>Ethereum’s community values experimentation, composability, and developer freedom. Rather than maximalism, Ethereum embraces Layer 2 scaling and constant upgrades. Ethereum does not aim to be perfect. It aims to evolve.</p>
+
+                <h4 style="border-color: #627EEA;">Timeline</h4>
+                <ul>
+                    <li><strong>2013</strong> — Whitepaper published by Vitalik</li>
+                    <li><strong>2015</strong> — Mainnet launch</li>
+                    <li><strong>2016</strong> — The DAO hack</li>
+                    <li><strong>2017</strong> — ICO Boom (ERC-20)</li>
+                    <li><strong>2020</strong> — DeFi Summer</li>
+                    <li><strong>2022</strong> — The Merge (Proof of Stake)</li>
+                </ul>
+
+                <p class="mt-8 text-[#627EEA] font-bold text-lg">
+                    Bitcoin replaced money. Ethereum replaces institutions.
+                </p>
+            </div>
         </div>
-      </article>
+    </article>
 
-      <!-- ADA -->
-      <article class="bg-brand-panel border border-[#0033ad]/30 p-6 md:p-8">
-        <div class="flex items-start justify-between gap-6 flex-wrap">
-          <div>
-            <h3 class="font-orbitron text-xl md:text-2xl text-white">ADA // PEER REVIEWED</h3>
-            <p class="text-xs uppercase tracking-widest mt-1 text-[#5aa0ff]">Research Driven</p>
-          </div>
-          <a href="index.html#products" class="text-xs border border-white/10 hover:border-brand-green/40 text-gray-300 hover:text-brand-green px-3 py-2 transition uppercase tracking-wider">
-            View Tee →
-          </a>
+    <article id="ada" class="mb-20 bg-brand-panel border-t-2 border-[#0033ad] relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+            <span class="font-orbitron text-9xl font-bold text-[#0033ad]">ADA</span>
         </div>
+        <div class="p-6 md:p-10 relative z-10">
+            <div class="flex flex-wrap justify-between items-start gap-4 mb-8 border-b border-white/10 pb-6">
+                <div>
+                    <h3 class="font-orbitron text-3xl md:text-4xl text-white mb-2">CARDANO</h3>
+                    <p class="text-[#5aa0ff] font-bold tracking-widest uppercase">PEER REVIEWED // The Bitcoin of Altcoins</p>
+                </div>
+                <a href="index.html#products" class="px-4 py-2 border border-[#0033ad] text-[#5aa0ff] hover:bg-[#0033ad] hover:text-white transition uppercase text-xs font-bold tracking-widest">
+                    Get The Tee
+                </a>
+            </div>
 
-        <div class="mt-5 grid md:grid-cols-3 gap-6 text-sm leading-relaxed">
-          <div class="md:col-span-2 text-gray-300 space-y-3">
-            <p>
-              Cardano is the “measure twice, cut once” chain. It tries to build crypto like engineering:
-              papers, formal methods, careful upgrades, and governance as a first-class feature.
-            </p>
-            <p>
-              The thesis: slow can be strategic if it means fewer disasters.
-              When the industry is sprinting on broken ankles, a walking pace can look… wise.
-            </p>
-            <p class="text-gray-400">
-              Punchline: peer-reviewed doesn’t mean “fun-free”… it means the receipts exist.
-            </p>
-          </div>
-          <div class="border border-white/10 bg-black/30 p-4">
-            <div class="text-[11px] text-gray-400 uppercase tracking-widest mb-2">What it represents</div>
-            <ul class="text-gray-300 space-y-2">
-              <li>• Formal design</li>
-              <li>• Governance-first</li>
-              <li>• Long-game mindset</li>
-            </ul>
-          </div>
+            <div class="wiki-content" style="border-left: 4px solid #0033ad;">
+                <h4 style="border-color: #0033ad;">What Cardano Is</h4>
+                <p>Cardano is a peer-to-peer blockchain built on the same core accounting philosophy as Bitcoin (UTXO), but extending it to support smart contracts and governance. It is not a departure from Bitcoin; it is a continuation.</p>
+                <p>This is why Cardano is often called: <strong>“The Bitcoin of Altcoins.”</strong></p>
+
+                <h4 style="border-color: #0033ad;">The Philosophy: Measure Twice, Cut Once</h4>
+                <p>Cardano is built on peer-reviewed academic research, formal methods, and mathematical proofs. Instead of “move fast and break things,” Cardano chose correctness over speed and safety over hype.</p>
+
+                <h4 style="border-color: #0033ad;">Charles Hoskinson</h4>
+                <p>Charles was an early Bitcoin educator and a co-founder of Ethereum. He left Ethereum due to philosophical differences regarding governance and structure. He believed blockchains should be built like critical infrastructure—meant to last decades.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #0033ad;">Proof of Stake — Ouroboros</h4>
+                <p>Cardano uses Ouroboros, the first Proof of Stake protocol proven secure through peer-reviewed research. It is energy efficient, mathematically proven, and maintains decentralization.</p>
+
+                <h4 style="border-color: #0033ad;">Real-World Vision</h4>
+                <p>Cardano focuses on digital identity, government-grade infrastructure, and financial inclusion (especially in Africa). It is designed to scale to billions of people who lack access to banks.</p>
+
+                <h4 style="border-color: #0033ad;">Community: "In Charles We Trust"</h4>
+                <p>The community is known for patience and a long-term mindset. They don't follow Charles Hoskinson for price predictions, but for his vision of structure and sovereignty. It isn't blind faith; it is alignment with a philosophy.</p>
+
+                <h4 style="border-color: #0033ad;">Timeline</h4>
+                <ul>
+                    <li><strong>2015</strong> — Research begins</li>
+                    <li><strong>2017</strong> — Mainnet launch</li>
+                    <li><strong>2020</strong> — Shelley era (Decentralization)</li>
+                    <li><strong>2021</strong> — Alonzo upgrade (Smart Contracts)</li>
+                    <li><strong>2024</strong> — Voltaire era (On-chain governance)</li>
+                </ul>
+
+                <p class="mt-8 text-[#5aa0ff] font-bold text-lg">
+                    In Charles we trust. You are early.
+                </p>
+            </div>
         </div>
-      </article>
+    </article>
 
-      <!-- XRP -->
-      <article class="bg-brand-panel border border-white/25 p-6 md:p-8">
-        <div class="flex items-start justify-between gap-6 flex-wrap">
-          <div>
-            <h3 class="font-orbitron text-xl md:text-2xl text-white">XRP // THE STANDARD</h3>
-            <p class="text-xs uppercase tracking-widest mt-1 text-gray-200">Liquidity Provider</p>
-          </div>
-          <a href="index.html#products" class="text-xs border border-white/10 hover:border-brand-green/40 text-gray-300 hover:text-brand-green px-3 py-2 transition uppercase tracking-wider">
-            View Tee →
-          </a>
+    <article id="xrp" class="mb-20 bg-brand-panel border-t-2 border-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+            <span class="font-orbitron text-9xl font-bold text-white">XRP</span>
         </div>
+        <div class="p-6 md:p-10 relative z-10">
+            <div class="flex flex-wrap justify-between items-start gap-4 mb-8 border-b border-white/10 pb-6">
+                <div>
+                    <h3 class="font-orbitron text-3xl md:text-4xl text-white mb-2">XRP</h3>
+                    <p class="text-gray-300 font-bold tracking-widest uppercase">THE STANDARD // Global Settlement</p>
+                </div>
+                <a href="index.html#products" class="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition uppercase text-xs font-bold tracking-widest">
+                    Get The Tee
+                </a>
+            </div>
 
-        <div class="mt-5 grid md:grid-cols-3 gap-6 text-sm leading-relaxed">
-          <div class="md:col-span-2 text-gray-300 space-y-3">
-            <p>
-              XRP is about payments and liquidity rails — the “plumbing” of money.
-              It’s controversial, it’s loud, and it refuses to die. That alone is a statement.
-            </p>
-            <p>
-              The thesis: if the world needs to move value fast and cheap, the rails matter more than the speeches.
-              Love it or hate it, liquidity always wins eventually.
-            </p>
-            <p class="text-gray-400">
-              Punchline: it’s called “the standard” because the community will remind you… daily.
-            </p>
-          </div>
-          <div class="border border-white/10 bg-black/30 p-4">
-            <div class="text-[11px] text-gray-400 uppercase tracking-widest mb-2">What it represents</div>
-            <ul class="text-gray-300 space-y-2">
-              <li>• Payments focus</li>
-              <li>• Liquidity rails</li>
-              <li>• “Still here” energy</li>
-            </ul>
-          </div>
+            <div class="wiki-content" style="border-left: 4px solid white;">
+                <h4 style="border-color: white;">What XRP Is</h4>
+                <p>XRP is a digital asset designed for fast, low-cost, cross-border value transfer. Its purpose is simple: Move value globally, instantly, and at scale.</p>
+                <p>Bitcoin challenges money itself. XRP fixes how money moves. XRP is not anti-bank. XRP is post-SWIFT.</p>
+
+                <h4 style="border-color: white;">The Problem: Legacy Finance</h4>
+                <p>SWIFT was created in the 1970s. It doesn't move money; it sends messages. It takes days to settle. XRP settles in 3-5 seconds with finality.</p>
+
+                <h4 style="border-color: white;">XRP Ledger vs. Ripple</h4>
+                <p>Ripple is a private company building solutions for banks. The XRP Ledger (XRPL) is decentralized and open-source. Ripple does not control the network. This distinction is critical.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: white;">The SEC Lawsuit & Victory</h4>
+                <p>In Dec 2020, the SEC sued Ripple, claiming XRP was a security. The price collapsed, but the community ("The XRP Army") stood firm.</p>
+                <p>In July 2023, the court ruled: <strong>XRP itself is NOT a security.</strong> This was a landmark victory for the entire industry.</p>
+
+                <h4 style="border-color: white;">The XRP Army</h4>
+                <p>XRP is backed by one of the most resilient communities in crypto. They researched, they organized, and they refused to sell. XRP survived not because of hype, but because of conviction.</p>
+
+                <h4 style="border-color: white;">Timeline</h4>
+                <ul>
+                    <li><strong>2012</strong> — XRPL launched</li>
+                    <li><strong>2013</strong> — Ripple Labs founded</li>
+                    <li><strong>2017</strong> — XRP enters top 3 assets</li>
+                    <li><strong>2020</strong> — SEC Lawsuit filed</li>
+                    <li><strong>2023</strong> — Court ruling: Not a Security</li>
+                    <li><strong>2025</strong> — Global settlement standard</li>
+                </ul>
+
+                <p class="mt-8 text-white font-bold text-lg">
+                    The Standard is changing.
+                </p>
+            </div>
         </div>
-      </article>
+    </article>
 
-      <!-- SOL -->
-      <article class="bg-brand-panel border border-[#14F195]/30 p-6 md:p-8">
-        <div class="flex items-start justify-between gap-6 flex-wrap">
-          <div>
-            <h3 class="font-orbitron text-xl md:text-2xl text-white">SOL // PROOF OF HISTORY</h3>
-            <p class="text-xs uppercase tracking-widest mt-1 text-[#14F195]">High Speed Layer 1</p>
-          </div>
-          <a href="index.html#products" class="text-xs border border-white/10 hover:border-brand-green/40 text-gray-300 hover:text-brand-green px-3 py-2 transition uppercase tracking-wider">
-            View Tee →
-          </a>
+    <article id="sol" class="mb-20 bg-brand-panel border-t-2 border-[#14F195] relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+            <span class="font-orbitron text-9xl font-bold text-[#14F195]">SOL</span>
         </div>
+        <div class="p-6 md:p-10 relative z-10">
+            <div class="flex flex-wrap justify-between items-start gap-4 mb-8 border-b border-white/10 pb-6">
+                <div>
+                    <h3 class="font-orbitron text-3xl md:text-4xl text-white mb-2">SOLANA</h3>
+                    <p class="text-[#14F195] font-bold tracking-widest uppercase">PROOF OF HISTORY // Speed as Primitive</p>
+                </div>
+                <a href="index.html#products" class="px-4 py-2 border border-[#14F195] text-[#14F195] hover:bg-[#14F195] hover:text-black transition uppercase text-xs font-bold tracking-widest">
+                    Get The Tee
+                </a>
+            </div>
 
-        <div class="mt-5 grid md:grid-cols-3 gap-6 text-sm leading-relaxed">
-          <div class="md:col-span-2 text-gray-300 space-y-3">
-            <p>
-              Solana is the “ship fast, scale hard” chain. It’s built for throughput and consumer apps:
-              fast UX, cheap fees, and a vibe that feels more like tech startups than cypherpunks.
-            </p>
-            <p>
-              The thesis: if crypto is going mainstream, speed and usability are non-negotiable.
-              You can’t onboard the world with a loading screen and a prayer.
-            </p>
-            <p class="text-gray-400">
-              Punchline: when it’s flying, it’s art. When it’s down… we don’t talk about it.
-            </p>
-          </div>
-          <div class="border border-white/10 bg-black/30 p-4">
-            <div class="text-[11px] text-gray-400 uppercase tracking-widest mb-2">What it represents</div>
-            <ul class="text-gray-300 space-y-2">
-              <li>• High throughput</li>
-              <li>• Consumer UX</li>
-              <li>• Builder velocity</li>
-            </ul>
-          </div>
+            <div class="wiki-content" style="border-left: 4px solid #14F195;">
+                <h4 style="border-color: #14F195;">What Solana Is</h4>
+                <p>Solana is a high-performance Layer 1 designed to scale to global usage. Its mission: Deliver blockchain-level decentralization at internet speed.</p>
+                <p>Bitcoin introduced scarcity. Ethereum introduced programmability. Solana introduced time.</p>
+
+                <h4 style="border-color: #14F195;">History Is The Proof</h4>
+                <p>Solana introduced <strong>Proof of History (PoH)</strong>. It is a cryptographic clock that allows the network to order events before consensus. This drastically reduces latency. Time is already proven.</p>
+
+                <h4 style="border-color: #14F195;">Outages & Resilience</h4>
+                <p>Solana experienced outages due to extreme load and bot activity. Instead of abandoning the project, the engineers hardened the network. By 2024, stability dramatically improved. Speed was not abandoned; it was refined.</p>
+
+                <div class="wiki-divider"></div>
+
+                <h4 style="border-color: #14F195;">Mobile & Consumer Focus</h4>
+                <p>Solana targets end users with initiatives like the Solana Phone (Saga) and an integrated mobile stack. The goal is to bring crypto to normal users, not just crypto natives.</p>
+
+                <h4 style="border-color: #14F195;">Timeline</h4>
+                <ul>
+                    <li><strong>2017</strong> — Solana founded</li>
+                    <li><strong>2020</strong> — Mainnet launch</li>
+                    <li><strong>2021</strong> — Explosive DeFi growth</li>
+                    <li><strong>2022</strong> — Market crash & rebuild</li>
+                    <li><strong>2023</strong> — Network hardening</li>
+                    <li><strong>2024</strong> — Consumer & Mobile resurgence</li>
+                </ul>
+
+                <p class="mt-8 text-[#14F195] font-bold text-lg">
+                    Speed is not a feature. It is the foundation.
+                </p>
+            </div>
         </div>
-      </article>
+    </article>
 
-    </section>
-
-    <!-- CTA -->
-    <section class="mt-12 bg-black/60 border border-brand-green/20 p-6 md:p-10">
+    <section class="mt-12 bg-black/60 border border-brand-green/20 p-6 md:p-10 text-center">
       <h2 class="font-orbitron text-2xl md:text-3xl text-white mb-4">
         PICK YOUR SIDE_
       </h2>
-      <p class="text-gray-300 leading-relaxed mb-6">
+      <p class="text-gray-300 leading-relaxed mb-6 max-w-2xl mx-auto">
         You don’t need to “agree” with all five. That’s the point.
         Each tee is a conversation starter — a signal to the right people, and a warning to the wrong ones.
       </p>
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a href="index.html#products" class="px-6 py-3 bg-brand-green text-black font-bold hover:bg-white transition-all uppercase font-orbitron tracking-wider text-sm text-center">
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="index.html#products" class="px-8 py-4 bg-brand-green text-black font-bold hover:bg-white transition-all uppercase font-orbitron tracking-wider text-sm">
           Shop the Power 5
         </a>
-        <a href="index.html#contact" class="px-6 py-3 border border-brand-green/40 text-brand-green hover:bg-brand-green/10 transition-all uppercase font-orbitron tracking-wider text-sm text-center">
-          Contact Us
-        </a>
       </div>
-
       <div class="mt-8 pt-6 border-t border-white/10 text-[11px] text-gray-500">
         Disclaimer: CryptoT is streetwear. This page is culture + education. Not financial advice.
       </div>
@@ -421,7 +517,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="border-t border-brand-green/20 bg-black py-12">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
@@ -436,7 +531,7 @@
   </footer>
 
   <script>
-    // Currency UI (for consistency only on About page)
+    // Currency UI (Visual consistency)
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
     let currentCurrency = "USD";
     function setCurrency(curr) {
