@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histoire du Bitcoin & Signification // Vires in Numeris | CryptoT</title>
+  <meta name="description" content="Découvrez l'histoire du Bitcoin, Satoshi Nakamoto et la philosophie de Vires in Numeris. Streetwear éducatif par CryptoT.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-green": "#39ff14",
+            "brand-black": "#0a0a0a",
+            "brand-panel": "#111111",
+          },
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            mono: ["Share Tech Mono", "monospace"],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{
+      background-image:
+        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+      background-size: 50px 50px;
+    }
+    
+    /* Wiki Text Styles */
+    .wiki-content h2 {
+        font-family: 'Orbitron', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid #F7931A; /* BTC COLOR */
+        padding-left: 1rem;
+    }
+    .wiki-content p {
+        margin-bottom: 1.5rem;
+        color: #d1d5db;
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+    .wiki-content ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+        color: #9ca3af;
+    }
+    .wiki-content li {
+        margin-bottom: 0.5rem;
+    }
+    .wiki-content a {
+        color: #F7931A; /* BTC COLOR */
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: all 0.2s;
+    }
+    .wiki-content a:hover { color: white; }
+    .wiki-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #F7931A, transparent); /* BTC COLOR */
+        margin: 3rem 0;
+        opacity: 0.3;
+    }
+    
+    /* Nav Active State */
+    .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
+    .nav-coin-btn:hover { opacity: 1; border-color: white; }
+    .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+  </style>
+
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+</head>
+
+<body class="matrix-bg min-h-screen font-mono selection:bg-[#F7931A] selection:text-black">
+
+  <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <a href="fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white">CRYPTO<span class="text-brand-green">T</span></a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ LE_POWER_5 ]</a>
+          <a href="fr-btc.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ À_PROPOS_D'EUX ]</a>
+          <a href="fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTE ]</a>
+          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ NOUS_JOINDRE ]</a>
+          
+          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
+             <span class="text-xs text-gray-500">AFFICHAGE: USD</span>
+          </div>
+          <a href="btc.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
+        </div>
+        <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-brand-green"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black/95 p-6 top-[62px]">
+        <div class="flex flex-col gap-6 text-center mt-10">
+            <a href="fr.html" class="text-xl text-white font-orbitron">ACCUEIL</a>
+            <a href="fr-btc.html" class="text-xl text-brand-green font-orbitron">À PROPOS D'EUX</a>
+            <a href="fr.html#products" class="text-xl text-white font-orbitron">BOUTIQUE</a>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10">[ FERMER ]</button>
+        </div>
+    </div>
+  </nav>
+
+  <div class="sticky top-[142px] md:top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
+        <a href="fr-btc.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#F7931A]" style="border-color: #F7931A;">BTC</a>
+        <a href="fr-eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
+        <a href="fr-ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033ad] text-sm md:text-base font-bold transition-all">ADA</a>
+        <a href="fr-xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
+        <a href="fr-sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <header class="text-center mb-16">
+        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#F7931A] drop-shadow-[0_0_15px_rgba(247,147,26,0.5)]">
+            BITCOIN
+        </h1>
+        <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
+            VIRES IN NUMERIS
+        </p>
+        <div class="inline-block px-3 py-1 border border-[#F7931A] text-[#F7931A] text-xs uppercase tracking-[0.2em] mb-8">
+            La Force du Nombre
+        </div>
+        
+        <div>
+            <a href="fr.html#products" class="inline-block bg-[#F7931A] text-black font-bold font-orbitron px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(247,147,26,0.3)]">
+                Acheter le T-Shirt BTC
+            </a>
+        </div>
+    </header>
+
+    <article class="wiki-content bg-brand-panel border border-[#F7931A]/20 p-6 md:p-12 relative overflow-hidden">
+        
+        <h2 style="margin-top:0;">Ce qu'est le Bitcoin — Droit au but</h2>
+        <p>Le Bitcoin est un système de cash électronique pair-à-pair conçu pour fonctionner sans confiance.</p>
+        <p>Son objectif principal est simple :</p>
+        <ul>
+            <li>offre fixe</li>
+            <li>validation décentralisée</li>
+            <li>transfert de valeur sans permission</li>
+        </ul>
+        <p>Le Bitcoin existe pour résoudre un seul problème : <strong class="text-white">une monnaie qui ne peut être ni inflatée, ni censurée, ni contrôlée.</strong></p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Le Problème Central — Argent Infini vs Ressources Finies</h2>
+        <p>La monnaie traditionnelle est créée par les banques centrales. Elle possède :</p>
+        <ul>
+            <li>une offre infinie</li>
+            <li>un contrôle politique</li>
+            <li>une inflation cachée</li>
+        </ul>
+        <p>Le Bitcoin a introduit l'opposé :</p>
+        <ul>
+            <li>un plafond strict de 21 millions</li>
+            <li>une émission prévisible</li>
+            <li>aucune autorité capable d'en imprimer plus</li>
+        </ul>
+        <p>Cela transforme la monnaie : elle passe d'une dette à une propriété.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Le Problème des Généraux Byzantins — Résolu</h2>
+        <p>Avant le Bitcoin, la monnaie décentralisée échouait à cause du Problème des Généraux Byzantins : Comment des acteurs indépendants peuvent-ils s'entendre sans se faire confiance ?</p>
+        <p>Le Bitcoin a résolu cela avec :</p>
+        <ul>
+            <li>la Preuve de Travail (Proof of Work)</li>
+            <li>des incitatifs économiques</li>
+            <li>la vérification cryptographique</li>
+        </ul>
+        <p>Le consensus n'est pas basé sur la confiance. Il est basé sur les mathématiques, l'énergie et la théorie des jeux.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Satoshi Nakamoto — La Disparition qui Comptait</h2>
+        <p>Le Bitcoin a été introduit en 2008 par <strong class="text-white">Satoshi Nakamoto</strong>, un créateur pseudonyme dont la véritable identité reste inconnue.</p>
+        <p>Il n'y a eu :</p>
+        <ul>
+            <li>aucun pré-minage</li>
+            <li>aucune allocation au fondateur</li>
+            <li>aucune direction centrale</li>
+        </ul>
+        <p>Cet anonymat n'est pas une faiblesse. C'est une fonctionnalité.</p>
+        <p>Il assure :</p>
+        <ul>
+            <li>aucune figure d'autorité</li>
+            <li>aucun point de défaillance unique</li>
+            <li>personne à pressurer, arrêter ou influencer</li>
+        </ul>
+        <p>Le Bitcoin n'appartient à personne. Et donc, à tout le monde.</p>
+        <p>Site original :<br><a href="https://bitcoin.org" target="_blank">https://bitcoin.org</a></p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Le Livre Blanc (Whitepaper)</h2>
+        <p>« Bitcoin: A Peer-to-Peer Electronic Cash System »<br>Publié : 31 octobre 2008</p>
+        <p>Livre Blanc :<br><a href="https://bitcoin.org/bitcoin.pdf" target="_blank">https://bitcoin.org/bitcoin.pdf</a></p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>La Communauté Bitcoin — Culture, Conviction et Maximalisme</h2>
+        <p>Le Bitcoin est plus qu'un logiciel. C'est une culture.</p>
+        <p>La communauté Bitcoin est reconnue pour :</p>
+        <ul>
+            <li>une conviction extrême</li>
+            <li>une vision à long terme</li>
+            <li>une résistance aux narratifs et au battage médiatique (hype)</li>
+        </ul>
+        <p>Les <strong class="text-white">Maximalistes Bitcoin</strong> croient que :</p>
+        <ul>
+            <li>le Bitcoin est la seule monnaie véritablement décentralisée</li>
+            <li>tout le reste est soit expérimental, soit compromis</li>
+            <li>la sécurité et la décentralisation comptent plus que la vitesse ou les fonctionnalités</li>
+        </ul>
+        <p>De l'extérieur, ça ressemble à une secte. De l'intérieur, c'est de la discipline.</p>
+        <p>Croyances communes :</p>
+        <ul>
+            <li>détenez vos propres clés</li>
+            <li>ne faites pas confiance, vérifiez</li>
+            <li>ignorez le bruit à court terme</li>
+            <li>pensez en décennies, pas en cycles</li>
+        </ul>
+        <p>Les Bitcoiners ne chassent pas les tendances. Ils attendent.</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Ce que le Bitcoin Est — Et ce qu'il n'est Pas</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-black/40 p-4 border-l-2 border-[#F7931A]">
+                <p class="uppercase text-xs tracking-widest text-[#F7931A] mb-2 font-bold">LE BITCOIN EST :</p>
+                <ul style="margin-bottom:0;">
+                    <li>décentralisé</li>
+                    <li>rare</li>
+                    <li>résistant à la censure</li>
+                    <li>sans permission</li>
+                </ul>
+            </div>
+            <div class="bg-black/40 p-4 border-l-2 border-gray-600">
+                <p class="uppercase text-xs tracking-widest text-gray-400 mb-2 font-bold">LE BITCOIN N'EST PAS :</p>
+                <ul style="margin-bottom:0;">
+                    <li>une compagnie</li>
+                    <li>une action en bourse</li>
+                    <li>contrôlé centralement</li>
+                    <li>inflationniste</li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-4">Il n'y a pas de PDG. Pas d'équipe marketing. Pas de bouton "reset".</p>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Chronologie Bitcoin — Événements Clés</h2>
+        <ul>
+            <li><strong>2008</strong> — Livre blanc publié par Satoshi Nakamoto</li>
+            <li><strong>2009</strong> — Bloc Genesis miné et lancement du réseau</li>
+            <li><strong>2010</strong> — Premier achat réel (10 000 BTC pour une pizza)</li>
+            <li><strong>2012</strong> — Premier halving (50 → 25 BTC)</li>
+            <li><strong>2013</strong> — Le Bitcoin gagne l'attention médiatique mondiale</li>
+            <li><strong>2016</strong> — Deuxième halving (25 → 12.5 BTC)</li>
+            <li><strong>2017</strong> — Le Bitcoin entre dans la conscience du public et les marchés à terme</li>
+            <li><strong>2020</strong> — Troisième halving (12.5 → 6.25 BTC). Début de l'accumulation institutionnelle</li>
+            <li><strong>2021</strong> — Le Bitcoin gagne une exposition boursière. Adoption par les trésoreries d'entreprises et ETF. Devient monnaie légale au Salvador</li>
+            <li><strong>2024</strong> — Quatrième halving (6.25 → 3.125 BTC)</li>
+            <li><strong>2025</strong> — Le Bitcoin est pleinement intégré aux marchés financiers mondiaux. Échangé aux côtés des actions, ETF et instruments souverains</li>
+        </ul>
+
+        <div class="wiki-divider"></div>
+
+        <h2>Dernier Appel au Réveil</h2>
+        <p>De 0.01 à 100k.<br>D'une expérience au marché boursier.</p>
+        <p class="text-xl text-white font-orbitron mt-6">Réveillez-vous.</p>
+        <p class="text-2xl text-[#F7931A] font-bold font-orbitron">Le Bitcoin s'en va vers l'infini.</p>
+    </article>
+
+    <div class="text-center mt-12">
+        <p class="text-gray-400 mb-6">Vous avez lu la thèse. Maintenant, portez le signal.</p>
+        <a href="fr.html#products" class="inline-block bg-[#F7931A] text-black font-bold font-orbitron px-12 py-5 text-lg uppercase tracking-wider hover:bg-white hover:text-black transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(247,147,26,0.4)]">
+            ACHETER T-SHIRT BTC
+        </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-brand-green/20 bg-black py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTRÉAL // INTERNATIONAL</p>
+      <div class="mt-6 flex justify-center gap-6 text-xs">
+        <a href="fr.html" class="text-gray-500 hover:text-brand-green transition-colors">ACCUEIL</a>
+        <a href="fr.html#products" class="text-gray-500 hover:text-brand-green transition-colors">BOUTIQUE</a>
+        <a href="fr.html#contact" class="text-gray-500 hover:text-brand-green transition-colors">CONTACT</a>
+      </div>
+      <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
+    </div>
+  </footer>
+
+  <script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("hidden");}</script>
+</body>
+</html>
