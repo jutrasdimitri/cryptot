@@ -50,6 +50,9 @@
     }
     /* Currency switcher active state */
     .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
+
+    /* ABOUT THEM tab active state (NEW) */
+    .about-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: 900; border-color: rgba(57,255,20,.65); background: rgba(57,255,20,.08); }
   </style>
 
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
@@ -106,8 +109,7 @@
 
     <div id="mobileMenu" class="hidden md:hidden">
       <div class="fixed inset-0 z-[70]" aria-hidden="true">
-        <!-- CHANGED: was bg-black/80 backdrop-blur-sm -->
-        <div class="absolute inset-0 bg-black/95" onclick="closeMobileMenu()"></div>
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
 
         <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-brand-panel border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
           <div class="flex items-center justify-between mb-6">
@@ -120,13 +122,11 @@
           </div>
 
           <div class="flex flex-col gap-3">
-            <!-- CHANGED: bg-black/30 -> bg-black/75 -->
-            <a href="#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/75 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ THE_POWER_5 ]</a>
-            <a href="#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/75 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTO ]</a>
-            <a href="#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/75 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
+            <a href="#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ THE_POWER_5 ]</a>
+            <a href="#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTO ]</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
             
-            <!-- CHANGED: bg-black/30 -> bg-black/75 -->
-            <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/75">
+            <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/30">
                <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
                <span class="text-gray-600">|</span>
                <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
@@ -273,6 +273,363 @@
 
     </div>
   </main>
+
+  <!-- ✅ NEW SECTION: ABOUT THEM (Power 5 Education) -->
+  <section id="about" class="py-24 bg-black border-t border-brand-green/20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-orbitron text-white mb-6 border-l-4 border-brand-green pl-4">ABOUT THEM_</h2>
+      <p class="text-gray-400 max-w-3xl mb-10">
+        Pick a protocol. Learn the purpose. Understand the thesis. Wear the signal.
+        <span class="text-brand-green">You are early.</span>
+      </p>
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap gap-3 mb-8">
+        <button class="about-btn active border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="BTC" onclick="showAbout('BTC')">BTC</button>
+        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="ETH" onclick="showAbout('ETH')">ETH</button>
+        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="ADA" onclick="showAbout('ADA')">ADA</button>
+        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="XRP" onclick="showAbout('XRP')">XRP</button>
+        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
+                data-about="SOL" onclick="showAbout('SOL')">SOL</button>
+      </div>
+
+      <!-- Content container -->
+      <div class="bg-brand-panel border border-brand-green/30 shadow-[0_0_18px_rgba(57,255,20,0.08)] p-6 md:p-10">
+
+        <!-- BTC -->
+        <div class="about-panel" id="about-BTC">
+          <div class="flex items-start justify-between gap-6 flex-wrap">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">BITCOIN — <span class="text-brand-green">VIRES IN NUMERIS</span></h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest mb-6">Peer-to-Peer Money. Fixed Supply. Absolute Scarcity.</p>
+            </div>
+            <div class="flex gap-3">
+              <button onclick="openModal('BTC // VIRES IN NUMERIS')" class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">Order BTC</button>
+              <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Whitepaper
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-6 text-[15px] md:text-base">
+            <p>Bitcoin was created to solve one core problem:</p>
+            <p>money that can be inflated, censored, or controlled by intermediaries.</p>
+            <p>At its heart, Bitcoin is peer-to-peer electronic cash — a system that allows anyone, anywhere in the world, to send value without trusting a bank, a government, or a third party.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">The Core Idea</h4>
+            <p>21 million coins. Forever.</p>
+            <p>No central issuer.</p>
+            <p>No money printing.</p>
+            <p>No bailouts.</p>
+            <p>Inflation is not an accident — it is a feature of the traditional banking system.</p>
+            <p>Banks create money out of debt, silently eroding purchasing power over time.</p>
+            <p>Bitcoin fixes this.</p>
+            <p>Because Bitcoin cannot be printed, it becomes a neutral, global medium of exchange and a long-term store of value.</p>
+            <p>Scarcity is not marketing — it is enforced by code.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">The Byzantine Problem</h4>
+            <p>Bitcoin solved the Byzantine Generals Problem:</p>
+            <p>how strangers can agree on truth without trusting each other.</p>
+            <p>Through Proof of Work and decentralized consensus, Bitcoin created:</p>
+            <p>Immutable history</p>
+            <p>Unforgeable cost</p>
+            <p>Absolute finality</p>
+            <p>For the first time in history, digital scarcity existed.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Satoshi Nakamoto</h4>
+            <p>Bitcoin was introduced in 2008 by Satoshi Nakamoto, an anonymous founder who disappeared after launching the network.</p>
+            <p>No leader.</p>
+            <p>No CEO.</p>
+            <p>No foundation.</p>
+            <p>Bitcoin belongs to no one — and therefore, to everyone.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Timeline</h4>
+            <p>2008 — Bitcoin whitepaper released</p>
+            <p>2009 — Genesis block mined</p>
+            <p>2010 — First real-world transaction (10,000 BTC for pizza)</p>
+            <p>2012–2020 — Adoption, halvings, network hardening</p>
+            <p>2021–2025 — Institutional adoption, ETFs, nation-state interest</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">What Bitcoin Is</h4>
+            <p>Digital gold</p>
+            <p>Final settlement layer</p>
+            <p>Monetary base for the future</p>
+            <p>Bitcoin is not here to replace Visa.</p>
+            <p>Bitcoin is here to replace central banks.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Final Thought</h4>
+            <p>Wake up.</p>
+            <p>Bitcoin’s supply is fixed.</p>
+            <p>Global demand is not.</p>
+            <p>Every currency will eventually be priced in Bitcoin.</p>
+            <p class="text-brand-green font-bold text-xl">// You are early.</p>
+          </div>
+        </div>
+
+        <!-- ETH -->
+        <div class="about-panel hidden" id="about-ETH">
+          <div class="flex items-start justify-between gap-6 flex-wrap">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">ETHEREUM — <span class="text-brand-green">CODE IS LAW</span></h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest mb-6">Bitcoin was money. But money wasn’t enough.</p>
+            </div>
+            <div class="flex gap-3">
+              <button onclick="openModal('ETH // CODE IS LAW')" class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">Order ETH</button>
+              <a href="https://ethereum.org/en/whitepaper/" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Whitepaper
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-6 text-[15px] md:text-base">
+            <p>Bitcoin was money. But money wasn’t enough.</p>
+            <p>Bitcoin proved that decentralized value transfer was possible.</p>
+            <p>Ethereum asked the next question:</p>
+            <p>What if blockchains could run programs?</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">The Core Idea</h4>
+            <p>Ethereum is a global, decentralized computer.</p>
+            <p>It allows developers to deploy smart contracts — unstoppable programs that run exactly as written, without intermediaries.</p>
+            <p>This enables:</p>
+            <p>DeFi (banks without banks)</p>
+            <p>NFTs (digital ownership)</p>
+            <p>DAOs (organizations without CEOs)</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Why Ethereum Exists</h4>
+            <p>Bitcoin is optimized for security and scarcity.</p>
+            <p>Ethereum is optimized for programmability.</p>
+            <p>Ethereum didn’t replace Bitcoin — it extended the blockchain idea.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Vitalik Buterin</h4>
+            <p>Ethereum was proposed in 2013 by Vitalik Buterin, a young developer who saw that Bitcoin’s scripting language was intentionally limited.</p>
+            <p>Vitalik envisioned a general-purpose blockchain.</p>
+            <p>The result was Ethereum.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">The Ethereum Virtual Machine (EVM)</h4>
+            <p>The EVM allows any developer to deploy code that:</p>
+            <p>Cannot be censored</p>
+            <p>Cannot be altered</p>
+            <p>Cannot be stopped</p>
+            <p>This is why Ethereum became the backbone of Web3.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Timeline</h4>
+            <p>2015 — Ethereum launches</p>
+            <p>2017 — ICO boom</p>
+            <p>2020 — DeFi explosion</p>
+            <p>2022 — Ethereum transitions to Proof of Stake</p>
+            <p>2023–2025 — Layer 2 scaling, global adoption</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">What Ethereum Replaces</h4>
+            <p>Traditional finance infrastructure</p>
+            <p>Middlemen</p>
+            <p>Trusted third parties</p>
+            <p>Ethereum is not a company.</p>
+            <p>It is infrastructure.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Final Thought</h4>
+            <p>Bitcoin is digital gold.</p>
+            <p>Ethereum is digital law.</p>
+            <p class="text-brand-green font-bold text-xl">// You are early.</p>
+          </div>
+        </div>
+
+        <!-- ADA -->
+        <div class="about-panel hidden" id="about-ADA">
+          <div class="flex items-start justify-between gap-6 flex-wrap">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">CARDANO — <span class="text-brand-green">PEER REVIEWED</span></h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest mb-6">The Bitcoin of Altcoins.</p>
+            </div>
+            <div class="flex gap-3">
+              <button onclick="openModal('ADA // PEER REVIEWED')" class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">Order ADA</button>
+              <a href="https://whitepaper.io/document/581/cardano-whitepaper" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Whitepaper
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-6 text-[15px] md:text-base">
+            <p>The Bitcoin of Altcoins.</p>
+            <p>Bitcoin introduced scarcity.</p>
+            <p>Ethereum introduced programmability.</p>
+            <p>Cardano was built to combine both — correctly.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">The Core Idea</h4>
+            <p>Cardano is a peer-reviewed, research-driven blockchain designed for:</p>
+            <p>Global scale</p>
+            <p>Long-term sustainability</p>
+            <p>Formal verification</p>
+            <p>It uses the UTXO model, like Bitcoin — not account-based like Ethereum.</p>
+            <p>This makes it:</p>
+            <p>More secure</p>
+            <p>More predictable</p>
+            <p>More scalable long term</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">“And Then Came Charles”</h4>
+            <p>Charles Hoskinson was an early contributor to Bitcoin and a co-founder of Ethereum.</p>
+            <p>When Ethereum chose speed over formal rigor, Charles walked away.</p>
+            <p>He didn’t fork Ethereum.</p>
+            <p>He didn’t rush.</p>
+            <p>He built Cardano.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Why Cardano Exists</h4>
+            <p>Cardano was designed as:</p>
+            <p>The Bitcoin philosophy</p>
+            <p>Applied to smart contracts</p>
+            <p>With academic rigor</p>
+            <p>Every protocol upgrade is peer-reviewed by cryptographers and researchers.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Africa & Real-World Adoption</h4>
+            <p>Cardano focuses on real adoption:</p>
+            <p>Digital identity</p>
+            <p>Financial inclusion</p>
+            <p>Emerging markets</p>
+            <p>Africa is not a testnet — it is the future.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Timeline</h4>
+            <p>2017 — Cardano launches</p>
+            <p>2020 — Shelley (decentralization)</p>
+            <p>2021 — Smart contracts (Alonzo)</p>
+            <p>2022–2023 — Governance & scaling</p>
+            <p>2024–2025 — High throughput, real-world deployment</p>
+            <p>Slow? Maybe.</p>
+            <p>Careful? Absolutely.</p>
+            <p>By 2025, Cardano is no longer slow — it is ready.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Final Thought</h4>
+            <p>Bitcoin secured money.</p>
+            <p>Ethereum unleashed code.</p>
+            <p>Cardano is building civilization-grade infrastructure.</p>
+            <p class="text-brand-green font-bold text-xl">// You are early.</p>
+          </div>
+        </div>
+
+        <!-- XRP -->
+        <div class="about-panel hidden" id="about-XRP">
+          <div class="flex items-start justify-between gap-6 flex-wrap">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">XRP — <span class="text-brand-green">THE STANDARD</span></h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest mb-6">The bridge between the old world and the new.</p>
+            </div>
+            <div class="flex gap-3">
+              <button onclick="openModal('XRP // THE STANDARD')" class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">Order XRP</button>
+              <a href="https://xrpl.org/docs/" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Docs
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-6 text-[15px] md:text-base">
+            <p>The bridge between the old world and the new.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">The Core Idea</h4>
+            <p>XRP was designed to solve one problem: global payments.</p>
+            <p>Sending money across borders is slow, expensive, and fragmented.</p>
+            <p>XRP enables:</p>
+            <p>Instant settlement</p>
+            <p>Low fees</p>
+            <p>High liquidity</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Ripple & Institutions</h4>
+            <p>XRP is closely associated with Ripple, a company focused on integrating blockchain with banks and financial institutions.</p>
+            <p>XRP is not anti-banks.</p>
+            <p>It is post-banks.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">The SEC Case</h4>
+            <p>XRP became the most battle-tested crypto asset in history.</p>
+            <p>After years of legal uncertainty, U.S. courts ruled that XRP is not a security in secondary markets.</p>
+            <p>This case brought regulatory clarity to the entire crypto space.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Timeline</h4>
+            <p>2012 — XRP Ledger launches</p>
+            <p>2017 — Global awareness</p>
+            <p>2020–2023 — SEC lawsuit</p>
+            <p>2024–2025 — Institutional re-integration</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">What XRP Replaces</h4>
+            <p>SWIFT</p>
+            <p>Nostro/Vostro accounts</p>
+            <p>Friction in global finance</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Final Thought</h4>
+            <p>Bitcoin is money.</p>
+            <p>Ethereum is logic.</p>
+            <p>XRP is movement.</p>
+            <p class="text-brand-green font-bold text-xl">// You are early.</p>
+          </div>
+        </div>
+
+        <!-- SOL -->
+        <div class="about-panel hidden" id="about-SOL">
+          <div class="flex items-start justify-between gap-6 flex-wrap">
+            <div>
+              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">SOLANA — <span class="text-brand-green">HISTORY IS THE PROOF</span></h3>
+              <p class="text-gray-400 text-sm uppercase tracking-widest mb-6">Speed, at the speed of light.</p>
+            </div>
+            <div class="flex gap-3">
+              <button onclick="openModal('SOL // PROOF OF HISTORY')" class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">Order SOL</button>
+              <a href="https://solana.com/solana-whitepaper.pdf" target="_blank" rel="noopener noreferrer"
+                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+                Whitepaper
+              </a>
+            </div>
+          </div>
+
+          <div class="text-gray-300 leading-relaxed space-y-6 text-[15px] md:text-base">
+            <p>Speed, at the speed of light.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">The Core Idea</h4>
+            <p>Solana was built to solve one thing: performance.</p>
+            <p>It introduces Proof of History, a cryptographic clock that orders transactions before consensus.</p>
+            <p>This enables:</p>
+            <p>Massive throughput</p>
+            <p>Low latency</p>
+            <p>Near-zero fees</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Why Solana Exists</h4>
+            <p>Ethereum scaled through layers.</p>
+            <p>Solana scaled at the base layer.</p>
+            <p>Different philosophy.</p>
+            <p>Same destination.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Timeline</h4>
+            <p>2020 — Solana launches</p>
+            <p>2021 — Explosive growth</p>
+            <p>2022 — Stress test & survival</p>
+            <p>2023–2025 — Maturity & stability</p>
+            <p>Solana didn’t die.</p>
+            <p>It adapted.</p>
+
+            <h4 class="font-orbitron text-xl text-white pt-2">Final Thought</h4>
+            <p>History is written by winners.</p>
+            <p>On Solana, history is the proof.</p>
+            <p class="text-brand-green font-bold text-xl">// You are early.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between border-t border-white/10 pt-8">
+        <div class="text-gray-400 text-sm">
+          Want the signal on fabric?
+          <span class="text-brand-green font-bold">Wear Your Assets.</span>
+        </div>
+        <a href="#products" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+          Back to The Power 5
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <!-- ✅ END NEW SECTION -->
 
   <section id="manifesto" class="py-24 bg-brand-panel border-t border-brand-green/20 relative">
     <div class="max-w-4xl mx-auto px-4 text-center">
@@ -427,9 +784,22 @@
       });
     }
 
+    // ✅ NEW: About Them tab switcher
+    function showAbout(symbol) {
+      document.querySelectorAll(".about-panel").forEach(p => p.classList.add("hidden"));
+      const target = document.getElementById("about-" + symbol);
+      if (target) target.classList.remove("hidden");
+
+      document.querySelectorAll(".about-btn").forEach(btn => {
+        if (btn.getAttribute("data-about") === symbol) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+    }
+
     // Auto-init on load
     document.addEventListener("DOMContentLoaded", () => {
       setCurrency("USD");
+      showAbout("BTC"); // ✅ Default tab opens BTC
     });
 
     // Mobile menu toggle
