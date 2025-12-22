@@ -48,7 +48,6 @@
       position:absolute; left:-9999px; top:auto;
       width:1px; height:1px; overflow:hidden;
     }
-    /* Currency switcher active state */
     .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
   </style>
 
@@ -57,13 +56,7 @@
 
 <body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
 
-  <div id="coinmarketcap-widget-marquee"
-       coins="1,1027,2010,52,5426"
-       currency="USD"
-       theme="dark"
-       transparent="false"
-       show-symbol-logo="true"
-       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+  <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="CAD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,14 +70,14 @@
 
         <div class="hidden md:flex items-center space-x-6">
           <a href="#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ LE_POWER_5 ]</a>
-          <a href="fr-btc.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ À_PROPOS ]</a>
+          <a href="fr-btc.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ À_PROPOS_D'EUX ]</a>
           <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTE ]</a>
           <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT ]</a>
           
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
-            <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
+            <button onclick="setCurrency('USD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
             <span class="text-gray-700">/</span>
-            <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
+            <button onclick="setCurrency('CAD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
             <span class="text-gray-700">/</span>
             <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
           </div>
@@ -92,63 +85,38 @@
           <a href="index.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
         </div>
 
-        <button type="button"
-                class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
-                aria-label="Open menu"
-                aria-controls="mobileMenu"
-                aria-expanded="false"
-                onclick="toggleMobileMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
+        <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMobileMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
 
-    <div id="mobileMenu" class="hidden md:hidden">
-      <div class="fixed inset-0 z-[70]" aria-hidden="true">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
-
-        <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-black border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
-          <div class="flex items-center justify-between mb-6">
-            <div class="text-xs text-gray-400 uppercase tracking-widest">MENU</div>
-            <button type="button" class="text-gray-400 hover:text-brand-green" aria-label="Close menu" onclick="closeMobileMenu()">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </button>
-          </div>
-
-          <div class="flex flex-col gap-3">
-            <a href="#products" onclick="closeMobileMenu()" class="border border-white/10 bg-gray-900 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ LE_POWER_5 ]</a>
-            <a href="fr-btc.html" onclick="closeMobileMenu()" class="border border-brand-green/40 bg-gray-900 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm">[ À_PROPOS ]</a>
-            <a href="#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-gray-900 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTE ]</a>
-            <a href="#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-gray-900 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT ]</a>
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black border-l border-brand-green/20 p-6 top-[62px]">
+        <div class="flex flex-col gap-6 text-center mt-10">
+            <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">BOUTIQUE</a>
+            <a href="fr-btc.html" onclick="closeMobileMenu()" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">À PROPOS D'EUX</a>
+            <a href="#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTE</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
             
             <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-gray-900">
-               <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
+               <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
                <span class="text-gray-600">|</span>
-               <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
+               <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
                <span class="text-gray-600">|</span>
                <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
             </div>
 
             <a href="index.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">ENGLISH</a>
-          </div>
-
-          <div class="mt-8 border-t border-white/10 pt-4 text-[11px] text-gray-500">
-            Statut : <span class="text-brand-green">En Ligne</span>
-          </div>
         </div>
-      </div>
+        <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ FERMER ]</button>
     </div>
   </nav>
 
   <header class="py-20 text-center relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
     <div class="relative z-10 px-4">
-      <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-        PORTEZ VOS <span class="text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.8)]">ACTIFS</span>
+      <h1 class="text-4xl md:text-6xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+        PORTEZ VOTRE <span class="text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.8)]">VALEUR NETTE</span>
       </h1>
       <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10">
         Streetwear crypto premium. Impressions haute qualité.
@@ -165,16 +133,16 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-          <img src="btc.jpg" alt="BTC VIRES IN NUMERIS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#F7931A] border border-[#F7931A] font-bold">Dispo Maintenant</div>
+        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+          <img src="btc.jpg" alt="BTC VIRES IN NUMERIS" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#F7931A] border border-[#F7931A] font-bold">Disponible</div>
         </div>
         <div class="p-6">
           <h3 class="font-orbitron text-xl text-white mb-1">BTC // VIRES IN NUMERIS</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Réserve de Valeur</p>
-          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">L'original. Décentralisé, rare et immuable. La logique "Orange Pill" sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard : Noir // <span class="text-white">Couleurs sur Demande</span></p>
-
+          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">L'original. Décentralisé, rare et immuable. La logique Orange Pill sur du Noir.</p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
+          
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
               <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
@@ -193,15 +161,15 @@
       </div>
 
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-          <img src="eth.jpg" alt="ETH CODE IS LAW" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#627EEA] border border-[#627EEA] font-bold">Dispo Maintenant</div>
+        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+          <img src="eth.jpg" alt="ETH CODE IS LAW" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#627EEA] border border-[#627EEA] font-bold">Disponible</div>
         </div>
         <div class="p-6">
           <h3 class="font-orbitron text-xl text-white mb-1">ETH // CODE IS LAW</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Contrats Intelligents</p>
           <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">L'ordinateur mondial. Carburant déflationniste pour le futur. Bleu Holographique sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard : Noir // <span class="text-white">Couleurs sur Demande</span></p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
@@ -221,15 +189,15 @@
       </div>
 
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-          <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#0033ad] border border-[#0033ad] font-bold">Dispo Maintenant</div>
+        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+          <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#0033ad] border border-[#0033ad] font-bold">Disponible</div>
         </div>
         <div class="p-6">
           <h3 class="font-orbitron text-xl text-white mb-1">ADA // PEER REVIEWED</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Basé sur la Recherche</p>
           <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">Rigueur académique et gouvernance décentralisée. Bleu Électrique Néon sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard : Noir // <span class="text-white">Couleurs sur Demande</span></p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
@@ -249,15 +217,15 @@
       </div>
 
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-          <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-white border border-white font-bold">Dispo Maintenant</div>
+        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+          <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-white border border-white font-bold">Disponible</div>
         </div>
         <div class="p-6">
           <h3 class="font-orbitron text-xl text-white mb-1">XRP // THE STANDARD</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Fournisseur de Liquidité</p>
           <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">Le pont entre l'ancien monde et le nouveau. Énergie Platine Pure sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard : Noir // <span class="text-white">Couleurs sur Demande</span></p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
@@ -277,15 +245,15 @@
       </div>
 
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-80 bg-gray-900 overflow-hidden relative">
-          <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-[#9945FF] border border-[#14F195] font-bold">Dispo Maintenant</div>
+        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+          <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-[#9945FF] border border-[#14F195] font-bold">Disponible</div>
         </div>
         <div class="p-6">
           <h3 class="font-orbitron text-xl text-white mb-1">SOL // PROOF OF HISTORY</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Layer 1 Ultra-Rapide</p>
-          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">La vitesse à la vitesse de la lumière. Esthétique Vaporwave Dégradée sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard : Noir // <span class="text-white">Couleurs sur Demande</span></p>
+          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">La vitesse à la vitesse de la lumière. Esthétique Vaporwave Dégradé sur Noir.</p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
@@ -310,10 +278,10 @@
         </div>
         <h3 class="font-orbitron text-xl text-white mb-2">COMMANDE SPÉCIALE</h3>
         <p class="text-gray-400 text-sm mb-6 max-w-xs">
-            Besoin d'une autre crypto, d'une <strong class="text-brand-green">couleur spécifique</strong> ou d'un <strong class="text-brand-green">logo personnalisé</strong> ? Nous faisons tout sur demande.
+            Vous ne voyez pas votre coin préféré ? Nous offrons des <strong class="text-brand-green">couleurs personnalisées</strong>, <strong class="text-brand-green">création de logo</strong> et n'importe quel ticker. Demandez-le.
         </p>
-        <button onclick="openModal('CUSTOM REQUEST')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-          DEMANDER CUSTOM
+        <button onclick="openModal('DEMANDE SPÉCIALE')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+          Faire une demande
         </button>
       </div>
 
@@ -327,12 +295,12 @@
       </h2>
       <div class="text-gray-300 text-lg leading-relaxed space-y-6">
         <p>Nous ne faisons pas confiance aux banques. Nous faisons confiance au code.</p>
-        <p>La monnaie fiat est une dette. La crypto est une propriété.</p>
-        <p>Nous portons nos actifs parce que nous croyons en l'avenir de l'argent.</p>
+        <p>La monnaie fiduciaire est une dette. La crypto est la propriété.</p>
+        <p>Nous portons nos actifs car nous croyons au futur de l'argent.</p>
         <div class="mt-12 pt-8 border-t border-brand-green/10">
-          <p class="text-gray-500 italic mb-4">"Tous les profits des ventes seront remis dans le marché en leverage... pour se faire liquider."</p>
-          <p class="text-gray-400">Blague à part, soyez prudents tout le monde !</p>
-          <p class="text-brand-green font-bold mt-4 text-xl">// Not your keys, not your crypto.</p>
+          <p class="text-gray-500 italic mb-4">"Tous les profits des ventes seront réinvestis dans le marché en levier... pour être liquidés."</p>
+          <p class="text-gray-400">Blague à part, soyez prudents !</p>
+          <p class="text-brand-green font-bold mt-4 text-xl">// Pas vos clés, pas vos cryptos.</p>
         </div>
       </div>
     </div>
@@ -349,7 +317,7 @@
         </div>
       </div>
       <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
-      <p class="text-gray-500 text-xs">EST. 2025 // MONTRÉAL // INTERNATIONAL</p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTRÉAL // MONDE ENTIER</p>
       <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
     </div>
   </footer>
@@ -366,20 +334,20 @@
       <p class="text-brand-green text-xs mb-6">CONNEXION CHIFFRÉE //</p>
 
       <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
-        <div class="text-brand-green text-xs tracking-widest">COMMANDE INITIÉE // VÉRIFIEZ VOS EMAILS</div>
-        <div class="text-gray-400 text-[11px] mt-1">Si vous ne le voyez pas, vérifiez vos spams. Les instructions de paiement suivront.</div>
+        <div class="text-brand-green text-xs tracking-widest">COMMANDE INITIÉE // VÉRIFIEZ VOTRE EMAIL</div>
+        <div class="text-gray-400 text-[11px] mt-1">Si vous ne le voyez pas, regardez les spams. Les instructions de paiement suivent séparément.</div>
       </div>
 
       <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
 
       <form id="orderForm" class="space-y-4" novalidate>
         <label class="hp-field" aria-hidden="true">
-          Compagnie
+          Company
           <input type="text" name="company" autocomplete="off" tabindex="-1">
         </label>
         <input type="hidden" name="ts" id="orderTs" value="">
         <input type="hidden" id="productInput" name="Product" value="">
-        <input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
+        <input type="hidden" id="currencyInput" name="SelectedCurrency" value="CAD">
 
         <div>
           <label class="block text-gray-400 text-xs mb-1 uppercase">Article Sélectionné</label>
@@ -404,7 +372,7 @@
         <div>
           <label class="block text-gray-400 text-xs mb-1 uppercase">Méthode de Paiement</label>
           <select name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
-            <option>Virement Interac (e-Transfer)</option>
+            <option>Virement Interac</option>
             <option>Bitcoin (BTC)</option>
             <option>Ethereum (ETH)</option>
             <option>Cardano (ADA)</option>
@@ -414,24 +382,24 @@
         </div>
 
         <div>
-          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse E-mail</label>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse Email</label>
           <input type="email" name="Email" required placeholder="satoshi@nakamoto.com" autocomplete="email"
                  class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none placeholder-gray-600">
         </div>
 
         <div>
-          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse de Livraison</label>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse d'expédition</label>
           <textarea name="Address" required rows="3" placeholder="Adresse complète..." autocomplete="shipping street-address"
                     class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none placeholder-gray-600"></textarea>
         </div>
 
         <button id="submitBtn" type="submit"
                 class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">
-          INITIER LA COMMANDE
+          LANCER LA COMMANDE
         </button>
 
         <p class="text-center text-gray-500 text-[10px] mt-2">
-          Les instructions de paiement (Interac/Crypto) seront envoyées à votre e-mail immédiatement après la confirmation.
+          Les instructions de paiement (Interac/Crypto) seront envoyées à votre email immédiatement après la confirmation.
         </p>
       </form>
     </div>
@@ -442,11 +410,11 @@
 
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
     const symbols = { USD: "$", CAD: "$", EUR: "€" };
-    let currentCurrency = "USD";
+    // Par défaut en CAD pour le site français
+    let currentCurrency = "CAD";
 
     function setCurrency(curr) {
       currentCurrency = curr;
-      
       const currInput = document.getElementById("currencyInput");
       if(currInput) currInput.value = curr;
 
@@ -466,7 +434,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      setCurrency("USD");
+      setCurrency("CAD"); // Force CAD au chargement
     });
 
     const mobileMenuEl = document.getElementById("mobileMenu");
@@ -507,7 +475,7 @@
       const btn = document.getElementById("submitBtn");
       btn.disabled = false;
       btn.classList.remove("opacity-60", "cursor-not-allowed");
-      btn.textContent = "INITIER LA COMMANDE";
+      btn.textContent = "LANCER LA COMMANDE";
 
       document.getElementById("orderTs").value = String(Date.now());
     }
@@ -563,7 +531,7 @@
 
       submitBtn.disabled = true;
       submitBtn.classList.add("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "ENVOI EN COURS...";
+      submitBtn.textContent = "ENVOI...";
 
       try {
         const payload = Object.fromEntries(fd.entries());
@@ -577,7 +545,7 @@
         if (!res.ok) {
           const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
             ? data.errors[0].message
-            : "Échec de la commande. Veuillez réessayer.";
+            : "Échec de la commande. Réessayez.";
           throw new Error(msg);
         }
 
@@ -589,7 +557,7 @@
 
         submitBtn.disabled = false;
         submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        submitBtn.textContent = "INITIER LA COMMANDE";
+        submitBtn.textContent = "LANCER LA COMMANDE";
       }
     });
   </script>
