@@ -20,7 +20,7 @@
             "brand-green": "#39ff14",
             "brand-black": "#0a0a0a",
             "brand-panel": "#111111",
-            "btc-orange": "#F7931A", 
+            "btc-orange": "#F7931A",
           },
           fontFamily: {
             orbitron: ["Orbitron", "sans-serif"],
@@ -59,10 +59,10 @@
     .logo-strip .lbl{
       letter-spacing: .22em; font-size: 10px; color: rgba(255,255,255,.55); text-transform: uppercase; white-space: nowrap;
     }
-    
+   
     /* ICONS SIZING */
     .picon{
-      width: 34px; height: 22px; 
+      width: 34px; height: 22px;
       display:inline-flex; align-items:center; justify-content:center;
       opacity: .92; filter: drop-shadow(0 0 10px rgba(57,255,20,0.05));
       transition: opacity .15s ease, transform .15s ease;
@@ -111,6 +111,11 @@
         opacity: 0.4;
     }
 
+    /* COIN NAV BUTTONS */
+    .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
+    .nav-coin-btn:hover { opacity: 1; border-color: white; }
+    .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+
     /* Keep nav compact */
     @media (max-width: 1100px){ .nav-accepted { display:none; } }
   </style>
@@ -156,7 +161,7 @@
           <a href="btc.html" class="text-sm text-brand-green font-bold uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">ABOUT_THEM</a>
           <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTO</a>
           <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT_US</a>
-          
+         
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
              <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
              <span class="text-gray-700">/</span>
@@ -180,7 +185,7 @@
         <a href="index.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
         <a href="index.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
         <a href="fr-btc.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
-        
+       
         <div class="logo-strip rounded px-3 py-3">
           <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
           <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
@@ -190,8 +195,18 @@
     </div>
   </nav>
 
+  <div class="sticky top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
+        <a href="btc.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#F7931A]" style="border-color: #F7931A;">BTC</a>
+        <a href="eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
+        <a href="ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033ad] text-sm md:text-base font-bold transition-all">ADA</a>
+        <a href="xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
+        <a href="sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
+    </div>
+  </div>
+
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    
+   
     <div class="text-center mb-16">
         <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#F7931A] drop-shadow-[0_0_15px_rgba(247,147,26,0.5)]">
             BITCOIN
@@ -205,7 +220,7 @@
     </div>
 
     <article class="wiki-content bg-brand-panel border border-[#F7931A]/20 p-6 md:p-12 relative overflow-hidden mb-24">
-       
+      
         <h2 style="margin-top:0;">What Bitcoin Is — Straight to the Point</h2>
         <p>Bitcoin is a peer-to-peer electronic cash system designed to operate without trust.</p>
         <p>Its core purpose is simple:</p>
@@ -372,7 +387,7 @@
             <span class="text-[#F7931A] text-sm mb-2 animate-pulse">● In Stock</span>
           </div>
           <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6">Free International Shipping // Encrypted Checkout</p>
-          
+         
           <button onclick="openModal('BTC','BTC // VIRES IN NUMERIS')" class="w-full py-4 bg-[#F7931A] text-black font-black text-xl hover:bg-white transition-all uppercase font-orbitron tracking-widest shadow-[0_0_20px_rgba(247,147,26,0.3)] hover:shadow-[0_0_30px_rgba(247,147,26,0.6)]">
             SECURE ORDER NOW
           </button>
@@ -460,7 +475,7 @@
 
     // MODAL & PAYMENTS
     const orderForm = document.getElementById("orderForm"); const statusBox = document.getElementById("orderStatusBox"); const errorBox = document.getElementById("orderErrorBox"); const submitBtn = document.getElementById("submitBtn"); const paySelect = document.getElementById("paymentSelect"); const payLogosRow = document.getElementById("payLogosRow");
-    
+   
     function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
       document.getElementById("productKey").value = productKey;
@@ -472,7 +487,7 @@
       if (paySelect) paySelect.value = "CARD"; updatePaymentUI();
     }
     function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency; } }
-    
+   
     function updatePaymentUI(){
       payLogosRow.innerHTML = "";
       const mode = paySelect.value;
