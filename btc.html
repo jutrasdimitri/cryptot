@@ -20,7 +20,7 @@
             "brand-green": "#39ff14",
             "brand-black": "#0a0a0a",
             "brand-panel": "#111111",
-            "btc-orange": "#F7931A",
+            "btc-orange": "#F7931A", 
           },
           fontFamily: {
             orbitron: ["Orbitron", "sans-serif"],
@@ -59,10 +59,10 @@
     .logo-strip .lbl{
       letter-spacing: .22em; font-size: 10px; color: rgba(255,255,255,.55); text-transform: uppercase; white-space: nowrap;
     }
-   
+    
     /* ICONS SIZING */
     .picon{
-      width: 34px; height: 22px;
+      width: 34px; height: 22px; 
       display:inline-flex; align-items:center; justify-content:center;
       opacity: .92; filter: drop-shadow(0 0 10px rgba(57,255,20,0.05));
       transition: opacity .15s ease, transform .15s ease;
@@ -71,7 +71,7 @@
     .picon:hover{ opacity: 1; transform: translateY(-1px); }
     .hero-icons .picon, .modal-icons .picon{ width: 40px; height: 26px; }
 
-    /* --- TON STYLE WIKI (RESPECTÉ À 100%) --- */
+    /* --- TON STYLE WIKI (RESPECTÉ) --- */
     .wiki-content h2 {
         font-family: 'Orbitron', sans-serif;
         color: white;
@@ -153,8 +153,10 @@
 
         <div class="hidden md:flex items-center space-x-6">
           <a href="index.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">THE_POWER_5</a>
-          <a href="#" class="text-sm text-brand-green font-bold uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">ABOUT_THIS_ASSET</a>
+          <a href="btc.html" class="text-sm text-brand-green font-bold uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">ABOUT_THEM</a>
           <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTO</a>
+          <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT_US</a>
+          
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
              <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
              <span class="text-gray-700">/</span>
@@ -174,10 +176,11 @@
     <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
       <div class="flex flex-col gap-6 text-center mt-10">
         <a href="index.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP ALL</a>
-        <a href="#" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THIS ASSET</a>
+        <a href="btc.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THEM</a>
         <a href="index.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
+        <a href="index.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
         <a href="fr-btc.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
-       
+        
         <div class="logo-strip rounded px-3 py-3">
           <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
           <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
@@ -188,44 +191,21 @@
   </nav>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-   
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-24">
-      <div class="relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-[#F7931A] to-yellow-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-        <div class="relative bg-black border border-[#F7931A]/30 p-2">
-          <img src="btc.jpg" alt="Bitcoin Tee" class="w-full h-[600px] object-cover object-top shadow-2xl">
-        </div>
-      </div>
-
-      <div class="sticky top-32">
-        <div class="border-l-4 border-[#F7931A] pl-6 mb-8">
-          <h1 class="text-5xl md:text-6xl font-black font-orbitron text-white mb-2">BITCOIN</h1>
-          <h2 class="text-2xl font-orbitron text-[#F7931A] tracking-widest">VIRES IN NUMERIS</h2>
-        </div>
-
-        <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-          Premium Institutional Grade Fabric.
-          <br>Designed for the ones who understand the code.
+    
+    <div class="text-center mb-16">
+        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#F7931A] drop-shadow-[0_0_15px_rgba(247,147,26,0.5)]">
+            BITCOIN
+        </h1>
+        <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
+            VIRES IN NUMERIS
         </p>
-
-        <div class="bg-brand-panel border border-[#F7931A]/20 p-6 mb-8">
-          <div class="flex items-end gap-4 mb-4">
-            <span class="text-4xl font-bold text-white price-display" data-base="35">$35 USD</span>
-            <span class="text-[#F7931A] text-sm mb-2 animate-pulse">● In Stock</span>
-          </div>
-          <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6">Free International Shipping // Encrypted Checkout</p>
-         
-          <button onclick="openModal('BTC','BTC // VIRES IN NUMERIS')" class="w-full py-4 bg-[#F7931A] text-black font-black text-xl hover:bg-white transition-all uppercase font-orbitron tracking-widest shadow-[0_0_20px_rgba(247,147,26,0.3)] hover:shadow-[0_0_30px_rgba(247,147,26,0.6)]">
-            SECURE ORDER NOW
-          </button>
+        <div class="inline-block px-3 py-1 border border-[#F7931A] text-[#F7931A] text-xs uppercase tracking-[0.2em]">
+            Strength in Numbers
         </div>
-      </div>
     </div>
 
-    <div class="border-t border-[#F7931A]/20 pt-16">
-     
-      <article class="wiki-content bg-brand-panel border border-[#F7931A]/20 p-6 md:p-12 relative overflow-hidden">
-      
+    <article class="wiki-content bg-brand-panel border border-[#F7931A]/20 p-6 md:p-12 relative overflow-hidden mb-24">
+       
         <h2 style="margin-top:0;">What Bitcoin Is — Straight to the Point</h2>
         <p>Bitcoin is a peer-to-peer electronic cash system designed to operate without trust.</p>
         <p>Its core purpose is simple:</p>
@@ -365,11 +345,44 @@
         <p>From 0.01 to 100k<br>From an experiment to the stock market</p>
         <p>Wake up.</p>
         <p class="text-2xl text-[#F7931A] font-bold font-orbitron mt-4">Bitcoin is going to infinite.</p>
-      </article>
+    </article>
+
+    <div id="shop" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#F7931A] to-yellow-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        <div class="relative bg-black border border-[#F7931A]/30 p-2">
+          <img src="btc.jpg" alt="Bitcoin Tee" class="w-full h-[600px] object-cover object-top shadow-2xl">
+        </div>
       </div>
+
+      <div class="sticky top-32">
+        <div class="border-l-4 border-[#F7931A] pl-6 mb-8">
+          <h2 class="text-4xl font-black font-orbitron text-white mb-2">WEAR THE SIGNAL</h2>
+          <p class="text-[#F7931A] tracking-widest font-bold">LIMITED EDITION</p>
+        </div>
+
+        <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+          Premium Institutional Grade Fabric.<br>
+          "Vires in Numeris" on the chest. History on your back.
+        </p>
+
+        <div class="bg-brand-panel border border-[#F7931A]/20 p-6">
+          <div class="flex items-end gap-4 mb-4">
+            <span class="text-4xl font-bold text-white price-display" data-base="35">$35 USD</span>
+            <span class="text-[#F7931A] text-sm mb-2 animate-pulse">● In Stock</span>
+          </div>
+          <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6">Free International Shipping // Encrypted Checkout</p>
+          
+          <button onclick="openModal('BTC','BTC // VIRES IN NUMERIS')" class="w-full py-4 bg-[#F7931A] text-black font-black text-xl hover:bg-white transition-all uppercase font-orbitron tracking-widest shadow-[0_0_20px_rgba(247,147,26,0.3)] hover:shadow-[0_0_30px_rgba(247,147,26,0.6)]">
+            SECURE ORDER NOW
+          </button>
+        </div>
+      </div>
+    </div>
+
   </main>
 
-  <footer class="border-t border-brand-green/20 bg-black py-12 text-center">
+  <footer class="border-t border-brand-green/20 bg-black py-12 text-center mt-20">
     <div class="max-w-7xl mx-auto px-4">
       <div class="mb-8">
         <p class="font-orbitron text-2xl text-white mb-4">CONNECT WITH <span class="text-brand-green">US</span></p>
@@ -391,7 +404,7 @@
   </footer>
 
   <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[150] hidden flex items-center justify-center p-4">
-    <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)]">
+    <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)] max-h-[90vh] overflow-y-auto">
       <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
       <h2 class="font-orbitron text-2xl text-white mb-1">SECURE ORDER</h2>
       <p class="text-brand-green text-xs mb-4">ENCRYPTED CONNECTION //</p>
@@ -447,7 +460,7 @@
 
     // MODAL & PAYMENTS
     const orderForm = document.getElementById("orderForm"); const statusBox = document.getElementById("orderStatusBox"); const errorBox = document.getElementById("orderErrorBox"); const submitBtn = document.getElementById("submitBtn"); const paySelect = document.getElementById("paymentSelect"); const payLogosRow = document.getElementById("payLogosRow");
-   
+    
     function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
       document.getElementById("productKey").value = productKey;
@@ -459,7 +472,7 @@
       if (paySelect) paySelect.value = "CARD"; updatePaymentUI();
     }
     function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency; } }
-   
+    
     function updatePaymentUI(){
       payLogosRow.innerHTML = "";
       const mode = paySelect.value;
