@@ -334,8 +334,8 @@
       <p class="text-brand-green text-xs mb-6">ENCRYPTED CONNECTION //</p>
 
       <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
-        <div class="text-brand-green text-xs tracking-widest">ORDER INITIATED // CHECK EMAIL</div>
-        <div class="text-gray-400 text-[11px] mt-1">If you don't see it, check spam. Payment instructions follow separately.</div>
+        <div class="text-brand-green text-xs tracking-widest">ORDER SAVED // REDIRECTING TO STRIPE CHECKOUT</div>
+        <div class="text-gray-400 text-[11px] mt-1">If nothing happens, your browser may have blocked the redirect. Try again.</div>
       </div>
 
       <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
@@ -395,11 +395,11 @@
 
         <button id="submitBtn" type="submit"
                 class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">
-          INITIATE ORDER
+          CONTINUE TO PAYMENT
         </button>
 
         <p class="text-center text-gray-500 text-[10px] mt-2">
-          Payment instructions (Interac/Crypto) will be sent to your email immediately after order confirmation.
+          Your order details will be saved, then you'll be redirected to a secure Stripe checkout to complete payment.
         </p>
       </form>
     </div>
@@ -407,6 +407,15 @@
 
   <script>
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
+
+    // ✅ Stripe Checkout links per product
+    const STRIPE_LINKS = {
+      "BTC // VIRES IN NUMERIS": "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
+      "ETH // CODE IS LAW": "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
+      "ADA // PEER REVIEWED": "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02",
+      "XRP // THE STANDARD": "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03",
+      "SOL // PROOF OF HISTORY": "https://buy.stripe.com/28E14p6428mz7hl12K1RC04",
+    };
 
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
     const symbols = { USD: "$", CAD: "$", EUR: "€" };
@@ -474,7 +483,7 @@
       const btn = document.getElementById("submitBtn");
       btn.disabled = false;
       btn.classList.remove("opacity-60", "cursor-not-allowed");
-      btn.textContent = "INITIATE ORDER";
+      btn.textContent = "CONTINUE TO PAYMENT";
 
       document.getElementById("orderTs").value = String(Date.now());
     }
@@ -506,6 +515,7 @@
 
       const fd = new FormData(orderForm);
 
+      // Honeypot check
       const hp = (fd.get("company") || "").toString().trim();
       if (hp) {
         errorBox.textContent = "Spam detected.";
@@ -513,6 +523,7 @@
         return;
       }
 
+      // Timestamp check
       const ts = Number(fd.get("ts"));
       if (!Number.isFinite(ts) || (Date.now() - ts) < 1200) {
         errorBox.textContent = "Security check failed. Please wait a moment and try again.";
@@ -520,6 +531,7 @@
         return;
       }
 
+      // Required fields
       const email = (fd.get("Email") || "").toString().trim();
       const address = (fd.get("Address") || "").toString().trim();
       if (!email || !address) {
@@ -528,11 +540,22 @@
         return;
       }
 
+      // Determine which Stripe link to use (by product selected)
+      const productName = (fd.get("Product") || "").toString().trim();
+      const stripeUrl = STRIPE_LINKS[productName];
+
+      if (!stripeUrl) {
+        errorBox.textContent = "Stripe link not found for this product. Please close and re-open the order modal.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.classList.add("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "SENDING...";
+      submitBtn.textContent = "SAVING..." ;
 
       try {
+        // Send to Formspree first (save address + email + size + qty + etc)
         const payload = Object.fromEntries(fd.entries());
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
@@ -544,19 +567,26 @@
         if (!res.ok) {
           const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
             ? data.errors[0].message
-            : "Order failed. Please try again.";
+            : "Could not save order details. Please try again.";
           throw new Error(msg);
         }
 
+        // Success UI then redirect to Stripe
         orderForm.classList.add("hidden");
         statusBox.classList.remove("hidden");
+
+        // Small delay so user sees status, then redirect
+        setTimeout(() => {
+          window.location.href = stripeUrl;
+        }, 650);
+
       } catch (err) {
         errorBox.textContent = err.message || "Network error. Please try again.";
         errorBox.classList.remove("hidden");
 
         submitBtn.disabled = false;
         submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        submitBtn.textContent = "INITIATE ORDER";
+        submitBtn.textContent = "CONTINUE TO PAYMENT";
       }
     });
   </script>
