@@ -44,10 +44,15 @@
       overflow:hidden;
     }
     :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
+
+    /* Honeypot (NO blocking — only helps bots; but browsers sometimes autofill hidden fields) */
     .hp-field{
       position:absolute; left:-9999px; top:auto;
       width:1px; height:1px; overflow:hidden;
+      opacity:0;
+      pointer-events:none;
     }
+
     .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
   </style>
 
@@ -73,7 +78,7 @@
           <a href="btc.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
           <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
           <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
-          
+
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
             <span class="text-gray-700">/</span>
@@ -97,7 +102,7 @@
             <a href="btc.html" onclick="closeMobileMenu()" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THEM</a>
             <a href="#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
             <a href="#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
-            
+
             <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-gray-900">
                <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
                <span class="text-gray-600">|</span>
@@ -123,7 +128,13 @@
         <br>
         <span class="text-brand-green">Code is Law. Style is Choice.</span>
       </p>
-      <div class="inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-xs h-[1px]"></div>
+
+      <div class="max-w-3xl mx-auto text-xs text-gray-400 border border-brand-green/20 bg-black/40 p-3">
+        <span class="text-brand-green font-bold">PAYMENTS:</span>
+        Credit Card via Stripe (Apple Pay / Google Pay when available) + Interac e-Transfer + Crypto.
+      </div>
+
+      <div class="inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-xs h-[1px] mt-10"></div>
     </div>
   </header>
 
@@ -132,6 +143,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+      <!-- BTC -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="btc.jpg" alt="BTC VIRES IN NUMERIS" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -142,7 +154,7 @@
           <p class="text-brand-green text-xs mb-3 uppercase">Store of Value</p>
           <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">The original. Decentralized, scarce, and immutable. Orange Pill logic on Black.</p>
           <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Black // <span class="text-white">All Colors Available on Request</span></p>
-          
+
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
               <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
@@ -152,7 +164,7 @@
                 <a href="btc.html" class="flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
                     HISTORY
                 </a>
-                <button onclick="openModal('BTC // VIRES IN NUMERIS')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                <button onclick="openModal('BTC','BTC // VIRES IN NUMERIS')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
                     ORDER NOW
                 </button>
             </div>
@@ -160,6 +172,7 @@
         </div>
       </div>
 
+      <!-- ETH -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
            <img src="eth.jpg" alt="ETH CODE IS LAW" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -180,7 +193,7 @@
                 <a href="eth.html" class="flex-1 py-3 border border-[#627EEA] text-[#627EEA] font-bold text-center text-xs hover:bg-[#627EEA]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
                     HISTORY
                 </a>
-                <button onclick="openModal('ETH // CODE IS LAW')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                <button onclick="openModal('ETH','ETH // CODE IS LAW')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
                     ORDER NOW
                 </button>
             </div>
@@ -188,6 +201,7 @@
         </div>
       </div>
 
+      <!-- ADA -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
            <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -208,7 +222,7 @@
                 <a href="ada.html" class="flex-1 py-3 border border-[#0033ad] text-[#0033ad] font-bold text-center text-xs hover:bg-[#0033ad]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
                     HISTORY
                 </a>
-                <button onclick="openModal('ADA // PEER REVIEWED')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                <button onclick="openModal('ADA','ADA // PEER REVIEWED')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
                     ORDER NOW
                 </button>
             </div>
@@ -216,6 +230,7 @@
         </div>
       </div>
 
+      <!-- XRP -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
            <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -236,7 +251,7 @@
                 <a href="xrp.html" class="flex-1 py-3 border border-white text-white font-bold text-center text-xs hover:bg-white/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
                     HISTORY
                 </a>
-                <button onclick="openModal('XRP // THE STANDARD')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                <button onclick="openModal('XRP','XRP // THE STANDARD')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
                     ORDER NOW
                 </button>
             </div>
@@ -244,6 +259,7 @@
         </div>
       </div>
 
+      <!-- SOL -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
            <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -264,7 +280,7 @@
                 <a href="sol.html" class="flex-1 py-3 border border-[#14F195] text-[#14F195] font-bold text-center text-xs hover:bg-[#14F195]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
                     HISTORY
                 </a>
-                <button onclick="openModal('SOL // PROOF OF HISTORY')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                <button onclick="openModal('SOL','SOL // PROOF OF HISTORY')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
                     ORDER NOW
                 </button>
             </div>
@@ -272,6 +288,7 @@
         </div>
       </div>
 
+      <!-- CUSTOM -->
       <div class="group bg-gray-900/50 border border-gray-800 border-dashed hover:border-brand-green transition-all duration-300 flex flex-col justify-center items-center text-center p-8 min-h-[500px]">
         <div class="w-20 h-20 rounded-full bg-brand-green/10 flex items-center justify-center mb-6 group-hover:bg-brand-green/20 transition-colors">
           <span class="text-4xl text-brand-green font-light">+</span>
@@ -280,7 +297,7 @@
         <p class="text-gray-400 text-sm mb-6 max-w-xs">
             Don't see your favorite coin? We offer <strong class="text-brand-green">custom colors</strong>, <strong class="text-brand-green">logo creation</strong>, and any ticker. Just ask.
         </p>
-        <button onclick="openModal('CUSTOM REQUEST')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+        <button onclick="openModal('CUSTOM','CUSTOM REQUEST')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
           Request Custom
         </button>
       </div>
@@ -316,12 +333,19 @@
           <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
         </div>
       </div>
+
+      <div class="max-w-3xl mx-auto text-xs text-gray-400 border border-brand-green/20 bg-black/40 p-3 mb-8">
+        <span class="text-brand-green font-bold">CHECKOUT:</span>
+        Card payments are processed securely by Stripe. Interac & Crypto are confirmed manually after order submission.
+      </div>
+
       <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
       <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
       <p class="text-gray-600 text-[10px] mt-8">ALL RIGHTS RESERVED.</p>
     </div>
   </footer>
 
+  <!-- MODAL -->
   <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
     <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)]">
       <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Close">
@@ -331,22 +355,32 @@
       </button>
 
       <h2 class="font-orbitron text-2xl text-white mb-1">SECURE ORDER</h2>
-      <p class="text-brand-green text-xs mb-6">ENCRYPTED CONNECTION //</p>
+      <p class="text-brand-green text-xs mb-4">ENCRYPTED CONNECTION //</p>
+
+      <div class="text-[11px] text-gray-400 border border-white/10 bg-black/30 p-3 mb-6">
+        <span class="text-white font-bold">How it works:</span>
+        Fill shipping details → choose payment.
+        <span class="text-brand-green font-bold">Credit Card</span> redirects to Stripe checkout.
+        <span class="text-white font-bold">Interac/Crypto</span> sends instructions by email.
+      </div>
 
       <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
-        <div class="text-brand-green text-xs tracking-widest">ORDER SAVED // REDIRECTING TO STRIPE CHECKOUT</div>
-        <div class="text-gray-400 text-[11px] mt-1">If nothing happens, your browser may have blocked the redirect. Try again.</div>
+        <div id="orderStatusTitle" class="text-brand-green text-xs tracking-widest">ORDER RECEIVED //</div>
+        <div id="orderStatusText" class="text-gray-400 text-[11px] mt-1">Processing...</div>
       </div>
 
       <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
 
       <form id="orderForm" class="space-y-4" novalidate>
+        <!-- honeypot (no blocking) -->
         <label class="hp-field" aria-hidden="true">
-          Company
-          <input type="text" name="company" autocomplete="off" tabindex="-1">
+          Do not fill
+          <input type="text" name="website" autocomplete="off" tabindex="-1" inputmode="none">
         </label>
+
         <input type="hidden" name="ts" id="orderTs" value="">
         <input type="hidden" id="productInput" name="Product" value="">
+        <input type="hidden" id="productKeyInput" name="ProductKey" value="">
         <input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
 
         <div>
@@ -371,14 +405,14 @@
 
         <div>
           <label class="block text-gray-400 text-xs mb-1 uppercase">Payment Method</label>
-          <select name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
-            <option>Interac e-Transfer</option>
-            <option>Bitcoin (BTC)</option>
-            <option>Ethereum (ETH)</option>
-            <option>Cardano (ADA)</option>
-            <option>XRP</option>
-            <option>Solana (SOL)</option>
+          <select id="paymentMethodSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
+            <option value="card">Credit Card (Stripe)</option>
+            <option value="interac">Interac e-Transfer</option>
+            <option value="crypto">Crypto</option>
           </select>
+          <p class="text-[10px] text-gray-500 mt-2">
+            Credit Card uses secure Stripe checkout (Apple Pay / Google Pay when available).
+          </p>
         </div>
 
         <div>
@@ -399,24 +433,26 @@
         </button>
 
         <p class="text-center text-gray-500 text-[10px] mt-2">
-          Your order details will be saved, then you'll be redirected to a secure Stripe checkout to complete payment.
+          We collect shipping details first to ensure correct fulfillment.
         </p>
       </form>
     </div>
   </div>
 
   <script>
+    // ====== YOUR FORMSPREE ENDPOINT ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
 
-    // ✅ Stripe Checkout links per product
+    // ====== STRIPE LINKS (CARD ONLY) ======
     const STRIPE_LINKS = {
-      "BTC // VIRES IN NUMERIS": "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
-      "ETH // CODE IS LAW": "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
-      "ADA // PEER REVIEWED": "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02",
-      "XRP // THE STANDARD": "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03",
-      "SOL // PROOF OF HISTORY": "https://buy.stripe.com/28E14p6428mz7hl12K1RC04",
+      BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
+      ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
+      ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02",
+      XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03",
+      SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04"
     };
 
+    // ====== CURRENCY DISPLAY (visual only) ======
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
     const symbols = { USD: "$", CAD: "$", EUR: "€" };
     let currentCurrency = "USD";
@@ -430,7 +466,7 @@
         if (btn.getAttribute("data-currency") === curr) btn.classList.add("active");
         else btn.classList.remove("active");
       });
-      
+
       document.querySelectorAll(".price-display").forEach(el => {
         const base = parseFloat(el.getAttribute("data-base"));
         let val = base * rates[curr];
@@ -443,8 +479,10 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       setCurrency("USD");
+      updateSubmitLabel();
     });
 
+    // ====== MOBILE MENU ======
     const mobileMenuEl = document.getElementById("mobileMenu");
     function toggleMobileMenu() {
       const isHidden = mobileMenuEl.classList.contains("hidden");
@@ -460,6 +498,7 @@
       if (btn) btn.setAttribute("aria-expanded", "false");
       document.body.classList.remove("overflow-hidden");
     }
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         closeMobileMenu();
@@ -467,10 +506,14 @@
       }
     });
 
-    function openModal(productName) {
+    // ====== MODAL ======
+    const paymentSelect = document.getElementById("paymentMethodSelect");
+
+    function openModal(productKey, productName) {
       document.getElementById("orderModal").classList.remove("hidden");
       document.getElementById("productDisplay").innerText = productName;
       document.getElementById("productInput").value = productName;
+      document.getElementById("productKeyInput").value = productKey;
 
       const currInput = document.getElementById("currencyInput");
       if (currInput) currInput.value = currentCurrency;
@@ -483,17 +526,19 @@
       const btn = document.getElementById("submitBtn");
       btn.disabled = false;
       btn.classList.remove("opacity-60", "cursor-not-allowed");
-      btn.textContent = "CONTINUE TO PAYMENT";
 
+      // reset & timestamp
       document.getElementById("orderTs").value = String(Date.now());
+      updateSubmitLabel();
     }
 
     function closeModal(reset = false) {
       document.getElementById("orderModal").classList.add("hidden");
       if (reset) {
-          document.getElementById("orderForm").reset();
-          const currInput = document.getElementById("currencyInput");
-          if (currInput) currInput.value = currentCurrency;
+        document.getElementById("orderForm").reset();
+        const currInput = document.getElementById("currencyInput");
+        if (currInput) currInput.value = currentCurrency;
+        updateSubmitLabel();
       }
     }
 
@@ -501,8 +546,21 @@
       if (e.target === this) closeModal();
     });
 
+    function updateSubmitLabel() {
+      const btn = document.getElementById("submitBtn");
+      const v = (paymentSelect && paymentSelect.value) ? paymentSelect.value : "card";
+      btn.textContent = (v === "card") ? "CONTINUE TO STRIPE CHECKOUT" : "SUBMIT ORDER REQUEST";
+    }
+
+    if (paymentSelect) {
+      paymentSelect.addEventListener("change", updateSubmitLabel);
+    }
+
+    // ====== FORM SUBMIT ======
     const orderForm = document.getElementById("orderForm");
     const statusBox = document.getElementById("orderStatusBox");
+    const statusTitle = document.getElementById("orderStatusTitle");
+    const statusText = document.getElementById("orderStatusText");
     const errorBox = document.getElementById("orderErrorBox");
     const submitBtn = document.getElementById("submitBtn");
 
@@ -515,23 +573,14 @@
 
       const fd = new FormData(orderForm);
 
-      // Honeypot check
-      const hp = (fd.get("company") || "").toString().trim();
-      if (hp) {
-        errorBox.textContent = "Spam detected.";
-        errorBox.classList.remove("hidden");
-        return;
-      }
-
-      // Timestamp check
+      // basic anti-bot timing (soft)
       const ts = Number(fd.get("ts"));
-      if (!Number.isFinite(ts) || (Date.now() - ts) < 1200) {
-        errorBox.textContent = "Security check failed. Please wait a moment and try again.";
+      if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
+        errorBox.textContent = "Security check failed. Please wait a second and try again.";
         errorBox.classList.remove("hidden");
         return;
       }
 
-      // Required fields
       const email = (fd.get("Email") || "").toString().trim();
       const address = (fd.get("Address") || "").toString().trim();
       if (!email || !address) {
@@ -540,23 +589,25 @@
         return;
       }
 
-      // Determine which Stripe link to use (by product selected)
-      const productName = (fd.get("Product") || "").toString().trim();
-      const stripeUrl = STRIPE_LINKS[productName];
+      const productKey = (fd.get("ProductKey") || "").toString().trim();
+      const payMethod = (fd.get("PaymentMethod") || "card").toString();
+      const isCard = payMethod === "card";
 
-      if (!stripeUrl) {
-        errorBox.textContent = "Stripe link not found for this product. Please close and re-open the order modal.";
+      // If card chosen, we must have a Stripe link (except CUSTOM)
+      if (isCard && (!productKey || !STRIPE_LINKS[productKey])) {
+        errorBox.textContent = "Stripe checkout is not available for this item. Please choose Interac/Crypto for custom orders.";
         errorBox.classList.remove("hidden");
         return;
       }
 
       submitBtn.disabled = true;
       submitBtn.classList.add("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "SAVING..." ;
+      submitBtn.textContent = "PROCESSING...";
 
       try {
-        // Send to Formspree first (save address + email + size + qty + etc)
+        // Send order details to Formspree (always), then redirect if card.
         const payload = Object.fromEntries(fd.entries());
+
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Accept": "application/json", "Content-Type": "application/json" },
@@ -567,18 +618,25 @@
         if (!res.ok) {
           const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
             ? data.errors[0].message
-            : "Could not save order details. Please try again.";
+            : "Order failed. Please try again.";
           throw new Error(msg);
         }
 
-        // Success UI then redirect to Stripe
         orderForm.classList.add("hidden");
         statusBox.classList.remove("hidden");
 
-        // Small delay so user sees status, then redirect
-        setTimeout(() => {
-          window.location.href = stripeUrl;
-        }, 650);
+        if (isCard) {
+          statusTitle.textContent = "REDIRECTING TO STRIPE //";
+          statusText.textContent = "Secure payment checkout loading...";
+          // short delay so user sees feedback
+          setTimeout(() => {
+            window.location.href = STRIPE_LINKS[productKey];
+          }, 700);
+        } else {
+          statusTitle.textContent = "ORDER RECEIVED // CHECK EMAIL";
+          statusText.textContent = "We’ll email Interac/Crypto instructions shortly. If you don’t see it, check spam.";
+          submitBtn.textContent = "DONE";
+        }
 
       } catch (err) {
         errorBox.textContent = err.message || "Network error. Please try again.";
@@ -586,7 +644,7 @@
 
         submitBtn.disabled = false;
         submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        submitBtn.textContent = "CONTINUE TO PAYMENT";
+        updateSubmitLabel();
       }
     });
   </script>
