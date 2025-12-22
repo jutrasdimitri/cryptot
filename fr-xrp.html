@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Histoire du XRP & Signification // Le Standard | CryptoT</title>
-  <meta name="description" content="Découvrez l'histoire du XRP, la victoire contre la SEC et l'Armée XRP. Streetwear éducatif par CryptoT.">
+  <title>XRP // LE STANDARD | CryptoT</title>
+  <meta name="description" content="Découvrez XRP, la nouvelle couche de règlement mondiale. Rapide, peu coûteux et bâti pour le futur de la finance. Le Standard.">
 
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
   <script>
@@ -17,11 +20,16 @@
             "brand-green": "#39ff14",
             "brand-black": "#0a0a0a",
             "brand-panel": "#111111",
+            "xrp-white": "#FFFFFF",
           },
           fontFamily: {
             orbitron: ["Orbitron", "sans-serif"],
             mono: ["Share Tech Mono", "monospace"],
           },
+          boxShadow: {
+            "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14",
+            "neon-white": "0 0 10px #FFFFFF, 0 0 20px #FFFFFF",
+          }
         }
       }
     }
@@ -35,15 +43,42 @@
         linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
       background-size: 50px 50px;
     }
-    
-    /* Wiki Text Styles - INCREASED SIZE */
+    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
+
+    /* honeypot */
+    .hp-field{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
+
+    /* Logo row styling */
+    .logo-strip{
+      border: 1px solid rgba(57,255,20,.20);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(8px);
+    }
+    .logo-strip .lbl{
+      letter-spacing: .22em; font-size: 10px; color: rgba(255,255,255,.55); text-transform: uppercase; white-space: nowrap;
+    }
+   
+    /* ICONS SIZING */
+    .picon{
+      width: 34px; height: 22px;
+      display:inline-flex; align-items:center; justify-content:center;
+      opacity: .92; filter: drop-shadow(0 0 10px rgba(57,255,20,0.05));
+      transition: opacity .15s ease, transform .15s ease;
+    }
+    .picon svg{ width: 100%; height: 100%; }
+    .picon:hover{ opacity: 1; transform: translateY(-1px); }
+    .hero-icons .picon, .modal-icons .picon{ width: 40px; height: 26px; }
+
+    /* --- WIKI STYLE (XRP WHITE) --- */
     .wiki-content h2 {
         font-family: 'Orbitron', sans-serif;
         color: white;
         font-size: 1.8rem;
         margin-top: 3.5rem;
         margin-bottom: 1.5rem;
-        border-left: 5px solid white; /* XRP COLOR */
+        border-left: 5px solid #FFFFFF; /* XRP COLOR */
         padding-left: 1.5rem;
     }
     .wiki-content h3 {
@@ -67,107 +102,137 @@
         font-size: 1.15rem;
         line-height: 1.8;
     }
-    .wiki-content li {
-        margin-bottom: 0.75rem;
-    }
+    .wiki-content li { margin-bottom: 0.75rem; }
     .wiki-content a {
-        color: white; /* XRP COLOR */
+        color: #FFFFFF; /* XRP COLOR */
         text-decoration: underline;
         text-underline-offset: 4px;
         transition: all 0.2s;
     }
-    .wiki-content a:hover { color: #ccc; }
+    .wiki-content a:hover { color: #39ff14; }
     .wiki-divider {
         width: 100%;
         height: 1px;
-        background: linear-gradient(90deg, transparent, white, transparent); /* XRP COLOR */
+        background: linear-gradient(90deg, transparent, #FFFFFF, transparent); /* XRP COLOR */
         margin: 4rem 0;
         opacity: 0.4;
     }
-    
-    /* Nav Active State */
+
+    /* COIN NAV BUTTONS */
     .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
     .nav-coin-btn:hover { opacity: 1; border-color: white; }
     .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+
+    /* Keep nav compact */
+    @media (max-width: 1100px){ .nav-accepted { display:none; } }
   </style>
 
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
 
-<body class="matrix-bg min-h-screen font-mono selection:bg-white selection:text-black">
+<body class="matrix-bg min-h-screen font-mono selection:bg-[#FFFFFF] selection:text-black">
 
   <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
+  <template id="svgIcons">
+    <span data-icon="visa" class="picon"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black,sans-serif" font-size="18" fill="#1A1F71">VISA</text></svg></span>
+    <span data-icon="mc" class="picon"><svg viewBox="0 0 64 24"><circle cx="26" cy="12" r="8" fill="#EB001B"/><circle cx="38" cy="12" r="8" fill="#F79E1B" opacity=".95"/><circle cx="32" cy="12" r="8" fill="#FF5F00" opacity=".9"/></svg></span>
+    <span data-icon="amex" class="picon"><svg viewBox="0 0 64 24"><rect x="2" y="3" width="60" height="18" rx="3" fill="#2E77BB"/><text x="10" y="17" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">AMEX</text></svg></span>
+    <span data-icon="applepay" class="picon"><svg viewBox="0 0 64 24"><path d="M18 10.5c1.2-1.5 2-3.4 1.8-5.5-1.8.1-3.8 1.2-5 2.7-1.1 1.3-2.1 3.3-1.8 5.2 2 .2 3.8-1 5-2.4Z" fill="#FFF"/><path d="M22 12c-2.4-1.4-4.8-.1-6 .1-1.2.3-3.2 1.2-5.1-.1-2.5-1.6-6.3-1.4-8 1.3-3 4.6-.8 11.5 2.1 15.2 1.4 1.8 3.1 3.7 5.3 3.6 2.1-.1 2.9-1.3 5.4-1.3 2.5 0 3.2 1.3 5.4 1.2 2.2 0 3.6-1.7 5-3.5 1.6-2.1 2.2-4.1 2.2-4.2-.1 0-4.1-1.6-4.1-6.2 0-3.9 3.2-5.6 3.4-5.7-1.9-2.8-4.9-3.1-6-3.2Z" fill="#FFF"/><text x="34" y="17" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">Pay</text></svg></span>
+    <span data-icon="gpay" class="picon"><svg viewBox="0 0 64 24"><text x="2" y="16" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">G</text><circle cx="10" cy="12" r="2.2" fill="#4285F4"/><circle cx="13" cy="12" r="2.2" fill="#34A853"/><circle cx="16" cy="12" r="2.2" fill="#FBBC05"/><circle cx="19" cy="12" r="2.2" fill="#EA4335"/><text x="26" y="17" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">Pay</text></svg></span>
+    <span data-icon="interac" class="picon"><svg viewBox="0 0 64 24"><rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"/><text x="12" y="17" font-family="Arial Black,sans-serif" font-size="11" fill="#111">INTERAC</text></svg></span>
+    <span data-icon="btc" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F7931A"/><text x="9.2" y="16.2" font-family="Arial Black,sans-serif" font-size="10" fill="#111">₿</text></svg></span>
+    <span data-icon="eth" class="picon"><svg viewBox="0 0 24 24"><polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"/><polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"/></svg></span>
+    <span data-icon="ada" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="#0033AD"/><g fill="#0033AD" opacity=".95"><circle cx="12" cy="5.2" r="1"/><circle cx="12" cy="18.8" r="1"/><circle cx="5.2" cy="12" r="1"/><circle cx="18.8" cy="12" r="1"/><circle cx="7.2" cy="7.2" r=".9"/><circle cx="16.8" cy="7.2" r=".9"/><circle cx="7.2" cy="16.8" r=".9"/><circle cx="16.8" cy="16.8" r=".9"/></g></svg></span>
+    <span data-icon="xrp" class="picon"><svg viewBox="0 0 24 24"><path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z" fill="#FFF"/><path d="M18 17c-1.6-1.6-3.2-2.4-6-2.4S7.6 15.4 6 17H4c2.2-2.2 4.7-3.6 8-3.6s5.8 1.4 8 3.6h-2Z" fill="#FFF"/></svg></span>
+    <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg" x1="0" x2="1"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)" opacity=".95"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)" opacity=".9"/></svg></span>
+  </template>
+
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <div class="flex items-center gap-2">
+      <div class="flex items-center justify-between h-20 gap-4">
+        <div class="flex items-center gap-2 min-w-[170px]">
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
-          <a href="fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white">CRYPTO<span class="text-brand-green">T</span></a>
+          <a href="fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
+            CRYPTO<span class="text-brand-green">T</span>
+          </a>
         </div>
+
+        <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
+          <span class="lbl mr-3">MÉTHODES ACCEPTÉES</span>
+          <div class="flex items-center gap-2" id="navAcceptedRow"></div>
+        </div>
+
         <div class="hidden md:flex items-center space-x-6">
-          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ LE_POWER_5 ]</a>
-          <a href="fr-btc.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ À_PROPOS_D'EUX ]</a>
-          <a href="fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTE ]</a>
-          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT ]</a>
-          
+          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">LE_TOP_5</a>
+          <a href="fr-xrp.html" class="text-sm text-brand-green font-bold uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">À_PROPOS_D'EUX</a>
+          <a href="fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTE</a>
+          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">NOUS_JOINDRE</a>
+         
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
-             <span class="text-xs text-gray-500">AFFICHAGE: USD</span>
+             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
+             <span class="text-gray-700">/</span>
+             <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
+             <span class="text-gray-700">/</span>
+             <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
           </div>
           <a href="xrp.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
         </div>
-        <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-brand-green"><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+
+        <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" onclick="toggleMobileMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
     </div>
-    
-    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black border-l border-brand-green/20 p-6 top-[62px]">
-        <div class="flex flex-col gap-6 text-center mt-10">
-            <a href="fr.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ACCUEIL</a>
-            <a href="fr-btc.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">À PROPOS D'EUX</a>
-            <a href="fr.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">BOUTIQUE</a>
-            <a href="xrp.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ENGLISH</a>
-            <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10">[ FERMER ]</button>
+
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
+      <div class="flex flex-col gap-6 text-center mt-10">
+        <a href="fr.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">BOUTIQUE</a>
+        <a href="fr-xrp.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">À PROPOS D'EUX</a>
+        <a href="fr.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTE</a>
+        <a href="fr.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">NOUS JOINDRE</a>
+        <a href="xrp.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ENGLISH</a>
+       
+        <div class="logo-strip rounded px-3 py-3">
+          <div class="lbl mb-2">MÉTHODES ACCEPTÉES</div>
+          <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
         </div>
+      </div>
+      <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ FERMER ]</button>
     </div>
   </nav>
 
-  <div class="sticky top-[142px] md:top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
+  <div class="sticky top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
     <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
         <a href="fr-btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
         <a href="fr-eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
         <a href="fr-ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033ad] text-sm md:text-base font-bold transition-all">ADA</a>
-        <a href="fr-xrp.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-white" style="border-color: white;">XRP</a>
+        <a href="fr-xrp.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#FFFFFF]" style="border-color: #FFFFFF;">XRP</a>
         <a href="fr-sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
     </div>
   </div>
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <header class="text-center mb-16">
-        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+   
+    <div class="text-center mb-16">
+        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#FFFFFF] drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
             XRP
         </h1>
-        <p class="text-xl md:text-2xl text-gray-300 tracking-widest uppercase font-bold mb-6">
+        <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
             LE STANDARD
         </p>
-        <div class="inline-block px-3 py-1 border border-white text-white text-xs uppercase tracking-[0.2em] mb-8">
+        <div class="inline-block px-3 py-1 border border-[#FFFFFF] text-[#FFFFFF] text-xs uppercase tracking-[0.2em]">
             La Nouvelle Couche de Règlement Mondiale
         </div>
-        
-        <div>
-            <a href="fr.html#products" class="inline-block bg-white text-black font-bold font-orbitron px-8 py-4 text-sm uppercase tracking-wider hover:bg-gray-300 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                Acheter le T-Shirt XRP
-            </a>
-        </div>
-    </header>
+    </div>
 
-    <article class="wiki-content bg-brand-panel border border-white/20 p-6 md:p-12 relative overflow-hidden">
-        
+    <article class="wiki-content bg-brand-panel border border-[#FFFFFF]/20 p-6 md:p-12 relative overflow-hidden mb-24">
+      
         <h2 style="margin-top:0;">Ce qu'est XRP — Droit au but</h2>
         <p>XRP est un actif numérique conçu pour le transfert de valeur transfrontalier rapide et à faible coût.</p>
-        <p>Son objectif est simple :<br>Déplacer de la valeur mondialement, instantanément et à l'échelle.</p>
-        <p>Le Bitcoin défie la monnaie elle-même. XRP répare la façon dont la monnaie se déplace.</p>
-        <p>XRP n'est pas anti-banque. XRP est post-SWIFT.</p>
+        <p>Son objectif est simple :<br>Déplacer la valeur mondialement, instantanément et à grande échelle.</p>
+        <p>Bitcoin défie la monnaie elle-même.<br>XRP répare comment la monnaie se déplace.</p>
+        <p>XRP n'est pas anti-banque.<br>XRP est post-SWIFT.</p>
 
         <div class="wiki-divider"></div>
 
@@ -175,11 +240,11 @@
         <p>Le système financier mondial repose encore sur SWIFT, créé dans les années 1970.</p>
         <p>SWIFT :</p>
         <ul>
-            <li>ne déplace pas l'argent</li>
+            <li>ne déplace pas d'argent</li>
             <li>envoie seulement des messages</li>
             <li>nécessite des intermédiaires</li>
-            <li>prend des jours à régler</li>
-            <li>bloque des trillions dans des comptes nostro/vostro</li>
+            <li>prend des jours pour le règlement</li>
+            <li>bloque des milliers de milliards dans des comptes nostro/vostro</li>
         </ul>
         <p>Cela crée :</p>
         <ul>
@@ -195,7 +260,7 @@
         <h2>Les Fondateurs — Qui a Créé XRP</h2>
         <p>XRP a été créé en 2012 par :</p>
         <ul>
-            <li><strong>Jed McCaleb</strong> — cryptographe, premier développeur Bitcoin, fondateur de Mt. Gox</li>
+            <li><strong>Jed McCaleb</strong> — cryptographe, développeur précoce de Bitcoin, fondateur de Mt. Gox</li>
             <li><strong>Chris Larsen</strong> — entrepreneur fintech, ancien PDG de Ripple</li>
             <li><strong>Arthur Britto</strong> — ingénieur logiciel et architecte de protocole</li>
             <li><strong>David Schwartz</strong> — cryptographe, maintenant CTO de Ripple (connu sous le nom de « JoelKatz »)</li>
@@ -204,14 +269,14 @@
 
         <div class="wiki-divider"></div>
 
-        <h2>Le Ledger XRP — Comment ça Marche</h2>
-        <p>Le Ledger XRP (XRPL) :</p>
+        <h2>XRP Ledger — Comment Ça Marche</h2>
+        <p>Le XRP Ledger (XRPL) :</p>
         <ul>
             <li>décentralisé</li>
             <li>open-source</li>
             <li>pas de minage</li>
-            <li>pas de Preuve de Travail</li>
-            <li>pas de Preuve d'Enjeu</li>
+            <li>pas de Preuve de Travail (Proof of Work)</li>
+            <li>pas de Preuve d'Enjeu (Proof of Stake)</li>
         </ul>
         <p>Au lieu de cela, il utilise un <strong>algorithme de consensus</strong>.</p>
         <p>Propriétés clés :</p>
@@ -242,13 +307,13 @@
         <h2>Ripple — L'Entreprise (Pas le Réseau)</h2>
         <p>Ripple est une entreprise privée qui :</p>
         <ul>
-            <li>bâtit des solutions de paiement pour entreprises</li>
-            <li>travaille avec les banques et institutions</li>
+            <li>construit des solutions de paiement pour entreprises</li>
+            <li>travaille avec des banques et des institutions</li>
             <li>intègre XRP pour la liquidité (ODL)</li>
         </ul>
         <p>Distinction importante :</p>
         <ul>
-            <li>Le Ledger XRP existe indépendamment</li>
+            <li>Le XRP Ledger existe indépendamment</li>
             <li>XRP est open-source</li>
             <li>Ripple ne contrôle pas le réseau</li>
         </ul>
@@ -265,48 +330,48 @@
             <li>hautement informée</li>
             <li>profondément engagée dans la régulation et la macro-finance</li>
         </ul>
-        <p>Durant la poursuite de la SEC :</p>
+        <p>Durant le procès de la SEC :</p>
         <ul>
             <li>la communauté est restée active</li>
             <li>a éduqué le public</li>
             <li>a suivi les documents de la cour</li>
-            <li>a contesté la désinformation</li>
+            <li>a défié la désinformation</li>
             <li>a défendu la distinction entre XRP et Ripple</li>
         </ul>
-        <p>Les détenteurs de XRP ne sont pas partis. Ils se sont organisés.</p>
+        <p>Les détenteurs de XRP ne sont pas partis.<br>Ils se sont organisés.</p>
         <p>Ce niveau de conviction est rare en crypto.</p>
-        <p>XRP n'a pas survécu grâce au battage médiatique. Il a survécu grâce à la croyance, la recherche et la persévérance.</p>
+        <p>XRP n'a pas survécu grâce à la hype.<br>Il a survécu grâce à la croyance, la recherche et la persistance.</p>
 
         <div class="wiki-divider"></div>
 
-        <h2>La Poursuite de la SEC — Un Moment Définissant</h2>
+        <h2>Le Procès de la SEC — Un Moment Déterminant</h2>
         <p>En décembre 2020, la SEC a poursuivi Ripple.</p>
-        <p>La réclamation :<br>XRP était une valeur mobilière non enregistrée.</p>
+        <p>Allégation :<br>XRP était un titre financier non enregistré (security).</p>
         <p>Impact :</p>
         <ul>
-            <li>XRP délisté aux É.-U.</li>
-            <li>le prix s'est effondré</li>
+            <li>XRP délisté aux États-Unis</li>
+            <li>effondrement du prix</li>
             <li>incertitude à travers tout le marché crypto</li>
         </ul>
-        <p>Ripple a riposté. L'Armée XRP a tenu bon.</p>
+        <p>Ripple a riposté.<br>L'Armée XRP a tenu bon.</p>
 
         <div class="wiki-divider"></div>
 
         <h2>La Victoire Historique</h2>
         <p>En juillet 2023, la cour a statué :</p>
-        <p>XRP lui-même n'est <strong>PAS une valeur mobilière</strong>.</p>
+        <p>XRP lui-même n'est <strong>PAS un titre financier (security)</strong>.</p>
         <p>Résultat clé :</p>
         <ul>
-            <li>les ventes sur le marché secondaire ne sont pas des titres</li>
+            <li>les ventes sur le marché secondaire ne sont pas des titres financiers</li>
             <li>XRP est un actif numérique, pas un contrat d'investissement</li>
         </ul>
         <p>Ce jugement a changé la régulation crypto pour toujours.</p>
-        <p>XRP a survécu. Le précédent a été établi.</p>
+        <p>XRP a survécu.<br>Le précédent a été établi.</p>
 
         <div class="wiki-divider"></div>
 
         <h2>Pourquoi XRP Compte Maintenant</h2>
-        <p>Post-poursuite :</p>
+        <p>Post-procès :</p>
         <ul>
             <li>clarté réglementaire</li>
             <li>intérêt institutionnel renouvelé</li>
@@ -317,70 +382,213 @@
             <li>une monnaie pont</li>
             <li>une couche de règlement</li>
             <li>un moteur de liquidité</li>
-            <li>infrastructure pour actifs tokenisés et CBDC</li>
+            <li>une infrastructure pour les actifs tokenisés et les CBDC</li>
         </ul>
-        <p>Ce n'est pas de la spéculation. C'est de la plomberie financière.</p>
+        <p>Ce n'est pas de la spéculation.<br>C'est de la plomberie financière.</p>
 
         <div class="wiki-divider"></div>
 
         <h2>XRP N'est Pas Bitcoin — Par Design</h2>
-        <p>Bitcoin :</p>
-        <ul>
-            <li>monnaie</li>
-            <li>réserve de valeur</li>
-            <li>révolution monétaire</li>
-        </ul>
-        <p>XRP :</p>
-        <ul>
-            <li>liquidité</li>
-            <li>règlement</li>
-            <li>infrastructure financière</li>
-        </ul>
-        <p>Missions différentes. Les deux sont essentiels.</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-black/40 p-4 border-l-2 border-[#F7931A]">
+                <p class="uppercase text-xs tracking-widest text-[#F7931A] mb-2 font-bold">BITCOIN :</p>
+                <ul style="margin-bottom:0;">
+                    <li>monnaie</li>
+                    <li>réserve de valeur</li>
+                    <li>révolution monétaire</li>
+                </ul>
+            </div>
+            <div class="bg-black/40 p-4 border-l-2 border-[#FFFFFF]">
+                <p class="uppercase text-xs tracking-widest text-[#FFFFFF] mb-2 font-bold">XRP :</p>
+                <ul style="margin-bottom:0;">
+                    <li>liquidité</li>
+                    <li>règlement</li>
+                    <li>infrastructure financière</li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-4">Missions différentes. Toutes deux essentielles.</p>
 
         <div class="wiki-divider"></div>
 
         <h2>Chronologie XRP — Événements Clés</h2>
         <ul>
-            <li><strong>2012</strong> — Lancement du Ledger XRP</li>
+            <li><strong>2012</strong> — Lancement du XRP Ledger</li>
             <li><strong>2013</strong> — Fondation de Ripple Labs</li>
             <li><strong>2017</strong> — XRP entre dans le top 3 des actifs crypto</li>
-            <li><strong>2020</strong> — Dépôt de la poursuite de la SEC</li>
-            <li><strong>2023</strong> — Jugement de la cour : XRP n'est pas une valeur mobilière</li>
+            <li><strong>2020</strong> — Poursuite de la SEC déposée</li>
+            <li><strong>2023</strong> — Jugement de la cour : XRP n'est pas un titre financier</li>
             <li><strong>2024</strong> — L'adoption institutionnelle reprend</li>
-            <li><strong>2025</strong> — XRP positionné comme standard de règlement mondial</li>
+            <li><strong>2025</strong> — XRP positionné comme un standard de règlement mondial</li>
         </ul>
 
         <div class="wiki-divider"></div>
 
         <h2>Mots de la Fin</h2>
-        <p>Le Bitcoin répare la monnaie.<br>Ethereum programme la logique.<br>Cardano bâtit des nations.</p>
+        <p>Bitcoin répare la monnaie.</p>
+        <p>Ethereum programme la logique.</p>
+        <p>Cardano bâtit des nations.</p>
         <p>XRP déplace la valeur à l'échelle mondiale.</p>
         <p>Et derrière lui se tient l'une des communautés les plus fortes de la crypto.</p>
-        <p class="text-2xl text-white font-bold font-orbitron mt-4">Le Standard est en train de changer.</p>
+        <p class="text-2xl text-[#FFFFFF] font-bold font-orbitron mt-4">Le Standard est en train de changer.</p>
     </article>
 
-    <div class="text-center mt-12">
-        <a href="fr.html#products" class="inline-block bg-white text-black font-bold font-orbitron px-12 py-5 text-lg uppercase tracking-wider hover:bg-gray-300 transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.4)]">
-            ACHETER T-SHIRT XRP
-        </a>
+    <div id="shop" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#FFFFFF] to-gray-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        <div class="relative bg-black border border-[#FFFFFF]/30 p-2">
+          <img src="xrp.jpg" alt="XRP Tee" class="w-full h-[600px] object-cover object-top shadow-2xl">
+        </div>
+      </div>
+
+      <div class="sticky top-32">
+        <div class="border-l-4 border-[#FFFFFF] pl-6 mb-8">
+          <h2 class="text-4xl font-black font-orbitron text-white mb-2">PORTEZ LE SIGNAL</h2>
+          <p class="text-[#FFFFFF] tracking-widest font-bold">ÉDITION LIMITÉE</p>
+        </div>
+
+        <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+          Tissu de Grade Institutionnel Premium.<br>
+          "The Standard" sur la poitrine. L'Histoire dans votre dos.
+        </p>
+
+        <div class="bg-brand-panel border border-[#FFFFFF]/20 p-6">
+          <div class="flex items-end gap-4 mb-4">
+            <span class="text-4xl font-bold text-white price-display" data-base="35">$35 USD</span>
+            <span class="text-[#FFFFFF] text-sm mb-2 animate-pulse">● En Stock</span>
+          </div>
+          <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6">Livraison Internationale Gratuite // Paiement Chiffré</p>
+         
+          <button onclick="openModal('XRP','XRP // THE STANDARD')" class="w-full py-4 bg-[#FFFFFF] text-black font-black text-xl hover:bg-gray-200 transition-all uppercase font-orbitron tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]">
+            COMMANDER MAINTENANT
+          </button>
+        </div>
+      </div>
     </div>
 
   </main>
 
-  <footer class="border-t border-brand-green/20 bg-black py-12 mt-12">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
-      <p class="text-gray-500 text-xs">EST. 2025 // MONTRÉAL // INTERNATIONAL</p>
-      <div class="mt-6 flex justify-center gap-6 text-xs">
-        <a href="fr.html" class="text-gray-500 hover:text-brand-green transition-colors">ACCUEIL</a>
-        <a href="fr.html#products" class="text-gray-500 hover:text-brand-green transition-colors">BOUTIQUE</a>
-        <a href="fr.html#contact" class="text-gray-500 hover:text-brand-green transition-colors">CONTACT</a>
+  <footer class="border-t border-brand-green/20 bg-black py-12 text-center mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <p class="font-orbitron text-2xl text-white mb-4">SUIVEZ-<span class="text-brand-green">NOUS</span></p>
+        <div class="flex justify-center gap-6">
+          <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
+          <a href="https://www.instagram.com/crypto.nouvelles" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+        </div>
       </div>
+
+      <div class="logo-strip rounded px-4 py-3 inline-block mb-8">
+        <div class="lbl mb-2">MÉTHODES DE PAIEMENT ACCEPTÉES</div>
+        <div class="flex flex-wrap items-center justify-center gap-2 hero-icons" id="footerAcceptedRow"></div>
+      </div>
+      <p class="font-orbitron text-white text-lg">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs mt-2">WEAR YOUR ASSETS</p>
       <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
     </div>
   </footer>
 
-  <script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("hidden");}</script>
+  <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[150] hidden flex items-center justify-center p-4">
+    <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)] max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      <h2 class="font-orbitron text-2xl text-white mb-1">COMMANDE SÉCURISÉE</h2>
+      <p class="text-brand-green text-xs mb-4">CONNEXION CHIFFRÉE //</p>
+      <div class="mb-5 border border-white/10 bg-black/35 px-4 py-3">
+        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Méthodes acceptées</div>
+        <div id="payLogosRow" class="flex flex-wrap items-center gap-2 modal-icons"></div>
+      </div>
+      <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3"><div class="text-brand-green text-xs tracking-widest">COMMANDE REÇUE //</div><div class="text-gray-400 text-[11px] mt-1">Nous vous contacterons sous peu.</div></div>
+      <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
+      <form id="orderForm" class="space-y-4" novalidate>
+        <label class="hp-field" aria-hidden="true">Website<input type="text" name="website" autocomplete="off" tabindex="-1"></label>
+        <input type="hidden" name="ts" id="orderTs" value=""><input type="hidden" id="productKey" name="ProductKey" value=""><input type="hidden" id="productInput" name="Product" value=""><input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
+        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Article Choisi</label><div id="productDisplay" class="text-white font-orbitron text-lg border-b border-gray-700 pb-2"></div></div>
+        <div class="grid grid-cols-2 gap-4">
+          <div><label class="block text-gray-400 text-xs mb-1 uppercase">Taille</label><select name="Size" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option></select></div>
+          <div><label class="block text-gray-400 text-xs mb-1 uppercase">Qté</label><select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option>1</option><option>2</option><option>3</option></select></div>
+        </div>
+        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Méthode de Paiement</label><select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option value="CARD">Carte / Apple Pay / Google Pay</option><option value="INTERAC">Virement Interac</option><option value="BTC">Bitcoin (BTC)</option><option value="ETH">Ethereum (ETH)</option><option value="ADA">Cardano (ADA)</option><option value="XRP">XRP</option><option value="SOL">Solana (SOL)</option></select></div>
+        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Courriel</label><input type="email" name="Email" required class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></div>
+        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Adresse</label><textarea name="Address" required rows="3" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></textarea></div>
+        <button id="submitBtn" type="submit" class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">PAYER MAINTENANT</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ====== LOGIC IDENTIQUE ======
+    const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
+    const PAYMENT_LINKS = { BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00", ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01", ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02", XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03", SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04" };
+    const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
+    const symbols = { USD: "$", CAD: "$", EUR: "€" };
+    let currentCurrency = "USD";
+
+    function setCurrency(curr) {
+      currentCurrency = curr;
+      const currInput = document.getElementById("currencyInput");
+      if (currInput) currInput.value = curr;
+      document.querySelectorAll(".currency-btn").forEach(btn => { if (btn.getAttribute("data-currency") === curr) btn.classList.add("active"); else btn.classList.remove("active"); });
+      document.querySelectorAll(".price-display").forEach(el => { const base = parseFloat(el.getAttribute("data-base")); let val = base * rates[curr]; val = val.toFixed(2).replace('.00', ''); if (curr === "EUR") el.innerText = val + " € EUR"; else el.innerText = symbols[curr] + val + " " + curr; });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => { setCurrency("USD"); mountAcceptedStrips(); });
+
+    // MOBILE MENU
+    const mobileMenuEl = document.getElementById("mobileMenu");
+    function toggleMobileMenu() { mobileMenuEl.classList.toggle("hidden", !mobileMenuEl.classList.contains("hidden")); }
+    function closeMobileMenu() { mobileMenuEl.classList.add("hidden"); }
+
+    // ICONS
+    function getIconNode(key){ const tpl = document.getElementById("svgIcons"); const holder = tpl.content.querySelector(`[data-icon="${key}"]`); return holder ? holder.cloneNode(true) : null; }
+    function mountRow(rowEl, keys){ rowEl.innerHTML = ""; keys.forEach(k => { const n = getIconNode(k); if (n) rowEl.appendChild(n); }); }
+    function mountAcceptedStrips(){ const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"]; const navRow = document.getElementById("navAcceptedRow"); const footRow = document.getElementById("footerAcceptedRow"); const mobRow = document.getElementById("mobileAcceptedRow"); if (navRow) mountRow(navRow, keys); if (footRow) mountRow(footRow, keys); if (mobRow) mountRow(mobRow, keys); }
+
+    // MODAL & PAYMENTS
+    const orderForm = document.getElementById("orderForm"); const statusBox = document.getElementById("orderStatusBox"); const errorBox = document.getElementById("orderErrorBox"); const submitBtn = document.getElementById("submitBtn"); const paySelect = document.getElementById("paymentSelect"); const payLogosRow = document.getElementById("payLogosRow");
+   
+    function openModal(productKey, productLabel) {
+      document.getElementById("orderModal").classList.remove("hidden");
+      document.getElementById("productKey").value = productKey;
+      document.getElementById("productDisplay").innerText = productLabel;
+      document.getElementById("productInput").value = productLabel;
+      const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency;
+      statusBox.classList.add("hidden"); errorBox.classList.add("hidden"); orderForm.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+      document.getElementById("orderTs").value = String(Date.now());
+      if (paySelect) paySelect.value = "CARD"; updatePaymentUI();
+    }
+    function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency; } }
+   
+    function updatePaymentUI(){
+      payLogosRow.innerHTML = "";
+      const mode = paySelect.value;
+      if (mode === "CARD") { ["visa","mc","amex","applepay","gpay"].forEach(k => payLogosRow.appendChild(getIconNode(k))); submitBtn.textContent = "PAYER MAINTENANT"; return; }
+      if (mode === "INTERAC") { payLogosRow.appendChild(getIconNode("interac")); submitBtn.textContent = "SOUMETTRE LA COMMANDE"; return; }
+      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" }; payLogosRow.appendChild(getIconNode(map[mode] || "btc")); submitBtn.textContent = "SOUMETTRE LA COMMANDE";
+    }
+    paySelect.addEventListener("change", updatePaymentUI);
+
+    orderForm.addEventListener("submit", async (e) => {
+      e.preventDefault(); errorBox.classList.add("hidden"); statusBox.classList.add("hidden");
+      const fd = new FormData(orderForm); if (fd.has("website")) fd.set("website", "");
+      const ts = Number(fd.get("ts")); if (!Number.isFinite(ts) || (Date.now() - ts) < 800) { errorBox.textContent = "Vérification de sécurité échouée."; errorBox.classList.remove("hidden"); return; }
+      const email = (fd.get("Email") || "").toString().trim(); const address = (fd.get("Address") || "").toString().trim();
+      if (!email || !address) { errorBox.textContent = "Champs requis manquants."; errorBox.classList.remove("hidden"); return; }
+
+      const productKey = (fd.get("ProductKey") || "").toString().trim(); const payMode = (fd.get("PaymentMethod") || "").toString().trim();
+      submitBtn.disabled = true; submitBtn.classList.add("opacity-60", "cursor-not-allowed"); submitBtn.textContent = "TRAITEMENT...";
+
+      try {
+        if (payMode === "CARD") {
+          const link = PAYMENT_LINKS[productKey]; if (!link) throw new Error("Lien de paiement introuvable.");
+          const url = new URL(link); url.searchParams.set("prefilled_email", email); url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
+          window.location.href = url.toString(); return;
+        }
+        const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(Object.fromEntries(fd.entries())), });
+        if (!res.ok) throw new Error("Échec de la commande.");
+        orderForm.classList.add("hidden"); statusBox.classList.remove("hidden");
+      } catch (err) { errorBox.textContent = err.message || "Erreur."; errorBox.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE"; }
+    });
+  </script>
 </body>
 </html>
