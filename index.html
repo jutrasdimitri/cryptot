@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CryptoT // Wear Your Assets</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -71,8 +69,10 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
+    
+    /* --- BOUTON DE RÉGLAGE DES LOGOS (ICI C'EST PLUS GROS) --- */
     .picon{
-      width: 26px; height: 18px;
+      width: 34px; height: 22px; /* Un peu plus gros de base */
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -83,14 +83,18 @@
     .picon svg{ width: 100%; height: 100%; }
     .picon:hover{ opacity: 1; transform: translateY(-1px); }
 
-    /* slightly larger icons for header strip */
-    .hero-icons .picon{ width: 30px; height: 20px; }
+    /* slightly larger icons for header/footer strip */
+    .hero-icons .picon{ width: 40px; height: 26px; } /* Bien visible */
 
-    /* icons inside modal can be a touch larger */
-    .modal-icons .picon{ width: 30px; height: 20px; }
+    /* icons inside modal */
+    .modal-icons .picon{ width: 40px; height: 26px; } /* Bien visible */
 
-    /* tiny separator line */
-    .sep{ width:1px; height:18px; background: rgba(255,255,255,.10); margin: 0 8px; }
+    /* Navigation Active State Glow */
+    nav a.nav-active {
+        color: #39ff14 !important;
+        text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+        border-bottom: 2px solid #39ff14;
+    }
 
     /* Keep nav compact on smaller laptops */
     @media (max-width: 1100px){
@@ -98,13 +102,11 @@
     }
   </style>
 
-  <!-- CoinMarketCap marquee -->
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
 
 <body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
 
-  <!-- Marquee -->
   <div id="coinmarketcap-widget-marquee"
        coins="1,1027,2010,52,5426"
        currency="USD"
@@ -113,16 +115,12 @@
        show-symbol-logo="true"
        class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
-  <!-- SVG ICONS (INLINE, NO FILES NEEDED) -->
   <template id="svgIcons">
-    <!-- VISA -->
     <span data-icon="visa" class="picon" title="Visa" aria-label="Visa">
       <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
         <text x="0" y="18" font-family="Arial Black, Arial, sans-serif" font-size="18" fill="#1A1F71">VISA</text>
       </svg>
     </span>
-
-    <!-- Mastercard -->
     <span data-icon="mc" class="picon" title="Mastercard" aria-label="Mastercard">
       <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
         <circle cx="26" cy="12" r="8" fill="#EB001B"></circle>
@@ -130,16 +128,12 @@
         <circle cx="32" cy="12" r="8" fill="#FF5F00" opacity="0.9"></circle>
       </svg>
     </span>
-
-    <!-- Amex -->
     <span data-icon="amex" class="picon" title="American Express" aria-label="American Express">
       <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
         <rect x="2" y="3" width="60" height="18" rx="3" fill="#2E77BB"></rect>
         <text x="10" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">AMEX</text>
       </svg>
     </span>
-
-    <!-- Apple Pay -->
     <span data-icon="applepay" class="picon" title="Apple Pay" aria-label="Apple Pay">
       <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
         <path d="M18 10.5c1.2-1.5 2-3.4 1.8-5.5-1.8.1-3.8 1.2-5 2.7-1.1 1.3-2.1 3.3-1.8 5.2 2 .2 3.8-1 5-2.4Z" fill="#FFFFFF"/>
@@ -147,8 +141,6 @@
         <text x="34" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">Pay</text>
       </svg>
     </span>
-
-    <!-- Google Pay -->
     <span data-icon="gpay" class="picon" title="Google Pay" aria-label="Google Pay">
       <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
         <text x="2" y="16" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">G</text>
@@ -159,32 +151,24 @@
         <text x="26" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">Pay</text>
       </svg>
     </span>
-
-    <!-- Interac -->
     <span data-icon="interac" class="picon" title="Interac e-Transfer" aria-label="Interac e-Transfer">
       <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
         <rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"></rect>
         <text x="12" y="17" font-family="Arial Black, Arial, sans-serif" font-size="11" fill="#111111">INTERAC</text>
       </svg>
     </span>
-
-    <!-- BTC -->
     <span data-icon="btc" class="picon" title="Bitcoin" aria-label="Bitcoin">
       <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
         <circle cx="12" cy="12" r="10" fill="#F7931A"></circle>
         <text x="9.2" y="16.2" font-family="Arial Black, Arial, sans-serif" font-size="10" fill="#111111">₿</text>
       </svg>
     </span>
-
-    <!-- ETH -->
     <span data-icon="eth" class="picon" title="Ethereum" aria-label="Ethereum">
       <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
         <polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"></polygon>
         <polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"></polygon>
       </svg>
     </span>
-
-    <!-- ADA -->
     <span data-icon="ada" class="picon" title="Cardano" aria-label="Cardano">
       <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
         <circle cx="12" cy="12" r="2.2" fill="#0033AD"></circle>
@@ -200,16 +184,12 @@
         </g>
       </svg>
     </span>
-
-    <!-- XRP (clean “X” mark) -->
     <span data-icon="xrp" class="picon" title="XRP" aria-label="XRP">
       <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
         <path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z" fill="#FFFFFF"/>
         <path d="M18 17c-1.6-1.6-3.2-2.4-6-2.4S7.6 15.4 6 17H4c2.2-2.2 4.7-3.6 8-3.6s5.8 1.4 8 3.6h-2Z" fill="#FFFFFF"/>
       </svg>
     </span>
-
-    <!-- SOL -->
     <span data-icon="sol" class="picon" title="Solana" aria-label="Solana">
       <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
         <defs>
@@ -228,27 +208,24 @@
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
-        <!-- Brand -->
         <div class="flex items-center gap-2 min-w-[170px]">
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
-          <a href="#products" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;"
+          <a href="#home" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;"
              class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
             CRYPTO<span class="text-brand-green">T</span>
           </a>
         </div>
 
-        <!-- NAV Accepted strip (desktop) -->
         <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
           <span class="lbl mr-3">ACCEPTED</span>
           <div class="flex items-center gap-2" id="navAcceptedRow"></div>
         </div>
 
-        <!-- Links -->
         <div class="hidden md:flex items-center space-x-6">
-          <a href="#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ THE_POWER_5 ]</a>
-          <a href="btc.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
-          <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTO ]</a>
-          <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
+          <a href="#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">THE_POWER_5</a>
+          <a href="btc.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">ABOUT_THEM</a>
+          <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">MANIFESTO</a>
+          <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">CONTACT_US</a>
 
           <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
@@ -261,7 +238,6 @@
           <a href="fr.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
         </div>
 
-        <!-- Mobile button -->
         <button type="button"
                 class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
                 aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMobileMenu()">
@@ -274,7 +250,6 @@
       </div>
     </div>
 
-    <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black border-l border-brand-green/20 p-6 top-[62px]">
       <div class="flex flex-col gap-6 text-center mt-10">
         <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
@@ -282,7 +257,6 @@
         <a href="#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
         <a href="#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
 
-        <!-- Accepted strip in mobile -->
         <div class="logo-strip rounded px-3 py-3">
           <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
           <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
@@ -303,7 +277,7 @@
     </div>
   </nav>
 
-  <header class="py-20 text-center relative overflow-hidden">
+  <header id="home" class="py-20 text-center relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
     <div class="relative z-10 px-4">
       <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
@@ -316,16 +290,6 @@
         <span class="text-brand-green">Code is Law. Style is Choice.</span>
       </p>
 
-      <!-- Header accepted strip -->
-      <div class="mx-auto max-w-3xl logo-strip rounded px-4 py-3">
-        <div class="flex items-center justify-center gap-3">
-          <span class="lbl hidden sm:inline">ACCEPTED PAYMENT METHODS</span>
-          <span class="lbl sm:hidden">ACCEPTED</span>
-          <span class="sep"></span>
-          <div class="flex flex-wrap items-center justify-center gap-2 hero-icons" id="heroAcceptedRow"></div>
-        </div>
-      </div>
-
       <div class="inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-xs h-[1px] mt-10"></div>
     </div>
   </header>
@@ -335,7 +299,6 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- BTC -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="btc.jpg" alt="BTC VIRES IN NUMERIS" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -360,7 +323,6 @@
         </div>
       </div>
 
-      <!-- ETH -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="eth.jpg" alt="ETH CODE IS LAW" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -385,7 +347,6 @@
         </div>
       </div>
 
-      <!-- ADA -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -410,7 +371,6 @@
         </div>
       </div>
 
-      <!-- XRP -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -435,7 +395,6 @@
         </div>
       </div>
 
-      <!-- SOL -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
@@ -460,7 +419,6 @@
         </div>
       </div>
 
-      <!-- Custom -->
       <div class="group bg-gray-900/50 border border-gray-800 border-dashed hover:border-brand-green transition-all duration-300 flex flex-col justify-center items-center text-center p-8 min-h-[500px]">
         <div class="w-20 h-20 rounded-full bg-brand-green/10 flex items-center justify-center mb-6 group-hover:bg-brand-green/20 transition-colors">
           <span class="text-4xl text-brand-green font-light">+</span>
@@ -517,7 +475,6 @@
     </div>
   </footer>
 
-  <!-- MODAL -->
   <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
     <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)]">
       <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Close">
@@ -530,7 +487,6 @@
       <h2 class="font-orbitron text-2xl text-white mb-1">SECURE ORDER</h2>
       <p class="text-brand-green text-xs mb-4">ENCRYPTED CONNECTION //</p>
 
-      <!-- Dynamic logos box -->
       <div class="mb-5 border border-white/10 bg-black/35 px-4 py-3">
         <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Accepted Payment Methods</div>
         <div id="payLogosRow" class="flex flex-wrap items-center gap-2 modal-icons"></div>
@@ -544,7 +500,6 @@
       <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
 
       <form id="orderForm" class="space-y-4" novalidate>
-        <!-- Honeypot (never blocks) -->
         <label class="hp-field" aria-hidden="true">
           Website
           <input type="text" name="website" autocomplete="off" tabindex="-1" inputmode="url">
@@ -616,7 +571,7 @@
     // ====== CONFIG ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
 
-    // Payment links (do NOT mention provider in UI)
+    // Payment links
     const PAYMENT_LINKS = {
       BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
       ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
@@ -728,7 +683,6 @@
 
       document.getElementById("orderTs").value = String(Date.now());
 
-      // Default selection
       if (paySelect) paySelect.value = "CARD";
       updatePaymentUI();
     }
@@ -770,7 +724,6 @@
         return;
       }
 
-      // Crypto mode
       const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
       payLogosRow.appendChild(getIconNode(map[mode] || "btc"));
       submitBtn.textContent = "SUBMIT ORDER";
@@ -791,9 +744,7 @@
       statusBox.classList.add("hidden");
 
       const fd = new FormData(orderForm);
-
-      // honeypot never blocks (autofill can fill it)
-      if (fd.has("website")) fd.set("website", "");
+      if (fd.has("website")) fd.set("website", ""); // honeypot
 
       const ts = Number(fd.get("ts"));
       if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
@@ -818,7 +769,6 @@
       submitBtn.textContent = "PROCESSING...";
 
       try {
-        // CARD -> redirect to payment link
         if (payMode === "CARD") {
           const link = PAYMENT_LINKS[productKey];
           if (!link) throw new Error("Payment link not found for this item.");
@@ -830,7 +780,6 @@
           return;
         }
 
-        // INTERAC / CRYPTO -> Formspree intake
         const payload = Object.fromEntries(fd.entries());
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
@@ -856,6 +805,38 @@
         submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
         submitBtn.textContent = (paySelect.value === "CARD") ? "PAY NOW" : "SUBMIT ORDER";
       }
+    });
+
+    // ====== SCROLL SPY LOGIC (LE NOUVEAU MOTEUR) ======
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("header, section, main, footer");
+      const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.25 // Active quand 25% de la section est visible
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reset all links
+            navLinks.forEach(link => link.classList.remove("nav-active"));
+            
+            // Activate current link
+            const id = entry.target.getAttribute("id");
+            if (id) {
+              const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+              if (activeLink) activeLink.classList.add("nav-active");
+            }
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => {
+        if(section.getAttribute('id')) observer.observe(section);
+      });
     });
   </script>
 </body>
