@@ -70,9 +70,9 @@
       white-space: nowrap;
     }
     
-    /* --- BOUTON DE RÉGLAGE DES LOGOS (ICI C'EST PLUS GROS) --- */
+    /* ICONS SIZING */
     .picon{
-      width: 34px; height: 22px; /* Un peu plus gros de base */
+      width: 34px; height: 22px; 
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -83,11 +83,11 @@
     .picon svg{ width: 100%; height: 100%; }
     .picon:hover{ opacity: 1; transform: translateY(-1px); }
 
-    /* slightly larger icons for header/footer strip */
-    .hero-icons .picon{ width: 40px; height: 26px; } /* Bien visible */
+    /* larger icons for header/footer strip */
+    .hero-icons .picon{ width: 40px; height: 26px; }
 
     /* icons inside modal */
-    .modal-icons .picon{ width: 40px; height: 26px; } /* Bien visible */
+    .modal-icons .picon{ width: 40px; height: 26px; }
 
     /* Navigation Active State Glow */
     nav a.nav-active {
@@ -250,7 +250,7 @@
       </div>
     </div>
 
-    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black border-l border-brand-green/20 p-6 top-[62px]">
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
       <div class="flex flex-col gap-6 text-center mt-10">
         <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
         <a href="btc.html" onclick="closeMobileMenu()" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THEM</a>
@@ -807,7 +807,7 @@
       }
     });
 
-    // ====== SCROLL SPY LOGIC (LE NOUVEAU MOTEUR) ======
+    // ====== SCROLL SPY LOGIC ======
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll("header, section, main, footer");
       const navLinks = document.querySelectorAll("nav a[href^='#']");
@@ -821,10 +821,8 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Reset all links
             navLinks.forEach(link => link.classList.remove("nav-active"));
             
-            // Activate current link
             const id = entry.target.getAttribute("id");
             if (id) {
               const activeLink = document.querySelector(`nav a[href="#${id}"]`);
