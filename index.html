@@ -45,7 +45,7 @@
     }
     :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
 
-    /* Honeypot (kept but NEVER blocks anymore) */
+    /* safer honeypot: hidden but avoids autofill */
     .hp-field{
       position:absolute; left:-9999px; top:auto;
       width:1px; height:1px; overflow:hidden;
@@ -53,17 +53,53 @@
 
     .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
 
-    /* Payment icons */
-    .pay-logos img{
-      width: 34px;
-      height: 34px;
-      opacity: .85;
-      filter: drop-shadow(0 0 10px rgba(57,255,20,0.06));
+    /* ===== Accepted payments bar (PRO) ===== */
+    .paybar {
+      border-top: 1px solid rgba(57,255,20,.18);
+      border-bottom: 1px solid rgba(57,255,20,.18);
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
     }
-    .pay-logos img:hover { opacity: 1; }
-    .pay-pill{
-      border: 1px solid rgba(57,255,20,.25);
-      background: rgba(0,0,0,.35);
+    .paybar .label {
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 10px;
+      color: rgba(229,229,229,.72);
+      font-family: Orbitron, sans-serif;
+    }
+    .logo-row { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:center; }
+    .logo-row img {
+      height: 16px;
+      width: auto;
+      opacity: .92;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,.35));
+    }
+    .logo-row img.big { height: 18px; }
+    .divider-dot {
+      width: 4px; height: 4px; border-radius: 999px;
+      background: rgba(57,255,20,.45);
+      opacity: .8;
+    }
+    /* Interac as a compact "badge" (logo-like) */
+    .interac-badge{
+      height: 18px;
+      padding: 0 8px;
+      border-radius: 4px;
+      display:flex; align-items:center; gap:6px;
+      background: rgba(255,210,0,.12);
+      border: 1px solid rgba(255,210,0,.45);
+      color: #ffd200;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-family: Orbitron, sans-serif;
+      opacity: .95;
+    }
+    .interac-dot{
+      width:10px; height:10px; border-radius:999px;
+      background:#ffd200;
+      box-shadow: 0 0 10px rgba(255,210,0,.25);
     }
   </style>
 
@@ -108,23 +144,23 @@
     </div>
 
     <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[70] bg-black border-l border-brand-green/20 p-6 top-[62px]">
-        <div class="flex flex-col gap-6 text-center mt-10">
-            <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
-            <a href="btc.html" onclick="closeMobileMenu()" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THEM</a>
-            <a href="#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
-            <a href="#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
+      <div class="flex flex-col gap-6 text-center mt-10">
+        <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
+        <a href="btc.html" onclick="closeMobileMenu()" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THEM</a>
+        <a href="#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
+        <a href="#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
 
-            <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-gray-900">
-               <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
-               <span class="text-gray-600">|</span>
-               <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
-               <span class="text-gray-600">|</span>
-               <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
-            </div>
-
-            <a href="fr.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
+        <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-gray-900">
+          <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
+          <span class="text-gray-600">|</span>
+          <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
+          <span class="text-gray-600">|</span>
+          <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
         </div>
-        <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
+
+        <a href="fr.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
+      </div>
+      <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
     </div>
   </nav>
 
@@ -140,21 +176,38 @@
         <span class="text-brand-green">Code is Law. Style is Choice.</span>
       </p>
 
-      <!-- Small payment strip (no checkout mention) -->
-      <div class="mt-8 flex items-center justify-center gap-3 pay-logos pay-pill px-4 py-3">
-        <img alt="Visa" src="https://cdn.simpleicons.org/visa/ffffff" />
-        <img alt="Mastercard" src="https://cdn.simpleicons.org/mastercard/ffffff" />
-        <img alt="American Express" src="https://cdn.simpleicons.org/americanexpress/ffffff" />
-        <img alt="Apple Pay" src="https://cdn.simpleicons.org/applepay/ffffff" />
-        <img alt="Google Pay" src="https://cdn.simpleicons.org/googlepay/ffffff" />
-        <div class="w-px h-7 bg-white/10 mx-1"></div>
-        <img alt="Interac" src="https://cdn.simpleicons.org/interac/FFD400" />
-        <div class="w-px h-7 bg-white/10 mx-1"></div>
-        <img alt="Bitcoin" src="https://cdn.simpleicons.org/bitcoin/F7931A" />
-        <img alt="Ethereum" src="https://cdn.simpleicons.org/ethereum/627EEA" />
-        <img alt="Cardano" src="https://cdn.simpleicons.org/cardano/0033ad" />
-        <img alt="XRP" src="https://cdn.simpleicons.org/xrp/ffffff" />
-        <img alt="Solana" src="https://cdn.simpleicons.org/solana/14F195" />
+      <!-- ✅ PRO payment strip (the one you hated is now fixed) -->
+      <div class="paybar max-w-4xl mx-auto px-4 py-3 mt-8">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-3">
+          <div class="label">Accepted payment methods</div>
+          <div class="hidden md:block divider-dot"></div>
+
+          <div class="logo-row" aria-label="Accepted payment methods logos">
+            <!-- Cards / wallets -->
+            <img class="big" alt="Visa" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/visa.svg" style="filter:none; height:18px;" onload="this.style.filter='none'" />
+            <img class="big" alt="Mastercard" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/mastercard.svg" style="filter:none; height:18px;" />
+            <img class="big" alt="American Express" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/americanexpress.svg" style="filter:none; height:18px;" />
+            <img alt="Apple Pay" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/applepay.svg" style="filter:none;" />
+            <img alt="Google Pay" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/googlepay.svg" style="filter:none;" />
+
+            <span class="divider-dot" aria-hidden="true"></span>
+
+            <!-- Interac badge (reliable + clear) -->
+            <span class="interac-badge" title="Interac e-Transfer">
+              <span class="interac-dot" aria-hidden="true"></span>
+              Interac
+            </span>
+
+            <span class="divider-dot" aria-hidden="true"></span>
+
+            <!-- Crypto -->
+            <img alt="Bitcoin" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/bitcoin.svg" />
+            <img alt="Ethereum" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/ethereum.svg" />
+            <img alt="Cardano" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/cardano.svg" />
+            <img alt="XRP" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/xrp.svg" />
+            <img alt="Solana" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/solana.svg" />
+          </div>
+        </div>
       </div>
 
       <div class="inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-xs h-[1px] mt-10"></div>
@@ -184,8 +237,12 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-                <a href="btc.html" class="flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
-                <button onclick="openModal('BTC','BTC // VIRES IN NUMERIS')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="btc.html" class="flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
+                HISTORY
+              </a>
+              <button onclick="openModal('BTC // VIRES IN NUMERIS')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                ORDER NOW
+              </button>
             </div>
           </div>
         </div>
@@ -194,7 +251,7 @@
       <!-- ETH -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
-           <img src="eth.jpg" alt="ETH CODE IS LAW" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <img src="eth.jpg" alt="ETH CODE IS LAW" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#627EEA] border border-[#627EEA] font-bold">Available Now</div>
         </div>
         <div class="p-6">
@@ -209,8 +266,12 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-                <a href="eth.html" class="flex-1 py-3 border border-[#627EEA] text-[#627EEA] font-bold text-center text-xs hover:bg-[#627EEA]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
-                <button onclick="openModal('ETH','ETH // CODE IS LAW')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="eth.html" class="flex-1 py-3 border border-[#627EEA] text-[#627EEA] font-bold text-center text-xs hover:bg-[#627EEA]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
+                HISTORY
+              </a>
+              <button onclick="openModal('ETH // CODE IS LAW')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                ORDER NOW
+              </button>
             </div>
           </div>
         </div>
@@ -219,7 +280,7 @@
       <!-- ADA -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
-           <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#0033ad] border border-[#0033ad] font-bold">Available Now</div>
         </div>
         <div class="p-6">
@@ -234,8 +295,12 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-                <a href="ada.html" class="flex-1 py-3 border border-[#0033ad] text-[#0033ad] font-bold text-center text-xs hover:bg-[#0033ad]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
-                <button onclick="openModal('ADA','ADA // PEER REVIEWED')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="ada.html" class="flex-1 py-3 border border-[#0033ad] text-[#0033ad] font-bold text-center text-xs hover:bg-[#0033ad]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
+                HISTORY
+              </a>
+              <button onclick="openModal('ADA // PEER REVIEWED')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                ORDER NOW
+              </button>
             </div>
           </div>
         </div>
@@ -244,7 +309,7 @@
       <!-- XRP -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
-           <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-white border border-white font-bold">Available Now</div>
         </div>
         <div class="p-6">
@@ -259,8 +324,12 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-                <a href="xrp.html" class="flex-1 py-3 border border-white text-white font-bold text-center text-xs hover:bg-white/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
-                <button onclick="openModal('XRP','XRP // THE STANDARD')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="xrp.html" class="flex-1 py-3 border border-white text-white font-bold text-center text-xs hover:bg-white/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
+                HISTORY
+              </a>
+              <button onclick="openModal('XRP // THE STANDARD')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                ORDER NOW
+              </button>
             </div>
           </div>
         </div>
@@ -269,7 +338,7 @@
       <!-- SOL -->
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
         <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
-           <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-[#9945FF] border border-[#14F195] font-bold">Available Now</div>
         </div>
         <div class="p-6">
@@ -284,23 +353,27 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-                <a href="sol.html" class="flex-1 py-3 border border-[#14F195] text-[#14F195] font-bold text-center text-xs hover:bg-[#14F195]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
-                <button onclick="openModal('SOL','SOL // PROOF OF HISTORY')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="sol.html" class="flex-1 py-3 border border-[#14F195] text-[#14F195] font-bold text-center text-xs hover:bg-[#14F195]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">
+                HISTORY
+              </a>
+              <button onclick="openModal('SOL // PROOF OF HISTORY')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
+                ORDER NOW
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Custom -->
+      <!-- CUSTOM -->
       <div class="group bg-gray-900/50 border border-gray-800 border-dashed hover:border-brand-green transition-all duration-300 flex flex-col justify-center items-center text-center p-8 min-h-[500px]">
         <div class="w-20 h-20 rounded-full bg-brand-green/10 flex items-center justify-center mb-6 group-hover:bg-brand-green/20 transition-colors">
           <span class="text-4xl text-brand-green font-light">+</span>
         </div>
         <h3 class="font-orbitron text-xl text-white mb-2">CUSTOM ORDER</h3>
         <p class="text-gray-400 text-sm mb-6 max-w-xs">
-            Don't see your favorite coin? We offer <strong class="text-brand-green">custom colors</strong>, <strong class="text-brand-green">logo creation</strong>, and any ticker. Just ask.
+          Don't see your favorite coin? We offer <strong class="text-brand-green">custom colors</strong>, <strong class="text-brand-green">logo creation</strong>, and any ticker. Just ask.
         </p>
-        <button onclick="openModal('CUSTOM','CUSTOM REQUEST')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+        <button onclick="openModal('CUSTOM REQUEST')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
           Request Custom
         </button>
       </div>
@@ -336,30 +409,13 @@
           <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
         </div>
       </div>
-
-      <div class="flex items-center justify-center gap-3 pay-logos opacity-80 mb-6">
-        <img alt="Visa" src="https://cdn.simpleicons.org/visa/ffffff" />
-        <img alt="Mastercard" src="https://cdn.simpleicons.org/mastercard/ffffff" />
-        <img alt="American Express" src="https://cdn.simpleicons.org/americanexpress/ffffff" />
-        <img alt="Apple Pay" src="https://cdn.simpleicons.org/applepay/ffffff" />
-        <img alt="Google Pay" src="https://cdn.simpleicons.org/googlepay/ffffff" />
-        <span class="text-gray-700 mx-1">|</span>
-        <img alt="Interac" src="https://cdn.simpleicons.org/interac/FFD400" />
-        <span class="text-gray-700 mx-1">|</span>
-        <img alt="Bitcoin" src="https://cdn.simpleicons.org/bitcoin/F7931A" />
-        <img alt="Ethereum" src="https://cdn.simpleicons.org/ethereum/627EEA" />
-        <img alt="Cardano" src="https://cdn.simpleicons.org/cardano/0033ad" />
-        <img alt="XRP" src="https://cdn.simpleicons.org/xrp/ffffff" />
-        <img alt="Solana" src="https://cdn.simpleicons.org/solana/14F195" />
-      </div>
-
       <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
       <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
       <p class="text-gray-600 text-[10px] mt-8">ALL RIGHTS RESERVED.</p>
     </div>
   </footer>
 
-  <!-- MODAL -->
+  <!-- Modal -->
   <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
     <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)]">
       <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Close">
@@ -371,28 +427,40 @@
       <h2 class="font-orbitron text-2xl text-white mb-1">SECURE ORDER</h2>
       <p class="text-brand-green text-xs mb-4">ENCRYPTED CONNECTION //</p>
 
-      <!-- Dynamic logos -->
-      <div id="payLogosBox" class="mb-5 border border-white/10 bg-black/35 px-4 py-3">
-        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Accepted Payment Methods</div>
-        <div id="payLogosRow" class="flex flex-wrap items-center gap-3 pay-logos"></div>
+      <div class="border border-white/10 bg-black/40 p-3 mb-5">
+        <div class="text-[10px] text-gray-400 uppercase tracking-[.18em] mb-2">Accepted payment methods</div>
+        <div class="logo-row">
+          <img class="big" alt="Visa" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/visa.svg" />
+          <img class="big" alt="Mastercard" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/mastercard.svg" />
+          <img class="big" alt="American Express" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/americanexpress.svg" />
+          <img alt="Apple Pay" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/applepay.svg" />
+          <img alt="Google Pay" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/googlepay.svg" />
+          <span class="interac-badge"><span class="interac-dot"></span>Interac</span>
+          <img alt="Bitcoin" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/bitcoin.svg" />
+          <img alt="Ethereum" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/ethereum.svg" />
+          <img alt="Cardano" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/cardano.svg" />
+          <img alt="XRP" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/xrp.svg" />
+          <img alt="Solana" src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/solana.svg" />
+        </div>
       </div>
 
       <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
-        <div class="text-brand-green text-xs tracking-widest">ORDER RECEIVED //</div>
-        <div class="text-gray-400 text-[11px] mt-1">We will contact you shortly with the next steps.</div>
+        <div class="text-brand-green text-xs tracking-widest">ORDER INITIATED // CHECK EMAIL</div>
+        <div class="text-gray-400 text-[11px] mt-1">If you don't see it, check spam.</div>
       </div>
 
       <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
 
       <form id="orderForm" class="space-y-4" novalidate>
-        <!-- Honeypot: NEVER blocks anymore -->
-        <label class="hp-field" aria-hidden="true">
-          Website
-          <input type="text" name="website" autocomplete="off" tabindex="-1" inputmode="url">
-        </label>
+        <!-- safer honeypot -->
+        <div class="hp-field" aria-hidden="true">
+          <label>
+            Leave this empty
+            <input type="text" name="website_url" autocomplete="new-password" tabindex="-1" />
+          </label>
+        </div>
 
         <input type="hidden" name="ts" id="orderTs" value="">
-        <input type="hidden" id="productKey" name="ProductKey" value="">
         <input type="hidden" id="productInput" name="Product" value="">
         <input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
 
@@ -418,14 +486,14 @@
 
         <div>
           <label class="block text-gray-400 text-xs mb-1 uppercase">Payment Method</label>
-          <select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
-            <option value="CARD">Card / Apple Pay / Google Pay</option>
-            <option value="INTERAC">Interac e-Transfer</option>
-            <option value="BTC">Bitcoin (BTC)</option>
-            <option value="ETH">Ethereum (ETH)</option>
-            <option value="ADA">Cardano (ADA)</option>
-            <option value="XRP">XRP</option>
-            <option value="SOL">Solana (SOL)</option>
+          <select name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
+            <option>Card / Apple Pay / Google Pay</option>
+            <option>Interac e-Transfer</option>
+            <option>Bitcoin (BTC)</option>
+            <option>Ethereum (ETH)</option>
+            <option>Cardano (ADA)</option>
+            <option>XRP</option>
+            <option>Solana (SOL)</option>
           </select>
         </div>
 
@@ -443,22 +511,22 @@
 
         <button id="submitBtn" type="submit"
                 class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">
-          PAY NOW
+          CONTINUE
         </button>
 
-        <p id="smallNote" class="text-center text-gray-500 text-[10px] mt-2">
-          Choose your method above. You will be guided through the process securely.
+        <p class="text-center text-gray-500 text-[10px] mt-2">
+          You will receive a confirmation email after submitting.
         </p>
       </form>
     </div>
   </div>
 
   <script>
-    // Manual order intake (kept for Interac/Crypto)
+    // Form endpoint
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
 
-    // Payment links (Cards / Apple / Google)
-    const PAYMENT_LINKS = {
+    // Payment links (card/wallet flow)
+    const PAY_LINKS = {
       BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
       ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
       ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02",
@@ -466,7 +534,6 @@
       SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04"
     };
 
-    // Currency UI
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
     const symbols = { USD: "$", CAD: "$", EUR: "€" };
     let currentCurrency = "USD";
@@ -491,11 +558,8 @@
       });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      setCurrency("USD");
-    });
+    document.addEventListener("DOMContentLoaded", () => setCurrency("USD"));
 
-    // Mobile menu
     const mobileMenuEl = document.getElementById("mobileMenu");
     function toggleMobileMenu() {
       const isHidden = mobileMenuEl.classList.contains("hidden");
@@ -511,45 +575,35 @@
       if (btn) btn.setAttribute("aria-expanded", "false");
       document.body.classList.remove("overflow-hidden");
     }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") { closeMobileMenu(); closeModal(); }
+    });
 
-    // Modal
-    const orderForm = document.getElementById("orderForm");
-    const statusBox = document.getElementById("orderStatusBox");
-    const errorBox = document.getElementById("orderErrorBox");
-    const submitBtn = document.getElementById("submitBtn");
-    const paySelect = document.getElementById("paymentSelect");
-    const payLogosRow = document.getElementById("payLogosRow");
-    const smallNote = document.getElementById("smallNote");
-
-    function openModal(productKey, productLabel) {
+    function openModal(productName) {
       document.getElementById("orderModal").classList.remove("hidden");
-
-      document.getElementById("productKey").value = productKey;
-      document.getElementById("productDisplay").innerText = productLabel;
-      document.getElementById("productInput").value = productLabel;
+      document.getElementById("productDisplay").innerText = productName;
+      document.getElementById("productInput").value = productName;
 
       const currInput = document.getElementById("currencyInput");
       if (currInput) currInput.value = currentCurrency;
 
-      statusBox.classList.add("hidden");
-      errorBox.classList.add("hidden");
-      errorBox.textContent = "";
-      orderForm.classList.remove("hidden");
+      document.getElementById("orderStatusBox").classList.add("hidden");
+      document.getElementById("orderErrorBox").classList.add("hidden");
+      document.getElementById("orderErrorBox").textContent = "";
+      document.getElementById("orderForm").classList.remove("hidden");
 
-      submitBtn.disabled = false;
-      submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+      const btn = document.getElementById("submitBtn");
+      btn.disabled = false;
+      btn.classList.remove("opacity-60", "cursor-not-allowed");
+      btn.textContent = "CONTINUE";
 
       document.getElementById("orderTs").value = String(Date.now());
-
-      // default selection
-      if (paySelect) paySelect.value = "CARD";
-      updatePaymentUI();
     }
 
     function closeModal(reset = false) {
       document.getElementById("orderModal").classList.add("hidden");
       if (reset) {
-        orderForm.reset();
+        document.getElementById("orderForm").reset();
         const currInput = document.getElementById("currencyInput");
         if (currInput) currInput.value = currentCurrency;
       }
@@ -559,68 +613,21 @@
       if (e.target === this) closeModal();
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeMobileMenu();
-        closeModal();
-      }
-    });
-
-    function icon(src, alt){
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = alt;
-      img.loading = "lazy";
-      return img;
+    function detectCoinFromProduct(productName) {
+      const up = (productName || "").toUpperCase();
+      if (up.includes("BTC")) return "BTC";
+      if (up.includes("ETH")) return "ETH";
+      if (up.includes("ADA")) return "ADA";
+      if (up.includes("XRP")) return "XRP";
+      if (up.includes("SOL")) return "SOL";
+      return null;
     }
 
-    function setLogosFor(mode){
-      payLogosRow.innerHTML = "";
+    const orderForm = document.getElementById("orderForm");
+    const statusBox = document.getElementById("orderStatusBox");
+    const errorBox = document.getElementById("orderErrorBox");
+    const submitBtn = document.getElementById("submitBtn");
 
-      if (mode === "CARD") {
-        payLogosRow.append(
-          icon("https://cdn.simpleicons.org/visa/ffffff","Visa"),
-          icon("https://cdn.simpleicons.org/mastercard/ffffff","Mastercard"),
-          icon("https://cdn.simpleicons.org/americanexpress/ffffff","American Express"),
-          icon("https://cdn.simpleicons.org/applepay/ffffff","Apple Pay"),
-          icon("https://cdn.simpleicons.org/googlepay/ffffff","Google Pay")
-        );
-        submitBtn.textContent = "PAY NOW";
-        smallNote.textContent = "Fast checkout. Visa / Mastercard / Amex + Apple Pay + Google Pay.";
-        return;
-      }
-
-      if (mode === "INTERAC") {
-        payLogosRow.append(
-          icon("https://cdn.simpleicons.org/interac/FFD400","Interac")
-        );
-        submitBtn.textContent = "SUBMIT ORDER";
-        smallNote.textContent = "We will contact you with the next steps after submission.";
-        return;
-      }
-
-      // Crypto
-      const map = {
-        BTC: ["https://cdn.simpleicons.org/bitcoin/F7931A","Bitcoin"],
-        ETH: ["https://cdn.simpleicons.org/ethereum/627EEA","Ethereum"],
-        ADA: ["https://cdn.simpleicons.org/cardano/0033ad","Cardano"],
-        XRP: ["https://cdn.simpleicons.org/xrp/ffffff","XRP"],
-        SOL: ["https://cdn.simpleicons.org/solana/14F195","Solana"],
-      };
-      const item = map[mode] || ["https://cdn.simpleicons.org/bitcoin/F7931A","Crypto"];
-      payLogosRow.append(icon(item[0], item[1]));
-      submitBtn.textContent = "SUBMIT ORDER";
-      smallNote.textContent = "We will contact you with the next steps after submission.";
-    }
-
-    function updatePaymentUI(){
-      const mode = paySelect.value;
-      setLogosFor(mode);
-    }
-
-    paySelect.addEventListener("change", updatePaymentUI);
-
-    // Submit logic
     orderForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -630,17 +637,23 @@
 
       const fd = new FormData(orderForm);
 
-      // Honeypot: DO NOT block (autofill can fill it)
-      // If it has content, just ignore it.
-      if (fd.has("website")) fd.set("website", "");
-
-      const ts = Number(fd.get("ts"));
-      if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
-        errorBox.textContent = "Security check: please wait a second and try again.";
+      // safer honeypot
+      const hp = (fd.get("website_url") || "").toString().trim();
+      if (hp) {
+        errorBox.textContent = "Spam detected.";
         errorBox.classList.remove("hidden");
         return;
       }
 
+      // time-check
+      const ts = Number(fd.get("ts"));
+      if (!Number.isFinite(ts) || (Date.now() - ts) < 900) {
+        errorBox.textContent = "Security check failed. Please wait a moment and try again.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      // required fields
       const email = (fd.get("Email") || "").toString().trim();
       const address = (fd.get("Address") || "").toString().trim();
       if (!email || !address) {
@@ -649,33 +662,17 @@
         return;
       }
 
-      const productKey = (fd.get("ProductKey") || "").toString().trim();
-      const payMode = (fd.get("PaymentMethod") || "").toString().trim();
-
       submitBtn.disabled = true;
       submitBtn.classList.add("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "PROCESSING...";
+      submitBtn.textContent = "SENDING...";
+
+      const paymentMethod = (fd.get("PaymentMethod") || "").toString();
+      const productName = (fd.get("Product") || "").toString();
+      const coin = detectCoinFromProduct(productName);
 
       try {
-        // CARD / Apple / Google -> redirect
-        if (payMode === "CARD") {
-          const link = PAYMENT_LINKS[productKey];
-          if (!link) throw new Error("Payment link not found for this item.");
-
-          // Pass email to checkout if supported (safe even if ignored)
-          const url = new URL(link);
-          url.searchParams.set("prefilled_email", email);
-
-          // Optional metadata-like reference (safe if ignored)
-          url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
-
-          window.location.href = url.toString();
-          return;
-        }
-
-        // INTERAC / CRYPTO -> Formspree intake
+        // Send order details to Formspree (always)
         const payload = Object.fromEntries(fd.entries());
-
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Accept": "application/json", "Content-Type": "application/json" },
@@ -690,15 +687,24 @@
           throw new Error(msg);
         }
 
+        // If user chose card/wallets, redirect to the matching payment link
+        if (paymentMethod.startsWith("Card") && coin && PAY_LINKS[coin]) {
+          // simple redirect after successful form submission
+          window.location.href = PAY_LINKS[coin];
+          return;
+        }
+
+        // Otherwise show success box (Interac / Crypto flows handled by email)
         orderForm.classList.add("hidden");
         statusBox.classList.remove("hidden");
+
       } catch (err) {
         errorBox.textContent = err.message || "Network error. Please try again.";
         errorBox.classList.remove("hidden");
 
         submitBtn.disabled = false;
         submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        submitBtn.textContent = (paySelect.value === "CARD") ? "PAY NOW" : "SUBMIT ORDER";
+        submitBtn.textContent = "CONTINUE";
       }
     });
   </script>
