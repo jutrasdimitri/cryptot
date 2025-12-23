@@ -4,13 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>CryptoT // Wear Your Assets</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
   <script>
     tailwind.config = {
       theme: {
@@ -31,7 +28,6 @@
       }
     }
   </script>
-
   <style>
     body { background-color: #050505; color: #e5e5e5; width: 100%; overflow-x: hidden; position: relative; }
     .matrix-bg{
@@ -198,14 +194,19 @@
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px] w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
-       
         <div class="flex items-center gap-3 min-w-fit">
-          <div class="flex items-center gap-1 text-[10px]">
-             <a href="index.html" class="text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors">EN</a>
-             <span class="text-gray-700">/</span>
-             <a href="fr.html" class="text-gray-500 hover:text-white transition">FR</a>
+          <div class="relative z-50 flex items-center gap-2">
+            <a href="index.html" class="text-[10px] text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors">EN</a>
+            <span class="text-gray-700">/</span>
+            <a href="fr.html" class="text-[10px] text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">FR</a>
           </div>
-          <a href="#home" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;" class="font-orbitron font-black text-xl tracking-tighter text-white uppercase ml-2">Crypto<span class="text-brand-green">T</span></a>
+
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          
+          <a href="#home" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;"
+             class="font-orbitron font-black text-2xl tracking-widest text-white uppercase ml-2 cursor-pointer whitespace-nowrap relative z-40">
+             CRYPTO<span class="text-brand-green">T</span>
+          </a>
         </div>
 
         <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
@@ -828,10 +829,11 @@
       }
     });
 
-    // ====== SCROLL SPY ======
+    // ====== SCROLL SPY (CORRIGÉ) ======
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll("header, section, main, footer");
-      const navLinks = document.querySelectorAll("nav a[href^='#']");
+      // CORRECTION ICI : On ne sélectionne que les liens dans le conteneur du menu de droite
+      const navLinks = document.querySelectorAll("nav .hidden.md\\:flex a[href^='#']");
 
       const observerOptions = { root: null, rootMargin: "0px", threshold: 0.25 };
 
@@ -841,7 +843,8 @@
             navLinks.forEach(link => link.classList.remove("nav-active"));
             const id = entry.target.getAttribute("id");
             if (id) {
-              const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+              // On cherche le lien actif uniquement dans le menu de droite
+              const activeLink = document.querySelector(`nav .hidden.md\\:flex a[href="#${id}"]`);
               if (activeLink) activeLink.classList.add("nav-active");
             }
           }
@@ -860,5 +863,6 @@
       updatePaymentUI();
     });
   </script>
+
 </body>
 </html>

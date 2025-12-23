@@ -20,7 +20,7 @@
             "brand-green": "#39ff14",
             "brand-black": "#0a0a0a",
             "brand-panel": "#111111",
-            "xrp-white": "#FFFFFF", 
+            "xrp-white": "#FFFFFF",
           },
           fontFamily: {
             orbitron: ["Orbitron", "sans-serif"],
@@ -48,8 +48,6 @@
     /* honeypot */
     .hp-field{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 
-    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
-
     /* Logo row styling */
     .logo-strip{
       border: 1px solid rgba(57,255,20,.20);
@@ -59,10 +57,10 @@
     .logo-strip .lbl{
       letter-spacing: .22em; font-size: 10px; color: rgba(255,255,255,.55); text-transform: uppercase; white-space: nowrap;
     }
-    
+   
     /* ICONS SIZING */
     .picon{
-      width: 34px; height: 22px; 
+      width: 34px; height: 22px;
       display:inline-flex; align-items:center; justify-content:center;
       opacity: .92; filter: drop-shadow(0 0 10px rgba(57,255,20,0.05));
       transition: opacity .15s ease, transform .15s ease;
@@ -152,6 +150,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
         <div class="flex items-center gap-2 min-w-[170px]">
+          <div class="relative z-50 flex items-center gap-2">
+            <a href="xrp.html" class="text-[10px] text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors">EN</a>
+            <span class="text-gray-700">/</span>
+            <a href="fr-xrp.html" class="text-[10px] text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">FR</a>
+          </div>
+
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
           <a href="index.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
             CRYPTO<span class="text-brand-green">T</span>
@@ -168,15 +172,6 @@
           <a href="btc.html" class="text-sm text-brand-green font-bold uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">ABOUT_THEM</a>
           <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTO</a>
           <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT_US</a>
-          
-          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
-             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
-             <span class="text-gray-700">/</span>
-             <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
-             <span class="text-gray-700">/</span>
-             <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
-          </div>
-          <a href="fr-xrp.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
         </div>
 
         <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" onclick="toggleMobileMenu()">
@@ -192,7 +187,7 @@
         <a href="index.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
         <a href="index.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
         <a href="fr-xrp.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
-        
+       
         <div class="logo-strip rounded px-3 py-3">
           <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
           <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
@@ -213,7 +208,7 @@
   </div>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    
+   
     <div class="text-center mb-16">
         <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#FFFFFF] drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
             XRP
@@ -458,7 +453,7 @@
             <span class="text-[#FFFFFF] text-sm mb-2 animate-pulse">● In Stock</span>
           </div>
           <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6">Free International Shipping // Encrypted Checkout</p>
-          
+         
           <button onclick="openModal('XRP','XRP // THE STANDARD')" class="w-full py-4 bg-[#FFFFFF] text-black font-black text-xl hover:bg-gray-200 transition-all uppercase font-orbitron tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]">
             SECURE ORDER NOW
           </button>
@@ -474,7 +469,8 @@
         <p class="font-orbitron text-2xl text-white mb-4">CONNECT WITH <span class="text-brand-green">US</span></p>
         <div class="flex justify-center gap-6">
           <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-<a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+          <a href="https://www.instagram.com/crypto.nouvelles" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
         </div>
       </div>
 
@@ -519,19 +515,16 @@
     // ====== LOGIC IDENTIQUE À L'ACCUEIL ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
     const PAYMENT_LINKS = { BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00", ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01", ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02", XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03", SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04" };
-    const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
-    const symbols = { USD: "$", CAD: "$", EUR: "€" };
-    let currentCurrency = "USD";
+   
+    // Currency fixed to USD (no UI)
+    const currentCurrency = "USD";
 
-    function setCurrency(curr) {
-      currentCurrency = curr;
-      const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = curr;
-      document.querySelectorAll(".currency-btn").forEach(btn => { if (btn.getAttribute("data-currency") === curr) btn.classList.add("active"); else btn.classList.remove("active"); });
-      document.querySelectorAll(".price-display").forEach(el => { const base = parseFloat(el.getAttribute("data-base")); let val = base * rates[curr]; val = val.toFixed(2).replace('.00', ''); if (curr === "EUR") el.innerText = val + " € EUR"; else el.innerText = symbols[curr] + val + " " + curr; });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => { setCurrency("USD"); mountAcceptedStrips(); });
+    document.addEventListener("DOMContentLoaded", () => {
+        mountAcceptedStrips();
+        updatePaymentUI();
+        const currInput = document.getElementById("currencyInput");
+        if (currInput) currInput.value = "USD";
+    });
 
     // MOBILE MENU
     const mobileMenuEl = document.getElementById("mobileMenu");
@@ -545,19 +538,19 @@
 
     // MODAL & PAYMENTS
     const orderForm = document.getElementById("orderForm"); const statusBox = document.getElementById("orderStatusBox"); const errorBox = document.getElementById("orderErrorBox"); const submitBtn = document.getElementById("submitBtn"); const paySelect = document.getElementById("paymentSelect"); const payLogosRow = document.getElementById("payLogosRow");
-    
+   
     function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
       document.getElementById("productKey").value = productKey;
       document.getElementById("productDisplay").innerText = productLabel;
       document.getElementById("productInput").value = productLabel;
-      const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency;
+      const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = "USD";
       statusBox.classList.add("hidden"); errorBox.classList.add("hidden"); orderForm.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
       document.getElementById("orderTs").value = String(Date.now());
       if (paySelect) paySelect.value = "CARD"; updatePaymentUI();
     }
-    function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency; } }
-    
+    function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = "USD"; } }
+   
     function updatePaymentUI(){
       payLogosRow.innerHTML = "";
       const mode = paySelect.value;

@@ -40,16 +40,14 @@
     body { background-color: #050505; color: #e5e5e5; }
     .matrix-bg{
       background-image:
-        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
-        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+        linear-gradient(0deg,transparent 24%,rgba(153,69,255,.03) 25%,rgba(153,69,255,.03) 26%,transparent 27%,transparent 74%,rgba(153,69,255,.03) 75%,rgba(153,69,255,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(153,69,255,.03) 25%,rgba(153,69,255,.03) 26%,transparent 27%,transparent 74%,rgba(153,69,255,.03) 75%,rgba(153,69,255,.03) 76%,transparent 77%,transparent);
       background-size: 50px 50px;
     }
-    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
+    :focus-visible{ outline:2px solid #9945FF; outline-offset:2px; }
 
     /* honeypot */
     .hp-field{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
-
-    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
 
     /* Logo row styling */
     .logo-strip{
@@ -110,11 +108,11 @@
         text-underline-offset: 4px;
         transition: all 0.2s;
     }
-    .wiki-content a:hover { color: #14F195; } /* Hover TEAL/GREEN */
+    .wiki-content a:hover { color: #14F195; } /* Hover TEAL */
     .wiki-divider {
         width: 100%;
         height: 1px;
-        background: linear-gradient(90deg, transparent, #9945FF, transparent); /* SOL PURPLE */
+        background: linear-gradient(90deg, transparent, #9945FF, transparent);
         margin: 4rem 0;
         opacity: 0.4;
     }
@@ -152,7 +150,14 @@
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
-        <div class="flex items-center gap-2 min-w-[170px]">
+       
+        <div class="flex items-center gap-3 min-w-fit">
+          <div class="relative z-50 flex items-center gap-2">
+            <a href="sol.html" class="text-[10px] text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors">EN</a>
+            <span class="text-gray-700">/</span>
+            <a href="fr-sol.html" class="text-[10px] text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">FR</a>
+          </div>
+
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
           <a href="index.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
             CRYPTO<span class="text-brand-green">T</span>
@@ -166,18 +171,9 @@
 
         <div class="hidden md:flex items-center space-x-6">
           <a href="index.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">THE_POWER_5</a>
-          <a href="btc.html" class="text-sm text-brand-green font-bold uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">ABOUT_THEM</a>
+          <a href="about-them.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">ABOUT_THEM</a>
           <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTO</a>
           <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT_US</a>
-         
-          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
-             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
-             <span class="text-gray-700">/</span>
-             <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
-             <span class="text-gray-700">/</span>
-             <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
-          </div>
-          <a href="fr-sol.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
         </div>
 
         <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" onclick="toggleMobileMenu()">
@@ -228,7 +224,7 @@
     </div>
 
     <article class="wiki-content bg-brand-panel border border-[#9945FF]/20 p-6 md:p-12 relative overflow-hidden mb-24">
-      
+       
         <h2 style="margin-top:0;">What Solana Is — Straight to the Point</h2>
         <p>Solana is a high-performance Layer 1 blockchain designed to scale to global usage.</p>
         <p>Its core mission:<br>Deliver blockchain-level decentralization at internet speed.</p>
@@ -424,7 +420,7 @@
         <p>Ethereum introduced programmable trust.</p>
         <p>Solana introduced verifiable time.</p>
         <p>Speed is not a feature.<br>It is the foundation.</p>
-        <p class="text-2xl text-[#9945FF] font-bold font-orbitron mt-4">History is the proof.</p>
+        <p>History is the proof.</p>
     </article>
 
     <div id="shop" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -468,7 +464,8 @@
         <p class="font-orbitron text-2xl text-white mb-4">CONNECT WITH <span class="text-brand-green">US</span></p>
         <div class="flex justify-center gap-6">
           <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-<a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+          <a href="https://www.instagram.com/crypto.nouvelles" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
         </div>
       </div>
 
@@ -513,19 +510,16 @@
     // ====== LOGIC IDENTIQUE À L'ACCUEIL ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
     const PAYMENT_LINKS = { BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00", ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01", ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02", XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03", SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04" };
-    const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
-    const symbols = { USD: "$", CAD: "$", EUR: "€" };
-    let currentCurrency = "USD";
+   
+    // Currency fixed to USD (no UI)
+    const currentCurrency = "USD";
 
-    function setCurrency(curr) {
-      currentCurrency = curr;
-      const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = curr;
-      document.querySelectorAll(".currency-btn").forEach(btn => { if (btn.getAttribute("data-currency") === curr) btn.classList.add("active"); else btn.classList.remove("active"); });
-      document.querySelectorAll(".price-display").forEach(el => { const base = parseFloat(el.getAttribute("data-base")); let val = base * rates[curr]; val = val.toFixed(2).replace('.00', ''); if (curr === "EUR") el.innerText = val + " € EUR"; else el.innerText = symbols[curr] + val + " " + curr; });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => { setCurrency("USD"); mountAcceptedStrips(); });
+    document.addEventListener("DOMContentLoaded", () => {
+        mountAcceptedStrips();
+        updatePaymentUI();
+        const currInput = document.getElementById("currencyInput");
+        if (currInput) currInput.value = "USD";
+    });
 
     // MOBILE MENU
     const mobileMenuEl = document.getElementById("mobileMenu");
@@ -545,12 +539,12 @@
       document.getElementById("productKey").value = productKey;
       document.getElementById("productDisplay").innerText = productLabel;
       document.getElementById("productInput").value = productLabel;
-      const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency;
+      const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = "USD";
       statusBox.classList.add("hidden"); errorBox.classList.add("hidden"); orderForm.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
       document.getElementById("orderTs").value = String(Date.now());
       if (paySelect) paySelect.value = "CARD"; updatePaymentUI();
     }
-    function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency; } }
+    function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = "USD"; } }
    
     function updatePaymentUI(){
       payLogosRow.innerHTML = "";
