@@ -20,7 +20,7 @@
             "brand-green": "#39ff14",
             "brand-black": "#0a0a0a",
             "brand-panel": "#111111",
-            "eth-blue": "#627EEA", 
+            "eth-blue": "#627EEA",
           },
           fontFamily: {
             orbitron: ["Orbitron", "sans-serif"],
@@ -39,16 +39,14 @@
     body { background-color: #050505; color: #e5e5e5; }
     .matrix-bg{
       background-image:
-        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
-        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+        linear-gradient(0deg,transparent 24%,rgba(98,126,234,.03) 25%,rgba(98,126,234,.03) 26%,transparent 27%,transparent 74%,rgba(98,126,234,.03) 75%,rgba(98,126,234,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(98,126,234,.03) 25%,rgba(98,126,234,.03) 26%,transparent 27%,transparent 74%,rgba(98,126,234,.03) 75%,rgba(98,126,234,.03) 76%,transparent 77%,transparent);
       background-size: 50px 50px;
     }
-    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
+    :focus-visible{ outline:2px solid #627EEA; outline-offset:2px; }
 
     /* honeypot */
     .hp-field{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
-
-    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
 
     /* Logo row styling */
     .logo-strip{
@@ -59,10 +57,10 @@
     .logo-strip .lbl{
       letter-spacing: .22em; font-size: 10px; color: rgba(255,255,255,.55); text-transform: uppercase; white-space: nowrap;
     }
-    
+
     /* ICONS SIZING */
     .picon{
-      width: 34px; height: 22px; 
+      width: 34px; height: 22px;
       display:inline-flex; align-items:center; justify-content:center;
       opacity: .92; filter: drop-shadow(0 0 10px rgba(57,255,20,0.05));
       transition: opacity .15s ease, transform .15s ease;
@@ -71,7 +69,7 @@
     .picon:hover{ opacity: 1; transform: translateY(-1px); }
     .hero-icons .picon, .modal-icons .picon{ width: 40px; height: 26px; }
 
-    /* --- WIKI STYLE (ETH COLOR) --- */
+    /* --- WIKI STYLE --- */
     .wiki-content h2 {
         font-family: 'Orbitron', sans-serif;
         color: white;
@@ -104,7 +102,7 @@
     }
     .wiki-content li { margin-bottom: 0.75rem; }
     .wiki-content a {
-        color: #627EEA; /* ETH COLOR */
+        color: #627EEA;
         text-decoration: underline;
         text-underline-offset: 4px;
         transition: all 0.2s;
@@ -113,7 +111,7 @@
     .wiki-divider {
         width: 100%;
         height: 1px;
-        background: linear-gradient(90deg, transparent, #627EEA, transparent); /* ETH COLOR */
+        background: linear-gradient(90deg, transparent, #627EEA, transparent);
         margin: 4rem 0;
         opacity: 0.4;
     }
@@ -132,7 +130,13 @@
 
 <body class="matrix-bg min-h-screen font-mono selection:bg-[#627EEA] selection:text-black">
 
-  <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+  <div id="coinmarketcap-widget-marquee"
+       coins="1,1027,2010,52,5426"
+       currency="USD"
+       theme="dark"
+       transparent="false"
+       show-symbol-logo="true"
+       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
   <template id="svgIcons">
     <span data-icon="visa" class="picon"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black,sans-serif" font-size="18" fill="#1A1F71">VISA</text></svg></span>
@@ -151,7 +155,14 @@
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
-        <div class="flex items-center gap-2 min-w-[170px]">
+
+        <div class="flex items-center gap-3 min-w-fit">
+          <div class="relative z-50 flex items-center gap-2">
+            <a href="eth.html" class="text-[10px] text-gray-400 border border-transparent px-2 py-1 hover:text-brand-green transition-colors">EN</a>
+            <span class="text-gray-700">/</span>
+            <a href="fr-eth.html" class="text-[10px] text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 uppercase tracking-wider transition-colors">FR</a>
+          </div>
+
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
           <a href="fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
             CRYPTO<span class="text-brand-green">T</span>
@@ -159,28 +170,21 @@
         </div>
 
         <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
-          <span class="lbl mr-3">MÉTHODES ACCEPTÉES</span>
+          <span class="lbl mr-3">ACCEPTÉ</span>
           <div class="flex items-center gap-2" id="navAcceptedRow"></div>
         </div>
 
         <div class="hidden md:flex items-center space-x-6">
-          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">LE_TOP_5</a>
-          <a href="fr-eth.html" class="text-sm text-brand-green font-bold uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">À_PROPOS_D'EUX</a>
+          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">LES_5_PILIERS</a>
+          <a href="fr-about.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">À_PROPOS</a>
           <a href="fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTE</a>
-          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">NOUS_JOINDRE</a>
-          
-          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
-             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
-             <span class="text-gray-700">/</span>
-             <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
-             <span class="text-gray-700">/</span>
-             <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
-          </div>
-          <a href="eth.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
+          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT</a>
         </div>
 
         <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" onclick="toggleMobileMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -188,55 +192,55 @@
     <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
       <div class="flex flex-col gap-6 text-center mt-10">
         <a href="fr.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">BOUTIQUE</a>
-        <a href="fr-eth.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">À PROPOS D'EUX</a>
+        <a href="fr-about.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">À PROPOS</a>
         <a href="fr.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTE</a>
-        <a href="fr.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">NOUS JOINDRE</a>
-        <a href="eth.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ENGLISH</a>
-        
+        <a href="fr.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
+        <a href="eth.html" class="text-xl text-gray-500 font-orbitron border-b border-gray-800 pb-4">ENGLISH</a>
+
         <div class="logo-strip rounded px-3 py-3">
-          <div class="lbl mb-2">MÉTHODES ACCEPTÉES</div>
+          <div class="lbl mb-2">MÉTHODES DE PAIEMENT</div>
           <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
         </div>
       </div>
+
       <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ FERMER ]</button>
     </div>
   </nav>
 
   <div class="sticky top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
     <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
-        <a href="fr-btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
-        <a href="fr-eth.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#627EEA]" style="border-color: #627EEA;">ETH</a>
-        <a href="fr-ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033ad] text-sm md:text-base font-bold transition-all">ADA</a>
-        <a href="fr-xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
-        <a href="fr-sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
+      <a href="fr-btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
+      <a href="fr-eth.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#627EEA]" style="border-color: #627EEA;">ETH</a>
+      <a href="fr-ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033ad] text-sm md:text-base font-bold transition-all">ADA</a>
+      <a href="fr-xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
+      <a href="fr-sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
     </div>
   </div>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#627EEA] drop-shadow-[0_0_15px_rgba(98,126,234,0.5)]">
-            ETHEREUM
-        </h1>
-        <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
-            LE CODE EST LA LOI
-        </p>
-        <div class="inline-block px-3 py-1 border border-[#627EEA] text-[#627EEA] text-xs uppercase tracking-[0.2em]">
-            Monnaie Programmable. Confiance Programmable.
-        </div>
+      <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#627EEA] drop-shadow-[0_0_15px_rgba(98,126,234,0.5)]">
+        ETHEREUM
+      </h1>
+      <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
+        LE CODE EST LA LOI
+      </p>
+      <div class="inline-block px-3 py-1 border border-[#627EEA] text-[#627EEA] text-xs uppercase tracking-[0.2em]">
+        Monnaie Programmable. Confiance Programmable.
+      </div>
     </div>
 
     <article class="wiki-content bg-brand-panel border border-[#627EEA]/20 p-6 md:p-12 relative overflow-hidden mb-24">
-       
+      
         <h2 style="margin-top:0;">Ce qu'est Ethereum — En une phrase</h2>
         <p>Ethereum est une plateforme informatique mondiale décentralisée qui permet à quiconque de déployer des applications imparables et de la monnaie programmable sans intermédiaires.</p>
-        <p>Si Bitcoin a prouvé que la monnaie pouvait exister sans banques, Ethereum a prouvé que la logique, les contrats et des systèmes financiers entiers pouvaient exister sans entreprises.</p>
+        <p>Si Bitcoin a prouvé que l'argent peut exister sans banques, Ethereum a prouvé que la logique, les contrats et des systèmes financiers entiers peuvent exister sans entreprises.</p>
 
         <div class="wiki-divider"></div>
 
-        <h2>Pourquoi Ethereum a été créé</h2>
-        <p>Bitcoin a résolu la monnaie.</p>
-        <p>Mais après Bitcoin, une limitation subsistait :</p>
+        <h2>Pourquoi Ethereum a été Créé</h2>
+        <p>Bitcoin a résolu le problème de l'argent.</p>
+        <p>Mais après Bitcoin, une limitation persistait :</p>
         <ul>
             <li>la valeur pouvait être transférée</li>
             <li>mais le comportement ne pouvait pas être programmé</li>
@@ -249,8 +253,8 @@
         <div class="wiki-divider"></div>
 
         <h2>Le Problème Central qu'Ethereum Résout</h2>
-        
-        <h3>1. Confiance dans les Institutions</h3>
+       
+        <h3>1. La Confiance dans les Institutions</h3>
         <p>Les systèmes modernes reposent sur :</p>
         <ul>
             <li>les banques</li>
@@ -267,11 +271,11 @@
             <li>fermer des services</li>
         </ul>
         <p>Ethereum remplace la confiance dans les institutions par la confiance dans l'exécution.</p>
-        <p>Si les conditions sont remplies, le résultat se produit.<br>Pas de permission. Pas d'annulation possible.</p>
+        <p>Si les conditions sont remplies, le résultat se produit.<br>Pas de permission. Pas de retour en arrière.</p>
 
         <div class="wiki-divider"></div>
 
-        <h3>2. Accords Programmables</h3>
+        <h3>2. Les Accords Programmables</h3>
         <p>Avant Ethereum :</p>
         <ul>
             <li>les contrats nécessitaient des avocats</li>
@@ -289,7 +293,7 @@
 
         <div class="wiki-divider"></div>
 
-        <h2>Contrats Intelligents — Expliqués Simplement</h2>
+        <h2>Les Contrats Intelligents (Smart Contracts) — Expliqués Simplement</h2>
         <p>Un contrat intelligent est du code déployé sur la blockchain.</p>
         <p>Une fois déployé :</p>
         <ul>
@@ -297,9 +301,10 @@
             <li>il ne peut pas être arrêté</li>
             <li>il s'exécute automatiquement</li>
         </ul>
-        <p>Les cas d'utilisation incluent :</p>
+       
+        <p>Les cas d'usage incluent :</p>
         <ul>
-            <li>les échanges décentralisés</li>
+            <li>les échanges décentralisés (DEX)</li>
             <li>les protocoles de prêt et d'emprunt</li>
             <li>les stablecoins</li>
             <li>les NFT</li>
@@ -310,18 +315,18 @@
         <div class="wiki-divider"></div>
 
         <h2>La Machine Virtuelle Ethereum (EVM)</h2>
-        <p>Les applications Ethereum fonctionnent à l'intérieur de la Machine Virtuelle Ethereum.</p>
+        <p>Les applications Ethereum s'exécutent à l'intérieur de la Machine Virtuelle Ethereum.</p>
         <p>L'EVM :</p>
         <ul>
             <li>s'exécute de manière identique sur des milliers de nœuds</li>
-            <li>garantit le même résultat partout dans le monde</li>
+            <li>garantit le même résultat dans le monde entier</li>
             <li>supprime la dépendance aux serveurs centralisés</li>
         </ul>
         <p>Cela rend Ethereum :</p>
         <ul>
             <li>résistant à la censure</li>
-            <li>synchronisé mondialement</li>
-            <li>vérifiable par n'importe qui</li>
+            <li>mondialement synchronisé</li>
+            <li>vérifiable par tous</li>
         </ul>
         <p>Ethereum est souvent décrit comme <strong class="text-white">l'ordinateur mondial</strong>.</p>
 
@@ -333,9 +338,9 @@
         <ul>
             <li>payer les frais de transaction (gaz)</li>
             <li>sécuriser le réseau via le staking</li>
-            <li>aligner les incitatifs économiques</li>
+            <li>aligner les incitations économiques</li>
         </ul>
-        <p>L'ETH n'est pas juste une devise.<br>C'est un capital productif au sein d'une couche d'exécution mondiale.</p>
+        <p>L'ETH n'est pas juste une monnaie.<br>C'est un capital productif au sein d'une couche d'exécution mondiale.</p>
 
         <div class="wiki-divider"></div>
 
@@ -347,9 +352,9 @@
             <li>la destruction de frais (burn)</li>
             <li>une rareté basée sur la demande</li>
         </ul>
-        
+       
         <h3>EIP-1559 (2021)</h3>
-        <p>Une partie des frais de transaction est brûlée de façon permanente.</p>
+        <p>Une partie des frais de transaction est brûlée définitivement.</p>
         <p>Cela signifie que :</p>
         <ul>
             <li>de l'ETH est retiré de la circulation</li>
@@ -360,83 +365,83 @@
 
         <div class="wiki-divider"></div>
 
-        <h2>Preuve d'Enjeu & La Fusion (The Merge)</h2>
-        <p>Ethereum a été lancé à l'origine avec la Preuve de Travail (Proof of Work).</p>
-        <p>En 2022, Ethereum a complété <strong class="text-white">La Fusion</strong>, passant à la Preuve d'Enjeu (Proof of Stake).</p>
+        <h2>Preuve d'Enjeu (PoS) & The Merge</h2>
+        <p>Ethereum a été lancé avec la Preuve de Travail (Proof of Work).</p>
+        <p>En 2022, Ethereum a complété <strong class="text-white">The Merge</strong>, passant à la Preuve d'Enjeu (Proof of Stake).</p>
         <p>La Preuve d'Enjeu :</p>
         <ul>
             <li>remplace les mineurs par des validateurs</li>
-            <li>sécurise le réseau grâce à l'ETH staké (mis en jeu)</li>
+            <li>sécurise le réseau via l'ETH staké</li>
             <li>réduit la consommation d'énergie de plus de 99%</li>
         </ul>
-        <p>La sécurité est assurée par le risque économique, pas par l'électricité.</p>
+        <p>La sécurité est assurée par le risque économique, et non par l'électricité.</p>
 
         <div class="wiki-divider"></div>
 
         <h2>Vitalik Buterin — Créateur d'Ethereum</h2>
         <p>Vitalik Buterin est né en 1994 en Russie et a déménagé au Canada enfant.</p>
         <p>Il a grandi à Toronto et a montré un talent exceptionnel en mathématiques et en informatique.</p>
-        <p>À l'âge de 17 ans :</p>
+        <p>À 17 ans :</p>
         <ul>
-            <li>il a co-fondé Bitcoin Magazine</li>
-            <li>s'est profondément impliqué dans la recherche sur Bitcoin</li>
-            <li>a exploré les limites de la blockchain directement</li>
+            <li>il a cofondé Bitcoin Magazine</li>
+            <li>s'est profondément impliqué dans la recherche Bitcoin</li>
+            <li>a exploré les limites de la blockchain de première main</li>
         </ul>
-        <p>Vitalik a reconnu que le langage de script de Bitcoin était intentionnellement limité.</p>
-        <p>À l'âge de 19 ans :</p>
+        <p>Vitalik a compris que le langage de script de Bitcoin était intentionnellement limité.</p>
+        <p>À 19 ans :</p>
         <ul>
             <li>il a écrit le livre blanc d'Ethereum (2013)</li>
             <li>proposant une blockchain à usage général</li>
         </ul>
-        <p>À l'âge de 21 ans :</p>
+        <p>À 21 ans :</p>
         <ul>
             <li>Ethereum a lancé son réseau principal (mainnet)</li>
         </ul>
-        <p>Durant le cycle de 2021, Vitalik est devenu l'un des plus jeunes milliardaires "self-made".</p>
+        <p>Durant le cycle de 2021, Vitalik est devenu l'un des plus jeunes milliardaires autodidactes.</p>
         <p>Contrairement à Satoshi Nakamoto :</p>
         <ul>
             <li>Vitalik est public</li>
-            <li>motivé par la recherche</li>
-            <li>concentré sur l'évolution à long terme plutôt que la hype</li>
+            <li>axé sur la recherche</li>
+            <li>concentré sur l'évolution à long terme plutôt que sur la hype</li>
         </ul>
 
         <div class="wiki-divider"></div>
 
-        <h2>Co-Fondateurs d'Ethereum — L'Origine de la Séparation</h2>
-        <p>Ethereum a été co-fondé par plusieurs figures clés :</p>
-        
+        <h2>Les Cofondateurs d'Ethereum — L'Origine de la Scission</h2>
+        <p>Ethereum a été cofondé par plusieurs figures clés :</p>
+       
         <h3>Vitalik Buterin</h3>
         <p>Auteur original et architecte d'Ethereum.</p>
 
         <h3>Gavin Wood</h3>
         <ul>
             <li>Inventeur de Solidity</li>
-            <li>Auteur du "Yellow Paper" d'Ethereum</li>
-            <li>A fondé plus tard Polkadot</li>
+            <li>Auteur du Livre Jaune d'Ethereum</li>
+            <li>A ensuite fondé Polkadot</li>
         </ul>
 
         <h3>Charles Hoskinson</h3>
         <ul>
             <li>Premier PDG d'Ethereum</li>
             <li>Plaidait pour une structure à but lucratif</li>
-            <li>A quitté Ethereum pour bâtir Cardano</li>
+            <li>A ensuite quitté Ethereum pour créer Cardano</li>
         </ul>
 
         <h3>Joseph Lubin</h3>
         <ul>
             <li>A fondé ConsenSys</li>
-            <li>A bâti l'infrastructure critique d'Ethereum</li>
+            <li>A construit l'infrastructure critique d'Ethereum</li>
         </ul>
 
         <h3>Anthony Di Iorio</h3>
         <ul>
-            <li>Premier financier et contributeur</li>
+            <li>Premier financeur et contributeur</li>
         </ul>
         <p>Les désaccords internes sur la gouvernance et la structure ont façonné tout l'écosystème crypto qui a suivi.</p>
 
         <div class="wiki-divider"></div>
 
-        <h2>La Communauté Ethereum — Des Bâtisseurs plutôt que des Maximalistes</h2>
+        <h2>La Communauté Ethereum — Bâtisseurs plutôt que Maximalistes</h2>
         <p>La communauté d'Ethereum est fondamentalement différente de celle de Bitcoin.</p>
         <p>La culture Ethereum valorise :</p>
         <ul>
@@ -454,7 +459,7 @@
         </ul>
         <p>Plutôt que le maximalisme, Ethereum embrasse :</p>
         <ul>
-            <li>la mise à l'échelle via Layer 2</li>
+            <li>le scaling Layer 2</li>
             <li>la diversité des applications</li>
             <li>les mises à jour constantes</li>
         </ul>
@@ -462,23 +467,23 @@
 
         <div class="wiki-divider"></div>
 
-        <h2>Livre Blanc Ethereum</h2>
-        <p>« Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform »<br>Auteur : Vitalik Buterin<br>Publié : 2013</p>
-        <p>Livre blanc :<br><a href="https://ethereum.org/en/whitepaper/" target="_blank">https://ethereum.org/en/whitepaper/</a></p>
+        <h2>Le Livre Blanc Ethereum</h2>
+        <p>“Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform”<br>Auteur : Vitalik Buterin<br>Publié : 2013</p>
+        <p>Livre Blanc :<br><a href="https://ethereum.org/en/whitepaper/" target="_blank">https://ethereum.org/en/whitepaper/</a></p>
 
         <div class="wiki-divider"></div>
 
         <h2>Chronologie Ethereum — Événements Clés</h2>
         <ul>
             <li>2013 — Publication du livre blanc d'Ethereum</li>
-            <li>2014 — Vente publique pour financer le développement</li>
-            <li>2015 — Lancement du réseau principal Ethereum</li>
-            <li>2016 — Le piratage de "The DAO" mène à un hard fork</li>
+            <li>2014 — Vente publique (crowdsale) pour financer le développement</li>
+            <li>2015 — Lancement du mainnet Ethereum</li>
+            <li>2016 — Le hack de The DAO entraîne un hard fork</li>
             <li>2017 — Le standard ERC-20 permet le boom des ICO</li>
             <li>2018 — Ethereum devient la fondation de la DeFi</li>
             <li>2020 — Début du staking Ethereum (ETH 2.0)</li>
-            <li>2021 — EIP-1559 introduit la destruction d'ETH</li>
-            <li>2022 — La Fusion (The Merge) — transition vers la Preuve d'Enjeu</li>
+            <li>2021 — EIP-1559 introduit le burn d'ETH</li>
+            <li>2022 — The Merge — transition vers la Preuve d'Enjeu</li>
             <li>2023 — L'ETH devient net-déflationniste lors de forte utilisation</li>
             <li>2024 — Ethereum domine la DeFi, les NFT et les Layer-2</li>
             <li>2025 — Ethereum profondément intégré dans la finance mondiale et l'infrastructure</li>
@@ -486,7 +491,7 @@
 
         <div class="wiki-divider"></div>
 
-        <h2>Ce qu'est Ethereum — Et Ce Qu'il N'est Pas</h2>
+        <h2>Ce qu'est Ethereum — Et ce qu'il n'est pas</h2>
         <p>Ethereum est :</p>
         <ul>
             <li>programmable</li>
@@ -503,29 +508,29 @@
 
         <div class="wiki-divider"></div>
 
-        <h2>Appel au Réveil Final</h2>
-        <p>Bitcoin a remplacé la monnaie.</p>
+        <h2>Dernier Avertissement</h2>
+        <p>Bitcoin a remplacé l'argent.</p>
         <p>Ethereum remplace les institutions.</p>
         <p class="text-2xl text-[#627EEA] font-bold font-orbitron mt-4">Le code est la loi.</p>
     </article>
 
     <div id="shop" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div class="relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-[#627EEA] to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#627EEA] to-blue-800 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
         <div class="relative bg-black border border-[#627EEA]/30 p-2">
-          <img src="eth.jpg" alt="Ethereum Tee" class="w-full h-[600px] object-cover object-top shadow-2xl">
+          <img src="eth.jpg" alt="T-Shirt Ethereum" class="w-full h-[600px] object-cover object-top shadow-2xl">
         </div>
       </div>
 
       <div class="sticky top-32">
         <div class="border-l-4 border-[#627EEA] pl-6 mb-8">
-          <h2 class="text-4xl font-black font-orbitron text-white mb-2">PORTEZ LE SIGNAL</h2>
+          <h2 class="text-4xl font-black font-orbitron text-white mb-2">PORTEZ LA RÉVOLUTION</h2>
           <p class="text-[#627EEA] tracking-widest font-bold">ÉDITION LIMITÉE</p>
         </div>
 
         <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-          Tissu de Grade Institutionnel Premium.<br>
-          "Code is Law" sur la poitrine. L'Histoire dans votre dos.
+          Tissu de Qualité Institutionnelle Premium.<br>
+          "Code is Law" sur la poitrine. L'Ordinateur Mondial dans votre dos.
         </p>
 
         <div class="bg-brand-panel border border-[#627EEA]/20 p-6">
@@ -534,23 +539,23 @@
             <span class="text-[#627EEA] text-sm mb-2 animate-pulse">● En Stock</span>
           </div>
           <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6">Livraison Internationale Gratuite // Paiement Chiffré</p>
-          
+
           <button onclick="openModal('ETH','ETH // CODE IS LAW')" class="w-full py-4 bg-[#627EEA] text-black font-black text-xl hover:bg-white transition-all uppercase font-orbitron tracking-widest shadow-[0_0_20px_rgba(98,126,234,0.3)] hover:shadow-[0_0_30px_rgba(98,126,234,0.6)]">
-            COMMANDER MAINTENANT
+            COMMANDE SÉCURISÉE
           </button>
         </div>
       </div>
     </div>
-
   </main>
 
   <footer class="border-t border-brand-green/20 bg-black py-12 text-center mt-20">
     <div class="max-w-7xl mx-auto px-4">
       <div class="mb-8">
-        <p class="font-orbitron text-2xl text-white mb-4">SUIVEZ-<span class="text-brand-green">NOUS</span></p>
+        <p class="font-orbitron text-2xl text-white mb-4">CONNECTEZ-VOUS AVEC <span class="text-brand-green">NOUS</span></p>
         <div class="flex justify-center gap-6">
           <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-<a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+          <a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
         </div>
       </div>
 
@@ -558,113 +563,271 @@
         <div class="lbl mb-2">MÉTHODES DE PAIEMENT ACCEPTÉES</div>
         <div class="flex flex-wrap items-center justify-center gap-2 hero-icons" id="footerAcceptedRow"></div>
       </div>
+
       <p class="font-orbitron text-white text-lg">CRYPTO<span class="text-brand-green">T</span></p>
-      <p class="text-gray-500 text-xs mt-2">WEAR YOUR ASSETS</p>
+      <p class="text-gray-500 text-xs mt-2">PORTEZ VOS ACTIFS</p>
       <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
     </div>
   </footer>
 
   <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[150] hidden flex items-center justify-center p-4">
     <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)] max-h-[90vh] overflow-y-auto">
-      <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-      <h2 class="font-orbitron text-2xl text-white mb-1">COMMANDE SÉCURISÉE</h2>
+      <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Fermer">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <h2 class="font-orbitron text-2xl text-white mb-1">PAIEMENT SÉCURISÉ</h2>
       <p class="text-brand-green text-xs mb-4">CONNEXION CHIFFRÉE //</p>
+
       <div class="mb-5 border border-white/10 bg-black/35 px-4 py-3">
-        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Méthodes acceptées</div>
+        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Méthodes Acceptées</div>
         <div id="payLogosRow" class="flex flex-wrap items-center gap-2 modal-icons"></div>
       </div>
-      <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3"><div class="text-brand-green text-xs tracking-widest">COMMANDE REÇUE //</div><div class="text-gray-400 text-[11px] mt-1">Nous vous contacterons sous peu.</div></div>
+
+      <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
+        <div class="text-brand-green text-xs tracking-widest">COMMANDE REÇUE //</div>
+        <div class="text-gray-400 text-[11px] mt-1">Nous vous contacterons rapidement.</div>
+      </div>
+
       <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
+
       <form id="orderForm" class="space-y-4" novalidate>
-        <label class="hp-field" aria-hidden="true">Website<input type="text" name="website" autocomplete="off" tabindex="-1"></label>
-        <input type="hidden" name="ts" id="orderTs" value=""><input type="hidden" id="productKey" name="ProductKey" value=""><input type="hidden" id="productInput" name="Product" value=""><input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
-        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Article Choisi</label><div id="productDisplay" class="text-white font-orbitron text-lg border-b border-gray-700 pb-2"></div></div>
-        <div class="grid grid-cols-2 gap-4">
-          <div><label class="block text-gray-400 text-xs mb-1 uppercase">Taille</label><select name="Size" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option></select></div>
-          <div><label class="block text-gray-400 text-xs mb-1 uppercase">Qté</label><select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option>1</option><option>2</option><option>3</option></select></div>
+        <label class="hp-field" aria-hidden="true">Website
+          <input type="text" name="website" autocomplete="off" tabindex="-1">
+        </label>
+
+        <input type="hidden" name="ts" id="orderTs" value="">
+        <input type="hidden" id="productKey" name="ProductKey" value="">
+        <input type="hidden" id="productInput" name="Product" value="">
+        <input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Article Sélectionné</label>
+          <div id="productDisplay" class="text-white font-orbitron text-lg border-b border-gray-700 pb-2"></div>
         </div>
-        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Méthode de Paiement</label><select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option value="CARD">Carte / Apple Pay / Google Pay</option><option value="INTERAC">Virement Interac</option><option value="BTC">Bitcoin (BTC)</option><option value="ETH">Ethereum (ETH)</option><option value="ADA">Cardano (ADA)</option><option value="XRP">XRP</option><option value="SOL">Solana (SOL)</option></select></div>
-        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Courriel</label><input type="email" name="Email" required class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></div>
-        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Adresse</label><textarea name="Address" required rows="3" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></textarea></div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-gray-400 text-xs mb-1 uppercase">Taille</label>
+            <select name="Size" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
+              <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-400 text-xs mb-1 uppercase">Qté</label>
+            <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
+              <option>1</option><option>2</option><option>3</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Méthode de Paiement</label>
+          <select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
+            <option value="CARD">Carte / Apple Pay / Google Pay</option>
+            <option value="INTERAC">Virement Interac</option>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="ADA">Cardano (ADA)</option>
+            <option value="XRP">XRP</option>
+            <option value="SOL">Solana (SOL)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Courriel</label>
+          <input type="email" name="Email" required class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
+        </div>
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse</label>
+          <textarea name="Address" required rows="3" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></textarea>
+        </div>
+
         <button id="submitBtn" type="submit" class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">PAYER MAINTENANT</button>
       </form>
     </div>
   </div>
 
   <script>
-    // ====== LOGIC IDENTIQUE À L'ANGLAIS MAIS UI TRADUITE ======
+    // ====== LOGIC IDENTIQUE À L'ACCUEIL (CURRENCY UI REMOVED, USD FIXED) ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
-    const PAYMENT_LINKS = { BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00", ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01", ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02", XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03", SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04" };
-    const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
-    const symbols = { USD: "$", CAD: "$", EUR: "€" };
-    let currentCurrency = "USD";
+    const PAYMENT_LINKS = {
+      BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
+      ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
+      ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02",
+      XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03",
+      SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04"
+    };
 
-    function setCurrency(curr) {
-      currentCurrency = curr;
+    // Currency fixed
+    const currentCurrency = "USD";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      mountAcceptedStrips();
+      updatePaymentUI();
       const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = curr;
-      document.querySelectorAll(".currency-btn").forEach(btn => { if (btn.getAttribute("data-currency") === curr) btn.classList.add("active"); else btn.classList.remove("active"); });
-      document.querySelectorAll(".price-display").forEach(el => { const base = parseFloat(el.getAttribute("data-base")); let val = base * rates[curr]; val = val.toFixed(2).replace('.00', ''); if (curr === "EUR") el.innerText = val + " € EUR"; else el.innerText = symbols[curr] + val + " " + curr; });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => { setCurrency("USD"); mountAcceptedStrips(); });
+      if (currInput) currInput.value = "USD";
+    });
 
     // MOBILE MENU
     const mobileMenuEl = document.getElementById("mobileMenu");
-    function toggleMobileMenu() { mobileMenuEl.classList.toggle("hidden", !mobileMenuEl.classList.contains("hidden")); }
-    function closeMobileMenu() { mobileMenuEl.classList.add("hidden"); }
+    function toggleMobileMenu() {
+      mobileMenuEl.classList.toggle("hidden", !mobileMenuEl.classList.contains("hidden"));
+    }
+    function closeMobileMenu() {
+      mobileMenuEl.classList.add("hidden");
+    }
 
     // ICONS
-    function getIconNode(key){ const tpl = document.getElementById("svgIcons"); const holder = tpl.content.querySelector(`[data-icon="${key}"]`); return holder ? holder.cloneNode(true) : null; }
-    function mountRow(rowEl, keys){ rowEl.innerHTML = ""; keys.forEach(k => { const n = getIconNode(k); if (n) rowEl.appendChild(n); }); }
-    function mountAcceptedStrips(){ const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"]; const navRow = document.getElementById("navAcceptedRow"); const footRow = document.getElementById("footerAcceptedRow"); const mobRow = document.getElementById("mobileAcceptedRow"); if (navRow) mountRow(navRow, keys); if (footRow) mountRow(footRow, keys); if (mobRow) mountRow(mobRow, keys); }
+    function getIconNode(key){
+      const tpl = document.getElementById("svgIcons");
+      const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
+      return holder ? holder.cloneNode(true) : null;
+    }
+    function mountRow(rowEl, keys){
+      rowEl.innerHTML = "";
+      keys.forEach(k => {
+        const n = getIconNode(k);
+        if (n) rowEl.appendChild(n);
+      });
+    }
+    function mountAcceptedStrips(){
+      const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
+      const navRow = document.getElementById("navAcceptedRow");
+      const footRow = document.getElementById("footerAcceptedRow");
+      const mobRow = document.getElementById("mobileAcceptedRow");
+      if (navRow) mountRow(navRow, keys);
+      if (footRow) mountRow(footRow, keys);
+      if (mobRow) mountRow(mobRow, keys);
+    }
 
     // MODAL & PAYMENTS
-    const orderForm = document.getElementById("orderForm"); const statusBox = document.getElementById("orderStatusBox"); const errorBox = document.getElementById("orderErrorBox"); const submitBtn = document.getElementById("submitBtn"); const paySelect = document.getElementById("paymentSelect"); const payLogosRow = document.getElementById("payLogosRow");
-    
+    const orderForm = document.getElementById("orderForm");
+    const statusBox = document.getElementById("orderStatusBox");
+    const errorBox = document.getElementById("orderErrorBox");
+    const submitBtn = document.getElementById("submitBtn");
+    const paySelect = document.getElementById("paymentSelect");
+    const payLogosRow = document.getElementById("payLogosRow");
+
     function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
       document.getElementById("productKey").value = productKey;
       document.getElementById("productDisplay").innerText = productLabel;
       document.getElementById("productInput").value = productLabel;
-      const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency;
-      statusBox.classList.add("hidden"); errorBox.classList.add("hidden"); orderForm.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+
+      const currInput = document.getElementById("currencyInput");
+      if (currInput) currInput.value = "USD";
+
+      statusBox.classList.add("hidden");
+      errorBox.classList.add("hidden");
+      orderForm.classList.remove("hidden");
+      submitBtn.disabled = false;
+      submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
       document.getElementById("orderTs").value = String(Date.now());
-      if (paySelect) paySelect.value = "CARD"; updatePaymentUI();
+
+      if (paySelect) paySelect.value = "CARD";
+      updatePaymentUI();
     }
-    function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency; } }
-    
+
+    function closeModal(reset = false) {
+      document.getElementById("orderModal").classList.add("hidden");
+      if (reset) {
+        orderForm.reset();
+        const currInput = document.getElementById("currencyInput");
+        if (currInput) currInput.value = "USD";
+      }
+    }
+
     function updatePaymentUI(){
       payLogosRow.innerHTML = "";
       const mode = paySelect.value;
-      if (mode === "CARD") { ["visa","mc","amex","applepay","gpay"].forEach(k => payLogosRow.appendChild(getIconNode(k))); submitBtn.textContent = "PAYER MAINTENANT"; return; }
-      if (mode === "INTERAC") { payLogosRow.appendChild(getIconNode("interac")); submitBtn.textContent = "SOUMETTRE LA COMMANDE"; return; }
-      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" }; payLogosRow.appendChild(getIconNode(map[mode] || "btc")); submitBtn.textContent = "SOUMETTRE LA COMMANDE";
+
+      if (mode === "CARD") {
+        ["visa","mc","amex","applepay","gpay"].forEach(k => {
+          const n = getIconNode(k);
+          if (n) payLogosRow.appendChild(n);
+        });
+        submitBtn.textContent = "PAYER MAINTENANT";
+        return;
+      }
+
+      if (mode === "INTERAC") {
+        const n = getIconNode("interac");
+        if (n) payLogosRow.appendChild(n);
+        submitBtn.textContent = "SOUMETTRE LA COMMANDE";
+        return;
+      }
+
+      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
+      const n = getIconNode(map[mode] || "btc");
+      if (n) payLogosRow.appendChild(n);
+      submitBtn.textContent = "SOUMETTRE LA COMMANDE";
     }
+
     paySelect.addEventListener("change", updatePaymentUI);
 
     orderForm.addEventListener("submit", async (e) => {
-      e.preventDefault(); errorBox.classList.add("hidden"); statusBox.classList.add("hidden");
-      const fd = new FormData(orderForm); if (fd.has("website")) fd.set("website", "");
-      const ts = Number(fd.get("ts")); if (!Number.isFinite(ts) || (Date.now() - ts) < 800) { errorBox.textContent = "Vérification de sécurité échouée."; errorBox.classList.remove("hidden"); return; }
-      const email = (fd.get("Email") || "").toString().trim(); const address = (fd.get("Address") || "").toString().trim();
-      if (!email || !address) { errorBox.textContent = "Champs requis manquants."; errorBox.classList.remove("hidden"); return; }
+      e.preventDefault();
+      errorBox.classList.add("hidden");
+      statusBox.classList.add("hidden");
 
-      const productKey = (fd.get("ProductKey") || "").toString().trim(); const payMode = (fd.get("PaymentMethod") || "").toString().trim();
-      submitBtn.disabled = true; submitBtn.classList.add("opacity-60", "cursor-not-allowed"); submitBtn.textContent = "TRAITEMENT...";
+      const fd = new FormData(orderForm);
+      if (fd.has("website")) fd.set("website", "");
+
+      const ts = Number(fd.get("ts"));
+      if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
+        errorBox.textContent = "Échec vérification sécurité.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const email = (fd.get("Email") || "").toString().trim();
+      const address = (fd.get("Address") || "").toString().trim();
+      if (!email || !address) {
+        errorBox.textContent = "Champs manquants.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const productKey = (fd.get("ProductKey") || "").toString().trim();
+      const payMode = (fd.get("PaymentMethod") || "").toString().trim();
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+      submitBtn.textContent = "TRAITEMENT...";
 
       try {
         if (payMode === "CARD") {
-          const link = PAYMENT_LINKS[productKey]; if (!link) throw new Error("Lien de paiement introuvable.");
-          const url = new URL(link); url.searchParams.set("prefilled_email", email); url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
-          window.location.href = url.toString(); return;
+          const link = PAYMENT_LINKS[productKey];
+          if (!link) throw new Error("Lien de paiement introuvable.");
+          const url = new URL(link);
+          url.searchParams.set("prefilled_email", email);
+          url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
+          window.location.href = url.toString();
+          return;
         }
-        const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(Object.fromEntries(fd.entries())), });
+
+        const res = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify(Object.fromEntries(fd.entries())),
+        });
+
         if (!res.ok) throw new Error("Échec de la commande.");
-        orderForm.classList.add("hidden"); statusBox.classList.remove("hidden");
-      } catch (err) { errorBox.textContent = err.message || "Erreur."; errorBox.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE"; }
+
+        orderForm.classList.add("hidden");
+        statusBox.classList.remove("hidden");
+      } catch (err) {
+        errorBox.textContent = err.message || "Erreur.";
+        errorBox.classList.remove("hidden");
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+        submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE";
+      }
     });
   </script>
 </body>
 </html>
-

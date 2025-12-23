@@ -1,472 +1,239 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth overflow-x-hidden">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptoT // À propos d’eux</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>À Propos d'Eux // La Vérité Monétaire | CryptoT</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            "brand-green": "#39ff14",
-            "brand-black": "#0a0a0a",
-            "brand-panel": "#111111",
-          },
-          fontFamily: {
-            orbitron: ["Orbitron", "sans-serif"],
-            mono: ["Share Tech Mono", "monospace"],
-          },
-          boxShadow: {
-            "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14",
-          }
+          colors: { "brand-green": "#39ff14", "brand-black": "#0a0a0a", "brand-panel": "#111111" },
+          fontFamily: { orbitron: ["Orbitron", "sans-serif"], mono: ["Share Tech Mono", "monospace"] },
+          boxShadow: { "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14" }
         }
       }
     }
   </script>
-
   <style>
-    body { background-color: #050505; color: #e5e5e5; }
-    .matrix-bg{
-      background-image:
-        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
-        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+    body { background-color: #050505; color: #e5e5e5; width: 100%; overflow-x: hidden; position: relative; }
+    .matrix-bg {
+      background-image: linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
+      linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
       background-size: 50px 50px;
     }
-    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
-
-    /* About tabs */
-    .about-btn.active{
-      color:#39ff14;
-      text-shadow: 0 0 8px rgba(57,255,20,0.5);
-      font-weight: 900;
-      border-color: rgba(57,255,20,.65) !important;
-      background: rgba(57,255,20,.08) !important;
-    }
-
-    /* (On garde le style currency-btn pour cohérence, même si pas utilisé ici) */
-    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
+    .logo-strip { border: 1px solid rgba(57,255,20,.20); background: rgba(0,0,0,.35); backdrop-filter: blur(8px); }
+    .picon { width: 34px; height: 22px; display:inline-flex; align-items:center; justify-content:center; opacity: .92; transition: transform .15s ease; }
+    .picon svg { width: 100%; height: 100%; }
+    .hero-icons .picon { width: 40px; height: 26px; }
+   
+    /* Typographie Spécifique au Manifeste */
+    .wiki-h2 { font-family: 'Orbitron', sans-serif; color: white; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1rem; border-left: 4px solid #39ff14; padding-left: 1rem; }
+    .wiki-h3 { font-family: 'Orbitron', sans-serif; color: #d1d5db; font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+    .wiki-p { margin-bottom: 1.5rem; color: #d1d5db; line-height: 1.8; font-size: 1rem; }
+    .wiki-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #39ff14, transparent); margin: 3rem 0; opacity: 0.3; }
+   
+    nav a.nav-active:not(.logo-link) { color: #39ff14 !important; border-bottom: 2px solid #39ff14; }
+    @media (max-width: 1100px){ .nav-accepted { display:none; } }
   </style>
-
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
+<body class="matrix-bg min-h-screen font-mono w-full overflow-x-hidden">
 
-<body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
+  <div class="fixed top-0 w-full z-[60] border-b border-brand-green/30 bg-brand-black overflow-hidden h-[62px]">
+    <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true"></div>
+  </div>
 
-  <div id="coinmarketcap-widget-marquee"
-       coins="1,1027,2010,52,5426"
-       currency="USD"
-       theme="dark"
-       transparent="false"
-       show-symbol-logo="true"
-       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+  <template id="svgIcons">
+    <span data-icon="visa" class="picon"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black" font-size="18" fill="#1A1F71">VISA</text></svg></span>
+    <span data-icon="mc" class="picon"><svg viewBox="0 0 64 24"><circle cx="26" cy="12" r="8" fill="#EB001B"/><circle cx="38" cy="12" r="8" fill="#F79E1B" opacity="0.95"/></svg></span>
+    <span data-icon="amex" class="picon"><svg viewBox="0 0 64 24"><rect x="2" y="3" width="60" height="18" rx="3" fill="#2E77BB"/><text x="10" y="17" font-family="Arial Black" font-size="12" fill="#FFF">AMEX</text></svg></span>
+    <span data-icon="applepay" class="picon"><svg viewBox="0 0 64 24" fill="#FFF"><path d="M18 10.5c1.2-1.5 2-3.4 1.8-5.5-1.8.1-3.8 1.2-5 2.7-1.1 1.3-2.1 3.3-1.8 5.2 2 .2 3.8-1 5-2.4Z"/><text x="34" y="17" font-family="Arial Black" font-size="12">Pay</text></svg></span>
+    <span data-icon="gpay" class="picon"><svg viewBox="0 0 64 24"><text x="2" y="16" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">G</text><circle cx="10" cy="12" r="2.2" fill="#4285F4"/><circle cx="13" cy="12" r="2.2" fill="#34A853"/><circle cx="16" cy="12" r="2.2" fill="#FBBC05"/><circle cx="19" cy="12" r="2.2" fill="#EA4335"/><text x="26" y="17" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">Pay</text></svg></span>
+    <span data-icon="interac" class="picon"><svg viewBox="0 0 64 24"><rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"/><text x="12" y="17" font-family="Arial Black" font-size="11" fill="#111111">INTERAC</text></svg></span>
+    <span data-icon="btc" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F7931A"/><text x="9.2" y="16.2" font-family="Arial Black" font-size="10" fill="#111111">₿</text></svg></span>
+    <span data-icon="eth" class="picon"><svg viewBox="0 0 24 24"><polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"/><polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"/></svg></span>
+    <span data-icon="ada" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="#0033AD"/><g fill="#0033AD"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></g></svg></span>
+    <span data-icon="xrp" class="picon"><svg viewBox="0 0 24 24" fill="#FFF"><path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z"/></svg></span>
+    <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)"/></svg></span>
+  </template>
 
-  <!-- NAV (même vibe que fr.html) -->
-  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px] w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <div class="flex items-center gap-2">
+      <div class="flex items-center justify-between h-20 gap-4">
+       
+        <div class="flex items-center gap-3 min-w-fit">
+          <div class="relative z-50 flex items-center gap-2">
+            <a href="about-them.html" class="text-[10px] text-gray-400 border border-transparent px-2 py-1 hover:text-brand-green transition-colors">EN</a>
+            <span class="text-gray-700">/</span>
+            <a href="fr-about.html" class="text-[10px] text-brand-green border border-brand-green/30 hover:bg-brand-green/10 px-2 py-1 uppercase tracking-wider transition-colors">FR</a>
+          </div>
+
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
-          <!-- Sur la page about, le logo ramène à fr.html -->
-          <a href="fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
-            CRYPTO<span class="text-brand-green">T</span>
+          <a href="fr.html" class="logo-link font-orbitron font-black text-2xl tracking-widest text-white uppercase ml-2 cursor-pointer whitespace-nowrap relative z-40">
+             CRYPTO<span class="text-brand-green">T</span>
           </a>
         </div>
-
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ LES_POWER_5 ]</a>
-
-          <!-- Page courante -->
-          <a href="fr-about.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ A_PROPOS_D_EUX ]</a>
-
-          <a href="fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ MANIFESTE ]</a>
-          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ NOUS_CONTACTER ]</a>
-
-          <!-- Switch langue -->
-          <a href="about.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
+     
+        <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
+          <span class="lbl mr-3">ACCEPTÉ</span>
+          <div class="flex items-center gap-2" id="navAcceptedRow"></div>
         </div>
 
-        <button type="button"
-                class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
-                aria-label="Ouvrir le menu"
-                aria-controls="mobileMenu"
-                aria-expanded="false"
-                onclick="toggleMobileMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
+        <div class="hidden md:flex items-center space-x-6 text-[10px] lg:text-sm tracking-widest text-gray-400">
+          <a href="fr.html#products" class="hover:text-brand-green uppercase tracking-wider transition-colors py-2">LES_5_PILIERS</a>
+          <a href="fr-about.html" class="text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">À_PROPOS</a>
+          <a href="fr.html#manifesto" class="hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTE</a>
+          <a href="fr.html#contact" class="hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT</a>
+        </div>
+
+        <button onclick="toggleMobileMenu()" class="md:hidden text-brand-green border border-brand-green/30 px-3 py-1 text-xs">MENU</button>
       </div>
     </div>
-
-    <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden md:hidden">
-      <div class="fixed inset-0 z-[70]" aria-hidden="true">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
-
-        <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-brand-panel border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
-          <div class="flex items-center justify-between mb-6">
-            <div class="text-xs text-gray-400 uppercase tracking-widest">MENU</div>
-            <button type="button" class="text-gray-400 hover:text-brand-green" aria-label="Fermer le menu" onclick="closeMobileMenu()">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </button>
-          </div>
-
-          <div class="flex flex-col gap-3">
-            <a href="fr.html#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ LES_POWER_5 ]</a>
-
-            <a href="fr-about.html" onclick="closeMobileMenu()" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm">[ A_PROPOS_D_EUX ]</a>
-
-            <a href="fr.html#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTE ]</a>
-
-            <a href="fr.html#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ NOUS_CONTACTER ]</a>
-
-            <a href="about.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">ENGLISH</a>
-          </div>
-
-          <div class="mt-8 border-t border-white/10 pt-4 text-[11px] text-gray-500">
-            Status: <span class="text-brand-green">Online</span>
-          </div>
+   
+    <div id="mobileMenu" class="hidden fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center gap-8 uppercase font-orbitron text-white">
+        <a href="fr.html#products" onclick="toggleMobileMenu()">Boutique</a>
+        <a href="fr-about.html" onclick="toggleMobileMenu()" class="text-brand-green">À Propos</a>
+        <a href="fr.html#manifesto" onclick="toggleMobileMenu()">Manifeste</a>
+        <a href="fr.html#contact" onclick="toggleMobileMenu()">Contact</a>
+        <div class="flex gap-4 mt-4">
+             <a href="about-them.html" class="text-gray-500 border border-gray-700 px-4 py-2">ENGLISH</a>
+             <a href="fr-about.html" class="text-brand-green border border-brand-green px-4 py-2">FRANÇAIS</a>
         </div>
-      </div>
+        <button onclick="toggleMobileMenu()" class="text-gray-600 mt-10">[ FERMER ]</button>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="py-20 text-center relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-    <div class="relative z-10 px-4 max-w-5xl mx-auto">
-      <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-        À PROPOS <span class="text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.8)]">D’EUX</span>
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
-        Choisis un protocole. Comprends la thèse. Porte le signal.
-        <br>
-        <span class="text-brand-green">Le code est froid. Les humains, moins.</span>
-      </p>
-      <div class="inline-block p-1 rounded bg-gradient-to-r from-transparent via-brand-green to-transparent w-full max-w-xs h-[1px]"></div>
-
-      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="fr.html#products"
-           class="px-8 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
-          Retour aux chandails
-        </a>
-        <a href="fr.html"
-           class="px-8 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-          Accueil
-        </a>
-      </div>
+  <div class="sticky top-[142px] z-40 bg-black/95 border-b border-white/10 py-3">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-2 md:gap-4 font-orbitron">
+      <a href="fr-btc.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-[#F7931A] hover:border-[#F7931A] text-xs md:text-sm font-bold transition-all">BTC</a>
+      <a href="fr-eth.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-[#627EEA] hover:border-[#627EEA] text-xs md:text-sm font-bold transition-all">ETH</a>
+      <a href="fr-ada.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-[#0033AD] hover:border-[#0033AD] text-xs md:text-sm font-bold transition-all">ADA</a>
+      <a href="fr-xrp.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-white hover:border-white text-xs md:text-sm font-bold transition-all">XRP</a>
+      <a href="fr-sol.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-[#14F195] hover:border-[#14F195] text-xs md:text-sm font-bold transition-all">SOL</a>
     </div>
+  </div>
+
+  <header class="py-12 md:py-16 text-center px-4 relative">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 pointer-events-none"></div>
+    <h1 class="text-4xl md:text-7xl font-black font-orbitron mb-4 text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.5)]">À PROPOS D'EUX</h1>
+    <p class="text-lg md:text-2xl text-white tracking-widest uppercase font-bold mb-4">LA VÉRITÉ MONÉTAIRE</p>
+    <div class="inline-block px-3 py-1 border border-brand-green text-brand-green text-[10px] uppercase tracking-[0.2em]">OFFRE LIMITÉE // P2P // SANS PERMISSION</div>
   </header>
 
-  <!-- CONTENT -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-
-    <section class="bg-brand-panel border border-brand-green/30 shadow-[0_0_18px_rgba(57,255,20,0.08)] p-6 md:p-10">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-        <div>
-          <h2 class="text-3xl font-orbitron text-white mb-3 border-l-4 border-brand-green pl-4">LES 5 PILIERS_</h2>
-          <p class="text-gray-400 max-w-4xl">
-            Ici, on fait pas du “marketing vide”. On fait du <span class="text-brand-green font-bold">signal</span>.
-            Chaque chandail représente une thèse: utilité, sécurité, vitesse, liquidité, gouvernance.
-            Tu peux aimer ou haïr — mais au moins tu comprends.
-          </p>
-        </div>
-        <div class="text-[11px] text-gray-500 leading-relaxed">
-          Éducatif seulement. Pas un conseil financier.<br>
-          <span class="text-brand-green">// Porte le signal, reste prudent.</span>
-        </div>
+  <main class="max-w-3xl mx-auto px-6 pb-24">
+    <article class="bg-brand-panel border border-brand-green/20 p-6 md:p-12 relative overflow-hidden mb-12 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+     
+      <div class="text-center text-white/80 text-sm md:text-base leading-relaxed font-orbitron tracking-wide mb-10 opacity-70">
+        S'IL VOUS PLAÎT, MON DIEU<br>
+        (et le Dieu — ou les Dieux — d'Internet),<br>
+        FAITES QUE TOUTE PERSONNE AYANT UN COMPTE BANCAIRE<br>
+        (des plus modestes vivant de paie en paie aux milliardaires)<br>
+        ET UTILISANT ENCORE LE SYSTÈME FINANCIER TRADITIONNEL<br>
+        TROUVE CE SITE.
       </div>
 
-      <!-- Tabs -->
-      <div class="flex flex-wrap gap-3 mb-8">
-        <button class="about-btn active border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
-                data-about="BTC" onclick="showAbout('BTC')">BTC</button>
-        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
-                data-about="ETH" onclick="showAbout('ETH')">ETH</button>
-        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
-                data-about="ADA" onclick="showAbout('ADA')">ADA</button>
-        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
-                data-about="XRP" onclick="showAbout('XRP')">XRP</button>
-        <button class="about-btn border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-2 text-gray-200 uppercase tracking-wider text-sm"
-                data-about="SOL" onclick="showAbout('SOL')">SOL</button>
-      </div>
+      <div class="wiki-divider"></div>
 
-      <!-- Panels -->
-      <div class="bg-black/30 border border-white/10 p-5 md:p-8">
+      <h2 class="wiki-h2 mt-0">À Propos d'Eux</h2>
+      <p class="wiki-p">Ce site existe parce que le système monétaire est brisé.</p>
+      <p class="wiki-p">Inefficace.<br>Obsolète.<br>Brisé par sa conception même.</p>
+      <p class="wiki-p">La plupart des gens ne le voient pas — non par manque d'intelligence, mais parce que le système financier traditionnel ne veut pas qu'ils le sachent... POUR L'INSTANT.</p>
+      <p class="wiki-p">Il a eu des décennies pour se normaliser, pour rendre ses défauts ordinaires, son inefficacité inévitable et la dépendance sécurisante.</p>
+      <p class="wiki-p">Le vrai problème pour eux n'est pas votre prise de conscience. Le problème, c'est que réparer le système actuel exigerait de repenser le monde entier — pour nous, et avec nous. Et cette idée effraie ceux qui profitent du système actuel.</p>
+      <p class="wiki-p">Le temps que quelque chose passe de presque rien à la refonte du monde financier, la plupart ne le remarquent que lorsqu'il est déjà trop tard... pour l'ignorer.</p>
+      <p class="wiki-p">Ce site est pour ceux qui sont prêts à comprendre — et aussi pour ceux qui ne le sont pas encore, mais qui le deviendront, une fois que la logique indiscutable aura fait son œuvre !</p>
+      <p class="text-center text-brand-green font-orbitron text-sm mt-8 italic">s'il vous plaît, accordez-moi juste une minute de plus de lecture...</p>
 
-        <!-- BTC -->
-        <div class="about-panel" id="about-BTC">
-          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
-            <div>
-              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
-                BITCOIN — <span class="text-brand-green">VIRES IN NUMERIS</span>
-              </h3>
-              <p class="text-gray-400 text-sm uppercase tracking-widest">
-                Monnaie P2P • Offre fixe • Rareté • Finalité
-              </p>
-            </div>
-            <div class="flex gap-3">
-              <a href="fr.html#products"
-                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
-                Magasiner BTC
-              </a>
-              <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener noreferrer"
-                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-                Whitepaper
-              </a>
-            </div>
-          </div>
+      <div class="wiki-divider"></div>
 
-          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
-            <p><span class="text-brand-green font-bold">Le problème:</span> le fiat peut être imprimé, gelé, censuré, dilué. Tu “utilises” ton argent tant que quelqu’un te le permet.</p>
-            <p><span class="text-brand-green font-bold">La réponse BTC:</span> une valeur numérique sans permission, protégée par des règles + un réseau mondial.</p>
+      <h2 class="wiki-h2">L'Offre Limitée n'est pas une Option</h2>
+      <h3 class="wiki-h3">C'est le But</h3>
+      <p class="wiki-p">Toute monnaie fiduciaire échoue pour la même raison : une offre infinie contrôlée par une minorité.</p>
+      <p class="wiki-p">Dès que l'argent peut être imprimé à volonté, il cesse d'être une réserve de valeur. Il devient un outil d'extraction.</p>
+      <p class="wiki-p">L'épargne est diluée. Le travail est dévalué. Le temps est volé.</p>
+      <p class="wiki-p">Ce n'est pas un bug du système. C'est le système.</p>
 
-            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
-            <p><span class="text-brand-green font-bold">21 millions.</span> Pas un slogan. Un plafond codé.</p>
-            <p>Quand tout peut être imprimé… la rareté devient un superpouvoir.</p>
+      <div class="wiki-divider"></div>
 
-            <h4 class="font-orbitron text-xl text-white pt-2">Pourquoi ça tient</h4>
-            <p><span class="text-brand-green font-bold">Proof of Work</span> = sécurité par le coût. Réécrire l’histoire coûte une fortune.</p>
-            <p><span class="text-brand-green font-bold">Finalité</span> = quand c’est réglé, c’est réglé. Pas de “chargeback”.</p>
+      <h2 class="wiki-h2">Bitcoin a Changé une Règle</h2>
+      <h3 class="wiki-h3">Et cela a Tout Changé</h3>
+      <p class="wiki-p">Bitcoin a introduit deux idées simultanément :</p>
+      <p class="wiki-p">1. Une offre fixe et immuable<br>2. Le transfert pair-à-pair sans intermédiaires</p>
+      <p class="wiki-p">Pas séparément. Ensemble.</p>
+      <p class="wiki-p">Une monnaie qui ne peut être ni imprimée ni censurée.</p>
+      <p class="wiki-p">Pas de banque centrale. Pas de permission tierce. Pas de dilution.</p>
+      <p class="wiki-p">Pour la première fois dans l'histoire moderne, l'argent est devenu rare par le code, et non par la confiance.</p>
 
-            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
-            <p>La demande peut monter à l’infini.</p>
-            <p>La supply de BTC… non.</p>
-            <p class="text-brand-green font-bold text-xl">// Tu es tôt.</p>
-          </div>
-        </div>
+      <div class="wiki-divider"></div>
 
-        <!-- ETH -->
-        <div class="about-panel hidden" id="about-ETH">
-          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
-            <div>
-              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
-                ETHEREUM — <span class="text-brand-green">CODE IS LAW</span>
-              </h3>
-              <p class="text-gray-400 text-sm uppercase tracking-widest">
-                Smart contracts • DeFi • Infrastructure Web3
-              </p>
-            </div>
-            <div class="flex gap-3">
-              <a href="fr.html#products"
-                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
-                Magasiner ETH
-              </a>
-              <a href="https://ethereum.org/en/whitepaper/" target="_blank" rel="noopener noreferrer"
-                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-                Whitepaper
-              </a>
-            </div>
-          </div>
+      <h2 class="wiki-h2">C'est Pourquoi Bitcoin Compte</h2>
+      <p class="wiki-p">Si demain le dollar américain avait un plafond strict, il gagnerait de la valeur avec le temps au lieu d'en perdre.</p>
+      <p class="wiki-p">C'est exactement ce que fait Bitcoin.</p>
+      <p class="wiki-p">Cette contrainte unique explique tout :<br>
+      • pourquoi il est passé de fractions de centime à six chiffres<br>
+      • pourquoi il survit à chaque krach<br>
+      • pourquoi il refuse de mourir<br>
+      • pourquoi il effraie les institutions<br>
+      • pourquoi il attire les bâtisseurs, pas les marketeurs</p>
+      <p class="wiki-p">Bitcoin ne promet pas de rendements. Il révèle la faille du fiduciaire.</p>
 
-          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
-            <p>Bitcoin a prouvé qu’on peut transférer de la valeur sans permission.</p>
-            <p>Ethereum a ajouté: <span class="text-brand-green font-bold">“et si on transférait aussi des règles?”</span></p>
+      <div class="wiki-divider"></div>
 
-            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
-            <p>Ethereum est une <span class="text-brand-green font-bold">machine mondiale</span>. Tu déploies un contrat, il tourne pareil pour tous.</p>
-            <p>Les “intermédiaires” deviennent du code — avec ses forces… et ses risques.</p>
+      <h2 class="wiki-h2">Tout le Reste Vient Après Bitcoin</h2>
+      <p class="wiki-p">Tout projet crypto existe dans l'ombre du Bitcoin.</p>
+      <p class="wiki-p">Certains tentent de l'étendre. Certains tentent d'en remplacer des parties. Certains tentent de le compromettre.</p>
+      <p class="wiki-p">Mais aucun n'a de sens si vous ne comprenez pas pourquoi l'offre limitée combinée à la monnaie pair-à-pair est non négociable.</p>
+      <p class="wiki-p">C'est la raison d'être de ce site.</p>
 
-            <h4 class="font-orbitron text-xl text-white pt-2">Ce que ça débloque</h4>
-            <p><span class="text-brand-green font-bold">DeFi</span>: échanger, prêter, emprunter sans institution.</p>
-            <p><span class="text-brand-green font-bold">Stablecoins</span>: dollars on-chain (avec tout le débat que ça implique).</p>
-            <p><span class="text-brand-green font-bold">Layer 2</span>: scaling — base solide, couches rapides.</p>
+      <div class="wiki-divider"></div>
 
-            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
-            <p>BTC = l’or numérique.</p>
-            <p>ETH = la <span class="text-brand-green font-bold">logique</span> numérique.</p>
-            <p class="text-brand-green font-bold text-xl">// Tu es tôt.</p>
-          </div>
-        </div>
+      <h2 class="wiki-h2">Pourquoi des Vêtements Ici ?</h2>
+      <p class="wiki-p">Parce que la conviction précède la possession.</p>
+      <p class="wiki-p">Porter un protocole n'a de sens que si vous comprenez ce qu'il remplace.</p>
+      <p class="wiki-p">Si quelque chose ici résonne en vous, vous pouvez choisir de porter le signal.</p>
+      <p class="wiki-p">Sinon, vous repartirez quand même en comprenant pourquoi ce système ne peut pas durer éternellement.</p>
+      <p class="text-center text-brand-green font-orbitron text-lg mt-10">Dans les deux cas — vous êtes le bienvenu ici.</p>
+      <p class="text-center mt-6 text-gray-500 text-sm">Bonne lecture.</p>
+    </article>
 
-        <!-- ADA -->
-        <div class="about-panel hidden" id="about-ADA">
-          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
-            <div>
-              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
-                CARDANO — <span class="text-brand-green">PEER REVIEWED</span>
-              </h3>
-              <p class="text-gray-400 text-sm uppercase tracking-widest">
-                Recherche • Méthode • Gouvernance
-              </p>
-            </div>
-            <div class="flex gap-3">
-              <a href="fr.html#products"
-                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
-                Magasiner ADA
-              </a>
-              <a href="https://whitepaper.io/document/581/cardano-whitepaper" target="_blank" rel="noopener noreferrer"
-                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-                Whitepaper
-              </a>
-            </div>
-          </div>
-
-          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
-            <p>Cardano joue la carte “civilisation-grade”. Moins de freestyle, plus de fondations.</p>
-
-            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
-            <p><span class="text-brand-green font-bold">Approche académique</span>: conception, validation, recherche — pour bâtir durable.</p>
-            <p><span class="text-brand-green font-bold">eUTXO</span>: héritage Bitcoin + flexibilité smart contracts.</p>
-
-            <h4 class="font-orbitron text-xl text-white pt-2">Trade-off</h4>
-            <p>Plus rigoureux = plus lent à ship. Mais souvent: plus stable, plus cohérent.</p>
-
-            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
-            <p>Si tu veux une chaîne qui pense “long terme”:</p>
-            <p class="text-brand-green font-bold text-xl">// Tu es tôt.</p>
-          </div>
-        </div>
-
-        <!-- XRP -->
-        <div class="about-panel hidden" id="about-XRP">
-          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
-            <div>
-              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
-                XRP — <span class="text-brand-green">THE STANDARD</span>
-              </h3>
-              <p class="text-gray-400 text-sm uppercase tracking-widest">
-                Paiements • Liquidité • Settlement rapide
-              </p>
-            </div>
-            <div class="flex gap-3">
-              <a href="fr.html#products"
-                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
-                Magasiner XRP
-              </a>
-              <a href="https://xrpl.org/docs/" target="_blank" rel="noopener noreferrer"
-                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-                Docs XRPL
-              </a>
-            </div>
-          </div>
-
-          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
-            <p>Les paiements internationaux, c’est encore “fax vibe”. XRP vise le rail: vitesse + coût bas + liquidité.</p>
-
-            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
-            <p>Réduire friction, délais, liquidité immobilisée.</p>
-            <p>Focus: <span class="text-brand-green font-bold">mouvement de valeur</span>.</p>
-
-            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
-            <p>BTC = l’argent.</p>
-            <p>ETH = le code.</p>
-            <p>XRP = <span class="text-brand-green font-bold">le mouvement</span>.</p>
-            <p class="text-brand-green font-bold text-xl">// Tu es tôt.</p>
-          </div>
-        </div>
-
-        <!-- SOL -->
-        <div class="about-panel hidden" id="about-SOL">
-          <div class="flex items-start justify-between gap-6 flex-wrap mb-6">
-            <div>
-              <h3 class="font-orbitron text-2xl md:text-3xl text-white mb-2">
-                SOLANA — <span class="text-brand-green">PROOF OF HISTORY</span>
-              </h3>
-              <p class="text-gray-400 text-sm uppercase tracking-widest">
-                Performance • Frais bas • UX rapide
-              </p>
-            </div>
-            <div class="flex gap-3">
-              <a href="fr.html#products"
-                 class="px-5 py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">
-                Magasiner SOL
-              </a>
-              <a href="https://solana.com/solana-whitepaper.pdf" target="_blank" rel="noopener noreferrer"
-                 class="px-5 py-3 border border-brand-green/40 text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-                Whitepaper
-              </a>
-            </div>
-          </div>
-
-          <div class="text-gray-300 leading-relaxed space-y-5 text-[15px] md:text-base">
-            <p>Solana vise l’échelle “consumer”: rapide, cheap, fluide. L’idée: que le on-chain feel comme Web2.</p>
-
-            <h4 class="font-orbitron text-xl text-white pt-2">La thèse</h4>
-            <p><span class="text-brand-green font-bold">Proof of History</span>: une horloge cryptographique pour aider l’ordre des événements.</p>
-            <p>Perf d’abord — puis durcir le réseau au fil des stress tests.</p>
-
-            <h4 class="font-orbitron text-xl text-white pt-2">Punchline</h4>
-            <p class="text-brand-green font-bold text-xl">// L’histoire est la preuve.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="mt-10 border-t border-white/10 pt-8 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-        <div class="text-gray-400 text-sm">
-          Tu veux porter une thèse sur du tissu? <span class="text-brand-green font-bold">Wear Your Assets.</span>
-        </div>
-        <a href="fr.html#products"
-           class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-          Retour aux produits
-        </a>
-      </div>
-
-    </section>
-
+    <div class="text-center">
+      <a href="fr-btc.html" class="inline-block px-8 py-4 border border-[#F7931A] text-[#F7931A] font-orbitron font-bold uppercase tracking-wider hover:bg-[#F7931A]/10 transition-all">
+        Commencer avec Bitcoin →
+      </a>
+    </div>
   </main>
 
-  <!-- FOOTER (même vibe que fr.html) -->
-  <footer class="border-t border-brand-green/20 bg-black py-12">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="mb-8">
-        <p class="font-orbitron text-2xl text-white mb-4">CONNECTE-TOI AVEC <span class="text-brand-green">NOUS</span></p>
-        <div class="flex justify-center gap-6">
-          <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-          <a href="https://www.instagram.com/dimitrijutras?igsh=MWxyenFoNDhremRt" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
-          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
-        </div>
-      </div>
-      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
-      <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
-      <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
+  <footer class="py-12 border-t border-brand-green/20 bg-black text-center">
+    <div id="footerIcons" class="flex flex-wrap justify-center gap-4 mb-8"></div>
+    <div class="flex justify-center gap-6 mb-8 text-[10px] text-gray-500 uppercase tracking-widest">
+        <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="hover:text-brand-green">TWITTER / X</a>
+        <a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="hover:text-brand-green">INSTAGRAM</a>
+        <a href="mailto:jutrasdimitri@gmail.com" class="hover:text-brand-green">EMAIL</a>
     </div>
+    <p class="text-[9px] text-gray-600 uppercase tracking-widest">© 2025 CryptoT // Montréal // Monde Entier</p>
   </footer>
 
   <script>
-    // Tabs
-    function showAbout(symbol) {
-      document.querySelectorAll(".about-panel").forEach(p => p.classList.add("hidden"));
-      const target = document.getElementById("about-" + symbol);
-      if (target) target.classList.remove("hidden");
+    function toggleMobileMenu() { document.getElementById("mobileMenu").classList.toggle("hidden"); }
+   
+    // ICON FACTORY
+    const tpl = document.getElementById("svgIcons");
+    const foot = document.getElementById("footerIcons");
+    const navRow = document.getElementById("navAcceptedRow");
+    const mobRow = document.getElementById("mobileAcceptedRow");
+    const keys = ["visa", "mc", "applepay", "gpay", "interac", "btc", "eth", "ada", "xrp", "sol"];
 
-      document.querySelectorAll(".about-btn").forEach(btn => {
-        if (btn.getAttribute("data-about") === symbol) btn.classList.add("active");
-        else btn.classList.remove("active");
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      showAbout("BTC");
-    });
-
-    // Mobile menu
-    const mobileMenuEl = document.getElementById("mobileMenu");
-    function toggleMobileMenu() {
-      const isHidden = mobileMenuEl.classList.contains("hidden");
-      mobileMenuEl.classList.toggle("hidden", !isHidden);
-      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
-      if (btn) btn.setAttribute("aria-expanded", String(isHidden));
-      if (isHidden) document.body.classList.add("overflow-hidden");
-      else document.body.classList.remove("overflow-hidden");
-    }
-    function closeMobileMenu() {
-      mobileMenuEl.classList.add("hidden");
-      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
-      if (btn) btn.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("overflow-hidden");
-    }
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMobileMenu();
+    keys.forEach(k => {
+      if(foot) foot.appendChild(tpl.content.querySelector(`[data-icon="${k}"]`).cloneNode(true));
+      if(navRow) navRow.appendChild(tpl.content.querySelector(`[data-icon="${k}"]`).cloneNode(true));
+      if(mobRow) mobRow.appendChild(tpl.content.querySelector(`[data-icon="${k}"]`).cloneNode(true));
     });
   </script>
 </body>
 </html>
+

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADA // REVU PAR DES PAIRS | CryptoT</title>
-  <meta name="description" content="Découvrez Cardano, le Bitcoin des Altcoins. Recherche revue par des pairs, vérification formelle et la vision de Charles Hoskinson.">
+  <title>ADA // REVU PAR LES PAIRS | CryptoT</title>
+  <meta name="description" content="Découvrez Cardano, le Bitcoin des Altcoins. Recherche revue par les pairs, vérification formelle et la vision de Charles Hoskinson.">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -39,16 +39,14 @@
     body { background-color: #050505; color: #e5e5e5; }
     .matrix-bg{
       background-image:
-        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
-        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+        linear-gradient(0deg,transparent 24%,rgba(0,51,173,.03) 25%,rgba(0,51,173,.03) 26%,transparent 27%,transparent 74%,rgba(0,51,173,.03) 75%,rgba(0,51,173,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(0,51,173,.03) 25%,rgba(0,51,173,.03) 26%,transparent 27%,transparent 74%,rgba(0,51,173,.03) 75%,rgba(0,51,173,.03) 76%,transparent 77%,transparent);
       background-size: 50px 50px;
     }
-    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
+    :focus-visible{ outline:2px solid #0033AD; outline-offset:2px; }
 
     /* honeypot */
     .hp-field{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
-
-    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
 
     /* Logo row styling */
     .logo-strip{
@@ -59,7 +57,7 @@
     .logo-strip .lbl{
       letter-spacing: .22em; font-size: 10px; color: rgba(255,255,255,.55); text-transform: uppercase; white-space: nowrap;
     }
-   
+
     /* ICONS SIZING */
     .picon{
       width: 34px; height: 22px;
@@ -71,7 +69,7 @@
     .picon:hover{ opacity: 1; transform: translateY(-1px); }
     .hero-icons .picon, .modal-icons .picon{ width: 40px; height: 26px; }
 
-    /* --- WIKI STYLE (ADA COLOR) --- */
+    /* --- WIKI STYLE (MATCHING OTHERS) --- */
     .wiki-content h2 {
         font-family: 'Orbitron', sans-serif;
         color: white;
@@ -104,7 +102,7 @@
     }
     .wiki-content li { margin-bottom: 0.75rem; }
     .wiki-content a {
-        color: #0033AD; /* ADA COLOR */
+        color: #0033AD;
         text-decoration: underline;
         text-underline-offset: 4px;
         transition: all 0.2s;
@@ -113,7 +111,7 @@
     .wiki-divider {
         width: 100%;
         height: 1px;
-        background: linear-gradient(90deg, transparent, #0033AD, transparent); /* ADA COLOR */
+        background: linear-gradient(90deg, transparent, #0033AD, transparent);
         margin: 4rem 0;
         opacity: 0.4;
     }
@@ -132,7 +130,13 @@
 
 <body class="matrix-bg min-h-screen font-mono selection:bg-[#0033AD] selection:text-white">
 
-  <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true" class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+  <div id="coinmarketcap-widget-marquee"
+       coins="1,1027,2010,52,5426"
+       currency="USD"
+       theme="dark"
+       transparent="false"
+       show-symbol-logo="true"
+       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
   <template id="svgIcons">
     <span data-icon="visa" class="picon"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black,sans-serif" font-size="18" fill="#1A1F71">VISA</text></svg></span>
@@ -143,15 +147,24 @@
     <span data-icon="interac" class="picon"><svg viewBox="0 0 64 24"><rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"/><text x="12" y="17" font-family="Arial Black,sans-serif" font-size="11" fill="#111">INTERAC</text></svg></span>
     <span data-icon="btc" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F7931A"/><text x="9.2" y="16.2" font-family="Arial Black,sans-serif" font-size="10" fill="#111">₿</text></svg></span>
     <span data-icon="eth" class="picon"><svg viewBox="0 0 24 24"><polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"/><polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"/></svg></span>
-    <span data-icon="ada" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="#0033AD"/><g fill="#0033AD" opacity=".95"><circle cx="12" cy="5.2" r="1"/><circle cx="12" cy="18.8" r="1"/><circle cx="5.2" cy="12" r="1"/><circle cx="18.8" cy="12" r="1"/><circle cx="7.2" cy="7.2" r=".9"/><circle cx="16.8" cy="7.2" r=".9"/><circle cx="7.2" cy="16.8" r=".9"/><circle cx="16.8" cy="16.8" r=".9"/></g></svg></span>
+    <span data-icon="ada" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="#0033AD"/><g fill="#0033AD" opacity="0.95"><circle cx="12" cy="5.2" r="1"/><circle cx="12" cy="18.8" r="1"/><circle cx="5.2" cy="12" r="1"/><circle cx="18.8" cy="12" r="1"/><circle cx="7.2" cy="7.2" r="0.9"/><circle cx="16.8" cy="7.2" r="0.9"/><circle cx="7.2" cy="16.8" r="0.9"/><circle cx="16.8" cy="16.8" r="0.9"/></g></svg></span>
     <span data-icon="xrp" class="picon"><svg viewBox="0 0 24 24"><path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z" fill="#FFF"/><path d="M18 17c-1.6-1.6-3.2-2.4-6-2.4S7.6 15.4 6 17H4c2.2-2.2 4.7-3.6 8-3.6s5.8 1.4 8 3.6h-2Z" fill="#FFF"/></svg></span>
-    <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg" x1="0" x2="1"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)" opacity=".95"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)" opacity=".9"/></svg></span>
+    <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg" x1="0" x2="1"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.95"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.9"></rect>
+      </svg>
+    </span>
   </template>
 
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
-        <div class="flex items-center gap-2 min-w-[170px]">
+
+        <div class="flex items-center gap-3 min-w-fit">
+          <div class="relative z-50 flex items-center gap-2">
+            <a href="ada.html" class="text-[10px] text-gray-400 border border-transparent px-2 py-1 hover:text-brand-green transition-colors">EN</a>
+            <span class="text-gray-700">/</span>
+            <a href="fr-ada.html" class="text-[10px] text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 uppercase tracking-wider transition-colors">FR</a>
+          </div>
+
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
           <a href="fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
             CRYPTO<span class="text-brand-green">T</span>
@@ -159,28 +172,21 @@
         </div>
 
         <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
-          <span class="lbl mr-3">MÉTHODES ACCEPTÉES</span>
+          <span class="lbl mr-3">ACCEPTÉ</span>
           <div class="flex items-center gap-2" id="navAcceptedRow"></div>
         </div>
 
         <div class="hidden md:flex items-center space-x-6">
-          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">LE_TOP_5</a>
-          <a href="fr-ada.html" class="text-sm text-brand-green font-bold uppercase tracking-wider transition-colors py-2 border-b-2 border-brand-green">À_PROPOS_D'EUX</a>
+          <a href="fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">LES_5_PILIERS</a>
+          <a href="fr-about.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">À_PROPOS</a>
           <a href="fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTE</a>
-          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">NOUS_JOINDRE</a>
-         
-          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
-             <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
-             <span class="text-gray-700">/</span>
-             <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
-             <span class="text-gray-700">/</span>
-             <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
-          </div>
-          <a href="ada.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
+          <a href="fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT</a>
         </div>
 
         <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" onclick="toggleMobileMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -188,66 +194,67 @@
     <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
       <div class="flex flex-col gap-6 text-center mt-10">
         <a href="fr.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">BOUTIQUE</a>
-        <a href="fr-ada.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">À PROPOS D'EUX</a>
+        <a href="fr-about.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">À PROPOS</a>
         <a href="fr.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTE</a>
-        <a href="fr.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">NOUS JOINDRE</a>
-        <a href="ada.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ENGLISH</a>
-       
+        <a href="fr.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
+        <a href="ada.html" class="text-xl text-gray-500 font-orbitron border-b border-gray-800 pb-4">ENGLISH</a>
+
         <div class="logo-strip rounded px-3 py-3">
-          <div class="lbl mb-2">MÉTHODES ACCEPTÉES</div>
+          <div class="lbl mb-2">MÉTHODES DE PAIEMENT</div>
           <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
         </div>
       </div>
+
       <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ FERMER ]</button>
     </div>
   </nav>
 
   <div class="sticky top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
     <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
-        <a href="fr-btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
-        <a href="fr-eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
-        <a href="fr-ada.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#0033AD]" style="border-color: #0033AD;">ADA</a>
-        <a href="fr-xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
-        <a href="fr-sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
+      <a href="fr-btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
+      <a href="fr-eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
+      <a href="fr-ada.html" class="nav-coin-btn active px-6 py-2 border text-sm md:text-base font-bold transition-all text-[#0033AD]" style="border-color: #0033AD;">ADA</a>
+      <a href="fr-xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
+      <a href="fr-sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
     </div>
   </div>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-   
     <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#0033AD] drop-shadow-[0_0_15px_rgba(0,51,173,0.5)]">
-            CARDANO
-        </h1>
-        <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
-            REVU PAR DES PAIRS
-        </p>
-        <div class="inline-block px-3 py-1 border border-[#0033AD] text-[#0033AD] text-xs uppercase tracking-[0.2em]">
-            Le Bitcoin des Altcoins
-        </div>
+      <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-[#0033AD] drop-shadow-[0_0_15px_rgba(0,51,173,0.5)]">
+        CARDANO
+      </h1>
+      <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
+        REVU PAR LES PAIRS
+      </p>
+      <div class="inline-block px-3 py-1 border border-[#0033AD] text-[#0033AD] text-xs uppercase tracking-[0.2em]">
+        Le Bitcoin des Altcoins
+      </div>
     </div>
 
     <article class="wiki-content bg-brand-panel border border-[#0033AD]/20 p-6 md:p-12 relative overflow-hidden mb-24">
       
         <h2 style="margin-top:0;">Ce qu'est Cardano — Droit au but</h2>
-        <p>Cardano est une blockchain pair-à-pair avec une offre limitée, bâtie sur la même philosophie comptable que Bitcoin, tout en l'étendant pour supporter les contrats intelligents, l'identité numérique et des applications à l'échelle mondiale.</p>
+        <p>Cardano est une blockchain pair-à-pair avec une offre limitée, construite sur la même philosophie comptable que Bitcoin, tout en l'étendant pour supporter les contrats intelligents, l'identité numérique et les applications à échelle mondiale.</p>
         <p>À la base, Cardano n'est pas une rupture avec Bitcoin.<br>C'est une continuation.</p>
         <p>Bitcoin a prouvé que la monnaie pair-à-pair avec une offre fixe pouvait exister.<br>Cardano pose une question plus profonde :</p>
-        <p><strong class="text-white">Et si cette même fondation pouvait soutenir un système financier et social mondial tout entier ?</strong></p>
+        <p><strong class="text-white">Et si cette même fondation pouvait soutenir un système financier et social mondial entier ?</strong></p>
 
         <div class="wiki-divider"></div>
 
         <h2>Bitcoin au Cœur — UTXO Étendu</h2>
         <p>Cardano est construit sur un modèle UTXO Étendu (eUTXO), directement dérivé du design UTXO original de Bitcoin.</p>
-        <p>Cela compte parce que l'UTXO :</p>
+        <p>Cela compte car l'UTXO :</p>
         <ul>
-            <li>impose un comportement de transaction déterministe</li>
+            <li>force un comportement transactionnel déterministe</li>
             <li>supprime les changements d'état cachés</li>
             <li>augmente la sécurité et la prévisibilité</li>
-            <li>empêche des catégories entières d'échecs de contrats intelligents</li>
+            <li>empêche des classes entières d'échecs de contrats intelligents</li>
         </ul>
-        <p>Là où plusieurs blockchains ont abandonné le modèle de Bitcoin pour la commodité, Cardano a doublé la mise dessus.</p>
-        <p>C'est pourquoi Cardano est souvent décrit comme :<br><strong>« Le modèle de sécurité de Bitcoin, étendu aux contrats intelligents. »</strong></p>
-        <p>Ce choix de design est ce qui vaut à Cardano le titre de :<br><strong class="text-[#0033AD]">Le Bitcoin des Altcoins.</strong></p>
+       
+        <p>Là où de nombreuses blockchains ont abandonné le modèle de Bitcoin par commodité, Cardano a doublé la mise dessus.</p>
+        <p>C'est pourquoi Cardano est souvent décrit comme :<br><strong>“Le modèle de sécurité de Bitcoin, étendu aux contrats intelligents.”</strong></p>
+        <p>Ce choix de conception vaut à Cardano le titre :<br><strong class="text-[#0033AD]">Le Bitcoin des Altcoins.</strong></p>
 
         <div class="wiki-divider"></div>
 
@@ -266,43 +273,43 @@
             <li>une ambiguïté de gouvernance</li>
         </ul>
         <p>Cardano a été créé pour répondre à une question plus difficile :</p>
-        <p>Et si nous bâtissions une blockchain comme nous bâtissons une infrastructure critique — avec des garanties mathématiques, une vérification formelle et une gouvernance à long terme ?</p>
+        <p>Et si nous construisions une blockchain comme nous construisons une infrastructure critique — avec des garanties mathématiques, une vérification formelle et une gouvernance à long terme ?</p>
 
         <div class="wiki-divider"></div>
 
-        <h2>La Philosophie derrière Cardano</h2>
-        <p>Cardano est bâti sur :</p>
+        <h2>La Philosophie Derrière Cardano</h2>
+        <p>Cardano est construit sur :</p>
         <ul>
-            <li>la recherche académique revue par des pairs</li>
+            <li>la recherche académique revue par les pairs</li>
             <li>les méthodes formelles</li>
             <li>les preuves mathématiques</li>
             <li>une ingénierie conservatrice et délibérée</li>
         </ul>
-        <p>Au lieu de « bouger vite et briser des choses », Cardano a choisi :</p>
+        <p>Au lieu de "aller vite et casser des choses", Cardano a choisi :</p>
         <ul>
-            <li>la justesse avant la vitesse</li>
-            <li>la sécurité avant la hype</li>
-            <li>la durabilité avant les raccourcis</li>
+            <li>l'exactitude plutôt que la vitesse</li>
+            <li>la sécurité plutôt que la hype</li>
+            <li>la durabilité plutôt que les raccourcis</li>
         </ul>
         <p>Cette philosophie rend Cardano fondamentalement différent de la plupart des projets blockchain.</p>
 
         <div class="wiki-divider"></div>
 
         <h2>Charles Hoskinson — De Bitcoin à Cardano</h2>
-        <p>Charles Hoskinson est impliqué dans la crypto depuis les tout débuts.</p>
+        <p>Charles Hoskinson est impliqué dans la crypto depuis les premiers jours.</p>
         <p>Avant Cardano :</p>
         <ul>
             <li>éducateur et défenseur précoce de Bitcoin</li>
             <li>profondément engagé dans les fondations économiques et philosophiques de Bitcoin</li>
             <li>concentré sur les systèmes pair-à-pair, la rareté et la souveraineté</li>
         </ul>
-        <p>Charles est devenu plus tard l'un des co-fondateurs originaux d'Ethereum et a servi comme son premier PDG.</p>
-        <p>Une divergence philosophique a émergé.</p>
+        <p>Charles est ensuite devenu l'un des cofondateurs originaux d'Ethereum et a servi comme son premier PDG.</p>
+        <p>Une scission philosophique a émergé.</p>
         <p>Ethereum a choisi :</p>
         <ul>
             <li>l'expérimentation rapide</li>
             <li>la gouvernance informelle</li>
-            <li>la vitesse avant les garanties</li>
+            <li>la vitesse plutôt que les garanties</li>
         </ul>
         <p>Charles croyait que les blockchains finiraient par :</p>
         <ul>
@@ -311,7 +318,7 @@
             <li>sécuriser l'infrastructure nationale</li>
             <li>servir des milliards de personnes</li>
         </ul>
-        <p>Il croyait que cela nécessitait une certitude mathématique.<br>Alors il a quitté Ethereum.<br>Et puis vint Charles.</p>
+        <p>Il croyait que cela exigeait une certitude mathématique.<br>Alors il a quitté Ethereum.<br>Et puis vint Charles.</p>
 
         <div class="wiki-divider"></div>
 
@@ -326,65 +333,65 @@
         <p>Cette séparation empêche :</p>
         <ul>
             <li>le contrôle centralisé</li>
-            <li>la capture corporative</li>
+            <li>la capture par les entreprises</li>
             <li>la prise de décision à court terme</li>
         </ul>
         <p>Cardano est conçu pour survivre à ses créateurs.</p>
 
         <div class="wiki-divider"></div>
 
-        <h2>Preuve d'Enjeu — Ouroboros</h2>
-        <p>Cardano utilise Ouroboros, le premier protocole de preuve d'enjeu prouvé sécuritaire par la recherche académique revue par des pairs.</p>
+        <h2>Preuve d'Enjeu (PoS) — Ouroboros</h2>
+        <p>Cardano utilise Ouroboros, le premier protocole de preuve d'enjeu prouvé sécurisé par la recherche académique revue par les pairs.</p>
         <p>Ouroboros :</p>
         <ul>
-            <li>est écoénergétique</li>
+            <li>est économe en énergie</li>
             <li>est mathématiquement prouvé</li>
             <li>maintient la décentralisation</li>
-            <li>passe à l'échelle de façon prévisible</li>
+            <li>passe à l'échelle de manière prévisible</li>
         </ul>
-        <p>Cardano a démontré que la Preuve d'Enjeu pouvait être sécuritaire bien avant qu'elle ne devienne la norme.</p>
+        <p>Cardano a démontré que la Preuve d'Enjeu pouvait être sécurisée bien avant qu'elle ne devienne courante.</p>
 
         <div class="wiki-divider"></div>
 
         <h2>Gouvernance & Souveraineté Numérique</h2>
         <p>Cardano se gouverne lui-même via :</p>
         <ul>
-            <li>le vote sur la chaîne (on-chain)</li>
+            <li>le vote on-chain</li>
             <li>une trésorerie financée par les frais de transaction</li>
-            <li>des propositions communautaires</li>
-            <li>des mises à jour de protocole sans hard forks</li>
+            <li>les propositions communautaires</li>
+            <li>les mises à jour de protocole sans hard forks</li>
         </ul>
-        <p>Les détenteurs d'ADA ne sont pas juste des utilisateurs.<br>Ils sont des parties prenantes.</p>
+        <p>Les détenteurs d'ADA ne sont pas de simples utilisateurs.<br>Ils sont des parties prenantes.</p>
         <p>Cardano fonctionne plus comme une nation numérique que comme une startup.</p>
 
         <div class="wiki-divider"></div>
 
-        <h2>Vision du Monde Réel — Identité & Afrique</h2>
+        <h2>Vision Monde Réel — Identité & Afrique</h2>
         <p>Cardano se concentre sur l'adoption dans le monde réel :</p>
         <ul>
             <li>systèmes d'identité numérique</li>
             <li>certificats d'éducation</li>
             <li>inclusion financière</li>
-            <li>infrastructure de grade gouvernemental</li>
+            <li>infrastructure de niveau gouvernemental</li>
         </ul>
         <p>L'Afrique est centrale car :</p>
         <ul>
             <li>des milliards de personnes manquent d'accès aux banques</li>
             <li>l'identité débloque la participation économique</li>
-            <li>les économies "mobile-first" peuvent sauter par-dessus les systèmes hérités</li>
+            <li>les économies "mobile-first" peuvent sauter les systèmes hérités</li>
         </ul>
         <p>Cardano est bâti pour passer à l'échelle pour des milliards de personnes.</p>
 
         <div class="wiki-divider"></div>
 
-        <h2>ADA comme Monnaie</h2>
-        <p>ADA possède :</p>
+        <h2>L'ADA comme Monnaie</h2>
+        <p>L'ADA possède :</p>
         <ul>
             <li>une offre maximale de 45 milliards</li>
             <li>une émission prévisible</li>
             <li>une politique monétaire transparente</li>
         </ul>
-        <p>ADA fonctionne comme :</p>
+        <p>L'ADA fonctionne comme :</p>
         <ul>
             <li>un moyen d'échange</li>
             <li>un actif de gouvernance</li>
@@ -403,15 +410,15 @@
 
         <h2>Source Directe — Charles Hoskinson</h2>
         <p>YouTube Officiel :<br><a href="https://www.youtube.com/@charleshoskinsoncrypto" target="_blank">https://www.youtube.com/@charleshoskinsoncrypto</a></p>
-        <p>Pas d'équipe de relations publiques. Pas de filtres. Juste de la pensée à long terme.</p>
+        <p>Pas d'équipe RP. Pas de filtres. Juste de la pensée à long terme.</p>
 
         <div class="wiki-divider"></div>
 
         <h2>La Communauté Cardano</h2>
         <p>La communauté Cardano est connue pour son état d'esprit à long terme.</p>
-        <p>Contrairement à beaucoup de communautés crypto motivées par la spéculation à court terme, les détenteurs de Cardano tendent à se concentrer sur :</p>
+        <p>Contrairement à de nombreuses communautés crypto motivées par la spéculation à court terme, les détenteurs de Cardano tendent à se concentrer sur :</p>
         <ul>
-            <li>le design de protocole</li>
+            <li>la conception du protocole</li>
             <li>la recherche et les méthodes formelles</li>
             <li>la participation à la gouvernance</li>
             <li>l'impact mondial à long terme</li>
@@ -422,25 +429,25 @@
         <p>Cardano est unique en ayant un fondateur très visible.</p>
         <p>Charles Hoskinson communique régulièrement et directement avec la communauté via :</p>
         <ul>
-            <li>des discussions techniques de longue durée</li>
+            <li>des discussions techniques approfondies</li>
             <li>des explications économiques et de gouvernance</li>
             <li>des réflexions philosophiques sur la décentralisation et la souveraineté</li>
         </ul>
-        <p>Cette transparence a créé un fort sentiment d'alignement entre le projet et ses supporters.</p>
-        <p>La communauté Cardano ne suit pas Charles pour des prédictions de prix.<br>Ils le suivent pour la structure, la vision et la pensée à long terme.</p>
+        <p>Cette transparence a créé un fort sentiment d'alignement entre le projet et ses soutiens.</p>
+        <p>La communauté Cardano ne suit pas Charles pour des prédictions de prix.<br>Elle le suit pour la structure, la vision et la pensée à long terme.</p>
 
         <h3>Une Culture de Patience</h3>
         <p>La communauté Cardano est souvent décrite comme :</p>
         <ul>
             <li>patiente</li>
             <li>conservatrice</li>
-            <li>orientée vers la recherche</li>
+            <li>orientée recherche</li>
         </ul>
         <p>Ceci est intentionnel.</p>
-        <p>La croyance est que les systèmes conçus pour soutenir des gouvernements, l'identité et des milliards d'utilisateurs doivent prioriser la justesse avant la vitesse.</p>
-        <p>Pour beaucoup de supporters, Cardano ne concerne pas le prochain cycle.<br>Il s'agit de bâtir une infrastructure destinée à durer des décennies.</p>
+        <p>La conviction est que les systèmes conçus pour soutenir des gouvernements, l'identité et des milliards d'utilisateurs doivent prioriser l'exactitude sur la vitesse.</p>
+        <p>Pour beaucoup de supporters, Cardano ne concerne pas le prochain cycle.<br>Il s'agit de construire une infrastructure faite pour durer des décennies.</p>
 
-        <h3>« En Charles Nous Avons Confiance »</h3>
+        <h3>“In Charles We Trust”</h3>
         <p>Au sein de la communauté, cette phrase reflète la confiance en :</p>
         <ul>
             <li>la revue par les pairs</li>
@@ -452,17 +459,17 @@
 
         <div class="wiki-divider"></div>
 
-        <h2>Chronologie Cardano — Événements Clés</h2>
+        <h2>Chronologie Cardano — Étapes Clés</h2>
         <ul>
             <li><strong>2015</strong> — Début de la recherche Cardano</li>
-            <li><strong>2017</strong> — Lancement du réseau principal Cardano</li>
+            <li><strong>2017</strong> — Lancement du mainnet Cardano</li>
             <li><strong>2019</strong> — Ère Shelley — décentralisation</li>
             <li><strong>2020</strong> — Déploiement complet d'Ouroboros</li>
             <li><strong>2021</strong> — Mise à jour Alonzo — contrats intelligents</li>
             <li><strong>2022</strong> — Mise à jour Vasil — améliorations de scalabilité</li>
-            <li><strong>2023</strong> — Les cadres de gouvernance maturent</li>
-            <li><strong>2024</strong> — Ère Voltaire — gouvernance complète sur la chaîne</li>
-            <li><strong>2025</strong> — La chaîne privée Midnight avance avec le soutien de l'infrastructure Google Cloud</li>
+            <li><strong>2023</strong> — Les cadres de gouvernance mûrissent</li>
+            <li><strong>2024</strong> — Ère Voltaire — gouvernance on-chain complète</li>
+            <li><strong>2025</strong> — La chaîne de confidentialité Midnight avance avec le support de l'infrastructure Google Cloud</li>
             <li><strong>2025</strong> — Cardano positionné comme infrastructure blockchain mondiale souveraine</li>
         </ul>
 
@@ -472,14 +479,14 @@
         <p>Bitcoin nous a donné une monnaie saine.</p>
         <p>Ethereum nous a donné une logique programmable.</p>
         <p>Cardano nous donne un système bâti pour le monde réel.</p>
-        <p class="text-2xl text-[#0033AD] font-bold font-orbitron mt-4">En Charles nous avons confiance.<br>Vous êtes en avance.</p>
+        <p class="text-2xl text-[#0033AD] font-bold font-orbitron mt-4">In Charles we trust.<br>Vous êtes en avance.</p>
     </article>
 
     <div id="shop" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-[#0033AD] to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
         <div class="relative bg-black border border-[#0033AD]/30 p-2">
-          <img src="ada.jpg" alt="Cardano Tee" class="w-full h-[600px] object-cover object-top shadow-2xl">
+          <img src="ada.jpg" alt="T-Shirt Cardano" class="w-full h-[600px] object-cover object-top shadow-2xl">
         </div>
       </div>
 
@@ -490,8 +497,8 @@
         </div>
 
         <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-          Tissu de Grade Institutionnel Premium.<br>
-          "Peer Reviewed" sur la poitrine. L'Histoire dans votre dos.
+          Tissu de Qualité Institutionnelle Premium.<br>
+          "Revu par les Pairs" sur la poitrine. L'Histoire dans votre dos.
         </p>
 
         <div class="bg-brand-panel border border-[#0033AD]/20 p-6">
@@ -500,23 +507,23 @@
             <span class="text-[#0033AD] text-sm mb-2 animate-pulse">● En Stock</span>
           </div>
           <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6">Livraison Internationale Gratuite // Paiement Chiffré</p>
-         
+
           <button onclick="openModal('ADA','ADA // PEER REVIEWED')" class="w-full py-4 bg-[#0033AD] text-black font-black text-xl hover:bg-white transition-all uppercase font-orbitron tracking-widest shadow-[0_0_20px_rgba(0,51,173,0.3)] hover:shadow-[0_0_30px_rgba(0,51,173,0.6)]">
-            COMMANDER MAINTENANT
+            COMMANDE SÉCURISÉE
           </button>
         </div>
       </div>
     </div>
-
   </main>
 
   <footer class="border-t border-brand-green/20 bg-black py-12 text-center mt-20">
     <div class="max-w-7xl mx-auto px-4">
       <div class="mb-8">
-        <p class="font-orbitron text-2xl text-white mb-4">SUIVEZ-<span class="text-brand-green">NOUS</span></p>
+        <p class="font-orbitron text-2xl text-white mb-4">CONNECTEZ-VOUS AVEC <span class="text-brand-green">NOUS</span></p>
         <div class="flex justify-center gap-6">
           <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-<a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+          <a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
         </div>
       </div>
 
@@ -524,113 +531,271 @@
         <div class="lbl mb-2">MÉTHODES DE PAIEMENT ACCEPTÉES</div>
         <div class="flex flex-wrap items-center justify-center gap-2 hero-icons" id="footerAcceptedRow"></div>
       </div>
+
       <p class="font-orbitron text-white text-lg">CRYPTO<span class="text-brand-green">T</span></p>
-      <p class="text-gray-500 text-xs mt-2">WEAR YOUR ASSETS</p>
+      <p class="text-gray-500 text-xs mt-2">PORTEZ VOS ACTIFS</p>
       <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
     </div>
   </footer>
 
   <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[150] hidden flex items-center justify-center p-4">
     <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)] max-h-[90vh] overflow-y-auto">
-      <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-      <h2 class="font-orbitron text-2xl text-white mb-1">COMMANDE SÉCURISÉE</h2>
+      <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Fermer">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <h2 class="font-orbitron text-2xl text-white mb-1">PAIEMENT SÉCURISÉ</h2>
       <p class="text-brand-green text-xs mb-4">CONNEXION CHIFFRÉE //</p>
+
       <div class="mb-5 border border-white/10 bg-black/35 px-4 py-3">
-        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Méthodes acceptées</div>
+        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Méthodes Acceptées</div>
         <div id="payLogosRow" class="flex flex-wrap items-center gap-2 modal-icons"></div>
       </div>
-      <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3"><div class="text-brand-green text-xs tracking-widest">COMMANDE REÇUE //</div><div class="text-gray-400 text-[11px] mt-1">Nous vous contacterons sous peu.</div></div>
+
+      <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
+        <div class="text-brand-green text-xs tracking-widest">COMMANDE REÇUE //</div>
+        <div class="text-gray-400 text-[11px] mt-1">Nous vous contacterons rapidement.</div>
+      </div>
+
       <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
+
       <form id="orderForm" class="space-y-4" novalidate>
-        <label class="hp-field" aria-hidden="true">Website<input type="text" name="website" autocomplete="off" tabindex="-1"></label>
-        <input type="hidden" name="ts" id="orderTs" value=""><input type="hidden" id="productKey" name="ProductKey" value=""><input type="hidden" id="productInput" name="Product" value=""><input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
-        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Article Choisi</label><div id="productDisplay" class="text-white font-orbitron text-lg border-b border-gray-700 pb-2"></div></div>
-        <div class="grid grid-cols-2 gap-4">
-          <div><label class="block text-gray-400 text-xs mb-1 uppercase">Taille</label><select name="Size" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option></select></div>
-          <div><label class="block text-gray-400 text-xs mb-1 uppercase">Qté</label><select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option>1</option><option>2</option><option>3</option></select></div>
+        <label class="hp-field" aria-hidden="true">Website
+          <input type="text" name="website" autocomplete="off" tabindex="-1">
+        </label>
+
+        <input type="hidden" name="ts" id="orderTs" value="">
+        <input type="hidden" id="productKey" name="ProductKey" value="">
+        <input type="hidden" id="productInput" name="Product" value="">
+        <input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Article Sélectionné</label>
+          <div id="productDisplay" class="text-white font-orbitron text-lg border-b border-gray-700 pb-2"></div>
         </div>
-        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Méthode de Paiement</label><select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"><option value="CARD">Carte / Apple Pay / Google Pay</option><option value="INTERAC">Virement Interac</option><option value="BTC">Bitcoin (BTC)</option><option value="ETH">Ethereum (ETH)</option><option value="ADA">Cardano (ADA)</option><option value="XRP">XRP</option><option value="SOL">Solana (SOL)</option></select></div>
-        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Courriel</label><input type="email" name="Email" required class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></div>
-        <div><label class="block text-gray-400 text-xs mb-1 uppercase">Adresse</label><textarea name="Address" required rows="3" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></textarea></div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-gray-400 text-xs mb-1 uppercase">Taille</label>
+            <select name="Size" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
+              <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-400 text-xs mb-1 uppercase">Qté</label>
+            <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
+              <option>1</option><option>2</option><option>3</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Méthode de Paiement</label>
+          <select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
+            <option value="CARD">Carte / Apple Pay / Google Pay</option>
+            <option value="INTERAC">Virement Interac</option>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="ADA">Cardano (ADA)</option>
+            <option value="XRP">XRP</option>
+            <option value="SOL">Solana (SOL)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Courriel</label>
+          <input type="email" name="Email" required class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
+        </div>
+
+        <div>
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse</label>
+          <textarea name="Address" required rows="3" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></textarea>
+        </div>
+
         <button id="submitBtn" type="submit" class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">PAYER MAINTENANT</button>
       </form>
     </div>
   </div>
 
   <script>
-    // ====== LOGIC IDENTIQUE À L'ANGLAIS MAIS UI TRADUITE ======
+    // ====== LOGIC IDENTIQUE À L'ACCUEIL (CURRENCY UI REMOVED, USD FIXED) ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
-    const PAYMENT_LINKS = { BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00", ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01", ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02", XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03", SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04" };
-    const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
-    const symbols = { USD: "$", CAD: "$", EUR: "€" };
-    let currentCurrency = "USD";
+    const PAYMENT_LINKS = {
+      BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
+      ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
+      ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02",
+      XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03",
+      SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04"
+    };
 
-    function setCurrency(curr) {
-      currentCurrency = curr;
+    // Currency fixed
+    const currentCurrency = "USD";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      mountAcceptedStrips();
+      updatePaymentUI();
       const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = curr;
-      document.querySelectorAll(".currency-btn").forEach(btn => { if (btn.getAttribute("data-currency") === curr) btn.classList.add("active"); else btn.classList.remove("active"); });
-      document.querySelectorAll(".price-display").forEach(el => { const base = parseFloat(el.getAttribute("data-base")); let val = base * rates[curr]; val = val.toFixed(2).replace('.00', ''); if (curr === "EUR") el.innerText = val + " € EUR"; else el.innerText = symbols[curr] + val + " " + curr; });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => { setCurrency("USD"); mountAcceptedStrips(); });
+      if (currInput) currInput.value = "USD";
+    });
 
     // MOBILE MENU
     const mobileMenuEl = document.getElementById("mobileMenu");
-    function toggleMobileMenu() { mobileMenuEl.classList.toggle("hidden", !mobileMenuEl.classList.contains("hidden")); }
-    function closeMobileMenu() { mobileMenuEl.classList.add("hidden"); }
+    function toggleMobileMenu() {
+      mobileMenuEl.classList.toggle("hidden", !mobileMenuEl.classList.contains("hidden"));
+    }
+    function closeMobileMenu() {
+      mobileMenuEl.classList.add("hidden");
+    }
 
     // ICONS
-    function getIconNode(key){ const tpl = document.getElementById("svgIcons"); const holder = tpl.content.querySelector(`[data-icon="${key}"]`); return holder ? holder.cloneNode(true) : null; }
-    function mountRow(rowEl, keys){ rowEl.innerHTML = ""; keys.forEach(k => { const n = getIconNode(k); if (n) rowEl.appendChild(n); }); }
-    function mountAcceptedStrips(){ const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"]; const navRow = document.getElementById("navAcceptedRow"); const footRow = document.getElementById("footerAcceptedRow"); const mobRow = document.getElementById("mobileAcceptedRow"); if (navRow) mountRow(navRow, keys); if (footRow) mountRow(footRow, keys); if (mobRow) mountRow(mobRow, keys); }
+    function getIconNode(key){
+      const tpl = document.getElementById("svgIcons");
+      const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
+      return holder ? holder.cloneNode(true) : null;
+    }
+    function mountRow(rowEl, keys){
+      rowEl.innerHTML = "";
+      keys.forEach(k => {
+        const n = getIconNode(k);
+        if (n) rowEl.appendChild(n);
+      });
+    }
+    function mountAcceptedStrips(){
+      const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
+      const navRow = document.getElementById("navAcceptedRow");
+      const footRow = document.getElementById("footerAcceptedRow");
+      const mobRow = document.getElementById("mobileAcceptedRow");
+      if (navRow) mountRow(navRow, keys);
+      if (footRow) mountRow(footRow, keys);
+      if (mobRow) mountRow(mobRow, keys);
+    }
 
     // MODAL & PAYMENTS
-    const orderForm = document.getElementById("orderForm"); const statusBox = document.getElementById("orderStatusBox"); const errorBox = document.getElementById("orderErrorBox"); const submitBtn = document.getElementById("submitBtn"); const paySelect = document.getElementById("paymentSelect"); const payLogosRow = document.getElementById("payLogosRow");
-   
+    const orderForm = document.getElementById("orderForm");
+    const statusBox = document.getElementById("orderStatusBox");
+    const errorBox = document.getElementById("orderErrorBox");
+    const submitBtn = document.getElementById("submitBtn");
+    const paySelect = document.getElementById("paymentSelect");
+    const payLogosRow = document.getElementById("payLogosRow");
+
     function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
       document.getElementById("productKey").value = productKey;
       document.getElementById("productDisplay").innerText = productLabel;
       document.getElementById("productInput").value = productLabel;
-      const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency;
-      statusBox.classList.add("hidden"); errorBox.classList.add("hidden"); orderForm.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+
+      const currInput = document.getElementById("currencyInput");
+      if (currInput) currInput.value = "USD";
+
+      statusBox.classList.add("hidden");
+      errorBox.classList.add("hidden");
+      orderForm.classList.remove("hidden");
+      submitBtn.disabled = false;
+      submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
       document.getElementById("orderTs").value = String(Date.now());
-      if (paySelect) paySelect.value = "CARD"; updatePaymentUI();
+
+      if (paySelect) paySelect.value = "CARD";
+      updatePaymentUI();
     }
-    function closeModal(reset = false) { document.getElementById("orderModal").classList.add("hidden"); if (reset) { orderForm.reset(); const currInput = document.getElementById("currencyInput"); if (currInput) currInput.value = currentCurrency; } }
-   
+
+    function closeModal(reset = false) {
+      document.getElementById("orderModal").classList.add("hidden");
+      if (reset) {
+        orderForm.reset();
+        const currInput = document.getElementById("currencyInput");
+        if (currInput) currInput.value = "USD";
+      }
+    }
+
     function updatePaymentUI(){
       payLogosRow.innerHTML = "";
       const mode = paySelect.value;
-      if (mode === "CARD") { ["visa","mc","amex","applepay","gpay"].forEach(k => payLogosRow.appendChild(getIconNode(k))); submitBtn.textContent = "PAYER MAINTENANT"; return; }
-      if (mode === "INTERAC") { payLogosRow.appendChild(getIconNode("interac")); submitBtn.textContent = "SOUMETTRE LA COMMANDE"; return; }
-      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" }; payLogosRow.appendChild(getIconNode(map[mode] || "btc")); submitBtn.textContent = "SOUMETTRE LA COMMANDE";
+
+      if (mode === "CARD") {
+        ["visa","mc","amex","applepay","gpay"].forEach(k => {
+          const n = getIconNode(k);
+          if (n) payLogosRow.appendChild(n);
+        });
+        submitBtn.textContent = "PAYER MAINTENANT";
+        return;
+      }
+
+      if (mode === "INTERAC") {
+        const n = getIconNode("interac");
+        if (n) payLogosRow.appendChild(n);
+        submitBtn.textContent = "SOUMETTRE LA COMMANDE";
+        return;
+      }
+
+      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
+      const n = getIconNode(map[mode] || "btc");
+      if (n) payLogosRow.appendChild(n);
+      submitBtn.textContent = "SOUMETTRE LA COMMANDE";
     }
+
     paySelect.addEventListener("change", updatePaymentUI);
 
     orderForm.addEventListener("submit", async (e) => {
-      e.preventDefault(); errorBox.classList.add("hidden"); statusBox.classList.add("hidden");
-      const fd = new FormData(orderForm); if (fd.has("website")) fd.set("website", "");
-      const ts = Number(fd.get("ts")); if (!Number.isFinite(ts) || (Date.now() - ts) < 800) { errorBox.textContent = "Vérification de sécurité échouée."; errorBox.classList.remove("hidden"); return; }
-      const email = (fd.get("Email") || "").toString().trim(); const address = (fd.get("Address") || "").toString().trim();
-      if (!email || !address) { errorBox.textContent = "Champs requis manquants."; errorBox.classList.remove("hidden"); return; }
+      e.preventDefault();
+      errorBox.classList.add("hidden");
+      statusBox.classList.add("hidden");
 
-      const productKey = (fd.get("ProductKey") || "").toString().trim(); const payMode = (fd.get("PaymentMethod") || "").toString().trim();
-      submitBtn.disabled = true; submitBtn.classList.add("opacity-60", "cursor-not-allowed"); submitBtn.textContent = "TRAITEMENT...";
+      const fd = new FormData(orderForm);
+      if (fd.has("website")) fd.set("website", "");
+
+      const ts = Number(fd.get("ts"));
+      if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
+        errorBox.textContent = "Échec vérification sécurité.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const email = (fd.get("Email") || "").toString().trim();
+      const address = (fd.get("Address") || "").toString().trim();
+      if (!email || !address) {
+        errorBox.textContent = "Champs manquants.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const productKey = (fd.get("ProductKey") || "").toString().trim();
+      const payMode = (fd.get("PaymentMethod") || "").toString().trim();
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+      submitBtn.textContent = "TRAITEMENT...";
 
       try {
         if (payMode === "CARD") {
-          const link = PAYMENT_LINKS[productKey]; if (!link) throw new Error("Lien de paiement introuvable.");
-          const url = new URL(link); url.searchParams.set("prefilled_email", email); url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
-          window.location.href = url.toString(); return;
+          const link = PAYMENT_LINKS[productKey];
+          if (!link) throw new Error("Lien de paiement introuvable.");
+          const url = new URL(link);
+          url.searchParams.set("prefilled_email", email);
+          url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
+          window.location.href = url.toString();
+          return;
         }
-        const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(Object.fromEntries(fd.entries())), });
+
+        const res = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify(Object.fromEntries(fd.entries())),
+        });
+
         if (!res.ok) throw new Error("Échec de la commande.");
-        orderForm.classList.add("hidden"); statusBox.classList.remove("hidden");
-      } catch (err) { errorBox.textContent = err.message || "Erreur."; errorBox.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE"; }
+
+        orderForm.classList.add("hidden");
+        statusBox.classList.remove("hidden");
+      } catch (err) {
+        errorBox.textContent = err.message || "Erreur.";
+        errorBox.classList.remove("hidden");
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+        submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE";
+      }
     });
   </script>
 </body>
 </html>
-

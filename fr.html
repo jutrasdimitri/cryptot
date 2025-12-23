@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>CryptoT // Portez Vos Actifs</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
   <script>
     tailwind.config = {
       theme: {
@@ -31,9 +28,8 @@
       }
     }
   </script>
-
   <style>
-    body { background-color: #050505; color: #e5e5e5; }
+    body { background-color: #050505; color: #e5e5e5; width: 100%; overflow-x: hidden; position: relative; }
     .matrix-bg{
       background-image:
         linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
@@ -48,15 +44,10 @@
     }
     :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
 
-    /* honeypot */
-    .hp-field{
-      position:absolute; left:-9999px; top:auto;
-      width:1px; height:1px; overflow:hidden;
-    }
+    .hp-field{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 
     .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
 
-    /* Logo row styling */
     .logo-strip{
       border: 1px solid rgba(57,255,20,.20);
       background: rgba(0,0,0,.35);
@@ -69,6 +60,7 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
+
     .picon{
       width: 34px; height: 22px;
       display:inline-flex;
@@ -81,20 +73,16 @@
     .picon svg{ width: 100%; height: 100%; }
     .picon:hover{ opacity: 1; transform: translateY(-1px); }
 
-    /* larger icons for header/footer strip */
     .hero-icons .picon{ width: 40px; height: 26px; }
-
-    /* icons inside modal */
     .modal-icons .picon{ width: 40px; height: 26px; }
 
-    /* Navigation Active State Glow */
-    nav a.nav-active {
-        color: #39ff14 !important;
-        text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
-        border-bottom: 2px solid #39ff14;
+    /* Correction pour ne pas colorer le logo en vert */
+    nav a.nav-active:not(.logo-link) {
+      color: #39ff14 !important;
+      text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+      border-bottom: 2px solid #39ff14;
     }
 
-    /* Keep nav compact on smaller laptops */
     @media (max-width: 1100px){
       .nav-accepted { display:none; }
     }
@@ -103,15 +91,16 @@
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
 
-<body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
+<body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black w-full overflow-x-hidden">
 
-  <div id="coinmarketcap-widget-marquee"
-       coins="1,1027,2010,52,5426"
-       currency="USD"
-       theme="dark"
-       transparent="false"
-       show-symbol-logo="true"
-       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+  <div class="fixed top-0 w-full z-[60] border-b border-brand-green/30 bg-brand-black max-w-full overflow-hidden">
+    <div id="coinmarketcap-widget-marquee"
+         coins="1,1027,2010,52,5426"
+         currency="USD"
+         theme="dark"
+         transparent="false"
+         show-symbol-logo="true"></div>
+  </div>
 
   <template id="svgIcons">
     <span data-icon="visa" class="picon" title="Visa" aria-label="Visa">
@@ -203,42 +192,39 @@
     </span>
   </template>
 
-  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px] w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
-        <div class="flex items-center gap-2 min-w-[170px]">
+        <div class="flex items-center gap-3 min-w-fit">
+          <div class="relative z-50 flex items-center gap-2">
+            <a href="index.html" class="text-[10px] text-gray-400 border border-transparent px-2 py-1 hover:text-brand-green transition-colors">EN</a>
+            <span class="text-gray-700">/</span>
+            <a href="fr.html" class="text-[10px] text-brand-green border border-brand-green/30 hover:bg-brand-green/10 px-2 py-1 uppercase tracking-wider transition-colors">FR</a>
+          </div>
+
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+         
           <a href="#home" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;"
-             class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
-            CRYPTO<span class="text-brand-green">T</span>
+             class="logo-link font-orbitron font-black text-2xl tracking-widest text-white uppercase ml-2 cursor-pointer whitespace-nowrap relative z-40">
+             CRYPTO<span class="text-brand-green">T</span>
           </a>
         </div>
 
         <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
-          <span class="lbl mr-3">MÉTHODES ACCEPTÉES</span>
+          <span class="lbl mr-3">ACCEPTÉ</span>
           <div class="flex items-center gap-2" id="navAcceptedRow"></div>
         </div>
 
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">LE_TOP_5</a>
-          <a href="fr-btc.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">À_PROPOS_D'EUX</a>
-          <a href="#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">MANIFESTE</a>
-          <a href="#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">NOUS_JOINDRE</a>
-
-          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
-            <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
-            <span class="text-gray-700">/</span>
-            <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
-            <span class="text-gray-700">/</span>
-            <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
-          </div>
-
-          <a href="index.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">EN</a>
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+          <a href="#products" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">LES_5_PILIERS</a>
+          <a href="fr-about.html" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">À_PROPOS</a>
+          <a href="#manifesto" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTE</a>
+          <a href="#contact" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT</a>
         </div>
 
         <button type="button"
-                class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
-                aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMobileMenu()">
+                class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
+                aria-label="Ouvrir menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMobileMenu()">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -248,41 +234,36 @@
       </div>
     </div>
 
-    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px] w-full overflow-y-auto">
       <div class="flex flex-col gap-6 text-center mt-10">
         <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">BOUTIQUE</a>
-        <a href="fr-btc.html" onclick="closeMobileMenu()" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">À PROPOS D'EUX</a>
+        <a href="fr-about.html" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">À PROPOS</a>
         <a href="#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTE</a>
-        <a href="#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">NOUS JOINDRE</a>
+        <a href="#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
 
         <div class="logo-strip rounded px-3 py-3">
-          <div class="lbl mb-2">MÉTHODES DE PAIEMENT ACCEPTÉES</div>
+          <div class="lbl mb-2">MÉTHODES DE PAIEMENT</div>
           <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
         </div>
 
-        <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-gray-900">
-          <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
-          <span class="text-gray-600">|</span>
-          <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
-          <span class="text-gray-600">|</span>
-          <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
+        <div class="flex items-center justify-center gap-4">
+          <a href="index.html" class="border border-white/10 hover:border-brand-green/30 hover:bg-brand-green/10 px-4 py-3 text-gray-300 hover:text-brand-green uppercase tracking-wider text-sm text-center">ENGLISH</a>
+          <a href="fr.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
         </div>
-
-        <a href="index.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">ENGLISH</a>
       </div>
 
       <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ FERMER ]</button>
     </div>
   </nav>
 
-  <header id="home" class="py-20 text-center relative overflow-hidden">
+  <header id="home" class="py-16 md:py-20 text-center relative overflow-hidden w-full">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-    <div class="relative z-10 px-4">
-      <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+    <div class="relative z-10 px-4 max-w-full">
+      <h1 class="text-3xl sm:text-4xl md:text-7xl font-black font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 break-words">
         PORTEZ VOS <span class="text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.8)]">ACTIFS</span>
       </h1>
 
-      <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-8">
+      <p class="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto mb-8 px-4">
         Streetwear crypto premium. Impressions haute qualité.
         <br>
         <span class="text-brand-green">Le Code est la Loi. Le Style est un Choix.</span>
@@ -292,25 +273,34 @@
     </div>
   </header>
 
-  <main id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-10">
-    <h2 class="text-3xl font-orbitron text-white mb-8 border-l-4 border-brand-green pl-4">LE TOP 5_</h2>
+  <main id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-10 overflow-hidden">
+    <h2 class="text-2xl md:text-3xl font-orbitron text-white mb-8 border-l-4 border-brand-green pl-4 uppercase">LES 5 PILIERS_</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300">
+        <div class="w-full h-[400px] md:h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="btc.jpg" alt="BTC VIRES IN NUMERIS" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#F7931A] border border-[#F7931A] font-bold">Disponible</div>
         </div>
         <div class="p-6">
-          <h3 class="font-orbitron text-xl text-white mb-1">BTC // VIRES IN NUMERIS</h3>
+          <h3 class="font-orbitron text-lg md:text-xl text-white mb-1">BTC // VIRES IN NUMERIS</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Réserve de Valeur</p>
-          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">L'original. Décentralisé, rare et immuable. La logique "Orange Pill" sur noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
+          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">L'original. Décentralisé, rare et immuable. La logique Orange Pill sur fond Noir.</p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Toutes couleurs disponibles</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
             </div>
             <div class="flex gap-2">
@@ -321,20 +311,29 @@
         </div>
       </div>
 
-      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300">
+        <div class="w-full h-[400px] md:h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="eth.jpg" alt="ETH CODE IS LAW" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#627EEA] border border-[#627EEA] font-bold">Disponible</div>
         </div>
         <div class="p-6">
-          <h3 class="font-orbitron text-xl text-white mb-1">ETH // CODE IS LAW</h3>
+          <h3 class="font-orbitron text-lg md:text-xl text-white mb-1">ETH // CODE IS LAW</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Contrats Intelligents</p>
           <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">L'ordinateur mondial. Carburant déflationniste pour le futur. Bleu Holographique sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Toutes couleurs disponibles</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
             </div>
             <div class="flex gap-2">
@@ -345,20 +344,29 @@
         </div>
       </div>
 
-      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300">
+        <div class="w-full h-[400px] md:h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="ada.jpg" alt="ADA PEER REVIEWED" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#0033ad] border border-[#0033ad] font-bold">Disponible</div>
         </div>
         <div class="p-6">
-          <h3 class="font-orbitron text-xl text-white mb-1">ADA // PEER REVIEWED</h3>
+          <h3 class="font-orbitron text-lg md:text-xl text-white mb-1">ADA // PEER REVIEWED</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Basé sur la Recherche</p>
           <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">Rigueur académique et gouvernance décentralisée. Bleu Électrique Néon sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Toutes couleurs disponibles</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
             </div>
             <div class="flex gap-2">
@@ -369,20 +377,29 @@
         </div>
       </div>
 
-      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300">
+        <div class="w-full h-[400px] md:h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-white border border-white font-bold">Disponible</div>
         </div>
         <div class="p-6">
-          <h3 class="font-orbitron text-xl text-white mb-1">XRP // THE STANDARD</h3>
+          <h3 class="font-orbitron text-lg md:text-xl text-white mb-1">XRP // THE STANDARD</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Fournisseur de Liquidité</p>
           <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">Le pont entre l'ancien monde et le nouveau. Énergie Platine Pure sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Toutes couleurs disponibles</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
             </div>
             <div class="flex gap-2">
@@ -393,20 +410,29 @@
         </div>
       </div>
 
-      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300 hover:-translate-y-2">
-        <div class="w-full h-[500px] bg-gray-900 overflow-hidden relative">
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300">
+        <div class="w-full h-[400px] md:h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-[#9945FF] border border-[#14F195] font-bold">Disponible</div>
         </div>
         <div class="p-6">
-          <h3 class="font-orbitron text-xl text-white mb-1">SOL // PROOF OF HISTORY</h3>
+          <h3 class="font-orbitron text-lg md:text-xl text-white mb-1">SOL // PROOF OF HISTORY</h3>
           <p class="text-brand-green text-xs mb-3 uppercase">Layer 1 Haute Vitesse</p>
-          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">Vitesse à la vitesse de la lumière. Esthétique Vaporwave Dégradé sur Noir.</p>
-          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Autres couleurs sur demande</span></p>
+          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">La vitesse à la vitesse de la lumière. Esthétique Vaporwave Dégradée sur Noir.</p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Noir // <span class="text-white">Toutes couleurs disponibles</span></p>
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">LIVRAISON INTERNATIONALE GRATUITE</span>
             </div>
             <div class="flex gap-2">
@@ -417,84 +443,83 @@
         </div>
       </div>
 
-      <div class="group bg-gray-900/50 border border-gray-800 border-dashed hover:border-brand-green transition-all duration-300 flex flex-col justify-center items-center text-center p-8 min-h-[500px]">
-        <div class="w-20 h-20 rounded-full bg-brand-green/10 flex items-center justify-center mb-6 group-hover:bg-brand-green/20 transition-colors">
-          <span class="text-4xl text-brand-green font-light">+</span>
+      <div class="group bg-gray-900/50 border border-gray-800 border-dashed hover:border-brand-green transition-all duration-300 flex flex-col justify-center items-center text-center p-8 min-h-[400px]">
+        <div class="w-16 h-16 rounded-full bg-brand-green/10 flex items-center justify-center mb-6">
+          <span class="text-3xl text-brand-green font-light">+</span>
         </div>
-        <h3 class="font-orbitron text-xl text-white mb-2">COMMANDE PERSONNALISÉE</h3>
-        <p class="text-gray-400 text-sm mb-6 max-w-xs">
-          Vous ne voyez pas votre crypto préférée ? Nous offrons des <strong class="text-brand-green">couleurs personnalisées</strong>, <strong class="text-brand-green">création de logo</strong>, et n'importe quel ticker. Demandez-le.
+        <h3 class="font-orbitron text-lg text-white mb-2">COMMANDE SUR MESURE</h3>
+        <p class="text-gray-400 text-xs mb-6 max-w-xs">
+          Vous ne voyez pas votre crypto préférée ? Nous offrons des couleurs personnalisées pour n'importe quel ticker. Demandez-nous.
         </p>
-        <button onclick="openModal('CUSTOM','CUSTOM REQUEST')" class="px-8 py-3 border border-brand-green text-brand-green font-bold text-sm hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
-          Demander du Sur-mesure
+        <button onclick="openModal('CUSTOM','CUSTOM REQUEST')" class="px-6 py-3 border border-brand-green text-brand-green font-bold text-xs hover:bg-brand-green hover:text-black transition-all uppercase font-orbitron tracking-wider">
+          DEMANDE SPÉCIALE
         </button>
       </div>
 
     </div>
   </main>
 
-  <section id="manifesto" class="py-24 bg-brand-panel border-t border-brand-green/20 relative">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-5xl font-orbitron font-bold text-white mb-8">
+  <section id="manifesto" class="py-16 md:py-24 bg-brand-panel border-t border-brand-green/20 relative w-full overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-5xl font-orbitron font-bold text-white mb-8 break-words uppercase">
         MANIFESTE — <span class="text-brand-green">LE CODE EST LA LOI</span>
       </h2>
-      <div class="text-gray-300 text-lg leading-relaxed space-y-6">
+      <div class="text-gray-300 text-base md:text-lg leading-relaxed space-y-6">
         <p>Nous ne faisons pas confiance aux banques. Nous faisons confiance au code.</p>
-        <p>La monnaie fiduciaire est une dette. La crypto est la propriété.</p>
-        <p>Nous portons nos actifs car nous croyons au futur de la monnaie.</p>
+        <p>La monnaie fiduciaire est une dette. La crypto est une propriété.</p>
+        <p>Nous portons nos actifs parce que nous croyons en l'avenir de l'argent.</p>
         <div class="mt-12 pt-8 border-t border-brand-green/10">
-          <p class="text-gray-500 italic mb-4">"Tous les profits des ventes seront réinvestis dans le marché en levier... pour être liquidés."</p>
-          <p class="text-gray-400">Blague à part, soyez prudents !</p>
-          <p class="text-brand-green font-bold mt-4 text-xl">// Pas vos clés, pas vos cryptos.</p>
+          <p class="text-brand-green font-bold mt-4 text-lg md:text-xl">// Pas vos clés, pas vos cryptos.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer id="contact" class="border-t border-brand-green/20 bg-black py-12">
+  <footer id="contact" class="border-t border-brand-green/20 bg-black py-12 w-full overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <div class="mb-8">
-        <p class="font-orbitron text-2xl text-white mb-4">SUIVEZ-<span class="text-brand-green">NOUS</span></p>
-        <div class="flex justify-center gap-6">
+        <p class="font-orbitron text-xl text-white mb-4">CONNECTEZ-VOUS AVEC <span class="text-brand-green">NOUS</span></p>
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
           <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-<a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+          <a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
         </div>
       </div>
 
-      <div class="logo-strip rounded px-4 py-3 inline-block">
+      <div class="logo-strip rounded px-4 py-3 inline-block max-w-full overflow-hidden">
         <div class="lbl mb-2">MÉTHODES DE PAIEMENT ACCEPTÉES</div>
         <div class="flex flex-wrap items-center justify-center gap-2 hero-icons" id="footerAcceptedRow"></div>
       </div>
 
       <p class="font-orbitron text-white text-lg mb-2 mt-8">CRYPTO<span class="text-brand-green">T</span></p>
-      <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // INTERNATIONAL</p>
-      <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
+      <p class="text-gray-500 text-xs uppercase">EST. 2025 // MONTRÉAL // MONDE ENTIER</p>
     </div>
   </footer>
 
-  <div id="orderModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
-    <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-[0_0_50px_rgba(57,255,20,0.1)]">
+  <div id="orderModal" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+
       <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Fermer">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
 
-      <h2 class="font-orbitron text-2xl text-white mb-1">COMMANDE SÉCURISÉE</h2>
-      <p class="text-brand-green text-xs mb-4">CONNEXION CHIFFRÉE //</p>
+      <h2 class="font-orbitron text-xl md:text-2xl text-white mb-1">PAIEMENT SÉCURISÉ</h2>
+      <p class="text-brand-green text-[10px] mb-4 uppercase tracking-widest">CONNEXION CHIFFRÉE //</p>
 
       <div class="mb-5 border border-white/10 bg-black/35 px-4 py-3">
-        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Méthodes de paiement acceptées</div>
+        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Méthodes Acceptées</div>
         <div id="payLogosRow" class="flex flex-wrap items-center gap-2 modal-icons"></div>
       </div>
 
-      <div id="orderStatusBox" class="hidden mb-4 border border-brand-green/30 bg-black/40 p-3">
-        <div class="text-brand-green text-xs tracking-widest">COMMANDE REÇUE //</div>
-        <div class="text-gray-400 text-[11px] mt-1">Nous vous contacterons sous peu pour la suite.</div>
+      <div id="orderStatusBox" class="hidden text-center py-10">
+        <div class="text-brand-green text-xl font-orbitron mb-2">COMMANDE REÇUE</div>
+        <p class="text-gray-400 text-xs">Nous vous contacterons par courriel pour la suite.</p>
+        <button onclick="closeModal()" class="mt-6 text-gray-500 text-xs underline">Retour à la boutique</button>
       </div>
 
-      <div id="orderErrorBox" class="hidden mb-4 border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-200"></div>
+      <div id="orderErrorBox" class="hidden mt-4 p-3 bg-red-900/20 border border-red-500/50 text-red-200 text-[10px]"></div>
 
       <form id="orderForm" class="space-y-4" novalidate>
         <label class="hp-field" aria-hidden="true">
@@ -508,28 +533,28 @@
         <input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
 
         <div>
-          <label class="block text-gray-400 text-xs mb-1 uppercase">Article choisi</label>
-          <div id="productDisplay" class="text-white font-orbitron text-lg border-b border-gray-700 pb-2"></div>
+          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Article Sélectionné</label>
+          <div id="productDisplay" class="text-white font-orbitron text-base border-b border-gray-700 pb-2"></div>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
           <div>
-            <label class="block text-gray-400 text-xs mb-1 uppercase">Taille</label>
-            <select name="Size" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
+            <label class="block text-gray-400 text-[10px] mb-1 uppercase">Taille</label>
+            <select name="Size" class="w-full bg-black border border-gray-700 text-white p-2 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
               <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
             </select>
           </div>
           <div>
-            <label class="block text-gray-400 text-xs mb-1 uppercase">Qté</label>
-            <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
+            <label class="block text-gray-400 text-[10px] mb-1 uppercase">Qté</label>
+            <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-2 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
               <option>1</option><option>2</option><option>3</option>
             </select>
           </div>
         </div>
 
         <div>
-          <label class="block text-gray-400 text-xs mb-1 uppercase">Méthode de paiement</label>
-          <select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
+          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Méthode de Paiement</label>
+          <select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
             <option value="CARD">Carte / Apple Pay / Google Pay</option>
             <option value="INTERAC">Virement Interac</option>
             <option value="BTC">Bitcoin (BTC)</option>
@@ -541,20 +566,21 @@
         </div>
 
         <div>
-          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse courriel</label>
-          <input type="email" name="Email" required placeholder="satoshi@nakamoto.com" autocomplete="email"
-                 class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none placeholder-gray-600">
+          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Adresse Courriel</label>
+          <input type="email" name="Email" required placeholder="satoshi@nakamoto.com"
+                 autocomplete="email"
+                 class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600">
         </div>
 
         <div>
-          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse de livraison</label>
-          <textarea name="Address" required rows="3" placeholder="Adresse complète..." autocomplete="shipping street-address"
-                    class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green focus:outline-none placeholder-gray-600"></textarea>
+          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Adresse de Livraison</label>
+          <textarea name="Address" required rows="2" placeholder="Adresse complète..."
+                    autocomplete="shipping street-address"
+                    class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600"></textarea>
         </div>
 
-        <button id="submitBtn" type="submit"
-                class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">
-          PAYER MAINTENANT
+        <button id="submitBtn" type="submit" class="w-full py-4 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-2">
+          PASSER AU PAIEMENT
         </button>
 
         <p id="smallNote" class="text-center text-gray-500 text-[10px] mt-2">
@@ -568,7 +594,6 @@
     // ====== CONFIG ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
 
-    // Payment links
     const PAYMENT_LINKS = {
       BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
       ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
@@ -584,27 +609,45 @@
 
     function setCurrency(curr) {
       currentCurrency = curr;
+
       const currInput = document.getElementById("currencyInput");
       if (currInput) currInput.value = curr;
 
       document.querySelectorAll(".currency-btn").forEach(btn => {
-        if (btn.getAttribute("data-currency") === curr) btn.classList.add("active");
-        else btn.classList.remove("active");
+        btn.classList.toggle("active", btn.getAttribute("data-currency") === curr);
       });
 
       document.querySelectorAll(".price-display").forEach(el => {
         const base = parseFloat(el.getAttribute("data-base"));
-        let val = base * rates[curr];
-        val = val.toFixed(2).replace('.00', '');
-        if (curr === "EUR") el.innerText = val + " € EUR";
-        else el.innerText = symbols[curr] + val + " " + curr;
+        let val = (base * rates[curr]).toFixed(2).replace('.00', '');
+        el.innerText = (curr === "EUR") ? `${val} € EUR` : `${symbols[curr]}${val} ${curr}`;
       });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      setCurrency("USD");
-      mountAcceptedStrips();
-    });
+    // ====== ICON FACTORY ======
+    function getIconNode(key){
+      const tpl = document.getElementById("svgIcons");
+      const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
+      return holder ? holder.cloneNode(true) : null;
+    }
+
+    function mountRow(rowEl, keys){
+      rowEl.innerHTML = "";
+      keys.forEach(k => {
+        const n = getIconNode(k);
+        if (n) rowEl.appendChild(n);
+      });
+    }
+
+    function mountAcceptedStrips(){
+      const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
+      const navRow = document.getElementById("navAcceptedRow");
+      const footRow = document.getElementById("footerAcceptedRow");
+      const mobRow  = document.getElementById("mobileAcceptedRow");
+      if (navRow) mountRow(navRow, keys);
+      if (footRow) mountRow(footRow, keys);
+      if (mobRow)  mountRow(mobRow, keys);
+    }
 
     // ====== MOBILE MENU ======
     const mobileMenuEl = document.getElementById("mobileMenu");
@@ -623,39 +666,10 @@
       document.body.classList.remove("overflow-hidden");
     }
 
-    // ====== ICON FACTORY (from template) ======
-    function getIconNode(key){
-      const tpl = document.getElementById("svgIcons");
-      const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
-      return holder ? holder.cloneNode(true) : null;
-    }
-
-    function mountRow(rowEl, keys){
-      rowEl.innerHTML = "";
-      keys.forEach(k => {
-        const n = getIconNode(k);
-        if (n) rowEl.appendChild(n);
-      });
-    }
-
-    function mountAcceptedStrips(){
-      const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
-
-      const navRow = document.getElementById("navAcceptedRow");
-      const heroRow = document.getElementById("heroAcceptedRow");
-      const footRow = document.getElementById("footerAcceptedRow");
-      const mobRow  = document.getElementById("mobileAcceptedRow");
-
-      if (navRow) mountRow(navRow, keys);
-      if (heroRow) mountRow(heroRow, keys);
-      if (footRow) mountRow(footRow, keys);
-      if (mobRow)  mountRow(mobRow, keys);
-    }
-
     // ====== MODAL ======
     const orderForm = document.getElementById("orderForm");
     const statusBox = document.getElementById("orderStatusBox");
-    const errorBox = document.getElementById("orderErrorBox");
+    const errorBox  = document.getElementById("orderErrorBox");
     const submitBtn = document.getElementById("submitBtn");
     const paySelect = document.getElementById("paymentSelect");
     const payLogosRow = document.getElementById("payLogosRow");
@@ -663,6 +677,7 @@
 
     function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
+
       document.getElementById("productKey").value = productKey;
       document.getElementById("productDisplay").innerText = productLabel;
       document.getElementById("productInput").value = productLabel;
@@ -677,6 +692,7 @@
 
       submitBtn.disabled = false;
       submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+      submitBtn.textContent = "PASSER AU PAIEMENT";
 
       document.getElementById("orderTs").value = String(Date.now());
 
@@ -708,29 +724,35 @@
       payLogosRow.innerHTML = "";
 
       if (mode === "CARD") {
-        ["visa","mc","amex","applepay","gpay"].forEach(k => payLogosRow.appendChild(getIconNode(k)));
+        ["visa","mc","amex","applepay","gpay"].forEach(k => {
+          const n = getIconNode(k);
+          if (n) payLogosRow.appendChild(n);
+        });
         submitBtn.textContent = "PAYER MAINTENANT";
         smallNote.textContent = "Visa / Mastercard / Amex + Apple Pay + Google Pay.";
         return;
       }
 
       if (mode === "INTERAC") {
-        payLogosRow.appendChild(getIconNode("interac"));
+        const n = getIconNode("interac");
+        if (n) payLogosRow.appendChild(n);
         submitBtn.textContent = "SOUMETTRE LA COMMANDE";
-        smallNote.textContent = "Nous vous contacterons pour la suite après la soumission.";
+        smallNote.textContent = "Nous vous contacterons pour la suite après soumission.";
         return;
       }
 
       const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
-      payLogosRow.appendChild(getIconNode(map[mode] || "btc"));
+      const n = getIconNode(map[mode] || "btc");
+      if (n) payLogosRow.appendChild(n);
       submitBtn.textContent = "SOUMETTRE LA COMMANDE";
-      smallNote.textContent = "Nous vous contacterons pour la suite après la soumission.";
+      smallNote.textContent = "Nous vous contacterons pour la suite après soumission.";
     }
 
     function updatePaymentUI(){
+      if (!paySelect) return;
       setLogosFor(paySelect.value);
     }
-    paySelect.addEventListener("change", updatePaymentUI);
+    if (paySelect) paySelect.addEventListener("change", updatePaymentUI);
 
     // ====== SUBMIT LOGIC ======
     orderForm.addEventListener("submit", async (e) => {
@@ -741,11 +763,13 @@
       statusBox.classList.add("hidden");
 
       const fd = new FormData(orderForm);
-      if (fd.has("website")) fd.set("website", ""); // honeypot
+
+      // honeypot
+      if (fd.has("website")) fd.set("website", "");
 
       const ts = Number(fd.get("ts"));
       if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
-        errorBox.textContent = "Sécurité : veuillez patienter une seconde.";
+        errorBox.textContent = "Vérification de sécurité: attendez une seconde.";
         errorBox.classList.remove("hidden");
         return;
       }
@@ -766,10 +790,10 @@
       submitBtn.textContent = "TRAITEMENT...";
 
       try {
+        // CARD => redirect Stripe link by productKey
         if (payMode === "CARD") {
           const link = PAYMENT_LINKS[productKey];
           if (!link) throw new Error("Lien de paiement introuvable.");
-
           const url = new URL(link);
           url.searchParams.set("prefilled_email", email);
           url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
@@ -777,6 +801,7 @@
           return;
         }
 
+        // Non-card => send order to Formspree
         const payload = Object.fromEntries(fd.entries());
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
@@ -788,41 +813,39 @@
         if (!res.ok) {
           const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
             ? data.errors[0].message
-            : "Erreur de commande. Réessayez.";
+            : "Échec de la commande. Réessayez.";
           throw new Error(msg);
         }
 
         orderForm.classList.add("hidden");
         statusBox.classList.remove("hidden");
+
       } catch (err) {
         errorBox.textContent = err.message || "Erreur réseau. Réessayez.";
         errorBox.classList.remove("hidden");
 
         submitBtn.disabled = false;
         submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE";
+        submitBtn.textContent = (paySelect && paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE";
       }
     });
 
-    // ====== SCROLL SPY LOGIC ======
+    // ====== SCROLL SPY (CORRIGÉ) ======
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll("header, section, main, footer");
-      const navLinks = document.querySelectorAll("nav a[href^='#']");
+      // CORRECTION ICI : On ne sélectionne que les liens dans le conteneur du menu de droite
+      const navLinks = document.querySelectorAll("nav .hidden.md\\:flex a[href^='#']");
 
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.25 // Active quand 25% de la section est visible
-      };
+      const observerOptions = { root: null, rootMargin: "0px", threshold: 0.25 };
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             navLinks.forEach(link => link.classList.remove("nav-active"));
-           
             const id = entry.target.getAttribute("id");
             if (id) {
-              const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+              // On cherche le lien actif uniquement dans le menu de droite
+              const activeLink = document.querySelector(`nav .hidden.md\\:flex a[href="#${id}"]`);
               if (activeLink) activeLink.classList.add("nav-active");
             }
           }
@@ -830,9 +853,17 @@
       }, observerOptions);
 
       sections.forEach((section) => {
-        if(section.getAttribute('id')) observer.observe(section);
+        if (section.getAttribute('id')) observer.observe(section);
       });
     });
+
+    // ====== INIT ======
+    document.addEventListener("DOMContentLoaded", () => {
+      setCurrency("USD");
+      mountAcceptedStrips();
+      updatePaymentUI();
+    });
   </script>
+
 </body>
 </html>
