@@ -1,646 +1,210 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CryptoT // About Them</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>CryptoT // The Monetary Truth</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            "brand-green": "#39ff14",
-            "brand-black": "#0a0a0a",
-            "brand-panel": "#111111",
-          },
-          fontFamily: {
-            orbitron: ["Orbitron", "sans-serif"],
-            mono: ["Share Tech Mono", "monospace"],
-          },
-          boxShadow: {
-            "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14",
-          }
+          colors: { "brand-green": "#39ff14", "brand-black": "#0a0a0a", "brand-panel": "#111111" },
+          fontFamily: { orbitron: ["Orbitron", "sans-serif"], mono: ["Share Tech Mono", "monospace"] },
+          boxShadow: { "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14" }
         }
       }
     }
   </script>
-
   <style>
-    body { background-color: #050505; color: #e5e5e5; }
-    .matrix-bg{
-      background-image:
-        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
-        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
-      background-size: 50px 50px;
-    }
-    .clamp-2{
-      display:-webkit-box;
-      -webkit-line-clamp:2;
-      -webkit-box-orient:vertical;
-      overflow:hidden;
-    }
-    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
-    /* honeypot */
-    .hp-field{
-      position:absolute; left:-9999px; top:auto;
-      width:1px; height:1px; overflow:hidden;
-    }
-    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
-    /* Logo row styling */
-    .logo-strip{
-      border: 1px solid rgba(57,255,20,.20);
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(8px);
-    }
-    .logo-strip .lbl{
-      letter-spacing: .22em;
-      font-size: 10px;
-      color: rgba(255,255,255,.55);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    /* ICONS SIZING */
-    .picon{
-      width: 34px; height: 22px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      opacity: .92;
-      filter: drop-shadow(0 0 10px rgba(57,255,20,0.05));
-      transition: opacity .15s ease, transform .15s ease;
-    }
-    .picon svg{ width: 100%; height: 100%; }
-    .picon:hover{ opacity: 1; transform: translateY(-1px); }
-    /* larger icons for header/footer strip */
-    .hero-icons .picon{ width: 40px; height: 26px; }
-    /* icons inside modal */
-    .modal-icons .picon{ width: 40px; height: 26px; }
-
-    /* Navigation Active State Glow */
-    nav a.nav-active {
-      color: #39ff14 !important;
-      text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
-      border-bottom: 2px solid #39ff14;
-    }
-
-    /* Keep nav compact on smaller laptops */
-    @media (max-width: 1100px){
-      .nav-accepted { display:none; }
-    }
-
-    /* ABOUT PAGE TYPOGRAPHY (match your wiki vibe) */
-    .wiki-content h2{
-      font-family: 'Orbitron', sans-serif;
-      color: white;
-      font-size: 1.8rem;
-      margin-top: 3.5rem;
-      margin-bottom: 1.5rem;
-      border-left: 5px solid #39ff14;
-      padding-left: 1.5rem;
-    }
-    .wiki-content h3{
-      font-family: 'Orbitron', sans-serif;
-      color: #d1d5db;
-      font-size: 1.4rem;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .wiki-content p{
-      margin-bottom: 1.8rem;
-      color: #d1d5db;
-      line-height: 2;
-      font-size: 1.15rem;
-    }
-    .wiki-divider{
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #39ff14, transparent);
-      margin: 4rem 0;
-      opacity: 0.4;
-    }
-    .prayer{
-      font-family: 'Orbitron', sans-serif;
-      white-space: pre-line;
-      letter-spacing: .06em;
-    }
+    body { background-color: #050505; color: #e5e5e5; width: 100%; overflow-x: hidden; position: relative; }
+    .matrix-bg { background-image: linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent), linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent); background-size: 50px 50px; }
+    .logo-strip { border: 1px solid rgba(57,255,20,.20); background: rgba(0,0,0,.35); backdrop-filter: blur(8px); }
+    .picon { width: 34px; height: 22px; display:inline-flex; align-items:center; justify-content:center; opacity: .92; transition: transform .15s ease; }
+    .picon svg { width: 100%; height: 100%; }
+    
+    /* Specific Typography for the Manifesto */
+    .wiki-h2 { font-family: 'Orbitron', sans-serif; color: white; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1rem; border-left: 4px solid #39ff14; padding-left: 1rem; }
+    .wiki-h3 { font-family: 'Orbitron', sans-serif; color: #d1d5db; font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+    .wiki-p { margin-bottom: 1.5rem; color: #d1d5db; line-height: 1.8; font-size: 1rem; }
+    .wiki-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #39ff14, transparent); margin: 3rem 0; opacity: 0.3; }
+    
+    nav a.nav-active { color: #39ff14 !important; border-bottom: 2px solid #39ff14; }
   </style>
-
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
+<body class="matrix-bg min-h-screen font-mono w-full overflow-x-hidden">
 
-<body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
-
-  <div id="coinmarketcap-widget-marquee"
-       coins="1,1027,2010,52,5426"
-       currency="USD"
-       theme="dark"
-       transparent="false"
-       show-symbol-logo="true"
-       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+  <div class="fixed top-0 w-full z-[60] border-b border-brand-green/30 bg-brand-black overflow-hidden h-[62px]">
+    <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true"></div>
+  </div>
 
   <template id="svgIcons">
-    <span data-icon="visa" class="picon" title="Visa" aria-label="Visa">
-      <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
-        <text x="0" y="18" font-family="Arial Black, Arial, sans-serif" font-size="18" fill="#1A1F71">VISA</text>
-      </svg>
-    </span>
-    <span data-icon="mc" class="picon" title="Mastercard" aria-label="Mastercard">
-      <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
-        <circle cx="26" cy="12" r="8" fill="#EB001B"></circle>
-        <circle cx="38" cy="12" r="8" fill="#F79E1B" opacity="0.95"></circle>
-        <circle cx="32" cy="12" r="8" fill="#FF5F00" opacity="0.9"></circle>
-      </svg>
-    </span>
-    <span data-icon="amex" class="picon" title="American Express" aria-label="American Express">
-      <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
-        <rect x="2" y="3" width="60" height="18" rx="3" fill="#2E77BB"></rect>
-        <text x="10" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">AMEX</text>
-      </svg>
-    </span>
-    <span data-icon="applepay" class="picon" title="Apple Pay" aria-label="Apple Pay">
-      <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
-        <path d="M18 10.5c1.2-1.5 2-3.4 1.8-5.5-1.8.1-3.8 1.2-5 2.7-1.1 1.3-2.1 3.3-1.8 5.2 2 .2 3.8-1 5-2.4Z" fill="#FFFFFF"/>
-        <path d="M22 12c-2.4-1.4-4.8-.1-6 .1-1.2.3-3.2 1.2-5.1-.1-2.5-1.6-6.3-1.4-8 1.3-3 4.6-.8 11.5 2.1 15.2 1.4 1.8 3.1 3.7 5.3 3.6 2.1-.1 2.9-1.3 5.4-1.3 2.5 0 3.2 1.3 5.4 1.2 2.2 0 3.6-1.7 5-3.5 1.6-2.1 2.2-4.1 2.2-4.2-.1 0-4.1-1.6-4.1-6.2 0-3.9 3.2-5.6 3.4-5.7-1.9-2.8-4.9-3.1-6-3.2Z" fill="#FFFFFF"/>
-        <text x="34" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">Pay</text>
-      </svg>
-    </span>
-    <span data-icon="gpay" class="picon" title="Google Pay" aria-label="Google Pay">
-      <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
-        <text x="2" y="16" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">G</text>
-        <circle cx="10" cy="12" r="2.2" fill="#4285F4"></circle>
-        <circle cx="13" cy="12" r="2.2" fill="#34A853"></circle>
-        <circle cx="16" cy="12" r="2.2" fill="#FBBC05"></circle>
-        <circle cx="19" cy="12" r="2.2" fill="#EA4335"></circle>
-        <text x="26" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">Pay</text>
-      </svg>
-    </span>
-    <span data-icon="interac" class="picon" title="Interac e-Transfer" aria-label="Interac e-Transfer">
-      <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
-        <rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"></rect>
-        <text x="12" y="17" font-family="Arial Black, Arial, sans-serif" font-size="11" fill="#111111">INTERAC</text>
-      </svg>
-    </span>
-    <span data-icon="btc" class="picon" title="Bitcoin" aria-label="Bitcoin">
-      <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" fill="#F7931A"></circle>
-        <text x="9.2" y="16.2" font-family="Arial Black, Arial, sans-serif" font-size="10" fill="#111111">₿</text>
-      </svg>
-    </span>
-    <span data-icon="eth" class="picon" title="Ethereum" aria-label="Ethereum">
-      <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-        <polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"></polygon>
-        <polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"></polygon>
-      </svg>
-    </span>
-    <span data-icon="ada" class="picon" title="Cardano" aria-label="Cardano">
-      <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-        <circle cx="12" cy="12" r="2.2" fill="#0033AD"></circle>
-        <g fill="#0033AD" opacity="0.95">
-          <circle cx="12" cy="5.2" r="1"></circle>
-          <circle cx="12" cy="18.8" r="1"></circle>
-          <circle cx="5.2" cy="12" r="1"></circle>
-          <circle cx="18.8" cy="12" r="1"></circle>
-          <circle cx="7.2" cy="7.2" r="0.9"></circle>
-          <circle cx="16.8" cy="7.2" r="0.9"></circle>
-          <circle cx="7.2" cy="16.8" r="0.9"></circle>
-          <circle cx="16.8" cy="16.8" r="0.9"></circle>
-        </g>
-      </svg>
-    </span>
-    <span data-icon="xrp" class="picon" title="XRP" aria-label="XRP">
-      <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-        <path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z" fill="#FFFFFF"/>
-        <path d="M18 17c-1.6-1.6-3.2-2.4-6-2.4S7.6 15.4 6 17H4c2.2-2.2 4.7-3.6 8-3.6s5.8 1.4 8 3.6h-2Z" fill="#FFFFFF"/>
-      </svg>
-    </span>
-    <span data-icon="sol" class="picon" title="Solana" aria-label="Solana">
-      <svg viewBox="0 0 64 24" role="img" aria-hidden="true">
-        <defs>
-          <linearGradient id="solg" x1="0" x2="1">
-            <stop offset="0" stop-color="#9945FF"/>
-            <stop offset="1" stop-color="#14F195"/>
-          </linearGradient>
-        </defs>
-        <rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"></rect>
-        <rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.95"></rect>
-        <rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.9"></rect>
-      </svg>
-    </span>
+    <span data-icon="visa" class="picon"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black" font-size="18" fill="#1A1F71">VISA</text></svg></span>
+    <span data-icon="mc" class="picon"><svg viewBox="0 0 64 24"><circle cx="26" cy="12" r="8" fill="#EB001B"/><circle cx="38" cy="12" r="8" fill="#F79E1B" opacity="0.95"/></svg></span>
+    <span data-icon="applepay" class="picon"><svg viewBox="0 0 64 24" fill="#FFF"><path d="M18 10.5c1.2-1.5 2-3.4 1.8-5.5-1.8.1-3.8 1.2-5 2.7-1.1 1.3-2.1 3.3-1.8 5.2 2 .2 3.8-1 5-2.4Z"/><text x="34" y="17" font-family="Arial Black" font-size="12">Pay</text></svg></span>
+    <span data-icon="interac" class="picon"><svg viewBox="0 0 64 24"><rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"/><text x="12" y="17" font-family="Arial Black" font-size="11" fill="#111111">INTERAC</text></svg></span>
+    <span data-icon="btc" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F7931A"/><text x="9.2" y="16.2" font-family="Arial Black" font-size="10" fill="#111111">₿</text></svg></span>
+    <span data-icon="eth" class="picon"><svg viewBox="0 0 24 24"><polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"/><polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"/></svg></span>
+    <span data-icon="ada" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="#0033AD"/><g fill="#0033AD"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></g></svg></span>
+    <span data-icon="xrp" class="picon"><svg viewBox="0 0 24 24" fill="#FFF"><path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z"/></svg></span>
+    <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)"/></svg></span>
   </template>
 
-  <!-- NAV (same as index) -->
-  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20 gap-4">
-        <div class="flex items-center gap-2 min-w-[170px]">
-          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
-          <a href="index.html"
-             class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
-            CRYPTO<span class="text-brand-green">T</span>
-          </a>
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px] w-full">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1 text-[10px]">
+           <a href="index.html" class="text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10">EN</a>
+           <span class="text-gray-700">/</span>
+           <a href="fr-about.html" class="text-gray-500 hover:text-white transition">FR</a>
         </div>
-
-        <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
-          <span class="lbl mr-3">ACCEPTED</span>
-          <div class="flex items-center gap-2" id="navAcceptedRow"></div>
-        </div>
-
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="index.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">THE_POWER_5</a>
-          <a href="about-them.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent nav-active">ABOUT_THEM</a>
-          <a href="index.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">MANIFESTO</a>
-          <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2 border-b-2 border-transparent">CONTACT_US</a>
-
-          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
-            <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
-            <span class="text-gray-700">/</span>
-            <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
-            <span class="text-gray-700">/</span>
-            <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
-          </div>
-
-          <a href="fr-about.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
-        </div>
-
-        <button type="button"
-                class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
-                aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"
-                onclick="toggleMobileMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-               viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
+        <a href="index.html" class="font-orbitron font-black text-xl tracking-tighter text-white uppercase ml-2">Crypto<span class="text-brand-green">T</span></a>
       </div>
+      
+      <div class="hidden md:flex items-center space-x-6 text-[10px] tracking-widest text-gray-400">
+        <a href="index.html#products" class="hover:text-brand-green transition">THE_POWER_5</a>
+        <a href="about-them.html" class="text-brand-green border-b border-brand-green">ABOUT_THEM</a>
+        <a href="index.html#manifesto" class="hover:text-brand-green transition">MANIFESTO</a>
+        <a href="index.html#contact" class="hover:text-brand-green transition">CONTACT</a>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-brand-green border border-brand-green/30 px-3 py-1 text-xs">MENU</button>
     </div>
-
-    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
-      <div class="flex flex-col gap-6 text-center mt-10">
-        <a href="index.html#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
-        <a href="about-them.html" onclick="closeMobileMenu()" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">ABOUT THEM</a>
-        <a href="index.html#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
-        <a href="index.html#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
-
-        <div class="logo-strip rounded px-3 py-3">
-          <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
-          <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
+    
+    <div id="mobileMenu" class="hidden fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center gap-8 uppercase font-orbitron text-white">
+        <a href="index.html#products" onclick="toggleMobileMenu()">Shop</a>
+        <a href="about-them.html" onclick="toggleMobileMenu()" class="text-brand-green">About Them</a>
+        <a href="index.html#manifesto" onclick="toggleMobileMenu()">Manifesto</a>
+        <a href="index.html#contact" onclick="toggleMobileMenu()">Contact</a>
+        <div class="flex gap-4 mt-4">
+             <a href="about-them.html" class="text-brand-green border border-brand-green px-4 py-2">ENGLISH</a>
+             <a href="fr-about.html" class="text-gray-500 border border-gray-700 px-4 py-2">FRANÇAIS</a>
         </div>
-
-        <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-gray-900">
-          <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
-          <span class="text-gray-600">|</span>
-          <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
-          <span class="text-gray-600">|</span>
-          <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
-        </div>
-
-        <a href="fr-about.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
-      </div>
-      <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
+        <button onclick="toggleMobileMenu()" class="text-gray-600 mt-10">[ CLOSE ]</button>
     </div>
   </nav>
 
-  <!-- SECONDARY COIN NAV (like your coin pages) -->
-  <div class="sticky top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
-    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
-      <a href="btc.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all">BTC</a>
-      <a href="eth.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all">ETH</a>
-      <a href="ada.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033AD] text-sm md:text-base font-bold transition-all">ADA</a>
-      <a href="xrp.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all">XRP</a>
-      <a href="sol.html" class="nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all">SOL</a>
+  <div class="sticky top-[126px] z-40 bg-black/95 border-b border-white/10 py-3">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-2 md:gap-4 font-orbitron">
+      <a href="btc.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-[#F7931A] hover:border-[#F7931A] text-xs md:text-sm font-bold transition-all">BTC</a>
+      <a href="eth.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-[#627EEA] hover:border-[#627EEA] text-xs md:text-sm font-bold transition-all">ETH</a>
+      <a href="ada.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-[#0033AD] hover:border-[#0033AD] text-xs md:text-sm font-bold transition-all">ADA</a>
+      <a href="xrp.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-white hover:border-white text-xs md:text-sm font-bold transition-all">XRP</a>
+      <a href="sol.html" class="px-4 py-1 border border-gray-800 text-gray-500 hover:text-[#14F195] hover:border-[#14F195] text-xs md:text-sm font-bold transition-all">SOL</a>
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center mb-16">
-      <h1 class="text-5xl md:text-7xl font-black font-orbitron mb-4 text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.5)]">
-        ABOUT THEM
-      </h1>
-      <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
-        THE MONETARY TRUTH
-      </p>
-      <div class="inline-block px-3 py-1 border border-brand-green text-brand-green text-xs uppercase tracking-[0.2em]">
-        LIMITED SUPPLY // P2P // NO PERMISSION
-      </div>
-    </div>
+  <header class="py-12 md:py-16 text-center px-4 relative">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 pointer-events-none"></div>
+    <h1 class="text-4xl md:text-7xl font-black font-orbitron mb-4 text-brand-green drop-shadow-[0_0_15px_rgba(57,255,20,0.5)]">ABOUT THEM</h1>
+    <p class="text-lg md:text-2xl text-white tracking-widest uppercase font-bold mb-4">THE MONETARY TRUTH</p>
+    <div class="inline-block px-3 py-1 border border-brand-green text-brand-green text-[10px] uppercase tracking-[0.2em]">LIMITED SUPPLY // P2P // NO PERMISSION</div>
+  </header>
 
-    <article class="wiki-content bg-brand-panel border border-brand-green/20 p-6 md:p-12 relative overflow-hidden mb-24">
-      <div class="prayer text-center text-white/90 text-sm md:text-base leading-relaxed">
-PLEASE GOD
-(and the God — or Gods — of the Internet),
-LET EVERYONE WHO HAS A BANK ACCOUNT
-(from the zeros living pay-to-pay to the billionaires)
-AND STILL USES THE TRADITIONAL FINANCIAL SYSTEM
-FIND THIS SITE.
+  <main class="max-w-3xl mx-auto px-6 pb-24">
+    <article class="bg-brand-panel border border-brand-green/20 p-6 md:p-12 relative overflow-hidden mb-12 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+      
+      <div class="text-center text-white/80 text-sm md:text-base leading-relaxed font-orbitron tracking-wide mb-10 opacity-70">
+        PLEASE GOD<br>
+        (and the God — or Gods — of the Internet),<br>
+        LET EVERYONE WHO HAS A BANK ACCOUNT<br>
+        (from the zeros living pay-to-pay to the billionaires)<br>
+        AND STILL USES THE TRADITIONAL FINANCIAL SYSTEM<br>
+        FIND THIS SITE.
       </div>
 
       <div class="wiki-divider"></div>
 
-      <h2 style="margin-top:0;">About Them</h2>
-
-      <p>This site exists because the monetary system is broken.</p>
-
-      <p>
-        Inefficient.<br>
-        Outdated.<br>
-        Broken by design.
-      </p>
-
-      <p>
-        Most people don’t see it — not because they lack intelligence,<br>
-        but because the traditional financial system does not want them to know… YET
-      </p>
-
-      <p>
-        It had decades to normalize itself,<br>
-        to make its flaws feel ordinary,<br>
-        to make inefficiency feel inevitable,<br>
-        and to make dependency feel safe.
-      </p>
-
-      <p>
-        The real problem for them is not your awareness.<br>
-        The real problem is that fixing the current system would require rethinking the entire world —<br>
-        for us, and with us.<br>
-        And that idea scares those who benefit from the current one.
-      </p>
-
-      <p>
-        By the time something can go from almost nothing<br>
-        to reshaping the entire financial world,<br>
-        most people only notice it when it’s already too late...to ignore.
-      </p>
-
-      <p>
-        This site is for those who are ready to understand why —<br>
-        and also for those who aren’t yet, but will be,<br>
-        once the indisputable logic does the work!
-      </p>
-
-      <p class="text-center text-brand-green font-orbitron text-lg mt-10">
-        please, just give me one more minute of your reading time....
-      </p>
+      <h2 class="wiki-h2 mt-0">About Them</h2>
+      <p class="wiki-p">This site exists because the monetary system is broken.</p>
+      <p class="wiki-p">Inefficient.<br>Outdated.<br>Broken by design.</p>
+      <p class="wiki-p">Most people don’t see it — not because they lack intelligence, but because the traditional financial system does not want them to know… YET</p>
+      <p class="wiki-p">It had decades to normalize itself, to make its flaws feel ordinary, to make inefficiency feel inevitable, and to make dependency feel safe.</p>
+      <p class="wiki-p">The real problem for them is not your awareness. The real problem is that fixing the current system would require rethinking the entire world — for us, and with us. And that idea scares those who benefit from the current one.</p>
+      <p class="wiki-p">By the time something can go from almost nothing to reshaping the entire financial world, most people only notice it when it’s already too late...to ignore.</p>
+      <p class="wiki-p">This site is for those who are ready to understand why — and also for those who aren’t yet, but will be, once the indisputable logic does the work!</p>
+      <p class="text-center text-brand-green font-orbitron text-sm mt-8 italic">please, just give me one more minute of your reading time....</p>
 
       <div class="wiki-divider"></div>
 
-      <h2>Limited Supply Is Not a Feature</h2>
-      <h3>It Is the Point</h3>
-
-      <p>Every fiat currency fails for the same reason:<br>infinite supply controlled by a few.</p>
-
-      <p>Once money can be printed at will, it stops being a store of value.<br>It becomes a tool of extraction.</p>
-
-      <p>
-        Savings are diluted.<br>
-        Work is devalued.<br>
-        Time is stolen.
-      </p>
-
-      <p>This isn’t a bug of the system.<br>It is the system.</p>
+      <h2 class="wiki-h2">Limited Supply Is Not a Feature</h2>
+      <h3 class="wiki-h3">It Is the Point</h3>
+      <p class="wiki-p">Every fiat currency fails for the same reason: infinite supply controlled by a few.</p>
+      <p class="wiki-p">Once money can be printed at will, it stops being a store of value. It becomes a tool of extraction.</p>
+      <p class="wiki-p">Savings are diluted. Work is devalued. Time is stolen.</p>
+      <p class="wiki-p">This isn’t a bug of the system. It is the system.</p>
 
       <div class="wiki-divider"></div>
 
-      <h2>Bitcoin Changed One Rule</h2>
-      <h3>And That Changed Everything</h3>
-
-      <p>Bitcoin introduced two ideas at the same time:</p>
-
-      <p>
-        1. A fixed, immutable supply<br>
-        2. Peer-to-peer transfer without intermediaries
-      </p>
-
-      <p>
-        Not separately.<br>
-        Together.
-      </p>
-
-      <p>
-        A currency that cannot be printed<br>
-        and cannot be censored.
-      </p>
-
-      <p>
-        No central bank.<br>
-        No third-party permission.<br>
-        No dilution.
-      </p>
-
-      <p>For the first time in modern history, money became scarce by code, not by trust.</p>
+      <h2 class="wiki-h2">Bitcoin Changed One Rule</h2>
+      <h3 class="wiki-h3">And That Changed Everything</h3>
+      <p class="wiki-p">Bitcoin introduced two ideas at the same time:</p>
+      <p class="wiki-p">1. A fixed, immutable supply<br>2. Peer-to-peer transfer without intermediaries</p>
+      <p class="wiki-p">Not separately. Together.</p>
+      <p class="wiki-p">A currency that cannot be printed and cannot be censored.</p>
+      <p class="wiki-p">No central bank. No third-party permission. No dilution.</p>
+      <p class="wiki-p">For the first time in modern history, money became scarce by code, not by trust.</p>
 
       <div class="wiki-divider"></div>
 
-      <h2>This Is Why Bitcoin Matters</h2>
-
-      <p>
-        If tomorrow the US dollar had a hard cap,<br>
-        it would gain value over time instead of losing it.
-      </p>
-
-      <p>Bitcoin does exactly that.</p>
-
-      <p>That single constraint explains everything:</p>
-
-      <p>
-        • why it went from fractions of a cent to six figures<br>
-        • why it survives every crash<br>
-        • why it refuses to die<br>
-        • why it scares institutions<br>
-        • why it attracts builders, not marketers
-      </p>
-
-      <p>
-        Bitcoin doesn’t promise returns.<br>
-        It reveals the flaw in fiat.
-      </p>
+      <h2 class="wiki-h2">This Is Why Bitcoin Matters</h2>
+      <p class="wiki-p">If tomorrow the US dollar had a hard cap, it would gain value over time instead of losing it.</p>
+      <p class="wiki-p">Bitcoin does exactly that.</p>
+      <p class="wiki-p">That single constraint explains everything:<br>
+      • why it went from fractions of a cent to six figures<br>
+      • why it survives every crash<br>
+      • why it refuses to die<br>
+      • why it scares institutions<br>
+      • why it attracts builders, not marketers</p>
+      <p class="wiki-p">Bitcoin doesn’t promise returns. It reveals the flaw in fiat.</p>
 
       <div class="wiki-divider"></div>
 
-      <h2>Everything Else Comes After Bitcoin</h2>
-
-      <p>Every crypto project exists in Bitcoin’s shadow.</p>
-
-      <p>
-        Some try to extend it.<br>
-        Some try to replace parts of it.<br>
-        Some try to compromise it.
-      </p>
-
-      <p>
-        But none of them make sense<br>
-        unless you understand why limited supply plus peer-to-peer money is non-negotiable.
-      </p>
-
-      <p>That is why this site exists.</p>
+      <h2 class="wiki-h2">Everything Else Comes After Bitcoin</h2>
+      <p class="wiki-p">Every crypto project exists in Bitcoin’s shadow.</p>
+      <p class="wiki-p">Some try to extend it. Some try to replace parts of it. Some try to compromise it.</p>
+      <p class="wiki-p">But none of them make sense unless you understand why limited supply plus peer-to-peer money is non-negotiable.</p>
+      <p class="wiki-p">That is why this site exists.</p>
 
       <div class="wiki-divider"></div>
 
-      <h2>How This Site Is Meant To Be Read</h2>
-
-      <p>If you are new to crypto:</p>
-
-      <p>
-        Start with Bitcoin.<br>
-        Always.
-      </p>
-
-      <p>Everything else is commentary.</p>
-
-      <p>If you are already here, already lost money, already stayed:</p>
-
-      <p>
-        You’re not stupid.<br>
-        You stayed because you understand the logic, even when price hurts.
-      </p>
-
-      <p>This site is a living encyclopedia of that logic.</p>
-
-      <p>
-        History.<br>
-        Protocol design.<br>
-        Trade-offs.<br>
-        Philosophy.
-      </p>
-
-      <p>
-        No hype.<br>
-        No price targets.<br>
-        No promises.
-      </p>
-
-      <div class="wiki-divider"></div>
-
-      <h2>Why Clothing Exists Here At All</h2>
-
-      <p>Because conviction precedes ownership.</p>
-
-      <p>
-        Wearing a protocol only makes sense<br>
-        if you understand what it replaces.
-      </p>
-
-      <p>
-        If something here resonates with you,<br>
-        you may choose to wear the signal.
-      </p>
-
-      <p>
-        If not, you’ll still leave understanding<br>
-        why this system cannot last forever.
-      </p>
-
-      <p class="text-center text-brand-green font-orbitron text-lg mt-10">
-        Either way — you’re welcome here.
-      </p>
-
-      <p class="text-center mt-6">Enjoy the read.</p>
+      <h2 class="wiki-h2">Why Clothing Exists Here At All</h2>
+      <p class="wiki-p">Because conviction precedes ownership.</p>
+      <p class="wiki-p">Wearing a protocol only makes sense if you understand what it replaces.</p>
+      <p class="wiki-p">If something here resonates with you, you may choose to wear the signal.</p>
+      <p class="wiki-p">If not, you’ll still leave understanding why this system cannot last forever.</p>
+      <p class="text-center text-brand-green font-orbitron text-lg mt-10">Either way — you’re welcome here.</p>
+      <p class="text-center mt-6 text-gray-500 text-sm">Enjoy the read.</p>
     </article>
 
-    <!-- OPTIONAL CTA BLOCK (kept minimal) -->
-    <div class="max-w-4xl mx-auto text-center">
+    <div class="text-center">
       <a href="btc.html" class="inline-block px-8 py-4 border border-[#F7931A] text-[#F7931A] font-orbitron font-bold uppercase tracking-wider hover:bg-[#F7931A]/10 transition-all">
         Start With Bitcoin →
       </a>
     </div>
-
   </main>
 
-  <!-- FOOTER (same vibe as index) -->
-  <footer class="border-t border-brand-green/20 bg-black py-12 mt-20">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="mb-8">
-        <p class="font-orbitron text-2xl text-white mb-4">CONNECT WITH <span class="text-brand-green">US</span></p>
-        <div class="flex justify-center gap-6">
-          <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-          <a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
-          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
-        </div>
-      </div>
-
-      <div class="logo-strip rounded px-4 py-3 inline-block">
-        <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
-        <div class="flex flex-wrap items-center justify-center gap-2 hero-icons" id="footerAcceptedRow"></div>
-      </div>
-
-      <p class="font-orbitron text-white text-lg mb-2 mt-8">CRYPTO<span class="text-brand-green">T</span></p>
-      <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
-      <p class="text-gray-600 text-[10px] mt-8">ALL RIGHTS RESERVED.</p>
+  <footer class="py-12 border-t border-brand-green/20 bg-black text-center">
+    <div id="footerIcons" class="flex flex-wrap justify-center gap-4 mb-8"></div>
+    <div class="flex justify-center gap-6 mb-8 text-[10px] text-gray-500 uppercase tracking-widest">
+        <a href="https://x.com/CryptoTshop" class="hover:text-brand-green">X.COM</a>
+        <a href="mailto:jutrasdimitri@gmail.com" class="hover:text-brand-green">EMAIL</a>
     </div>
+    <p class="text-[9px] text-gray-600 uppercase tracking-widest">© 2025 CryptoT // Montreal // Worldwide</p>
   </footer>
 
   <script>
-    // Currency UI (kept for consistency with your header UI; does nothing on this page except button state)
-    const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
-    const symbols = { USD: "$", CAD: "$", EUR: "€" };
-    let currentCurrency = "USD";
-
-    function setCurrency(curr) {
-      currentCurrency = curr;
-      const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = curr;
-      document.querySelectorAll(".currency-btn").forEach(btn => {
-        if (btn.getAttribute("data-currency") === curr) btn.classList.add("active");
-        else btn.classList.remove("active");
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      setCurrency("USD");
-      mountAcceptedStrips();
-    });
-
-    // ====== MOBILE MENU ======
-    const mobileMenuEl = document.getElementById("mobileMenu");
-    function toggleMobileMenu() {
-      const isHidden = mobileMenuEl.classList.contains("hidden");
-      mobileMenuEl.classList.toggle("hidden", !isHidden);
-      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
-      if (btn) btn.setAttribute("aria-expanded", String(isHidden));
-      if (isHidden) document.body.classList.add("overflow-hidden");
-      else document.body.classList.remove("overflow-hidden");
-    }
-    function closeMobileMenu() {
-      mobileMenuEl.classList.add("hidden");
-      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
-      if (btn) btn.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    // ====== ICON FACTORY (from template) ======
-    function getIconNode(key){
-      const tpl = document.getElementById("svgIcons");
-      const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
-      return holder ? holder.cloneNode(true) : null;
-    }
-    function mountRow(rowEl, keys){
-      rowEl.innerHTML = "";
-      keys.forEach(k => {
-        const n = getIconNode(k);
-        if (n) rowEl.appendChild(n);
-      });
-    }
-    function mountAcceptedStrips(){
-      const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
-      const navRow = document.getElementById("navAcceptedRow");
-      const footRow = document.getElementById("footerAcceptedRow");
-      const mobRow  = document.getElementById("mobileAcceptedRow");
-      if (navRow) mountRow(navRow, keys);
-      if (footRow) mountRow(footRow, keys);
-      if (mobRow)  mountRow(mobRow, keys);
-    }
-
-    // Escape closes
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMobileMenu();
+    function toggleMobileMenu() { document.getElementById("mobileMenu").classList.toggle("hidden"); }
+    
+    // ICON FACTORY
+    const tpl = document.getElementById("svgIcons");
+    const foot = document.getElementById("footerIcons");
+    ["visa", "mc", "applepay", "interac", "btc", "eth", "ada", "xrp", "sol"].forEach(k => {
+      foot.appendChild(tpl.content.querySelector(`[data-icon="${k}"]`).cloneNode(true));
     });
   </script>
 </body>

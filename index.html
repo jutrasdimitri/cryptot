@@ -64,7 +64,7 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
-    
+
     .picon{
       width: 34px; height: 22px;
       display:inline-flex;
@@ -81,9 +81,9 @@
     .modal-icons .picon{ width: 40px; height: 26px; }
 
     nav a.nav-active {
-        color: #39ff14 !important;
-        text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
-        border-bottom: 2px solid #39ff14;
+      color: #39ff14 !important;
+      text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+      border-bottom: 2px solid #39ff14;
     }
 
     @media (max-width: 1100px){
@@ -198,12 +198,14 @@
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px] w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
-        <div class="flex items-center gap-2 min-w-fit">
-          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
-          <a href="#home" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;"
-             class="font-orbitron font-black text-xl md:text-2xl tracking-widest text-white cursor-pointer whitespace-nowrap">
-            CRYPTO<span class="text-brand-green">T</span>
-          </a>
+       
+        <div class="flex items-center gap-3 min-w-fit">
+          <div class="flex items-center gap-1 text-[10px]">
+             <a href="index.html" class="text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors">EN</a>
+             <span class="text-gray-700">/</span>
+             <a href="fr.html" class="text-gray-500 hover:text-white transition">FR</a>
+          </div>
+          <a href="#home" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;" class="font-orbitron font-black text-xl tracking-tighter text-white uppercase ml-2">Crypto<span class="text-brand-green">T</span></a>
         </div>
 
         <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
@@ -213,18 +215,9 @@
 
         <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
           <a href="#products" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">THE_POWER_5</a>
+          <a href="about-them.html" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">ABOUT_THEM</a>
           <a href="#manifesto" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTO</a>
           <a href="#contact" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT_US</a>
-
-          <div class="flex items-center gap-1 border-l border-gray-700 pl-4 ml-2">
-            <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white" data-currency="USD">USD</button>
-            <span class="text-gray-700">/</span>
-            <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white" data-currency="CAD">CAD</button>
-            <span class="text-gray-700">/</span>
-            <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white" data-currency="EUR">EUR</button>
-          </div>
-
-          <a href="fr.html" class="text-[10px] text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
         </div>
 
         <button type="button"
@@ -242,6 +235,7 @@
     <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px] w-full overflow-y-auto">
       <div class="flex flex-col gap-6 text-center mt-10">
         <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
+        <a href="about-them.html" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ABOUT THEM</a>
         <a href="#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
         <a href="#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
 
@@ -250,15 +244,10 @@
           <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
         </div>
 
-        <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-gray-900">
-          <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
-          <span class="text-gray-600">|</span>
-          <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
-          <span class="text-gray-600">|</span>
-          <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
+        <div class="flex items-center justify-center gap-4">
+          <a href="index.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">ENGLISH</a>
+          <a href="fr.html" class="border border-white/10 hover:border-brand-green/30 hover:bg-brand-green/10 px-4 py-3 text-gray-300 hover:text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
         </div>
-
-        <a href="fr.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
       </div>
 
       <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
@@ -300,11 +289,21 @@
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <button onclick="openModal('BTC','BTC // VIRES IN NUMERIS')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="btc.html" class="flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <button onclick="openModal('BTC','BTC // VIRES IN NUMERIS')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
         </div>
@@ -323,11 +322,21 @@
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <button onclick="openModal('ETH','ETH // CODE IS LAW')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="eth.html" class="flex-1 py-3 border border-[#627EEA] text-[#627EEA] font-bold text-center text-xs hover:bg-[#627EEA]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <button onclick="openModal('ETH','ETH // CODE IS LAW')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
         </div>
@@ -346,21 +355,63 @@
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <button onclick="openModal('ADA','ADA // PEER REVIEWED')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="ada.html" class="flex-1 py-3 border border-[#0033ad] text-[#0033ad] font-bold text-center text-xs hover:bg-[#0033ad]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <button onclick="openModal('ADA','ADA // PEER REVIEWED')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ✅ SOLANA (AJOUTÉ — rien d’autre changé) -->
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300">
+        <div class="w-full h-[400px] md:h-[500px] bg-gray-900 overflow-hidden relative">
+          <img src="xrp.jpg" alt="XRP THE STANDARD" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-white border border-white font-bold">Available Now</div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-orbitron text-lg md:text-xl text-white mb-1">XRP // THE STANDARD</h3>
+          <p class="text-brand-green text-xs mb-3 uppercase">Liquidity Provider</p>
+          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">Bridging the old world and the new. Pure Platinum Energy on Black.</p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">Standard: Black // <span class="text-white">All Colors Available</span></p>
+
+          <div class="pt-4 border-t border-white/10">
+            <div class="mb-3">
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
+              <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
+            </div>
+            <div class="flex gap-2">
+              <a href="xrp.html" class="flex-1 py-3 border border-white text-white font-bold text-center text-xs hover:bg-white/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <button onclick="openModal('XRP','XRP // THE STANDARD')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300">
         <div class="w-full h-[400px] md:h-[500px] bg-gray-900 overflow-hidden relative">
           <img src="sol.jpg" alt="SOL PROOF OF HISTORY" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
-          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#14F195] border border-[#14F195] font-bold">Available Now</div>
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-[#9945FF] border border-[#14F195] font-bold">Available Now</div>
         </div>
         <div class="p-6">
           <h3 class="font-orbitron text-lg md:text-xl text-white mb-1">SOL // PROOF OF HISTORY</h3>
@@ -370,11 +421,21 @@
 
           <div class="pt-4 border-t border-white/10">
             <div class="mb-3">
-              <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="35">$35 USD</span>
+
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <button onclick="openModal('SOL','SOL // PROOF OF HISTORY')" class="w-full py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
+              <a href="sol.html" class="flex-1 py-3 border border-[#14F195] text-[#14F195] font-bold text-center text-xs hover:bg-[#14F195]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <button onclick="openModal('SOL','SOL // PROOF OF HISTORY')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
         </div>
@@ -417,8 +478,8 @@
       <div class="mb-8">
         <p class="font-orbitron text-xl text-white mb-4">CONNECT WITH <span class="text-brand-green">US</span></p>
         <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
-          <a href="https://x.com/CryptoTshop" target="_blank" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-          <a href="https://www.instagram.com/djcryptonouvelles" target="_blank" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
+          <a href="https://www.instagram.com/djcryptonouvelles" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
           <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
         </div>
       </div>
@@ -435,6 +496,7 @@
 
   <div id="orderModal" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
     <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+
       <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Close">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -444,8 +506,25 @@
       <h2 class="font-orbitron text-xl md:text-2xl text-white mb-1">SECURE ORDER</h2>
       <p class="text-brand-green text-[10px] mb-4 uppercase tracking-widest">ENCRYPTED CONNECTION //</p>
 
-      <form id="orderForm" class="space-y-4">
-        <label class="hp-field"><input type="text" name="website" tabindex="-1"></label>
+      <div class="mb-5 border border-white/10 bg-black/35 px-4 py-3">
+        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Accepted Payment Methods</div>
+        <div id="payLogosRow" class="flex flex-wrap items-center gap-2 modal-icons"></div>
+      </div>
+
+      <div id="orderStatusBox" class="hidden text-center py-10">
+        <div class="text-brand-green text-xl font-orbitron mb-2">ORDER RECEIVED</div>
+        <p class="text-gray-400 text-xs">We will contact you via email for the next steps.</p>
+        <button onclick="closeModal()" class="mt-6 text-gray-500 text-xs underline">Back to Shop</button>
+      </div>
+
+      <div id="orderErrorBox" class="hidden mt-4 p-3 bg-red-900/20 border border-red-500/50 text-red-200 text-[10px]"></div>
+
+      <form id="orderForm" class="space-y-4" novalidate>
+        <label class="hp-field" aria-hidden="true">
+          Website
+          <input type="text" name="website" autocomplete="off" tabindex="-1" inputmode="url">
+        </label>
+
         <input type="hidden" name="ts" id="orderTs" value="">
         <input type="hidden" id="productKey" name="ProductKey" value="">
         <input type="hidden" id="productInput" name="Product" value="">
@@ -459,46 +538,60 @@
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label class="block text-gray-400 text-[10px] mb-1 uppercase">Size</label>
-            <select name="Size" class="w-full bg-black border border-gray-700 text-white p-2 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none">
+            <select name="Size" class="w-full bg-black border border-gray-700 text-white p-2 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
               <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
             </select>
           </div>
           <div>
             <label class="block text-gray-400 text-[10px] mb-1 uppercase">Qty</label>
-            <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-2 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none">
+            <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-2 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
               <option>1</option><option>2</option><option>3</option>
             </select>
           </div>
         </div>
 
         <div>
+          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Payment Method</label>
+          <select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
+            <option value="CARD">Card / Apple Pay / Google Pay</option>
+            <option value="INTERAC">Interac e-Transfer</option>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="ADA">Cardano (ADA)</option>
+            <option value="XRP">XRP</option>
+            <option value="SOL">Solana (SOL)</option>
+          </select>
+        </div>
+
+        <div>
           <label class="block text-gray-400 text-[10px] mb-1 uppercase">Email Address</label>
-          <input type="email" name="Email" required placeholder="satoshi@nakamoto.com" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none">
+          <input type="email" name="Email" required placeholder="satoshi@nakamoto.com"
+                 autocomplete="email"
+                 class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600">
         </div>
 
         <div>
           <label class="block text-gray-400 text-[10px] mb-1 uppercase">Shipping Address</label>
-          <textarea name="Address" required rows="2" placeholder="Full address..." class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none"></textarea>
+          <textarea name="Address" required rows="2" placeholder="Full address..."
+                    autocomplete="shipping street-address"
+                    class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600"></textarea>
         </div>
 
         <button id="submitBtn" type="submit" class="w-full py-4 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-2">
           PROCEED TO PAYMENT
         </button>
-      </form>
-      
-      <div id="orderStatusBox" class="hidden text-center py-10">
-        <div class="text-brand-green text-xl font-orbitron mb-2">ORDER RECEIVED</div>
-        <p class="text-gray-400 text-xs">We will contact you via email for the next steps.</p>
-        <button onclick="closeModal()" class="mt-6 text-gray-500 text-xs underline">Back to Shop</button>
-      </div>
 
-      <div id="orderErrorBox" class="hidden mt-4 p-3 bg-red-900/20 border border-red-500/50 text-red-200 text-[10px]"></div>
+        <p id="smallNote" class="text-center text-gray-500 text-[10px] mt-2">
+          Choose your method above. You will be guided through the process securely.
+        </p>
+      </form>
     </div>
   </div>
 
   <script>
     // ====== CONFIG ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
+
     const PAYMENT_LINKS = {
       BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
       ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
@@ -507,15 +600,21 @@
       SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04"
     };
 
+    // Currency UI
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
     const symbols = { USD: "$", CAD: "$", EUR: "€" };
     let currentCurrency = "USD";
 
     function setCurrency(curr) {
       currentCurrency = curr;
+
+      const currInput = document.getElementById("currencyInput");
+      if (currInput) currInput.value = curr;
+
       document.querySelectorAll(".currency-btn").forEach(btn => {
         btn.classList.toggle("active", btn.getAttribute("data-currency") === curr);
       });
+
       document.querySelectorAll(".price-display").forEach(el => {
         const base = parseFloat(el.getAttribute("data-base"));
         let val = (base * rates[curr]).toFixed(2).replace('.00', '');
@@ -523,93 +622,243 @@
       });
     }
 
-    // ====== UTILS ======
+    // ====== ICON FACTORY ======
     function getIconNode(key){
       const tpl = document.getElementById("svgIcons");
-      return tpl.content.querySelector(`[data-icon="${key}"]`).cloneNode(true);
+      const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
+      return holder ? holder.cloneNode(true) : null;
     }
 
-    function mountRow(rowId, keys){
-      const row = document.getElementById(rowId);
-      if(!row) return;
-      row.innerHTML = "";
-      keys.forEach(k => row.appendChild(getIconNode(k)));
+    function mountRow(rowEl, keys){
+      rowEl.innerHTML = "";
+      keys.forEach(k => {
+        const n = getIconNode(k);
+        if (n) rowEl.appendChild(n);
+      });
     }
 
-    const allIcons = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
+    function mountAcceptedStrips(){
+      const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
+      const navRow = document.getElementById("navAcceptedRow");
+      const footRow = document.getElementById("footerAcceptedRow");
+      const mobRow  = document.getElementById("mobileAcceptedRow");
+      if (navRow) mountRow(navRow, keys);
+      if (footRow) mountRow(footRow, keys);
+      if (mobRow)  mountRow(mobRow, keys);
+    }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      setCurrency("USD");
-      mountRow("navAcceptedRow", allIcons);
-      mountRow("footerAcceptedRow", allIcons);
-      mountRow("mobileAcceptedRow", allIcons);
-    });
-
-    // ====== NAVIGATION ======
+    // ====== MOBILE MENU ======
+    const mobileMenuEl = document.getElementById("mobileMenu");
     function toggleMobileMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.classList.toggle("hidden");
-      document.body.classList.toggle("overflow-hidden");
+      const isHidden = mobileMenuEl.classList.contains("hidden");
+      mobileMenuEl.classList.toggle("hidden", !isHidden);
+      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
+      if (btn) btn.setAttribute("aria-expanded", String(isHidden));
+      if (isHidden) document.body.classList.add("overflow-hidden");
+      else document.body.classList.remove("overflow-hidden");
     }
     function closeMobileMenu() {
-      document.getElementById("mobileMenu").classList.add("hidden");
+      mobileMenuEl.classList.add("hidden");
+      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
+      if (btn) btn.setAttribute("aria-expanded", "false");
       document.body.classList.remove("overflow-hidden");
     }
 
-    // ====== MODAL LOGIC ======
-    function openModal(key, label) {
+    // ====== MODAL ======
+    const orderForm = document.getElementById("orderForm");
+    const statusBox = document.getElementById("orderStatusBox");
+    const errorBox  = document.getElementById("orderErrorBox");
+    const submitBtn = document.getElementById("submitBtn");
+    const paySelect = document.getElementById("paymentSelect");
+    const payLogosRow = document.getElementById("payLogosRow");
+    const smallNote = document.getElementById("smallNote");
+
+    function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
-      document.getElementById("productKey").value = key;
-      document.getElementById("productDisplay").innerText = label;
-      document.getElementById("productInput").value = label;
-      document.getElementById("orderTs").value = Date.now();
-      document.getElementById("orderForm").classList.remove("hidden");
-      document.getElementById("orderStatusBox").classList.add("hidden");
+
+      document.getElementById("productKey").value = productKey;
+      document.getElementById("productDisplay").innerText = productLabel;
+      document.getElementById("productInput").value = productLabel;
+
+      const currInput = document.getElementById("currencyInput");
+      if (currInput) currInput.value = currentCurrency;
+
+      statusBox.classList.add("hidden");
+      errorBox.classList.add("hidden");
+      errorBox.textContent = "";
+      orderForm.classList.remove("hidden");
+
+      submitBtn.disabled = false;
+      submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+      submitBtn.textContent = "PROCEED TO PAYMENT";
+
+      document.getElementById("orderTs").value = String(Date.now());
+
+      if (paySelect) paySelect.value = "CARD";
+      updatePaymentUI();
     }
 
-    function closeModal() {
+    function closeModal(reset = false) {
       document.getElementById("orderModal").classList.add("hidden");
+      if (reset) {
+        orderForm.reset();
+        const currInput = document.getElementById("currencyInput");
+        if (currInput) currInput.value = currentCurrency;
+      }
     }
 
-    document.getElementById("orderForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const btn = document.getElementById("submitBtn");
-      const err = document.getElementById("orderErrorBox");
-      
-      btn.disabled = true;
-      btn.innerText = "ENCRYPTING...";
-      err.classList.add("hidden");
+    document.getElementById("orderModal").addEventListener("click", function(e) {
+      if (e.target === this) closeModal();
+    });
 
-      const fd = new FormData(e.target);
-      const data = Object.fromEntries(fd.entries());
-      
-      try {
-        const response = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-          // Si c'est BTC/ETH/etc on redirige vers Stripe
-          const stripeLink = PAYMENT_LINKS[data.ProductKey];
-          if(stripeLink) {
-             window.location.href = stripeLink + "?prefilled_email=" + encodeURIComponent(data.Email);
-          } else {
-             document.getElementById("orderForm").classList.add("hidden");
-             document.getElementById("orderStatusBox").classList.remove("hidden");
-          }
-        } else {
-          throw new Error("Transmission error. Please try again.");
-        }
-      } catch (e) {
-        err.innerText = e.message;
-        err.classList.remove("hidden");
-        btn.disabled = false;
-        btn.innerText = "PROCEED TO PAYMENT";
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeMobileMenu();
+        closeModal();
       }
     });
 
+    function setLogosFor(mode){
+      payLogosRow.innerHTML = "";
+
+      if (mode === "CARD") {
+        ["visa","mc","amex","applepay","gpay"].forEach(k => {
+          const n = getIconNode(k);
+          if (n) payLogosRow.appendChild(n);
+        });
+        submitBtn.textContent = "PAY NOW";
+        smallNote.textContent = "Visa / Mastercard / Amex + Apple Pay + Google Pay.";
+        return;
+      }
+
+      if (mode === "INTERAC") {
+        const n = getIconNode("interac");
+        if (n) payLogosRow.appendChild(n);
+        submitBtn.textContent = "SUBMIT ORDER";
+        smallNote.textContent = "We will contact you with the next steps after submission.";
+        return;
+      }
+
+      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
+      const n = getIconNode(map[mode] || "btc");
+      if (n) payLogosRow.appendChild(n);
+      submitBtn.textContent = "SUBMIT ORDER";
+      smallNote.textContent = "We will contact you with the next steps after submission.";
+    }
+
+    function updatePaymentUI(){
+      if (!paySelect) return;
+      setLogosFor(paySelect.value);
+    }
+    if (paySelect) paySelect.addEventListener("change", updatePaymentUI);
+
+    // ====== SUBMIT LOGIC ======
+    orderForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      errorBox.classList.add("hidden");
+      errorBox.textContent = "";
+      statusBox.classList.add("hidden");
+
+      const fd = new FormData(orderForm);
+
+      // honeypot
+      if (fd.has("website")) fd.set("website", "");
+
+      const ts = Number(fd.get("ts"));
+      if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
+        errorBox.textContent = "Security check: please wait a second and try again.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const email = (fd.get("Email") || "").toString().trim();
+      const address = (fd.get("Address") || "").toString().trim();
+      if (!email || !address) {
+        errorBox.textContent = "Missing required fields.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const productKey = (fd.get("ProductKey") || "").toString().trim();
+      const payMode = (fd.get("PaymentMethod") || "").toString().trim();
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+      submitBtn.textContent = "PROCESSING...";
+
+      try {
+        // CARD => redirect Stripe link by productKey
+        if (payMode === "CARD") {
+          const link = PAYMENT_LINKS[productKey];
+          if (!link) throw new Error("Payment link not found for this item.");
+          const url = new URL(link);
+          url.searchParams.set("prefilled_email", email);
+          url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
+          window.location.href = url.toString();
+          return;
+        }
+
+        // Non-card => send order to Formspree
+        const payload = Object.fromEntries(fd.entries());
+        const res = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
+            ? data.errors[0].message
+            : "Order failed. Please try again.";
+          throw new Error(msg);
+        }
+
+        orderForm.classList.add("hidden");
+        statusBox.classList.remove("hidden");
+
+      } catch (err) {
+        errorBox.textContent = err.message || "Network error. Please try again.";
+        errorBox.classList.remove("hidden");
+
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+        submitBtn.textContent = (paySelect && paySelect.value === "CARD") ? "PAY NOW" : "SUBMIT ORDER";
+      }
+    });
+
+    // ====== SCROLL SPY ======
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("header, section, main, footer");
+      const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+      const observerOptions = { root: null, rootMargin: "0px", threshold: 0.25 };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove("nav-active"));
+            const id = entry.target.getAttribute("id");
+            if (id) {
+              const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+              if (activeLink) activeLink.classList.add("nav-active");
+            }
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => {
+        if (section.getAttribute('id')) observer.observe(section);
+      });
+    });
+
+    // ====== INIT ======
+    document.addEventListener("DOMContentLoaded", () => {
+      setCurrency("USD");
+      mountAcceptedStrips();
+      updatePaymentUI();
+    });
   </script>
 </body>
 </html>
