@@ -12,18 +12,9 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            "brand-green": "#39ff14",
-            "brand-black": "#0a0a0a",
-            "brand-panel": "#111111",
-          },
-          fontFamily: {
-            orbitron: ["Orbitron", "sans-serif"],
-            mono: ["Share Tech Mono", "monospace"],
-          },
-          boxShadow: {
-            "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14",
-          }
+          colors: { "brand-green": "#39ff14", "brand-black": "#0a0a0a", "brand-panel": "#111111" },
+          fontFamily: { orbitron: ["Orbitron", "sans-serif"], mono: ["Share Tech Mono", "monospace"] },
+          boxShadow: { "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14" }
         }
       }
     }
@@ -47,7 +38,14 @@
     .picon:hover{ opacity: 1; transform: translateY(-1px); }
     .hero-icons .picon{ width: 40px; height: 26px; }
     .modal-icons .picon{ width: 40px; height: 26px; }
-    nav a.nav-active { color: #39ff14 !important; text-shadow: 0 0 8px rgba(57, 255, 20, 0.6); border-bottom: 2px solid #39ff14; }
+   
+    /* Correction Logo et Navigation Active */
+    nav a.nav-active:not(.logo-link) {
+      color: #39ff14 !important;
+      text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+      border-bottom: 2px solid #39ff14;
+    }
+
     @media (max-width: 1100px){ .nav-accepted { display:none; } }
   </style>
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
@@ -60,13 +58,13 @@
   </div>
 
   <template id="svgIcons">
-    <span data-icon="visa" class="picon" title="Visa" aria-label="Visa"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black, Arial, sans-serif" font-size="18" fill="#1A1F71">VISA</text></svg></span>
+    <span data-icon="visa" class="picon" title="Visa" aria-label="Visa"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black, sans-serif" font-size="18" fill="#1A1F71">VISA</text></svg></span>
     <span data-icon="mc" class="picon" title="Mastercard" aria-label="Mastercard"><svg viewBox="0 0 64 24"><circle cx="26" cy="12" r="8" fill="#EB001B"></circle><circle cx="38" cy="12" r="8" fill="#F79E1B" opacity="0.95"></circle><circle cx="32" cy="12" r="8" fill="#FF5F00" opacity="0.9"></circle></svg></span>
-    <span data-icon="amex" class="picon" title="American Express" aria-label="American Express"><svg viewBox="0 0 64 24"><rect x="2" y="3" width="60" height="18" rx="3" fill="#2E77BB"></rect><text x="10" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">AMEX</text></svg></span>
-    <span data-icon="applepay" class="picon" title="Apple Pay" aria-label="Apple Pay"><svg viewBox="0 0 64 24"><path d="M18 10.5c1.2-1.5 2-3.4 1.8-5.5-1.8.1-3.8 1.2-5 2.7-1.1 1.3-2.1 3.3-1.8 5.2 2 .2 3.8-1 5-2.4Z" fill="#FFFFFF"/><path d="M22 12c-2.4-1.4-4.8-.1-6 .1-1.2.3-3.2 1.2-5.1-.1-2.5-1.6-6.3-1.4-8 1.3-3 4.6-.8 11.5 2.1 15.2 1.4 1.8 3.1 3.7 5.3 3.6 2.1-.1 2.9-1.3 5.4-1.3 2.5 0 3.2 1.3 5.4 1.2 2.2 0 3.6-1.7 5-3.5 1.6-2.1 2.2-4.1 2.2-4.2-.1 0-4.1-1.6-4.1-6.2 0-3.9 3.2-5.6 3.4-5.7-1.9-2.8-4.9-3.1-6-3.2Z" fill="#FFFFFF"/><text x="34" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">Pay</text></svg></span>
-    <span data-icon="gpay" class="picon" title="Google Pay" aria-label="Google Pay"><svg viewBox="0 0 64 24"><text x="2" y="16" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">G</text><circle cx="10" cy="12" r="2.2" fill="#4285F4"></circle><circle cx="13" cy="12" r="2.2" fill="#34A853"></circle><circle cx="16" cy="12" r="2.2" fill="#FBBC05"></circle><circle cx="19" cy="12" r="2.2" fill="#EA4335"></circle><text x="26" y="17" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#FFFFFF">Pay</text></svg></span>
-    <span data-icon="interac" class="picon" title="Interac e-Transfer" aria-label="Interac e-Transfer"><svg viewBox="0 0 64 24"><rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"></rect><text x="12" y="17" font-family="Arial Black, Arial, sans-serif" font-size="11" fill="#111111">INTERAC</text></svg></span>
-    <span data-icon="btc" class="picon" title="Bitcoin" aria-label="Bitcoin"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F7931A"></circle><text x="9.2" y="16.2" font-family="Arial Black, Arial, sans-serif" font-size="10" fill="#111111">₿</text></svg></span>
+    <span data-icon="amex" class="picon" title="American Express" aria-label="American Express"><svg viewBox="0 0 64 24"><rect x="2" y="3" width="60" height="18" rx="3" fill="#2E77BB"></rect><text x="10" y="17" font-family="Arial Black, sans-serif" font-size="12" fill="#FFFFFF">AMEX</text></svg></span>
+    <span data-icon="applepay" class="picon" title="Apple Pay" aria-label="Apple Pay"><svg viewBox="0 0 64 24"><path d="M18 10.5c1.2-1.5 2-3.4 1.8-5.5-1.8.1-3.8 1.2-5 2.7-1.1 1.3-2.1 3.3-1.8 5.2 2 .2 3.8-1 5-2.4Z" fill="#FFFFFF"/><path d="M22 12c-2.4-1.4-4.8-.1-6 .1-1.2.3-3.2 1.2-5.1-.1-2.5-1.6-6.3-1.4-8 1.3-3 4.6-.8 11.5 2.1 15.2 1.4 1.8 3.1 3.7 5.3 3.6 2.1-.1 2.9-1.3 5.4-1.3 2.5 0 3.2 1.3 5.4 1.2 2.2 0 3.6-1.7 5-3.5 1.6-2.1 2.2-4.1 2.2-4.2-.1 0-4.1-1.6-4.1-6.2 0-3.9 3.2-5.6 3.4-5.7-1.9-2.8-4.9-3.1-6-3.2Z" fill="#FFFFFF"/><text x="34" y="17" font-family="Arial Black, sans-serif" font-size="12" fill="#FFFFFF">Pay</text></svg></span>
+    <span data-icon="gpay" class="picon" title="Google Pay" aria-label="Google Pay"><svg viewBox="0 0 64 24"><text x="2" y="16" font-family="Arial Black, sans-serif" font-size="12" fill="#FFFFFF">G</text><circle cx="10" cy="12" r="2.2" fill="#4285F4"></circle><circle cx="13" cy="12" r="2.2" fill="#34A853"></circle><circle cx="16" cy="12" r="2.2" fill="#FBBC05"></circle><circle cx="19" cy="12" r="2.2" fill="#EA4335"></circle><text x="26" y="17" font-family="Arial Black, sans-serif" font-size="12" fill="#FFFFFF">Pay</text></svg></span>
+    <span data-icon="interac" class="picon" title="Interac e-Transfer" aria-label="Interac e-Transfer"><svg viewBox="0 0 64 24"><rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"></rect><text x="12" y="17" font-family="Arial Black, sans-serif" font-size="11" fill="#111111">INTERAC</text></svg></span>
+    <span data-icon="btc" class="picon" title="Bitcoin" aria-label="Bitcoin"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F7931A"></circle><text x="9.2" y="16.2" font-family="Arial Black, sans-serif" font-size="10" fill="#111111">₿</text></svg></span>
     <span data-icon="eth" class="picon" title="Ethereum" aria-label="Ethereum"><svg viewBox="0 0 24 24"><polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"></polygon><polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"></polygon></svg></span>
     <span data-icon="ada" class="picon" title="Cardano" aria-label="Cardano"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="#0033AD"></circle><g fill="#0033AD" opacity="0.95"><circle cx="12" cy="5.2" r="1"></circle><circle cx="12" cy="18.8" r="1"></circle><circle cx="5.2" cy="12" r="1"></circle><circle cx="18.8" cy="12" r="1"></circle><circle cx="7.2" cy="7.2" r="0.9"></circle><circle cx="16.8" cy="7.2" r="0.9"></circle><circle cx="7.2" cy="16.8" r="0.9"></circle><circle cx="16.8" cy="16.8" r="0.9"></circle></g></svg></span>
     <span data-icon="xrp" class="picon" title="XRP" aria-label="XRP"><svg viewBox="0 0 24 24"><path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z" fill="#FFFFFF"/><path d="M18 17c-1.6-1.6-3.2-2.4-6-2.4S7.6 15.4 6 17H4c2.2-2.2 4.7-3.6 8-3.6s5.8 1.4 8 3.6h-2Z" fill="#FFFFFF"/></svg></span>
@@ -78,12 +76,17 @@
       <div class="flex items-center justify-between h-20 gap-4">
        
         <div class="flex items-center gap-3 min-w-fit">
-          <div class="flex items-center gap-1 text-[10px]">
+          <div class="relative z-50 flex items-center gap-2 text-[10px]">
              <a href="index.html" class="text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors">EN</a>
              <span class="text-gray-700">/</span>
-             <a href="fr.html" class="text-gray-500 hover:text-white transition">FR</a>
+             <a href="fr.html" class="text-gray-500 hover:text-brand-green uppercase tracking-wider transition-colors">FR</a>
           </div>
-          <a href="#home" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;" class="font-orbitron font-black text-xl tracking-tighter text-white uppercase ml-2 cursor-pointer">Crypto<span class="text-brand-green">T</span></a>
+
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+         
+          <a href="#home" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;" class="logo-link font-orbitron font-black text-2xl tracking-widest text-white uppercase ml-2 cursor-pointer whitespace-nowrap relative z-40">
+             CRYPTO<span class="text-brand-green">T</span>
+          </a>
         </div>
 
         <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
@@ -91,17 +94,11 @@
           <div class="flex items-center gap-2" id="navAcceptedRow"></div>
         </div>
 
-        <div class="hidden md:flex items-center space-x-6 text-[10px] tracking-widest text-gray-400">
-          <a href="#products" class="hover:text-brand-green uppercase transition-colors py-2">THE_POWER_5</a>
-          <a href="about-them.html" class="hover:text-brand-green uppercase transition-colors py-2">ABOUT_THEM</a>
-          <a href="#manifesto" class="hover:text-brand-green uppercase transition-colors py-2">MANIFESTO</a>
-          <a href="#contact" class="hover:text-brand-green uppercase transition-colors py-2">CONTACT_US</a>
-         
-          <div class="flex items-center gap-1 border-l border-gray-800 pl-4">
-            <button onclick="setCurrency('USD')" class="currency-btn active px-1" data-currency="USD">USD</button>
-            <button onclick="setCurrency('CAD')" class="currency-btn px-1" data-currency="CAD">CAD</button>
-            <button onclick="setCurrency('EUR')" class="currency-btn px-1" data-currency="EUR">EUR</button>
-          </div>
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+          <a href="#products" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">THE_POWER_5</a>
+          <a href="about-them.html" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">ABOUT_THEM</a>
+          <a href="#manifesto" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTO</a>
+          <a href="#contact" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT_US</a>
         </div>
 
         <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMobileMenu()">
@@ -324,22 +321,6 @@
     </div>
   </main>
 
-  <section id="manifesto" class="py-16 md:py-24 bg-brand-panel border-t border-brand-green/20 relative w-full overflow-hidden">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-2xl md:text-5xl font-orbitron font-bold text-white mb-8 break-words uppercase">
-        MANIFESTO — <span class="text-brand-green">CODE IS LAW</span>
-      </h2>
-      <div class="text-gray-300 text-base md:text-lg leading-relaxed space-y-6">
-        <p>We don't trust banks. We trust code.</p>
-        <p>Fiat currency is debt. Crypto is ownership.</p>
-        <p>We wear our assets because we believe in the future of money.</p>
-        <div class="mt-12 pt-8 border-t border-brand-green/10">
-          <p class="text-brand-green font-bold mt-4 text-lg md:text-xl">// Not your keys, not your crypto.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer id="contact" class="border-t border-brand-green/20 bg-black py-12 w-full overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <div class="mb-8">
@@ -361,104 +342,9 @@
     </div>
   </footer>
 
-  <div id="orderModal" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
-    <div class="bg-brand-panel border border-brand-green/50 w-full max-w-md p-6 relative shadow-2xl overflow-y-auto max-h-[90vh]">
-
-      <button onclick="closeModal(true)" class="absolute top-4 right-4 text-gray-500 hover:text-brand-green" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-
-      <h2 class="font-orbitron text-xl md:text-2xl text-white mb-1">SECURE ORDER</h2>
-      <p class="text-brand-green text-[10px] mb-4 uppercase tracking-widest">ENCRYPTED CONNECTION //</p>
-
-      <div class="mb-5 border border-white/10 bg-black/35 px-4 py-3">
-        <div class="text-gray-500 text-[10px] uppercase tracking-widest mb-2">Accepted Payment Methods</div>
-        <div id="payLogosRow" class="flex flex-wrap items-center gap-2 modal-icons"></div>
-      </div>
-
-      <div id="orderStatusBox" class="hidden text-center py-10">
-        <div class="text-brand-green text-xl font-orbitron mb-2">ORDER RECEIVED</div>
-        <p class="text-gray-400 text-xs">We will contact you via email for the next steps.</p>
-        <button onclick="closeModal()" class="mt-6 text-gray-500 text-xs underline">Back to Shop</button>
-      </div>
-
-      <div id="orderErrorBox" class="hidden mt-4 p-3 bg-red-900/20 border border-red-500/50 text-red-200 text-[10px]"></div>
-
-      <form id="orderForm" class="space-y-4" novalidate>
-        <label class="hp-field" aria-hidden="true">
-          Website
-          <input type="text" name="website" autocomplete="off" tabindex="-1" inputmode="url">
-        </label>
-
-        <input type="hidden" name="ts" id="orderTs" value="">
-        <input type="hidden" id="productKey" name="ProductKey" value="">
-        <input type="hidden" id="productInput" name="Product" value="">
-        <input type="hidden" id="currencyInput" name="SelectedCurrency" value="USD">
-
-        <div>
-          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Selected Item</label>
-          <div id="productDisplay" class="text-white font-orbitron text-base border-b border-gray-700 pb-2"></div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="block text-gray-400 text-[10px] mb-1 uppercase">Size</label>
-            <select name="Size" class="w-full bg-black border border-gray-700 text-white p-2 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
-              <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-gray-400 text-[10px] mb-1 uppercase">Qty</label>
-            <select name="Quantity" class="w-full bg-black border border-gray-700 text-white p-2 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
-              <option>1</option><option>2</option><option>3</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Payment Method</label>
-          <select id="paymentSelect" name="PaymentMethod" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none appearance-none rounded-none" autocomplete="off">
-            <option value="CARD">Card / Apple Pay / Google Pay</option>
-            <option value="INTERAC">Interac e-Transfer</option>
-            <option value="BTC">Bitcoin (BTC)</option>
-            <option value="ETH">Ethereum (ETH)</option>
-            <option value="ADA">Cardano (ADA)</option>
-            <option value="XRP">XRP</option>
-            <option value="SOL">Solana (SOL)</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Email Address</label>
-          <input type="email" name="Email" required placeholder="satoshi@nakamoto.com"
-                 autocomplete="email"
-                 class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600">
-        </div>
-
-        <div>
-          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Shipping Address</label>
-          <textarea name="Address" required rows="2" placeholder="Full address..."
-                    autocomplete="shipping street-address"
-                    class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600"></textarea>
-        </div>
-
-        <button id="submitBtn" type="submit" class="w-full py-4 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-2">
-          PROCEED TO PAYMENT
-        </button>
-
-        <p id="smallNote" class="text-center text-gray-500 text-[10px] mt-2">
-          Choose your method above. You will be guided through the process securely.
-        </p>
-      </form>
-    </div>
-  </div>
-
   <script>
     // ====== CONFIG ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
-
     const PAYMENT_LINKS = {
       BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
       ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
@@ -467,21 +353,13 @@
       SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04"
     };
 
-    // Currency UI
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
     const symbols = { USD: "$", CAD: "$", EUR: "€" };
     let currentCurrency = "USD";
 
     function setCurrency(curr) {
       currentCurrency = curr;
-
-      const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = curr;
-
-      document.querySelectorAll(".currency-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.getAttribute("data-currency") === curr);
-      });
-
+      document.querySelectorAll(".currency-btn").forEach(btn => btn.classList.toggle("active", btn.getAttribute("data-currency") === curr));
       document.querySelectorAll(".price-display").forEach(el => {
         const base = parseFloat(el.getAttribute("data-base"));
         let val = (base * rates[curr]).toFixed(2).replace('.00', '');
@@ -489,242 +367,32 @@
       });
     }
 
-    // ====== ICON FACTORY ======
+    // MENU MOBILE
+    const mobileMenuEl = document.getElementById("mobileMenu");
+    function toggleMobileMenu() { mobileMenuEl.classList.toggle("hidden"); }
+    function closeMobileMenu() { mobileMenuEl.classList.add("hidden"); }
+
+    // ICON FACTORY
     function getIconNode(key){
       const tpl = document.getElementById("svgIcons");
       const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
       return holder ? holder.cloneNode(true) : null;
     }
-
     function mountRow(rowEl, keys){
+      if(!rowEl) return;
       rowEl.innerHTML = "";
-      keys.forEach(k => {
-        const n = getIconNode(k);
-        if (n) rowEl.appendChild(n);
-      });
+      keys.forEach(k => { const n = getIconNode(k); if (n) rowEl.appendChild(n); });
     }
-
     function mountAcceptedStrips(){
       const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
-      const navRow = document.getElementById("navAcceptedRow");
-      const footRow = document.getElementById("footerAcceptedRow");
-      const mobRow  = document.getElementById("mobileAcceptedRow");
-      if (navRow) mountRow(navRow, keys);
-      if (footRow) mountRow(footRow, keys);
-      if (mobRow)  mountRow(mobRow, keys);
+      mountRow(document.getElementById("navAcceptedRow"), keys);
+      mountRow(document.getElementById("footerAcceptedRow"), keys);
+      mountRow(document.getElementById("mobileAcceptedRow"), keys);
     }
 
-    // ====== MOBILE MENU ======
-    const mobileMenuEl = document.getElementById("mobileMenu");
-    function toggleMobileMenu() {
-      const isHidden = mobileMenuEl.classList.contains("hidden");
-      mobileMenuEl.classList.toggle("hidden", !isHidden);
-      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
-      if (btn) btn.setAttribute("aria-expanded", String(isHidden));
-      if (isHidden) document.body.classList.add("overflow-hidden");
-      else document.body.classList.remove("overflow-hidden");
-    }
-    function closeMobileMenu() {
-      mobileMenuEl.classList.add("hidden");
-      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
-      if (btn) btn.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    // ====== MODAL ======
-    const orderForm = document.getElementById("orderForm");
-    const statusBox = document.getElementById("orderStatusBox");
-    const errorBox  = document.getElementById("orderErrorBox");
-    const submitBtn = document.getElementById("submitBtn");
-    const paySelect = document.getElementById("paymentSelect");
-    const payLogosRow = document.getElementById("payLogosRow");
-    const smallNote = document.getElementById("smallNote");
-
-    function openModal(productKey, productLabel) {
-      document.getElementById("orderModal").classList.remove("hidden");
-
-      document.getElementById("productKey").value = productKey;
-      document.getElementById("productDisplay").innerText = productLabel;
-      document.getElementById("productInput").value = productLabel;
-
-      const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = currentCurrency;
-
-      statusBox.classList.add("hidden");
-      errorBox.classList.add("hidden");
-      errorBox.textContent = "";
-      orderForm.classList.remove("hidden");
-
-      submitBtn.disabled = false;
-      submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "PROCEED TO PAYMENT";
-
-      document.getElementById("orderTs").value = String(Date.now());
-
-      if (paySelect) paySelect.value = "CARD";
-      updatePaymentUI();
-    }
-
-    function closeModal(reset = false) {
-      document.getElementById("orderModal").classList.add("hidden");
-      if (reset) {
-        orderForm.reset();
-        const currInput = document.getElementById("currencyInput");
-        if (currInput) currInput.value = currentCurrency;
-      }
-    }
-
-    document.getElementById("orderModal").addEventListener("click", function(e) {
-      if (e.target === this) closeModal();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeMobileMenu();
-        closeModal();
-      }
-    });
-
-    function setLogosFor(mode){
-      payLogosRow.innerHTML = "";
-
-      if (mode === "CARD") {
-        ["visa","mc","amex","applepay","gpay"].forEach(k => {
-          const n = getIconNode(k);
-          if (n) payLogosRow.appendChild(n);
-        });
-        submitBtn.textContent = "PAY NOW";
-        smallNote.textContent = "Visa / Mastercard / Amex + Apple Pay + Google Pay.";
-        return;
-      }
-
-      if (mode === "INTERAC") {
-        const n = getIconNode("interac");
-        if (n) payLogosRow.appendChild(n);
-        submitBtn.textContent = "SUBMIT ORDER";
-        smallNote.textContent = "We will contact you with the next steps after submission.";
-        return;
-      }
-
-      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
-      const n = getIconNode(map[mode] || "btc");
-      if (n) payLogosRow.appendChild(n);
-      submitBtn.textContent = "SUBMIT ORDER";
-      smallNote.textContent = "We will contact you with the next steps after submission.";
-    }
-
-    function updatePaymentUI(){
-      if (!paySelect) return;
-      setLogosFor(paySelect.value);
-    }
-    if (paySelect) paySelect.addEventListener("change", updatePaymentUI);
-
-    // ====== SUBMIT LOGIC ======
-    orderForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      errorBox.classList.add("hidden");
-      errorBox.textContent = "";
-      statusBox.classList.add("hidden");
-
-      const fd = new FormData(orderForm);
-
-      // honeypot
-      if (fd.has("website")) fd.set("website", "");
-
-      const ts = Number(fd.get("ts"));
-      if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
-        errorBox.textContent = "Security check: please wait a second and try again.";
-        errorBox.classList.remove("hidden");
-        return;
-      }
-
-      const email = (fd.get("Email") || "").toString().trim();
-      const address = (fd.get("Address") || "").toString().trim();
-      if (!email || !address) {
-        errorBox.textContent = "Missing required fields.";
-        errorBox.classList.remove("hidden");
-        return;
-      }
-
-      const productKey = (fd.get("ProductKey") || "").toString().trim();
-      const payMode = (fd.get("PaymentMethod") || "").toString().trim();
-
-      submitBtn.disabled = true;
-      submitBtn.classList.add("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "PROCESSING...";
-
-      try {
-        // CARD => redirect Stripe link by productKey
-        if (payMode === "CARD") {
-          const link = PAYMENT_LINKS[productKey];
-          if (!link) throw new Error("Payment link not found for this item.");
-          const url = new URL(link);
-          url.searchParams.set("prefilled_email", email);
-          url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
-          window.location.href = url.toString();
-          return;
-        }
-
-        // Non-card => send order to Formspree
-        const payload = Object.fromEntries(fd.entries());
-        const res = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Accept": "application/json", "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok) {
-          const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
-            ? data.errors[0].message
-            : "Order failed. Please try again.";
-          throw new Error(msg);
-        }
-
-        orderForm.classList.add("hidden");
-        statusBox.classList.remove("hidden");
-
-      } catch (err) {
-        errorBox.textContent = err.message || "Network error. Please try again.";
-        errorBox.classList.remove("hidden");
-
-        submitBtn.disabled = false;
-        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        submitBtn.textContent = (paySelect && paySelect.value === "CARD") ? "PAY NOW" : "SUBMIT ORDER";
-      }
-    });
-
-    // ====== SCROLL SPY ======
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll("header, section, main, footer");
-      const navLinks = document.querySelectorAll("nav a[href^='#']");
-
-      const observerOptions = { root: null, rootMargin: "0px", threshold: 0.25 };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            navLinks.forEach(link => link.classList.remove("nav-active"));
-            const id = entry.target.getAttribute("id");
-            if (id) {
-              const activeLink = document.querySelector(`nav a[href="#${id}"]`);
-              if (activeLink) activeLink.classList.add("nav-active");
-            }
-          }
-        });
-      }, observerOptions);
-
-      sections.forEach((section) => {
-        if (section.getAttribute('id')) observer.observe(section);
-      });
-    });
-
-    // ====== INIT ======
     document.addEventListener("DOMContentLoaded", () => {
       setCurrency("USD");
       mountAcceptedStrips();
-      updatePaymentUI();
     });
   </script>
 </body>
