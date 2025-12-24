@@ -636,24 +636,25 @@
           </select>
         </div>
 
-        <div>
-          <label class="block text-gray-400 text-xs mb-1 uppercase">Courriel</label>
-          <input type="email" name="Email" required class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green">
-        </div>
-
-        <div>
-          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse</label>
-          <textarea name="Address" required rows="3" class="w-full bg-black border border-gray-700 text-white p-3 focus:border-brand-green"></textarea>
+        <div class="space-y-3">
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Adresse de Livraison</label>
+          <input type="text" name="Address_Street" required placeholder="Numéro et Rue" autocomplete="street-address" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+          <div class="grid grid-cols-2 gap-4">
+            <input type="text" name="Address_City" required placeholder="Ville" autocomplete="address-level2" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+            <input type="text" name="Address_State" required placeholder="Prov./État" autocomplete="address-level1" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <input type="text" name="Address_Zip" required placeholder="Code Postal" autocomplete="postal-code" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+            <input type="text" name="Address_Country" required placeholder="Pays" autocomplete="country" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+          </div>
         </div>
 
         <button id="submitBtn" type="submit" class="w-full py-4 bg-brand-green text-black font-bold text-lg hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-4">PAYER MAINTENANT</button>
-      </form>
-    </div>
-  </div>
 
-  <script>
-    // ====== LOGIC IDENTIQUE À L'ACCUEIL (CURRENCY UI REMOVED, USD FIXED) ======
+    <script>
+    // ====== MEGA SCRIPT FINAL (Payment Fix + Address Split) ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
+    
     const PAYMENT_LINKS = {
       BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
       ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
@@ -662,49 +663,59 @@
       SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04"
     };
 
-    // Currency fixed
-    const currentCurrency = "USD";
+    const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
+    const symbols = { USD: "$", CAD: "$", EUR: "€" };
+    let currentCurrency = "USD";
+
+    function setCurrency(curr) {
+      currentCurrency = curr;
+      const currInput = document.getElementById("currencyInput");
+      if (currInput) currInput.value = curr;
+      
+      document.querySelectorAll(".currency-btn").forEach(btn => {
+        if (btn.getAttribute("data-currency") === curr) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+      
+      document.querySelectorAll(".price-display").forEach(el => {
+        const base = parseFloat(el.getAttribute("data-base"));
+        let val = (base * rates[curr]).toFixed(2).replace('.00', '');
+        if (curr === "EUR") el.innerText = val + " € EUR";
+        else el.innerText = symbols[curr] + val + " " + curr;
+      });
+    }
 
     document.addEventListener("DOMContentLoaded", () => {
-      mountAcceptedStrips();
-      updatePaymentUI();
-      const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = "USD";
+      if(typeof mountAcceptedStrips === "function") mountAcceptedStrips();
+      if(typeof updatePaymentUI === "function") updatePaymentUI();
+      setCurrency("USD");
     });
 
-    // MOBILE MENU
+    // MENU MOBILE
     const mobileMenuEl = document.getElementById("mobileMenu");
-    function toggleMobileMenu() {
-      mobileMenuEl.classList.toggle("hidden", !mobileMenuEl.classList.contains("hidden"));
-    }
-    function closeMobileMenu() {
-      mobileMenuEl.classList.add("hidden");
-    }
+    function toggleMobileMenu() { if(mobileMenuEl) mobileMenuEl.classList.toggle("hidden"); }
+    function closeMobileMenu() { if(mobileMenuEl) mobileMenuEl.classList.add("hidden"); }
 
     // ICONS
     function getIconNode(key){
       const tpl = document.getElementById("svgIcons");
+      if(!tpl) return null;
       const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
       return holder ? holder.cloneNode(true) : null;
     }
     function mountRow(rowEl, keys){
+      if(!rowEl) return;
       rowEl.innerHTML = "";
-      keys.forEach(k => {
-        const n = getIconNode(k);
-        if (n) rowEl.appendChild(n);
-      });
+      keys.forEach(k => { const n = getIconNode(k); if (n) rowEl.appendChild(n); });
     }
     function mountAcceptedStrips(){
       const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
-      const navRow = document.getElementById("navAcceptedRow");
-      const footRow = document.getElementById("footerAcceptedRow");
-      const mobRow = document.getElementById("mobileAcceptedRow");
-      if (navRow) mountRow(navRow, keys);
-      if (footRow) mountRow(footRow, keys);
-      if (mobRow) mountRow(mobRow, keys);
+      mountRow(document.getElementById("navAcceptedRow"), keys);
+      mountRow(document.getElementById("footerAcceptedRow"), keys);
+      mountRow(document.getElementById("mobileAcceptedRow"), keys);
     }
 
-    // MODAL & PAYMENTS
+    // MODAL
     const orderForm = document.getElementById("orderForm");
     const statusBox = document.getElementById("orderStatusBox");
     const errorBox = document.getElementById("orderErrorBox");
@@ -715,119 +726,107 @@
     function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
       document.getElementById("productKey").value = productKey;
-      document.getElementById("productDisplay").innerText = productLabel;
-      document.getElementById("productInput").value = productLabel;
+      const disp = document.getElementById("productDisplay");
+      if(disp) disp.innerText = productLabel;
+      const inp = document.getElementById("productInput");
+      if(inp) inp.value = productLabel;
 
-      const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = "USD";
-
-      statusBox.classList.add("hidden");
-      errorBox.classList.add("hidden");
-      orderForm.classList.remove("hidden");
-      submitBtn.disabled = false;
-      submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-      document.getElementById("orderTs").value = String(Date.now());
-
+      if(statusBox) statusBox.classList.add("hidden");
+      if(errorBox) { errorBox.classList.add("hidden"); errorBox.textContent = ""; }
+      if(orderForm) orderForm.classList.remove("hidden");
+      
+      if(submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); }
+      const ts = document.getElementById("orderTs");
+      if(ts) ts.value = String(Date.now());
       if (paySelect) paySelect.value = "CARD";
       updatePaymentUI();
     }
 
     function closeModal(reset = false) {
       document.getElementById("orderModal").classList.add("hidden");
-      if (reset) {
-        orderForm.reset();
-        const currInput = document.getElementById("currencyInput");
-        if (currInput) currInput.value = "USD";
-      }
+      if (reset && orderForm) orderForm.reset();
     }
 
     function updatePaymentUI(){
+      if(!payLogosRow || !paySelect) return;
       payLogosRow.innerHTML = "";
       const mode = paySelect.value;
-
       if (mode === "CARD") {
-        ["visa","mc","amex","applepay","gpay"].forEach(k => {
-          const n = getIconNode(k);
-          if (n) payLogosRow.appendChild(n);
-        });
-        submitBtn.textContent = "PAYER MAINTENANT";
+        ["visa","mc","amex","applepay","gpay"].forEach(k => { const n = getIconNode(k); if(n) payLogosRow.appendChild(n); });
+        if(submitBtn) submitBtn.textContent = "PAYER / PAY NOW"; 
         return;
       }
-
       if (mode === "INTERAC") {
         const n = getIconNode("interac");
-        if (n) payLogosRow.appendChild(n);
-        submitBtn.textContent = "SOUMETTRE LA COMMANDE";
+        if(n) payLogosRow.appendChild(n);
+        if(submitBtn) submitBtn.textContent = "SOUMETTRE / SUBMIT";
         return;
       }
-
       const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
-      const n = getIconNode(map[mode] || "btc");
-      if (n) payLogosRow.appendChild(n);
-      submitBtn.textContent = "SOUMETTRE LA COMMANDE";
+      const coinIcon = getIconNode(map[mode] || "btc");
+      if(coinIcon) payLogosRow.appendChild(coinIcon);
+      if(submitBtn) submitBtn.textContent = "SOUMETTRE / SUBMIT";
     }
 
-    paySelect.addEventListener("change", updatePaymentUI);
+    if(paySelect) paySelect.addEventListener("change", updatePaymentUI);
 
-    orderForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      errorBox.classList.add("hidden");
-      statusBox.classList.add("hidden");
+    // --- LOGIQUE D'ENVOI ---
+    if(orderForm) {
+      orderForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if(errorBox) errorBox.classList.add("hidden");
+        if(statusBox) statusBox.classList.add("hidden");
 
-      const fd = new FormData(orderForm);
-      if (fd.has("website")) fd.set("website", "");
+        const fd = new FormData(orderForm);
+        const email = (fd.get("Email") || "").toString().trim();
+        // Validation des nouveaux champs
+        const street = (fd.get("Address_Street") || "").toString().trim();
+        const city = (fd.get("Address_City") || "").toString().trim();
 
-      const ts = Number(fd.get("ts"));
-      if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
-        errorBox.textContent = "Échec vérification sécurité.";
-        errorBox.classList.remove("hidden");
-        return;
-      }
-
-      const email = (fd.get("Email") || "").toString().trim();
-      const address = (fd.get("Address") || "").toString().trim();
-      if (!email || !address) {
-        errorBox.textContent = "Champs manquants.";
-        errorBox.classList.remove("hidden");
-        return;
-      }
-
-      const productKey = (fd.get("ProductKey") || "").toString().trim();
-      const payMode = (fd.get("PaymentMethod") || "").toString().trim();
-
-      submitBtn.disabled = true;
-      submitBtn.classList.add("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "TRAITEMENT...";
-
-      try {
-        if (payMode === "CARD") {
-          const link = PAYMENT_LINKS[productKey];
-          if (!link) throw new Error("Lien de paiement introuvable.");
-          const url = new URL(link);
-          url.searchParams.set("prefilled_email", email);
-          url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
-          window.location.href = url.toString();
+        if (!email || !street || !city) {
+          if(errorBox) { errorBox.textContent = "Missing fields (Email, Street, City) / Champs manquants."; errorBox.classList.remove("hidden"); }
           return;
         }
 
-        const res = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Accept": "application/json", "Content-Type": "application/json" },
-          body: JSON.stringify(Object.fromEntries(fd.entries())),
-        });
+        const productKey = (fd.get("ProductKey") || "").toString().trim();
+        const payMode = (fd.get("PaymentMethod") || "").toString().trim();
 
-        if (!res.ok) throw new Error("Échec de la commande.");
+        if(submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+          submitBtn.textContent = "PROCESSING...";
+        }
 
-        orderForm.classList.add("hidden");
-        statusBox.classList.remove("hidden");
-      } catch (err) {
-        errorBox.textContent = err.message || "Erreur.";
-        errorBox.classList.remove("hidden");
-        submitBtn.disabled = false;
-        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE";
-      }
-    });
+        try {
+          // 1. FORMSPREE
+          const payload = Object.fromEntries(fd.entries());
+          payload._subject = "New Order: " + productKey + " (" + payMode + ")";
+          const res = await fetch(FORM_ENDPOINT, {
+            method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          if (!res.ok) throw new Error("Server Error.");
+
+          // 2. REDIRECTION STRIPE (SI CARTE)
+          if (payMode === "CARD") {
+            const link = PAYMENT_LINKS[productKey];
+            if (!link) throw new Error("Link not found.");
+            const url = new URL(link);
+            url.searchParams.set("prefilled_email", email);
+            url.searchParams.set("client_reference_id", "CryptoT-" + Date.now());
+            window.location.href = url.toString();
+            return;
+          }
+
+          // 3. SUCCES (INTERAC/CRYPTO)
+          orderForm.classList.add("hidden");
+          if(statusBox) statusBox.classList.remove("hidden");
+        } catch (err) {
+          if(errorBox) { errorBox.textContent = "Error occurred. Try again."; errorBox.classList.remove("hidden"); }
+          if(submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = "RETRY"; }
+        }
+      });
+    }
   </script>
 </body>
 </html>

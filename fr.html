@@ -572,11 +572,17 @@
                  class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600">
         </div>
 
-        <div>
-          <label class="block text-gray-400 text-[10px] mb-1 uppercase">Adresse de Livraison</label>
-          <textarea name="Address" required rows="2" placeholder="Adresse complète..."
-                    autocomplete="shipping street-address"
-                    class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600"></textarea>
+       <div class="space-y-3">
+          <label class="block text-gray-400 text-xs mb-1 uppercase">Shipping Address</label>
+          <input type="text" name="Address_Street" required placeholder="Number and Street" autocomplete="street-address" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+          <div class="grid grid-cols-2 gap-4">
+            <input type="text" name="Address_City" required placeholder="City" autocomplete="address-level2" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+            <input type="text" name="Address_State" required placeholder="State/Prov" autocomplete="address-level1" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <input type="text" name="Address_Zip" required placeholder="Zip/Postal Code" autocomplete="postal-code" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+            <input type="text" name="Address_Country" required placeholder="Country" autocomplete="country" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600 rounded-none">
+          </div>
         </div>
 
         <button id="submitBtn" type="submit" class="w-full py-4 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider mt-2">
@@ -591,9 +597,9 @@
   </div>
 
   <script>
-    // ====== CONFIG ======
+    // ====== MEGA SCRIPT FINAL (Payment Fix + Address Split) ======
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
-
+    
     const PAYMENT_LINKS = {
       BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
       ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
@@ -602,267 +608,170 @@
       SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04"
     };
 
-    // Currency UI
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
     const symbols = { USD: "$", CAD: "$", EUR: "€" };
     let currentCurrency = "USD";
 
     function setCurrency(curr) {
       currentCurrency = curr;
-
       const currInput = document.getElementById("currencyInput");
       if (currInput) currInput.value = curr;
-
+      
       document.querySelectorAll(".currency-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.getAttribute("data-currency") === curr);
+        if (btn.getAttribute("data-currency") === curr) btn.classList.add("active");
+        else btn.classList.remove("active");
       });
-
+      
       document.querySelectorAll(".price-display").forEach(el => {
         const base = parseFloat(el.getAttribute("data-base"));
         let val = (base * rates[curr]).toFixed(2).replace('.00', '');
-        el.innerText = (curr === "EUR") ? `${val} € EUR` : `${symbols[curr]}${val} ${curr}`;
+        if (curr === "EUR") el.innerText = val + " € EUR";
+        else el.innerText = symbols[curr] + val + " " + curr;
       });
     }
 
-    // ====== ICON FACTORY ======
+    document.addEventListener("DOMContentLoaded", () => {
+      if(typeof mountAcceptedStrips === "function") mountAcceptedStrips();
+      if(typeof updatePaymentUI === "function") updatePaymentUI();
+      setCurrency("USD");
+    });
+
+    // MENU MOBILE
+    const mobileMenuEl = document.getElementById("mobileMenu");
+    function toggleMobileMenu() { if(mobileMenuEl) mobileMenuEl.classList.toggle("hidden"); }
+    function closeMobileMenu() { if(mobileMenuEl) mobileMenuEl.classList.add("hidden"); }
+
+    // ICONS
     function getIconNode(key){
       const tpl = document.getElementById("svgIcons");
+      if(!tpl) return null;
       const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
       return holder ? holder.cloneNode(true) : null;
     }
-
     function mountRow(rowEl, keys){
+      if(!rowEl) return;
       rowEl.innerHTML = "";
-      keys.forEach(k => {
-        const n = getIconNode(k);
-        if (n) rowEl.appendChild(n);
-      });
+      keys.forEach(k => { const n = getIconNode(k); if (n) rowEl.appendChild(n); });
     }
-
     function mountAcceptedStrips(){
       const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
-      const navRow = document.getElementById("navAcceptedRow");
-      const footRow = document.getElementById("footerAcceptedRow");
-      const mobRow  = document.getElementById("mobileAcceptedRow");
-      if (navRow) mountRow(navRow, keys);
-      if (footRow) mountRow(footRow, keys);
-      if (mobRow)  mountRow(mobRow, keys);
+      mountRow(document.getElementById("navAcceptedRow"), keys);
+      mountRow(document.getElementById("footerAcceptedRow"), keys);
+      mountRow(document.getElementById("mobileAcceptedRow"), keys);
     }
 
-    // ====== MOBILE MENU ======
-    const mobileMenuEl = document.getElementById("mobileMenu");
-    function toggleMobileMenu() {
-      const isHidden = mobileMenuEl.classList.contains("hidden");
-      mobileMenuEl.classList.toggle("hidden", !isHidden);
-      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
-      if (btn) btn.setAttribute("aria-expanded", String(isHidden));
-      if (isHidden) document.body.classList.add("overflow-hidden");
-      else document.body.classList.remove("overflow-hidden");
-    }
-    function closeMobileMenu() {
-      mobileMenuEl.classList.add("hidden");
-      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
-      if (btn) btn.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    // ====== MODAL ======
+    // MODAL
     const orderForm = document.getElementById("orderForm");
     const statusBox = document.getElementById("orderStatusBox");
-    const errorBox  = document.getElementById("orderErrorBox");
+    const errorBox = document.getElementById("orderErrorBox");
     const submitBtn = document.getElementById("submitBtn");
     const paySelect = document.getElementById("paymentSelect");
     const payLogosRow = document.getElementById("payLogosRow");
-    const smallNote = document.getElementById("smallNote");
 
     function openModal(productKey, productLabel) {
       document.getElementById("orderModal").classList.remove("hidden");
-
       document.getElementById("productKey").value = productKey;
-      document.getElementById("productDisplay").innerText = productLabel;
-      document.getElementById("productInput").value = productLabel;
+      const disp = document.getElementById("productDisplay");
+      if(disp) disp.innerText = productLabel;
+      const inp = document.getElementById("productInput");
+      if(inp) inp.value = productLabel;
 
-      const currInput = document.getElementById("currencyInput");
-      if (currInput) currInput.value = currentCurrency;
-
-      statusBox.classList.add("hidden");
-      errorBox.classList.add("hidden");
-      errorBox.textContent = "";
-      orderForm.classList.remove("hidden");
-
-      submitBtn.disabled = false;
-      submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "PASSER AU PAIEMENT";
-
-      document.getElementById("orderTs").value = String(Date.now());
-
+      if(statusBox) statusBox.classList.add("hidden");
+      if(errorBox) { errorBox.classList.add("hidden"); errorBox.textContent = ""; }
+      if(orderForm) orderForm.classList.remove("hidden");
+      
+      if(submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); }
+      const ts = document.getElementById("orderTs");
+      if(ts) ts.value = String(Date.now());
       if (paySelect) paySelect.value = "CARD";
       updatePaymentUI();
     }
 
     function closeModal(reset = false) {
       document.getElementById("orderModal").classList.add("hidden");
-      if (reset) {
-        orderForm.reset();
-        const currInput = document.getElementById("currencyInput");
-        if (currInput) currInput.value = currentCurrency;
-      }
-    }
-
-    document.getElementById("orderModal").addEventListener("click", function(e) {
-      if (e.target === this) closeModal();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeMobileMenu();
-        closeModal();
-      }
-    });
-
-    function setLogosFor(mode){
-      payLogosRow.innerHTML = "";
-
-      if (mode === "CARD") {
-        ["visa","mc","amex","applepay","gpay"].forEach(k => {
-          const n = getIconNode(k);
-          if (n) payLogosRow.appendChild(n);
-        });
-        submitBtn.textContent = "PAYER MAINTENANT";
-        smallNote.textContent = "Visa / Mastercard / Amex + Apple Pay + Google Pay.";
-        return;
-      }
-
-      if (mode === "INTERAC") {
-        const n = getIconNode("interac");
-        if (n) payLogosRow.appendChild(n);
-        submitBtn.textContent = "SOUMETTRE LA COMMANDE";
-        smallNote.textContent = "Nous vous contacterons pour la suite après soumission.";
-        return;
-      }
-
-      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
-      const n = getIconNode(map[mode] || "btc");
-      if (n) payLogosRow.appendChild(n);
-      submitBtn.textContent = "SOUMETTRE LA COMMANDE";
-      smallNote.textContent = "Nous vous contacterons pour la suite après soumission.";
+      if (reset && orderForm) orderForm.reset();
     }
 
     function updatePaymentUI(){
-      if (!paySelect) return;
-      setLogosFor(paySelect.value);
+      if(!payLogosRow || !paySelect) return;
+      payLogosRow.innerHTML = "";
+      const mode = paySelect.value;
+      if (mode === "CARD") {
+        ["visa","mc","amex","applepay","gpay"].forEach(k => { const n = getIconNode(k); if(n) payLogosRow.appendChild(n); });
+        if(submitBtn) submitBtn.textContent = "PAYER / PAY NOW"; 
+        return;
+      }
+      if (mode === "INTERAC") {
+        const n = getIconNode("interac");
+        if(n) payLogosRow.appendChild(n);
+        if(submitBtn) submitBtn.textContent = "SOUMETTRE / SUBMIT";
+        return;
+      }
+      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" };
+      const coinIcon = getIconNode(map[mode] || "btc");
+      if(coinIcon) payLogosRow.appendChild(coinIcon);
+      if(submitBtn) submitBtn.textContent = "SOUMETTRE / SUBMIT";
     }
-    if (paySelect) paySelect.addEventListener("change", updatePaymentUI);
 
-    // ====== SUBMIT LOGIC ======
-    orderForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    if(paySelect) paySelect.addEventListener("change", updatePaymentUI);
 
-      errorBox.classList.add("hidden");
-      errorBox.textContent = "";
-      statusBox.classList.add("hidden");
+    // --- LOGIQUE D'ENVOI ---
+    if(orderForm) {
+      orderForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if(errorBox) errorBox.classList.add("hidden");
+        if(statusBox) statusBox.classList.add("hidden");
 
-      const fd = new FormData(orderForm);
+        const fd = new FormData(orderForm);
+        const email = (fd.get("Email") || "").toString().trim();
+        // Validation des nouveaux champs
+        const street = (fd.get("Address_Street") || "").toString().trim();
+        const city = (fd.get("Address_City") || "").toString().trim();
 
-      // honeypot
-      if (fd.has("website")) fd.set("website", "");
-
-      const ts = Number(fd.get("ts"));
-      if (!Number.isFinite(ts) || (Date.now() - ts) < 800) {
-        errorBox.textContent = "Vérification de sécurité: attendez une seconde.";
-        errorBox.classList.remove("hidden");
-        return;
-      }
-
-      const email = (fd.get("Email") || "").toString().trim();
-      const address = (fd.get("Address") || "").toString().trim();
-      if (!email || !address) {
-        errorBox.textContent = "Champs requis manquants.";
-        errorBox.classList.remove("hidden");
-        return;
-      }
-
-      const productKey = (fd.get("ProductKey") || "").toString().trim();
-      const payMode = (fd.get("PaymentMethod") || "").toString().trim();
-
-      submitBtn.disabled = true;
-      submitBtn.classList.add("opacity-60", "cursor-not-allowed");
-      submitBtn.textContent = "TRAITEMENT...";
-
-      try {
-        // CARD => redirect Stripe link by productKey
-        if (payMode === "CARD") {
-          const link = PAYMENT_LINKS[productKey];
-          if (!link) throw new Error("Lien de paiement introuvable.");
-          const url = new URL(link);
-          url.searchParams.set("prefilled_email", email);
-          url.searchParams.set("client_reference_id", "CryptoT-" + productKey);
-          window.location.href = url.toString();
+        if (!email || !street || !city) {
+          if(errorBox) { errorBox.textContent = "Missing fields (Email, Street, City) / Champs manquants."; errorBox.classList.remove("hidden"); }
           return;
         }
 
-        // Non-card => send order to Formspree
-        const payload = Object.fromEntries(fd.entries());
-        const res = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Accept": "application/json", "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
+        const productKey = (fd.get("ProductKey") || "").toString().trim();
+        const payMode = (fd.get("PaymentMethod") || "").toString().trim();
 
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok) {
-          const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
-            ? data.errors[0].message
-            : "Échec de la commande. Réessayez.";
-          throw new Error(msg);
+        if(submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+          submitBtn.textContent = "PROCESSING...";
         }
 
-        orderForm.classList.add("hidden");
-        statusBox.classList.remove("hidden");
+        try {
+          // 1. FORMSPREE
+          const payload = Object.fromEntries(fd.entries());
+          payload._subject = "New Order: " + productKey + " (" + payMode + ")";
+          const res = await fetch(FORM_ENDPOINT, {
+            method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          if (!res.ok) throw new Error("Server Error.");
 
-      } catch (err) {
-        errorBox.textContent = err.message || "Erreur réseau. Réessayez.";
-        errorBox.classList.remove("hidden");
-
-        submitBtn.disabled = false;
-        submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        submitBtn.textContent = (paySelect && paySelect.value === "CARD") ? "PAYER MAINTENANT" : "SOUMETTRE LA COMMANDE";
-      }
-    });
-
-    // ====== SCROLL SPY (CORRIGÉ) ======
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll("header, section, main, footer");
-      // CORRECTION ICI : On ne sélectionne que les liens dans le conteneur du menu de droite
-      const navLinks = document.querySelectorAll("nav .hidden.md\\:flex a[href^='#']");
-
-      const observerOptions = { root: null, rootMargin: "0px", threshold: 0.25 };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            navLinks.forEach(link => link.classList.remove("nav-active"));
-            const id = entry.target.getAttribute("id");
-            if (id) {
-              // On cherche le lien actif uniquement dans le menu de droite
-              const activeLink = document.querySelector(`nav .hidden.md\\:flex a[href="#${id}"]`);
-              if (activeLink) activeLink.classList.add("nav-active");
-            }
+          // 2. REDIRECTION STRIPE (SI CARTE)
+          if (payMode === "CARD") {
+            const link = PAYMENT_LINKS[productKey];
+            if (!link) throw new Error("Link not found.");
+            const url = new URL(link);
+            url.searchParams.set("prefilled_email", email);
+            url.searchParams.set("client_reference_id", "CryptoT-" + Date.now());
+            window.location.href = url.toString();
+            return;
           }
-        });
-      }, observerOptions);
 
-      sections.forEach((section) => {
-        if (section.getAttribute('id')) observer.observe(section);
+          // 3. SUCCES (INTERAC/CRYPTO)
+          orderForm.classList.add("hidden");
+          if(statusBox) statusBox.classList.remove("hidden");
+        } catch (err) {
+          if(errorBox) { errorBox.textContent = "Error occurred. Try again."; errorBox.classList.remove("hidden"); }
+          if(submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = "RETRY"; }
+        }
       });
-    });
-
-    // ====== INIT ======
-    document.addEventListener("DOMContentLoaded", () => {
-      setCurrency("USD");
-      mountAcceptedStrips();
-      updatePaymentUI();
-    });
+    }
   </script>
 
 </body>
