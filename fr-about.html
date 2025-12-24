@@ -59,7 +59,7 @@
     <span data-icon="eth" class="picon"><svg viewBox="0 0 24 24"><polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"/><polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"/></svg></span>
     <span data-icon="ada" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="#0033AD"/><g fill="#0033AD"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></g></svg></span>
     <span data-icon="xrp" class="picon"><svg viewBox="0 0 24 24" fill="#FFF"><path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z"/></svg></span>
-    <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)"/></svg></span>
+    <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg" x1="0" x2="1"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.95"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.9"/></svg></span>
   </template>
 
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px] w-full">
@@ -94,19 +94,19 @@
         <button onclick="toggleMobileMenu()" class="md:hidden text-brand-green border border-brand-green/30 px-3 py-1 text-xs">MENU</button>
       </div>
     </div>
-   
-    <div id="mobileMenu" class="hidden fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center gap-8 uppercase font-orbitron text-white">
-        <a href="fr.html#products" onclick="toggleMobileMenu()">Boutique</a>
-        <a href="fr-about.html" onclick="toggleMobileMenu()" class="text-brand-green">À Propos</a>
-        <a href="fr.html#manifesto" onclick="toggleMobileMenu()">Manifeste</a>
-        <a href="fr.html#contact" onclick="toggleMobileMenu()">Contact</a>
-        <div class="flex gap-4 mt-4">
-             <a href="about-them.html" class="text-gray-500 border border-gray-700 px-4 py-2">ENGLISH</a>
-             <a href="fr-about.html" class="text-brand-green border border-brand-green px-4 py-2">FRANÇAIS</a>
-        </div>
-        <button onclick="toggleMobileMenu()" class="text-gray-600 mt-10">[ FERMER ]</button>
-    </div>
   </nav>
+
+  <div id="mobileMenu" class="hidden fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center gap-8 uppercase font-orbitron text-white">
+      <a href="fr.html#products" onclick="toggleMobileMenu()">Boutique</a>
+      <a href="fr-about.html" onclick="toggleMobileMenu()" class="text-brand-green">À Propos</a>
+      <a href="fr.html#manifesto" onclick="toggleMobileMenu()">Manifeste</a>
+      <a href="fr.html#contact" onclick="toggleMobileMenu()">Contact</a>
+      <div class="flex gap-4 mt-4">
+           <a href="about-them.html" class="text-gray-500 border border-gray-700 px-4 py-2">ENGLISH</a>
+           <a href="fr-about.html" class="text-brand-green border border-brand-green px-4 py-2">FRANÇAIS</a>
+      </div>
+      <button onclick="toggleMobileMenu()" class="text-gray-600 mt-10">[ FERMER ]</button>
+  </div>
 
   <div class="sticky top-[142px] z-40 bg-black/95 border-b border-white/10 py-3">
     <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-2 md:gap-4 font-orbitron">
@@ -144,7 +144,7 @@
       <p class="wiki-p">Inefficace.<br>Obsolète.<br>Brisé par sa conception même.</p>
       <p class="wiki-p">La plupart des gens ne le voient pas — non par manque d'intelligence, mais parce que le système financier traditionnel ne veut pas qu'ils le sachent... POUR L'INSTANT.</p>
       <p class="wiki-p">Il a eu des décennies pour se normaliser, pour rendre ses défauts ordinaires, son inefficacité inévitable et la dépendance sécurisante.</p>
-      <p class="wiki-p">Le vrai problème pour eux n'est pas votre prise de conscience. Le problème, c'est que réparer le système actuel exigerait de repenser le monde entier — pour nous, et avec nous. Et cette idée effraie ceux qui profitent du système actuel.</p>
+      <p class="wiki-p">Le vrai problème pour eux n'est pas votre prise de conscience. Le problème est que réparer le système actuel exigerait de repenser le monde entier — pour nous, et avec nous. Et cette idée effraie ceux qui profitent du système actuel.</p>
       <p class="wiki-p">Le temps que quelque chose passe de presque rien à la refonte du monde financier, la plupart ne le remarquent que lorsqu'il est déjà trop tard... pour l'ignorer.</p>
       <p class="wiki-p">Ce site est pour ceux qui sont prêts à comprendre — et aussi pour ceux qui ne le sont pas encore, mais qui le deviendront, une fois que la logique indiscutable aura fait son œuvre !</p>
       <p class="text-center text-brand-green font-orbitron text-sm mt-8 italic">s'il vous plaît, accordez-moi juste une minute de plus de lecture...</p>
@@ -236,4 +236,3 @@
   </script>
 </body>
 </html>
-

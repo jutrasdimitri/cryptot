@@ -41,7 +41,7 @@
         linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
       background-size: 50px 50px;
     }
-    
+   
     /* ICONS SIZING */
     .picon{
       width: 34px; height: 22px;
@@ -118,21 +118,21 @@
         <button onclick="toggleMobileMenu()" class="md:hidden text-brand-green border border-brand-green/30 px-3 py-1 text-xs">MENU</button>
       </div>
     </div>
-   
-    <div id="mobileMenu" class="hidden fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center gap-8 uppercase font-orbitron text-white p-6 top-[62px]">
-        <a href="index.html#products" onclick="toggleMobileMenu()" class="text-xl border-b border-gray-800 pb-2 w-full text-center hover:text-brand-green">SHOP ALL</a>
-        <a href="about-them.html" onclick="toggleMobileMenu()" class="text-xl border-b border-gray-800 pb-2 w-full text-center text-brand-green">ABOUT THEM</a>
-        <a href="index.html#manifesto" onclick="toggleMobileMenu()" class="text-xl border-b border-gray-800 pb-2 w-full text-center hover:text-brand-green">MANIFESTO</a>
-        <a href="index.html#contact" onclick="toggleMobileMenu()" class="text-xl border-b border-gray-800 pb-2 w-full text-center hover:text-brand-green">CONTACT</a>
-        
-        <div class="logo-strip rounded px-3 py-3 mt-4">
-          <div class="lbl mb-2 text-center">ACCEPTED PAYMENT METHODS</div>
-          <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
-        </div>
-
-        <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
-    </div>
   </nav>
+
+  <div id="mobileMenu" class="hidden fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center gap-8 uppercase font-orbitron text-white p-6 top-[62px]">
+      <a href="index.html#products" onclick="toggleMobileMenu()" class="text-xl border-b border-gray-800 pb-2 w-full text-center hover:text-brand-green">SHOP ALL</a>
+      <a href="about-them.html" onclick="toggleMobileMenu()" class="text-xl border-b border-gray-800 pb-2 w-full text-center text-brand-green">ABOUT THEM</a>
+      <a href="index.html#manifesto" onclick="toggleMobileMenu()" class="text-xl border-b border-gray-800 pb-2 w-full text-center hover:text-brand-green">MANIFESTO</a>
+      <a href="index.html#contact" onclick="toggleMobileMenu()" class="text-xl border-b border-gray-800 pb-2 w-full text-center hover:text-brand-green">CONTACT</a>
+     
+      <div class="logo-strip rounded px-3 py-3 mt-4">
+        <div class="lbl mb-2 text-center">ACCEPTED PAYMENT METHODS</div>
+        <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
+  </div>
 
   <div class="sticky top-[142px] z-40 bg-black/95 border-b border-white/10 py-3">
     <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-2 md:gap-4 font-orbitron">
@@ -236,10 +236,10 @@
   <footer class="py-12 border-t border-brand-green/20 bg-black text-center">
     <div class="flex justify-center gap-6 mb-8 text-[10px] text-gray-500 uppercase tracking-widest">
         <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="hover:text-brand-green">TWITTER / X</a>
-        <a href="https://www.instagram.com/crypto.nouvelles" target="_blank" rel="noopener noreferrer" class="hover:text-brand-green">INSTAGRAM</a>
+        <a href="https://www.instagram.com/djcryptonouvelles" target="_blank" rel="noopener noreferrer" class="hover:text-brand-green">INSTAGRAM</a>
         <a href="mailto:jutrasdimitri@gmail.com" class="hover:text-brand-green">EMAIL</a>
     </div>
-    
+   
     <div class="logo-strip rounded px-4 py-3 inline-block mb-8">
       <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
       <div class="flex flex-wrap items-center justify-center gap-2 hero-icons" id="footerAcceptedRow"></div>
@@ -251,11 +251,11 @@
   <script>
     // MENU MOBILE
     const mobileMenuEl = document.getElementById("mobileMenu");
-    function toggleMobileMenu() { 
-      mobileMenuEl.classList.toggle("hidden"); 
+    function toggleMobileMenu() {
+      mobileMenuEl.classList.toggle("hidden");
     }
 
-    // ICONS
+    // ICONS FACTORY
     function getIconNode(key){
       const tpl = document.getElementById("svgIcons");
       if(!tpl) return null;
