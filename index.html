@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>CryptoT // Wear Your Assets</title>
- 
+
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17754769101"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -17,6 +16,20 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-17754769101');
+
+  // Fonction de conversion Google Ads
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17754769101/7RsACOzKitcbEM2NkZJC',
+        'event_callback': callback
+    });
+    return false;
+  }
 </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -62,7 +75,7 @@
     .picon:hover{ opacity: 1; transform: translateY(-1px); }
     .hero-icons .picon{ width: 40px; height: 26px; }
     .modal-icons .picon{ width: 40px; height: 26px; }
-   
+  
     /* Correction Logo */
     nav a.nav-active:not(.logo-link) {
       color: #39ff14 !important;
@@ -508,6 +521,10 @@
           body: JSON.stringify(payload),
         });
         if (!res.ok) throw new Error();
+       
+        // APPEL DE LA CONVERSION GOOGLE ADS ICI
+        gtag_report_conversion();
+
         if (payMode === "CARD") {
           const link = PAYMENT_LINKS[productKey];
           window.location.href = link + "?prefilled_email=" + encodeURIComponent(email);
