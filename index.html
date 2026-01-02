@@ -15,22 +15,6 @@
     gtag('js', new Date());
     gtag('config', 'AW-17754769101');
   </script>
-
-  <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) !== 'undefined' && url) {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17754769101/zmFpCN7b29YbEM2NkZJC',
-          'event_callback': callback
-      });
-      return false;
-    }
-  </script>
-
   <script src="https://cdn.tailwindcss.com/"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -496,6 +480,7 @@
 
     paySelect.addEventListener("change", updatePaymentUI);
 
+    // --- CORRECTION GOOGLE ADS ICI ---
     orderForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
@@ -515,8 +500,12 @@
        
         if (!res.ok) throw new Error();
 
-        // Fonction de redirection après conversion
+        // 1. Définir la suite (redirection ou message)
+        let redirected = false;
         const goNext = () => {
+          if (redirected) return;
+          redirected = true;
+         
           if (payMode === "CARD") {
             const link = PAYMENT_LINKS[productKey];
             window.location.href = link + "?prefilled_email=" + encodeURIComponent(email);
@@ -526,16 +515,22 @@
           }
         };
 
-        // Envoi du signal Google Ads (Conversion)
+        // 2. Envoyer le signal Google Ads (si dispo)
         if (typeof gtag === "function") {
-          gtag_report_conversion(); // Utilise la fonction définie dans le head
-          setTimeout(goNext, 800);  // On laisse un petit délai pour être sûr que le tag parte
+          gtag('event', 'conversion', {
+              'send_to': 'AW-17754769101/zmFpCN7b29YbEM2NkZJC',
+              'event_callback': goNext
+          });
+          // Sécurité: Si Google met trop de temps (plus de 1s), on force la suite
+          setTimeout(goNext, 1000);
         } else {
+          // Si pas de tag, on enchaine direct
           goNext();
         }
 
       } catch (err) {
-        errorBox.textContent = "Error occurred. Try again.";
+        console.error(err);
+        errorBox.textContent = "Error occurred. Please try again.";
         errorBox.classList.remove("hidden");
         submitBtn.disabled = false;
         submitBtn.textContent = "RETRY";
