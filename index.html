@@ -480,7 +480,7 @@
 
     paySelect.addEventListener("change", updatePaymentUI);
 
-    // --- CORRECTION ET SÉCURISATION DU TRACKING ---
+    // --- TRACKING CODE MIS A JOUR AVEC LE BON LABEL (7Rf...) ---
     orderForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
@@ -497,15 +497,14 @@
           headers: { "Accept": "application/json", "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
-       
+        
         if (!res.ok) throw new Error();
 
-        // Fonction pour enchainer après le tracking
         let redirected = false;
         const goNext = () => {
           if (redirected) return;
           redirected = true;
-         
+          
           if (payMode === "CARD") {
             const link = PAYMENT_LINKS[productKey];
             window.location.href = link + "?prefilled_email=" + encodeURIComponent(email);
@@ -516,26 +515,21 @@
           }
         };
 
-        // ENVOI DU SIGNAL A GOOGLE
-        console.log("Tentative d'envoi conversion Google...");
-       
+        // ENVOI DU SIGNAL A GOOGLE AVEC LE NOUVEAU ID CORRECT
+        console.log("Envoi conversion vers AW-17754769101/7RfACOiKitcbEM2NkZJC");
+        
         if (typeof gtag === "function") {
           gtag('event', 'conversion', {
-              'send_to': 'AW-17754769101/zmFpCN7b29YbEM2NkZJC',
+              'send_to': 'AW-17754769101/7RfACOiKitcbEM2NkZJC', // C'EST ICI LA CORRECTION
               'event_callback': goNext,
-              'event_timeout': 2000  // On laisse max 2 secondes à Google pour répondre
+              'event_timeout': 2000
           });
-         
-          // Sécurité ultime : Si Google ne répond pas dans les 2.1 secondes, on force le passage
+          
           setTimeout(() => {
-             if(!redirected) {
-                console.log("Google trop lent, on force la suite.");
-                goNext();
-             }
+             if(!redirected) goNext();
           }, 2100);
-         
+          
         } else {
-          console.log("Gtag non trouvé, suite directe.");
           goNext();
         }
 
