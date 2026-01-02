@@ -480,7 +480,7 @@
 
     paySelect.addEventListener("change", updatePaymentUI);
 
-    // --- CORRECTION GOOGLE ADS ICI ---
+    // --- CORRECTION ET SÉCURISATION DU TRACKING ---
     orderForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
@@ -500,7 +500,7 @@
        
         if (!res.ok) throw new Error();
 
-        // 1. Définir la suite (redirection ou message)
+        // Fonction pour enchainer après le tracking
         let redirected = false;
         const goNext = () => {
           if (redirected) return;
@@ -510,21 +510,32 @@
             const link = PAYMENT_LINKS[productKey];
             window.location.href = link + "?prefilled_email=" + encodeURIComponent(email);
           } else {
+            // Mode Interac ou Crypto : on reste sur la page
             orderForm.classList.add("hidden");
             statusBox.classList.remove("hidden");
           }
         };
 
-        // 2. Envoyer le signal Google Ads (si dispo)
+        // ENVOI DU SIGNAL A GOOGLE
+        console.log("Tentative d'envoi conversion Google...");
+       
         if (typeof gtag === "function") {
           gtag('event', 'conversion', {
               'send_to': 'AW-17754769101/zmFpCN7b29YbEM2NkZJC',
-              'event_callback': goNext
+              'event_callback': goNext,
+              'event_timeout': 2000  // On laisse max 2 secondes à Google pour répondre
           });
-          // Sécurité: Si Google met trop de temps (plus de 1s), on force la suite
-          setTimeout(goNext, 1000);
+         
+          // Sécurité ultime : Si Google ne répond pas dans les 2.1 secondes, on force le passage
+          setTimeout(() => {
+             if(!redirected) {
+                console.log("Google trop lent, on force la suite.");
+                goNext();
+             }
+          }, 2100);
+         
         } else {
-          // Si pas de tag, on enchaine direct
+          console.log("Gtag non trouvé, suite directe.");
           goNext();
         }
 
