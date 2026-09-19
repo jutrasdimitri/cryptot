@@ -10,6 +10,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>CryptoT // Porte tes actifs — T-shirts crypto</title>
   <meta name="description" content="T-shirts crypto premium pour les vrais croyants. Designs Bitcoin, Ethereum, Cardano, XRP et Solana. 35 $ USD, livraison internationale gratuite.">
+
+<link rel="canonical" href="https://cryptot.shop/fr.html" />
+<link rel="alternate" hreflang="fr" href="https://cryptot.shop/fr.html" />
+<link rel="alternate" hreflang="en" href="https://cryptot.shop/index.html" />
+<link rel="alternate" hreflang="x-default" href="https://cryptot.shop/fr.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="CryptoT" />
+<meta property="og:title" content="CryptoT // Porte tes actifs — T-shirts crypto" />
+<meta property="og:description" content="T-shirts crypto premium pour les vrais croyants. Designs Bitcoin, Ethereum, Cardano, XRP et Solana. 35 $ USD, livraison internationale gratuite." />
+<meta property="og:url" content="https://cryptot.shop/fr.html" />
+<meta property="og:image" content="https://cryptot.shop/btc.jpg" />
+<meta property="og:locale" content="fr_CA" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CryptoT // Porte tes actifs — T-shirts crypto" />
+<meta name="twitter:description" content="T-shirts crypto premium pour les vrais croyants. Designs Bitcoin, Ethereum, Cardano, XRP et Solana. 35 $ USD, livraison internationale gratuite." />
+<meta name="twitter:image" content="https://cryptot.shop/btc.jpg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -404,7 +421,20 @@
     </div>
   </section>
 
-  <footer id="contact" class="border-t border-brand-green/20 bg-black py-12 w-full overflow-hidden">
+  
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <div class="border border-brand-green/20 bg-black/60 p-8 text-center max-w-2xl mx-auto">
+    <h2 class="font-orbitron text-xl text-white font-bold mb-2">REJOINS LA LISTE</h2>
+    <p class="text-gray-500 text-sm mb-6">Nouveaut&eacute;s et drops en avant-premi&egrave;re, direct dans ta bo&icirc;te. Z&eacute;ro spam.</p>
+    <form id="newsForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
+      <input type="email" name="Email" required placeholder="ton@courriel.com" class="flex-1 bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600" />
+      <button type="submit" id="newsBtn" class="px-8 py-3 bg-brand-green text-black font-bold uppercase font-orbitron tracking-widest text-sm hover:bg-white transition-all">S'INSCRIRE</button>
+    </form>
+    <p id="newsOk" class="hidden text-brand-green text-xs tracking-widest mt-4">C'EST NOT&Eacute; &mdash; BIENVENUE DANS LA LISTE&nbsp;! //</p>
+    <p id="newsErr" class="hidden text-red-400 text-xs mt-4">Un probl&egrave;me est survenu. R&eacute;essaie.</p>
+  </div>
+</section>
+<footer id="contact" class="border-t border-brand-green/20 bg-black py-12 w-full overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <div class="mb-8">
         <p class="font-orbitron text-xl text-white mb-4">CONNECTEZ-VOUS AVEC <span class="text-brand-green">NOUS</span></p>
@@ -706,5 +736,37 @@
     }
   </script>
 
+
+<script>
+(function(){
+  var ENDPOINT = 'https://formspree.io/f/mykgkker';
+  async function postForm(payload){
+    var res = await fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if(!res.ok) throw new Error('Server Error.');
+  }
+  var nf = document.getElementById('newsForm');
+  if(nf){
+    nf.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var email = ((nf.Email && nf.Email.value) || '').trim();
+      if(!email || email.indexOf('@') < 0) return;
+      var btn = document.getElementById('newsBtn');
+      btn.disabled = true; btn.textContent = '...';
+      try{
+        await postForm({ Email: email, _subject: 'Newsletter signup \u2014 CryptoT', Form: 'newsletter' });
+        nf.classList.add('hidden');
+        document.getElementById('newsOk').classList.remove('hidden');
+      }catch(err){
+        document.getElementById('newsErr').classList.remove('hidden');
+        btn.disabled = false; btn.textContent = "S'INSCRIRE";
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>

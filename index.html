@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>CryptoT // Wear Your Assets — Crypto T-Shirts</title>
   <meta name="description" content="Premium crypto t-shirts for true believers. Bitcoin, Ethereum, Cardano, XRP & Solana designs. $35 USD, free international shipping." />
+
+<link rel="canonical" href="https://cryptot.shop/" />
+<link rel="alternate" hreflang="en" href="https://cryptot.shop/" />
+<link rel="alternate" hreflang="fr" href="https://cryptot.shop/fr.html" />
+<link rel="alternate" hreflang="x-default" href="https://cryptot.shop/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="CryptoT" />
+<meta property="og:title" content="CryptoT // Wear Your Assets — Crypto T-Shirts" />
+<meta property="og:description" content="Premium crypto t-shirts for true believers. Bitcoin, Ethereum, Cardano, XRP & Solana designs. $35 USD, free international shipping." />
+<meta property="og:url" content="https://cryptot.shop/" />
+<meta property="og:image" content="https://cryptot.shop/btc.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="fr_CA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CryptoT // Wear Your Assets — Crypto T-Shirts" />
+<meta name="twitter:description" content="Premium crypto t-shirts for true believers. Bitcoin, Ethereum, Cardano, XRP & Solana designs. $35 USD, free international shipping." />
+<meta name="twitter:image" content="https://cryptot.shop/btc.jpg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -370,7 +387,20 @@
     </div>
   </section>
 
-  <footer id="contact" class="border-t border-brand-green/20 bg-black py-12 w-full overflow-hidden">
+  
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <div class="border border-brand-green/20 bg-black/60 p-8 text-center max-w-2xl mx-auto">
+    <h2 class="font-orbitron text-xl text-white font-bold mb-2">JOIN THE LIST</h2>
+    <p class="text-gray-500 text-sm mb-6">New designs and early drops, straight to your inbox. No spam, ever.</p>
+    <form id="newsForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
+      <input type="email" name="Email" required placeholder="your@email.com" class="flex-1 bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600" />
+      <button type="submit" id="newsBtn" class="px-8 py-3 bg-brand-green text-black font-bold uppercase font-orbitron tracking-widest text-sm hover:bg-white transition-all">SIGN UP</button>
+    </form>
+    <p id="newsOk" class="hidden text-brand-green text-xs tracking-widest mt-4">YOU'RE IN &mdash; WELCOME TO THE LIST&nbsp;! //</p>
+    <p id="newsErr" class="hidden text-red-400 text-xs mt-4">Something went wrong. Try again.</p>
+  </div>
+</section>
+<footer id="contact" class="border-t border-brand-green/20 bg-black py-12 w-full overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <div class="mb-8">
         <p class="font-orbitron text-xl text-white mb-4">CONNECT WITH <span class="text-brand-green">US</span></p>
@@ -583,5 +613,34 @@
       setCurrency("USD");
     });
   </script>
+
+<script>
+(function(){
+  var ENDPOINT = 'https://formspree.io/f/mykgkker';
+  var nf = document.getElementById('newsForm');
+  if(nf){
+    nf.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var email = ((nf.Email && nf.Email.value) || '').trim();
+      if(!email || email.indexOf('@') < 0) return;
+      var btn = document.getElementById('newsBtn');
+      btn.disabled = true; btn.textContent = '...';
+      try{
+        var res = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ Email: email, _subject: 'Newsletter signup \u2014 CryptoT', Form: 'newsletter' })
+        });
+        if(!res.ok) throw new Error('Server Error.');
+        nf.classList.add('hidden');
+        document.getElementById('newsOk').classList.remove('hidden');
+      }catch(err){
+        document.getElementById('newsErr').classList.remove('hidden');
+        btn.disabled = false; btn.textContent = 'SIGN UP';
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
