@@ -76,4 +76,44 @@
     <loc>https://cryptot.shop/about.html</loc>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://cryptot.shop/btc-hoodie.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/eth-hoodie.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/ada-hoodie.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/xrp-hoodie.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/sol-hoodie.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-btc-hoodie.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-eth-hoodie.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-ada-hoodie.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-xrp-hoodie.html</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-sol-hoodie.html</loc>
+    <priority>0.90</priority>
+  </url>
 </urlset>
