@@ -358,12 +358,11 @@
   <div class="border border-brand-green/30 bg-brand-panel p-8 md:p-14 text-center relative overflow-hidden">
     <h2 class="font-orbitron text-3xl md:text-4xl text-white font-black mb-4">REÇOIS LE <span class="text-brand-green">RÉCAP HEBDO.</span></h2>
     <p class="text-gray-400 mb-8 max-w-xl mx-auto">Gratuit. Chaque lundi. Les plus grosses histoires Power 5 de la semaine &mdash; vérifiées, pas de fake news, sans bruit.</p>
-    <form id="newsForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
-      <input type="hidden" name="_subject" value="New newsletter signup — Crypto News">
-      <input type="email" name="Email" required placeholder="ton@courriel.com" class="flex-1 bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600" />
+    <form id="newsForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="https://app.kit.com/forms/9949859/subscriptions" method="POST" novalidate>
+      <input type="email" name="email_address" required placeholder="ton@courriel.com" class="flex-1 bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600" />
       <button type="submit" id="newsBtn" class="px-8 py-3 bg-brand-green text-black font-bold uppercase font-orbitron tracking-widest text-sm hover:bg-white transition-all">S'INSCRIRE</button>
     </form>
-    <p id="newsOk" class="hidden text-brand-green text-xs tracking-widest mt-4">C'EST NOTÉ &mdash; BIENVENUE DANS LA LISTE ! //</p>
+    <p id="newsOk" class="hidden text-brand-green text-xs tracking-widest mt-4">VÉRIFIE TA BOÎTE COURRIEL &mdash; CLIQUE LE LIEN DE CONFIRMATION&nbsp;! //</p>
     <p id="newsErr" class="hidden text-red-400 text-xs mt-4">Un problème est survenu. Réessayez.</p>
     <p class="text-gray-600 text-[11px] mt-6 max-w-md mx-auto">En t'inscrivant, tu acceptes de recevoir l'infolettre hebdo ainsi que des drops et promos occasionnels. Désinscription en tout temps.</p>
   </div>
@@ -647,22 +646,30 @@
   }
   var nf = document.getElementById('newsForm');
   if(nf){
-    nf.addEventListener('submit', async function(e){
-      e.preventDefault();
-      var email = ((nf.Email && nf.Email.value) || '').trim();
-      if(!email || email.indexOf('@') < 0) return;
+    // Native POST to Kit (action on the form). Kit redirects back to ?subscribed=1.
+    // This handler only validates, fires the Formspree backup ping, then lets the submit proceed.
+    nf.addEventListener('submit', function(e){
+      var input = nf.querySelector('input[name="email_address"]');
+      var email = ((input && input.value) || '').trim();
+      if(!email || email.indexOf('@') < 0){ e.preventDefault(); document.getElementById('newsErr').classList.remove('hidden'); return; }
       var btn = document.getElementById('newsBtn');
       btn.disabled = true; btn.textContent = '...';
       try{
-        await postForm({ Email: email, _subject: 'New newsletter signup \u2014 Crypto News', Form: 'newsletter' });
-        nf.classList.add('hidden');
-        document.getElementById('newsOk').classList.remove('hidden');
-      }catch(err){
-        document.getElementById('newsErr').classList.remove('hidden');
-        btn.disabled = false; btn.textContent = "S'INSCRIRE";
-      }
+        var blob = new Blob([JSON.stringify({ Email: email, _subject: 'New newsletter signup \u2014 Crypto News', Form: 'newsletter' })], {type:'application/json'});
+        if(navigator.sendBeacon) navigator.sendBeacon(ENDPOINT, blob);
+      }catch(err){}
+      // do NOT preventDefault — let the browser POST natively to Kit
     });
   }
+  // Kit success redirect lands here: ?subscribed=1
+  try{
+    if(new URLSearchParams(window.location.search).get('subscribed') === '1'){
+      var okEl = document.getElementById('newsOk');
+      if(okEl) okEl.classList.remove('hidden');
+      if(nf) nf.classList.add('hidden');
+      if(window.history && window.history.replaceState) window.history.replaceState({}, '', window.location.pathname);
+    }
+  }catch(err){}
   var rf = document.getElementById('reviewForm');
   if(rf){
     rf.addEventListener('submit', async function(e){
