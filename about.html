@@ -145,44 +145,44 @@
       </div>
     </div>
 
-    <div id="mobileMenu" class="hidden md:hidden">
-      <div class="fixed inset-0 z-[70]" aria-hidden="true">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
+  </nav>
+<div id="mobileMenu" class="hidden md:hidden">
+    <div class="fixed inset-0 z-[70]" aria-hidden="true">
+      <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
 
-        <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-brand-panel border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
-          <div class="flex items-center justify-between mb-6">
-            <div class="text-xs text-gray-400 uppercase tracking-widest">MENU</div>
-            <button type="button" class="text-gray-400 hover:text-brand-green" aria-label="Close menu" onclick="closeMobileMenu()">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </button>
+      <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-brand-panel border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
+        <div class="flex items-center justify-between mb-6">
+          <div class="text-xs text-gray-400 uppercase tracking-widest">MENU</div>
+          <button type="button" class="text-gray-400 hover:text-brand-green" aria-label="Close menu" onclick="closeMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <a href="index.html#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ THE_POWER_5 ]</a>
+          <a href="about.html" onclick="closeMobileMenu()" class="border border-brand-green/40 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm">[ ABOUT_THEM ]</a>
+          <a href="index.html#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTO ]</a>
+          <a href="index.html#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
+
+          <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/30">
+            <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
           </div>
 
-          <div class="flex flex-col gap-3">
-            <a href="index.html#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ THE_POWER_5 ]</a>
-            <a href="about.html" onclick="closeMobileMenu()" class="border border-brand-green/40 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm">[ ABOUT_THEM ]</a>
-            <a href="index.html#manifesto" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ MANIFESTO ]</a>
-            <a href="index.html#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
+          <a href="fr-about.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
+        </div>
 
-            <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/30">
-              <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
-              <span class="text-gray-600">|</span>
-              <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
-              <span class="text-gray-600">|</span>
-              <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
-            </div>
-
-            <a href="fr-about.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
-          </div>
-
-          <div class="mt-8 border-t border-white/10 pt-4 text-[11px] text-gray-500">
-            Status: <span class="text-brand-green">Online</span>
-          </div>
+        <div class="mt-8 border-t border-white/10 pt-4 text-[11px] text-gray-500">
+          Status: <span class="text-brand-green">Online</span>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 
   <header class="py-16 md:py-20 text-center relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
