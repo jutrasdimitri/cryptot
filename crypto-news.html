@@ -246,12 +246,76 @@
 
     <article class="wiki-content bg-brand-panel border border-[#39ff14]/20 p-6 md:p-12 relative overflow-hidden mb-24">
       <h2 style="margin-top:0;">This Week</h2>
-      <p>First edition drops Monday, September 28, 2026 — the biggest Power 5 stories of the week, verified, no noise.</p>
+      <p>This week's edition (September 21&ndash;27) drops Monday, September 28, 2026 &mdash; the biggest Power 5 stories of the week, verified, no noise.</p>
 
       <div class="wiki-divider"></div>
 
       <h2>Archive</h2>
-      <p class="text-gray-500">Past editions will live here.</p>
+      <!-- MONDAY CRON: prepend new weekly editions directly below this line, newest first. Each edition = <section data-edition="YYYY-Www" id="edition-YYYY-Www" class="edition-block">. -->
+      <section data-edition="2026-W38" id="edition-2026-W38" class="edition-block">
+        <div class="mb-8">
+          <div class="text-gray-500 text-xs tracking-[0.25em] uppercase mb-2">Archive // Edition 02</div>
+          <h3 class="font-orbitron text-2xl md:text-3xl text-white font-bold">Week of September 14&ndash;20, 2026</h3>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-brand-green text-xs tracking-[0.25em] uppercase mb-2">September 15, 2026</div>
+          <h3 class="font-orbitron text-xl md:text-2xl text-white font-bold mb-4">CLARITY Act stalls in the U.S. Senate</h3>
+          <p>On September 15, the U.S. Senate failed to advance the Digital Asset Market Clarity Act: the cloture motion fell 49&ndash;50, well short of the 60 votes needed. Every Democrat voted no &mdash; joined by four Republicans over ethics guardrails and CFTC staffing &mdash; leaving the most ambitious federal crypto market-structure bill effectively dead for 2026.</p>
+          <div class="text-sm mt-2"><span class="text-gray-500">Source: </span><a href="https://www.coindesk.com/markets/2026/09/16/xrp-sinks-10-as-the-clarity-act-fails-and-bitcoin-slides-toward-usd76-000" target="_blank" rel="noopener noreferrer">CoinDesk</a></div>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-brand-green text-xs tracking-[0.25em] uppercase mb-2">September 15, 2026</div>
+          <h3 class="font-orbitron text-xl md:text-2xl text-white font-bold mb-4">XRP Ledger Batch amendment (V1.1) hits 80% validator support</h3>
+          <p>Amendment XLS-56 &mdash; "Batch V1.1" &mdash; crossed the 80% validator approval threshold (29 of 35 validators) on September 15, entering its 14-day activation window. Barring a loss of support, it activates around September 29, 2026. The feature bundles up to 8 transactions into a single atomic operation &mdash; built for settlement use cases like delivery-versus-payment.</p>
+          <div class="text-sm mt-2"><span class="text-gray-500">Source: </span><a href="https://www.cryptotimes.io/2026/09/16/xrp-ledgers-batch-v1-1-amendment-nears-activation-threshold/" target="_blank" rel="noopener noreferrer">CryptoTimes</a> <span class="text-gray-500">(announced by Vet / XRPLF, verifiable on-chain via XRPScan)</span></div>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-brand-green text-xs tracking-[0.25em] uppercase mb-2">September 17, 2026</div>
+          <h3 class="font-orbitron text-xl md:text-2xl text-white font-bold mb-4">CFTC sends crypto rulemaking to the White House</h3>
+          <p>Two days after the CLARITY Act failed, the CFTC submitted its crypto market-structure rulemaking package ("Regulation Crypto Asset Transactions and Regulation Crypto Asset Markets", RIN 3038-AF80) to the White House's OIRA for review. The draft isn't public yet, but the move signals the agency intends to write crypto market rules under its existing authority. The same day, it issued no-action relief for "passive" software providers.</p>
+          <div class="text-sm mt-2"><span class="text-gray-500">Source: </span><a href="https://unchainedcrypto.com/cftc-sent-crypto-market-structure-rulemaking-to-the-white-house-two-days-after-clarity-act-failed/" target="_blank" rel="noopener noreferrer">Unchained</a></div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-brand-green text-xs tracking-[0.25em] uppercase mb-2">September 17, 2026</div>
+          <h3 class="font-orbitron text-xl md:text-2xl text-white font-bold mb-4">SEC grants 5-year "Innovation Exemption" for onchain trading of tokenized stocks</h3>
+          <p>The SEC issued an order granting a conditional 5-year exemption (through September 17, 2031): qualifying "Tokenized Securities Venues" can trade tokenized U.S. NMS stocks onchain through permissioned automated market makers without registering as an exchange. Liquidity providers get a parallel exemption from the "dealer" definition. Tokens must carry the same rights as the underlying shares &mdash; dividends, voting, the works.</p>
+          <div class="text-sm mt-2"><span class="text-gray-500">Source: </span><a href="https://www.sec.gov/newsroom/press-releases/2026-90-sec-issues-innovation-exemption-facilitate-trading-tokenized-nms-stock-request-comment?ref=blockhead.co" target="_blank" rel="noopener noreferrer">U.S. SEC (official)</a></div>
+        </div>
+      </section>
+
+      <div class="wiki-divider"></div>
+
+      <section data-edition="2026-W37" id="edition-2026-W37" class="edition-block">
+        <div class="mb-8">
+          <div class="text-gray-500 text-xs tracking-[0.25em] uppercase mb-2">Archive // Edition 01</div>
+          <h3 class="font-orbitron text-2xl md:text-3xl text-white font-bold">Week of September 7&ndash;13, 2026</h3>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-brand-green text-xs tracking-[0.25em] uppercase mb-2">September 7, 2026</div>
+          <h3 class="font-orbitron text-xl md:text-2xl text-white font-bold mb-4">Liquid Network exploit: ~4,000 BTC drained, ~3,400 returned</h3>
+          <p>Blockstream's Liquid Network, a Bitcoin sidechain, was hit by an exploit that drained roughly 4,000 BTC (~$320M). The attackers &mdash; described as white hats &mdash; agreed to return about 3,400 BTC (~$270M) once the bug was patched, keeping roughly 600 BTC (~$47M) as a bounty. Bridge withdrawals and L-BTC services stayed paused while the incident was investigated.</p>
+          <div class="text-sm mt-2"><span class="text-gray-500">Sources: </span><a href="https://www.theblock.co/news/defi/2026-09-07-liquid-network-attacker-says-they-will-return-most-of-4000-btc-after-bug-fix-413673" target="_blank" rel="noopener noreferrer">The Block</a><span class="text-gray-500">, </span><a href="https://www.coindesk.com/markets/2026/09/08/white-hat-hackers-return-most-of-usd320m-bitcoin-taken-from-liquid-network" target="_blank" rel="noopener noreferrer">CoinDesk</a></div>
+        </div>
+
+        <div class="mb-12">
+          <div class="text-brand-green text-xs tracking-[0.25em] uppercase mb-2">September 9, 2026</div>
+          <h3 class="font-orbitron text-xl md:text-2xl text-white font-bold mb-4">Germany moves to end tax-free crypto after 1 year of holding</h3>
+          <p>Germany's Federal Ministry of Finance drafted a bill that would end the country's famous tax exemption after 12 months of holding. Gains on crypto acquired after December 31, 2026 would be taxed at a flat 25% (+ solidarity surcharge, ~26.375% effective) &mdash; like stocks. Existing holdings keep the old regime. The draft still has to clear cabinet and the Bundestag.</p>
+          <div class="text-sm mt-2"><span class="text-gray-500">Source: </span><a href="https://www.coindesk.com/business/2026/09/09/germany-moves-to-tax-bitcoin-like-stocks-as-new-draft-bill-targets-tax-free-gains" target="_blank" rel="noopener noreferrer">CoinDesk</a></div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-brand-green text-xs tracking-[0.25em] uppercase mb-2">September 10, 2026</div>
+          <h3 class="font-orbitron text-xl md:text-2xl text-white font-bold mb-4">Canada's OSFI clears tokenized bank deposits</h3>
+          <p>Canada's federal banking regulator, the Office of the Superintendent of Financial Institutions (OSFI), issued official guidance: tokenized deposits are "not legally distinct" from traditional deposits. Federally regulated banks can therefore offer blockchain-based deposit products inside the existing framework &mdash; no bespoke regime required. A first among major jurisdictions.</p>
+          <div class="text-sm mt-2"><span class="text-gray-500">Source: </span><a href="https://www.cryptotimes.io/2026/09/11/canadas-osfi-gives-banks-clarity-on-tokenized-deposits/" target="_blank" rel="noopener noreferrer">CryptoTimes</a> <span class="text-gray-500">(via OSFI)</span></div>
+        </div>
+      </section>
     </article>
 
   
