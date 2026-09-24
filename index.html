@@ -22,6 +22,39 @@
 <meta name="twitter:title" content="CryptoT // Wear Your Assets — Crypto T-Shirts" />
 <meta name="twitter:description" content="Premium crypto t-shirts for true believers. Bitcoin, Ethereum, Cardano, XRP & Solana designs. $35 USD, free international shipping." />
 <meta name="twitter:image" content="https://cryptot.shop/btc.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cryptot.shop/#organization",
+        "name": "CryptoT",
+        "url": "https://cryptot.shop/",
+        "logo": "https://cryptot.shop/apple-touch-icon.png",
+        "description": "CryptoT is Montreal-based crypto streetwear. Premium t-shirts ($35 USD) and hoodies ($69.99 USD) for Bitcoin, Ethereum, Cardano, XRP and Solana — free international shipping on every order.",
+        "sameAs": [
+          "https://www.instagram.com/djcryptonouvelles",
+          "https://x.com/JutrasDimitri"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "jutrasdimitri@gmail.com",
+          "contactType": "customer service",
+          "availableLanguage": ["en", "fr"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cryptot.shop/#website",
+        "url": "https://cryptot.shop/",
+        "name": "CryptoT // Wear Your Assets",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://cryptot.shop/#organization" }
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -79,7 +112,11 @@
   <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
 <body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black w-full overflow-x-hidden">
-  <div class="fixed top-0 w-full z-[60] border-b border-brand-green/30 bg-brand-black max-w-full overflow-hidden h-[62px]">
+
+<div class="fixed top-0 w-full z-[60] h-9 flex items-center justify-center bg-black border-b border-[#39ff14] px-4 text-center">
+    <p class="text-[#39ff14] text-xs sm:text-sm font-bold tracking-wide">⚡ POWER5 — 10% off 2+ hoodies with code <span class="underline underline-offset-2">POWER5</span> at checkout</p>
+  </div>
+  <div class="fixed top-9 w-full z-[60] border-b border-brand-green/30 bg-brand-black max-w-full overflow-hidden h-[62px]">
     <div id="coinmarketcap-widget-marquee" coins="1,1027,2010,52,5426" currency="USD" theme="dark" transparent="false" show-symbol-logo="true"></div>
   </div>
   <template id="svgIcons">
@@ -96,7 +133,7 @@
     <span data-icon="sol" class="picon" title="Solana"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg" x1="0" x2="1"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.95"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.9"/></svg></span>
   </template>
 
-  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px] w-full">
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[98px] z-50 mt-[98px] w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
         <div class="flex items-center gap-3 min-w-fit">
@@ -128,7 +165,7 @@
     </div>
   </nav>
 
-  <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px] w-full overflow-y-auto" style="background:#000;">
+  <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px] w-full overflow-y-auto">
     <div class="flex flex-col gap-6 text-center mt-10">
       <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
       <a href="about-them.html" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ABOUT US</a>
@@ -350,7 +387,7 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <a href="btc-hoodie.html" class="flex-1 py-3 border border-[#F7931A] text-[#F7931A] hover:bg-[#F7931A]/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <a href="btc.html" class="flex-1 py-3 border border-[#F7931A] text-[#F7931A] hover:bg-[#F7931A]/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
               <button onclick="openModal('BTC-HOODIE','BTC // VIRES IN NUMERIS — HOODIE')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
@@ -379,7 +416,7 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <a href="eth-hoodie.html" class="flex-1 py-3 border border-[#627EEA] text-[#627EEA] hover:bg-[#627EEA]/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <a href="eth.html" class="flex-1 py-3 border border-[#627EEA] text-[#627EEA] hover:bg-[#627EEA]/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
               <button onclick="openModal('ETH-HOODIE','ETH // CODE IS LAW — HOODIE')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
@@ -408,7 +445,7 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <a href="ada-hoodie.html" class="flex-1 py-3 border border-[#0033ad] text-[#0033ad] hover:bg-[#0033ad]/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <a href="ada.html" class="flex-1 py-3 border border-[#0033ad] text-[#0033ad] hover:bg-[#0033ad]/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
               <button onclick="openModal('ADA-HOODIE','ADA // PEER REVIEWED — HOODIE')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
@@ -437,7 +474,7 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <a href="xrp-hoodie.html" class="flex-1 py-3 border border-white text-white hover:bg-white/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <a href="xrp.html" class="flex-1 py-3 border border-white text-white hover:bg-white/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
               <button onclick="openModal('XRP-HOODIE','XRP // THE STANDARD — HOODIE')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
@@ -466,7 +503,7 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <a href="sol-hoodie.html" class="flex-1 py-3 border border-[#14F195] text-[#14F195] hover:bg-[#14F195]/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
+              <a href="sol.html" class="flex-1 py-3 border border-[#14F195] text-[#14F195] hover:bg-[#14F195]/10 font-bold text-center text-xs transition-all font-orbitron uppercase tracking-wider flex items-center justify-center">HISTORY</a>
               <button onclick="openModal('SOL-HOODIE','SOL // PROOF OF HISTORY — HOODIE')" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">ORDER NOW</button>
             </div>
           </div>
@@ -474,6 +511,34 @@
       </div>
     </div>
   </main>
+
+  <section id="price-index" class="py-16 md:py-20 border-t border-brand-green/20 w-full">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-orbitron text-white mb-4 border-l-4 border-brand-green pl-4 uppercase">PRICE_INDEX_</h2>
+      <p class="text-gray-400 text-sm mb-8 max-w-2xl">One price per item, worldwide. Free international shipping on every order — no hidden fees.</p>
+      <div class="overflow-x-auto border border-brand-green/20">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-black/60 text-brand-green font-orbitron text-xs uppercase tracking-widest">
+              <th class="text-left p-4">Design</th>
+              <th class="text-right p-4">T-Shirt (USD)</th>
+              <th class="text-right p-4">T-Shirt (CAD)</th>
+              <th class="text-right p-4">Hoodie (USD)</th>
+              <th class="text-right p-4">Hoodie (CAD)</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-300">
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">BTC // VIRES IN NUMERIS</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">ETH // CODE IS LAW</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">ADA // PEER REVIEWED</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">XRP // THE STANDARD</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">SOL // PROOF OF HISTORY</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 text-xs mt-4 uppercase tracking-widest">CAD at the site rate (1 USD = 1.45 CAD) // Shipping: free, worldwide.</p>
+    </div>
+  </section>
 
   <section id="why" class="py-16 md:py-20 border-t border-brand-green/20 w-full">
     <div class="max-w-4xl mx-auto px-6">
@@ -533,6 +598,9 @@
           <h3 class="font-orbitron text-brand-green text-sm md:text-base mb-2 uppercase tracking-wider">How do I pay?</h3>
           <p class="text-gray-300 leading-relaxed">Secure checkout. Your payment info never touches our servers.</p>
         </div>
+        <div class="mt-10 text-center">
+          <a href="faq.html" class="inline-block px-6 py-3 border border-brand-green text-brand-green font-orbitron text-xs uppercase tracking-widest hover:bg-brand-green hover:text-black transition-all">READ THE FULL FAQ →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -561,7 +629,7 @@
         </div>
         <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm mt-4">
           <a href="shipping.html" class="text-gray-500 hover:text-brand-green transition-colors">SHIPPING &amp; RETURNS</a>
-          <a href="#faq" class="text-gray-500 hover:text-brand-green transition-colors">FAQ</a>
+          <a href="faq.html" class="text-gray-500 hover:text-brand-green transition-colors">FAQ</a>
         </div>
       </div>
       <div class="logo-strip rounded px-4 py-3 inline-block max-w-full overflow-hidden">
