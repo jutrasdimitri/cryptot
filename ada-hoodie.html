@@ -155,17 +155,13 @@
 
 <body class="matrix-bg min-h-screen font-mono selection:bg-[#0033AD] selection:text-white">
 
-<div class="fixed top-0 w-full z-[60] h-9 flex items-center justify-center bg-black border-b border-[#39ff14] px-4 text-center">
-    <p class="text-[#39ff14] text-xs sm:text-sm font-bold tracking-wide">⚡ POWER5 — 10% off 2+ hoodies with code <span class="underline underline-offset-2">POWER5</span> at checkout</p>
-  </div>
-
   <div id="coinmarketcap-widget-marquee"
        coins="1,1027,2010,52,5426"
        currency="USD"
        theme="dark"
        transparent="false"
        show-symbol-logo="true"
-       class="fixed top-9 w-full z-[60] border-b border-brand-green/30"></div>
+       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
 
   <template id="svgIcons">
     <span data-icon="visa" class="picon"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black,sans-serif" font-size="18" fill="#1A1F71">VISA</text></svg></span>
@@ -181,7 +177,7 @@
     <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg" x1="0" x2="1"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)" opacity=".95"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)" opacity=".9"/></svg></span>
   </template>
 
-  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[98px] z-50 mt-[98px]">
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
 
@@ -219,24 +215,24 @@
       </div>
     </div>
 
-  </nav>
-<div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
-    <div class="flex flex-col gap-6 text-center mt-10">
-      <a href="index.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP ALL</a>
-      <a href="about-them.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ABOUT THEM</a>
-      <a href="index.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
-      <a href="crypto-news.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CRYPTO NEWS</a>
-      <a href="index.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
-      <a href="fr-ada-hoodie.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
+      <div class="flex flex-col gap-6 text-center mt-10">
+        <a href="index.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP ALL</a>
+        <a href="about-them.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ABOUT THEM</a>
+        <a href="index.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
+        <a href="crypto-news.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CRYPTO NEWS</a>
+        <a href="index.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
+        <a href="fr-ada-hoodie.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
 
-      <div class="logo-strip rounded px-3 py-3">
-        <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
-        <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
+        <div class="logo-strip rounded px-3 py-3">
+          <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
+          <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
+        </div>
       </div>
-    </div>
 
-    <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
-  </div>
+      <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
+    </div>
+  </nav>
 
   <div class="sticky top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
     <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
@@ -501,7 +497,6 @@
             <li><strong>2025</strong> — Midnight privacy chain advances with Google Cloud infrastructure support</li>
             <li><strong>2025</strong> — Cardano positioned as sovereign global blockchain infrastructure</li>
         </ul>
-      <p class="text-sm mt-4"><span class="text-gray-500 uppercase text-xs tracking-widest">Sources: </span><a href="https://cardano.org" target="_blank" rel="noopener noreferrer" class="text-brand-green hover:text-white transition-colors">Cardano</a></p>
 
         <div class="wiki-divider"></div>
 
@@ -570,48 +565,6 @@
   </main>
 
   
-
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-  <div class="border-t border-white/10 pt-12">
-    <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-2 text-center">COMPLETE YOUR <span class="text-brand-green">POWER 5</span></h2>
-    <p class="text-gray-400 text-sm mb-8 max-w-xl mx-auto text-center">One for every conviction. Collect all five.</p>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-      <a href="btc-hoodie.html" class="group border border-white/10 bg-black/40 hover:border-brand-green/60 transition-all overflow-hidden">
-        <div class="overflow-hidden"><img src="btc-hoodie.jpg" alt="BTC // VIRES IN NUMERIS" loading="lazy" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-500"></div>
-        <div class="p-4">
-          <div class="font-orbitron text-white text-sm font-bold">BTC // VIRES IN NUMERIS</div>
-          <div class="text-gray-500 text-xs mt-1">Bitcoin Hoodie</div>
-          <div class="text-brand-green font-bold mt-2">$69.99 USD</div>
-        </div>
-      </a>
-      <a href="eth-hoodie.html" class="group border border-white/10 bg-black/40 hover:border-brand-green/60 transition-all overflow-hidden">
-        <div class="overflow-hidden"><img src="eth-hoodie.jpg" alt="ETH // CODE IS LAW" loading="lazy" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-500"></div>
-        <div class="p-4">
-          <div class="font-orbitron text-white text-sm font-bold">ETH // CODE IS LAW</div>
-          <div class="text-gray-500 text-xs mt-1">Ethereum Hoodie</div>
-          <div class="text-brand-green font-bold mt-2">$69.99 USD</div>
-        </div>
-      </a>
-      <a href="xrp-hoodie.html" class="group border border-white/10 bg-black/40 hover:border-brand-green/60 transition-all overflow-hidden">
-        <div class="overflow-hidden"><img src="xrp-hoodie.jpg" alt="XRP // THE STANDARD" loading="lazy" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-500"></div>
-        <div class="p-4">
-          <div class="font-orbitron text-white text-sm font-bold">XRP // THE STANDARD</div>
-          <div class="text-gray-500 text-xs mt-1">XRP Hoodie</div>
-          <div class="text-brand-green font-bold mt-2">$69.99 USD</div>
-        </div>
-      </a>
-      <a href="sol-hoodie.html" class="group border border-white/10 bg-black/40 hover:border-brand-green/60 transition-all overflow-hidden">
-        <div class="overflow-hidden"><img src="sol-hoodie.jpg" alt="SOL // PROOF OF HISTORY" loading="lazy" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-500"></div>
-        <div class="p-4">
-          <div class="font-orbitron text-white text-sm font-bold">SOL // PROOF OF HISTORY</div>
-          <div class="text-gray-500 text-xs mt-1">Solana Hoodie</div>
-          <div class="text-brand-green font-bold mt-2">$69.99 USD</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
 <section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
   <div class="border-t border-white/10 pt-12">
     <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-2">CUSTOMER REVIEWS</h2>
@@ -666,7 +619,6 @@
         <div class="flex justify-center gap-6">
           <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
 <a href="https://www.instagram.com/djcryptonouvelles?igsh=MWo2d282N3lnaDF1Ng==" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
-          <a href="faq.html" class="text-gray-500 hover:text-brand-green transition-colors">FAQ</a>
         </div>
       </div>
 
@@ -831,6 +783,100 @@
       mountRow(document.getElementById("mobileAcceptedRow"), keys);
     }
 
+    // ====== CRYPTO DIRECT PAY (wallet + live rate + QR) ======
+    const WALLET_ADDRESSES = {
+      BTC: "bc1quh7ejpsrgh5swg9vfwp8yx78ulv7pmm30ekza8",
+      ETH: "0x7a4F0ae318D3bfb6DEefa8F513DAB4EB340F38bD",
+      ADA: "addr1q86y70kk03v77au7t8dthjdfly36mqw3ksuqqprzs2ep3qjjtrrg2ly3y82ucl2fet5v0y37gz2hp8nka93hd0240r8qt04xtk",
+      XRP: "rLwSWibSKb32pYS2ye1W16AWen3JHFzxaM",
+      SOL: "4NefJA393tgq6c61bVBTEZm4izqnwabp8MoBd45hW1vB"
+    };
+    const COINGECKO_IDS = { BTC: "bitcoin", ETH: "ethereum", ADA: "cardano", XRP: "ripple", SOL: "solana" };
+    const COIN_DECIMALS = { BTC: 6, ETH: 6, ADA: 2, XRP: 2, SOL: 4 };
+    const CRYPTO_MODES = ["BTC", "ETH", "ADA", "XRP", "SOL"];
+
+    async function fetchCryptoUSD(coin) {
+      const id = COINGECKO_IDS[coin];
+      if (id) {
+        try {
+          const r = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=" + encodeURIComponent(id) + "&vs_currencies=usd");
+          const j = await r.json();
+          if (j && j[id] && j[id].usd) return j[id].usd;
+        } catch (e) {}
+      }
+      try {
+        const r2 = await fetch("https://api.coinbase.com/v2/exchange-rates?currency=" + encodeURIComponent(coin));
+        const j2 = await r2.json();
+        const rate = j2 && j2.data && j2.data.rates && parseFloat(j2.data.rates.USD);
+        if (rate) return rate;
+      } catch (e) {}
+      return null;
+    }
+
+    function cryptoBasePrice(productKey) {
+      if (/HOODIE/.test(productKey)) return 69.99;
+      if (/^(BTC|ETH|ADA|XRP|SOL)$/.test(productKey)) return 35;
+      const el = document.querySelector(".price-display");
+      const b = el ? parseFloat(el.getAttribute("data-base")) : NaN;
+      return isNaN(b) ? 0 : b;
+    }
+
+    function cryptoPayHTML(coin, amountStr, usdPrice, usdTotalStr, address, isFR) {
+      const qr = "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=10&color=ffffff&bgcolor=0a0a0a&data=" + encodeURIComponent(address);
+      const sendLine = amountStr
+        ? (isFR ? "Envoyez exactement" : "Send exactly") + ' <span class="font-orbitron text-brand-green font-bold">' + amountStr + " " + coin + "</span> " + (isFR ? "&agrave; cette adresse :" : "to this address:")
+        : (isFR ? 'Envoyez votre paiement en <span class="font-orbitron text-brand-green font-bold">' + coin + "</span> &agrave; cette adresse :" : 'Send your <span class="font-orbitron text-brand-green font-bold">' + coin + "</span> payment to this address:");
+      const rateLine = usdPrice
+        ? '<div class="text-gray-500 text-[11px] mt-2">' + (isFR ? "Taux en direct" : "Live rate") + ": 1 " + coin + " = $" + Number(usdPrice).toLocaleString("en-US", { maximumFractionDigits: 2 }) + " USD &nbsp;|&nbsp; " + (isFR ? "Total" : "Total") + ": $" + usdTotalStr + " USD</div>"
+        : '<div class="text-yellow-400/80 text-[11px] mt-2">' + (isFR ? "Taux en direct indisponible &mdash; on vous confirmera le montant exact par courriel." : "Live rate unavailable &mdash; we&rsquo;ll confirm the exact amount by email.") + "</div>";
+      const note = isFR ? "Apr&egrave;s l'envoi, on confirmera votre commande par courriel." : "After sending, we&rsquo;ll confirm your order by email.";
+      const copyLabel = isFR ? "Copier" : "Copy";
+      return (
+        '<div class="text-brand-green text-xs tracking-widest">' + (isFR ? "D&Eacute;TAILS DU PAIEMENT //" : "PAYMENT DETAILS //") + "</div>" +
+        '<div class="text-white text-sm mt-3">' + sendLine + "</div>" +
+        '<div class="flex items-center gap-2 mt-2">' +
+          '<code class="flex-1 text-[11px] text-gray-300 bg-black/60 border border-gray-700 px-2 py-2 break-all select-all">' + address + "</code>" +
+          '<button type="button" id="copyAddrBtn" class="shrink-0 px-3 py-2 border border-brand-green/50 text-brand-green text-xs uppercase tracking-wider hover:bg-brand-green hover:text-black transition-colors">' + copyLabel + "</button>" +
+        "</div>" +
+        '<div class="mt-3 flex justify-center"><img src="' + qr + '" alt="QR ' + coin + '" width="180" height="180" class="border border-gray-700" loading="lazy"></div>' +
+        rateLine +
+        '<div class="text-gray-400 text-[11px] mt-2">' + note + "</div>"
+      );
+    }
+
+    async function showCryptoSuccess(coin, fd, productKey) {
+      const isFR = (document.documentElement.lang || "en").toLowerCase().indexOf("fr") === 0;
+      const box = document.getElementById("orderStatusBox");
+      const qty = parseInt(((fd.get("Quantity") || "1") + "").trim(), 10) || 1;
+      const usdTotal = cryptoBasePrice(productKey) * qty;
+      const address = WALLET_ADDRESSES[coin] || "";
+      let usdPrice = null;
+      try { usdPrice = await fetchCryptoUSD(coin); } catch (e) { usdPrice = null; }
+      let amountStr = "";
+      if (usdPrice && usdTotal > 0) {
+        const dec = COIN_DECIMALS[coin] != null ? COIN_DECIMALS[coin] : 4;
+        amountStr = (usdTotal / usdPrice).toFixed(dec);
+      }
+      if (box) {
+        box.innerHTML = cryptoPayHTML(coin, amountStr, usdPrice, usdTotal.toFixed(2), address, isFR);
+        box.classList.remove("hidden");
+        const btn = document.getElementById("copyAddrBtn");
+        if (btn) btn.addEventListener("click", async () => {
+          const doneMsg = isFR ? "Copi&eacute; &#10003;" : "Copied &#10003;";
+          const done = () => { btn.innerHTML = doneMsg; };
+          try { await navigator.clipboard.writeText(address); done(); }
+          catch (e) {
+            const ta = document.createElement("textarea");
+            ta.value = address;
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); done(); } catch (e2) {}
+            document.body.removeChild(ta);
+          }
+        });
+      }
+    }
+
     // MODAL
     const orderForm = document.getElementById("orderForm");
     const statusBox = document.getElementById("orderStatusBox");
@@ -936,7 +982,11 @@
 
           // 3. SUCCES (INTERAC/CRYPTO)
           orderForm.classList.add("hidden");
-          if(statusBox) statusBox.classList.remove("hidden");
+          if (CRYPTO_MODES.indexOf(payMode) !== -1) {
+            await showCryptoSuccess(payMode, fd, productKey);
+          } else if (statusBox) {
+            statusBox.classList.remove("hidden");
+          }
         } catch (err) {
           if(errorBox) { errorBox.textContent = "Error occurred. Try again."; errorBox.classList.remove("hidden"); }
           if(submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = "RETRY"; }
