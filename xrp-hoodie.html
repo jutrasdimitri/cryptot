@@ -748,8 +748,8 @@
       payLogosRow.innerHTML = "";
       const mode = paySelect.value;
       if (mode === "CARD") { ["visa","mc","amex","applepay","gpay"].forEach(k => payLogosRow.appendChild(getIconNode(k))); submitBtn.textContent = "PAY NOW"; return; }
-      if (mode === "INTERAC") { payLogosRow.appendChild(getIconNode("interac")); submitBtn.textContent = "SUBMIT ORDER"; return; }
-      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" }; payLogosRow.appendChild(getIconNode(map[mode] || "btc")); submitBtn.textContent = "SUBMIT ORDER";
+      if (mode === "INTERAC") { payLogosRow.appendChild(getIconNode("interac")); submitBtn.textContent = "SOUMETTRE / SUBMIT"; return; }
+      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" }; payLogosRow.appendChild(getIconNode(map[mode] || "btc")); submitBtn.textContent = "SOUMETTRE / SUBMIT";
     }
     paySelect.addEventListener("change", updatePaymentUI);
 
@@ -774,7 +774,7 @@
         orderForm.classList.add("hidden");
         if (CRYPTO_MODES.indexOf(payMode) !== -1) { await showCryptoSuccess(payMode, fd, productKey); }
         else { statusBox.classList.remove("hidden"); }
-      } catch (err) { errorBox.textContent = err.message || "Error."; errorBox.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = (paySelect.value === "CARD") ? "PAY NOW" : "SUBMIT ORDER"; }
+      } catch (err) { errorBox.textContent = err.message || "Error."; errorBox.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER / PAY NOW" : "SOUMETTRE / SUBMIT"; }
     });
   </script>
 
