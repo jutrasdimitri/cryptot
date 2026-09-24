@@ -70,6 +70,15 @@
   </url>
 
   <url>
+    <loc>https://cryptot.shop/faq.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-faq.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
     <loc>https://cryptot.shop/about-them.html</loc>
     <priority>0.80</priority>
   </url>
