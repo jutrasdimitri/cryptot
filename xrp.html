@@ -206,26 +206,23 @@
       </div>
     </div>
 
-    
   </nav>
-
-  <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px] w-full overflow-y-auto" style="background:#000;">
-      <div class="flex flex-col gap-6 text-center mt-10">
-        <a href="index.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP ALL</a>
-        <a href="about-them.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ABOUT THEM</a>
-        <a href="index.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
-        <a href="crypto-news.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CRYPTO NEWS</a>
-        <a href="index.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
-        <a href="fr-xrp.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
-       
-        <div class="logo-strip rounded px-3 py-3">
-          <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
-          <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
-        </div>
+<div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
+    <div class="flex flex-col gap-6 text-center mt-10">
+      <a href="index.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP ALL</a>
+      <a href="about-them.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ABOUT THEM</a>
+      <a href="index.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
+      <a href="crypto-news.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CRYPTO NEWS</a>
+      <a href="index.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
+      <a href="fr-xrp.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">FRANÇAIS</a>
+     
+      <div class="logo-strip rounded px-3 py-3">
+        <div class="lbl mb-2">ACCEPTED PAYMENT METHODS</div>
+        <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
       </div>
-      <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
     </div>
-
+    <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ CLOSE ]</button>
+  </div>
 
   <div class="sticky top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
     <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
@@ -460,6 +457,7 @@
             <li><strong>2026</strong> — Token Escrow (XLS-85) goes live on mainnet for institutional settlement</li>
             <li><strong>2026</strong> — XRPL activity surges: active addresses up 142%, RLUSD up ~19x</li>
         </ul>
+      <p class="text-sm mt-4"><span class="text-gray-500 uppercase text-xs tracking-widest">Sources: </span><a href="https://xrpl.org" target="_blank" rel="noopener noreferrer" class="text-brand-green hover:text-white transition-colors">XRP Ledger docs</a></p>
 
         <div class="wiki-divider"></div>
 
@@ -584,8 +582,9 @@
         <p class="font-orbitron text-2xl text-white mb-4">CONNECT WITH <span class="text-brand-green">US</span></p>
         <div class="flex justify-center gap-6">
           <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
-          <a href="https://www.instagram.com/crypto.nouvelles" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="https://www.instagram.com/cryptot.shop" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
           <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+          <a href="faq.html" class="text-gray-500 hover:text-brand-green transition-colors">FAQ</a>
         </div>
       </div>
 
@@ -651,100 +650,6 @@
     function mountRow(rowEl, keys){ rowEl.innerHTML = ""; keys.forEach(k => { const n = getIconNode(k); if (n) rowEl.appendChild(n); }); }
     function mountAcceptedStrips(){ const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"]; const navRow = document.getElementById("navAcceptedRow"); const footRow = document.getElementById("footerAcceptedRow"); const mobRow = document.getElementById("mobileAcceptedRow"); if (navRow) mountRow(navRow, keys); if (footRow) mountRow(footRow, keys); if (mobRow) mountRow(mobRow, keys); }
 
-    // ====== CRYPTO DIRECT PAY (wallet + live rate + QR) ======
-    const WALLET_ADDRESSES = {
-      BTC: "bc1quh7ejpsrgh5swg9vfwp8yx78ulv7pmm30ekza8",
-      ETH: "0x7a4F0ae318D3bfb6DEefa8F513DAB4EB340F38bD",
-      ADA: "addr1q86y70kk03v77au7t8dthjdfly36mqw3ksuqqprzs2ep3qjjtrrg2ly3y82ucl2fet5v0y37gz2hp8nka93hd0240r8qt04xtk",
-      XRP: "rLwSWibSKb32pYS2ye1W16AWen3JHFzxaM",
-      SOL: "4NefJA393tgq6c61bVBTEZm4izqnwabp8MoBd45hW1vB"
-    };
-    const COINGECKO_IDS = { BTC: "bitcoin", ETH: "ethereum", ADA: "cardano", XRP: "ripple", SOL: "solana" };
-    const COIN_DECIMALS = { BTC: 6, ETH: 6, ADA: 2, XRP: 2, SOL: 4 };
-    const CRYPTO_MODES = ["BTC", "ETH", "ADA", "XRP", "SOL"];
-
-    async function fetchCryptoUSD(coin) {
-      const id = COINGECKO_IDS[coin];
-      if (id) {
-        try {
-          const r = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=" + encodeURIComponent(id) + "&vs_currencies=usd");
-          const j = await r.json();
-          if (j && j[id] && j[id].usd) return j[id].usd;
-        } catch (e) {}
-      }
-      try {
-        const r2 = await fetch("https://api.coinbase.com/v2/exchange-rates?currency=" + encodeURIComponent(coin));
-        const j2 = await r2.json();
-        const rate = j2 && j2.data && j2.data.rates && parseFloat(j2.data.rates.USD);
-        if (rate) return rate;
-      } catch (e) {}
-      return null;
-    }
-
-    function cryptoBasePrice(productKey) {
-      if (/HOODIE/.test(productKey)) return 69.99;
-      if (/^(BTC|ETH|ADA|XRP|SOL)$/.test(productKey)) return 35;
-      const el = document.querySelector(".price-display");
-      const b = el ? parseFloat(el.getAttribute("data-base")) : NaN;
-      return isNaN(b) ? 0 : b;
-    }
-
-    function cryptoPayHTML(coin, amountStr, usdPrice, usdTotalStr, address, isFR) {
-      const qr = "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=10&color=ffffff&bgcolor=0a0a0a&data=" + encodeURIComponent(address);
-      const sendLine = amountStr
-        ? (isFR ? "Envoyez exactement" : "Send exactly") + ' <span class="font-orbitron text-brand-green font-bold">' + amountStr + " " + coin + "</span> " + (isFR ? "&agrave; cette adresse :" : "to this address:")
-        : (isFR ? 'Envoyez votre paiement en <span class="font-orbitron text-brand-green font-bold">' + coin + "</span> &agrave; cette adresse :" : 'Send your <span class="font-orbitron text-brand-green font-bold">' + coin + "</span> payment to this address:");
-      const rateLine = usdPrice
-        ? '<div class="text-gray-500 text-[11px] mt-2">' + (isFR ? "Taux en direct" : "Live rate") + ": 1 " + coin + " = $" + Number(usdPrice).toLocaleString("en-US", { maximumFractionDigits: 2 }) + " USD &nbsp;|&nbsp; " + (isFR ? "Total" : "Total") + ": $" + usdTotalStr + " USD</div>"
-        : '<div class="text-yellow-400/80 text-[11px] mt-2">' + (isFR ? "Taux en direct indisponible &mdash; on vous confirmera le montant exact par courriel." : "Live rate unavailable &mdash; we&rsquo;ll confirm the exact amount by email.") + "</div>";
-      const note = isFR ? "Apr&egrave;s l'envoi, on confirmera votre commande par courriel." : "After sending, we&rsquo;ll confirm your order by email.";
-      const copyLabel = isFR ? "Copier" : "Copy";
-      return (
-        '<div class="text-brand-green text-xs tracking-widest">' + (isFR ? "D&Eacute;TAILS DU PAIEMENT //" : "PAYMENT DETAILS //") + "</div>" +
-        '<div class="text-white text-sm mt-3">' + sendLine + "</div>" +
-        '<div class="flex items-center gap-2 mt-2">' +
-          '<code class="flex-1 text-[11px] text-gray-300 bg-black/60 border border-gray-700 px-2 py-2 break-all select-all">' + address + "</code>" +
-          '<button type="button" id="copyAddrBtn" class="shrink-0 px-3 py-2 border border-brand-green/50 text-brand-green text-xs uppercase tracking-wider hover:bg-brand-green hover:text-black transition-colors">' + copyLabel + "</button>" +
-        "</div>" +
-        '<div class="mt-3 flex justify-center"><img src="' + qr + '" alt="QR ' + coin + '" width="180" height="180" class="border border-gray-700" loading="lazy"></div>' +
-        rateLine +
-        '<div class="text-gray-400 text-[11px] mt-2">' + note + "</div>"
-      );
-    }
-
-    async function showCryptoSuccess(coin, fd, productKey) {
-      const isFR = (document.documentElement.lang || "en").toLowerCase().indexOf("fr") === 0;
-      const box = document.getElementById("orderStatusBox");
-      const qty = parseInt(((fd.get("Quantity") || "1") + "").trim(), 10) || 1;
-      const usdTotal = cryptoBasePrice(productKey) * qty;
-      const address = WALLET_ADDRESSES[coin] || "";
-      let usdPrice = null;
-      try { usdPrice = await fetchCryptoUSD(coin); } catch (e) { usdPrice = null; }
-      let amountStr = "";
-      if (usdPrice && usdTotal > 0) {
-        const dec = COIN_DECIMALS[coin] != null ? COIN_DECIMALS[coin] : 4;
-        amountStr = (usdTotal / usdPrice).toFixed(dec);
-      }
-      if (box) {
-        box.innerHTML = cryptoPayHTML(coin, amountStr, usdPrice, usdTotal.toFixed(2), address, isFR);
-        box.classList.remove("hidden");
-        const btn = document.getElementById("copyAddrBtn");
-        if (btn) btn.addEventListener("click", async () => {
-          const doneMsg = isFR ? "Copi&eacute; &#10003;" : "Copied &#10003;";
-          const done = () => { btn.innerHTML = doneMsg; };
-          try { await navigator.clipboard.writeText(address); done(); }
-          catch (e) {
-            const ta = document.createElement("textarea");
-            ta.value = address;
-            document.body.appendChild(ta);
-            ta.select();
-            try { document.execCommand("copy"); done(); } catch (e2) {}
-            document.body.removeChild(ta);
-          }
-        });
-      }
-    }
-
     // MODAL & PAYMENTS
     const orderForm = document.getElementById("orderForm"); const statusBox = document.getElementById("orderStatusBox"); const errorBox = document.getElementById("orderErrorBox"); const submitBtn = document.getElementById("submitBtn"); const paySelect = document.getElementById("paymentSelect"); const payLogosRow = document.getElementById("payLogosRow");
    
@@ -764,8 +669,8 @@
       payLogosRow.innerHTML = "";
       const mode = paySelect.value;
       if (mode === "CARD") { ["visa","mc","amex","applepay","gpay"].forEach(k => payLogosRow.appendChild(getIconNode(k))); submitBtn.textContent = "PAY NOW"; return; }
-      if (mode === "INTERAC") { payLogosRow.appendChild(getIconNode("interac")); submitBtn.textContent = "SOUMETTRE / SUBMIT"; return; }
-      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" }; payLogosRow.appendChild(getIconNode(map[mode] || "btc")); submitBtn.textContent = "SOUMETTRE / SUBMIT";
+      if (mode === "INTERAC") { payLogosRow.appendChild(getIconNode("interac")); submitBtn.textContent = "SUBMIT ORDER"; return; }
+      const map = { BTC:"btc", ETH:"eth", ADA:"ada", XRP:"xrp", SOL:"sol" }; payLogosRow.appendChild(getIconNode(map[mode] || "btc")); submitBtn.textContent = "SUBMIT ORDER";
     }
     paySelect.addEventListener("change", updatePaymentUI);
 
@@ -787,10 +692,8 @@
         }
         const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(Object.fromEntries(fd.entries())), });
         if (!res.ok) throw new Error("Order failed.");
-        orderForm.classList.add("hidden");
-        if (CRYPTO_MODES.indexOf(payMode) !== -1) { await showCryptoSuccess(payMode, fd, productKey); }
-        else { statusBox.classList.remove("hidden"); }
-      } catch (err) { errorBox.textContent = err.message || "Error."; errorBox.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = (paySelect.value === "CARD") ? "PAYER / PAY NOW" : "SOUMETTRE / SUBMIT"; }
+        orderForm.classList.add("hidden"); statusBox.classList.remove("hidden");
+      } catch (err) { errorBox.textContent = err.message || "Error."; errorBox.classList.remove("hidden"); submitBtn.disabled = false; submitBtn.classList.remove("opacity-60", "cursor-not-allowed"); submitBtn.textContent = (paySelect.value === "CARD") ? "PAY NOW" : "SUBMIT ORDER"; }
     });
   </script>
 
