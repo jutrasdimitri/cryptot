@@ -22,6 +22,39 @@
 <meta name="twitter:title" content="CryptoT // Wear Your Assets — Crypto T-Shirts" />
 <meta name="twitter:description" content="Premium crypto t-shirts for true believers. Bitcoin, Ethereum, Cardano, XRP & Solana designs. $35 USD, free international shipping." />
 <meta name="twitter:image" content="https://cryptot.shop/btc.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cryptot.shop/#organization",
+        "name": "CryptoT",
+        "url": "https://cryptot.shop/",
+        "logo": "https://cryptot.shop/apple-touch-icon.png",
+        "description": "CryptoT is Montreal-based crypto streetwear. Premium t-shirts ($35 USD) and hoodies ($69.99 USD) for Bitcoin, Ethereum, Cardano, XRP and Solana — free international shipping on every order.",
+        "sameAs": [
+          "https://www.instagram.com/djcryptonouvelles",
+          "https://x.com/JutrasDimitri"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "jutrasdimitri@gmail.com",
+          "contactType": "customer service",
+          "availableLanguage": ["en", "fr"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cryptot.shop/#website",
+        "url": "https://cryptot.shop/",
+        "name": "CryptoT // Wear Your Assets",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://cryptot.shop/#organization" }
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -479,6 +512,34 @@
     </div>
   </main>
 
+  <section id="price-index" class="py-16 md:py-20 border-t border-brand-green/20 w-full">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-orbitron text-white mb-4 border-l-4 border-brand-green pl-4 uppercase">PRICE_INDEX_</h2>
+      <p class="text-gray-400 text-sm mb-8 max-w-2xl">One price per item, worldwide. Free international shipping on every order — no hidden fees.</p>
+      <div class="overflow-x-auto border border-brand-green/20">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-black/60 text-brand-green font-orbitron text-xs uppercase tracking-widest">
+              <th class="text-left p-4">Design</th>
+              <th class="text-right p-4">T-Shirt (USD)</th>
+              <th class="text-right p-4">T-Shirt (CAD)</th>
+              <th class="text-right p-4">Hoodie (USD)</th>
+              <th class="text-right p-4">Hoodie (CAD)</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-300">
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">BTC // VIRES IN NUMERIS</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">ETH // CODE IS LAW</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">ADA // PEER REVIEWED</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">XRP // THE STANDARD</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+            <tr class="border-t border-white/10 hover:bg-white/5"><td class="p-4 font-bold text-white">SOL // PROOF OF HISTORY</td><td class="text-right p-4">$35</td><td class="text-right p-4">$50.75</td><td class="text-right p-4">$69.99</td><td class="text-right p-4">$101.49</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-500 text-xs mt-4 uppercase tracking-widest">CAD at the site rate (1 USD = 1.45 CAD) // Shipping: free, worldwide.</p>
+    </div>
+  </section>
+
   <section id="why" class="py-16 md:py-20 border-t border-brand-green/20 w-full">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-2xl md:text-3xl font-orbitron text-white mb-6 border-l-4 border-brand-green pl-4 uppercase">Why a t-shirt?_</h2>
@@ -537,6 +598,9 @@
           <h3 class="font-orbitron text-brand-green text-sm md:text-base mb-2 uppercase tracking-wider">How do I pay?</h3>
           <p class="text-gray-300 leading-relaxed">Secure checkout. Your payment info never touches our servers.</p>
         </div>
+        <div class="mt-10 text-center">
+          <a href="faq.html" class="inline-block px-6 py-3 border border-brand-green text-brand-green font-orbitron text-xs uppercase tracking-widest hover:bg-brand-green hover:text-black transition-all">READ THE FULL FAQ →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -565,7 +629,7 @@
         </div>
         <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm mt-4">
           <a href="shipping.html" class="text-gray-500 hover:text-brand-green transition-colors">SHIPPING &amp; RETURNS</a>
-          <a href="#faq" class="text-gray-500 hover:text-brand-green transition-colors">FAQ</a>
+          <a href="faq.html" class="text-gray-500 hover:text-brand-green transition-colors">FAQ</a>
         </div>
       </div>
       <div class="logo-strip rounded px-4 py-3 inline-block max-w-full overflow-hidden">
