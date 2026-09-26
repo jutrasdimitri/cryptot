@@ -871,15 +871,9 @@
 
 <script>
 (function(){
-  var ENDPOINT = 'https://formspree.io/f/mykgkker';
-  async function postForm(payload){
-    var res = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    if(!res.ok) throw new Error('Server Error.');
-  }
+  var KIT_FORM_ID = '9949859';
+  var FS_ENDPOINT = 'https://formspree.io/f/mykgkker';
+  var FS_SUBJECT = 'Newsletter signup \u2014 CryptoT';
   var nf = document.getElementById('newsForm');
   if(nf){
     nf.addEventListener('submit', async function(e){
@@ -887,38 +881,28 @@
       var email = ((nf.Email && nf.Email.value) || '').trim();
       if(!email || email.indexOf('@') < 0) return;
       var btn = document.getElementById('newsBtn');
+      var btnLabel = btn.textContent;
       btn.disabled = true; btn.textContent = '...';
       try{
-        await postForm({ Email: email, _subject: 'Newsletter signup \u2014 CryptoT', Form: 'newsletter' });
+        var body = new URLSearchParams();
+        body.append('email_address', email);
+        var res = await fetch('https://app.kit.com/forms/' + KIT_FORM_ID + '/subscriptions', {
+          method: 'POST',
+          body: body
+        });
+        if(!res.ok) throw new Error('Server Error.');
+        try{
+          var fd = new FormData();
+          fd.append('Email', email);
+          fd.append('_subject', FS_SUBJECT);
+          fd.append('Form', 'newsletter');
+          navigator.sendBeacon(FS_ENDPOINT, fd);
+        }catch(_){}
         nf.classList.add('hidden');
         document.getElementById('newsOk').classList.remove('hidden');
       }catch(err){
         document.getElementById('newsErr').classList.remove('hidden');
-        btn.disabled = false; btn.textContent = "S'INSCRIRE";
-      }
-    });
-  }
-  var rf = document.getElementById('reviewForm');
-  if(rf){
-    rf.addEventListener('submit', async function(e){
-      e.preventDefault();
-      var fd = new FormData(rf);
-      var name = ((fd.get('Name')) || '').toString().trim();
-      var body = ((fd.get('Review')) || '').toString().trim();
-      if(!name || !body) return;
-      var btn = document.getElementById('reviewBtn');
-      btn.disabled = true; btn.textContent = '...';
-      try{
-        var payload = Object.fromEntries(fd.entries());
-        payload.Product = 'XRP';
-        payload._subject = 'New review \u2014 XRP';
-        payload.Form = 'review';
-        await postForm(payload);
-        rf.classList.add('hidden');
-        document.getElementById('reviewOk').classList.remove('hidden');
-      }catch(err){
-        document.getElementById('reviewErr').classList.remove('hidden');
-        btn.disabled = false; btn.textContent = 'ENVOYER MON AVIS';
+        btn.disabled = false; btn.textContent = btnLabel;
       }
     });
   }

@@ -1148,7 +1148,9 @@
 
 <script>
 (function(){
-  var ENDPOINT = 'https://formspree.io/f/mykgkker';
+  var KIT_FORM_ID = '9949833';
+  var FS_ENDPOINT = 'https://formspree.io/f/mykgkker';
+  var FS_SUBJECT = 'Newsletter signup \u2014 CryptoT';
   var nf = document.getElementById('newsForm');
   if(nf){
     nf.addEventListener('submit', async function(e){
@@ -1156,19 +1158,28 @@
       var email = ((nf.Email && nf.Email.value) || '').trim();
       if(!email || email.indexOf('@') < 0) return;
       var btn = document.getElementById('newsBtn');
+      var btnLabel = btn.textContent;
       btn.disabled = true; btn.textContent = '...';
       try{
-        var res = await fetch(ENDPOINT, {
+        var body = new URLSearchParams();
+        body.append('email_address', email);
+        var res = await fetch('https://app.kit.com/forms/' + KIT_FORM_ID + '/subscriptions', {
           method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify({ Email: email, _subject: 'Newsletter signup \u2014 CryptoT', Form: 'newsletter' })
+          body: body
         });
         if(!res.ok) throw new Error('Server Error.');
+        try{
+          var fd = new FormData();
+          fd.append('Email', email);
+          fd.append('_subject', FS_SUBJECT);
+          fd.append('Form', 'newsletter');
+          navigator.sendBeacon(FS_ENDPOINT, fd);
+        }catch(_){}
         nf.classList.add('hidden');
         document.getElementById('newsOk').classList.remove('hidden');
       }catch(err){
         document.getElementById('newsErr').classList.remove('hidden');
-        btn.disabled = false; btn.textContent = 'SIGN UP';
+        btn.disabled = false; btn.textContent = btnLabel;
       }
     });
   }
