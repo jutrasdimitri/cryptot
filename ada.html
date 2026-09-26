@@ -930,22 +930,41 @@
       var btnLabel = btn.textContent;
       btn.disabled = true; btn.textContent = '...';
       try{
-        var body = new URLSearchParams();
-        body.append('email_address', email);
+        var kbody = new FormData();
+        kbody.append('email_address', email);
         var res = await fetch('https://app.kit.com/forms/' + KIT_FORM_ID + '/subscriptions', {
           method: 'POST',
-          body: body
+          headers: { 'Accept': 'application/json', 'X-CKJS-Version': '6' },
+          body: kbody
         });
         if(!res.ok) throw new Error('Server Error.');
+        var kdata = await res.json();
+        if(kdata.status !== 'success' && !(kdata.status === 'quarantined' && kdata.url)){
+          throw new Error('Kit: ' + (kdata.status || 'unknown'));
+        }
         try{
           var fd = new FormData();
           fd.append('Email', email);
           fd.append('_subject', FS_SUBJECT);
           fd.append('Form', 'newsletter');
-          navigator.sendBeacon(FS_ENDPOINT, fd);
+          if(navigator.sendBeacon) navigator.sendBeacon(FS_ENDPOINT, fd);
         }catch(_){}
         nf.classList.add('hidden');
-        document.getElementById('newsOk').classList.remove('hidden');
+        if(kdata.status === 'success'){
+          document.getElementById('newsOk').classList.remove('hidden');
+        }else{
+          var IS_FR = (KIT_FORM_ID === '9949859');
+          var qp = document.createElement('p');
+          qp.className = 'text-yellow-300 text-xs tracking-widest mt-4';
+          qp.appendChild(document.createTextNode(IS_FR ? 'Une derni\u00e8re \u00e9tape \u2014 ' : 'One more step \u2014 '));
+          var qa = document.createElement('a');
+          qa.href = kdata.url; qa.target = '_blank'; qa.rel = 'noopener';
+          qa.className = 'underline text-white';
+          qa.textContent = IS_FR ? 'compl\u00e9tez cette v\u00e9rification de s\u00e9curit\u00e9' : 'complete this quick security check';
+          qp.appendChild(qa);
+          qp.appendChild(document.createTextNode(IS_FR ? ' pour terminer votre inscription.' : ' to finish subscribing.'));
+          nf.parentNode.insertBefore(qp, nf.nextSibling);
+        }
       }catch(err){
         document.getElementById('newsErr').classList.remove('hidden');
         btn.disabled = false; btn.textContent = btnLabel;
