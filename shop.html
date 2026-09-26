@@ -243,21 +243,7 @@
       <p class="text-xl md:text-2xl text-white tracking-widest uppercase font-bold mb-6">
         TWO COLLECTIONS. ONE SIGNAL.
       </p>
-      <p class="text-gray-400 max-w-2xl mx-auto">Premium, Budget — filter by collection or by coin. Every piece is an original Power 5 design.</p>
-    </div>
-
-    <div class="flex flex-wrap gap-2 justify-center mb-3" id="colChips">
-      <button data-fcol="all" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-brand-green text-brand-green">All collections</button>
-      <button data-fcol="premium" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-gray-800 text-gray-500 hover:text-white transition-colors">Premium</button>
-      <button data-fcol="budget" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-gray-800 text-gray-500 hover:text-white transition-colors">Budget</button>
-    </div>
-    <div class="flex flex-wrap gap-2 justify-center mb-12" id="coinChips">
-      <button data-fcoin="all" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-brand-green text-brand-green">All coins</button>
-      <button data-fcoin="btc" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-gray-800 text-gray-500 hover:text-white transition-colors">BTC</button>
-      <button data-fcoin="eth" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-gray-800 text-gray-500 hover:text-white transition-colors">ETH</button>
-      <button data-fcoin="ada" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-gray-800 text-gray-500 hover:text-white transition-colors">ADA</button>
-      <button data-fcoin="xrp" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-gray-800 text-gray-500 hover:text-white transition-colors">XRP</button>
-      <button data-fcoin="sol" class="fchip font-orbitron text-xs uppercase tracking-widest px-4 py-2 border border-gray-800 text-gray-500 hover:text-white transition-colors">SOL</button>
+      <p class="text-gray-400 max-w-2xl mx-auto">Premium and Budget — every piece is an original Power 5 design.</p>
     </div>
 
 <section data-section data-collection="premium" class="mb-16">
@@ -579,39 +565,6 @@
   </main>
 
   <script>
-    let fCol = 'all', fCoin = 'all';
-    function paintChips(container, attr, val) {
-      container.querySelectorAll('.fchip').forEach(b => {
-        const on = b.dataset[attr] === val;
-        b.classList.toggle('border-brand-green', on);
-        b.classList.toggle('text-brand-green', on);
-        b.classList.toggle('border-gray-800', !on);
-        b.classList.toggle('text-gray-500', !on);
-      });
-    }
-    function applyFilter() {
-      document.querySelectorAll('[data-card]').forEach(el => {
-        const ok = (fCol === 'all' || el.dataset.collection === fCol) &&
-                   (fCoin === 'all' || el.dataset.coin === fCoin);
-        el.style.display = ok ? '' : 'none';
-      });
-      document.querySelectorAll('[data-section]').forEach(sec => {
-        const any = [...sec.querySelectorAll('[data-card]')].some(el => el.style.display !== 'none');
-        sec.style.display = any ? '' : 'none';
-      });
-    }
-    document.getElementById('colChips').addEventListener('click', e => {
-      const b = e.target.closest('[data-fcol]'); if (!b) return;
-      fCol = b.dataset.fcol;
-      paintChips(document.getElementById('colChips'), 'fcol', fCol);
-      applyFilter();
-    });
-    document.getElementById('coinChips').addEventListener('click', e => {
-      const b = e.target.closest('[data-fcoin]'); if (!b) return;
-      fCoin = b.dataset.fcoin;
-      paintChips(document.getElementById('coinChips'), 'fcoin', fCoin);
-      applyFilter();
-    });
   </script>
 
   
