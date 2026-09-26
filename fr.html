@@ -1243,9 +1243,8 @@
           if (!res.ok) throw new Error("Server Error.");
 
           // 2. REDIRECTION STRIPE (SI CARTE)
-          if (payMode === "CARD") {
-            const link = PAYMENT_LINKS[productKey];
-            if (!link) throw new Error("Link not found.");
+          const link = PAYMENT_LINKS[productKey];
+          if (payMode === "CARD" && link) {
             const url = new URL(link);
             url.searchParams.set("prefilled_email", email);
             url.searchParams.set("client_reference_id", "CryptoT-" + Date.now());
