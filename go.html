@@ -15,155 +15,50 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CryptoT — Lien en bio</title>
-  <meta name="description" content="Le produit du jour et toute la collection Le Power 5 — CryptoT. Wear your assets." />
+  <title>CryptoT — Coin du jour</title>
+  <meta name="description" content="Le coin du jour CryptoT — l'info avant tout. Wear your assets." />
   <meta name="robots" content="noindex, nofollow" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            "brand-green": "#39ff14",
-            "brand-black": "#0a0a0a",
-            "brand-panel": "#111111",
-          },
-          fontFamily: {
-            orbitron: ["Orbitron", "sans-serif"],
-            mono: ["Share Tech Mono", "monospace"],
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
-    body { background-color: #050505; color: #e5e5e5; }
-    .matrix-bg{
-      background-image:
-        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
-        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
-      background-size: 50px 50px;
-    }
+    body { background-color:#050505; color:#e5e5e5; font-family:ui-monospace,Menlo,monospace;
+           display:flex; min-height:100vh; align-items:center; justify-content:center;
+           text-align:center; margin:0; padding:24px; }
+    .brand { font-size:13px; letter-spacing:.3em; color:#39ff14; margin-bottom:16px; }
+    .brand span { color:#fff; }
+    a { color:#39ff14; }
+    .links a { margin:0 6px; }
   </style>
 </head>
-<body class="matrix-bg min-h-screen font-mono selection:bg-[#39ff14] selection:text-black">
-
-  <div class="max-w-md mx-auto px-5 py-10">
-
-    <div class="text-center mb-8">
-      <a href="/" class="inline-block">
-        <p class="font-orbitron font-black text-3xl tracking-widest text-white">CRYPTO<span class="text-brand-green">T</span></p>
-      </a>
-      <p class="text-xs text-gray-500 mt-2 tracking-widest">@cryptot.shop · Wear your assets</p>
-    </div>
-
-    <!-- PRODUIT-DU-JOUR:START -->
-    <section class="border border-brand-green/40 bg-brand-panel/80 p-6 mb-8 text-center shadow-[0_0_25px_rgba(57,255,20,0.15)]">
-      <p class="text-[11px] tracking-[0.25em] text-brand-green mb-4">⚡ PRODUIT DU JOUR // PRODUCT OF THE DAY</p>
-      <img id="hero-img" src="sol.jpg" alt="SOL // Proof of History — Solana T-Shirt" class="w-full max-w-[280px] mx-auto mb-4 border border-white/10" />
-      <h1 id="hero-title" class="font-orbitron font-bold text-xl text-white tracking-wider mb-2">SOL // PROOF OF HISTORY</h1>
-      <p id="hero-blurb" class="text-sm text-gray-400 mb-1">Speed at the speed of light.</p>
-      <p class="text-sm text-gray-300 mb-5">Tee premium — <span class="text-brand-green font-bold">35 $ US</span> · Livraison internationale gratuite</p>
-      <a id="hero-cta" href="sol.html" class="inline-block w-full bg-brand-green text-black font-orbitron font-bold text-sm tracking-widest py-4 hover:bg-white transition-colors">SHOP THE SOL TEE →</a>
-      <p id="hero-cta-fr" class="text-[11px] text-gray-500 mt-3">Acheter le tee SOL →</p>
-    </section>
-    <!-- PRODUIT-DU-JOUR:END -->
-
-    <p class="text-[11px] tracking-[0.25em] text-gray-500 text-center mb-4">LE POWER 5 // THE POWER 5</p>
-    <div class="grid grid-cols-1 gap-3 mb-8">
-      <a href="btc.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-4 hover:border-brand-green/50 transition-colors">
-        <span class="font-orbitron text-sm tracking-wider text-white">BTC <span class="text-gray-500">// VIRES IN NUMERIS</span></span>
-        <span class="text-brand-green">→</span>
-      </a>
-      <a href="eth.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-4 hover:border-brand-green/50 transition-colors">
-        <span class="font-orbitron text-sm tracking-wider text-white">ETH <span class="text-gray-500">// CODE IS LAW</span></span>
-        <span class="text-brand-green">→</span>
-      </a>
-      <a href="ada.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-4 hover:border-brand-green/50 transition-colors">
-        <span class="font-orbitron text-sm tracking-wider text-white">ADA <span class="text-gray-500">// PEER REVIEWED</span></span>
-        <span class="text-brand-green">→</span>
-      </a>
-      <a href="xrp.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-4 hover:border-brand-green/50 transition-colors">
-        <span class="font-orbitron text-sm tracking-wider text-white">XRP <span class="text-gray-500">// THE STANDARD</span></span>
-        <span class="text-brand-green">→</span>
-      </a>
-      <a href="sol.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-4 hover:border-brand-green/50 transition-colors">
-        <span class="font-orbitron text-sm tracking-wider text-white">SOL <span class="text-gray-500">// PROOF OF HISTORY</span></span>
-        <span class="text-brand-green">→</span>
-      </a>
-    </div>
-
-    <p class="text-[11px] tracking-[0.25em] text-gray-500 text-center mb-4">HOODIES</p>
-    <div class="grid grid-cols-1 gap-3 mb-10">
-      <a href="btc-hoodie.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-3 hover:border-brand-green/50 transition-colors">
-        <span class="text-sm tracking-wider text-gray-300">BTC Hoodie — 69,99 $ US</span>
-        <span class="text-brand-green">→</span>
-      </a>
-      <a href="eth-hoodie.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-3 hover:border-brand-green/50 transition-colors">
-        <span class="text-sm tracking-wider text-gray-300">ETH Hoodie — 69,99 $ US</span>
-        <span class="text-brand-green">→</span>
-      </a>
-      <a href="ada-hoodie.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-3 hover:border-brand-green/50 transition-colors">
-        <span class="text-sm tracking-wider text-gray-300">ADA Hoodie — 69,99 $ US</span>
-        <span class="text-brand-green">→</span>
-      </a>
-      <a href="xrp-hoodie.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-3 hover:border-brand-green/50 transition-colors">
-        <span class="text-sm tracking-wider text-gray-300">XRP Hoodie — 69,99 $ US</span>
-        <span class="text-brand-green">→</span>
-      </a>
-      <a href="sol-hoodie.html" class="flex items-center justify-between border border-white/10 bg-brand-panel/60 px-5 py-3 hover:border-brand-green/50 transition-colors">
-        <span class="text-sm tracking-wider text-gray-300">SOL Hoodie — 69,99 $ US</span>
-        <span class="text-brand-green">→</span>
-      </a>
-    </div>
-
-    <a href="/" class="block w-full text-center border border-brand-green/60 text-brand-green font-orbitron font-bold text-sm tracking-widest py-4 mb-10 hover:bg-brand-green hover:text-black transition-colors">← TOUTE LA BOUTIQUE · FULL SHOP</a>
-
-    <footer class="text-center border-t border-white/10 pt-6">
-      <p class="text-[11px] text-gray-600 mb-2">© 2026 CryptoT — Wear your assets</p>
-      <a href="about-them.html" class="text-[11px] text-gray-500 hover:text-brand-green tracking-widest">ABOUT THEM · À PROPOS</a>
-    </footer>
-
+<body>
+  <div>
+    <p class="brand">CRYPTO<span>T</span> — COIN DU JOUR // COIN OF THE DAY</p>
+    <p id="msg">Redirection vers la page info du jour… // Redirecting to today's info page…</p>
+    <noscript>
+      <p>Choisis ton coin // Pick your coin :</p>
+      <p class="links">
+        <a href="/ada.html">ADA</a>·<a href="/eth.html">ETH</a>·<a href="/sol.html">SOL</a>·<a href="/xrp.html">XRP</a>·<a href="/btc.html">BTC</a>
+      </p>
+    </noscript>
   </div>
 
   <script>
-    // Produit du jour — même rotation que les posts IG (ancre : dim 20 sept 2026 = ADA).
+    // Lien en bio → page INFO du coin du jour (éduquer avant de vendre).
+    // Même rotation que les posts IG (ancre : dim 20 sept 2026 = ADA).
     (function () {
       var ORDER = ["ADA", "ETH", "SOL", "XRP", "BTC"];
-      var DATA = {
-        ADA: { tag: "PEER REVIEWED",   blurb: "Academic rigor meets decentralized governance.", img: "ada.jpg", page: "ada.html" },
-        ETH: { tag: "CODE IS LAW",     blurb: "The world computer. Deflationary fuel for the future.", img: "eth.jpg", page: "eth.html" },
-        SOL: { tag: "PROOF OF HISTORY", blurb: "Speed at the speed of light.", img: "sol.jpg", page: "sol.html" },
-        XRP: { tag: "THE STANDARD",    blurb: "The bridge between the old world and the new.", img: "xrp.jpg", page: "xrp.html" },
-        BTC: { tag: "VIRES IN NUMERIS", blurb: "The original. Decentralized, scarce and immutable.", img: "btc.jpg", page: "btc.html" }
-      };
       try {
         var anchor = new Date(2026, 8, 20);
         anchor.setHours(0, 0, 0, 0);
         var today = new Date();
         today.setHours(0, 0, 0, 0);
         var diff = Math.round((today - anchor) / 86400000);
-        var coin = ORDER[((diff % 5) + 5) % 5];
-        var d = DATA[coin];
-        if (!d) return;
-        document.getElementById("hero-img").src = d.img;
-        document.getElementById("hero-img").alt = coin + " // " + d.tag + " T-Shirt";
-        document.getElementById("hero-title").textContent = coin + " // " + d.tag;
-        document.getElementById("hero-blurb").textContent = d.blurb;
-        var cta = document.getElementById("hero-cta");
-        cta.href = d.page;
-        cta.textContent = "SHOP THE " + coin + " TEE \u2192";
-        document.getElementById("hero-cta-fr").textContent = "Acheter le tee " + coin + " \u2192";
-      } catch (e) { /* garde le contenu statique par défaut */ }
+        var coin = ORDER[((diff % 5) + 5) % 5].toLowerCase();
+        var lang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+        var page = (lang.indexOf("fr") === 0 ? "fr-" : "") + coin + ".html";
+        window.location.replace("/" + page);
+      } catch (e) {
+        document.getElementById("msg").textContent = "Choisis ton coin ci-dessous. // Pick your coin below.";
+      }
     })();
   </script>
-
 </body>
 </html>
