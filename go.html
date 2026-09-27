@@ -65,12 +65,12 @@
     <!-- PRODUIT-DU-JOUR:START -->
     <section class="border border-brand-green/40 bg-brand-panel/80 p-6 mb-8 text-center shadow-[0_0_25px_rgba(57,255,20,0.15)]">
       <p class="text-[11px] tracking-[0.25em] text-brand-green mb-4">⚡ PRODUIT DU JOUR // PRODUCT OF THE DAY</p>
-      <img src="sol.jpg" alt="SOL // Proof of History — Solana T-Shirt" class="w-full max-w-[280px] mx-auto mb-4 border border-white/10" />
-      <h1 class="font-orbitron font-bold text-xl text-white tracking-wider mb-2">SOL // PROOF OF HISTORY</h1>
-      <p class="text-sm text-gray-400 mb-1">Speed at the speed of light.</p>
+      <img id="hero-img" src="sol.jpg" alt="SOL // Proof of History — Solana T-Shirt" class="w-full max-w-[280px] mx-auto mb-4 border border-white/10" />
+      <h1 id="hero-title" class="font-orbitron font-bold text-xl text-white tracking-wider mb-2">SOL // PROOF OF HISTORY</h1>
+      <p id="hero-blurb" class="text-sm text-gray-400 mb-1">Speed at the speed of light.</p>
       <p class="text-sm text-gray-300 mb-5">Tee premium — <span class="text-brand-green font-bold">35 $ US</span> · Livraison internationale gratuite</p>
-      <a href="sol.html" class="inline-block w-full bg-brand-green text-black font-orbitron font-bold text-sm tracking-widest py-4 hover:bg-white transition-colors">SHOP THE SOL TEE →</a>
-      <p class="text-[11px] text-gray-500 mt-3">Acheter le tee SOL →</p>
+      <a id="hero-cta" href="sol.html" class="inline-block w-full bg-brand-green text-black font-orbitron font-bold text-sm tracking-widest py-4 hover:bg-white transition-colors">SHOP THE SOL TEE →</a>
+      <p id="hero-cta-fr" class="text-[11px] text-gray-500 mt-3">Acheter le tee SOL →</p>
     </section>
     <!-- PRODUIT-DU-JOUR:END -->
 
@@ -128,6 +128,38 @@
     </footer>
 
   </div>
+
+  <script>
+    // Produit du jour — même rotation que les posts IG (ancre : dim 20 sept 2026 = ADA).
+    (function () {
+      var ORDER = ["ADA", "ETH", "SOL", "XRP", "BTC"];
+      var DATA = {
+        ADA: { tag: "PEER REVIEWED",   blurb: "Academic rigor meets decentralized governance.", img: "ada.jpg", page: "ada.html" },
+        ETH: { tag: "CODE IS LAW",     blurb: "The world computer. Deflationary fuel for the future.", img: "eth.jpg", page: "eth.html" },
+        SOL: { tag: "PROOF OF HISTORY", blurb: "Speed at the speed of light.", img: "sol.jpg", page: "sol.html" },
+        XRP: { tag: "THE STANDARD",    blurb: "The bridge between the old world and the new.", img: "xrp.jpg", page: "xrp.html" },
+        BTC: { tag: "VIRES IN NUMERIS", blurb: "The original. Decentralized, scarce and immutable.", img: "btc.jpg", page: "btc.html" }
+      };
+      try {
+        var anchor = new Date(2026, 8, 20);
+        anchor.setHours(0, 0, 0, 0);
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var diff = Math.round((today - anchor) / 86400000);
+        var coin = ORDER[((diff % 5) + 5) % 5];
+        var d = DATA[coin];
+        if (!d) return;
+        document.getElementById("hero-img").src = d.img;
+        document.getElementById("hero-img").alt = coin + " // " + d.tag + " T-Shirt";
+        document.getElementById("hero-title").textContent = coin + " // " + d.tag;
+        document.getElementById("hero-blurb").textContent = d.blurb;
+        var cta = document.getElementById("hero-cta");
+        cta.href = d.page;
+        cta.textContent = "SHOP THE " + coin + " TEE \u2192";
+        document.getElementById("hero-cta-fr").textContent = "Acheter le tee " + coin + " \u2192";
+      } catch (e) { /* garde le contenu statique par défaut */ }
+    })();
+  </script>
 
 </body>
 </html>
