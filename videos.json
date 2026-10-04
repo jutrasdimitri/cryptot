@@ -1,0 +1,51 @@
+{
+  "updated": "2026-10-04",
+  "channel": "https://www.youtube.com/@cryptoTshop",
+  "videos": [
+    {
+      "id": "PAsDjWDvYSo",
+      "type": "longform",
+      "title": "Crypto Week Ahead: ADA, BTC Levels & What Analysts Watch",
+      "date": "2026-10-04",
+      "duration": "8:36",
+      "durationISO": "PT8M36S",
+      "url": "https://www.youtube.com/watch?v=PAsDjWDvYSo",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/PAsDjWDvYSo",
+      "thumbnail": "https://i.ytimg.com/vi/PAsDjWDvYSo/maxresdefault.jpg",
+      "topics": {
+        "en": [
+          "Petrobras × Cardano — sustainable fuel tracked on-chain",
+          "Fiserv × Solana + North Dakota's Roughrider Coin",
+          "Power 5 levels in plain language: ADA, ETH, SOL, XRP, BTC",
+          "What analysts watch: Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
+          "Week-ahead levels: ADA close above $0.2564, BTC above $85,300, ETH at the $2,800 wall"
+        ],
+        "fr": [
+          "Petrobras × Cardano — carburant durable suivi sur la blockchain",
+          "Fiserv × Solana + le Roughrider Coin du Dakota du Nord",
+          "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
+          "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
+          "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "LdYwZLSiFGc",
+      "type": "short",
+      "title": "Brazil's Oil Giant Is Testing Cardano — Here's Why It Matters",
+      "date": "2026-10-04",
+      "duration": "0:46",
+      "durationISO": "PT46S",
+      "url": "https://youtube.com/shorts/LdYwZLSiFGc",
+      "thumbnail": "https://i.ytimg.com/vi/LdYwZLSiFGc/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Petrobras is testing Cardano to track sustainable aviation fuel and renewable diesel on-chain — the whole story in 46 seconds."
+        ],
+        "fr": [
+          "Petrobras teste Cardano pour suivre le carburant d'aviation durable et le diesel renouvelable sur la blockchain — toute l'histoire en 46 secondes."
+        ]
+      }
+    }
+  ]
+}

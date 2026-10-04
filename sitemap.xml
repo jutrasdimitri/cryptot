@@ -61,6 +61,15 @@
   </url>
 
   <url>
+    <loc>https://cryptot.shop/videos.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-videos.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
     <loc>https://cryptot.shop/shipping.html</loc>
     <priority>0.70</priority>
   </url>
