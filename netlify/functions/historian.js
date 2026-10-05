@@ -369,25 +369,41 @@ async function spendCredit(visitorId) {
 
 // Nombre de questions gratuites déjà utilisées par ce visiteur —
 // compteur À VIE (pas de remise à zéro quotidienne ni au démarrage).
+// Lecture = max(Blobs, cache mémoire de l'instance) : Blobs donne la
+// durabilité (le compteur survit aux démarrages à froid), le cache
+// donne l'exactitude immédiate sur une instance chaude — la lecture
+// Blobs seule est à cohérence éventuelle (propagation jusqu'à ~60 s,
+// constatée en tests live le 5 oct. 2026 : deux questions rapides
+// d'affilée pouvaient lire un compteur périmé et fuir). Les lectures
+// « strong » du SDK retournent vide dans ce runtime Lambda (testé le
+// même jour), d'où cette superposition plutôt qu'un mode du magasin.
+const freeMemCache = new Map(); // visitorId -> used (miroir chaud de Blobs)
+
 async function getFreeUsed(visitorId) {
   const store = getCreditStore();
-  if (!store) return 0;
-  try {
-    const rec = await store.get(freeKey(visitorId), { type: 'json' });
-    return rec && typeof rec.used === 'number' && rec.used > 0 ? Math.floor(rec.used) : 0;
-  } catch (err) {
-    console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'getFreeUsed', error: String(err && err.message || err) }));
-    return 0;
+  let blobsUsed = 0;
+  if (store) {
+    try {
+      const rec = await store.get(freeKey(visitorId), { type: 'json' });
+      if (rec && typeof rec.used === 'number' && rec.used > 0) blobsUsed = Math.floor(rec.used);
+    } catch (err) {
+      console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'getFreeUsed', error: String(err && err.message || err) }));
+    }
   }
+  const used = Math.max(blobsUsed, freeMemCache.get(visitorId) || 0);
+  if (freeMemCache.size > 5000) freeMemCache.clear(); // borne simple
+  freeMemCache.set(visitorId, used);
+  return used;
 }
 
 // Incrémente le compteur gratuit APRÈS une réponse réussie (même règle
 // que les crédits : un appel au modèle qui échoue ne coûte rien).
 async function incrementFreeUsed(visitorId) {
+  const used = (await getFreeUsed(visitorId)) + 1;
+  freeMemCache.set(visitorId, used);
   const store = getCreditStore();
   if (!store) return false;
   try {
-    const used = (await getFreeUsed(visitorId)) + 1;
     await store.setJSON(freeKey(visitorId), { used: used, updatedAt: new Date().toISOString() });
     return true;
   } catch (err) {
