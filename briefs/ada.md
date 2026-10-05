@@ -42,3 +42,6 @@ A blockchain built like infrastructure rather than like an app: formally verifie
 - Staking reward rates change over time — never quote a percentage from memory.
 - Hoskinson's personal claims and controversies (his biography is sometimes disputed by journalists) — stick to the documented project history, not the personality wars.
 - Ethiopia: describe the 2021 partnership announcement accurately; do not claim current deployment scale without a fresh source.
+
+## Key numbers — verified history
+- **All-time high: $3.09 USD, on September 2, 2021** — reached in the run-up to the Alonzo smart-contract launch (September 12, 2021). If a visitor asks for Cardano's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.

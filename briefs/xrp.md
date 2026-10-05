@@ -46,3 +46,6 @@ The identity question remains XRP's honest debate: it is the most corporate, ban
 - Escrow balances and monthly releases change constantly — only via the real-time feed, never from memory.
 - Ripple the company and XRP the asset are not the same thing — always keep the distinction in explanations.
 - Claims that banks "use XRP" at scale: adoption varies by product and partner; describe Ripple's payment network and named partnerships factually, and never claim universal bank adoption.
+
+## Key numbers — verified history
+- **All-time high: $3.65 USD, on July 17, 2025** — finally passing the January 2018 peak (about $3.40) that had stood for more than seven years. If a visitor asks for XRP's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.

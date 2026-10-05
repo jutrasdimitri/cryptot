@@ -41,3 +41,6 @@ Then came the biggest engineering feat in Ethereum's history: **The Merge, on Se
 - Energy savings from The Merge are estimates (~99.9%+) — say "estimated."
 - Claims about ether being "deflationary" depend on current issuance and fee data — only via the real-time feed.
 - Vitalik's exact role today: he is a researcher and public voice, not a CEO — never describe him as "running" Ethereum.
+
+## Key numbers — verified history
+- **All-time high: $4,946 USD, on August 24, 2025** — finally passing the 2021 peak (about $4,890 in November 2021) that had stood for almost four years. If a visitor asks for Ethereum's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.

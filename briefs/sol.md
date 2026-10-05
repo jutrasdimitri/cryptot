@@ -41,3 +41,6 @@ Institutional chapters followed: U.S. **spot Solana ETFs began trading on Octobe
 - Throughput figures ("65,000 transactions per second") are lab/marketing numbers, not everyday reality — never present them as actual current performance.
 - The Fiserv platform details (live October 1, 2026; Roughrider Coin) come from CryptoT's own project reporting — attribute them that way until independently sourced.
 - Sam Bankman-Fried is a convicted fraudster; describe FTX's role factually, without implying Solana's team was part of the fraud — no court found that.
+
+## Key numbers — verified history
+- **All-time high: $293.31 USD, on January 19, 2025.** If a visitor asks for Solana's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.

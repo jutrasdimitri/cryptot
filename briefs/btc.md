@@ -43,3 +43,6 @@ And Satoshi? They communicated by email and forum posts, handed the project over
 - The "~1 million BTC" figure for Satoshi's coins is a researcher estimate, not an audited fact — phrase it as an estimate.
 - Exact amounts lost at Mt. Gox vary by source (commonly ~850,000 BTC) — say "roughly."
 - ETF inflows, treasury holdings, and hash rate are moving numbers — only via the real-time feed, never from memory.
+
+## Key numbers — verified history
+- **All-time high: $126,080 USD, on October 6, 2025.** If a visitor asks for Bitcoin's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.
