@@ -607,6 +607,22 @@ function jsonResponse(statusCode, body) {
  * Handler Netlify                                                     *
  * ------------------------------------------------------------------ */
 exports.handler = async function (event) {
+  /* Netlify Blobs en mode Lambda (v1) : brancher le contexte de
+   * l'événement AVANT tout usage du magasin de crédits — sans cet
+   * appel, getStore() échoue (erreur attrapée en silence) et les
+   * crédits payés ne sont ni lus ni écrits. Bug vécu le 5 oct. 2026 :
+   * achat réel de 3 $ vérifié chez Stripe, solde resté à 0.
+   * Échec toléré : on journalise et on continue — les questions
+   * gratuites ne dépendent pas de Blobs. */
+  try {
+    const netlifyBlobs = require('@netlify/blobs');
+    if (typeof netlifyBlobs.connectLambda === 'function') {
+      netlifyBlobs.connectLambda(event);
+    }
+  } catch (err) {
+    console.log(JSON.stringify({ type: 'historian_blobs_connect_failed', error: String(err && err.message || err) }));
+  }
+
   if (event.httpMethod !== 'POST') {
     return jsonResponse(405, { error: 'method_not_allowed', remaining: FREE_PER_DAY });
   }
