@@ -17,6 +17,11 @@
                                sans clé ; sert à la couche temps réel)
      HISTORIAN_CONTENT_DIR    (optionnel — dossier contenant PERSONA.md et
                                briefs/ ; sinon résolution automatique)
+     HISTORIAN_STRIPE_SECRET_KEY (phase 2 — clé restreinte Stripe du compte
+                               CryptoT, permissions Checkout Sessions
+                               lecture+écriture seulement ; absente → les
+                               packs sont inertes, le reste fonctionne)
+     HISTORIAN_STRIPE_PRICE_ID   (phase 2 — prix du pack 20 questions / 3 $)
 
    Couche temps réel (prix) : si le message du visiteur touche le présent
    (prix / « now » / « today » / « worth » et équivalents FR), la fonction
@@ -29,16 +34,27 @@
    Le brief des origines (briefs/origins.md, racines pré-2009) est chargé
    EN PLUS du brief du coin quand coin = btc ou general.
 
-   TODO phase 2 (paiement) — points d'ancrage marqués « TODO PHASE 2 » :
-     1. Remplacer le compteur en mémoire par une persistance durable
-        (Netlify Blobs ou base externe) — la Map ci-dessous se réinitialise
-        à chaque démarrage à froid de la fonction.
-     2. Brancher la vérification de crédits Stripe : un visiteur qui a
-        acheté un pack de 10 questions puise dans ses crédits au lieu de
-        (ou après) son quota gratuit quotidien.
-     3. Remplacer le visitorId localStorage par un jeton signé / compte,
-        pour empêcher la réinitialisation triviale du compteur.
-     4. Expédier le journal des échanges vers un stockage durable pour
+   PHASE 2 (paiement) — FAIT le 4 oct. 2026 :
+     - Crédits persistants dans Netlify Blobs (magasin « historian-credits ») :
+       solde par visiteur + registre des sessions Stripe créditées
+       (idempotence : un session_id ne crédite jamais deux fois).
+     - Dépenses : quota gratuit quotidien d'abord, crédits du pack ensuite.
+       Ni l'un ni l'autre n'est débité quand l'appel au modèle échoue.
+     - Actions POST supplémentaires sur le même point d'entrée :
+         {action:'balance'}  → solde {remaining, credits, canBuy}
+         {action:'checkout'} → crée une session Stripe Checkout hébergée
+                               (visitorId en metadata + client_reference_id)
+                               et renvoie {checkoutUrl}
+         {action:'claim', sessionId} → vérifie la session côté serveur
+                               auprès de Stripe (payée, montant, visiteur)
+                               puis crédite 20 questions, une seule fois.
+     - Le compteur des questions GRATUITES reste la Map en mémoire
+       ci-dessous (elle se réinitialise à chaque démarrage à froid — connu
+       et accepté au prototype ; seuls les crédits payés sont durables).
+   TODO restant :
+     1. Remplacer le visitorId localStorage par un jeton signé / compte,
+        pour empêcher la réinitialisation triviale du compteur gratuit.
+     2. Expédier le journal des échanges vers un stockage durable pour
         l'audit hebdomadaire de Mimi (actuellement : console.log structuré,
         visible dans les logs Netlify).
    ========================================================================== */
@@ -56,6 +72,22 @@ const API_KEY = process.env.HISTORIAN_API_KEY || '';
 const MODEL = process.env.HISTORIAN_MODEL || 'muse-spark-1.3';
 const FREE_PER_DAY = parseInt(process.env.HISTORIAN_FREE_PER_DAY || '3', 10) || 3;
 const API_TIMEOUT_MS = 25000;
+
+/* Phase 2 — packs payés (Stripe Checkout hébergé + crédits Netlify Blobs).
+ * Spec verrouillée par Dim le 4 oct. 2026 : 20 questions / 3,00 $ USD. */
+const STRIPE_SECRET_KEY = process.env.HISTORIAN_STRIPE_SECRET_KEY || '';
+// Le prix n'est pas un secret : valeur par défaut en dur (l'API Netlify a
+// refusé la création de la variable — 404 — le 4 oct. 2026) ; la variable
+// d'environnement, si elle est créée un jour, a préséance.
+const STRIPE_PRICE_ID = process.env.HISTORIAN_STRIPE_PRICE_ID || 'price_1UN05PRsVpQoafikMPDoa4aq';
+const STRIPE_API_BASE = 'https://api.stripe.com/v1';
+const PACK_QUESTIONS = 20;
+const PACK_AMOUNT_CENTS = 300; // garde-fou à la vérification d'une session
+const SITE_ORIGIN = 'https://cryptot.shop';
+
+function packsConfigured() {
+  return !!(STRIPE_SECRET_KEY && STRIPE_PRICE_ID);
+}
 
 // Tarifs Meta Model API (Muse Spark) relevés au PLAN.md le 4 oct. 2026 —
 // servent uniquement à estimer le coût dans le journal d'audit.
@@ -126,12 +158,12 @@ const COIN_MENTIONS = [
 const OFFLINE_MESSAGES = {
   en: {
     demo: "Ah, a visitor! Forgive the dust — my archives are still being prepared, volume by volume. Come back very soon and I will tell you the whole story of this coin, in plain language, the way it deserves to be told.",
-    limit: "And that closes today's reading session — you have used your free questions for the day. The archives reopen tomorrow. (Paid question packs are coming soon.)",
+    limit: "And that closes today's free reading — you have used your free questions for the day, and your pack is empty. The free archives reopen tomorrow — or pick up a pack of 20 questions below and we keep going.",
     trouble: "Hmm — a page seems stuck in the archives. Give me a moment to sort my notes and ask me again."
   },
   fr: {
     demo: "Ah, un visiteur ! Pardonne la poussière — mes archives sont encore en préparation, volume par volume. Reviens très bientôt et je te raconterai toute l'histoire de ce coin, en langage clair, comme elle mérite d'être racontée.",
-    limit: "Et voilà qui conclut la lecture d'aujourd'hui — tu as utilisé tes questions gratuites du jour. Les archives rouvrent demain. (Les packs de questions payants arrivent bientôt.)",
+    limit: "Et voilà qui conclut la lecture gratuite d'aujourd'hui — tu as utilisé tes questions gratuites du jour, et ton pack est vide. Les archives gratuites rouvrent demain — ou prends un pack de 20 questions ci-dessous et on continue.",
     trouble: "Hmm — une page semble coincée dans les archives. Laisse-moi un instant pour replacer mes notes et repose-moi ta question."
   }
 };
@@ -267,6 +299,153 @@ function shortHash(str) {
   let h = 0;
   for (let i = 0; i < str.length; i++) { h = ((h << 5) - h + str.charCodeAt(i)) | 0; }
   return 'v' + (h >>> 0).toString(36);
+}
+
+/* ------------------------------------------------------------------ *
+ * Crédits payés — Netlify Blobs (magasin « historian-credits »).      *
+ *                                                                     *
+ * Clés : « visitor/<id> » → {credits, updatedAt}                      *
+ *        « session/<id> » → {visitorId, questions, creditedAt}        *
+ * Le registre des sessions est le verrou d'idempotence : un paiement  *
+ * ne crédite qu'une fois, même si le visiteur réclame deux fois.     *
+ *                                                                     *
+ * Chargement PARESSEUX et tolérant : si le SDK ou le magasin est      *
+ * indisponible, les crédits tombent à 0 et TOUT le reste (questions   *
+ * gratuites) continue de fonctionner — jamais de crash.               *
+ * ------------------------------------------------------------------ */
+let blobsStore = null;
+let blobsTried = false;
+
+function getCreditStore() {
+  if (blobsTried) return blobsStore;
+  blobsTried = true;
+  try {
+    const { getStore } = require('@netlify/blobs');
+    blobsStore = getStore('historian-credits');
+  } catch (err) {
+    console.log(JSON.stringify({ type: 'historian_blobs_unavailable', error: String(err && err.message || err) }));
+    blobsStore = null;
+  }
+  return blobsStore;
+}
+
+function visitorKey(visitorId) { return 'visitor/' + encodeURIComponent(visitorId); }
+function sessionKey(sessionId) { return 'session/' + encodeURIComponent(sessionId); }
+
+async function getCredits(visitorId) {
+  const store = getCreditStore();
+  if (!store) return 0;
+  try {
+    const rec = await store.get(visitorKey(visitorId), { type: 'json' });
+    return rec && typeof rec.credits === 'number' && rec.credits > 0 ? Math.floor(rec.credits) : 0;
+  } catch (err) {
+    console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'getCredits', error: String(err && err.message || err) }));
+    return 0;
+  }
+}
+
+async function setCredits(visitorId, credits) {
+  const store = getCreditStore();
+  if (!store) return false;
+  try {
+    await store.setJSON(visitorKey(visitorId), { credits: credits, updatedAt: new Date().toISOString() });
+    return true;
+  } catch (err) {
+    console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'setCredits', error: String(err && err.message || err) }));
+    return false;
+  }
+}
+
+// Débite un crédit APRÈS une réponse réussie. Renvoie false si le solde
+// était vide ou si le magasin est indisponible (journalisé, jamais fatal).
+async function spendCredit(visitorId) {
+  const current = await getCredits(visitorId);
+  if (current <= 0) return false;
+  return setCredits(visitorId, current - 1);
+}
+
+// Crédite un pack pour une session Stripe vérifiée — idempotent.
+// Renvoie {credited: bool, already: bool, credits: solde résultant}.
+async function creditPackForSession(visitorId, sessionId) {
+  const store = getCreditStore();
+  if (!store) return { credited: false, already: false, credits: 0 };
+  try {
+    const existing = await store.get(sessionKey(sessionId), { type: 'json' });
+    if (existing) {
+      return { credited: false, already: true, credits: await getCredits(visitorId) };
+    }
+    // Le registre d'abord (le verrou), puis le solde.
+    await store.setJSON(sessionKey(sessionId), {
+      visitorId: visitorId, questions: PACK_QUESTIONS, creditedAt: new Date().toISOString()
+    });
+    const balance = (await getCredits(visitorId)) + PACK_QUESTIONS;
+    await setCredits(visitorId, balance);
+    return { credited: true, already: false, credits: balance };
+  } catch (err) {
+    console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'creditPack', error: String(err && err.message || err) }));
+    return { credited: false, already: false, credits: await getCredits(visitorId) };
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Stripe — appels REST directs (form-encoded), clé secrète côté       *
+ * serveur seulement. Création + lecture de sessions Checkout.         *
+ * ------------------------------------------------------------------ */
+async function stripeRequest(method, pathStripe, params) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 12000);
+  try {
+    const opts = {
+      method: method,
+      signal: controller.signal,
+      headers: { 'Authorization': 'Bearer ' + STRIPE_SECRET_KEY }
+    };
+    if (params) {
+      opts.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+      opts.body = params.toString();
+    }
+    const res = await fetch(STRIPE_API_BASE + pathStripe, opts);
+    const data = await res.json().catch(() => null);
+    if (!res.ok) {
+      const msg = data && data.error && data.error.message ? data.error.message : ('HTTP ' + res.status);
+      throw new Error('Stripe: ' + msg);
+    }
+    return data;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// Crée la session Checkout hébergée du pack pour ce visiteur.
+// returnPath : chemin de la page de test (validé par l'appelant).
+async function createPackCheckout(visitorId, lang, returnPath) {
+  const sep = returnPath.indexOf('?') === -1 ? '?' : '&';
+  const params = new URLSearchParams();
+  params.set('mode', 'payment');
+  params.set('line_items[0][price]', STRIPE_PRICE_ID);
+  params.set('line_items[0][quantity]', '1');
+  params.set('client_reference_id', visitorId);
+  params.set('metadata[visitorId]', visitorId);
+  params.set('metadata[product]', 'historian_pack_20');
+  params.set('metadata[questions]', String(PACK_QUESTIONS));
+  params.set('payment_intent_data[metadata][visitorId]', visitorId);
+  params.set('locale', lang === 'fr' ? 'fr' : 'en');
+  params.set('success_url', SITE_ORIGIN + returnPath + sep + 'cth_checkout=success&session_id={CHECKOUT_SESSION_ID}');
+  params.set('cancel_url', SITE_ORIGIN + returnPath + sep + 'cth_checkout=cancelled');
+  const session = await stripeRequest('POST', '/checkout/sessions', params);
+  return session;
+}
+
+// Vérifie une session auprès de Stripe : payée, bon montant, bon visiteur.
+// Ne fait JAMAIS confiance au seul retour du navigateur.
+function sessionMatchesPack(session, visitorId) {
+  if (!session || typeof session !== 'object') return false;
+  if (session.mode !== 'payment') return false;
+  if (session.payment_status !== 'paid') return false;
+  if (session.amount_total !== PACK_AMOUNT_CENTS) return false;
+  if (session.currency !== 'usd') return false;
+  const metaVisitor = session.metadata && session.metadata.visitorId;
+  return session.client_reference_id === visitorId || metaVisitor === visitorId;
 }
 
 /* ------------------------------------------------------------------ *
@@ -448,6 +627,65 @@ exports.handler = async function (event) {
     ? body.visitorId
     : 'anon-' + ((event.headers && (event.headers['x-forwarded-for'] || event.headers['client-ip'])) || 'unknown');
 
+  /* --- Actions phase 2 (aucun message requis) -------------------------
+   * balance  : solde du visiteur (quota gratuit restant + crédits).
+   * checkout : crée la session Stripe Checkout du pack.
+   * claim    : vérifie une session payée et crédite le pack (idempotent). */
+  const action = typeof body.action === 'string' ? body.action : '';
+  const freeLeftNow = Math.max(0, FREE_PER_DAY - getCount(visitorId));
+
+  if (action === 'balance') {
+    return jsonResponse(200, {
+      remaining: freeLeftNow,
+      credits: await getCredits(visitorId),
+      canBuy: packsConfigured()
+    });
+  }
+
+  if (action === 'checkout') {
+    if (!packsConfigured()) {
+      return jsonResponse(200, { error: 'packs_not_configured', canBuy: false });
+    }
+    let returnPath = typeof body.returnPath === 'string' ? body.returnPath : '';
+    if (!/^\/(?!\/)[A-Za-z0-9\-._~/?&=%]*$/.test(returnPath)) returnPath = '/historian-test';
+    try {
+      const session = await createPackCheckout(visitorId, lang, returnPath);
+      console.log(JSON.stringify({ type: 'historian_checkout_created', ts: new Date().toISOString(), visitor: shortHash(visitorId), session: session.id }));
+      return jsonResponse(200, { checkoutUrl: session.url, sessionId: session.id, canBuy: true });
+    } catch (err) {
+      console.log(JSON.stringify({ type: 'historian_checkout_error', ts: new Date().toISOString(), error: String(err && err.message || err) }));
+      return jsonResponse(200, { error: 'checkout_failed', canBuy: true });
+    }
+  }
+
+  if (action === 'claim') {
+    const sessionId = typeof body.sessionId === 'string' ? body.sessionId : '';
+    if (!/^cs_[A-Za-z0-9_]{10,200}$/.test(sessionId)) {
+      return jsonResponse(400, { error: 'invalid_session', credited: false });
+    }
+    if (!packsConfigured()) {
+      return jsonResponse(200, { error: 'packs_not_configured', credited: false, canBuy: false });
+    }
+    try {
+      const session = await stripeRequest('GET', '/checkout/sessions/' + encodeURIComponent(sessionId), null);
+      if (!sessionMatchesPack(session, visitorId)) {
+        console.log(JSON.stringify({ type: 'historian_claim_rejected', ts: new Date().toISOString(), visitor: shortHash(visitorId), session: sessionId }));
+        return jsonResponse(200, { credited: false, error: 'payment_not_verified', credits: await getCredits(visitorId), canBuy: true });
+      }
+      const result = await creditPackForSession(visitorId, sessionId);
+      if (result.credited) {
+        console.log(JSON.stringify({ type: 'historian_credits_granted', ts: new Date().toISOString(), visitor: shortHash(visitorId), session: sessionId, questions: PACK_QUESTIONS, credits: result.credits }));
+      }
+      return jsonResponse(200, {
+        credited: result.credited, alreadyCredited: result.already,
+        credits: result.credits, remaining: freeLeftNow, canBuy: true
+      });
+    } catch (err) {
+      console.log(JSON.stringify({ type: 'historian_claim_error', ts: new Date().toISOString(), error: String(err && err.message || err) }));
+      return jsonResponse(200, { credited: false, error: 'claim_failed', credits: await getCredits(visitorId), canBuy: true });
+    }
+  }
+
   if (!message) {
     return jsonResponse(400, { error: 'empty_message', remaining: FREE_PER_DAY - getCount(visitorId) });
   }
@@ -456,20 +694,21 @@ exports.handler = async function (event) {
   const used = getCount(visitorId);
   const remainingBefore = Math.max(0, FREE_PER_DAY - used);
 
-  /* --- Quota gratuit épuisé -------------------------------------------
-   * TODO PHASE 2 : avant de refuser, vérifier les crédits Stripe du
-   * visiteur ; s'il lui en reste, servir la réponse en débitant un
-   * crédit plutôt que le quota quotidien. */
-  if (remainingBefore <= 0) {
+  /* --- Quota gratuit épuisé ET pack vide ------------------------------
+   * La dépense se fait dans cet ordre : gratuit d'abord, crédits du
+   * pack ensuite. Si les deux sont à zéro, on s'arrête ici — le widget
+   * offre alors le pack (canBuy) sous ce message. */
+  const creditsBefore = await getCredits(visitorId);
+  if (remainingBefore <= 0 && creditsBefore <= 0) {
     logExchange({ visitor: shortHash(visitorId), coin: coin, lang: lang, limited: true, question: message.slice(0, 200) });
-    return jsonResponse(200, { answer: msgs.limit, remaining: 0, limited: true });
+    return jsonResponse(200, { answer: msgs.limit, remaining: 0, credits: 0, limited: true, canBuy: packsConfigured() });
   }
 
   /* --- Mode démo hors-ligne (clé ou base API absente) ------------------
    * Le visiteur ne perd pas de question : rien n'est débité. */
   if (!API_KEY || !API_BASE) {
     logExchange({ visitor: shortHash(visitorId), coin: coin, lang: lang, demo: true, question: message.slice(0, 200) });
-    return jsonResponse(200, { answer: msgs.demo, remaining: remainingBefore, demo: true });
+    return jsonResponse(200, { answer: msgs.demo, remaining: remainingBefore, credits: creditsBefore, demo: true, canBuy: packsConfigured() });
   }
 
   /* --- Appel réel au modèle ------------------------------------------ */
@@ -479,21 +718,32 @@ exports.handler = async function (event) {
     const liveBlock = await maybeFetchLiveData(coin, message);
     const systemPrompt = buildSystemPrompt(coin, lang, liveBlock);
     const result = await callModel(systemPrompt, history, message);
-    incrementCount(visitorId);
+    // Réponse réussie seulement qu'on débite : gratuit d'abord, sinon
+    // un crédit du pack (le quota gratuit était épuisé mais le pack
+    // avait des crédits — vérifié plus haut).
+    let paidWith = 'free';
+    if (remainingBefore > 0) {
+      incrementCount(visitorId);
+    } else {
+      await spendCredit(visitorId);
+      paidWith = 'credit';
+    }
     const remaining = Math.max(0, FREE_PER_DAY - getCount(visitorId));
+    const credits = await getCredits(visitorId);
     logExchange({
       visitor: shortHash(visitorId), coin: coin, lang: lang,
       question: message.slice(0, 200),
+      paidWith: paidWith,
       liveData: !!liveBlock,
       promptTokens: result.usage ? result.usage.prompt_tokens : null,
       completionTokens: result.usage ? result.usage.completion_tokens : null,
       estCostUsd: estimateCostUsd(result.usage)
     });
-    return jsonResponse(200, { answer: result.answer, remaining: remaining });
+    return jsonResponse(200, { answer: result.answer, remaining: remaining, credits: credits, canBuy: packsConfigured() });
   } catch (err) {
     // Échec de NOTRE côté : le visiteur ne perd pas sa question, et il
     // reçoit un mot du personnage plutôt qu'une erreur technique.
     console.log(JSON.stringify({ type: 'historian_api_error', ts: new Date().toISOString(), error: String(err && err.message || err) }));
-    return jsonResponse(200, { answer: msgs.trouble, remaining: remainingBefore, error: true });
+    return jsonResponse(200, { answer: msgs.trouble, remaining: remainingBefore, credits: creditsBefore, error: true, canBuy: packsConfigured() });
   }
 };

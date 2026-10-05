@@ -73,7 +73,17 @@
       counterDone: 'Free questions used up for today',
       thinking: 'Digging through the archives…',
       errorNet: 'The archives are dusty right now — give me a moment and try again.',
-      footer: 'Powered by Mimi · Education, not financial advice'
+      footer: 'Powered by Mimi · Education, not financial advice',
+      creditsLeft: function (n) { return n + ' pack question' + (n === 1 ? '' : 's') + ' left'; },
+      buyPack: 'Get 20 questions — $3',
+      buyNote: 'One pack = 20 extra questions · Secure checkout by Stripe',
+      packsSoon: 'Question packs are coming very soon — the free archives reopen tomorrow.',
+      verifying: 'Welcome back — let me check the register for your payment…',
+      creditedMsg: function (n) { return 'Payment confirmed in the register: ' + n + ' questions are now in your pack. Ask away!'; },
+      alreadyMsg: 'That payment was already added to your pack — your balance is up to date.',
+      cancelledMsg: 'No harm done — the checkout was cancelled and nothing was charged. Your free questions return tomorrow.',
+      checkoutError: 'The register jammed for a moment — the pack could not be opened. Nothing was charged; try again in a minute.',
+      notVerified: 'I could not confirm that payment in the register yet. If you completed it, give it a moment and reopen this panel.'
     },
     fr: {
       launcher: "Demande à l'Historien",
@@ -93,7 +103,17 @@
       counterDone: 'Questions gratuites épuisées pour aujourd\'hui',
       thinking: 'Je fouille les archives…',
       errorNet: 'Les archives sont poussiéreuses en ce moment — laisse-moi un instant et réessaie.',
-      footer: 'Propulsé par Mimi · Éducation, pas des conseils financiers'
+      footer: 'Propulsé par Mimi · Éducation, pas des conseils financiers',
+      creditsLeft: function (n) { return n + ' question' + (n === 1 ? '' : 's') + ' de pack restante' + (n === 1 ? '' : 's'); },
+      buyPack: 'Obtenir 20 questions — 3 $',
+      buyNote: 'Un pack = 20 questions de plus · Paiement sécurisé par Stripe',
+      packsSoon: 'Les packs de questions arrivent très bientôt — les archives gratuites rouvrent demain.',
+      verifying: 'Bon retour — je vérifie ton paiement dans le registre…',
+      creditedMsg: function (n) { return 'Paiement confirmé dans le registre : ' + n + ' questions sont maintenant dans ton pack. Vas-y, pose ta question !'; },
+      alreadyMsg: 'Ce paiement a déjà été ajouté à ton pack — ton solde est à jour.',
+      cancelledMsg: 'Aucun souci — le paiement a été annulé et rien n\'a été facturé. Tes questions gratuites reviennent demain.',
+      checkoutError: 'Le registre a coincé un instant — le pack n\'a pas pu s\'ouvrir. Rien n\'a été facturé ; réessaie dans une minute.',
+      notVerified: 'Je n\'ai pas encore pu confirmer ce paiement dans le registre. Si tu l\'as complété, laisse-lui un moment et rouvre ce panneau.'
     }
   };
 
@@ -135,6 +155,9 @@
     greeted: false,
     sending: false,
     remaining: null,     // null = pas encore confirmé par le serveur
+    credits: null,       // questions du pack payé (null = inconnu)
+    canBuy: false,       // les packs sont-ils achetables en ce moment ?
+    balanceLoaded: false,
     history: []          // [{role: 'user'|'assistant', content: '...'}]
   };
 
@@ -236,6 +259,15 @@
     counter.appendChild(counterNote);
     panel.appendChild(counter);
 
+    /* Achat du pack (phase 2) — visible quand les gratuites sont épuisées */
+    var buyWrap = el('div', 'cth-buy');
+    var buyBtn = el('button', 'cth-buy-btn', t.buyPack);
+    buyBtn.type = 'button';
+    var buyNote = el('div', 'cth-buy-note', t.buyNote);
+    buyWrap.appendChild(buyBtn);
+    buyWrap.appendChild(buyNote);
+    panel.appendChild(buyWrap);
+
     /* Saisie */
     var inputRow = el('div', 'cth-inputrow');
     var input = el('input', 'cth-input');
@@ -265,11 +297,13 @@
 
     els = { root: root, panel: panel, messages: messages, presets: presetsWrap,
             input: input, sendBtn: sendBtn, launcher: launcher,
-            counterLeft: counterLeft, counterNote: counterNote };
+            counterLeft: counterLeft, counterNote: counterNote,
+            buyWrap: buyWrap, buyBtn: buyBtn, buyNote: buyNote };
 
     /* Événements */
     launcher.addEventListener('click', togglePanel);
     closeBtn.addEventListener('click', closePanel);
+    buyBtn.addEventListener('click', startCheckout);
     sendBtn.addEventListener('click', function () { sendMessage(input.value); });
     input.addEventListener('keydown', function (ev) {
       if (ev.key === 'Enter') { ev.preventDefault(); sendMessage(input.value); }
@@ -298,6 +332,7 @@
         : t.greetingCoin(COIN_NAMES[config.coin]);
       addMessage('assistant', greeting, true);
     }
+    if (!state.balanceLoaded) refreshBalance();
     setTimeout(function () { els.input.focus(); }, 60);
   }
 
@@ -354,23 +389,146 @@
   }
 
   /* ------------------------------------------------------------------ *
-   * Compteur                                                            *
+   * Compteur + crédits du pack                                          *
    * ------------------------------------------------------------------ */
+  // Le visiteur peut poser une question s'il lui reste des gratuites
+  // OU des crédits de pack (le serveur dépense dans cet ordre).
+  function hasQuota() {
+    if (state.remaining === null) return true; // pas encore confirmé
+    return state.remaining > 0 || (state.credits || 0) > 0;
+  }
+
   function updateCounter() {
     var t = I18N[config.lang];
-    if (state.remaining === null) {
+    if (state.remaining === null && state.credits === null) {
       els.counterLeft.textContent = '';
       els.counterNote.textContent = FREE_PER_DAY + ' ' + t.counterFree;
+      els.buyWrap.classList.remove('cth-visible');
       return;
     }
-    if (state.remaining <= 0) {
+    var parts = [];
+    if (state.remaining !== null && state.remaining > 0) parts.push(t.counterLeft(state.remaining));
+    if ((state.credits || 0) > 0) parts.push(t.creditsLeft(state.credits));
+    if (parts.length) {
+      els.counterLeft.textContent = parts.join(' · ');
+      els.counterNote.textContent = '';
+    } else {
       els.counterLeft.textContent = '0';
       els.counterNote.textContent = t.counterDone;
-      els.input.disabled = true;
-      els.sendBtn.disabled = true;
-    } else {
-      els.counterLeft.textContent = t.counterLeft(state.remaining);
-      els.counterNote.textContent = '';
+    }
+    var exhausted = !hasQuota();
+    els.input.disabled = exhausted;
+    els.sendBtn.disabled = exhausted;
+    // Zone d'achat : visible dès que les gratuites du jour sont épuisées.
+    var showBuy = state.remaining !== null && state.remaining <= 0;
+    els.buyWrap.classList.toggle('cth-visible', !!showBuy);
+    if (showBuy) {
+      els.buyBtn.style.display = state.canBuy ? '' : 'none';
+      els.buyNote.textContent = state.canBuy ? t.buyNote : t.packsSoon;
+    }
+  }
+
+  // Petit appel API partagé (même point d'entrée que les questions).
+  function apiCall(payload) {
+    return fetch(config.api, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    });
+  }
+
+  function applyBalance(data) {
+    if (!data) return;
+    if (typeof data.remaining === 'number') state.remaining = data.remaining;
+    if (typeof data.credits === 'number') state.credits = data.credits;
+    if (typeof data.canBuy === 'boolean') state.canBuy = data.canBuy;
+  }
+
+  // Solde à jour sans poser de question (ouverture du panneau, retour
+  // de paiement). Ne débite rien.
+  function refreshBalance() {
+    apiCall({ action: 'balance', coin: config.coin, lang: config.lang, visitorId: getVisitorId() })
+      .then(function (data) {
+        state.balanceLoaded = true;
+        applyBalance(data);
+        updateCounter();
+      })
+      .catch(function () { /* silencieux : le compteur par défaut reste */ });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Achat du pack — Stripe Checkout hébergé (phase 2)                   *
+   * ------------------------------------------------------------------ */
+  function startCheckout() {
+    if (!state.canBuy) return;
+    var t = I18N[config.lang];
+    els.buyBtn.disabled = true;
+    apiCall({
+      action: 'checkout', coin: config.coin, lang: config.lang,
+      visitorId: getVisitorId(), returnPath: window.location.pathname
+    })
+      .then(function (data) {
+        if (data && data.checkoutUrl) {
+          window.location.href = data.checkoutUrl; // page hébergée Stripe
+          return;
+        }
+        throw new Error('no checkout url');
+      })
+      .catch(function () {
+        els.buyBtn.disabled = false;
+        addMessage('assistant', t.checkoutError);
+      });
+  }
+
+  // Retour de Stripe : ?cth_checkout=success&session_id=cs_… (ou cancelled).
+  // On ouvre le panneau, on fait vérifier le paiement CÔTÉ SERVEUR,
+  // et on nettoie l'URL.
+  function handleCheckoutReturn() {
+    var params;
+    try { params = new URLSearchParams(window.location.search); } catch (e) { return; }
+    var flag = params.get('cth_checkout');
+    if (!flag) return;
+    var sessionId = params.get('session_id');
+    try {
+      var clean = window.location.pathname + window.location.hash;
+      window.history.replaceState(null, '', clean);
+    } catch (e) { /* l'URL reste, sans gravité */ }
+
+    // Le message de retour remplace le mot d'accueil, et c'est la
+    // réclamation (claim) qui rafraîchit le solde — pas le balance.
+    state.greeted = true;
+    state.balanceLoaded = true;
+    openPanel();
+    var t = I18N[config.lang];
+
+    if (flag === 'cancelled') {
+      addMessage('assistant', t.cancelledMsg, true);
+      refreshBalance();
+      return;
+    }
+    if (flag === 'success' && sessionId) {
+      addMessage('assistant', t.verifying, true);
+      apiCall({
+        action: 'claim', coin: config.coin, lang: config.lang,
+        visitorId: getVisitorId(), sessionId: sessionId
+      })
+        .then(function (data) {
+          applyBalance(data);
+          if (data && data.credited) {
+            addMessage('assistant', t.creditedMsg(state.credits || 20), true);
+          } else if (data && data.alreadyCredited) {
+            addMessage('assistant', t.alreadyMsg, true);
+          } else {
+            addMessage('assistant', t.notVerified, true);
+          }
+          updateCounter();
+        })
+        .catch(function () {
+          addMessage('assistant', t.notVerified, true);
+        });
     }
   }
 
@@ -380,7 +538,7 @@
   function sendMessage(rawText) {
     var text = (rawText || '').trim();
     if (!text || state.sending) return;
-    if (state.remaining !== null && state.remaining <= 0) return;
+    if (!hasQuota()) return;
 
     state.sending = true;
     els.sendBtn.disabled = true;
@@ -398,20 +556,10 @@
       visitorId: getVisitorId()
     };
 
-    fetch(config.api, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json();
-      })
+    apiCall(payload)
       .then(function (data) {
         typing.remove();
-        if (data && typeof data.remaining === 'number') {
-          state.remaining = data.remaining;
-        }
+        applyBalance(data);
         var answer = (data && data.answer) ? String(data.answer)
           : I18N[config.lang].errorNet;
         addMessage('assistant', answer);
@@ -424,10 +572,8 @@
       })
       .finally(function () {
         state.sending = false;
-        if (!(state.remaining !== null && state.remaining <= 0)) {
-          els.sendBtn.disabled = false;
-          els.input.focus();
-        }
+        updateCounter();
+        if (hasQuota()) els.input.focus();
       });
   }
 
@@ -437,6 +583,7 @@
   function init() {
     ensureCss();
     build();
+    handleCheckoutReturn();
   }
 
   if (document.readyState === 'loading') {

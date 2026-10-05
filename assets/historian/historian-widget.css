@@ -385,6 +385,53 @@
   }
 }
 
+/* ---------- Achat du pack (phase 2) ---------- */
+
+.cth-root .cth-buy {
+  display: none;
+  padding: 8px 12px 10px;
+  border-top: 1px solid #16240f;
+  background: var(--cth-bg);
+}
+
+.cth-root .cth-buy.cth-visible {
+  display: block;
+}
+
+.cth-root .cth-buy-btn {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--cth-green);
+  border: 1px solid var(--cth-green-bright);
+  border-radius: 10px;
+  color: #04150a;
+  font-family: var(--cth-font-title);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+
+.cth-root .cth-buy-btn:hover:not(:disabled),
+.cth-root .cth-buy-btn:focus-visible {
+  background: var(--cth-green-bright);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.cth-root .cth-buy-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.cth-root .cth-buy-note {
+  margin-top: 5px;
+  font-size: 11px;
+  text-align: center;
+  color: var(--cth-muted);
+}
+
 /* Avatar du Historian (image approuvée par Dim, 4 oct. 2026) */
 .cth-root .cth-avatar { overflow: hidden; padding: 0; background: #000; }
 .cth-root .cth-avatar-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
