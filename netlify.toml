@@ -9,3 +9,8 @@
   from = "/api/historian"
   to = "/.netlify/functions/historian"
   status = 200
+
+[[redirects]]
+  from = "/api/historian-webhook"
+  to = "/.netlify/functions/historian-webhook"
+  status = 200

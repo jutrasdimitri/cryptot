@@ -321,7 +321,12 @@ function getCreditStore() {
   blobsTried = true;
   try {
     const { getStore } = require('@netlify/blobs');
-    blobsStore = getStore('historian-credits');
+    // Cohérence FORTE pour tout le magasin de crédits : le verrou
+    // d'idempotence des sessions et le solde des visiteurs ne doivent
+    // jamais dépendre de la propagation éventuelle (jusqu'à 60 s) —
+    // durcissement du 5 oct. 2026, en même temps que le webhook Stripe
+    // (historian-webhook.js utilise la même configuration).
+    blobsStore = getStore({ name: 'historian-credits', consistency: 'strong' });
   } catch (err) {
     console.log(JSON.stringify({ type: 'historian_blobs_unavailable', error: String(err && err.message || err) }));
     blobsStore = null;
