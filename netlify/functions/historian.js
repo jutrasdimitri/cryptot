@@ -355,7 +355,8 @@ async function callModel(systemPrompt, history, message) {
         model: MODEL,
         messages: messages,
         temperature: 0.7,
-        max_tokens: 700
+        max_tokens: 2500,
+        reasoning: { effort: 'low' }
       })
     });
     if (!res.ok) throw new Error('API HTTP ' + res.status);
