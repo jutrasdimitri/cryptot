@@ -49,3 +49,7 @@ The identity question remains XRP's honest debate: it is the most corporate, ban
 
 ## Key numbers — verified history
 - **All-time high: $3.65 USD, on July 17, 2025** — finally passing the January 2018 peak (about $3.40) that had stood for more than seven years. If a visitor asks for XRP's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.
+
+## Current status — as of October 4, 2026
+- **U.S. spot XRP ETFs: TRADING since November 2025.** The first was Canary Capital's **XRPC** on Nasdaq, launched November 13, 2025. Seven funds in total, with roughly **$1.79B in cumulative inflows by late September 2026** — Bitwise's fund in the lead (about $676M), alongside Franklin's XRPZ, Grayscale's GXRP and 21Shares' TOXR.
+- **On March 17, 2026, the SEC and the CFTC jointly classified XRP as a "digital commodity"** — the regulatory ending to the war that began with the Christmas lawsuit of December 2020.

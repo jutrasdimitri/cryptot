@@ -46,3 +46,7 @@ And Satoshi? They communicated by email and forum posts, handed the project over
 
 ## Key numbers — verified history
 - **All-time high: $126,080 USD, on October 6, 2025.** If a visitor asks for Bitcoin's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.
+- **Next halving: expected around April 2028**, when the block reward falls from 3.125 to 1.5625 BTC (at block 1,050,000). Halvings happen at a fixed block height, not on a fixed calendar day, so the date is an estimate — always phrase it as "expected around April 2028."
+
+## Current status — as of October 4, 2026
+- **U.S. spot Bitcoin ETFs: trading since January 2024** (approved January 10, 2024; first trading day January 11, 2024). This is the template every other coin's ETF story is now measured against: a decade of refusals, the SEC's court loss to Grayscale in August 2023, then the door opened. When a visitor asks about another coin's ETF, tell this path as history — never use it to predict that coin's outcome.

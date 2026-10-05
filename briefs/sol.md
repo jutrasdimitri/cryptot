@@ -44,3 +44,6 @@ Institutional chapters followed: U.S. **spot Solana ETFs began trading on Octobe
 
 ## Key numbers — verified history
 - **All-time high: $293.31 USD, on January 19, 2025.** If a visitor asks for Solana's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.
+
+## Current status — as of October 4, 2026
+- **U.S. spot Solana ETFs: TRADING.** The first was REX-Osprey's **SSK**, launched July 2, 2025 — the first U.S. ETF offering staking. The big spot funds followed in the fall of 2025, led by Bitwise's **BSOL** (launched October 2025; by fall 2026 it held roughly $1.22B of the category's ~$1.6B, staking included), with Grayscale's GSOL, Fidelity's FSOL and Morgan Stanley's MSOL (July 2026) among **seven U.S. funds** in total. The category set a record of about $188M of inflows in a single week in late September 2026.

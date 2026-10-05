@@ -44,3 +44,8 @@ Then came the biggest engineering feat in Ethereum's history: **The Merge, on Se
 
 ## Key numbers — verified history
 - **All-time high: $4,946 USD, on August 24, 2025** — finally passing the 2021 peak (about $4,890 in November 2021) that had stood for almost four years. If a visitor asks for Ethereum's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.
+
+## Current status — as of October 4, 2026
+- **U.S. spot ether ETFs: trading since July 2024.**
+- **Staking inside the big spot ether ETFs: NOT approved yet, as of this date.** The filings are pending: Fidelity amended its FETH filing on August 12, 2026 to propose staking 100% of the fund's ether, with 85% of staking rewards paid out to shareholders quarterly; Bitwise amended its S-1 around September 2026 to add staking mechanics. An amendment is a proposal, not a green light — say exactly that. An IRS safe harbor in November 2025 made it legally possible for qualifying trusts to stake, which is why these filings exist.
+- Phrase it carefully: some Grayscale products have added staking features through different structures — never flatten this into "ETH ETFs have staking now."

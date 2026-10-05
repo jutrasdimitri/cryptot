@@ -69,6 +69,17 @@ const ATH_FACTS = {
   xrp: '$3.65 USD on July 17, 2025'
 };
 
+// Statuts actuels documentés (sections « Current status » des briefs,
+// datées du 4 oct. 2026) — injectés en dur comme les ATH : le modèle doit
+// répondre les faits datés d'abord, et ne refuser que la prédiction.
+const STATUS_FACTS = {
+  btc: 'U.S. spot Bitcoin ETFs have been trading since January 2024 (approved January 10, 2024).',
+  eth: 'U.S. spot ether ETFs have been trading since July 2024. As of October 4, 2026, staking inside the major spot ether ETFs is NOT yet approved — amendments proposing it (Fidelity FETH, August 12, 2026; Bitwise, September 2026) are filed and pending.',
+  ada: 'As of October 4, 2026, there is NO U.S. spot Cardano ETF trading. Grayscale withdrew its Cardano Trust ETF filing (S-1) on August 7, 2026 — a sponsor withdrawal (Form RW), NOT an SEC rejection. Regulated ADA futures launched on the CME on February 9, 2026 and passed the six-month mark on August 9, 2026. ADA is a small slice (~0.8%) of Grayscale\'s GDLC index ETF.',
+  sol: 'U.S. spot Solana ETFs ARE trading: first REX-Osprey SSK (July 2, 2025, with staking), then the big spot funds from October 2025 (Bitwise BSOL, Grayscale GSOL, Fidelity FSOL, Morgan Stanley MSOL) — seven U.S. funds.',
+  xrp: 'U.S. spot XRP ETFs ARE trading since November 2025 (first: Canary XRPC, Nasdaq, November 13, 2025; seven funds, ~$1.79B cumulative inflows by late September 2026). On March 17, 2026, the SEC and CFTC classified XRP as a digital commodity.'
+};
+
 const COIN_NAMES = {
   btc: 'Bitcoin', eth: 'Ethereum', ada: 'Cardano',
   sol: 'Solana', xrp: 'XRP', general: 'Power 5'
@@ -203,6 +214,16 @@ function buildSystemPrompt(coin, lang, liveBlock) {
     parts.push('\n---\nDOCUMENTED FACTS — all-time highs (ATH): Bitcoin ' + ATH_FACTS.btc + '; Ethereum ' +
       ATH_FACTS.eth + '; Cardano ' + ATH_FACTS.ada + '; Solana ' + ATH_FACTS.sol + '; XRP ' + ATH_FACTS.xrp +
       '. When a visitor asks for an all-time high, state the fact plainly — the price and the date. Never refuse it as price talk.');
+  }
+
+  // Statut actuel documenté : même traitement que l'ATH — fait d'abord.
+  if (STATUS_FACTS[coin]) {
+    parts.push('\n---\nDOCUMENTED STATUS — ' + COIN_NAMES[coin] + ', as of October 4, 2026: ' + STATUS_FACTS[coin] +
+      ' When a visitor asks about the current state of things (ETFs, approvals, listings), answer with these dated facts FIRST, opening with "As of October 2026…". Refuse ONLY the prediction part of a question (what WILL happen) — never the factual part.');
+  } else if (coin === 'general') {
+    parts.push('\n---\nDOCUMENTED STATUS — as of October 4, 2026: Bitcoin: ' + STATUS_FACTS.btc + ' Ethereum: ' +
+      STATUS_FACTS.eth + ' Cardano: ' + STATUS_FACTS.ada + ' Solana: ' + STATUS_FACTS.sol + ' XRP: ' + STATUS_FACTS.xrp +
+      ' When a visitor asks about the current state of things (ETFs, approvals, listings), answer with these dated facts FIRST, opening with "As of October 2026…". Refuse ONLY the prediction part of a question (what WILL happen) — never the factual part.');
   }
 
   // Bloc temps réel (prix du moment) : présent seulement si la question

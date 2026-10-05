@@ -45,3 +45,9 @@ A blockchain built like infrastructure rather than like an app: formally verifie
 
 ## Key numbers — verified history
 - **All-time high: $3.09 USD, on September 2, 2021** — reached in the run-up to the Alonzo smart-contract launch (September 12, 2021). If a visitor asks for Cardano's all-time high (ATH), state this plainly: the price and the date. It is a documented historical fact, not price talk.
+
+## Current status — as of October 4, 2026
+- **U.S. spot Cardano ETF: NONE trading, as of this date.** If a visitor asks "will Cardano have an ETF?", the honest factual answer starts here — then the prediction part ("soon?") is declined in character, as always.
+- **Grayscale withdrew its Cardano Trust ETF filing (S-1) on August 7, 2026** — a Form RW withdrawal, meaning the sponsor pulled its own paperwork. It was NOT an SEC rejection or denial (Grayscale's DOT and HBAR filings were withdrawn the same way). NYSE Arca had already withdrawn its related listing proposal on September 29, 2025.
+- **The stepping stones do exist**: regulated ADA futures launched on the CME on February 9, 2026, and passed the six-month mark on August 9, 2026 — the track record the SEC's Generic Listing Standards look at for a coin's eligibility. Eligibility is a door being unlocked, not a launch date — never present it as "an ETF is coming."
+- ADA does sit inside one trading U.S. ETF: Grayscale's **GDLC**, a large-cap index basket fund (its conversion was approved around July 1, 2025), where ADA is a small slice — roughly 0.8% of the basket.
