@@ -22,9 +22,11 @@
         peuvent se croiser sans jamais créditer deux fois.
 
    Cette fonction ne répond JAMAIS à des questions : aucun appel au
-   modèle. Les lectures du magasin de crédits se font en cohérence
-   FORTE (strong) — le verrou d'idempotence ne doit pas dépendre de
-   la propagation éventuelle (jusqu'à 60 s).
+   modèle. Note cohérence Blobs : les lectures « strong » (au niveau
+   magasin OU par opération) ont été testées le 5 oct. 2026 dans ce
+   runtime Lambda et renvoient vide (solde lu 0) — le magasin est donc
+   utilisé en cohérence éventuelle, EXACTEMENT comme le parcours
+   claim de historian.js, dont l'idempotence a été prouvée en réel.
 
    Variables d'environnement :
      HISTORIAN_STRIPE_SECRET_KEY     (déjà en place — re-vérification)
@@ -55,9 +57,8 @@ const SIGNATURE_TOLERANCE_SEC = 300; // 5 minutes, comme Stripe
  *                                                                     *
  * Clés : « visitor/<id> » → {credits, updatedAt}                      *
  *        « session/<id> » → {visitorId, questions, creditedAt}       *
- * Les lectures critiques (verrou + solde) se font en cohérence FORTE  *
- * (option par opération sur get) — jamais de dépendance à la          *
- * propagation éventuelle (jusqu'à 60 s).                              *
+ * Cohérence éventuelle (défaut Blobs), comme historian.js : les       *
+ * lectures « strong » renvoient vide dans ce runtime (testé 5 oct.).  *
  * ------------------------------------------------------------------ */
 let blobsStore = null;
 let blobsTried = false;
@@ -82,7 +83,7 @@ async function getCredits(visitorId) {
   const store = getCreditStore();
   if (!store) return 0;
   try {
-    const rec = await store.get(visitorKey(visitorId), { type: 'json', consistency: 'strong' });
+    const rec = await store.get(visitorKey(visitorId), { type: 'json' });
     return rec && typeof rec.credits === 'number' && rec.credits > 0 ? Math.floor(rec.credits) : 0;
   } catch (err) {
     console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'webhookGetCredits', error: String(err && err.message || err) }));
@@ -108,7 +109,7 @@ async function creditPackForSession(visitorId, sessionId) {
   const store = getCreditStore();
   if (!store) return { credited: false, already: false, credits: 0 };
   try {
-    const existing = await store.get(sessionKey(sessionId), { type: 'json', consistency: 'strong' });
+    const existing = await store.get(sessionKey(sessionId), { type: 'json' });
     if (existing) {
       return { credited: false, already: true, credits: await getCredits(visitorId) };
     }
