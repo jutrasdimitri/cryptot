@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "PJ9fjjhsmds",
+      "type": "longform",
+      "title": "Bitcoin Near $87K: The Close That Decides Everything",
+      "date": "2026-10-05",
+      "duration": "8:22",
+      "durationISO": "PT8M22S",
+      "url": "https://www.youtube.com/watch?v=PJ9fjjhsmds",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/PJ9fjjhsmds",
+      "thumbnail": "https://i.ytimg.com/vi/PJ9fjjhsmds/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin's $87K close test (softer U.S. jobs data, +$2.65B September spot BTC ETF inflows)",
+          "Cardano ADA +11% short squeeze and the $0.263 close",
+          "Ethereum range",
+          "Power 5 levels ADA → ETH → SOL → XRP → BTC"
+        ],
+        "fr": [
+          "Le test de clôture de Bitcoin à 87 000 $ (données d'emploi US plus faibles, +2,65 G$ d'entrées dans les ETF BTC spot en septembre)",
+          "Le short squeeze de Cardano ADA (+11 %) et sa clôture à 0,263 $",
+          "Ethereum en range",
+          "Niveaux Power 5 ADA → ETH → SOL → XRP → BTC"
+        ]
+      }
+    },
+    {
       "id": "PAsDjWDvYSo",
       "type": "longform",
       "title": "Crypto Week Ahead: ADA, BTC Levels & What Analysts Watch",
