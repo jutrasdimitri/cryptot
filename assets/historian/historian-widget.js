@@ -192,7 +192,11 @@
     panel.setAttribute('aria-label', t.title);
 
     var header = el('div', 'cth-header');
-    var avatar = el('div', 'cth-avatar', 'H');
+    var avatar = el('div', 'cth-avatar');
+    var avatarImg = el('img', 'cth-avatar-img');
+    avatarImg.src = '/assets/historian/historian-avatar.webp';
+    avatarImg.alt = 'The Crypto Historian';
+    avatar.appendChild(avatarImg);
     var headerText = el('div', 'cth-header-text');
     var title = el('div', 'cth-title', t.title);
     var subtitle = el('div', 'cth-subtitle',
@@ -252,9 +256,7 @@
     launcher.type = 'button';
     launcher.setAttribute('aria-haspopup', 'dialog');
     launcher.innerHTML =
-      '<svg class="cth-launcher-icon" viewBox="0 0 24 24" aria-hidden="true">' +
-      '<path d="M4 22h16v-2H4v2zM6 2v16h2.5V4.5c0-.8.7-1.5 1.5-1.5h1V2H6zm12 0h-5v1h1c.8 0 1.5.7 1.5 1.5V18H18V2zM12 6l-1.2 2.6L8 9.4l2 2-.5 2.9L12 12.9l2.5 1.4L14 11.4l2-2-2.8-.8L12 6z"/>' +
-      '</svg>' +
+      '<img class="cth-launcher-avatar" src="/assets/historian/historian-avatar.webp" alt="" aria-hidden="true">' +
       '<span></span>';
     launcher.querySelector('span').textContent = t.launcher;
     root.appendChild(launcher);

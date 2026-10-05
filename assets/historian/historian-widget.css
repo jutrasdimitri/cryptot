@@ -384,3 +384,8 @@
     font-size: 13px;
   }
 }
+
+/* Avatar du Historian (image approuvée par Dim, 4 oct. 2026) */
+.cth-root .cth-avatar { overflow: hidden; padding: 0; background: #000; }
+.cth-root .cth-avatar-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+.cth-root .cth-launcher-avatar { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 1px solid var(--cth-green); }
