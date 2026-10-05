@@ -63,6 +63,12 @@ const PRICE_IN_PER_M = 1.25;
 const PRICE_OUT_PER_M = 4.25;
 
 const VALID_COINS = ['btc', 'eth', 'ada', 'sol', 'xrp', 'general'];
+const ATH_FACTS = {
+  btc: '$126,080 USD on October 6, 2025', eth: '$4,946 USD on August 24, 2025',
+  ada: '$3.09 USD on September 2, 2021', sol: '$293.31 USD on January 19, 2025',
+  xrp: '$3.65 USD on July 17, 2025'
+};
+
 const COIN_NAMES = {
   btc: 'Bitcoin', eth: 'Ethereum', ada: 'Cardano',
   sol: 'Solana', xrp: 'XRP', general: 'Power 5'
@@ -187,6 +193,16 @@ function buildSystemPrompt(coin, lang, liveBlock) {
     if (origins) {
       parts.push('\n---\nORIGINS BRIEF — the pre-2009 roots (background material for this page):\n' + origins);
     }
+  }
+
+  // Fait documenté ATH : injecté en dur pour que le modèle le donne toujours.
+  if (ATH_FACTS[coin]) {
+    parts.push('\n---\nDOCUMENTED FACT — ' + COIN_NAMES[coin] + ' all-time high (ATH): ' + ATH_FACTS[coin] +
+      '. When a visitor asks for the all-time high, state this fact plainly — the price and the date. Never refuse it as price talk.');
+  } else if (coin === 'general') {
+    parts.push('\n---\nDOCUMENTED FACTS — all-time highs (ATH): Bitcoin ' + ATH_FACTS.btc + '; Ethereum ' +
+      ATH_FACTS.eth + '; Cardano ' + ATH_FACTS.ada + '; Solana ' + ATH_FACTS.sol + '; XRP ' + ATH_FACTS.xrp +
+      '. When a visitor asks for an all-time high, state the fact plainly — the price and the date. Never refuse it as price talk.');
   }
 
   // Bloc temps réel (prix du moment) : présent seulement si la question
