@@ -12,7 +12,9 @@
      HISTORIAN_API_BASE       (défaut : '' → mode démo tant qu'elle est vide)
      HISTORIAN_MODEL          (défaut : 'muse-spark-1.3' — À CONFIRMER dans
                                la doc Meta Model API au moment du branchement)
-     HISTORIAN_FREE_PER_DAY   (défaut : 3)
+     HISTORIAN_FREE_PER_DAY   (défaut : 3 — malgré son nom historique,
+                               c'est le plafond de questions gratuites
+                               À VIE par visiteur depuis le 5 oct. 2026)
      HISTORIAN_PRICE_API_BASE (optionnel — défaut : API publique CoinGecko,
                                sans clé ; sert à la couche temps réel)
      HISTORIAN_CONTENT_DIR    (optionnel — dossier contenant PERSONA.md et
@@ -38,7 +40,7 @@
      - Crédits persistants dans Netlify Blobs (magasin « historian-credits ») :
        solde par visiteur + registre des sessions Stripe créditées
        (idempotence : un session_id ne crédite jamais deux fois).
-     - Dépenses : quota gratuit quotidien d'abord, crédits du pack ensuite.
+     - Dépenses : quota gratuit (à vie) d'abord, crédits du pack ensuite.
        Ni l'un ni l'autre n'est débité quand l'appel au modèle échoue.
      - Actions POST supplémentaires sur le même point d'entrée :
          {action:'balance'}  → solde {remaining, credits, canBuy}
@@ -48,9 +50,11 @@
          {action:'claim', sessionId} → vérifie la session côté serveur
                                auprès de Stripe (payée, montant, visiteur)
                                puis crédite 20 questions, une seule fois.
-     - Le compteur des questions GRATUITES reste la Map en mémoire
-       ci-dessous (elle se réinitialise à chaque démarrage à froid — connu
-       et accepté au prototype ; seuls les crédits payés sont durables).
+     - Le compteur des questions GRATUITES était une Map en mémoire
+       (plafond quotidien, réinitialisé à chaque démarrage à froid)
+       jusqu'au 5 oct. 2026. Depuis la décision de Dim du 5 oct. 2026,
+       il vit dans Netlify Blobs comme les crédits, et le modèle est
+       passé à 3 questions gratuites À VIE par visiteur (essai unique).
    TODO restant :
      1. Remplacer le visitorId localStorage par un jeton signé / compte,
         pour empêcher la réinitialisation triviale du compteur gratuit.
@@ -70,7 +74,10 @@ const path = require('path');
 const API_BASE = (process.env.HISTORIAN_API_BASE || '').replace(/\/+$/, '');
 const API_KEY = process.env.HISTORIAN_API_KEY || '';
 const MODEL = process.env.HISTORIAN_MODEL || 'muse-spark-1.3';
-const FREE_PER_DAY = parseInt(process.env.HISTORIAN_FREE_PER_DAY || '3', 10) || 3;
+// Plafond de questions gratuites À VIE par visiteur (essai unique) —
+// décision de Dim le 5 oct. 2026. La variable d'environnement garde son
+// nom historique (…_PER_DAY), mais elle plafonne le total à vie.
+const FREE_LIMIT = parseInt(process.env.HISTORIAN_FREE_PER_DAY || '3', 10) || 3;
 const API_TIMEOUT_MS = 25000;
 
 /* Phase 2 — packs payés (Stripe Checkout hébergé + crédits Netlify Blobs).
@@ -158,12 +165,12 @@ const COIN_MENTIONS = [
 const OFFLINE_MESSAGES = {
   en: {
     demo: "Ah, a visitor! Forgive the dust — my archives are still being prepared, volume by volume. Come back very soon and I will tell you the whole story of this coin, in plain language, the way it deserves to be told.",
-    limit: "And that closes today's free reading — you have used your free questions for the day, and your pack is empty. The free archives reopen tomorrow — or pick up a pack of 20 questions below and we keep going.",
+    limit: "And that closes the free reading — you have used your 3 free questions, and your pack is empty. Pick up a pack of 20 questions below and we keep going.",
     trouble: "Hmm — a page seems stuck in the archives. Give me a moment to sort my notes and ask me again."
   },
   fr: {
     demo: "Ah, un visiteur ! Pardonne la poussière — mes archives sont encore en préparation, volume par volume. Reviens très bientôt et je te raconterai toute l'histoire de ce coin, en langage clair, comme elle mérite d'être racontée.",
-    limit: "Et voilà qui conclut la lecture gratuite d'aujourd'hui — tu as utilisé tes questions gratuites du jour, et ton pack est vide. Les archives gratuites rouvrent demain — ou prends un pack de 20 questions ci-dessous et on continue.",
+    limit: "Et voilà qui conclut la lecture gratuite — tu as utilisé tes 3 questions gratuites, et ton pack est vide. Prends un pack de 20 questions ci-dessous et on continue.",
     trouble: "Hmm — une page semble coincée dans les archives. Laisse-moi un instant pour replacer mes notes et repose-moi ta question."
   }
 };
@@ -275,24 +282,13 @@ function buildSystemPrompt(coin, lang, liveBlock) {
 }
 
 /* ------------------------------------------------------------------ *
- * Compteur de questions — PROTOTYPE : simple Map en mémoire.         *
- * TODO PHASE 2 : persistance durable + crédits Stripe (voir en-tête).*
+ * Compteur de questions gratuites : voir la section Netlify Blobs    *
+ * plus bas — compteur DURABLE (clé « free/<id> »), 3 questions À VIE  *
+ * par visiteur depuis le 5 oct. 2026 (décision de Dim). L'ancienne    *
+ * Map en mémoire (plafond quotidien) a été retirée : elle se          *
+ * réinitialisait à chaque démarrage à froid, donc le « par jour »     *
+ * fuyait — un visiteur patient récupérait 3 questions sans fin.       *
  * ------------------------------------------------------------------ */
-const counters = new Map(); // visitorId -> { day: 'YYYY-MM-DD', count: n }
-
-function todayKey() {
-  return new Date().toISOString().slice(0, 10); // UTC — suffisant au prototype
-}
-
-function getCount(visitorId) {
-  const rec = counters.get(visitorId);
-  if (!rec || rec.day !== todayKey()) return 0;
-  return rec.count;
-}
-
-function incrementCount(visitorId) {
-  counters.set(visitorId, { day: todayKey(), count: getCount(visitorId) + 1 });
-}
 
 // Petit hachage non crypto — juste pour ne pas journaliser l'identifiant brut.
 function shortHash(str) {
@@ -302,10 +298,16 @@ function shortHash(str) {
 }
 
 /* ------------------------------------------------------------------ *
- * Crédits payés — Netlify Blobs (magasin « historian-credits »).      *
+ * Crédits payés + compteur gratuit — Netlify Blobs (magasin           *
+ * « historian-credits »).                                             *
  *                                                                     *
  * Clés : « visitor/<id> » → {credits, updatedAt}                      *
  *        « session/<id> » → {visitorId, questions, creditedAt}        *
+ *        « free/<id> »    → {used, updatedAt} — compteur des          *
+ *        questions gratuites, DURABLE depuis le 5 oct. 2026 : modèle  *
+ *        « 3 questions gratuites À VIE par visiteur » (essai unique,  *
+ *        décision de Dim) ; avant, une Map en mémoire plafonnée par   *
+ *        jour se réinitialisait à chaque démarrage à froid.           *
  * Le registre des sessions est le verrou d'idempotence : un paiement  *
  * ne crédite qu'une fois, même si le visiteur réclame deux fois.     *
  *                                                                     *
@@ -331,6 +333,7 @@ function getCreditStore() {
 
 function visitorKey(visitorId) { return 'visitor/' + encodeURIComponent(visitorId); }
 function sessionKey(sessionId) { return 'session/' + encodeURIComponent(sessionId); }
+function freeKey(visitorId) { return 'free/' + encodeURIComponent(visitorId); }
 
 async function getCredits(visitorId) {
   const store = getCreditStore();
@@ -362,6 +365,35 @@ async function spendCredit(visitorId) {
   const current = await getCredits(visitorId);
   if (current <= 0) return false;
   return setCredits(visitorId, current - 1);
+}
+
+// Nombre de questions gratuites déjà utilisées par ce visiteur —
+// compteur À VIE (pas de remise à zéro quotidienne ni au démarrage).
+async function getFreeUsed(visitorId) {
+  const store = getCreditStore();
+  if (!store) return 0;
+  try {
+    const rec = await store.get(freeKey(visitorId), { type: 'json' });
+    return rec && typeof rec.used === 'number' && rec.used > 0 ? Math.floor(rec.used) : 0;
+  } catch (err) {
+    console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'getFreeUsed', error: String(err && err.message || err) }));
+    return 0;
+  }
+}
+
+// Incrémente le compteur gratuit APRÈS une réponse réussie (même règle
+// que les crédits : un appel au modèle qui échoue ne coûte rien).
+async function incrementFreeUsed(visitorId) {
+  const store = getCreditStore();
+  if (!store) return false;
+  try {
+    const used = (await getFreeUsed(visitorId)) + 1;
+    await store.setJSON(freeKey(visitorId), { used: used, updatedAt: new Date().toISOString() });
+    return true;
+  } catch (err) {
+    console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'incrementFreeUsed', error: String(err && err.message || err) }));
+    return false;
+  }
 }
 
 // Crédite un pack pour une session Stripe vérifiée — idempotent.
@@ -624,14 +656,14 @@ exports.handler = async function (event) {
   }
 
   if (event.httpMethod !== 'POST') {
-    return jsonResponse(405, { error: 'method_not_allowed', remaining: FREE_PER_DAY });
+    return jsonResponse(405, { error: 'method_not_allowed', remaining: FREE_LIMIT });
   }
 
   let body;
   try {
     body = JSON.parse(event.body || '{}');
   } catch (e) {
-    return jsonResponse(400, { error: 'invalid_json', remaining: FREE_PER_DAY });
+    return jsonResponse(400, { error: 'invalid_json', remaining: FREE_LIMIT });
   }
 
   const coin = VALID_COINS.indexOf(String(body.coin || '').toLowerCase()) !== -1
@@ -648,7 +680,7 @@ exports.handler = async function (event) {
    * checkout : crée la session Stripe Checkout du pack.
    * claim    : vérifie une session payée et crédite le pack (idempotent). */
   const action = typeof body.action === 'string' ? body.action : '';
-  const freeLeftNow = Math.max(0, FREE_PER_DAY - getCount(visitorId));
+  const freeLeftNow = Math.max(0, FREE_LIMIT - (await getFreeUsed(visitorId)));
 
   if (action === 'balance') {
     return jsonResponse(200, {
@@ -703,12 +735,12 @@ exports.handler = async function (event) {
   }
 
   if (!message) {
-    return jsonResponse(400, { error: 'empty_message', remaining: FREE_PER_DAY - getCount(visitorId) });
+    return jsonResponse(400, { error: 'empty_message', remaining: freeLeftNow });
   }
 
   const msgs = OFFLINE_MESSAGES[lang];
-  const used = getCount(visitorId);
-  const remainingBefore = Math.max(0, FREE_PER_DAY - used);
+  const used = await getFreeUsed(visitorId);
+  const remainingBefore = Math.max(0, FREE_LIMIT - used);
 
   /* --- Quota gratuit épuisé ET pack vide ------------------------------
    * La dépense se fait dans cet ordre : gratuit d'abord, crédits du
@@ -739,12 +771,12 @@ exports.handler = async function (event) {
     // avait des crédits — vérifié plus haut).
     let paidWith = 'free';
     if (remainingBefore > 0) {
-      incrementCount(visitorId);
+      await incrementFreeUsed(visitorId);
     } else {
       await spendCredit(visitorId);
       paidWith = 'credit';
     }
-    const remaining = Math.max(0, FREE_PER_DAY - getCount(visitorId));
+    const remaining = Math.max(0, FREE_LIMIT - (await getFreeUsed(visitorId)));
     const credits = await getCredits(visitorId);
     logExchange({
       visitor: shortHash(visitorId), coin: coin, lang: lang,

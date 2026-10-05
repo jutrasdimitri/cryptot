@@ -68,20 +68,20 @@
       placeholder: 'Ask a question…',
       send: 'Send',
       close: 'Close',
-      counterFree: 'free questions a day',
-      counterLeft: function (n) { return n + ' free question' + (n === 1 ? '' : 's') + ' left today'; },
-      counterDone: 'Free questions used up for today',
+      counterFree: 'free trial questions',
+      counterLeft: function (n) { return n + ' free question' + (n === 1 ? '' : 's') + ' left'; },
+      counterDone: 'Your 3 free questions are used up',
       thinking: 'Digging through the archives…',
       errorNet: 'The archives are dusty right now — give me a moment and try again.',
       footer: 'Powered by Mimi · Education, not financial advice',
       creditsLeft: function (n) { return n + ' pack question' + (n === 1 ? '' : 's') + ' left'; },
       buyPack: 'Get 20 questions — $3',
       buyNote: 'One pack = 20 extra questions · Secure checkout by Stripe',
-      packsSoon: 'Question packs are coming very soon — the free archives reopen tomorrow.',
+      packsSoon: 'Question packs are coming very soon.',
       verifying: 'Welcome back — let me check the register for your payment…',
       creditedMsg: function (n) { return 'Payment confirmed in the register: ' + n + ' questions are now in your pack. Ask away!'; },
       alreadyMsg: 'That payment was already added to your pack — your balance is up to date.',
-      cancelledMsg: 'No harm done — the checkout was cancelled and nothing was charged. Your free questions return tomorrow.',
+      cancelledMsg: 'No harm done — the checkout was cancelled and nothing was charged.',
       checkoutError: 'The register jammed for a moment — the pack could not be opened. Nothing was charged; try again in a minute.',
       notVerified: 'I could not confirm that payment in the register yet. If you completed it, give it a moment and reopen this panel.'
     },
@@ -98,20 +98,20 @@
       placeholder: 'Pose ta question…',
       send: 'Envoyer',
       close: 'Fermer',
-      counterFree: 'questions gratuites par jour',
-      counterLeft: function (n) { return n + ' question' + (n === 1 ? '' : 's') + ' gratuite' + (n === 1 ? '' : 's') + " restante" + (n === 1 ? '' : 's') + " aujourd'hui"; },
-      counterDone: 'Questions gratuites épuisées pour aujourd\'hui',
+      counterFree: 'questions gratuites pour essayer',
+      counterLeft: function (n) { return n + ' question' + (n === 1 ? '' : 's') + ' gratuite' + (n === 1 ? '' : 's') + " restante" + (n === 1 ? '' : 's'); },
+      counterDone: 'Vos 3 questions gratuites sont écoulées',
       thinking: 'Je fouille les archives…',
       errorNet: 'Les archives sont poussiéreuses en ce moment — laisse-moi un instant et réessaie.',
       footer: 'Propulsé par Mimi · Éducation, pas des conseils financiers',
       creditsLeft: function (n) { return n + ' question' + (n === 1 ? '' : 's') + ' de pack restante' + (n === 1 ? '' : 's'); },
       buyPack: 'Obtenir 20 questions — 3 $',
       buyNote: 'Un pack = 20 questions de plus · Paiement sécurisé par Stripe',
-      packsSoon: 'Les packs de questions arrivent très bientôt — les archives gratuites rouvrent demain.',
+      packsSoon: 'Les packs de questions arrivent très bientôt.',
       verifying: 'Bon retour — je vérifie ton paiement dans le registre…',
       creditedMsg: function (n) { return 'Paiement confirmé dans le registre : ' + n + ' questions sont maintenant dans ton pack. Vas-y, pose ta question !'; },
       alreadyMsg: 'Ce paiement a déjà été ajouté à ton pack — ton solde est à jour.',
-      cancelledMsg: 'Aucun souci — le paiement a été annulé et rien n\'a été facturé. Tes questions gratuites reviennent demain.',
+      cancelledMsg: 'Aucun souci — le paiement a été annulé et rien n\'a été facturé.',
       checkoutError: 'Le registre a coincé un instant — le pack n\'a pas pu s\'ouvrir. Rien n\'a été facturé ; réessaie dans une minute.',
       notVerified: 'Je n\'ai pas encore pu confirmer ce paiement dans le registre. Si tu l\'as complété, laisse-lui un moment et rouvre ce panneau.'
     }
@@ -145,7 +145,7 @@
     }
   };
 
-  var FREE_PER_DAY = 3; // Miroir de l'UI seulement — la vérité vit côté serveur.
+  var FREE_LIMIT = 3; // Miroir de l'UI seulement — la vérité vit côté serveur.
 
   /* ------------------------------------------------------------------ *
    * État interne                                                        *
@@ -254,7 +254,7 @@
     /* Compteur */
     var counter = el('div', 'cth-counter');
     var counterLeft = el('span', 'cth-counter-count', '');
-    var counterNote = el('span', 'cth-counter-note', FREE_PER_DAY + ' ' + t.counterFree);
+    var counterNote = el('span', 'cth-counter-note', FREE_LIMIT + ' ' + t.counterFree);
     counter.appendChild(counterLeft);
     counter.appendChild(counterNote);
     panel.appendChild(counter);
@@ -402,7 +402,7 @@
     var t = I18N[config.lang];
     if (state.remaining === null && state.credits === null) {
       els.counterLeft.textContent = '';
-      els.counterNote.textContent = FREE_PER_DAY + ' ' + t.counterFree;
+      els.counterNote.textContent = FREE_LIMIT + ' ' + t.counterFree;
       els.buyWrap.classList.remove('cth-visible');
       return;
     }
@@ -419,7 +419,7 @@
     var exhausted = !hasQuota();
     els.input.disabled = exhausted;
     els.sendBtn.disabled = exhausted;
-    // Zone d'achat : visible dès que les gratuites du jour sont épuisées.
+    // Zone d'achat : visible dès que les gratuites sont épuisées.
     var showBuy = state.remaining !== null && state.remaining <= 0;
     els.buyWrap.classList.toggle('cth-visible', !!showBuy);
     if (showBuy) {
