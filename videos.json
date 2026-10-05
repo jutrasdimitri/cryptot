@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -26,6 +26,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "YqIgKeyTdWg",
+      "type": "short",
+      "title": "BREAKING: Cardano ADA Jumps 11% — What Happened?",
+      "date": "2026-10-05",
+      "duration": "0:35",
+      "durationISO": "PT35S",
+      "url": "https://youtube.com/shorts/YqIgKeyTdWg",
+      "thumbnail": "https://i.ytimg.com/vi/YqIgKeyTdWg/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Cardano's ADA jumped about 11% in one day as traders who bet on a fall were forced to buy back fast — the whole story in 35 seconds."
+        ],
+        "fr": [
+          "L'ADA de Cardano a bondi d'environ 11 % en une journée : les traders qui misaient sur une baisse ont été forcés de racheter rapidement — toute l'histoire en 35 secondes."
         ]
       }
     },
