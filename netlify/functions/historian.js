@@ -321,12 +321,7 @@ function getCreditStore() {
   blobsTried = true;
   try {
     const { getStore } = require('@netlify/blobs');
-    // Cohérence FORTE pour tout le magasin de crédits : le verrou
-    // d'idempotence des sessions et le solde des visiteurs ne doivent
-    // jamais dépendre de la propagation éventuelle (jusqu'à 60 s) —
-    // durcissement du 5 oct. 2026, en même temps que le webhook Stripe
-    // (historian-webhook.js utilise la même configuration).
-    blobsStore = getStore({ name: 'historian-credits', consistency: 'strong' });
+    blobsStore = getStore('historian-credits');
   } catch (err) {
     console.log(JSON.stringify({ type: 'historian_blobs_unavailable', error: String(err && err.message || err) }));
     blobsStore = null;
@@ -341,7 +336,9 @@ async function getCredits(visitorId) {
   const store = getCreditStore();
   if (!store) return 0;
   try {
-    const rec = await store.get(visitorKey(visitorId), { type: 'json' });
+    // Lecture en cohérence FORTE (par opération) : le solde ne doit
+    // jamais dépendre de la propagation éventuelle (jusqu'à 60 s).
+    const rec = await store.get(visitorKey(visitorId), { type: 'json', consistency: 'strong' });
     return rec && typeof rec.credits === 'number' && rec.credits > 0 ? Math.floor(rec.credits) : 0;
   } catch (err) {
     console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'getCredits', error: String(err && err.message || err) }));
@@ -375,7 +372,9 @@ async function creditPackForSession(visitorId, sessionId) {
   const store = getCreditStore();
   if (!store) return { credited: false, already: false, credits: 0 };
   try {
-    const existing = await store.get(sessionKey(sessionId), { type: 'json' });
+    // Le verrou de session se lit en cohérence FORTE : un pack déjà
+    // crédité (claim ou webhook) ne doit jamais repasser pour neuf.
+    const existing = await store.get(sessionKey(sessionId), { type: 'json', consistency: 'strong' });
     if (existing) {
       return { credited: false, already: true, credits: await getCredits(visitorId) };
     }

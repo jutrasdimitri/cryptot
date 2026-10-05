@@ -55,7 +55,9 @@ const SIGNATURE_TOLERANCE_SEC = 300; // 5 minutes, comme Stripe
  *                                                                     *
  * Clés : « visitor/<id> » → {credits, updatedAt}                      *
  *        « session/<id> » → {visitorId, questions, creditedAt}       *
- * Magasin ouvert en cohérence FORTE dès la création.                  *
+ * Les lectures critiques (verrou + solde) se font en cohérence FORTE  *
+ * (option par opération sur get) — jamais de dépendance à la          *
+ * propagation éventuelle (jusqu'à 60 s).                              *
  * ------------------------------------------------------------------ */
 let blobsStore = null;
 let blobsTried = false;
@@ -65,7 +67,7 @@ function getCreditStore() {
   blobsTried = true;
   try {
     const { getStore } = require('@netlify/blobs');
-    blobsStore = getStore({ name: 'historian-credits', consistency: 'strong' });
+    blobsStore = getStore('historian-credits');
   } catch (err) {
     console.log(JSON.stringify({ type: 'historian_blobs_unavailable', error: String(err && err.message || err) }));
     blobsStore = null;
@@ -80,7 +82,7 @@ async function getCredits(visitorId) {
   const store = getCreditStore();
   if (!store) return 0;
   try {
-    const rec = await store.get(visitorKey(visitorId), { type: 'json' });
+    const rec = await store.get(visitorKey(visitorId), { type: 'json', consistency: 'strong' });
     return rec && typeof rec.credits === 'number' && rec.credits > 0 ? Math.floor(rec.credits) : 0;
   } catch (err) {
     console.log(JSON.stringify({ type: 'historian_blobs_error', op: 'webhookGetCredits', error: String(err && err.message || err) }));
@@ -106,7 +108,7 @@ async function creditPackForSession(visitorId, sessionId) {
   const store = getCreditStore();
   if (!store) return { credited: false, already: false, credits: 0 };
   try {
-    const existing = await store.get(sessionKey(sessionId), { type: 'json' });
+    const existing = await store.get(sessionKey(sessionId), { type: 'json', consistency: 'strong' });
     if (existing) {
       return { credited: false, already: true, credits: await getCredits(visitorId) };
     }
