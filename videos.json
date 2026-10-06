@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -51,6 +51,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "QHmgFjQA3LI",
+      "type": "short",
+      "title": "Cardano ADA Breakout Confirmed: What the Close Proved",
+      "date": "2026-10-06",
+      "duration": "0:52",
+      "durationISO": "PT52S",
+      "url": "https://youtube.com/shorts/QHmgFjQA3LI",
+      "thumbnail": "https://i.ytimg.com/vi/QHmgFjQA3LI/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Cardano closed at $0.2704, above the $0.263 ceiling — the double top is busted; why a retest would be normal and the next wall at $0.2886, in 52 seconds."
+        ],
+        "fr": [
+          "Cardano a clôturé à 0,2704 $ US, au-dessus du plafond de 0,263 $ — le double top est busté; pourquoi un retest serait normal et le prochain mur à 0,2886 $, en 52 secondes."
         ]
       }
     },
