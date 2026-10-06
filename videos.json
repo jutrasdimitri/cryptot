@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "zqjDDaEOwX4",
+      "type": "longform",
+      "title": "Cardano Breakout Confirmed: ADA & BTC Closes Explained",
+      "date": "2026-10-06",
+      "duration": "8:11",
+      "durationISO": "PT8M11S",
+      "url": "https://www.youtube.com/watch?v=zqjDDaEOwX4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/zqjDDaEOwX4",
+      "thumbnail": "https://i.ytimg.com/vi/zqjDDaEOwX4/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Cardano ADA's busted double top: the close above $0.263 and why a retest would be normal",
+          "Bitcoin's confirmed breakout: the close above $85,300",
+          "Ethereum still stuck in its range; Fed hike bets fading before Wednesday's FOMC minutes",
+          "Power 5 levels ADA → ETH → SOL → XRP → BTC"
+        ],
+        "fr": [
+          "Le double top busté de Cardano ADA : la clôture au-dessus de 0,263 $ et pourquoi un retest serait normal",
+          "La cassure confirmée de Bitcoin : la clôture au-dessus de 85 300 $",
+          "Ethereum toujours coincé dans son range; les paris de hausse de la Fed s'estompent avant les minutes du FOMC de mercredi",
+          "Niveaux Power 5 ADA → ETH → SOL → XRP → BTC"
+        ]
+      }
+    },
+    {
       "id": "PJ9fjjhsmds",
       "type": "longform",
       "title": "Bitcoin Near $87K: The Close That Decides Everything",
