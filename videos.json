@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "BqAUYJe9toQ",
+      "type": "longform",
+      "title": "Crypto Breakouts on Trial: Three Closes Decide Tonight",
+      "date": "2026-10-07",
+      "duration": "9:51",
+      "durationISO": "PT9M51S",
+      "url": "https://www.youtube.com/watch?v=BqAUYJe9toQ",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/BqAUYJe9toQ",
+      "thumbnail": "https://i.ytimg.com/vi/BqAUYJe9toQ/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday's closes held — today a second, violent intraday test pushed ADA, BTC and ETH below their lines at once",
+          "Tonight's three closes decide: ADA vs $0.263, BTC vs $85,300, ETH vs $2,620",
+          "Cardano's new CIP-0113 standard for regulated tokens, in plain language — plus today's FOMC minutes",
+          "Power 5 levels ADA → ETH → SOL → XRP → BTC"
+        ],
+        "fr": [
+          "Les clôtures d'hier ont tenu — aujourd'hui un deuxième test intraday violent a poussé ADA, BTC et ETH sous leurs lignes en même temps",
+          "Les trois clôtures de ce soir décident : ADA vs 0,263 $, BTC vs 85 300 $, ETH vs 2 620 $",
+          "Le nouveau standard Cardano CIP-0113 pour les actifs régulés, en langage clair — plus les minutes du FOMC du jour",
+          "Niveaux Power 5 ADA → ETH → SOL → XRP → BTC"
+        ]
+      }
+    },
+    {
       "id": "zqjDDaEOwX4",
       "type": "longform",
       "title": "Cardano Breakout Confirmed: ADA & BTC Closes Explained",
