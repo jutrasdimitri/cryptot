@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -76,6 +76,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "sfDSZzV-FQs",
+      "type": "short",
+      "title": "Crypto Breakouts on Trial: Tonight's Closes Decide",
+      "date": "2026-10-07",
+      "duration": "0:52",
+      "durationISO": "PT52S",
+      "url": "https://youtube.com/shorts/sfDSZzV-FQs",
+      "thumbnail": "https://i.ytimg.com/vi/sfDSZzV-FQs/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday's closes held — ADA above $0.263, BTC above $85,300, ETH in range. Today all three are retested intraday; tonight's three closes decide if the breakouts live, in plain language."
+        ],
+        "fr": [
+          "Les clôtures d'hier ont tenu — ADA au-dessus de 0,263 $ US, BTC au-dessus de 85 300 $, ETH dans son range. Aujourd'hui, les trois sont retestés en intraday; les trois clôtures de ce soir décideront si les cassures survivent, en langage clair."
         ]
       }
     },
