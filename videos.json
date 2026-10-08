@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "Ek5f0bZbqf8",
+      "type": "longform",
+      "title": "Crypto Breakouts Failed: The Next Floors Explained",
+      "date": "2026-10-08",
+      "duration": "8:50",
+      "durationISO": "PT8M50S",
+      "url": "https://www.youtube.com/watch?v=Ek5f0bZbqf8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Ek5f0bZbqf8",
+      "thumbnail": "https://i.ytimg.com/vi/Ek5f0bZbqf8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday's closes failed everywhere — ADA below $0.263, BTC below $85,300, ETH below $2,620",
+          "BTC slipped below $83,000 as oil, yields and hawkish Fed minutes pressured crypto; spot BTC ETFs saw about $487M in outflows",
+          "The next floors that decide tonight: BTC vs $83,000, ETH vs $2,530, ADA vs $0.25",
+          "Power 5 levels ADA → ETH → SOL → XRP → BTC"
+        ],
+        "fr": [
+          "Les clôtures d'hier ont échoué partout — ADA sous 0,263 $, BTC sous 85 300 $, ETH sous 2 620 $",
+          "BTC a glissé sous 83 000 $ sous la pression du pétrole, des rendements et des minutes du FOMC; environ 487 M$ de sorties des ETF BTC spot",
+          "Les prochains planchers qui décident ce soir : BTC vs 83 000 $, ETH vs 2 530 $, ADA vs 0,25 $",
+          "Niveaux Power 5 ADA → ETH → SOL → XRP → BTC"
+        ]
+      }
+    },
+    {
       "id": "BqAUYJe9toQ",
       "type": "longform",
       "title": "Crypto Breakouts on Trial: Three Closes Decide Tonight",
