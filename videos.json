@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "OKPxcsq8Wh4",
+      "type": "longform",
+      "title": "Crypto's $1.2B Flush: The Pullback Test Explained",
+      "date": "2026-10-09",
+      "duration": "9:54",
+      "durationISO": "PT9M54S",
+      "url": "https://www.youtube.com/watch?v=OKPxcsq8Wh4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/OKPxcsq8Wh4",
+      "thumbnail": "https://i.ytimg.com/vi/OKPxcsq8Wh4/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 8: about $1.19B in leveraged positions force-closed — over $1B of it longs; ETH hit hardest for its size (~$356M vs BTC ~$298M)",
+          "The Oct 8 closes confirmed bearish breaks: ADA below $0.242, BTC below $83,000, ETH below $2,530",
+          "This morning's bounce = a normal pullback test (Bulkowski: pullbacks in 58-66% of rectangle breakouts) until closes reclaim ADA $0.242, BTC $83,000, ETH $2,530-$2,620",
+          "Power 5 levels ADA → ETH → SOL → XRP → BTC"
+        ],
+        "fr": [
+          "8 oct. : environ 1,19 G$ de positions à levier fermées de force — plus de 1 G$ en longs; ETH le plus touché pour sa taille (~356 M$ vs ~298 M$ pour BTC)",
+          "Les clôtures du 8 ont confirmé les cassures : ADA sous 0,242 $, BTC sous 83 000 $, ETH sous 2 530 $",
+          "Le rebond de ce matin = un test de pullback normal (Bulkowski : pullbacks dans 58-66 % des cassures de rectangle) tant que les clôtures ne récupèrent pas ADA 0,242 $, BTC 83 000 $, ETH 2 530-2 620 $",
+          "Niveaux Power 5 ADA → ETH → SOL → XRP → BTC"
+        ]
+      }
+    },
+    {
       "id": "Ek5f0bZbqf8",
       "type": "longform",
       "title": "Crypto Breakouts Failed: The Next Floors Explained",
