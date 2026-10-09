@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -126,6 +126,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "ROrXQqHAI_U",
+      "type": "short",
+      "title": "Crypto's $1.2B Flush: Why Ether Got Hit Hardest",
+      "date": "2026-10-09",
+      "duration": "0:52",
+      "durationISO": "PT52S",
+      "url": "https://youtube.com/shorts/ROrXQqHAI_U",
+      "thumbnail": "https://i.ytimg.com/vi/ROrXQqHAI_U/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "About $1.19B in leveraged crypto bets were forced closed on Oct 8 - over $1B of it longs, Ether hit hardest for its size at about $356M. This morning's bounce is a pullback test, in plain language."
+        ],
+        "fr": [
+          "Environ 1,19 G$ de paris crypto a levier fermes de force le 8 oct. - plus de 1 G$ de paris haussiers, Ether le plus touche pour sa taille (environ 356 M$). Le rebond de ce matin est un test de pullback, en langage clair."
         ]
       }
     },
