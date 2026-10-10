@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -151,6 +151,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "QJSNq-IEFHo",
+      "type": "short",
+      "title": "BREAKING: XRP Ledger Bug Could Have Printed XRP From Nothing",
+      "date": "2026-10-10",
+      "duration": "0:43",
+      "durationISO": "PT43S",
+      "url": "https://youtube.com/shorts/QJSNq-IEFHo",
+      "thumbnail": "https://i.ytimg.com/vi/QJSNq-IEFHo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "A bug hidden since 2015 could have created spendable XRP from nothing, breaking the 100 billion cap; reported Sept 22, reproduced by RippleX, patched Sept 25 in xrpld 3.4.1, no evidence of public use."
+        ],
+        "fr": [
+          "Une faille cachee depuis 2015 aurait pu creer des XRP depensables a partir de rien, brisant le plafond de 100 milliards; signalee le 22 sept., reproduite par RippleX, corrigee le 25 sept. dans xrpld 3.4.1, sans preuve d utilisation publique."
         ]
       }
     },
