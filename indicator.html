@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RQF4846HHK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RQF4846HHK');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CryptoT Confluence // TradingView Indicator | CryptoT</title>
+  <meta name="description" content="CryptoT Confluence is an original TradingView indicator: five technical readings, one confluence score (X/5), an EMA 200 regime layer — and a published historical audit, limits included. Its public TradingView release is in preparation — learn the method now with the User Guide (PDF), $12.99 one-time. Education only — not financial advice." />
+  <link rel="canonical" href="https://cryptot.shop/indicator.html" />
+  <link rel="alternate" hreflang="en" href="https://cryptot.shop/indicator.html" />
+  <link rel="alternate" hreflang="fr" href="https://cryptot.shop/fr-indicateur.html" />
+  <link rel="alternate" hreflang="x-default" href="https://cryptot.shop/indicator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="CryptoT" />
+  <meta property="og:title" content="CryptoT Confluence // TradingView Indicator | CryptoT" />
+  <meta property="og:description" content="Five readings. One score. No hype. An original TradingView confluence indicator with a published historical audit — what the numbers say, and what they don't." />
+  <meta property="og:url" content="https://cryptot.shop/indicator.html" />
+  <meta property="og:image" content="https://cryptot.shop/btc.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_CA" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CryptoT Confluence // TradingView Indicator | CryptoT" />
+  <meta name="twitter:description" content="Five readings. One score. No hype. An original TradingView confluence indicator with a published historical audit — limits included." />
+  <meta name="twitter:image" content="https://cryptot.shop/btc.jpg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "CryptoT Confluence — FAQ",
+    "url": "https://cryptot.shop/indicator.html",
+    "inLanguage": "en",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When will the indicator be available on TradingView?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CryptoT Confluence v1.1 is built, compiled and historically audited. Its public TradingView release is in preparation — TradingView requires a paid creator plan to publish scripts, and we are sequencing that launch deliberately; until it lands, the script itself is not available anywhere. Follow CryptoT on TradingView and join the launch-notice list on this page to be told the day it goes live. The User Guide (PDF) sold here is the complete manual for the indicator — it does not include the script itself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why are there so few signals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By design. A full signal requires 4 of 5 independent readings aligned, real volume participation, the right side of the trend — and, since v1.1, the right EMA 200 regime context. Most days, the honest answer is no alignment — the score shows you that instead of inventing trades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work on TradingView's free plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By design. CryptoT Confluence runs on any TradingView plan, including the free plan, and it uses exactly ONE indicator slot on your chart — everything is inside the single script."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I buy access anywhere else?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — and right now, the indicator is not available anywhere at all. Anyone offering to sell you access today — a website, a direct message, for crypto — is running a scam; it is not CryptoT. The real release will be announced on this page and on our TradingView profile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it guarantee profits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — and run from anyone who says their indicator does. CryptoT Confluence is an educational tool that measures alignment. Your decisions, your risk, your responsibility."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-green": "#39ff14",
+            "brand-black": "#0a0a0a",
+            "brand-panel": "#111111",
+          },
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            mono: ["Share Tech Mono", "monospace"],
+          },
+          boxShadow: {
+            "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{
+      background-image:
+        linear-gradient(0deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(57,255,20,.03) 25%,rgba(57,255,20,.03) 26%,transparent 27%,transparent 74%,rgba(57,255,20,.03) 75%,rgba(57,255,20,.03) 76%,transparent 77%,transparent);
+      background-size: 50px 50px;
+    }
+    :focus-visible{ outline:2px solid rgba(57,255,20,.85); outline-offset:2px; }
+    .currency-btn.active { color: #39ff14; text-shadow: 0 0 8px rgba(57,255,20,0.5); font-weight: bold; }
+    .wiki-content h3 {
+        font-family: 'Orbitron', sans-serif;
+        color: #39ff14;
+        font-size: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+    .wiki-content p {
+        margin-bottom: 1rem;
+        color: #d1d5db;
+        line-height: 1.7;
+    }
+    .wiki-content a {
+        color: #39ff14;
+        text-decoration: none;
+        border-bottom: 1px dotted #39ff14;
+        transition: all 0.2s;
+    }
+    .wiki-content a:hover { color: white; border-bottom-style: solid; }
+    .wiki-divider {
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255,255,255,0.1);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .audit-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-bottom: 1rem; }
+    .audit-table th, .audit-table td { border: 1px solid rgba(255,255,255,0.12); padding: 0.45rem 0.6rem; text-align: left; }
+    .audit-table th { color: #39ff14; font-family: 'Orbitron', sans-serif; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .audit-table td { color: #d1d5db; }
+  </style>
+
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+</head>
+
+<body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
+
+  <div id="coinmarketcap-widget-marquee"
+       coins="1,1027,2010,52,5426"
+       currency="USD"
+       theme="dark"
+       transparent="false"
+       show-symbol-logo="true"
+       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <a href="index.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
+            CRYPTO<span class="text-brand-green">T</span>
+          </a>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="index.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ THE_POWER_5 ]</a>
+          <a href="about-them.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ ABOUT_THEM ]</a>
+          <a href="faq.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ FAQ ]</a>
+          <a href="guide.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ GUIDE ]</a>
+          <a href="indicator.html" class="text-sm text-brand-green uppercase tracking-wider transition-colors">[ INDICATOR ]</a>
+          <a href="index.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors">[ CONTACT_US ]</a>
+
+          <div class="flex items-center gap-2 border-l border-gray-700 pl-4 ml-2">
+            <button onclick="setCurrency('USD')" class="currency-btn active text-xs text-gray-500 hover:text-white transition-colors" data-currency="USD">USD</button>
+            <span class="text-gray-700">/</span>
+            <button onclick="setCurrency('CAD')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="CAD">CAD</button>
+            <span class="text-gray-700">/</span>
+            <button onclick="setCurrency('EUR')" class="currency-btn text-xs text-gray-500 hover:text-white transition-colors" data-currency="EUR">EUR</button>
+          </div>
+
+          <a href="fr-indicateur.html" class="text-sm text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 transition-colors ml-2">FR</a>
+        </div>
+
+        <button type="button"
+                class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition"
+                aria-label="Open menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                onclick="toggleMobileMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="hidden md:hidden">
+    <div class="fixed inset-0 z-[70]" aria-hidden="true">
+      <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
+      <div class="absolute right-0 top-[62px] w-full max-w-xs h-[calc(100%-62px)] bg-brand-panel border-l border-brand-green/20 shadow-[0_0_40px_rgba(57,255,20,0.12)] p-6">
+        <div class="flex items-center justify-between mb-6">
+          <div class="text-xs text-gray-400 uppercase tracking-widest">MENU</div>
+          <button type="button" class="text-gray-400 hover:text-brand-green" aria-label="Close menu" onclick="closeMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="index.html#products" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ THE_POWER_5 ]</a>
+          <a href="about-them.html" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ ABOUT_THEM ]</a>
+          <a href="faq.html" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ FAQ ]</a>
+          <a href="guide.html" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ GUIDE ]</a>
+          <a href="indicator.html" onclick="closeMobileMenu()" class="border border-brand-green/40 bg-brand-green/10 px-4 py-3 text-brand-green uppercase tracking-wider text-sm">[ INDICATOR ]</a>
+          <a href="index.html#contact" onclick="closeMobileMenu()" class="border border-white/10 bg-black/30 hover:bg-brand-green/10 px-4 py-3 text-gray-200 uppercase tracking-wider text-sm">[ CONTACT_US ]</a>
+          <div class="flex items-center justify-center gap-4 py-3 border border-white/10 bg-black/30">
+            <button onclick="setCurrency('USD'); closeMobileMenu()" class="currency-btn active text-sm text-gray-400 hover:text-white" data-currency="USD">USD</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setCurrency('CAD'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="CAD">CAD</button>
+            <span class="text-gray-600">|</span>
+            <button onclick="setCurrency('EUR'); closeMobileMenu()" class="currency-btn text-sm text-gray-400 hover:text-white" data-currency="EUR">EUR</button>
+          </div>
+          <a href="fr-indicateur.html" class="border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center">FRANÇAIS</a>
+        </div>
+        <div class="mt-8 border-t border-white/10 pt-4 text-[11px] text-gray-500">
+          Status: <span class="text-brand-green">Online</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="py-12 md:py-16 text-center px-4 relative">
+    <p class="text-brand-green text-xs uppercase tracking-[0.3em] mb-4">THE POWER 5 // EDUCATION FIRST</p>
+    <h1 class="text-4xl md:text-7xl font-black font-orbitron mb-4 text-white">CRYPTO<span class="text-brand-green">T</span> CONFLUENCE</h1>
+    <p class="text-lg md:text-2xl text-white tracking-widest uppercase font-bold mb-4">FIVE READINGS. ONE SCORE. NO HYPE.</p>
+    <div class="inline-block px-3 py-1 border border-brand-green text-brand-green text-[10px] uppercase tracking-[0.2em]">TRADINGVIEW INDICATOR // PUBLIC RELEASE IN PREPARATION</div>
+    <p class="text-gray-400 max-w-2xl mx-auto mt-8 leading-relaxed">Most indicators shout &ldquo;buy&rdquo; and &ldquo;sell&rdquo; all day long. CryptoT Confluence does the opposite: it stays quiet until five independent technical readings actually agree — and you see that agreement in one number, the <strong class="text-white">Confluence Score, X out of 5</strong>, on your chart at all times.</p>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 pb-24">
+    <article class="wiki-content bg-brand-panel border border-brand-green/20 p-6 md:p-12 relative overflow-hidden mb-12 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+
+      <h3 style="margin-top:0;">What it is</h3>
+      <p>CryptoT Confluence is an original TradingView indicator built for learners who want to read a chart the way experienced analysts do: structure first, momentum second, confirmation before action. A full signal appears <strong class="text-white">only</strong> when at least 4 of 5 components align <em>with</em> the trend — and, since v1.1, only inside the regime context the historical audit actually validated. The rest of the time, the score tells you the most useful thing a beginner can hear: <em>not yet.</em></p>
+      <p>It was created by Dimitri &ldquo;Dim&rdquo; Jutras, the educator behind CryptoT — daily crypto education in English and French, and the <a href="guide.html">Power 5 Starter Guide</a>. The indicator simply encodes the same discipline taught on the channel: multiple confirmations, no leverage gambling, never quit learning.</p>
+
+      <figure class="my-8"><img src="assets/confluence-panel.jpg" alt="CryptoT Confluence v1.1 score panel on an ADA/USDT 4-hour TradingView chart" class="w-full border border-brand-green/30" loading="lazy"><figcaption class="text-center text-gray-500 text-xs uppercase tracking-widest mt-3">The real score panel — CryptoT Confluence v1.1 on ADA/USDT (4H), TradingView, October 10, 2026</figcaption></figure>
+
+      <div class="wiki-divider"></div>
+
+      <h3>The five components</h3>
+      <p><strong class="text-white">C1 — Trend:</strong> price position vs. fast/slow EMAs. No signal ever fires against the dominant trend — it is also the hard filter: no buy alignment can trigger below the slow EMA.</p>
+      <p><strong class="text-white">C2 — Structure:</strong> the sequence of confirmed pivot highs and lows (higher highs / higher lows, or the mirror). It also draws the <strong class="text-white">automatic support &amp; resistance levels</strong> from those same pivots — calculated, never hand-drawn.</p>
+      <p><strong class="text-white">C3 — Momentum:</strong> RSI and the MACD histogram must agree before they vote. It confirms; it doesn&rsquo;t predict.</p>
+      <p><strong class="text-white">C4 — Flow:</strong> a composite of public, published formulas (MFI, recentered RSI, recentered stochastic, &minus;100 to +100) asking one question: is money actually behind this move?</p>
+      <p><strong class="text-white">C5 — Volume:</strong> a confirmation point awarded only when participation (relative volume, RVOL &ge; 1.2) is real. A move without volume doesn&rsquo;t earn the point.</p>
+
+      <div class="wiki-divider"></div>
+
+      <h3>The regime layer — why context decides</h3>
+      <p>The first version of this indicator scored alignment and nothing else. Our historical audit (full results below) showed that the <em>same</em> alignment means opposite things depending on where price sits versus its <strong class="text-white">EMA 200</strong> — so v1.1 qualifies every event by regime:</p>
+      <p><strong class="text-white">Full BUY signal (&ldquo;CONF&rdquo;)</strong> — buy alignment <em>with</em> price above the EMA 200: trend continuation territory, the context the audit validated on the daily timeframe.</p>
+      <p><strong class="text-white">Full SELL signal (&ldquo;CONF&rdquo;)</strong> — sell alignment breaking down <em>while price is still above</em> the EMA 200: an early breakdown, the second validated context.</p>
+      <p><strong class="text-white">&ldquo;REBOND&rdquo; — observation only.</strong> A buy alignment <em>below</em> the EMA 200 is a counter-trend bounce, not a buy signal. Historically its median 20-bar outcome was negative (see the audit) — the indicator labels it so you watch it, not chase it.</p>
+      <p><strong class="text-white">&ldquo;CAPITULATION&rdquo; — avoid.</strong> A full bearish alignment <em>inside an established downtrend</em> marked exhaustion more often than continuation in the audit — selling or shorting there meant standing in front of sharp rebounds. The indicator warns instead of signalling.</p>
+      <p>An anti-echo cooldown (10 bars per direction) also stops the same signal from re-firing bar after bar: in the raw version, about 70% of signals were echoes of the previous one; in v1.1 that share is cut to about 45%.</p>
+
+      <div class="wiki-divider"></div>
+
+      <h3>How to read the score</h3>
+      <p><strong class="text-white">0–2 / 5 — Noise.</strong> The readings disagree or are mostly neutral. Do nothing. This is most of the time — and it&rsquo;s the point.</p>
+      <p><strong class="text-white">3 / 5 — Partial alignment.</strong> Worth watching. Check the automatic support/resistance levels nearby.</p>
+      <p><strong class="text-white">4–5 / 5 — Strong alignment.</strong> The only zone where a full signal can appear, when the regime qualifies it — still your decision, with your own risk plan.</p>
+      <p>Recommended use: <strong class="text-white">daily (1D) to decide the direction, 4H to watch the setup.</strong> Below 1H is not recommended — the indicator was designed for 4H/1D-style reading, not scalping.</p>
+
+      <div class="wiki-divider"></div>
+
+      <h3>The audit — what the numbers say</h3>
+      <p>Before publishing this tool, we replayed its exact rules over historical data and measured what happened <em>after</em> each signal. This section publishes the results — including the parts that flatter nobody. That is the deal: <strong class="text-white">published audit statistics</strong>, and the limits printed next to them.</p>
+      <p><strong class="text-white">Method.</strong> Audit run October 10, 2026, on public OKX data — daily candles from February 14, 2022 to October 9, 2026, and 4-hour candles from August 3, 2025 to October 10, 2026 — across BTC, ETH, ADA, SOL and XRP. 1,820 events logged; signals confirmed at candle close only (no repainting by construction); one frozen parameter set, nothing tuned after the fact. Outcomes measured over the following 5, 10 and 20 bars. No fees, slippage or position sizing: this audits signal <em>timing and context</em>, not a trading strategy.</p>
+      <p><strong class="text-white">The two contexts that held up — daily timeframe, full signals only:</strong></p>
+      <table class="audit-table">
+        <tr><th>Full signal (daily)</th><th>N</th><th>What the audit measured</th></tr>
+        <tr>
+          <td>BUY, price above EMA 200</td><td>154</td>
+          <td>Median move after 10 bars: <strong class="text-white">+1.15%</strong> · mean after 20 bars: <strong class="text-white">+5.70%</strong> · 52% closed positive</td>
+        </tr>
+        <tr>
+          <td>SELL, early breakdown (still above EMA 200)</td><td>86</td>
+          <td>The favourable move came first in <strong class="text-white">52.3%</strong> of the &plusmn;3% race · median move after 20 bars: <strong class="text-white">+1.61%</strong> in the signal&rsquo;s direction</td>
+        </tr>
+      </table>
+      <p><strong class="text-white">The limits — published on purpose:</strong></p>
+      <p>▸ Pooled across every context, the &plusmn;3% race is roughly a coin flip (full BUY: 44.7% favourable-first vs 45.6% adverse-first, random baseline 43.5% / 47.6%; full SELL: 47.3% vs 44.0%, baseline 47.6% / 43.5%). On the 4H timeframe, medians sit near zero. <strong class="text-white">There is no general timing edge in these numbers</strong> — the measured value lives in the two daily contexts above, and in knowing which contexts to avoid.</p>
+      <p>▸ The avoided contexts, measured: &ldquo;REBOND&rdquo; labels (buy alignment below the EMA 200, N = 428) had a median 20-bar outcome of <strong class="text-white">&minus;1.35%</strong> — hence <em>observation only</em>. &ldquo;CAPITULATION&rdquo; labels on the daily timeframe (N = 272) were followed by a median adverse excursion of <strong class="text-white">&minus;11.69%</strong> — selling there meant standing in front of rebounds. Hence <em>avoid</em>.</p>
+      <p>▸ Excursions cut both ways: the median worst adverse excursion after a daily full BUY signal was about &minus;9% over 20 bars. That measured fact is why the included guide teaches invalidation sized to the instrument — never a fixed &minus;3% stop.</p>
+      <p>Past signals say nothing about future results. These statistics describe how this specific tool behaved on one historical period, on five markets — nothing more.</p>
+
+      <div class="wiki-divider"></div>
+
+      <h3 id="pricing">Access &amp; education (USD)</h3>
+      <p>Two different things live on this page, and they are often confused — so here they are, kept separate: <strong class="text-white">the indicator itself</strong> (built and audited; its public TradingView release is in preparation) and <strong class="text-white">education about the method</strong> (available now). <strong class="text-white">Nothing on this page sells access to the indicator — until the public release, the script is not available anywhere.</strong></p>
+    </article>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-brand-panel border border-brand-green/30 p-8 flex flex-col">
+        <p class="font-orbitron text-white text-lg uppercase mb-1">The indicator — TradingView release in preparation</p>
+        <p class="text-3xl font-bold text-white mb-4">In preparation <span class="text-sm text-gray-400">— join the notice list</span></p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">CryptoT Confluence v1.1 is built, compiled and audited — the results are on this page. It currently lives in our own TradingView library: TradingView requires a paid creator plan to publish scripts publicly, and we are sequencing that launch deliberately rather than rushing it. Follow our profile — the release will be announced there, and here, the day it goes live. When it lands: one indicator slot, any chart, any TradingView plan.</p>
+        <a href="https://www.tradingview.com/u/jutrasdimitri/" class="mt-auto block text-center py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">Follow CryptoT on TradingView</a>
+      </div>
+      <div class="bg-brand-panel border border-brand-green p-8 flex flex-col shadow-neon-green">
+        <p class="font-orbitron text-white text-lg uppercase mb-1">User Guide (PDF)</p>
+        <p class="text-3xl font-bold text-white mb-4">$12.99 <span class="text-sm text-gray-400">one-time</span></p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">The complete guide to reading and using the indicator (PDF, EN/FR): the five components, the qualified signals (CONF / REBOND / CAPITULATION), the two contexts proven by our published audit, the traps to avoid, and worked examples. One payment — no subscription. <strong class="text-white">Education only — this guide is the complete manual for the indicator; the script itself arrives with the public TradingView release.</strong></p>
+        <a href="https://buy.stripe.com/bJeaEZ1NMbyL3157r81RC0H" class="mt-auto block text-center py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">Get the User Guide (PDF) — $12.99</a>
+      </div>
+    </div>
+
+    <article class="wiki-content bg-brand-panel border border-brand-green/20 p-6 md:p-12 relative overflow-hidden mb-12 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+      <p><strong class="text-white">Join the TradingView launch-notice list.</strong> The indicator&rsquo;s public release is in preparation — TradingView requires a paid creator plan to publish scripts, and Creator Program / Marketplace eligibility takes time after release (a public track record: months live, 100+ boosts, TradingView review). Leave your email and you will get exactly one message the day the indicator goes live on TradingView. Nothing else, no spam. Follow the release on TradingView: <a href="https://www.tradingview.com/u/jutrasdimitri/">CryptoT on TradingView</a>.</p>
+      <form action="https://formspree.io/f/mykgkker" method="POST" class="space-y-4 max-w-md mb-6">
+        <label class="block text-sm text-gray-400">Your email, for the launch notice
+          <input type="email" name="email" required placeholder="you@email.com" class="mt-2 w-full bg-black border border-brand-green/30 px-4 py-3 text-white" />
+        </label>
+        <input type="hidden" name="produit" value="CryptoT Confluence — avis de lancement Marketplace" />
+        <input type="hidden" name="_subject" value="CryptoT Confluence — avis de lancement Marketplace" />
+        <button type="submit" class="block w-full text-center py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">Notify me at launch →</button>
+      </form>
+      <p><strong class="text-white">One slot, everything included.</strong> TradingView&rsquo;s free/Basic plan allows 2 indicators per chart — CryptoT Confluence uses exactly <strong class="text-white">one</strong> indicator slot: trend, structure, momentum, flow, volume, the regime layer and the score panel all live inside the single script, and it runs on any TradingView plan, including the free one.</p>
+
+      <div class="wiki-divider"></div>
+
+      <h3 style="margin-top:0;">⚠️ Read this before you buy</h3>
+      <p><strong class="text-white">CryptoT Confluence is an educational tool. It is not financial advice, and it does not replace your own analysis.</strong></p>
+      <p>▸ <strong class="text-white">No return is guaranteed or promised — by anyone, ever.</strong> A confluence score measures how technical readings align. It does not know the future.</p>
+      <p>▸ A past signal says nothing about future results. Test everything yourself, start small, and never risk money you need.</p>
+      <p>▸ <strong class="text-white">The User Guide (PDF) sold on this page is education — the complete manual.</strong> It does not include the script: the indicator&rsquo;s public TradingView release is in preparation, and until it lands, nobody can sell you the indicator — anyone who tries is not us.</p>
+      <p>▸ CryptoT sells education and tools. If you are looking for guaranteed profits, this product is not for you — and neither is anyone honestly selling one.</p>
+
+      <div class="wiki-divider"></div>
+
+      <h3>Questions</h3>
+      <p><strong class="text-white">When will the indicator be available on TradingView?</strong><br>CryptoT Confluence v1.1 is built, compiled and historically audited. Its public TradingView release is in preparation — TradingView requires a paid creator plan to publish scripts, and we are sequencing that launch deliberately; until it lands, the script itself is not available anywhere. Follow CryptoT on TradingView and join the launch-notice list on this page to be told the day it goes live. The User Guide (PDF) sold here is the complete manual for the indicator — it does not include the script itself.</p>
+      <p><strong class="text-white">Why are there so few signals?</strong><br>By design. A full signal requires 4 of 5 independent readings aligned, real volume participation, the right side of the trend — and the right EMA 200 regime context. Most days, the honest answer is &ldquo;no alignment&rdquo; — the score shows you that instead of inventing trades.</p>
+      <p><strong class="text-white">Does it work on TradingView&rsquo;s free plan?</strong><br>By design — any plan, including free. It uses one indicator slot, and it runs on any symbol and timeframe; it was built and tested for the crypto Power 5 (BTC, ETH, ADA, SOL, XRP), on daily and 4H readings.</p>
+      <p><strong class="text-white">Can I buy access anywhere else?</strong><br>No — and right now, the indicator is not available anywhere at all. Anyone offering to sell you access today — a website, a direct message, for crypto — is running a scam; it is not CryptoT. The real release will be announced on this page and on our TradingView profile.</p>
+      <p><strong class="text-white">Does it guarantee profits?</strong><br>No — and run from anyone who says their indicator does. It is an educational tool that shows alignment. Your decisions, your risk, your responsibility.</p>
+
+      <div class="wiki-divider"></div>
+
+      <p class="text-center font-orbitron text-white tracking-widest">&ldquo;NEVER QUIT LEARNING.&rdquo;</p>
+      <p class="text-xs text-gray-500 leading-relaxed">Disclaimer: CryptoT Confluence is published by CryptoT for education and entertainment only. It is not financial, investment, legal or tax advice, and nothing on this page is a recommendation or solicitation to buy, sell or hold any asset. Cryptocurrency is volatile and high-risk; you can lose some or all of any money you put in. The audit statistics presented above are historical measurements from a defined past period (public OKX data, February 2022 – October 2026 depending on timeframe) and will not repeat as-is. Past performance never guarantees future results. Do your own research and, for decisions that matter, consult a licensed professional in your jurisdiction.</p>
+    </article>
+
+    <div class="text-center">
+      <a href="#pricing" class="inline-block px-8 py-4 bg-brand-green text-black font-orbitron font-bold uppercase tracking-wider hover:bg-white transition-all">
+        Get the User Guide — $12.99 →
+      </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-brand-green/20 bg-black py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="font-orbitron text-white text-lg mb-2">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs">EST. 2025 // MONTREAL // WORLDWIDE</p>
+      <div class="mt-6 flex justify-center gap-6 text-xs">
+        <a href="index.html" class="text-gray-500 hover:text-brand-green transition-colors">HOME</a>
+        <a href="index.html#products" class="text-gray-500 hover:text-brand-green transition-colors">SHOP</a>
+        <a href="about-them.html" class="text-gray-500 hover:text-brand-green transition-colors">ABOUT</a>
+        <a href="index.html#contact" class="text-gray-500 hover:text-brand-green transition-colors">CONTACT</a>
+      </div>
+      <p class="text-gray-600 text-[10px] mt-8">ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Currency UI (visual consistency)
+    const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
+    let currentCurrency = "USD";
+    function setCurrency(curr) {
+      currentCurrency = curr;
+      document.querySelectorAll(".currency-btn").forEach(btn => {
+        if (btn.getAttribute("data-currency") === curr) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+    }
+    document.addEventListener("DOMContentLoaded", () => setCurrency("USD"));
+
+    // Mobile menu
+    const mobileMenuEl = document.getElementById("mobileMenu");
+    function toggleMobileMenu() {
+      const isHidden = mobileMenuEl.classList.contains("hidden");
+      mobileMenuEl.classList.toggle("hidden", !isHidden);
+      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
+      if (btn) btn.setAttribute("aria-expanded", String(isHidden));
+      if (isHidden) document.body.classList.add("overflow-hidden");
+      else document.body.classList.remove("overflow-hidden");
+    }
+    function closeMobileMenu() {
+      mobileMenuEl.classList.add("hidden");
+      const btn = document.querySelector('button[aria-controls="mobileMenu"]');
+      if (btn) btn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("overflow-hidden");
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMobileMenu();
+    });
+  </script>
+</body>
+</html>
