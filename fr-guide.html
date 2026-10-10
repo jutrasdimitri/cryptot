@@ -393,6 +393,17 @@
       <p class="text-gray-300 mb-6"><b class="text-white block mb-1">Je peux payer en crypto?</b>Oui — commandez par le formulaire ci-dessus, payez en crypto, et le guide est livré par courriel après la confirmation sur la chaîne. Note : les paiements crypto sont finaux (aucun remboursement possible sur la chaîne); le prix est en USD et le montant crypto est fixé au taux du moment de la commande.</p>
       <p class="text-gray-300 mb-6"><b class="text-white block mb-1">Qui a fait ça?</b>CryptoT — la boutique et le média de Montréal derrière la couverture quotidienne des Power 5 et le Crypto Historian sur cryptot.shop. La même règle que tout ce qu'on publie : <i>Never quit learning.</i></p>
     </section>
+        <section class="border-t border-white/10 py-12">
+      <div class="text-center">
+        <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-6">CHAPITRE 1 — GRATUIT</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto mb-8">Pas encore certain ? Lisez le <b class="text-white">premier chapitre complet</b> de l'Édition Complète Power 5 — plus le sommaire entier — gratuitement. PDF en français + en anglais, accès instantané à la page suivante. Vous rejoignez aussi la liste CryptoT : un courriel par semaine, aucun pourriel, désinscription en tout temps.</p>
+        <form id="sampleForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
+          <input type="email" name="Email" required placeholder="votre@courriel.com" class="flex-1 bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600" />
+          <button type="submit" id="sampleBtn" class="px-8 py-3 bg-brand-green text-black font-bold uppercase font-orbitron tracking-widest text-sm hover:bg-white transition-all">RECEVOIR MON CHAPITRE GRATUIT</button>
+        </form>
+        <p id="sampleErr" class="hidden text-red-400 text-xs mt-4">Une erreur est survenue. Réessayez.</p>
+      </div>
+    </section>
     <p class="font-orbitron text-center text-white tracking-[2px] text-xl mt-14">"NEVER QUIT LEARNING."</p>
     <p class="text-gray-500 text-xs border-t border-white/10 pt-6 mt-8">Avis : Ce guide est publié par CryptoT à des fins d'éducation et de divertissement seulement. Ce n'est pas un conseil financier, d'investissement, juridique ou fiscal, et rien dans ce guide ne constitue une recommandation ou une sollicitation d'acheter, de vendre ou de détenir un actif. Les cryptomonnaies sont volatiles et à haut risque; vous pouvez perdre une partie ou la totalité de l'argent que vous y mettez. Les prix et instantanés sont de l'information historique datée (sommets historiques vérifiés via CoinGecko, octobre 2026) et seront périmés. Faites vos propres recherches et, pour les décisions qui comptent, consultez un professionnel autorisé dans votre juridiction. La performance passée ne garantit jamais les résultats futurs.</p>
   </main>
@@ -442,5 +453,69 @@
     document.addEventListener("DOMContentLoaded", mountAcceptedStrips);
   </script>
 
+
+<script>
+(function(){
+  var KIT_FORM_ID = '9949859';
+  var FS_ENDPOINT = 'https://formspree.io/f/mykgkker';
+  var SAMPLE_URL = '/fr-echantillon-guide.html';
+  var nf = document.getElementById('sampleForm');
+  if(nf){
+    nf.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var email = ((nf.Email && nf.Email.value) || '').trim();
+      if(!email || email.indexOf('@') < 0) return;
+      var btn = document.getElementById('sampleBtn');
+      var btnLabel = btn.textContent;
+      btn.disabled = true; btn.textContent = '...';
+      try{
+        var kbody = new FormData();
+        kbody.append('email_address', email);
+        var res = await fetch('https://app.kit.com/forms/' + KIT_FORM_ID + '/subscriptions', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'X-CKJS-Version': '6' },
+          body: kbody
+        });
+        if(!res.ok) throw new Error('Server Error.');
+        var kdata = await res.json();
+        if(kdata.status !== 'success' && !(kdata.status === 'quarantined' && kdata.url)){
+          throw new Error('Kit: ' + (kdata.status || 'unknown'));
+        }
+        try{
+          var fd = new FormData();
+          fd.append('Email', email);
+          fd.append('_subject', 'Power 5 sample request \u2014 CryptoT');
+          fd.append('Form', 'power5-sample');
+          if(navigator.sendBeacon) navigator.sendBeacon(FS_ENDPOINT, fd);
+        }catch(_){}
+        if(kdata.status === 'success'){
+          window.location.assign(SAMPLE_URL);
+        }else{
+          nf.classList.add('hidden');
+          var qp = document.createElement('p');
+          qp.className = 'text-yellow-300 text-xs tracking-widest mt-4';
+          qp.appendChild(document.createTextNode('Une derni\u00e8re \u00e9tape \u2014 '));
+          var qa = document.createElement('a');
+          qa.href = kdata.url; qa.target = '_blank'; qa.rel = 'noopener';
+          qa.className = 'underline text-white';
+          qa.textContent = 'compl\u00e9tez cette v\u00e9rification de s\u00e9curit\u00e9';
+          qp.appendChild(qa);
+          qp.appendChild(document.createTextNode(' pour terminer votre inscription \u2014 ensuite '));
+          var qb = document.createElement('a');
+          qb.href = SAMPLE_URL;
+          qb.className = 'underline text-white';
+          qb.textContent = 'obtenez votre \u00e9chantillon gratuit ici';
+          qp.appendChild(qb);
+          qp.appendChild(document.createTextNode('.'));
+          nf.parentNode.insertBefore(qp, nf.nextSibling);
+        }
+      }catch(err){
+        document.getElementById('sampleErr').classList.remove('hidden');
+        btn.disabled = false; btn.textContent = btnLabel;
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
