@@ -12,6 +12,23 @@
 
   gtag('config', 'AW-17754769101');
 </script>
+<script>
+  // Crypto Historian pack purchase measurement: Stripe Checkout returns buyers to
+  // this same page with ?cth_checkout=success&session_id=cs_... — fire the Ads
+  // purchase event once per checkout session (sessionStorage guard + the checkout
+  // session id as transaction_id, so refreshes do not double-count). No value is
+  // sent: Ads falls back to counting the conversion without a guide price.
+  (function () {
+    try {
+      var p = new URLSearchParams(window.location.search);
+      var sid = p.get('session_id');
+      if (p.get('cth_checkout') === 'success' && sid && !sessionStorage.getItem('cth_conv_' + sid)) {
+        sessionStorage.setItem('cth_conv_' + sid, '1');
+        gtag('event', 'conversion', {'send_to': 'AW-17754769101/7iVkCOuYtpgdEM2NkZJC', 'transaction_id': sid});
+      }
+    } catch (e) {}
+  })();
+</script>
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
