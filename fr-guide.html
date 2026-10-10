@@ -1,180 +1,437 @@
 <!DOCTYPE html>
-
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Guide de démarrage Power 5 // Apprenez Bitcoin, Ethereum, Cardano, Solana, XRP | CryptoT</title>
-<meta name="description" content="Le Guide de démarrage Power 5 de CryptoT (38 pages en français) : les vraies histoires de Bitcoin, Ethereum, Cardano, Solana et XRP — plus un kit complet pour lire les graphiques, des exemples travaillés, des listes de vérification risque et un plan d'apprentissage de 90 jours. Éducation seulement. Pas un conseil financier." />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
-<style>
-  :root{ --bg:#050505; --panel:#0d0d0f; --line:#26262b; --txt:#e5e5e5; --mut:#9ca3af; --btc:#F7931A; --cta:#f5c518; }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;line-height:1.65}
-  .wrap{max-width:860px;margin:0 auto;padding:0 20px}
-  header{border-bottom:1px solid var(--line);padding:16px 0}
-  .brand{font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:3px;color:#fff;text-decoration:none}
-  .brand span{color:var(--btc)}
-  .hero{padding:64px 0 40px;text-align:center}
-  .kicker{font-family:'Orbitron',sans-serif;color:var(--btc);letter-spacing:4px;font-size:12px}
-  h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:42px;line-height:1.15;margin:16px 0 12px;color:#fff}
-  .sub{color:var(--mut);font-size:18px;max-width:640px;margin:0 auto}
-  .chips{display:flex;gap:8px;justify-content:center;margin:26px 0;flex-wrap:wrap}
-  .chip{font-family:'Orbitron',sans-serif;font-weight:700;font-size:13px;padding:7px 16px;border-radius:4px;color:#fff}
-  .price-box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px;margin:34px auto;max-width:520px;text-align:center}
-  .price{font-family:'Orbitron',sans-serif;font-size:44px;font-weight:900;color:#fff}
-  .price small{font-size:15px;color:var(--mut);font-weight:500}
-  .cta{display:inline-block;background:var(--cta);color:#111;font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:1px;padding:15px 38px;border-radius:6px;text-decoration:none;margin-top:16px}
-  .cta:hover{filter:brightness(1.08)}
-  .fineprint{color:var(--mut);font-size:12.5px;margin-top:12px}
-  section{padding:30px 0;border-top:1px solid var(--line)}
-  h2{font-family:'Orbitron',sans-serif;font-size:22px;color:#fff;margin-bottom:14px}
-  ul{list-style:none}
-  li{padding:7px 0 7px 26px;position:relative;color:#d1d5db}
-  li::before{content:"▸";position:absolute;left:4px;color:var(--btc)}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-  @media(max-width:680px){.cols{grid-template-columns:1fr} h1{font-size:32px}}
-  .not li::before{content:"✕";color:#ef4444}
-  .faq p{color:#d1d5db;margin-bottom:16px}
-  .faq b{color:#fff}
-  .disc{color:var(--mut);font-size:12px;padding:26px 0 50px;border-top:1px solid var(--line)}
-  .slogan{font-family:'Orbitron',sans-serif;text-align:center;color:#fff;letter-spacing:2px;padding:8px 0 0}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RQF4846HHK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  .orderform{max-width:520px;margin:18px auto 0;text-align:left}
-  .orderform label{display:block;color:#d1d5db;font-size:14px;margin:12px 0 4px}
-  .orderform input,.orderform select{width:100%;background:#111;color:#fff;border:1px solid var(--line);border-radius:6px;padding:11px 12px;font-size:15px;margin-top:5px}
-  .orderform button{width:100%;text-align:center}
-</style>
+  gtag('config', 'G-RQF4846HHK');
+</script>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide de démarrage Power 5 // Apprenez Bitcoin, Ethereum, Cardano, Solana, XRP | CryptoT</title>
+  <meta name="description" content="Le Guide de démarrage Power 5 de CryptoT (38 pages en français) : les vraies histoires de Bitcoin, Ethereum, Cardano, Solana et XRP — plus un kit complet pour lire les graphiques, des exemples travaillés, des listes de vérification risque et un plan d'apprentissage de 90 jours. Éducation seulement. Pas un conseil financier.">
+<link rel="canonical" href="https://cryptot.shop/fr-guide.html" />
+<link rel="alternate" hreflang="en" href="https://cryptot.shop/guide.html" />
+<link rel="alternate" hreflang="fr" href="https://cryptot.shop/fr-guide.html" />
+<link rel="alternate" hreflang="x-default" href="https://cryptot.shop/guide.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="CryptoT" />
+<meta property="og:title" content="Guide de démarrage Power 5 // Apprenez Bitcoin, Ethereum, Cardano, Solana, XRP | CryptoT" />
+<meta property="og:description" content="Le Guide de démarrage Power 5 de CryptoT (38 pages en français) : les vraies histoires de Bitcoin, Ethereum, Cardano, Solana et XRP — plus un kit complet pour lire les graphiques, des exemples travaillés, des listes de vérification risque et un plan d'apprentissage de 90 jours. Éducation seulement. Pas un conseil financier." />
+<meta property="og:url" content="https://cryptot.shop/fr-guide.html" />
+<meta property="og:locale" content="fr_CA" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Guide de démarrage Power 5 // Apprenez Bitcoin, Ethereum, Cardano, Solana, XRP | CryptoT" />
+<meta name="twitter:description" content="Le Guide de démarrage Power 5 de CryptoT (38 pages en français) : les vraies histoires de Bitcoin, Ethereum, Cardano, Solana et XRP — plus un kit complet pour lire les graphiques, des exemples travaillés, des listes de vérification risque et un plan d'apprentissage de 90 jours. Éducation seulement. Pas un conseil financier." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-green": "#39ff14",
+            "brand-black": "#0a0a0a",
+            "brand-panel": "#111111",
+            "ada-blue": "#0033AD",
+          },
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            mono: ["Share Tech Mono", "monospace"],
+          },
+          boxShadow: {
+            "neon-green": "0 0 10px #39ff14, 0 0 20px #39ff14",
+            "neon-blue": "0 0 10px #0033AD, 0 0 20px #0033AD",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #050505; color: #e5e5e5; }
+    .matrix-bg{
+      background-image:
+        linear-gradient(0deg,transparent 24%,rgba(0,51,173,.03) 25%,rgba(0,51,173,.03) 26%,transparent 27%,transparent 74%,rgba(0,51,173,.03) 75%,rgba(0,51,173,.03) 76%,transparent 77%,transparent),
+        linear-gradient(90deg,transparent 24%,rgba(0,51,173,.03) 25%,rgba(0,51,173,.03) 26%,transparent 27%,transparent 74%,rgba(0,51,173,.03) 75%,rgba(0,51,173,.03) 76%,transparent 77%,transparent);
+      background-size: 50px 50px;
+    }
+    :focus-visible{ outline:2px solid #0033AD; outline-offset:2px; }
+
+    /* honeypot */
+    .hp-field{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+    /* Logo row styling */
+    .logo-strip{
+      border: 1px solid rgba(57,255,20,.20);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(8px);
+    }
+    .logo-strip .lbl{
+      letter-spacing: .22em; font-size: 10px; color: rgba(255,255,255,.55); text-transform: uppercase; white-space: nowrap;
+    }
+
+    /* ICONS SIZING */
+    .picon{
+      width: 34px; height: 22px;
+      display:inline-flex; align-items:center; justify-content:center;
+      opacity: .92; filter: drop-shadow(0 0 10px rgba(57,255,20,0.05));
+      transition: opacity .15s ease, transform .15s ease;
+    }
+    .picon svg{ width: 100%; height: 100%; }
+    .picon:hover{ opacity: 1; transform: translateY(-1px); }
+    .hero-icons .picon, .modal-icons .picon{ width: 40px; height: 26px; }
+
+    /* --- WIKI STYLE (MATCHING OTHERS) --- */
+    .wiki-content h2 {
+        font-family: 'Orbitron', sans-serif;
+        color: white;
+        font-size: 1.8rem;
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid #0033AD; /* ADA COLOR */
+        padding-left: 1.5rem;
+    }
+    .wiki-content h3 {
+        font-family: 'Orbitron', sans-serif;
+        color: #d1d5db;
+        font-size: 1.4rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .wiki-content p {
+        margin-bottom: 1.8rem;
+        color: #d1d5db;
+        line-height: 2;
+        font-size: 1.2rem;
+    }
+    .wiki-content ul {
+        list-style-type: disc;
+        padding-left: 2rem;
+        margin-bottom: 2.5rem;
+        color: #9ca3af;
+        font-size: 1.15rem;
+        line-height: 1.8;
+    }
+    .wiki-content li { margin-bottom: 0.75rem; }
+    .wiki-content a {
+        color: #0033AD;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: all 0.2s;
+    }
+    .wiki-content a:hover { color: white; }
+    .wiki-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #0033AD, transparent);
+        margin: 4rem 0;
+        opacity: 0.4;
+    }
+
+    /* COIN NAV BUTTONS */
+    .nav-coin-btn { opacity: 0.5; border: 1px solid #333; }
+    .nav-coin-btn:hover { opacity: 1; border-color: white; }
+    .nav-coin-btn.active { opacity: 1; background-color: rgba(255,255,255,0.05); border-color: currentColor; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+
+    /* Keep nav compact */
+    @media (max-width: 1100px){ .nav-accepted { display:none; } }
+  </style>
+
+  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
 </head>
-<body>
-<header><div class="wrap"><a class="brand" href="/fr">CRYPTO<span>T</span></a></div></header>
+<body class="matrix-bg min-h-screen font-mono selection:bg-brand-green selection:text-black">
 
-<div class="wrap">
-  <div class="hero">
-    <div class="kicker">LES POWER 5 // L'ÉDUCATION D'ABORD</div>
-    <h1>LE GUIDE DE DÉMARRAGE<br/>POWER 5</h1>
-    <p class="sub">Bitcoin. Ethereum. Cardano. Solana. XRP. Leurs vraies histoires et leurs jalons vérifiés — plus un kit complet pour apprendre à lire les graphiques, des exemples travaillés étape par étape, les listes de vérification qui gardent les débutants hors du trouble, et un plan d'apprentissage de 90 jours. La trousse de survie que personne ne donne aux débutants, dans un seul manuel.</p>
-    <div class="chips">
-      <span class="chip" style="background:#F7931A">BTC</span>
-      <span class="chip" style="background:#627EEA">ETH</span>
-      <span class="chip" style="background:#0033AD">ADA</span>
-      <span class="chip" style="background:#14A882">SOL</span>
-      <span class="chip" style="background:#2378B4">XRP</span>
+  <div id="coinmarketcap-widget-marquee"
+       coins="1,1027,2010,52,5426"
+       currency="USD"
+       theme="dark"
+       transparent="false"
+       show-symbol-logo="true"
+       class="fixed top-0 w-full z-[60] border-b border-brand-green/30"></div>
+
+  <template id="svgIcons">
+    <span data-icon="visa" class="picon"><svg viewBox="0 0 64 24"><text x="0" y="18" font-family="Arial Black,sans-serif" font-size="18" fill="#1A1F71">VISA</text></svg></span>
+    <span data-icon="mc" class="picon"><svg viewBox="0 0 64 24"><circle cx="26" cy="12" r="8" fill="#EB001B"/><circle cx="38" cy="12" r="8" fill="#F79E1B" opacity=".95"/><circle cx="32" cy="12" r="8" fill="#FF5F00" opacity=".9"/></svg></span>
+    <span data-icon="amex" class="picon"><svg viewBox="0 0 64 24"><rect x="2" y="3" width="60" height="18" rx="3" fill="#2E77BB"/><text x="10" y="17" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">AMEX</text></svg></span>
+    <span data-icon="applepay" class="picon"><svg viewBox="0 0 64 24"><path d="M18 10.5c1.2-1.5 2-3.4 1.8-5.5-1.8.1-3.8 1.2-5 2.7-1.1 1.3-2.1 3.3-1.8 5.2 2 .2 3.8-1 5-2.4Z" fill="#FFF"/><path d="M22 12c-2.4-1.4-4.8-.1-6 .1-1.2.3-3.2 1.2-5.1-.1-2.5-1.6-6.3-1.4-8 1.3-3 4.6-.8 11.5 2.1 15.2 1.4 1.8 3.1 3.7 5.3 3.6 2.1-.1 2.9-1.3 5.4-1.3 2.5 0 3.2 1.3 5.4 1.2 2.2 0 3.6-1.7 5-3.5 1.6-2.1 2.2-4.1 2.2-4.2-.1 0-4.1-1.6-4.1-6.2 0-3.9 3.2-5.6 3.4-5.7-1.9-2.8-4.9-3.1-6-3.2Z" fill="#FFF"/><text x="34" y="17" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">Pay</text></svg></span>
+    <span data-icon="gpay" class="picon"><svg viewBox="0 0 64 24"><text x="2" y="16" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">G</text><circle cx="10" cy="12" r="2.2" fill="#4285F4"/><circle cx="13" cy="12" r="2.2" fill="#34A853"/><circle cx="16" cy="12" r="2.2" fill="#FBBC05"/><circle cx="19" cy="12" r="2.2" fill="#EA4335"/><text x="26" y="17" font-family="Arial Black,sans-serif" font-size="12" fill="#FFF">Pay</text></svg></span>
+    <span data-icon="interac" class="picon"><svg viewBox="0 0 64 24"><rect x="2" y="4" width="60" height="16" rx="3" fill="#FFD400"/><text x="12" y="17" font-family="Arial Black,sans-serif" font-size="11" fill="#111">INTERAC</text></svg></span>
+    <span data-icon="btc" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#F7931A"/><text x="9.2" y="16.2" font-family="Arial Black,sans-serif" font-size="10" fill="#111">₿</text></svg></span>
+    <span data-icon="eth" class="picon"><svg viewBox="0 0 24 24"><polygon points="12,2 6.2,12 12,9.2 17.8,12" fill="#627EEA"/><polygon points="12,22 6.2,13 12,16 17.8,13" fill="#3C3C3D"/></svg></span>
+    <span data-icon="ada" class="picon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2" fill="#0033AD"/><g fill="#0033AD" opacity="0.95"><circle cx="12" cy="5.2" r="1"/><circle cx="12" cy="18.8" r="1"/><circle cx="5.2" cy="12" r="1"/><circle cx="18.8" cy="12" r="1"/><circle cx="7.2" cy="7.2" r="0.9"/><circle cx="16.8" cy="7.2" r="0.9"/><circle cx="7.2" cy="16.8" r="0.9"/><circle cx="16.8" cy="16.8" r="0.9"/></g></svg></span>
+    <span data-icon="xrp" class="picon"><svg viewBox="0 0 24 24"><path d="M6 7c1.6 1.6 3.2 2.4 6 2.4S16.4 8.6 18 7h2c-2.2 2.2-4.7 3.6-8 3.6S6.2 9.2 4 7h2Z" fill="#FFF"/><path d="M18 17c-1.6-1.6-3.2-2.4-6-2.4S7.6 15.4 6 17H4c2.2-2.2 4.7-3.6 8-3.6s5.8 1.4 8 3.6h-2Z" fill="#FFF"/></svg></span>
+    <span data-icon="sol" class="picon"><svg viewBox="0 0 64 24"><defs><linearGradient id="solg" x1="0" x2="1"><stop offset="0" stop-color="#9945FF"/><stop offset="1" stop-color="#14F195"/></linearGradient></defs><rect x="8" y="4" width="44" height="4" rx="2" fill="url(#solg)"/><rect x="12" y="10" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.95"/><rect x="8" y="16" width="44" height="4" rx="2" fill="url(#solg)" opacity="0.9"></rect>
+      </svg>
+    </span>
+  </template>
+
+  <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+
+        <div class="flex items-center gap-3 min-w-fit">
+          <div class="relative z-50 flex items-center gap-2">
+            <a class='text-[10px] text-gray-400 border border-transparent px-2 py-1 hover:text-brand-green transition-colors' href='/guide'>EN</a>
+            <span class="text-gray-700">/</span>
+            <a class='text-[10px] text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 uppercase tracking-wider transition-colors' href='/fr-guide'>FR</a>
+          </div>
+
+          <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+          <a class='font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer' href='/fr'>
+            CRYPTO<span class="text-brand-green">T</span>
+          </a>
+        </div>
+
+        <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
+          <span class="lbl mr-3">ACCEPTÉ</span>
+          <div class="flex items-center gap-2" id="navAcceptedRow"></div>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6">
+          <a class='text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr#products'>LES_5_PILIERS</a>
+          <a class='text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr-about'>À_PROPOS</a>
+          <a class='text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr#manifesto'>MANIFESTE</a>
+          <a class='text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr-crypto-news'>CRYPTO_NOUVELLES</a>
+          <a class='text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr#contact'>CONTACT</a>
+        </div>
+
+        <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" onclick="toggleMobileMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
-    <div class="price-box">
-      <div class="price">12,99 $ <small>USD — paiement unique</small></div>
-      <p class="fineprint">PDF de 38 pages en français (+ version anglaise incluse) · Téléchargement instantané après le paiement — ou payez en crypto plus bas</p>
-      
-      <a class="cta" href="https://buy.stripe.com/bJe00l9gefP19ptaDk1RC0F">OBTENIR LE GUIDE</a>
-      <p class="fineprint">Éducation seulement — pas un conseil financier. Aucune prédiction. Aucun hype.</p>
+
+  </nav>
+<div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
+    <div class="flex flex-col gap-6 text-center mt-10">
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr#products'>BOUTIQUE</a>
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr-about'>À PROPOS</a>
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr#manifesto'>MANIFESTE</a>
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr-crypto-news'>CRYPTO NOUVELLES</a>
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr#contact'>CONTACT</a>
+      <a class='text-xl text-gray-500 font-orbitron border-b border-gray-800 pb-4' href='/ada'>ENGLISH</a>
+
+      <div class="logo-strip rounded px-3 py-3">
+        <div class="lbl mb-2">MÉTHODES DE PAIEMENT</div>
+        <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
+      </div>
+    </div>
+
+    <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ FERMER ]</button>
+  </div>
+
+  <div class="sticky top-[142px] z-40 bg-black/90 border-b border-white/10 py-4">
+    <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center gap-3 font-orbitron">
+      <a class='nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#F7931A] text-sm md:text-base font-bold transition-all' href='/fr-btc'>BTC</a>
+      <a class='nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#627EEA] text-sm md:text-base font-bold transition-all' href='/fr-eth'>ETH</a>
+      <a class='nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#0033AD] text-sm md:text-base font-bold transition-all' href='/fr-ada'>ADA</a>
+      <a class='nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-white text-sm md:text-base font-bold transition-all' href='/fr-xrp'>XRP</a>
+      <a class='nav-coin-btn px-6 py-2 border border-gray-800 text-gray-500 hover:text-[#14F195] text-sm md:text-base font-bold transition-all' href='/fr-sol'>SOL</a>
     </div>
   </div>
 
-  <section>
-    <h2>À L'INTÉRIEUR</h2>
-    <ul>
-      <li><b>Lisez ceci d'abord</b> — ce qu'est ce guide, et la seule règle qui vous protège.</li>
-      <li><b>La crypto en 10 minutes</b> — blockchains, portefeuilles, clés et plateformes, en langage clair.</li>
-      <li><b>Pourquoi ces cinq-là</b> — cinq réseaux, cinq idées différentes de ce qu'une blockchain devrait être.</li>
-      <li><b>BTC — Bitcoin</b> : le livre blanc, les pizzas, les halvings (prochain : ~avril 2028), le plafond de 21 millions.</li>
-      <li><b>ETH — Ethereum</b> : les contrats intelligents, The DAO, The Merge — la vraie histoire de l'ordinateur mondial.</li>
-      <li><b>ADA — Cardano</b> : la chaîne révisée par les pairs, ses ères, et le staking expliqué simplement.</li>
-      <li><b>SOL — Solana</b> : la Proof of History, l'effondrement de 2022, et la reconstruction.</li>
-      <li><b>XRP — XRP Ledger</b> : des paiements en 3 à 5 secondes, et le procès de la SEC qui a défini son statut.</li>
-      <li><b>Lire un marché sans se faire jouer</b> — les cycles, le FOMO, et un instantané d'octobre 2026 contre le sommet historique vérifié de chaque coin.</li>
-      <li><b>Bases de l'analyse technique</b> — chandelles, tendance, support et résistance, volume; les moyennes mobiles (plafond ou trampoline?), le RSI et le MACD sans magie; l'habitude des échelles de temps, du haut vers le bas.</li>
-      <li><b>Les figures chartistes, mesurées</b> — double creux, double sommet, triangle ascendant, drapeau haussier, épaules-tête-épaules : les repérer, les confirmer, les invalider — avec les statistiques publiées de Thomas Bulkowski et un aide-mémoire d'une page.</li>
-      <li><b>Exemples travaillés</b> — lire un vrai graphique en 5 étapes (ADA, octobre 2026), le tableau du calcul de récupération, et une arnaque démontée ligne par ligne.</li>
-      <li><b>Risque : comment les gens perdent vraiment de l'argent</b> — l'effet de levier, les sommets de cycle, et les signaux d'alarme des arnaques.</li>
-      <li><b>Les erreurs de débutant les plus coûteuses</b> — les 8 frais de scolarité que d'autres ont déjà payés pour vous.</li>
-      <li><b>Avant d'acheter quoi que ce soit : la vérification en 10 points</b> — la liste de diligence imprimable.</li>
-      <li><b>Sécurité du portefeuille</b> — les règles de la phrase de récupération et les habitudes quotidiennes qui gardent vos coins à vous.</li>
-      <li><b>Vos 90 premiers jours : un plan d'apprentissage</b> — les fondations, des pratiques de portefeuille avec zéro dollar à risque, la chasse aux figures, et un auto-test au jour 90. Un plan d'apprentissage — jamais un plan d'investissement.</li>
-      <li><b>Glossaire</b> — 29 termes, tous utilisés dans le guide, en langage clair.</li>
-    </ul>
-    <p class="fineprint" style="margin-top:10px">🇬🇧 Also available in English — <b>both versions (FR 38 pages + EN 31 pages) are included</b> with every purchase.</p>
-  </section>
-
-  <section>
-    <h2>APRÈS LA LECTURE, VOUS POUVEZ…</h2>
-    <ul>
-      <li>Lire n'importe quel graphique crypto en 5 étapes disciplinées — et écrire ce qui prouverait que votre lecture est fausse.</li>
-      <li>Expliquer les chandelles, les moyennes mobiles, le RSI et le MACD à un ami, en mots simples, sans superstition.</li>
-      <li>Repérer les 5 figures chartistes classiques — et nommer leur confirmation ET leur invalidation.</li>
-      <li>Faire le calcul de récupération : pourquoi −50 % exige +100 %, et pourquoi un tirage de −92 % exige environ +1 170 %.</li>
-      <li>Passer la vérification en 10 points avant tout achat, garder une phrase de récupération en sécurité, et reconnaître une arnaque en moins d'une minute.</li>
-      <li>Suivre un plan d'apprentissage structuré de 90 jours au lieu de regarder les prix défiler.</li>
-    </ul>
-    <p class="fineprint" style="margin-top:10px">Des tranches vidéo gratuites tirées de ce guide — un concept par vidéo — paraissent sur la chaîne YouTube de CryptoT (@cryptoTshop). Le guide est le manuel complet dont elles sont tirées.</p>
-  </section>
-
-  <section>
-    <h2>PAYER EN CRYPTO</h2>
-    <p style="color:#d1d5db">Vous préférez payer en crypto? <b style="color:#fff">Commandez par formulaire, payez en crypto, guide livré par courriel.</b></p>
-    <ul>
-      <li>Le prix reste en USD (12,99 $) — le montant exact en crypto est calculé au taux du moment de la commande et confirmé dans notre réponse.</li>
-      <li>Envoyez le formulaire de commande (votre courriel + le coin choisi + la langue : FR ou EN) → on répond avec le montant et l'adresse de réception → une fois le paiement confirmé sur la blockchain, les deux PDFs arrivent dans votre boîte (habituellement en quelques heures, toujours en moins de 24 h).</li>
-      <li>À savoir : les paiements crypto sont finaux une fois envoyés — les blockchains n'ont pas de bouton « annuler », donc les commandes crypto ne peuvent pas être remboursées. Carte via Stripe ci-dessus si vous préférez un paiement réversible.</li>
-    </ul>
-    
-    <form class="orderform" action="https://formspree.io/f/mykgkker" method="POST">
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-12">
+      <p class="font-orbitron text-brand-green tracking-[4px] text-xs mb-4">LES POWER 5 // L'ÉDUCATION D'ABORD</p>
+      <h1 class="text-4xl md:text-6xl font-black font-orbitron text-white mb-6">LE GUIDE DE DÉMARRAGE<br/>POWER 5</h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Bitcoin. Ethereum. Cardano. Solana. XRP. Leurs vraies histoires et leurs jalons vérifiés — plus un kit complet pour apprendre à lire les graphiques, des exemples travaillés étape par étape, les listes de vérification qui gardent les débutants hors du trouble, et un plan d'apprentissage de 90 jours. La trousse de survie que personne ne donne aux débutants, dans un seul manuel.</p>
+    </div>
+    <div class="border border-white/10 bg-black/60 px-6 py-8 mb-14">
+      <div class="flex flex-wrap justify-center items-start gap-8 md:gap-12">
+        <a href='/fr-btc' class="flex flex-col items-center gap-3 group">
+          <img src="/assets/power5-logos/btc-logo.png" alt="BTC logo" class="h-14 w-14 md:h-16 md:w-16 object-contain transition-transform group-hover:scale-110" loading="lazy" />
+          <span class="font-orbitron font-bold tracking-widest text-sm" style="color:#F7931A">BTC</span>
+        </a>
+        <a href='/fr-eth' class="flex flex-col items-center gap-3 group">
+          <img src="/assets/power5-logos/eth-logo.jpg" alt="ETH logo" class="h-14 w-14 md:h-16 md:w-16 object-contain transition-transform group-hover:scale-110" loading="lazy" />
+          <span class="font-orbitron font-bold tracking-widest text-sm" style="color:#627EEA">ETH</span>
+        </a>
+        <a href='/fr-ada' class="flex flex-col items-center gap-3 group">
+          <img src="/assets/power5-logos/ada-logo.png" alt="ADA logo" class="h-14 w-14 md:h-16 md:w-16 object-contain transition-transform group-hover:scale-110" loading="lazy" />
+          <span class="font-orbitron font-bold tracking-widest text-sm" style="color:#0033AD">ADA</span>
+        </a>
+        <a href='/fr-sol' class="flex flex-col items-center gap-3 group">
+          <img src="/assets/power5-logos/sol-logo.png" alt="SOL logo" class="h-14 w-14 md:h-16 md:w-16 object-contain transition-transform group-hover:scale-110" loading="lazy" />
+          <span class="font-orbitron font-bold tracking-widest text-sm text-transparent bg-clip-text bg-gradient-to-r from-[#9945FF] to-[#14F195]">SOL</span>
+        </a>
+        <a href='/fr-xrp' class="flex flex-col items-center gap-3 group">
+          <img src="/assets/power5-logos/xrp-logo.png" alt="XRP logo" class="h-14 w-14 md:h-16 md:w-16 object-contain transition-transform group-hover:scale-110" loading="lazy" />
+          <span class="font-orbitron font-bold tracking-widest text-sm" style="color:#FFFFFF">XRP</span>
+        </a>
+      </div>
+    </div>
+    <div class="border border-brand-green/30 bg-brand-panel p-8 md:p-10 max-w-xl mx-auto text-center mb-4">
+      <div class="font-orbitron text-5xl font-black text-white">12,99 $ <span class="text-base text-gray-400 font-medium">USD — paiement unique</span></div>
+      <p class="text-gray-500 text-xs mt-4">PDF de 38 pages en français (+ version anglaise incluse) · Téléchargement instantané après le paiement — ou payez en crypto plus bas</p>
+      <div class="mt-6"><a class="inline-block px-10 py-4 bg-brand-green text-black font-orbitron font-bold uppercase tracking-widest text-sm hover:bg-white transition-all " href="https://buy.stripe.com/bJe00l9gefP19ptaDk1RC0F">OBTENIR LE GUIDE</a></div>
+      <p class="text-gray-500 text-xs mt-4">Éducation seulement — pas un conseil financier. Aucune prédiction. Aucun hype.</p>
+    </div>
+    <section class="border-t border-white/10 py-12">
+      <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-6">À L'INTÉRIEUR</h2>
+      <ul class="space-y-3 text-gray-300">
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Lisez ceci d'abord</b> — ce qu'est ce guide, et la seule règle qui vous protège.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">La crypto en 10 minutes</b> — blockchains, portefeuilles, clés et plateformes, en langage clair.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Pourquoi ces cinq-là</b> — cinq réseaux, cinq idées différentes de ce qu'une blockchain devrait être.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">BTC — Bitcoin</b> : le livre blanc, les pizzas, les halvings (prochain : ~avril 2028), le plafond de 21 millions.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">ETH — Ethereum</b> : les contrats intelligents, The DAO, The Merge — la vraie histoire de l'ordinateur mondial.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">ADA — Cardano</b> : la chaîne révisée par les pairs, ses ères, et le staking expliqué simplement.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">SOL — Solana</b> : la Proof of History, l'effondrement de 2022, et la reconstruction.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">XRP — XRP Ledger</b> : des paiements en 3 à 5 secondes, et le procès de la SEC qui a défini son statut.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Lire un marché sans se faire jouer</b> — les cycles, le FOMO, et un instantané d'octobre 2026 contre le sommet historique vérifié de chaque coin.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Bases de l'analyse technique</b> — chandelles, tendance, support et résistance, volume; les moyennes mobiles (plafond ou trampoline?), le RSI et le MACD sans magie; l'habitude des échelles de temps, du haut vers le bas.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Les figures chartistes, mesurées</b> — double creux, double sommet, triangle ascendant, drapeau haussier, épaules-tête-épaules : les repérer, les confirmer, les invalider — avec les statistiques publiées de Thomas Bulkowski et un aide-mémoire d'une page.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Exemples travaillés</b> — lire un vrai graphique en 5 étapes (ADA, octobre 2026), le tableau du calcul de récupération, et une arnaque démontée ligne par ligne.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Risque : comment les gens perdent vraiment de l'argent</b> — l'effet de levier, les sommets de cycle, et les signaux d'alarme des arnaques.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Les erreurs de débutant les plus coûteuses</b> — les 8 frais de scolarité que d'autres ont déjà payés pour vous.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Avant d'acheter quoi que ce soit : la vérification en 10 points</b> — la liste de diligence imprimable.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Sécurité du portefeuille</b> — les règles de la phrase de récupération et les habitudes quotidiennes qui gardent vos coins à vous.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Vos 90 premiers jours : un plan d'apprentissage</b> — les fondations, des pratiques de portefeuille avec zéro dollar à risque, la chasse aux figures, et un auto-test au jour 90. Un plan d'apprentissage — jamais un plan d'investissement.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span><b class="text-white">Glossaire</b> — 29 termes, tous utilisés dans le guide, en langage clair.</span></li>
+      </ul>
+      <p class="text-gray-500 text-xs mt-4">🇬🇧 Also available in English — <b class="text-gray-300">both versions (FR 38 pages + EN 31 pages) are included</b> with every purchase.</p>
+    </section>
+    <section class="border-t border-white/10 py-12">
+      <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-6">APRÈS LA LECTURE, VOUS POUVEZ…</h2>
+      <ul class="space-y-3 text-gray-300">
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Lire n'importe quel graphique crypto en 5 étapes disciplinées — et écrire ce qui prouverait que votre lecture est fausse.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Expliquer les chandelles, les moyennes mobiles, le RSI et le MACD à un ami, en mots simples, sans superstition.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Repérer les 5 figures chartistes classiques — et nommer leur confirmation ET leur invalidation.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Faire le calcul de récupération : pourquoi −50 % exige +100 %, et pourquoi un tirage de −92 % exige environ +1 170 %.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Passer la vérification en 10 points avant tout achat, garder une phrase de récupération en sécurité, et reconnaître une arnaque en moins d'une minute.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Suivre un plan d'apprentissage structuré de 90 jours au lieu de regarder les prix défiler.</span></li>
+      </ul>
+      <p class="text-gray-500 text-xs mt-4">Des tranches vidéo gratuites tirées de ce guide — un concept par vidéo — paraissent sur la chaîne YouTube de CryptoT (@cryptoTshop). Le guide est le manuel complet dont elles sont tirées.</p>
+    </section>
+    <section class="border-t border-white/10 py-12">
+      <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-6">PAYER EN CRYPTO</h2>
+      <p class="text-gray-300 mb-4">Vous préférez payer en crypto? <b class="text-white">Commandez par formulaire, payez en crypto, guide livré par courriel.</b></p>
+      <ul class="space-y-3 text-gray-300">
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Le prix reste en USD (12,99 $) — le montant exact en crypto est calculé au taux du moment de la commande et confirmé dans notre réponse.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Envoyez le formulaire de commande (votre courriel + le coin choisi + la langue : FR ou EN) → on répond avec le montant et l'adresse de réception → une fois le paiement confirmé sur la blockchain, les deux PDFs arrivent dans votre boîte (habituellement en quelques heures, toujours en moins de 24 h).</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>À savoir : les paiements crypto sont finaux une fois envoyés — les blockchains n'ont pas de bouton « annuler », donc les commandes crypto ne peuvent pas être remboursées. Carte via Stripe ci-dessus si vous préférez un paiement réversible.</span></li>
+      </ul>
+    <form class="max-w-xl mx-auto text-left space-y-4 mt-8" action="https://formspree.io/f/mykgkker" method="POST">
       <input type="hidden" name="_subject" value="Commande crypto - Guide de démarrage Power 5" />
       <input type="hidden" name="Product" value="CryptoT Power 5 Starter Guide - 12,99 USD" />
-      <label>Votre courriel
-        <input type="email" name="Email" required placeholder="vous@exemple.com" />
-      </label>
-      <label>Coin avec lequel vous paierez
-        <select name="Coin">
+      <div>
+        <label class="block text-gray-400 text-xs uppercase tracking-widest mb-2">Votre courriel</label>
+        <input type="email" name="Email" required placeholder="vous@exemple.com" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600" />
+      </div>
+      <div>
+        <label class="block text-gray-400 text-xs uppercase tracking-widest mb-2">Coin avec lequel vous paierez</label>
+        <select name="Coin" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600">
           <option>BTC</option><option>ETH</option><option>ADA</option>
           <option>SOL</option><option>XRP</option><option>Autre</option>
         </select>
-      </label>
-      <label>Langue du guide
-        <select name="Language">
+      </div>
+      <div>
+        <label class="block text-gray-400 text-xs uppercase tracking-widest mb-2">Langue du guide</label>
+        <select name="Language" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600">
           <option>English</option><option selected>Français</option><option>Les deux</option>
         </select>
-      </label>
-      <label>Message (optionnel)
-        <input type="text" name="Message" placeholder="Quelque chose à nous signaler?" />
-      </label>
-      <button class="cta" type="submit" style="border:0;cursor:pointer;width:100%">COMMANDER PAR COURRIEL — PAYER EN CRYPTO</button>
-      <p class="fineprint">Ce formulaire ne prend aucun paiement — nous répondons avec le montant exact en crypto et l'adresse de réception.</p>
-    </form>
-  </section>
-
-  <section>
-    <div class="cols">
+      </div>
       <div>
-        <h2>C'EST POUR VOUS SI…</h2>
-        <ul>
-          <li>Vous êtes curieux de la crypto mais vous refusez d'apprendre des vidéos de hype.</li>
-          <li>Vous voulez l'histoire, les idées ET des habiletés pratiques de lecture de graphiques — pas les objectifs de prix d'un étranger.</li>
-          <li>Vous préférez comprendre le risque avant de toucher à un marché.</li>
-        </ul>
+        <label class="block text-gray-400 text-xs uppercase tracking-widest mb-2">Message (optionnel)</label>
+        <input type="text" name="Message" placeholder="Quelque chose à nous signaler?" class="w-full bg-black border border-gray-700 text-white p-3 text-sm focus:border-brand-green focus:outline-none placeholder-gray-600" />
       </div>
-      <div class="not">
-        <h2>CE N'EST PAS…</h2>
-        <ul>
-          <li>Un conseil financier, des signaux, ou des « quoi acheter ».</li>
-          <li>Des prédictions de prix — personne d'honnête vend ça.</li>
-          <li>Un programme pour devenir riche. Les hivers sont dans ce guide pour une raison.</li>
-        </ul>
+      <button type="submit" class="w-full px-8 py-4 bg-brand-green text-black font-bold uppercase font-orbitron tracking-widest text-sm hover:bg-white transition-all">COMMANDER PAR COURRIEL — PAYER EN CRYPTO</button>
+      <p class="text-gray-500 text-xs">Ce formulaire ne prend aucun paiement — nous répondons avec le montant exact en crypto et l'adresse de réception.</p>
+    </form>
+    </section>
+    <section class="border-t border-white/10 py-12">
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-6">C'EST POUR VOUS SI…</h2>
+      <ul class="space-y-3 text-gray-300">
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Vous êtes curieux de la crypto mais vous refusez d'apprendre des vidéos de hype.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Vous voulez l'histoire, les idées ET des habiletés pratiques de lecture de graphiques — pas les objectifs de prix d'un étranger.</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">▸</span><span>Vous préférez comprendre le risque avant de toucher à un marché.</span></li>
+      </ul>
+        </div>
+        <div>
+          <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-6">CE N'EST PAS…</h2>
+      <ul class="space-y-3 text-gray-300">
+        <li class="flex gap-3"><span class="text-red-500">✕</span><span>Un conseil financier, des signaux, ou des « quoi acheter ».</span></li>
+        <li class="flex gap-3"><span class="text-red-500">✕</span><span>Des prédictions de prix — personne d'honnête vend ça.</span></li>
+        <li class="flex gap-3"><span class="text-red-500">✕</span><span>Un programme pour devenir riche. Les hivers sont dans ce guide pour une raison.</span></li>
+      </ul>
+        </div>
       </div>
+    </section>
+    <section class="border-t border-white/10 py-12">
+      <h2 class="font-orbitron text-2xl md:text-3xl text-white font-black mb-6">QUESTIONS</h2>
+      <p class="text-gray-300 mb-6"><b class="text-white block mb-1">Qu'est-ce que je reçois?</b>Le guide dans les DEUX langues : le PDF français (38 pages) et le PDF anglais (31 pages) — téléchargement instantané après le paiement (Stripe), ou livraison par courriel si vous payez en crypto. Cinq histoires de réseaux vérifiées, un cours complet de bases d'analyse technique avec exemples travaillés, les chapitres risque et erreurs, deux listes de vérification actionnables, un plan d'apprentissage de 90 jours et un glossaire de 29 termes. Lisible sur tout appareil, à garder pour toujours.</p>
+      <p class="text-gray-300 mb-6"><b class="text-white block mb-1">Pourquoi 12,99 $?</b>Les guides de démarrage comparables se vendent 9,99 $ à 24,99 $ US avec une fraction de ce contenu — aucune statistique sourcée, aucun exemple travaillé, aucune liste de vérification, aucun plan, une seule langue. Ici : un cours de départ complet et sourcé dans un seul document, sous le seuil d'impulsion de 13 $. Paiement unique, aucun abonnement.</p>
+      <p class="text-gray-300 mb-6"><b class="text-white block mb-1">Est-ce un conseil financier?</b>Non. C'est de l'éducation sur l'histoire, la technologie, la lecture de graphiques et le risque. CryptoT ne vous dit jamais quoi acheter, vendre ou détenir.</p>
+      <p class="text-gray-300 mb-6"><b class="text-white block mb-1">Je peux payer en crypto?</b>Oui — commandez par le formulaire ci-dessus, payez en crypto, et le guide est livré par courriel après la confirmation sur la chaîne. Note : les paiements crypto sont finaux (aucun remboursement possible sur la chaîne); le prix est en USD et le montant crypto est fixé au taux du moment de la commande.</p>
+      <p class="text-gray-300 mb-6"><b class="text-white block mb-1">Qui a fait ça?</b>CryptoT — la boutique et le média de Montréal derrière la couverture quotidienne des Power 5 et le Crypto Historian sur cryptot.shop. La même règle que tout ce qu'on publie : <i>Never quit learning.</i></p>
+    </section>
+    <p class="font-orbitron text-center text-white tracking-[2px] text-xl mt-14">"NEVER QUIT LEARNING."</p>
+    <p class="text-gray-500 text-xs border-t border-white/10 pt-6 mt-8">Avis : Ce guide est publié par CryptoT à des fins d'éducation et de divertissement seulement. Ce n'est pas un conseil financier, d'investissement, juridique ou fiscal, et rien dans ce guide ne constitue une recommandation ou une sollicitation d'acheter, de vendre ou de détenir un actif. Les cryptomonnaies sont volatiles et à haut risque; vous pouvez perdre une partie ou la totalité de l'argent que vous y mettez. Les prix et instantanés sont de l'information historique datée (sommets historiques vérifiés via CoinGecko, octobre 2026) et seront périmés. Faites vos propres recherches et, pour les décisions qui comptent, consultez un professionnel autorisé dans votre juridiction. La performance passée ne garantit jamais les résultats futurs.</p>
+  </main>
+
+<footer class="border-t border-brand-green/20 bg-black py-12 text-center mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <p class="font-orbitron text-2xl text-white mb-4">CONNECTEZ-VOUS AVEC <span class="text-brand-green">NOUS</span></p>
+        <div class="flex justify-center gap-6">
+          <a href="https://x.com/JutrasDimitri" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">TWITTER / X</a>
+          <a href="https://www.instagram.com/cryptot.shop" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-green transition-colors">INSTAGRAM</a>
+          <a href="mailto:jutrasdimitri@gmail.com" class="text-gray-500 hover:text-brand-green transition-colors">EMAIL</a>
+          <a class='text-gray-500 hover:text-brand-green transition-colors' href='/fr-faq'>FAQ</a>
+        </div>
+      </div>
+
+      <div class="logo-strip rounded px-4 py-3 inline-block mb-8">
+        <div class="lbl mb-2">MÉTHODES DE PAIEMENT ACCEPTÉES</div>
+        <div class="flex flex-wrap items-center justify-center gap-2 hero-icons" id="footerAcceptedRow"></div>
+      </div>
+
+      <p class="font-orbitron text-white text-lg">CRYPTO<span class="text-brand-green">T</span></p>
+      <p class="text-gray-500 text-xs mt-2">PORTEZ VOS ACTIFS</p>
+      <p class="text-gray-600 text-[10px] mt-8">TOUS DROITS RÉSERVÉS.</p>
     </div>
-  </section>
+  </footer>
 
-  <section class="faq">
-    <h2>QUESTIONS</h2>
-    <p><b>Qu'est-ce que je reçois?</b><br/>Le guide dans les DEUX langues : le PDF français (38 pages) et le PDF anglais (31 pages) — téléchargement instantané après le paiement (Stripe), ou livraison par courriel si vous payez en crypto. Cinq histoires de réseaux vérifiées, un cours complet de bases d'analyse technique avec exemples travaillés, les chapitres risque et erreurs, deux listes de vérification actionnables, un plan d'apprentissage de 90 jours et un glossaire de 29 termes. Lisible sur tout appareil, à garder pour toujours.</p>
-    <p><b>Pourquoi 12,99 $?</b><br/>Les guides de démarrage comparables se vendent 9,99 $ à 24,99 $ US avec une fraction de ce contenu — aucune statistique sourcée, aucun exemple travaillé, aucune liste de vérification, aucun plan, une seule langue. Ici : un cours de départ complet et sourcé dans un seul document, sous le seuil d'impulsion de 13 $. Paiement unique, aucun abonnement.</p>
-    <p><b>Est-ce un conseil financier?</b><br/>Non. C'est de l'éducation sur l'histoire, la technologie, la lecture de graphiques et le risque. CryptoT ne vous dit jamais quoi acheter, vendre ou détenir.</p>
-    <p><b>Je peux payer en crypto?</b><br/>Oui — commandez par le formulaire ci-dessus, payez en crypto, et le guide est livré par courriel après la confirmation sur la chaîne. Note : les paiements crypto sont finaux (aucun remboursement possible sur la chaîne); le prix est en USD et le montant crypto est fixé au taux du moment de la commande.</p>
-    <p><b>Qui a fait ça?</b><br/>CryptoT — la boutique et le média de Montréal derrière la couverture quotidienne des Power 5 et le Crypto Historian sur cryptot.shop. La même règle que tout ce qu'on publie : <i>Never quit learning.</i></p>
-  </section>
+  <script>
+    function toggleMobileMenu() { var m = document.getElementById("mobileMenu"); if (m) m.classList.toggle("hidden"); }
+    function getIconNode(key){
+      const tpl = document.getElementById("svgIcons");
+      if(!tpl) return null;
+      const holder = tpl.content.querySelector(`[data-icon="${key}"]`);
+      return holder ? holder.cloneNode(true) : null;
+    }
+    function mountRow(rowEl, keys){
+      if(!rowEl) return;
+      rowEl.innerHTML = "";
+      keys.forEach(k => { const n = getIconNode(k); if (n) rowEl.appendChild(n); });
+    }
+    function mountAcceptedStrips(){
+      const keys = ["visa","mc","amex","applepay","gpay","interac","btc","eth","ada","xrp","sol"];
+      mountRow(document.getElementById("navAcceptedRow"), keys);
+      mountRow(document.getElementById("footerAcceptedRow"), keys);
+      mountRow(document.getElementById("mobileAcceptedRow"), keys);
+    }
+    document.addEventListener("DOMContentLoaded", mountAcceptedStrips);
+  </script>
 
-  <div class="slogan">"NEVER QUIT LEARNING."</div>
-  <p class="disc">Avis : Ce guide est publié par CryptoT à des fins d'éducation et de divertissement seulement. Ce n'est pas un conseil financier, d'investissement, juridique ou fiscal, et rien dans ce guide ne constitue une recommandation ou une sollicitation d'acheter, de vendre ou de détenir un actif. Les cryptomonnaies sont volatiles et à haut risque; vous pouvez perdre une partie ou la totalité de l'argent que vous y mettez. Les prix et instantanés sont de l'information historique datée (sommets historiques vérifiés via CoinGecko, octobre 2026) et seront périmés. Faites vos propres recherches et, pour les décisions qui comptent, consultez un professionnel autorisé dans votre juridiction. La performance passée ne garantit jamais les résultats futurs.</p>
-</div>
 </body>
 </html>
