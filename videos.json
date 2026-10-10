@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "KKYo2w6g-gQ",
+      "type": "longform",
+      "title": "Cardano Leads Alone: The False Breakdown Explained",
+      "date": "2026-10-10",
+      "duration": "9:03",
+      "durationISO": "PT9M3S",
+      "url": "https://www.youtube.com/watch?v=KKYo2w6g-gQ",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/KKYo2w6g-gQ",
+      "thumbnail": "https://i.ytimg.com/vi/KKYo2w6g-gQ/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 9 closes split the trio: ADA closed at $0.24287 — back inside its $0.242-$0.260 range by $0.00087 — while BTC closed at $82,544.71 (still below $83,000) and ETH at $2,485.23 (still below $2,530.28), their bearish breaks still in force",
+          "What a busted (failed) breakdown is, in plain language: Bulkowski break-even failure rate 24%, pullbacks in 58-66% of cases",
+          "This morning ADA leads alone at $0.25584 (+5.34%) while BTC (+0.22%) and ETH (+0.30%) sit almost flat",
+          "The closes that decide: tonight ADA vs $0.242, Sunday the BTC weekly close — Power 5 levels ADA → ETH → SOL → XRP → BTC"
+        ],
+        "fr": [
+          "Les clôtures du 9 ont partagé le trio : ADA a clôturé à 0,24287 $ — de retour dans son range 0,242-0,260 $, par 0,00087 $ seulement — pendant que BTC clôturait à 82 544,71 $ (toujours sous 83 000 $) et ETH à 2 485,23 $ (toujours sous 2 530,28 $), leurs cassures baissières toujours en vigueur",
+          "C'est quoi une fausse cassure « bustée », en langage clair : taux d'échec break-even de 24 % chez Bulkowski, pullbacks dans 58-66 % des cas",
+          "Ce matin, ADA mène seul à 0,25584 $ (+5,34 %) pendant que BTC (+0,22 %) et ETH (+0,30 %) restent presque plats",
+          "Les clôtures qui décident : ce soir ADA vs 0,242 $, dimanche la clôture hebdo de BTC — niveaux Power 5 ADA → ETH → SOL → XRP → BTC"
+        ]
+      }
+    },
+    {
       "id": "OKPxcsq8Wh4",
       "type": "longform",
       "title": "Crypto's $1.2B Flush: The Pullback Test Explained",
