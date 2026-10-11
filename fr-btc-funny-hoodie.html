@@ -417,7 +417,7 @@
   <div class="border border-brand-green/30 bg-brand-panel p-8 md:p-12 text-center relative overflow-hidden">
     <h2 class="font-orbitron text-3xl md:text-4xl text-white font-black mb-4">CONVAINCU ? <span class="text-brand-green">PORTE LE SIGNAL.</span></h2>
     <p class="text-gray-400 mb-8 max-w-xl mx-auto">Tu as lu l'histoire. Maintenant porte-la. 47,99&nbsp;$ USD, livraison internationale gratuite, tailles S &agrave; 2XL.</p>
-    <div class="w-full py-3 px-6 border border-gray-600 text-gray-400 font-bold text-sm uppercase font-orbitron tracking-wider text-center">TEMPORAIREMENT INDISPONIBLE</div>
+    <button onclick="openModal('BTC-FUNNY-HOODIE','BTC // C\'MON... DO SOMETHING - HOODIE')" class="px-10 py-4 bg-brand-green text-black font-black text-lg hover:bg-white transition-all uppercase font-orbitron tracking-widest">COMMANDE S&Eacute;CURIS&Eacute;E</button>
     <div class="mt-6"><a class='text-xs text-gray-500 hover:text-brand-green uppercase tracking-widest transition-colors' href='/fr-about'>Ou d&eacute;couvre pourquoi CryptoT existe &rarr;</a></div>
   </div>
 </section>
@@ -448,7 +448,9 @@
           </div>
           <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6">Livraison Internationale Gratuite // Paiement Chiffré</p>
 
-          <div class="w-full py-3 px-6 border border-gray-600 text-gray-400 font-bold text-sm uppercase font-orbitron tracking-wider text-center">TEMPORAIREMENT INDISPONIBLE</div>
+          <button onclick="openModal('BTC-FUNNY-HOODIE','BTC // C\'MON... DO SOMETHING - HOODIE')" class="w-full py-4 bg-[#F7931A] text-black font-black text-xl hover:bg-white transition-all uppercase font-orbitron tracking-widest shadow-[0_0_20px_rgba(247,147,26,0.3)] hover:shadow-[0_0_30px_rgba(247,147,26,0.6)]">
+            COMMANDE SÉCURISÉE
+          </button>
 <div class="grid grid-cols-3 gap-2 mt-4 text-center">
   <div class="border border-white/10 bg-black/40 px-2 py-3">
     <div class="text-brand-green text-[10px] uppercase tracking-widest">Paiement s&eacute;curis&eacute;</div>
@@ -626,12 +628,9 @@
     const FORM_ENDPOINT = "https://formspree.io/f/mykgkker";
     
     const PAYMENT_LINKS = {
-      BTC: "https://buy.stripe.com/3cI3cxgIG32fbxBaDk1RC00",
-      ETH: "https://buy.stripe.com/7sY4gB0JIbyL1X1aDk1RC01",
-      ADA: "https://buy.stripe.com/9B6fZj642eKX9pt7r81RC02",
-      XRP: "https://buy.stripe.com/6oU8wR3VUauH8lpdPw1RC03",
-      SOL: "https://buy.stripe.com/28E14p6428mz7hl12K1RC04",
       "BTC-HOODIE": "https://buy.stripe.com/6oU9AVdwu46j459fXE1RC06",
+      "BTC-FUNNY": "https://buy.stripe.com/dRmfZj0JI7iv4594eW1RC1p",
+      "BTC-FUNNY-HOODIE": "https://buy.stripe.com/aFa6oJ7861Yb59d5j01RC0J",
       "ETH-FUNNY": "https://buy.stripe.com/9B63cxbomdGTatx26O1RC0M",
       "ETH-FUNNY-HOODIE": "https://buy.stripe.com/7sY3cxcsqcCP6dh9zg1RC0N",
       "ADA-FUNNY": "https://buy.stripe.com/aFadRbfECcCP0SX8vc1RC0O",
@@ -641,7 +640,15 @@
       "SOL-FUNNY": "https://buy.stripe.com/fZu28t1NM9qD4597r81RC0S",
       "SOL-FUNNY-HOODIE": "https://buy.stripe.com/28EeVf2RQ0U7atxcLs1RC0T",
       "HODL": "https://buy.stripe.com/aFabJ39ge32fcBF9zg1RC0U",
-      "HODL-HOODIE": "https://buy.stripe.com/6oU8wRbom6er0SXdPw1RC0V"
+      "HODL-HOODIE": "https://buy.stripe.com/6oU8wRbom6er0SXdPw1RC0V",
+      "ETH-POKE": "https://buy.stripe.com/dRm3cx7860U7atxdPw1RC1q",
+      "ETH-POKE-HOODIE": "https://buy.stripe.com/eVq8wR4ZY32f1X15j01RC1i",
+      "ADA-POKE": "https://buy.stripe.com/7sY28t8caauH0SX9zg1RC1r",
+      "ADA-POKE-HOODIE": "https://buy.stripe.com/28EbJ3akiauH1X1aDk1RC1k",
+      "SOL-POKE": "https://buy.stripe.com/cNicN71NM9qD3158vc1RC1s",
+      "SOL-POKE-HOODIE": "https://buy.stripe.com/00wdRb642fP1gRV12K1RC1m",
+      "XRP-POKE": "https://buy.stripe.com/14A28t8ca8mz1X15j01RC1t",
+      "XRP-POKE-HOODIE": "https://buy.stripe.com/6oU9AV8cacCPbxB9zg1RC1o"
     };
 
     const rates = { USD: 1, CAD: 1.45, EUR: 0.95 };
