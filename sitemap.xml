@@ -471,4 +471,20 @@
     <loc>https://cryptot.shop/fr-xrp-poke-hoodie.html</loc>
     <priority>0.90</priority>
   </url>
+  <url>
+    <loc>https://cryptot.shop/mugs.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-mugs.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/hats.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://cryptot.shop/fr-hats.html</loc>
+    <priority>0.80</priority>
+  </url>
 </urlset>
