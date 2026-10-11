@@ -180,6 +180,24 @@
       }
     },
     {
+      "id": "27fT_n52w2U",
+      "type": "short",
+      "title": "BREAKING: Ledger Confirms Implant in Tampered Wallet",
+      "date": "2026-10-10",
+      "duration": "0:45",
+      "durationISO": "PT45S",
+      "url": "https://youtube.com/shorts/27fT_n52w2U",
+      "thumbnail": "https://i.ytimg.com/vi/27fT_n52w2U/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Ledger confirmed an unauthorized hardware implant in one affected customer device in the CryptoBilis case; the reseller halted all hardware wallet sales, unused-device buyers should not set up, and activated buyers should consider a new device with a new recovery phrase."
+        ],
+        "fr": [
+          "Ledger a confirme un implant materiel non autorise dans un appareil d un client touche dans le dossier CryptoBilis; le revendeur a arrete toutes ses ventes de portefeuilles materiels, les acheteurs non configures ne doivent pas commencer, et ceux qui l ont fait devraient envisager un nouvel appareil avec une nouvelle phrase de recuperation."
+        ]
+      }
+    },
+    {
       "id": "wzdX2fV8CwQ",
       "type": "short",
       "title": "Ceiling or Trampoline? — The CryptoT Power 5 Starter Guide Is Here",
