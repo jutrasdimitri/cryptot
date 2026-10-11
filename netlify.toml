@@ -14,3 +14,43 @@
   from = "/api/historian-webhook"
   to = "/.netlify/functions/historian-webhook"
   status = 200
+
+[[redirects]]
+  from = "/btc-candle"
+  to = "/#products"
+  status = 301
+
+[[redirects]]
+  from = "/btc-candle.html"
+  to = "/#products"
+  status = 301
+
+[[redirects]]
+  from = "/btc-candle-hoodie"
+  to = "/#products"
+  status = 301
+
+[[redirects]]
+  from = "/btc-candle-hoodie.html"
+  to = "/#products"
+  status = 301
+
+[[redirects]]
+  from = "/fr-btc-candle"
+  to = "/fr.html#products"
+  status = 301
+
+[[redirects]]
+  from = "/fr-btc-candle.html"
+  to = "/fr.html#products"
+  status = 301
+
+[[redirects]]
+  from = "/fr-btc-candle-hoodie"
+  to = "/fr.html#products"
+  status = 301
+
+[[redirects]]
+  from = "/fr-btc-candle-hoodie.html"
+  to = "/fr.html#products"
+  status = 301
