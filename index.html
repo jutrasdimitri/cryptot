@@ -162,6 +162,7 @@
         </div>
         <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
           <a href="#products" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">THE_POWER_5</a>
+          <a href="/accessories" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">ACCESSORIES</a>
           <a class='text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/about-them'>ABOUT_US</a>
           <a href="#manifesto" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTO</a>
           <a class='text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/crypto-news'>CRYPTO_NEWS</a>
@@ -181,6 +182,7 @@
   <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px] w-full overflow-y-auto">
     <div class="flex flex-col gap-6 text-center mt-10">
       <a href="#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">SHOP</a>
+          <a href="/accessories" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ACCESSORIES</a>
       <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/about-them' onclick='closeMobileMenu()'>ABOUT US</a>
       <a href="#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTO</a>
       <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/crypto-news' onclick='closeMobileMenu()'>CRYPTO NEWS</a>
@@ -275,8 +277,8 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <a class='flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center' href='/mugs'>HISTORY</a>
-              <button onclick="location.href='/mugs'" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">VIEW MUGS</button>
+              <a class='flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center' href='/accessories#mugs'>HISTORY</a>
+              <button onclick="location.href='/accessories#mugs'" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">VIEW MUGS</button>
             </div>
           </div>
         </div>
@@ -304,8 +306,37 @@
               <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
             </div>
             <div class="flex gap-2">
-              <a class='flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center' href='/hats'>HISTORY</a>
-              <button onclick="location.href='/hats'" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">VIEW CAPS</button>
+              <a class='flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center' href='/accessories#caps'>HISTORY</a>
+              <button onclick="location.href='/accessories#caps'" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">VIEW CAPS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group bg-brand-panel border border-brand-green/30 shadow-[0_0_15px_rgba(57,255,20,0.1)] hover:border-brand-green hover:shadow-neon-green transition-all duration-300">
+        <div class="w-full h-[400px] md:h-[500px] bg-gray-900 overflow-hidden relative">
+          <img src="keychain-btc.jpg" alt="KEYCHAINS" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" loading="lazy">
+          <div class="absolute top-2 right-2 bg-black/80 backdrop-blur px-2 py-1 text-xs text-[#F7931A] border border-[#F7931A] font-bold">Available</div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-orbitron text-lg md:text-xl text-white mb-1">POWER 5 // KEYCHAINS</h3>
+          <p class="text-brand-green text-xs mb-3 uppercase">POWER 5 // ACCESSORIES</p>
+          <p class="text-gray-400 text-sm mb-2 h-10 clamp-2">Die-cut acrylic keychains with the official Power 5 coin logos — carry your stack everywhere.</p>
+          <p class="text-[10px] text-gray-500 mb-4 uppercase tracking-wide">ACRYLIC // DIE-CUT</p>
+          <div class="pt-4 border-t border-white/10">
+            <div class="mb-3">
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-2xl font-bold text-white block price-display" data-base="21.99">$21.99 USD</span>
+                <div class="flex items-center gap-1">
+                  <button onclick="setCurrency('USD')" class="currency-btn active text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="USD">USD</button>
+                  <button onclick="setCurrency('CAD')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="CAD">CAD</button>
+                  <button onclick="setCurrency('EUR')" class="currency-btn text-[10px] text-gray-500 hover:text-white border border-white/10 px-2 py-1" data-currency="EUR">EUR</button>
+                </div>
+              </div>
+              <span class="text-[10px] text-gray-500 uppercase tracking-wider">FREE INTERNATIONAL SHIPPING</span>
+            </div>
+            <div class="flex gap-2">
+              <a class='flex-1 py-3 border border-[#F7931A] text-[#F7931A] font-bold text-center text-xs hover:bg-[#F7931A]/10 transition-all font-orbitron uppercase tracking-wider flex items-center justify-center' href='/accessories#keychains'>HISTORY</a>
+              <button onclick="location.href='/accessories#keychains'" class="flex-[1.5] py-3 bg-brand-green text-black font-bold text-sm hover:bg-white transition-all uppercase font-orbitron tracking-wider">VIEW KEYCHAINS</button>
             </div>
           </div>
         </div>
