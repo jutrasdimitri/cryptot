@@ -61,6 +61,22 @@
      2. Expédier le journal des échanges vers un stockage durable pour
         l'audit hebdomadaire de Mimi (actuellement : console.log structuré,
         visible dans les logs Netlify).
+
+   COUCHE « SEMI-EMPLOYÉ » + FACTURATION JUSTE — FAIT le 11 oct. 2026
+   (décision de Dim après l'avoir testé lui-même : il refusait le
+   courriel PUBLIC du shop en brûlant une question) :
+     - Bloc « SHOP DESK » injecté dans le prompt système : faits PUBLICS
+       de la boutique (courriel admin@cryptot.shop — le SEUL courriel
+       qu'il donne —, familles/prix courants, commande via Stripe,
+       livraison gratuite mondiale, retours défauts seulement) + règle
+       explicite public (à répondre) vs privé (à refuser comme avant).
+     - Facturation au marqueur : le modèle termine chaque réponse par
+       [[cth:bill]] (réponse substantive d'enseignement) ou [[cth:free]]
+       (service boutique, refus, « je ne sais pas », redirection hors
+       sujet, jasette). Le serveur retire le marqueur avant l'affichage
+       et ne débite (gratuit d'abord, pack ensuite) QUE sur bill.
+       Marqueur absent → débité (filet de sécurité, journalisé) : le
+       modèle ne doit jamais l'omettre.
    ========================================================================== */
 
 'use strict';
@@ -124,11 +140,45 @@ const COIN_NAMES = {
   sol: 'Solana', xrp: 'XRP', general: 'Power 5'
 };
 
-// Liens publics CryptoT (les seuls que le modèle a le droit de citer).
+// Liens publics CryptoT (les seuls que le modèle a le droit de citer —
+// tous vérifiés en ligne le 11 oct. 2026).
 const PUBLIC_LINKS = [
   'Video library: https://cryptot.shop/videos',
   'YouTube channel: https://www.youtube.com/@cryptoTshop',
-  'Shop & coin info pages: https://cryptot.shop'
+  'Shop & coin info pages: https://cryptot.shop',
+  'The Power 5 Complete Edition guide: https://cryptot.shop/guide',
+  'Funny collection: https://cryptot.shop/funny',
+  'Accessories (magnets, keychains): https://cryptot.shop/accessories',
+  'Shipping & returns: https://cryptot.shop/shipping',
+  'About the shop: https://cryptot.shop/about'
+].join('\n');
+
+/* ------------------------------------------------------------------ *
+ * Couche « semi-employé » — faits PUBLICS de la boutique (11 oct.    *
+ * 2026). Le Historian fait partie de l'équipe du shop : il donne ces  *
+ * faits librement et aiguille les visiteurs. Prix en USD relevés sur *
+ * les pages en ligne + l'échelle finale du 11 oct. 2026             *
+ * (build/price-context.json). À re-synchroniser quand les prix       *
+ * changent. AUCUN fait privé ici — la règle public/privé est dans le  *
+ * bloc RUNTIME de buildSystemPrompt().                                *
+ * ------------------------------------------------------------------ */
+const SHOP_FACTS = [
+  'You also work the shop desk of CryptoT — you are part of the shop team, not just a visiting teacher. CryptoT (cryptot.shop) is run from Montréal, Canada.',
+  'PUBLIC CONTACT: the shop\'s public email is admin@cryptot.shop. It is printed on the site itself — it is public information, NOT private. Give it freely and completely whenever a visitor asks how to contact the shop, reach the team, or get help with an order.',
+  'The ONLY email address you ever give out is admin@cryptot.shop. Never give any other email address, ever.',
+  'PRODUCTS & CURRENT PRICES (USD, price list of October 11, 2026 — state them plainly when asked):',
+  '- The Power 5 Complete Edition — the shop\'s digital guide: US$9.99. A 99-page PDF in English with the full French edition (114 pages) included; instant download right after checkout. Page: https://cryptot.shop/guide',
+  '- Regular Power 5 shirts: tees US$35.00, hoodies US$49.99.',
+  '- Funny line (one meme design per coin): tees US$29.99, hoodies US$47.99.',
+  '- "C\'mon... Do Something" poke tees: US$27.99 — the most affordable tee in the shop; poke hoodies US$47.99.',
+  '- Budget line: tees US$28.99, hoodies US$44.99.',
+  '- Halloween line (seasonal): tees US$29.99, hoodies US$47.99.',
+  '- Coin magnets: US$17.99 each; the full Power 5 magnet pack (all five coins): US$41.99.',
+  '- Acrylic keychains: US$21.99. Mugs: white US$21.99, black US$22.99. Caps: foam trucker US$29.99, dad hat US$35.99.',
+  'HOW ORDERING WORKS: the visitor picks a product on cryptot.shop and checks out securely by card through Stripe. Clothing and accessories are printed to order — made for that visitor after they order. The guide is digital: instant download after checkout.',
+  'SHIPPING: FREE worldwide — the price shown is the full price; no shipping fees are added, anywhere in the world. Production takes 2–5 business days, then delivery takes about 2–3 weeks depending on location. Tracking is provided when available.',
+  'RETURNS: every piece is printed to order, so returns are for defective items only — a misprint, the wrong item, or damage in transit. In those cases the shop remakes the item or refunds in full — the customer\'s choice. To report a defect, the customer emails admin@cryptot.shop with the order number and a photo of the issue. Custom orders are final sale, unless defective (then the same remake-or-refund promise applies).',
+  'Steer visitors to the one page that fits their question (guide, funny collection, accessories, shipping & returns, the coin pages) using ONLY the links listed in the runtime block below.'
 ].join('\n');
 
 /* ------------------------------------------------------------------ *
@@ -265,6 +315,11 @@ function buildSystemPrompt(coin, lang, liveBlock) {
       ' When a visitor asks about the current state of things (ETFs, approvals, listings), answer with these dated facts FIRST, opening with "As of October 2026…". Refuse ONLY the prediction part of a question (what WILL happen) — never the factual part.');
   }
 
+  // Couche « semi-employé » : les faits publics de la boutique (voir la
+  // constante SHOP_FACTS plus haut). Présente sur toutes les pages : un
+  // visiteur peut poser une question de boutique depuis n'importe où.
+  parts.push('\n---\nSHOP DESK — the public facts of the shop you work for:\n' + SHOP_FACTS);
+
   // Bloc temps réel (prix du moment) : présent seulement si la question
   // touche le présent ET si la récupération a réussi (voir plus bas).
   if (liveBlock) {
@@ -276,7 +331,14 @@ function buildSystemPrompt(coin, lang, liveBlock) {
     '- Reply in ' + (lang === 'fr' ? 'French' : 'English') + '.\n' +
     '- Plain language, warm teacher tone. Aim for under ~250 words unless the visitor asks for a full story.\n' +
     '- When a CryptoT link genuinely helps, end with ONE of these (never invent other URLs):\n' + PUBLIC_LINKS + '\n' +
-    '- Education only: no price predictions, no buy/sell advice, ever.'
+    '- Education only: no price predictions, no buy/sell advice, ever.\n' +
+    '- PUBLIC vs PRIVATE — know the difference, it is part of your job:\n' +
+    '  PUBLIC (answer freely and completely — this is shop service): the shop\'s contact email admin@cryptot.shop, the products and their prices, how to order, the shipping and returns policies, and the shop\'s public pages. Never refuse a public shop fact by calling it private.\n' +
+    '  PRIVATE (refuse warmly, exactly as you always have): any individual team member\'s personal email, phone number or home address; anything about a team member\'s private life; other customers\' orders or personal data; the shop\'s internal costs, suppliers or margins. The only contact you ever hand out is the public shop inbox: admin@cryptot.shop.\n' +
+    '- BILLING MARKER (machine instruction — never mention it, never explain it, never let it change your tone): end every reply with exactly ONE of these two markers, alone on the very last line:\n' +
+    '  [[cth:bill]] — when your reply gives a substantive answer to a question about crypto history or how crypto works (your teaching — including an answer that teaches facts and declines only a prediction part).\n' +
+    '  [[cth:free]] — when the exchange is shop service or a non-answer: any answer about the shop itself (contact, products, prices, ordering, shipping, returns), a refusal of any kind, an honest "I don\'t know", an off-topic redirect, or small talk and greetings.\n' +
+    '  Visitors are only charged for your teaching. A reply that does not teach costs them nothing.'
   );
   return parts.join('\n');
 }
@@ -782,15 +844,30 @@ exports.handler = async function (event) {
     const liveBlock = await maybeFetchLiveData(coin, message);
     const systemPrompt = buildSystemPrompt(coin, lang, liveBlock);
     const result = await callModel(systemPrompt, history, message);
-    // Réponse réussie seulement qu'on débite : gratuit d'abord, sinon
-    // un crédit du pack (le quota gratuit était épuisé mais le pack
-    // avait des crédits — vérifié plus haut).
-    let paidWith = 'free';
-    if (remainingBefore > 0) {
-      await incrementFreeUsed(visitorId);
-    } else {
-      await spendCredit(visitorId);
-      paidWith = 'credit';
+    /* Facturation juste (11 oct. 2026) : on ne débite QUE les vraies
+     * réponses d'enseignement. Le modèle termine sa réponse par un
+     * marqueur — [[cth:bill]] (enseignement substantif) ou [[cth:free]]
+     * (service boutique, refus, « je ne sais pas », redirection, jasette)
+     * — qu'on retire AVANT l'affichage. Marqueur absent : on débite
+     * (filet de sécurité journalisé — le modèle ne doit jamais l'omettre,
+     * et un refus sans marqueur resterait visible dans le journal). */
+    let billed = true;
+    let markerSeen = 'none';
+    const cleanedAnswer = result.answer.replace(/\[\[cth:(bill|free)\]\]/gi, function (match, kind) {
+      markerSeen = kind.toLowerCase();
+      if (kind.toLowerCase() === 'free') billed = false;
+      return '';
+    }).trim();
+    let paidWith = billed ? 'free' : 'none';
+    if (billed) {
+      // Gratuit d'abord, sinon un crédit du pack (le quota gratuit était
+      // épuisé mais le pack avait des crédits — vérifié plus haut).
+      if (remainingBefore > 0) {
+        await incrementFreeUsed(visitorId);
+      } else {
+        await spendCredit(visitorId);
+        paidWith = 'credit';
+      }
     }
     const remaining = Math.max(0, FREE_LIMIT - (await getFreeUsed(visitorId)));
     const credits = await getCredits(visitorId);
@@ -798,12 +875,14 @@ exports.handler = async function (event) {
       visitor: shortHash(visitorId), coin: coin, lang: lang,
       question: message.slice(0, 200),
       paidWith: paidWith,
+      billed: billed,
+      marker: markerSeen,
       liveData: !!liveBlock,
       promptTokens: result.usage ? result.usage.prompt_tokens : null,
       completionTokens: result.usage ? result.usage.completion_tokens : null,
       estCostUsd: estimateCostUsd(result.usage)
     });
-    return jsonResponse(200, { answer: result.answer, remaining: remaining, credits: credits, canBuy: packsConfigured() });
+    return jsonResponse(200, { answer: cleanedAnswer, remaining: remaining, credits: credits, canBuy: packsConfigured() });
   } catch (err) {
     // Échec de NOTRE côté : le visiteur ne perd pas sa question, et il
     // reçoit un mot du personnage plutôt qu'une erreur technique.
