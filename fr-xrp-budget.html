@@ -185,17 +185,16 @@
   <nav class="border-b border-brand-green/20 bg-black/90 backdrop-blur sticky top-[62px] z-50 mt-[62px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
-        <div class="flex items-center gap-2 min-w-[170px]">
+        <div class="flex items-center gap-3 min-w-fit">
           <div class="relative z-50 flex items-center gap-2">
-            <a href="xrp-budget.html" class="text-[10px] text-gray-400 border border-transparent px-2 py-1 hover:text-brand-green transition-colors">EN</a>
+            <a class='text-[10px] text-gray-400 border border-transparent px-2 py-1 hover:text-brand-green transition-colors' href='/xrp-budget'>EN</a>
             <span class="text-gray-700">/</span>
-            <a href="fr-xrp.html" class="text-[10px] text-brand-green border border-brand-green/30 px-2 py-1 hover:bg-brand-green/10 uppercase tracking-wider transition-colors">FR</a>
+            <a class='text-[10px] text-brand-green border border-brand-green/30 hover:bg-brand-green/10 px-2 py-1 uppercase tracking-wider transition-colors' href='/fr-xrp-budget'>FR</a>
           </div>
 
           <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
-          <a href="/fr.html" class="font-orbitron font-black text-2xl tracking-widest text-white cursor-pointer">
-            CRYPTO<span class="text-brand-green">T</span>
-          </a>
+         
+          <a href="/fr.html#products" class="logo-link font-orbitron font-black text-2xl tracking-widest text-white uppercase ml-2 cursor-pointer whitespace-nowrap relative z-40">CRYPTO<span class="text-brand-green">T</span></a>
         </div>
 
         <div class="nav-accepted hidden lg:flex items-center logo-strip rounded px-3 py-2">
@@ -203,42 +202,46 @@
           <div class="flex items-center gap-2" id="navAcceptedRow"></div>
         </div>
 
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="/fr.html#products" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">LES_5_PILIERS</a>
-          <a href="fr-accessories.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">ACCESSOIRES</a>
-          <a href="fr-about.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">À_PROPOS</a>
-          <a href="/fr.html#manifesto" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTE</a>
-          <a href="fr-crypto-news.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CRYPTO_NOUVELLES</a>
-          <a href="fr-guide.html" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">GUIDE</a>
-          <a href="/fr.html#contact" class="text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT</a>
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+          <a href="/fr.html#products" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">LES_5_PILIERS</a>
+          <a href="/fr-accessories" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">ACCESSOIRES</a>
+          <a class='text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr-about'>À_PROPOS</a>
+          <a href="/fr.html#manifesto" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">MANIFESTE</a>
+          <a class='text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr-crypto-news'>CRYPTO_NOUVELLES</a>
+          <a class='text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr-videos'>VIDÉOS</a>
+          <a class='text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2' href='/fr-guide'>GUIDE</a>
+          <a href="/fr.html#contact" class="text-[10px] lg:text-sm text-gray-400 hover:text-brand-green uppercase tracking-wider transition-colors py-2">CONTACT</a>
         </div>
 
-        <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" onclick="toggleMobileMenu()">
+        <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 border border-brand-green/30 text-brand-green hover:bg-brand-green/10 transition" aria-label="Ouvrir menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMobileMenu()">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
     </div>
-
   </nav>
 <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-[100] bg-black border-l border-brand-green/20 p-6 top-[62px]">
     <div class="flex flex-col gap-6 text-center mt-10">
-      <a href="/fr.html#products" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">BOUTIQUE</a>
-          <a href="fr-accessories.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ACCESSOIRES</a>
-      <a href="fr-about.html" class="text-xl text-brand-green font-orbitron border-b border-gray-800 pb-4">À PROPOS</a>
-      <a href="/fr.html#manifesto" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTE</a>
-      <a href="fr-crypto-news.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CRYPTO NOUVELLES</a>
-      <a href="fr-guide.html" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">GUIDE</a>
-      <a href="/fr.html#contact" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
-      <a href="xrp-budget.html" class="text-xl text-gray-500 font-orbitron border-b border-gray-800 pb-4">ENGLISH</a>
+      <a href="/fr.html#products" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">BOUTIQUE</a>
+          <a href="/fr-accessories" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">ACCESSOIRES</a>
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr-about' onclick='closeMobileMenu()'>À PROPOS</a>
+      <a href="/fr.html#manifesto" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">MANIFESTE</a>
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr-crypto-news' onclick='closeMobileMenu()'>CRYPTO NOUVELLES</a>
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr-videos' onclick='closeMobileMenu()'>VIDÉOS</a>
+      <a class='text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4' href='/fr-guide' onclick='closeMobileMenu()'>GUIDE</a>
+      <a href="/fr.html#contact" onclick="closeMobileMenu()" class="text-xl text-white font-orbitron hover:text-brand-green border-b border-gray-800 pb-4">CONTACT</a>
 
       <div class="logo-strip rounded px-3 py-3">
         <div class="lbl mb-2">MÉTHODES DE PAIEMENT</div>
         <div class="flex flex-wrap justify-center gap-2 hero-icons" id="mobileAcceptedRow"></div>
       </div>
-    </div>
 
+      <div class="flex items-center justify-center gap-4">
+        <a class='border border-white/10 hover:border-brand-green/30 hover:bg-brand-green/10 px-4 py-3 text-gray-300 hover:text-brand-green uppercase tracking-wider text-sm text-center' href='/xrp-budget'>ENGLISH</a>
+        <a class='border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 px-4 py-3 text-brand-green uppercase tracking-wider text-sm text-center' href='/fr-xrp-budget'>FRANÇAIS</a>
+      </div>
+    </div>
     <button onclick="toggleMobileMenu()" class="text-gray-500 mt-10 w-full text-center">[ FERMER ]</button>
   </div>
 
