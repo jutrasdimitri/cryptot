@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -176,6 +176,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "1TPF4UrTdu8",
+      "type": "short",
+      "title": "CPI Wednesday: Why One Print Could Shake Crypto",
+      "date": "2026-10-11",
+      "duration": "0:57",
+      "durationISO": "PT57S",
+      "url": "https://youtube.com/shorts/1TPF4UrTdu8",
+      "thumbnail": "https://i.ytimg.com/vi/1TPF4UrTdu8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Wednesday's September CPI (Oct 14, 8:30 a.m. ET) is the last inflation print before the Fed's October 28 decision. Traders price about a 19% chance of an October hike and roughly 76% for December, after September's hike to 3.75%-4.00%. Bitcoin closed Oct 10 at $82,910.80, just $89 below $83,000, and fights that line into tonight's weekly close."
+        ],
+        "fr": [
+          "Le CPI de septembre (mer. 14 oct., 8 h 30 HE) est le dernier chiffre d'inflation avant la decision de la Fed du 28 octobre. Les traders voient environ 19 % de chances d'une hausse en octobre et environ 76 % en decembre, apres la hausse de septembre a 3,75 %-4,00 %. Bitcoin a cloture le 10 oct. a 82 910,80 $, a seulement 89 $ sous 83 000 $, et se bat sur cette ligne avant la cloture hebdomadaire de ce soir."
         ]
       }
     },
