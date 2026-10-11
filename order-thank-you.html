@@ -18,7 +18,7 @@
 // cannot carry separate success URLs). French-language browsers are handed to the
 // French twin page, which fires the same event — the event therefore fires once.
 // No value is sent on purpose: merch prices vary (21.99-69.99 USD) and the Ads
-// conversion default (12.99 CAD) belongs to the guide, so no wrong value is reported.
+// conversion default (9.99 CAD) belongs to the guide, so no wrong value is reported.
 if ((navigator.language || '').toLowerCase().indexOf('fr') === 0) {
   window.location.replace('/fr-merci-commande.html');
 } else {
