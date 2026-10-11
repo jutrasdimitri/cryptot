@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "L3Pm9miA8Y8",
+      "type": "longform",
+      "title": "Bitcoin Above $83K Intraday: Tonight's Weekly Close Decides",
+      "date": "2026-10-11",
+      "duration": "8:03",
+      "durationISO": "PT8M3S",
+      "url": "https://www.youtube.com/watch?v=L3Pm9miA8Y8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/L3Pm9miA8Y8",
+      "thumbnail": "https://i.ytimg.com/vi/L3Pm9miA8Y8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin trades above $83,000 this afternoon (near $83,873, high $84,199) after the Oct 10 close missed the line by just $89.20 — but intraday is not a close: only tonight's close, which is also the weekly close, can bust the breakdown",
+          "What tonight decides, in plain language: a weekly close above $83,000 busts Bitcoin's breakdown; below it, the breakdown stays alive",
+          "The week ahead: Wednesday's September CPI — the last inflation print before the Fed's Oct 28 decision (FedWatch: ~19% odds of an October hike)",
+          "Last week's fund flows: Ether ETFs posted $542.1M in net outflows (worst week since January), Bitcoin ETFs $681.1M — plus the refreshed Power 5 levels ADA → ETH → SOL → XRP → BTC"
+        ],
+        "fr": [
+          "Bitcoin s'échange au-dessus de 83 000 $ cet après-midi (près de 83 873 $, haut 84 199 $) après que la clôture du 10 oct. a manqué la ligne de 89,20 $ seulement — mais l'intrajournalier n'est pas une clôture : seule celle de ce soir, qui est aussi la clôture hebdomadaire, peut invalider la cassure",
+          "Ce que ce soir décide, en langage clair : une clôture hebdomadaire au-dessus de 83 000 $ invalide la cassure baissière de Bitcoin; en dessous, elle reste en vie",
+          "La semaine à venir : le CPI de septembre mercredi — le dernier print d'inflation avant la décision de la Fed du 28 oct. (FedWatch : ~19 % de chances d'une hausse en octobre)",
+          "Les flux de la semaine passée : 542,1 M$ de sorties nettes pour les ETF Ether (pire semaine depuis janvier), 681,1 M$ pour les ETF Bitcoin — plus les niveaux Power 5 rafraîchis ADA → ETH → SOL → XRP → BTC"
+        ]
+      }
+    },
+    {
       "id": "KKYo2w6g-gQ",
       "type": "longform",
       "title": "Cardano Leads Alone: The False Breakdown Explained",
