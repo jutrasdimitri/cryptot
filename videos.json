@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "dlD_fWMng0E",
+      "type": "longform",
+      "title": "Bitcoin Hit $84K, Then Slipped: Tonight's Close Decides",
+      "date": "2026-10-12",
+      "duration": "9:01",
+      "durationISO": "PT9M1S",
+      "url": "https://www.youtube.com/watch?v=dlD_fWMng0E",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/dlD_fWMng0E",
+      "thumbnail": "https://i.ytimg.com/vi/dlD_fWMng0E/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin pushed to $84,262 this morning, then slipped back below $83,000 this afternoon (near $82,400 at build time) — the bust confirmed at yesterday's close is being retested the very next day; tonight's close grades the retest",
+          "Strategy's smallest Bitcoin buy of the year: 250 BTC for $21.5M bought Oct 5-11 at an average $86,194, bringing its total holdings to 848,250 BTC",
+          "Standard Chartered launched custody for Ripple's dollar (RLUSD) on the XRP Ledger — a bank vault for Ripple's stablecoin",
+          "The refreshed Power 5 levels in plain language — Oct 12 afternoon: BTC ~$82,391 · ETH ~$2,510 · ADA ~$0.241 · SOL ~$107.50 · XRP ~$1.356"
+        ],
+        "fr": [
+          "Bitcoin a grimpé à 84 262 $ ce matin, puis a glissé sous les 83 000 $ cet après-midi (près de 82 400 $ à la production) — la cassure invalidée à la clôture d'hier est retestée dès le lendemain; la clôture de ce soir note le retest",
+          "Le plus petit achat de Bitcoin de l'année pour Strategy : 250 BTC pour 21,5 M$ achetés du 5 au 11 oct. à 86 194 $ en moyenne, pour un total de 848 250 BTC détenus",
+          "Standard Chartered a lancé la garde du dollar de Ripple (RLUSD) sur le XRP Ledger — un coffre bancaire pour le stablecoin de Ripple",
+          "Les niveaux Power 5 rafraîchis, en langage clair — après-midi du 12 oct. : BTC ~82 391 $ · ETH ~2 510 $ · ADA ~0,241 $ · SOL ~107,50 $ · XRP ~1,356 $"
+        ]
+      }
+    },
+    {
       "id": "L3Pm9miA8Y8",
       "type": "longform",
       "title": "Bitcoin Above $83K Intraday: Tonight's Weekly Close Decides",
