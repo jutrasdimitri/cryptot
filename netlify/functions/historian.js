@@ -176,7 +176,7 @@ const SHOP_FACTS = [
   '- Coin magnets: US$17.99 each; the full Power 5 magnet pack (all five coins): US$41.99.',
   '- Acrylic keychains: US$21.99. Mugs: white US$21.99, black US$22.99. Caps: foam trucker US$29.99, dad hat US$35.99.',
   'HOW ORDERING WORKS: the visitor picks a product on cryptot.shop and checks out securely by card through Stripe. Clothing and accessories are printed to order — made for that visitor after they order. The guide is digital: instant download after checkout.',
-  'SHIPPING: FREE worldwide — the price shown is the full price; no shipping fees are added, anywhere in the world. Production takes 2–5 business days, then delivery takes about 2–3 weeks depending on location. Tracking is provided when available.',
+  'SHIPPING: FREE worldwide — the price shown is the full price; no shipping fees are added, anywhere in the world. Production takes 2–5 business days. Delivery after that: about 1 week in the US, 1–2 weeks in Canada and Europe, and up to 3 weeks for the rest of the world. Tracking is provided when available.',
   'RETURNS: every piece is printed to order, so returns are for defective items only — a misprint, the wrong item, or damage in transit. In those cases the shop remakes the item or refunds in full — the customer\'s choice. To report a defect, the customer emails admin@cryptot.shop with the order number and a photo of the issue. Custom orders are final sale, unless defective (then the same remake-or-refund promise applies).',
   'Steer visitors to the one page that fits their question (guide, funny collection, accessories, shipping & returns, the coin pages) using ONLY the links listed in the runtime block below.'
 ].join('\n');
