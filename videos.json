@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -201,6 +201,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "W6ORgfXSwx8",
+      "type": "short",
+      "title": "Bitcoin Busted Its Breakdown: $85,300 Is Next",
+      "date": "2026-10-12",
+      "duration": "0:58",
+      "durationISO": "PT58S",
+      "url": "https://youtube.com/shorts/W6ORgfXSwx8",
+      "thumbnail": "https://i.ytimg.com/vi/W6ORgfXSwx8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin closed Oct 11 at $83,678.29, above $83,000 on both the daily and weekly close — its rectangle breakdown is busted. BTC trades near $84,000 this morning despite $681M in U.S. spot Bitcoin ETF outflows last week (largest since June). Next ceiling $85,300. ADA closed at $0.25196, third straight close inside its 0.242-0.260 range. ETH reclaimed $2,530.28 by $3.94 and retested it as support this morning."
+        ],
+        "fr": [
+          "Bitcoin a cloture le 11 oct. a 83 678,29 $, au-dessus de 83 000 $ en cloture quotidienne et hebdomadaire — sa cassure baissiere de rectangle est annulee (bust). BTC se negocie pres de 84 000 $ ce matin malgre 681 M$ de sorties des ETF Bitcoin spot americains la semaine passee (les plus grosses depuis juin). Prochain plafond : 85 300 $. ADA a cloture a 0,25196 $, troisieme cloture de suite dans son range 0,242-0,260. ETH a repris 2 530,28 $ de 3,94 $ et l'a reteste comme support ce matin."
         ]
       }
     },
