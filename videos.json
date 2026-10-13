@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -226,6 +226,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "PxQEStavF68",
+      "type": "short",
+      "title": "The $83K Whipsaw: Bitcoin's Bust Lasted One Day",
+      "date": "2026-10-13",
+      "duration": "0:59",
+      "durationISO": "PT59S",
+      "url": "https://youtube.com/shorts/PxQEStavF68",
+      "thumbnail": "https://i.ytimg.com/vi/PxQEStavF68/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin closed Oct 12 at $81,742.50, below $83,000 - Sunday's confirmed bust undone in one day, the fourth flip across $83,000 in four closes (a whipsaw). This morning BTC fell below $81,000 as Korean chip stocks tumbled (KOSPI -6%+), then bounced back above $83,000 near $83,508. ETH leads the bounce +3.08% testing $2,530.28 from below; ADA near $0.2375 after a wick to $0.22404."
         ]
       }
     },
