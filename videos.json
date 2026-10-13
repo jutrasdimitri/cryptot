@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "I16GssBO0J4",
+      "type": "longform",
+      "title": "Bitcoin's $83K Whipsaw, Day Two: CPI Decides Tomorrow",
+      "date": "2026-10-13",
+      "duration": "8:52",
+      "durationISO": "PT8M52S",
+      "url": "https://www.youtube.com/watch?v=I16GssBO0J4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/I16GssBO0J4",
+      "thumbnail": "https://i.ytimg.com/vi/I16GssBO0J4/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Day two of the $83K whipsaw: Bitcoin touched $84,070 this morning, then slipped back to about $82,970 this afternoon — still under the $83,000 line, so tonight's close grades the retest",
+          "$771M in leveraged positions flushed in 24 hours — about $685.6M of it longs — and what a liquidation flush does to price, in plain language",
+          "Russia's biggest bank Sberbank cleared to trade crypto: Bank of Russia approval, BTC/ETH tests in its app, launch planned for December 1",
+          "Evernorth's Nasdaq debut with a treasury of about 473M XRP (~$672M), tomorrow's September CPI (8:30 a.m. ET, consensus +3.6% year over year), and the refreshed Power 5 levels: BTC ~$82,970 · ETH ~$2,500 · ADA ~$0.2353 · SOL ~$107.49 · XRP ~$1.3658"
+        ],
+        "fr": [
+          "Deuxième jour du whipsaw des 83 000 $ : Bitcoin a touché 84 070 $ ce matin, puis est revenu à environ 82 970 $ cet après-midi — toujours sous la ligne des 83 000 $, donc la clôture de ce soir note le retest",
+          "771 M$ de positions à effet de levier liquidées en 24 h — dont environ 685,6 M$ en positions longues — et ce qu'un flush de liquidations fait au prix, en langage clair",
+          "Sberbank, la plus grande banque de Russie, autorisée au trading crypto : approbation de la Banque de Russie, tests BTC/ETH dans son application, lancement visé le 1er décembre",
+          "Les débuts d'Evernorth au Nasdaq avec une trésorerie d'environ 473 M de XRP (~672 M$), le CPI de septembre demain (8 h 30 HE, consensus +3,6 % sur un an), et les niveaux Power 5 rafraîchis : BTC ~82 970 $ · ETH ~2 500 $ · ADA ~0,2353 $ · SOL ~107,49 $ · XRP ~1,3658 $"
+        ]
+      }
+    },
+    {
       "id": "dlD_fWMng0E",
       "type": "longform",
       "title": "Bitcoin Hit $84K, Then Slipped: Tonight's Close Decides",
