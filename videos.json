@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "6Uai7e-IKwg",
+      "type": "longform",
+      "title": "Hot CPI at 3.7%: Bitcoin Loses $83K Again",
+      "date": "2026-10-14",
+      "duration": "8:12",
+      "durationISO": "PT8M12S",
+      "url": "https://www.youtube.com/watch?v=6Uai7e-IKwg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/6Uai7e-IKwg",
+      "thumbnail": "https://i.ytimg.com/vi/6Uai7e-IKwg/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "September CPI came in hot: headline +3.7% year over year vs 3.6% expected, core +2.6% vs 2.5% — gasoline +9.1% on the month drove more than half the monthly rise (BLS, Oct 14, 8:30 a.m. ET), and what a hot print means for the Fed's Oct 27-28 meeting, in plain language",
+          "Bitcoin lost the $83,000 line again in the session: a high of $84,062, then about $81,545 this afternoon — the close above $83,000 reclaimed yesterday, put to the test by the print",
+          "Interactive Brokers launched Ether staking for eligible clients (Oct 13) — a U.S. brokerage giant with over $903B in client assets adding staking, and why it matters",
+          "Cardano broke its all-time transaction record: 1,780,896 transactions in epoch 660 (Oct 6-11) — and its price ignored it; plus the refreshed Power 5 levels: BTC ~$81,545 · ETH ~$2,425 · ADA ~$0.2282 · SOL ~$104.01 · XRP ~$1.326"
+        ],
+        "fr": [
+          "Le CPI de septembre est sorti chaud : +3,7 % sur un an contre 3,6 % attendu, core +2,6 % contre 2,5 % — l'essence (+9,1 % sur le mois) explique plus de la moitié de la hausse mensuelle (BLS, 14 oct., 8 h 30 HE), et ce qu'un print chaud veut dire pour la réunion de la Fed des 27 et 28 octobre, en langage clair",
+          "Bitcoin a reperdu la ligne des 83 000 $ en séance : un sommet à 84 062 $, puis environ 81 545 $ cet après-midi — la clôture au-dessus de 83 000 $ reconquise hier, mise à l'épreuve par le print",
+          "Interactive Brokers a lancé le staking d'Ether pour ses clients admissibles (13 oct.) — un géant américain du courtage avec plus de 903 G$ d'actifs clients ajoute le staking, et pourquoi ça compte",
+          "Cardano a battu son record historique de transactions : 1 780 896 transactions dans l'epoch 660 (6 au 11 oct.) — et son prix l'a ignoré ; plus les niveaux Power 5 rafraîchis : BTC ~81 545 $ · ETH ~2 425 $ · ADA ~0,2282 $ · SOL ~104,01 $ · XRP ~1,326 $"
+        ]
+      }
+    },
+    {
       "id": "I16GssBO0J4",
       "type": "longform",
       "title": "Bitcoin's $83K Whipsaw, Day Two: CPI Decides Tomorrow",
