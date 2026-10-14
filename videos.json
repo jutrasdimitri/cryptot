@@ -255,6 +255,24 @@
       }
     },
     {
+      "id": "mfuH5YTYBmM",
+      "type": "short",
+      "title": "What Is Staking? Your Coins Stay in Your Wallet",
+      "date": "2026-10-14",
+      "duration": "0:54",
+      "durationISO": "PT54S",
+      "url": "https://youtube.com/shorts/mfuH5YTYBmM",
+      "thumbnail": "https://i.ytimg.com/vi/mfuH5YTYBmM/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Staking, in plain language: some crypto networks do not use miners - coin holders help secure the network by staking, pledging their coins behind honest record-keeping, and the network pays rewards in return. Cardano works this way: you delegate your ADA to a stake pool that helps confirm transactions, and your coins never leave your wallet. Rewards are never guaranteed, they change over time, and staked coins still rise and fall with the market."
+        ],
+        "fr": [
+          "Le staking, en langage clair : certains reseaux crypto n utilisent pas de mineurs - les detenteurs aident a securiser le reseau en mettant leurs coins en jeu derriere une tenue de registres honnete, et le reseau paie des recompenses en retour. Cardano fonctionne ainsi : vous deleguez vos ADA a un stake pool qui aide a confirmer les transactions, et vos coins ne quittent jamais votre portefeuille. Les recompenses ne sont jamais garanties, elles changent avec le temps, et les coins en staking montent et descendent toujours avec le marche."
+        ]
+      }
+    },
+    {
       "id": "RZCXrgPNlWI",
       "type": "short",
       "title": "CPI Day: Bitcoin Holds $83K Into the 8:30 Print",
