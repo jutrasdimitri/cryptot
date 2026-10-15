@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -276,6 +276,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "Ml19Ix4eOus",
+      "type": "short",
+      "title": "BREAKING: Cardano ADA Drops 7%, Breaks Below $0.22",
+      "date": "2026-10-15",
+      "duration": "0:43",
+      "durationISO": "PT43S",
+      "url": "https://youtube.com/shorts/Ml19Ix4eOus",
+      "thumbnail": "https://i.ytimg.com/vi/Ml19Ix4eOus/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Cardano's ADA fell about 7% on October 15 and broke below $0.22, briefly touching $0.216 — its lowest level since September 18. It opened near $0.235, then dropped more than 4% in a single hour as almost $2 million in long bets were forced closed."
+        ],
+        "fr": [
+          "L'ADA de Cardano a chute d'environ 7 % le 15 octobre et a casse sous 0,22 $ US, touchant brievement 0,216 $ US — son plus bas depuis le 18 septembre. Parti pres de 0,235 $ US, il a perdu plus de 4 % en une heure alors que pres de 2 M$ US de positions longues etaient fermees de force."
         ]
       }
     },
