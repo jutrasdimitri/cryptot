@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "stfjVmzfabE",
+      "type": "longform",
+      "title": "Second Inflation Shock: $937M Flushed, Closes Decide",
+      "date": "2026-10-15",
+      "duration": "8:54",
+      "durationISO": "PT8M54S",
+      "url": "https://www.youtube.com/watch?v=stfjVmzfabE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/stfjVmzfabE",
+      "thumbnail": "https://i.ytimg.com/vi/stfjVmzfabE/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "September producer inflation came in hot: PPI +1.3% on the month, +6.3% year over year — the second inflation shock in two days. Bitcoin dipped below $80,000, about $937 million in leveraged bets were flushed, then prices rebounded. Plus a Cardano DeFi headline read carefully, and the refreshed Power 5 levels."
+        ],
+        "fr": [
+          "L'inflation des producteurs de septembre est arrivée chaude : PPI +1,3 % sur le mois, +6,3 % sur un an — le deuxième choc d'inflation en deux jours. Bitcoin est passé sous 80 000 $, environ 937 millions de dollars de positions à levier ont été rincées, puis les prix ont rebondi. Plus un titre DeFi de Cardano lu avec soin, et les niveaux Power 5 rafraîchis."
+        ]
+      }
+    },
+    {
       "id": "6Uai7e-IKwg",
       "type": "longform",
       "title": "Hot CPI at 3.7%: Bitcoin Loses $83K Again",
