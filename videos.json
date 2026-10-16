@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "SogFnqYLenc",
+      "type": "longform",
+      "title": "Warsh Gives No Signal: Crypto's Rebound Fades",
+      "date": "2026-10-16",
+      "duration": "8:54",
+      "durationISO": "PT8M54S",
+      "url": "https://www.youtube.com/watch?v=SogFnqYLenc",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/SogFnqYLenc",
+      "thumbnail": "https://i.ytimg.com/vi/SogFnqYLenc/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Fed Chair Kevin Warsh spoke in Bangkok and gave markets no signal at all on the October meeting, as a third hot inflation print in three days landed: import prices up 8.1% year over year. Bitcoin slipped back near $81,400 after coming within $60 of the $83,000 line, and Cardano finished the afternoon sitting right on its $0.22362 validation line. Plus the ETF money that still is not confirming (Bitcoin funds essentially flat, Ether funds still leaking in October), and the refreshed Power 5 levels."
+        ],
+        "fr": [
+          "Le président de la Fed, Kevin Warsh, a parlé à Bangkok et n’a donné aux marchés aucun signal sur la réunion d’octobre, alors qu’une troisième donnée d’inflation chaude en trois jours tombait : les prix à l’importation en hausse de 8,1 % sur un an. Bitcoin est retombé près de 81 400 $ après être passé à moins de 60 $ de la ligne des 83 000 $, et Cardano a terminé l’après-midi assis exactement sur sa ligne de validation de 0,22362 $. Plus l’argent des ETF qui ne confirme toujours pas (fonds Bitcoin essentiellement plats, fonds Ether qui fuient encore en octobre), et les niveaux Power 5 rafraîchis."
+        ]
+      }
+    },
+    {
       "id": "stfjVmzfabE",
       "type": "longform",
       "title": "Second Inflation Shock: $937M Flushed, Closes Decide",
