@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -295,6 +295,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "j2XkSREE2Yo",
+      "type": "short",
+      "title": "The Wicks Failed: Every Floor Held at the Close",
+      "date": "2026-10-16",
+      "duration": "1:00",
+      "durationISO": "PT60S",
+      "url": "https://youtube.com/shorts/j2XkSREE2Yo",
+      "thumbnail": "https://i.ytimg.com/vi/j2XkSREE2Yo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 15 closes: BTC $82,131.46 after a wick to $79,676.02 (below $80,000), ETH $2,439.45 above its $2,404.60 floor after a wick to $2,313.07, ADA $0.22970 above $0.22362 — no floor broke at the close. This morning alts lead the rebound: ADA +4.25%, ETH +3.64%, BTC +1.33% in 24h. Repair needs closes above BTC $83,000, ETH $2,530.28, ADA $0.242."
         ]
       }
     },
