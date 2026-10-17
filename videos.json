@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -314,6 +314,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "l9U2atGgric",
+      "type": "short",
+      "title": "BREAKING: Schwab Opens Bitcoin & Ether Trading to All Clients",
+      "date": "2026-10-17",
+      "duration": "0:40",
+      "durationISO": "PT40S",
+      "url": "https://youtube.com/shorts/l9U2atGgric",
+      "thumbnail": "https://i.ytimg.com/vi/l9U2atGgric/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Charles Schwab has completed the rollout of Schwab Crypto, opening direct Bitcoin and Ether trading to all eligible clients. Schwab oversees $13.33 trillion in client assets with over 40 million active brokerage accounts, and Solana is planned before the end of 2026."
+        ],
+        "fr": [
+          "Charles Schwab a termine le deploiement de Schwab Crypto : le trading direct de Bitcoin et d'Ether est ouvert a tous ses clients admissibles. Schwab gere 13 330 G$ US d'actifs clients avec plus de 40 millions de comptes de courtage actifs, et Solana est prevu avant la fin de 2026."
         ]
       }
     },
