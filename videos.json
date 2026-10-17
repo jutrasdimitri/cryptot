@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "v-XKP4pdKnU",
+      "type": "longform",
+      "title": "Banks Open Crypto Doors: Schwab Live, Deutsche Next",
+      "date": "2026-10-17",
+      "duration": "9:10",
+      "durationISO": "PT9M10S",
+      "url": "https://www.youtube.com/watch?v=v-XKP4pdKnU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/v-XKP4pdKnU",
+      "thumbnail": "https://i.ytimg.com/vi/v-XKP4pdKnU/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Two of the world's biggest banks moved on crypto in the same week — from opposite ends. Charles Schwab opened direct Bitcoin and Ether trading to all eligible clients — more than 40 million accounts — and Deutsche Bank says its institutional custody is only weeks away. Visa Direct put USDC stablecoin prefunding into live production (180+ countries) at the same time. Prices, meanwhile, drifted on a quiet Saturday: Cardano traded below its $0.22362 validation line in price, and Sunday's weekly close now decides the week. Plus the refreshed Power 5 levels in plain language."
+        ],
+        "fr": [
+          "Deux des plus grandes banques du monde ont bougé sur la crypto dans la même semaine — par les deux extrémités. Charles Schwab a ouvert le trading direct de Bitcoin et d’Ether à tous ses clients admissibles — plus de 40 millions de comptes — et Deutsche Bank dit que sa garde institutionnelle n’est qu’à quelques semaines. Visa Direct a mis le préfinancement en stablecoin USDC en production réelle (plus de 180 pays) en même temps. Les prix, eux, ont dérivé dans un samedi tranquille : Cardano est passé sous sa ligne de validation de 0,22362 $ en prix, et la clôture hebdomadaire de dimanche décide maintenant de la semaine. Plus les niveaux Power 5 rafraîchis en langage clair."
+        ]
+      }
+    },
+    {
       "id": "SogFnqYLenc",
       "type": "longform",
       "title": "Warsh Gives No Signal: Crypto's Rebound Fades",
