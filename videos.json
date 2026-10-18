@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -333,6 +333,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "PXEjJTlN06s",
+      "type": "short",
+      "title": "Two Floors Broke at the Close: Weekly Verdict Tonight",
+      "date": "2026-10-18",
+      "duration": "0:52",
+      "durationISO": "PT52S",
+      "url": "https://youtube.com/shorts/PXEjJTlN06s",
+      "thumbnail": "https://i.ytimg.com/vi/PXEjJTlN06s/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 17 closes: ADA $0.21924, first close below its $0.22362 validation line (Oct 8 low), 6th close below $0.242; ETH $2,399.68, first close below its $2,404.60 floor; BTC $81,378.21, almost flat, 4th close below $83,000. Tonight the weekly close decides whether the daily breaks are carved into the weekly chart."
         ]
       }
     },
