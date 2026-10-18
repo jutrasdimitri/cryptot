@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "eYE7KqGxsp8",
+      "type": "longform",
+      "title": "Two Floors Broke: Sunday's Weekly Close Grades the Week",
+      "date": "2026-10-18",
+      "duration": "10:12",
+      "durationISO": "PT10M12S",
+      "url": "https://www.youtube.com/watch?v=eYE7KqGxsp8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/eYE7KqGxsp8",
+      "thumbnail": "https://i.ytimg.com/vi/eYE7KqGxsp8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday at the close, the two validations waited on all week arrived the same night: Cardano closed at $0.21924, below its $0.22362 validation line, and Ether closed at $2,399.68, just below its $2,404.60 floor, while Bitcoin stayed almost flat. Tonight the weekly close grades the whole week. Plus our Sunday panel review (Dan Gambardello, Ben Cowen, George, CoinsKid), Charles Hoskinson personally writing a new programming language for Cardano, and a third straight weekly outflow from Ether funds. Plus the refreshed Power 5 levels in plain language."
+        ],
+        "fr": [
+          "Hier à la clôture, les deux validations attendues toute la semaine sont arrivées le même soir : Cardano a clôturé à 0,21924 $, sous sa ligne de validation de 0,22362 $, et Ether a clôturé à 2 399,68 $, juste sous son plancher de 2 404,60 $, pendant que Bitcoin restait presque plat. Ce soir, la clôture hebdomadaire note toute la semaine. Plus notre revue du panel du dimanche (Dan Gambardello, Ben Cowen, George, CoinsKid), Charles Hoskinson qui écrit personnellement un nouveau langage de programmation pour Cardano, et une troisième semaine de sorties de suite pour les fonds Ether. Plus les niveaux Power 5 rafraîchis en langage clair."
+        ]
+      }
+    },
+    {
       "id": "v-XKP4pdKnU",
       "type": "longform",
       "title": "Banks Open Crypto Doors: Schwab Live, Deutsche Next",
