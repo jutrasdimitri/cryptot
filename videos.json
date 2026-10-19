@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -352,6 +352,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "9Ml_1-OzIt8",
+      "type": "short",
+      "title": "Bitcoin Retests $83K After a Split Weekly Close",
+      "date": "2026-10-19",
+      "duration": "0:56",
+      "durationISO": "PT56S",
+      "url": "https://youtube.com/shorts/9Ml_1-OzIt8",
+      "thumbnail": "https://i.ytimg.com/vi/9Ml_1-OzIt8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 18 weekly closes: BTC $82,006.85 below $83,000; ADA $0.22098 below $0.22362, breakdown carved into the weekly chart; ETH $2,407.51, saved its $2,404.60 floor by $2.91. Oct 19 morning: BTC bounced to about $82,746, wick to $83,076. Only a daily close above $83,000 starts the repair."
         ]
       }
     },
