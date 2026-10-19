@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "icdF6hj-to4",
+      "type": "longform",
+      "title": "JPMorgan Brings Bank Dollars to Ethereum as the Bounce Fades",
+      "date": "2026-10-19",
+      "duration": "9:04",
+      "durationISO": "PT9M4S",
+      "url": "https://www.youtube.com/watch?v=icdF6hj-to4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/icdF6hj-to4",
+      "thumbnail": "https://i.ytimg.com/vi/icdF6hj-to4/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin retested $83,000 from below twice this morning — wicks to $83,076 and $83,158 — after a split weekly close, and by the afternoon the bounce had faded: Bitcoin near $81,800, Ether back below its saved floor in price, Cardano still under its line. The day's biggest story: JPMorgan, the largest U.S. bank, is bringing JPM Coin — bank dollars in token form — to Ethereum for institutional clients. Plus China grows 4.5% and beats its forecast, Bitmine closes in on 5% of all Ether, Cardano's Catalyst pilot pays for usage instead of promises, and the refreshed Power 5 levels in plain language."
+        ],
+        "fr": [
+          "Bitcoin a retesté 83 000 $ par en dessous deux fois ce matin — des mèches à 83 076 $ et 83 158 $ — après une clôture hebdomadaire partagée, et en après-midi le rebond s'était essoufflé : Bitcoin près de 81 800 $, Ether de retour sous son plancher sauvé en prix, Cardano toujours sous sa ligne. La grosse histoire du jour : JPMorgan, la plus grande banque américaine, amène JPM Coin — des dollars bancaires en forme de jeton — sur Ethereum pour ses clients institutionnels. Plus la Chine qui croît de 4,5 % et bat les prévisions, Bitmine à un cheveu de 5 % de tout l'Ether, le pilote Catalyst de Cardano qui paie pour l'usage plutôt que pour les promesses, et les niveaux Power 5 rafraîchis en langage clair."
+        ]
+      }
+    },
+    {
       "id": "eYE7KqGxsp8",
       "type": "longform",
       "title": "Two Floors Broke: Sunday's Weekly Close Grades the Week",
