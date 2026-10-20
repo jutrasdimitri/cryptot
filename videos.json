@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "05V76I9HpAA",
+      "type": "longform",
+      "title": "Switzerland Opens Bitcoin to Retail as Price Tests $83K Again",
+      "date": "2026-10-20",
+      "duration": "8:07",
+      "durationISO": "PT8M7S",
+      "url": "https://www.youtube.com/watch?v=05V76I9HpAA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/05V76I9HpAA",
+      "thumbnail": "https://i.ytimg.com/vi/05V76I9HpAA/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday at the close, verified on Coinbase, Bitcoin failed its $83,000 retest: two wicks above the line, $83,076 and $83,158, and a close at $81,837.69, below the line — and this afternoon the bounce knocked on $83,000 again, with a high at $83,439 and still no close above it. The day's biggest story: Switzerland's regulator FINMA approved the country's first Bitcoin fund for everyday savers, with a special exemption and a clear risk warning. Plus U.S. Bitcoin funds taking in $526.6 million while Ether funds lost money for a fourth straight day, oil near $111 capping the mood, and the refreshed Power 5 levels in plain language."
+        ],
+        "fr": [
+          "Hier à la clôture, vérifié sur Coinbase, Bitcoin a échoué son retest des 83 000 $ : deux mèches au-dessus de la ligne, 83 076 $ et 83 158 $, et une clôture à 81 837,69 $, sous la ligne — et cet après-midi le rebond a cogné aux 83 000 $ encore une fois, avec un haut à 83 439 $, toujours sans clôture au-dessus. La grosse histoire du jour : le régulateur suisse, la FINMA, a approuvé le premier fonds Bitcoin du pays destiné aux épargnants ordinaires, avec une exemption spéciale et un avertissement de risque clair. Plus les fonds Bitcoin américains qui ont encaissé 526,6 millions $ pendant que les fonds Ether perdaient de l'argent pour un quatrième jour de suite, le pétrole près de 111 $ qui plafonne l'ambiance, et les niveaux Power 5 rafraîchis en langage clair."
+        ]
+      }
+    },
+    {
       "id": "icdF6hj-to4",
       "type": "longform",
       "title": "JPMorgan Brings Bank Dollars to Ethereum as the Bounce Fades",
