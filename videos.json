@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -371,6 +371,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "EU5m6HtBd2o",
+      "type": "short",
+      "title": "Bitcoin's $83K Retest Failed: Two Wicks, Zero Closes",
+      "date": "2026-10-20",
+      "duration": "0:54",
+      "durationISO": "PT54S",
+      "url": "https://youtube.com/shorts/EU5m6HtBd2o",
+      "thumbnail": "https://i.ytimg.com/vi/EU5m6HtBd2o/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 19 closes: BTC $81,837.69 below $83,000 after wicks to $83,076 and $83,158 — retest failed, only the close counts; ADA $0.2179 below $0.22362, breakdown stands; ETH $2,405.08 saved its $2,404.60 floor by $0.48, slipping near $2,380 on Oct 20 morning. U.S. spot Bitcoin funds: about $228M in weekly outflows."
         ]
       }
     },
