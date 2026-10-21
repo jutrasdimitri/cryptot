@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "Ku6Pea7EQGE",
+      "type": "longform",
+      "title": "Bitcoin Tops $84K, Ether Tops $2.5K: Closes Decide",
+      "date": "2026-10-21",
+      "duration": "9:46",
+      "durationISO": "PT9M46S",
+      "url": "https://www.youtube.com/watch?v=Ku6Pea7EQGE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Ku6Pea7EQGE",
+      "thumbnail": "https://i.ytimg.com/vi/Ku6Pea7EQGE/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin traded above $84,000 this afternoon and Ether above $2,500 — two lines, zero daily closes above $84,000 since October 6. Yesterday at the close, verified on Coinbase, Cardano reclaimed its $0.22362 line by $0.00005, Bitcoin missed $83,000 by $62, and Ether saved its $2,404.60 floor by $42. Today the bounce pushed further on cooler oil: Bitcoin printed near $84,800 and Ether knocked on its $2,530.28 pivot. Solana activated Alpenglow, cutting finality from ~12.8 seconds to ~150 milliseconds, live at slot 459,653,000. The Cardano Foundation and five allies asked the SEC to write ADA's digital commodity status into the rules themselves. And Tuesday's fund flows stayed split — Bitcoin +$23.16M, Ether -$26.13M for a fifth straight outflow day — one week before the Fed's October 28 decision. Plus the refreshed Power 5 levels in plain language."
+        ],
+        "fr": [
+          "Bitcoin s'est échangé au-dessus de 84 000 $ cet après-midi et Ether au-dessus de 2 500 $ — deux lignes, zéro clôture quotidienne au-dessus de 84 000 $ depuis le 6 octobre. Hier à la clôture, vérifié sur Coinbase, Cardano a repris sa ligne de 0,22362 $ par 0,00005 $, Bitcoin a raté 83 000 $ par 62 $, et Ether a sauvé son plancher de 2 404,60 $ par 42 $. Aujourd'hui, le rebond a poussé plus loin sur un pétrole plus calme : Bitcoin a imprimé près de 84 800 $ et Ether a cogné à son pivot de 2 530,28 $. Solana a activé Alpenglow, ramenant la finalité d'environ 12,8 secondes à environ 150 millisecondes, en direct au slot 459 653 000. La Fondation Cardano et cinq alliés ont demandé à la SEC d'inscrire le statut de marchandise numérique de l'ADA dans les règles elles-mêmes. Et les flux de fonds de mardi sont restés partagés — Bitcoin +23,16 M$, Ether -26,13 M$ pour un cinquième jour de sorties de suite — une semaine avant la décision de la Fed du 28 octobre. Plus les niveaux Power 5 rafraîchis en langage clair."
+        ]
+      }
+    },
+    {
       "id": "05V76I9HpAA",
       "type": "longform",
       "title": "Switzerland Opens Bitcoin to Retail as Price Tests $83K Again",
