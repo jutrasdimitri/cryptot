@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -390,6 +390,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "n5BvQE7pENk",
+      "type": "short",
+      "title": "Cardano Reclaimed Its Line by Five Cents",
+      "date": "2026-10-21",
+      "duration": "0:53",
+      "durationISO": "PT53S",
+      "url": "https://youtube.com/shorts/n5BvQE7pENk",
+      "thumbnail": "https://i.ytimg.com/vi/n5BvQE7pENk/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 20 closes: ADA $0.22367 above $0.22362 by $0.00005 - busted breakdown trying to form; BTC $82,938.26 missed $83,000 by $62, above it this morning (high $83,608.74); ETH $2,446.62 saved its $2,404.60 floor by $42.02. Tonight Cardano has to hold its line."
+        ],
+        "fr": [
+          "Clotures du 20 oct. : ADA 0,22367 $ au-dessus de 0,22362 $ par 0,00005 $ - cassure bustee en formation; BTC 82 938,26 $ a rate 83 000 $ par 62 $, au-dessus ce matin (haut 83 608,74 $); ETH 2 446,62 $ a sauve son plancher de 2 404,60 $ par 42,02 $. Ce soir, Cardano doit tenir sa ligne."
         ]
       }
     },
