@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "hv7dK9bXjYE",
+      "type": "longform",
+      "title": "Bitcoin's $84K Bounce Reversed: Tonight's Close Decides",
+      "date": "2026-10-22",
+      "duration": "8:26",
+      "durationISO": "PT8M26S",
+      "url": "https://www.youtube.com/watch?v=hv7dK9bXjYE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hv7dK9bXjYE",
+      "thumbnail": "https://i.ytimg.com/vi/hv7dK9bXjYE/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday Bitcoin closed at $84,024.67, above $83,000 for the first time since Oct 13, Cardano closed above its $0.22362 line a second straight day, and Ether held its $2,404.60 floor. Today the bounce reversed: BTC rejected near $85,000 fell toward $81,300, ADA slid ~7% to $0.212 testing $0.21, ETH fell below its floor in price — while Oct 21 fund flows published today showed BTC funds +$524.8M (third straight green day, ~$1.07B in 3 days) and ETH funds +$14.9M. Tonight's closes decide."
+        ],
+        "fr": [
+          "Hier, Bitcoin a clôturé à 84 024,67 $, au-dessus de 83 000 $ pour la première fois depuis le 13 octobre, Cardano a clôturé au-dessus de sa ligne de 0,22362 $ pour une deuxième journée de suite, et Ether a tenu son plancher de 2 404,60 $. Aujourd'hui, le rebond s'est retourné : Bitcoin, rejeté près de 85 000 $, est tombé vers 81 300 $, Cardano a glissé d'environ 7 % à 0,212 $ en testant 0,21 $, et Ether est passé sous son plancher en prix — pendant que les flux de fonds du 21 octobre publiés aujourd'hui allaient dans l'autre sens : fonds Bitcoin +524,8 M$ (troisième journée verte de suite, environ 1,07 G$ en trois jours) et fonds Ether +14,9 M$. Les clôtures de ce soir décident."
+        ]
+      }
+    },
+    {
       "id": "Ku6Pea7EQGE",
       "type": "longform",
       "title": "Bitcoin Tops $84K, Ether Tops $2.5K: Closes Decide",
