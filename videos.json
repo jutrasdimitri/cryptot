@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -409,6 +409,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "O0g1pchCZNI",
+      "type": "short",
+      "title": "Bitcoin Closed Above $83K — Then Slipped Back Below",
+      "date": "2026-10-22",
+      "duration": "0:52",
+      "durationISO": "PT52S",
+      "url": "https://youtube.com/shorts/O0g1pchCZNI",
+      "thumbnail": "https://i.ytimg.com/vi/O0g1pchCZNI/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 21 closes: BTC $84,024.67 above $83,000 (first close above since Oct 13); ADA $0.22508 above $0.22362, 2nd straight close above; ETH $2,471.78 above its $2,404.60 floor, high $2,524.38 near the $2,530.28 pivot. Oct 22 morning: all three back below their lines intraday - pullback test, verdict at tonight's close."
         ]
       }
     },
