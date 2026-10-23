@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -428,6 +428,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "_THNlBsu6DQ",
+      "type": "short",
+      "title": "Bitcoin ETFs Lost $635M in One Day: What Changed?",
+      "date": "2026-10-23",
+      "duration": "0:52",
+      "durationISO": "PT52S",
+      "url": "https://youtube.com/shorts/_THNlBsu6DQ",
+      "thumbnail": "https://i.ytimg.com/vi/_THNlBsu6DQ/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 22 U.S. spot Bitcoin ETF net outflows $635M (published Oct 23, SoSoValue/Farside via Cointelegraph and KuCoin): erases Wednesday $528M inflow, snaps 3-day $1.08B inflow streak, largest outflow since June 25; Ether ETFs -$110M; BTC Oct 22 Coinbase close $81,307.16 below $83,000."
         ]
       }
     },
