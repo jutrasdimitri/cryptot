@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "g5mKzBit-6Q",
+      "type": "longform",
+      "title": "Three Floors Broke: Ether's $2,405 Test Decides Tonight",
+      "date": "2026-10-23",
+      "duration": "8:35",
+      "durationISO": "PT8M35S",
+      "url": "https://www.youtube.com/watch?v=g5mKzBit-6Q",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/g5mKzBit-6Q",
+      "thumbnail": "https://i.ytimg.com/vi/g5mKzBit-6Q/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday at the close, verified on Coinbase, all three verdicts landed bearish: Cardano closed at $0.21182, below its $0.22362 line; Bitcoin closed at $81,307.16, below $83,000; and Ether closed at $2,385.86, below its $2,404.60 floor for the first time. Today the market steadied on an oversold bounce: Bitcoin trades near $81,473, Ether sits right on its broken floor near $2,403, and Cardano holds above $0.21 near $0.2158 — while fund money whipsawed, with $635.6 million leaving Bitcoin funds on Thursday even though the week is still net positive by about $443 million. Tonight's closes decide whether Ether's break was false."
+        ],
+        "fr": [
+          "Hier à la clôture, vérifié sur Coinbase, les trois verdicts sont tombés baissiers : Cardano a clôturé à 0,21182 $, sous sa ligne de 0,22362 $ ; Bitcoin a clôturé à 81 307,16 $, sous les 83 000 $ ; et Ether a clôturé à 2 385,86 $, sous son plancher de 2 404,60 $ pour la première fois. Aujourd'hui, le marché s'est stabilisé sur un rebond de survendu : Bitcoin s'échange près de 81 473 $, Ether est assis directement sur son plancher brisé près de 2 403 $, et Cardano tient au-dessus de 0,21 $ près de 0,2158 $ — pendant que l'argent des fonds a fait des montagnes russes, avec 635,6 millions de dollars sortis des fonds Bitcoin jeudi, même si la semaine reste positive d'environ 443 millions. Les clôtures de ce soir décident si le bris d'Ether était faux."
+        ]
+      }
+    },
+    {
       "id": "hv7dK9bXjYE",
       "type": "longform",
       "title": "Bitcoin's $84K Bounce Reversed: Tonight's Close Decides",
