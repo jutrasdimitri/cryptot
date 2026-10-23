@@ -432,6 +432,24 @@
       }
     },
     {
+      "id": "KlJW2hL9qlo",
+      "type": "short",
+      "title": "What Is a Liquidation? When Borrowed Bets Get Closed",
+      "date": "2026-10-23",
+      "duration": "0:49",
+      "durationISO": "PT49S",
+      "url": "https://youtube.com/shorts/KlJW2hL9qlo",
+      "thumbnail": "https://i.ytimg.com/vi/KlJW2hL9qlo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "What is a liquidation, in plain language: when a trader borrows to make a bigger bet, the exchange sets a line that bet cannot cross; if price hits it, the exchange closes the position automatically to protect its loan - that forced closing is a liquidation. On Oct 22, about $431M of crypto positions were liquidated in 24 hours on both sides of Bitcoin's round trip toward $85,000 (CoinGlass via CoinDesk)."
+        ],
+        "fr": [
+          "C'est quoi une liquidation, en langage clair : quand un trader emprunte pour miser plus gros, la plateforme fixe une ligne que le pari ne peut pas franchir; si le prix la touche, la plateforme ferme la position automatiquement pour proteger son pret - cette fermeture forcee est une liquidation. Le 22 oct., environ 431 M$ de positions crypto liquidees en 24 heures, des deux cotes du voyage de Bitcoin vers 85 000 $ (CoinGlass via CoinDesk)."
+        ]
+      }
+    },
+    {
       "id": "_THNlBsu6DQ",
       "type": "short",
       "title": "Bitcoin ETFs Lost $635M in One Day: What Changed?",
