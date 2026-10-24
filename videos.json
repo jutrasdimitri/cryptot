@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "H2ISMAHtcu0",
+      "type": "longform",
+      "title": "Bitcoin's $80K Wick: Sunday's Weekly Close Decides",
+      "date": "2026-10-24",
+      "duration": "8:09",
+      "durationISO": "PT8M9S",
+      "url": "https://www.youtube.com/watch?v=H2ISMAHtcu0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/H2ISMAHtcu0",
+      "thumbnail": "https://i.ytimg.com/vi/H2ISMAHtcu0/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "This morning Bitcoin wicked down to $79,107 on Coinbase — about 2.4% under yesterday's close of $81,078 — as more than $200 million of leveraged bets were closed in about an hour, then buyers pulled the price right back above $80,000. The wick was not just a Bitcoin story: Ether touched $2,275.94, Cardano tested twenty cents at $0.20028, Solana visited below $100, and XRP approached its $1.25 floor. Tonight's daily close at 8 p.m. Eastern and Sunday's weekly close do the grading — and next week brings the Federal Reserve decision on Wednesday and the PCE inflation print on Thursday."
+        ],
+        "fr": [
+          "Ce matin, Bitcoin a fait une mèche jusqu'à 79 107 $ sur Coinbase — environ 2,4 % sous la clôture d'hier de 81 078 $ — pendant que plus de 200 millions de dollars de paris à levier étaient fermés en environ une heure, puis les acheteurs ont ramené le prix au-dessus de 80 000 $. Ether a touché 2 275,94 $, Cardano a testé les vingt cents à 0,20028 $, Solana est passé sous 100 $ et XRP s'est approché de son plancher de 1,25 $. La clôture quotidienne de ce soir et la clôture hebdomadaire de dimanche font le verdict — et la semaine prochaine amène la décision de la Fed mercredi et l'inflation PCE jeudi."
+        ]
+      }
+    },
+    {
       "id": "g5mKzBit-6Q",
       "type": "longform",
       "title": "Three Floors Broke: Ether's $2,405 Test Decides Tonight",
