@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -447,6 +447,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "dgemr1jBJ7k",
+      "type": "short",
+      "title": "Bitcoin ETFs Bleed Again: $138M Out, Week Still Green",
+      "date": "2026-10-24",
+      "duration": "0:58",
+      "durationISO": "PT58S",
+      "url": "https://youtube.com/shorts/dgemr1jBJ7k",
+      "thumbnail": "https://i.ytimg.com/vi/dgemr1jBJ7k/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 23 U.S. spot Bitcoin ETF net outflows $137.9M (published Oct 24, SoSoValue via TradingView; DefiLlama/Farside via CoinJuice): second straight exit day after Oct 22 -$635.5M, two-day total $773.4M, IBIT -$110.3M, FBTC -$31.8M, MSBT +$4.2M; week Oct 19-23 still net +$301.2M; BTC Oct 23 Coinbase close $81,078.04 below $83,000, testing $80,000 zone."
         ]
       }
     },
