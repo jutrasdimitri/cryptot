@@ -22,7 +22,7 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 99990;
+  z-index: 90; /* sous le menu mobile et les modales (z-100) : le bouton ne doit jamais bloquer la navigation — fix 25 oct. 2026, signalé par Dim */
   font-family: var(--cth-font-body);
   color: var(--cth-text);
   font-size: 15px;
