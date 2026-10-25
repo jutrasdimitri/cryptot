@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -485,6 +485,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "a_NGbwAWyd8",
+      "type": "short",
+      "title": "The Wicks Broke Every Floor. The Closes Didn't.",
+      "date": "2026-10-25",
+      "duration": "1:00",
+      "durationISO": "PT1M",
+      "url": "https://youtube.com/shorts/a_NGbwAWyd8",
+      "thumbnail": "https://i.ytimg.com/vi/a_NGbwAWyd8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 24 Coinbase closes (CryptoT TA Oct 25): ADA L $0.20028 / C $0.20772 (-1.34%), BTC L $79,107 / C $80,769.67 (-0.38%), ETH L $2,275.94 / C $2,355.36 (-1.22%) - all three wicked through their floors and closed back above; weekly closes due Oct 25 tonight (week in progress ADA -7.59%, BTC -1.96%, ETH -3.03%)."
         ]
       }
     },
