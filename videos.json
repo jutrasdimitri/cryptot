@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "LxhgL1ld_oE",
+      "type": "longform",
+      "title": "Weekly Close Tonight: Every Floor Held — So Far",
+      "date": "2026-10-25",
+      "duration": "10:19",
+      "durationISO": "PT10M19S",
+      "url": "https://www.youtube.com/watch?v=LxhgL1ld_oE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/LxhgL1ld_oE",
+      "thumbnail": "https://i.ytimg.com/vi/LxhgL1ld_oE/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday every Power 5 floor broke in the wick — and every single one held at the close: Bitcoin wicked to $79,107 and closed at $80,769.67, Cardano tested twenty cents and closed at $0.20772, Ether pierced its safety net and closed back above it, Solana visited below $100 and closed at $102.23, and XRP never even touched its floor. Tonight is the double verdict — the daily close and the weekly close land together at 8 p.m. Eastern — with XRP leading the five, stablecoin payments up 45%, and the Federal Reserve on Wednesday plus the PCE inflation print on Thursday ahead."
+        ],
+        "fr": [
+          "Hier, les cinq planchers Power 5 ont cassé en mèche — et tous ont tenu à la clôture : Bitcoin a fait une mèche à 79 107 $ et a clôturé à 80 769,67 $, Cardano a testé les vingt cents et a clôturé à 0,20772 $, Ether a percé son filet de sécurité et a clôturé au-dessus, Solana est passé sous 100 $ et a clôturé à 102,23 $, et XRP n'a même pas touché son plancher. Ce soir, double verdict — clôture quotidienne et clôture hebdomadaire ensemble à 20 h, heure de l'Est — avec XRP en tête des cinq, les paiements en stablecoins en hausse de 45 %, la Réserve fédérale mercredi et l'inflation PCE jeudi à venir."
+        ]
+      }
+    },
+    {
       "id": "GWEuWVQb2i0",
       "type": "longform",
       "title": "My Crypto Story Since 2021 — The Bitcoin & Cardano Charts I Lived Through",
