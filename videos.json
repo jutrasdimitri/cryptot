@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "otEkNPgNbuA",
+      "type": "longform",
+      "title": "Power 5 Weekly TA: The Weekly Breaks Are In",
+      "date": "2026-10-26",
+      "duration": "11:04",
+      "durationISO": "PT11M4S",
+      "url": "https://www.youtube.com/watch?v=otEkNPgNbuA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/otEkNPgNbuA",
+      "thumbnail": "https://i.ytimg.com/vi/otEkNPgNbuA/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Sunday's weekly close graded the whole week: Cardano closed at $0.20375, down 7.8% on the week, under its line but still above $0.20; Bitcoin closed at $80,053.16, holding $80,000 by just $53; Ether closed at $2,326.75 and lost its $2,336-$2,341 safety net, defending its last monthly line at $2,324.54; Solana held $100 at $101.23; and XRP was the most resilient of the five, down just 0.9% at $1.2946. Bitcoin ETFs still finished the week plus $301 million, and the Federal Reserve decision on Wednesday frames the week ahead. Monday Power 5 technical analysis edition: every coin, every timeframe that matters, last week's levels graded one by one, in plain language."
+        ],
+        "fr": [
+          "La clôture hebdomadaire de dimanche a noté toute la semaine : Cardano a clôturé à 0,20375 $, en baisse de 7,8 % sur la semaine, sous sa ligne mais toujours au-dessus de 0,20 $ ; Bitcoin a clôturé à 80 053,16 $, tenant les 80 000 $ par seulement 53 $ ; Ether a clôturé à 2 326,75 $ et perdu son filet de 2 336-2 341 $, défendant sa dernière ligne mensuelle à 2 324,54 $ ; Solana a tenu les 100 $ à 101,23 $ ; et XRP a été le plus résilient des cinq, en baisse de seulement 0,9 % à 1,2946 $. Les ETF Bitcoin ont quand même fini la semaine à +301 millions $, et la décision de la Fed mercredi cadre la semaine à venir. Édition d'analyse technique Power 5 du lundi : chaque coin, chaque timeframe qui compte, les niveaux de la semaine passée notés un par un, en langage clair."
+        ]
+      }
+    },
+    {
       "id": "LxhgL1ld_oE",
       "type": "longform",
       "title": "Weekly Close Tonight: Every Floor Held — So Far",
