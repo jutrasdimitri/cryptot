@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -504,6 +504,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "8xCqxt3ShSA",
+      "type": "short",
+      "title": "Bitcoin Held $80K by $53. The Weekly Breaks Are In.",
+      "date": "2026-10-26",
+      "duration": "0:57",
+      "durationISO": "PT57S",
+      "url": "https://youtube.com/shorts/8xCqxt3ShSA",
+      "thumbnail": "https://i.ytimg.com/vi/8xCqxt3ShSA/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 25 Coinbase closes (CryptoT TA Oct 26): ADA C $0.20375 (-1.91% day, -7.80% week) weekly close under $0.22362, $0.20 held; BTC C $80,053.16 (-0.89%, -2.38% week) weekly close under $83,000, $80,000 held by $53.16; ETH C $2,326.75 (-1.21%, -3.35% week) under $2,404.60 and under the $2,336-$2,341 net; Fed decision Wednesday Oct 28; Cipher_B Buy Circles active in 4H on all three."
         ]
       }
     },
