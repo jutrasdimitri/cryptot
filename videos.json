@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -523,6 +523,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "TyWf0f4f6I8",
+      "type": "short",
+      "title": "Bitcoin Held $80,000 by Just $9 Before the Fed",
+      "date": "2026-10-27",
+      "duration": "1:00",
+      "durationISO": "PT1M",
+      "url": "https://youtube.com/shorts/TyWf0f4f6I8",
+      "thumbnail": "https://i.ytimg.com/vi/TyWf0f4f6I8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 26 Coinbase closes (CryptoT TA Oct 27): BTC C $80,008.79 (-0.06%) held $80,000 by $8.79, back under $80,000 this morning; ADA C $0.20639 (+1.19%) only green close, $0.20 held 2nd day, Cipher_B Buy Circle active in DAILY; ETH C $2,320.34 (-0.27%) closed under monthly EMA1 $2,324.54; Fed meeting Oct 27-28, decision Wednesday, ~90% hold expected."
         ]
       }
     },
