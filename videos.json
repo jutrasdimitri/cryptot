@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "KB7EeVsJV9w",
+      "type": "longform",
+      "title": "Bitcoin Back Above $80K: The Fed Decides Tomorrow",
+      "date": "2026-10-27",
+      "duration": "8:49",
+      "durationISO": "PT8M49S",
+      "url": "https://www.youtube.com/watch?v=KB7EeVsJV9w",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/KB7EeVsJV9w",
+      "thumbnail": "https://i.ytimg.com/vi/KB7EeVsJV9w/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin slipped under $80,000 on the morning of Oct 27, then climbed back above it near $80,400 in the afternoon, on day one of the Federal Reserve meeting - the decision lands Oct 28, with markets pricing about a 90 percent chance of no change. The fund money split in two: Bitcoin ETFs took in about $110 million on Monday while Ether funds lost about $89 million. Cardano holds $0.20 for a third day with its first daily buy signal of this slide, Ether has to win back the monthly line it lost at Monday's close ($2,324.54), and XRP quietly leads the five. All of it in plain language."
+        ],
+        "fr": [
+          "Bitcoin est passé sous les 80 000 $ le matin du 27 octobre, puis les a repris près de 80 400 $ en après-midi, au jour 1 de la réunion de la Réserve fédérale - la décision tombe le 28 octobre, avec environ 90 % de chances de statu quo pricées par les marchés. L'argent des fonds s'est divisé en deux : les ETF Bitcoin ont encaissé environ 110 millions $ lundi pendant que les fonds Ether perdaient environ 89 millions $. Cardano tient 0,20 $ un troisième jour avec son premier signal d'achat quotidien de cette glissade, Ether doit reconquérir la ligne mensuelle perdue à la clôture de lundi (2 324,54 $), et XRP mène tranquillement les cinq. En langage clair, du début à la fin."
+        ]
+      }
+    },
+    {
       "id": "otEkNPgNbuA",
       "type": "longform",
       "title": "Power 5 Weekly TA: The Weekly Breaks Are In",
