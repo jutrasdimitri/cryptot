@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "gzqNHdhHUCk",
+      "type": "longform",
+      "title": "Fed Decision Day: Bitcoin Holds $80K Into the Verdict",
+      "date": "2026-10-28",
+      "duration": "9:37",
+      "durationISO": "PT9M37S",
+      "url": "https://www.youtube.com/watch?v=gzqNHdhHUCk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/gzqNHdhHUCk",
+      "thumbnail": "https://i.ytimg.com/vi/gzqNHdhHUCk/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "On Oct 28, the Federal Reserve held its rate at 3.75%-4.00% - a hold priced at about 92 percent, so Chair Warsh's words about December are the real story. Bitcoin topped $81,400 in the morning, then eased back near $80,800 in the afternoon. Bitcoin funds took in $176 million on Tuesday, a second straight day of inflows, while Ether funds lost $60.2 million. Yesterday's closes repaired: Bitcoin held $80,000 by $799, Ether won back its lost monthly line at $2,347.01, and Cardano held $0.20 a third straight day. All of it in plain language."
+        ],
+        "fr": [
+          "Le 28 octobre, la Réserve fédérale a maintenu son taux entre 3,75 % et 4,00 % - un statu quo évalué à environ 92 %, donc ce sont les mots de Warsh sur décembre qui comptent. Bitcoin est monté au-dessus de 81 400 $ le matin, puis s'est replié près de 80 800 $ en après-midi. Les fonds Bitcoin ont encaissé 176 millions $ mardi, une deuxième journée d'entrées de suite, pendant que les fonds Ether perdaient 60,2 millions $. Les clôtures d'hier ont réparé : Bitcoin a tenu 80 000 $ de 799 $, Ether a reconquis sa ligne mensuelle à 2 347,01 $, et Cardano a tenu 0,20 $ un troisième jour de suite. En langage clair, du début à la fin."
+        ]
+      }
+    },
+    {
       "id": "KB7EeVsJV9w",
       "type": "longform",
       "title": "Bitcoin Back Above $80K: The Fed Decides Tomorrow",
