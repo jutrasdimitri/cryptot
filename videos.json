@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "pdhiZQoRYO4",
+      "type": "longform",
+      "title": "Bitcoin Rejected Below $80K: The Buyback Failed",
+      "date": "2026-10-29",
+      "duration": "10:51",
+      "durationISO": "PT10M51S",
+      "url": "https://www.youtube.com/watch?v=pdhiZQoRYO4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/pdhiZQoRYO4",
+      "thumbnail": "https://i.ytimg.com/vi/pdhiZQoRYO4/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The morning after the Fed's hawkish hold, the day ran in three acts. This morning, Cardano (ADA) pierced $0.20 in price for the first time (low $0.19542), Bitcoin (BTC) slipped below $80,000, and Ethereum (ETH) lost its safety net. This afternoon, buyers bought the pierce back - Bitcoin near $80,733, Cardano near $0.203. Then the bounce failed: Bitcoin was rejected to $78,177, a new low for the month, Cardano broke to $0.1872, Ether fell through its net and its monthly line, and Solana and XRP lost their floors too - every Power 5 floor pierced in price. September PCE inflation came in at 3.6% (core 3.1%), in line with expectations, while Bitcoin funds took in $137 million for a third straight day. Tonight's closes - and tomorrow's monthly close - decide. All of it in plain language."
+        ],
+        "fr": [
+          "Le lendemain du maintien restrictif de la Fed, la journée s'est jouée en trois actes. Ce matin, Cardano (ADA) a percé 0,20 $ en prix pour la première fois (creux de 0,19542 $), Bitcoin (BTC) est passé sous 80 000 $ et Ethereum (ETH) a perdu son filet. Cet après-midi, les acheteurs ont racheté la percée - Bitcoin près de 80 733 $, Cardano près de 0,203 $. Puis le rebond a échoué : Bitcoin rejeté à 78 177 $, nouveau creux du mois, Cardano cassé à 0,1872 $, Ether passé sous son filet et sa ligne mensuelle, et Solana et XRP ont aussi perdu leurs planchers - chaque plancher Power 5 percé en prix. L'inflation PCE de septembre est sortie à 3,6 % (cœur 3,1 %), conforme aux attentes, pendant que les fonds Bitcoin encaissaient 137 millions $ pour un troisième jour de suite. Les clôtures de ce soir - et la clôture mensuelle de demain - décident. En langage clair, du début à la fin."
+        ]
+      }
+    },
+    {
       "id": "gzqNHdhHUCk",
       "type": "longform",
       "title": "Fed Decision Day: Bitcoin Holds $80K Into the Verdict",
