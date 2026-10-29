@@ -565,6 +565,21 @@
       }
     },
     {
+      "id": "GC7cu_zqtao",
+      "type": "short",
+      "title": "BREAKING: Polymarket Exploit Drains $2.65M, Trading Paused",
+      "date": "2026-10-29",
+      "duration": "0:43",
+      "durationISO": "PT43S",
+      "url": "https://youtube.com/shorts/GC7cu_zqtao",
+      "thumbnail": "https://i.ytimg.com/vi/GC7cu_zqtao/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Polymarket exploit (Oct 29): a compromised third-party provider let an attacker drain about $2.65M from ~995 accounts (Arkham data via The Block); exchange went cancel-only ~2:05 p.m. ET, trading restored ~3 p.m. ET, full reimbursement promised to affected traders, case referred to law enforcement. The risk was a trusted outside service, not the blockchain."
+        ]
+      }
+    },
+    {
       "id": "J3rvyYapZ1c",
       "type": "short",
       "title": "What Is a Divergence? Price Falls, Force Fades",
