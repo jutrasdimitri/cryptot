@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -561,6 +561,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "soc-PM5ZjRU",
+      "type": "short",
+      "title": "Fed's Hawkish Hold: Cardano Pierces $0.20, Bitcoin $80K",
+      "date": "2026-10-29",
+      "duration": "0:55",
+      "durationISO": "PT55S",
+      "url": "https://youtube.com/shorts/soc-PM5ZjRU",
+      "thumbnail": "https://i.ytimg.com/vi/soc-PM5ZjRU/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Oct 28 Coinbase closes (CryptoT TA Oct 29): BTC C $81,249.31 (+0.56%); ADA C $0.20578 (+0.04%) held $0.20 a 4th day; ETH C $2,356.89 (+0.42%) second repair close; Fed hawkish hold 3.75%-4.00% (10-2, Cook and Hammack for a hike); Oct 29 morning: ADA pierced $0.20 (low $0.19542), BTC below $80,000 in price, ETH lost $2,336-$2,341 in price."
         ]
       }
     },
