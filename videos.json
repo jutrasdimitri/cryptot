@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "PYPXCEbaoJE",
+      "type": "longform",
+      "title": "Binance's $6.3B Hack: The Full Day, Explained Simply",
+      "date": "2026-10-30",
+      "duration": "9:44",
+      "durationISO": "PT9M44S",
+      "url": "https://www.youtube.com/watch?v=PYPXCEbaoJE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/PYPXCEbaoJE",
+      "thumbnail": "https://i.ytimg.com/vi/PYPXCEbaoJE/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The largest crypto theft on record hit Binance last night: about $6.3 billion moved out in minutes. Today Binance says about $3 billion is frozen, its own holdings already match most of the affected tokens, and withdrawals should resume within about 42 hours. Bitcoin fell to $76,301, liquidations hit $1.57 billion, sentiment flipped from Neutral to Fear - and yesterday's closes flipped all five Power 5 levels: $0.20, $80,000, the Ether net, $100 and $1.26 are now ceilings, not floors. Tomorrow's monthly close grades October. All of it in plain language."
+        ],
+        "fr": [
+          "Le plus grand vol de crypto de l'histoire a frappé Binance la nuit dernière : environ 6,3 milliards $ sont sortis en quelques minutes. Aujourd'hui, Binance dit qu'environ 3 milliards $ sont gelés, que ses propres avoirs correspondent déjà à la plupart des tokens touchés et que les retraits devraient reprendre d'ici environ 42 heures. Bitcoin est tombé à 76 301 $, les liquidations ont atteint 1,57 milliard $, le sentiment est passé de Neutre à Peur - et les clôtures d'hier ont retourné les cinq niveaux Power 5 : 0,20 $, 80 000 $, le filet d'Ether, 100 $ et 1,26 $ sont maintenant des plafonds, pas des planchers. La clôture mensuelle de demain juge octobre. Le tout en langage clair."
+        ]
+      }
+    },
+    {
       "id": "pdhiZQoRYO4",
       "type": "longform",
       "title": "Bitcoin Rejected Below $80K: The Buyback Failed",
