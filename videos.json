@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -580,6 +580,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "WBzeDM0VfxA",
+      "type": "short",
+      "title": "BREAKING UPDATE: Binance Blames DevOps Laptop in $6.3B Hack",
+      "date": "2026-10-30",
+      "duration": "0:46",
+      "durationISO": "PT46S",
+      "url": "https://youtube.com/shorts/WBzeDM0VfxA",
+      "thumbnail": "https://i.ytimg.com/vi/WBzeDM0VfxA/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance hack UPDATE 5 (Oct 30): Binance official statement - initial investigation points to a compromised DevOps engineer's laptop (service container access, unauthorized withdrawals), no evidence of wallet private key leak, total impact ~$6.3B (Binance's own estimate), ~$3B frozen on chain, losses covered from SAFU + company funds, updated Proof of Reserves promised."
         ]
       }
     },
