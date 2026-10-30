@@ -584,6 +584,21 @@
       }
     },
     {
+      "id": "GSPTOGKcOuo",
+      "type": "short",
+      "title": "BREAKING UPDATE: Binance Pauses Withdrawals, DeFi Freezes",
+      "date": "2026-10-29",
+      "duration": "0:43",
+      "durationISO": "PT43S",
+      "url": "https://youtube.com/shorts/GSPTOGKcOuo",
+      "thumbnail": "https://i.ytimg.com/vi/GSPTOGKcOuo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance hack UPDATE (Oct 29 evening): withdrawals temporarily suspended on multiple networks (Binance spokesperson to TechCrunch; CoinDesk); hacker wallet tally past $5.7B (Arkham via CoinDesk, updated 19:36 EDT); attacker borrowed 19,762 ETH on Aave against about $60M stolen USDT (Decrypt/Etherscan); Aave froze V3 Ethereum mainnet markets, Kamino paused SOL/BTC markets; CZ says user funds safe and losses will be covered, SAFU fund ~$1B."
+        ]
+      }
+    },
+    {
       "id": "rezoqUAaG-Q",
       "type": "short",
       "title": "BREAKING: Binance Investigates Suspected $5.5B Hack",
