@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -599,6 +599,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "Gx3jcTnpy8g",
+      "type": "short",
+      "title": "Red October: Tonight's Monthly Close Tests Bitcoin's Net",
+      "date": "2026-10-31",
+      "duration": "0:54",
+      "durationISO": "PT54S",
+      "url": "https://youtube.com/shorts/Gx3jcTnpy8g",
+      "thumbnail": "https://i.ytimg.com/vi/Gx3jcTnpy8g/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Red October, monthly close tonight (CryptoT TA Oct 31): BTC -7.6% month, ETH -16.6%, ADA -21.9%; ~$300B left total market value in October; ADA +2.58% Oct 30 close held; BTC C $77,180.42 above monthly net near $76,000."
         ]
       }
     },
