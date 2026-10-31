@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "waLqdxpl7KQ",
+      "type": "longform",
+      "title": "Binance at 90%: Tonight's Monthly Close Grades Red October",
+      "date": "2026-10-31",
+      "duration": "9:55",
+      "durationISO": "PT9M55S",
+      "url": "https://www.youtube.com/watch?v=waLqdxpl7KQ",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/waLqdxpl7KQ",
+      "thumbnail": "https://i.ytimg.com/vi/waLqdxpl7KQ/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance has replaced 90% of the $6.3B stolen on Thursday and its top 10 user coins are backed at 100% or more; the full proof of reserves lands November 3 and withdrawals are set to reopen Sunday. Friday graded the fund test: $643.2M left U.S. spot Bitcoin funds in one day. And tonight's monthly close grades Red October — Bitcoin -7.6% for the month, Ether -16.6%, Cardano -21.9% — on Bitcoin's safety net near $76,000."
+        ],
+        "fr": [
+          "Binance a remplacé 90 % des 6,3 G$ volés jeudi et ses 10 plus gros actifs d'utilisateurs sont adossés à 100 % ou plus; la preuve de réserves complète arrive le 3 novembre et les retraits doivent rouvrir dimanche. Vendredi a gradué le test des fonds : 643,2 M$ ont quitté les fonds Bitcoin spot américains en un jour. Et la clôture mensuelle de ce soir grade Octobre rouge — Bitcoin -7,6 % sur le mois, Ether -16,6 %, Cardano -21,9 % — sur le filet de sécurité de Bitcoin près de 76 000 $."
+        ]
+      }
+    },
+    {
       "id": "PYPXCEbaoJE",
       "type": "longform",
       "title": "Binance's $6.3B Hack: The Full Day, Explained Simply",
