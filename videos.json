@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "OjdKyemnK78",
+      "type": "longform",
+      "title": "Binance Reopens: $3.64B Walks Out, Weekly Close Tonight",
+      "date": "2026-11-01",
+      "duration": "9:09",
+      "durationISO": "PT9M9S",
+      "url": "https://www.youtube.com/watch?v=OjdKyemnK78",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/OjdKyemnK78",
+      "thumbnail": "https://i.ytimg.com/vi/OjdKyemnK78/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance reopened withdrawals on all 15 phase-one networks on Sunday — and $3.64 billion left the exchange, net, in the first nine and a half hours: $4.65 billion out against $1.01 billion in, 2.1% of its $171 billion in assets, with volumes now stabilising. Cardano is still waiting — ADA withdrawals remain suspended while the last networks are tested. Red October got its final grade — Bitcoin -7.3%, Ether -16.1%, Cardano -21.9% — with Bitcoin closing the month above its monthly safety net and the first buy circles of the whole slide lit up on Cardano and Ether this morning. Tonight's weekly close grades those signals, and all five Power 5 levels from yesterday are revisited honestly, in plain language."
+        ],
+        "fr": [
+          "Binance a rouvert les retraits sur les 15 réseaux de la phase 1 dimanche — et 3,64 milliards $ ont quitté la plateforme, net, dans les neuf premières heures et demie : 4,65 milliards $ sortis contre 1,01 milliard $ entrés, soit 2,1 % de ses 171 milliards $ d'actifs, avec des volumes qui se stabilisent. Cardano attend toujours — les retraits d'ADA restent suspendus pendant les derniers tests de réseaux. Octobre rouge a reçu sa note finale — Bitcoin -7,3 %, Ether -16,1 %, Cardano -21,9 % — avec Bitcoin qui a clos le mois au-dessus de son filet de sécurité mensuel et les premiers buy circles de toute la glissade allumés sur Cardano et Ether ce matin. La clôture hebdomadaire de ce soir note ces signaux, et les cinq niveaux Power 5 d'hier sont revisités honnêtement, en langage clair."
+        ]
+      }
+    },
+    {
       "id": "waLqdxpl7KQ",
       "type": "longform",
       "title": "Binance at 90%: Tonight's Monthly Close Grades Red October",
