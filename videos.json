@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -618,6 +618,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "IU-_p1LWMhw",
+      "type": "short",
+      "title": "BREAKING: Binance Resumes Withdrawals, 95% Covered",
+      "date": "2026-11-01",
+      "duration": "0:44",
+      "durationISO": "PT44S",
+      "url": "https://youtube.com/shorts/IU-_p1LWMhw",
+      "thumbnail": "https://i.ytimg.com/vi/IU-_p1LWMhw/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance hack UPDATE (Nov 1): withdrawals resume in phases - Reuters (Nov 1, 2026) reports Binance covering 95% of the $6.3 billion stolen on Oct 29 and resuming withdrawals in phases, phase one 06:00-09:00 GMT covering BTC, ETH, BNB, SOL, XRP, DOGE and stablecoins, remaining 5% less liquid tokens - TokenPost (Nov 1, 2026) independently confirms the 95% replenishment figure, up from 90%."
         ]
       }
     },
