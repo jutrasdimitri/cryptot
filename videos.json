@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -637,6 +637,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "Hfdj6yq3X0I",
+      "type": "short",
+      "title": "BREAKING: Binance Outflows Pass $7 Billion, OKX Leads Inflows",
+      "date": "2026-11-02",
+      "duration": "0:36",
+      "durationISO": "PT36S",
+      "url": "https://youtube.com/shorts/Hfdj6yq3X0I",
+      "thumbnail": "https://i.ytimg.com/vi/Hfdj6yq3X0I/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance hack UPDATE (Nov 2): net outflows pass $7B over 24 hours per DefiLlama (Cointelegraph, Nov 2, 2026), up from $5.8B earlier Monday - the second full day after withdrawals reopened; rival exchanges absorb inflows: OKX leads tracked exchanges with ~$445M in 24h net inflows, then Bybit ~$112M, Gate ~$91M, Bitget ~$54M; CoinDesk (Nov 2, 2026) independently reports more than $6B flowed out over 24 hours, ~$129B still tracked at Binance and OKX at ~$450M; Binance held ~$127.9B in DefiLlama-tracked wallets and says it has replenished ~95% of the affected assets."
         ]
       }
     },
