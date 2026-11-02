@@ -641,6 +641,21 @@
       }
     },
     {
+      "id": "CkDNzNZhBts",
+      "type": "short",
+      "title": "BREAKING: Binance Reserve Proof Is Live, SAFU Halved",
+      "date": "2026-11-02",
+      "duration": "0:36",
+      "durationISO": "PT36S",
+      "url": "https://youtube.com/shorts/CkDNzNZhBts",
+      "thumbnail": "https://i.ytimg.com/vi/CkDNzNZhBts/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance proof of reserves verified (Nov 2, 2026): the full zero-knowledge proof for the October 31 snapshot is complete, so holders of 10 fully backed tokens (BTC, ETH, USDT, BNB, SOL, USDC, XRP, USD1, RLUSD, ZEC) can independently verify at least 1:1 backing; Binance says about 95% of the $6.3B hack losses have been replenished, next snapshot Nov 4 covering more tokens; the disclosed SAFU emergency Bitcoin wallet was tapped for a confirmed 7,499 BTC transfer on Saturday and now holds about 7,500 BTC (about $583M), down from about 15,000 BTC; 24h net outflows fell to about $3.29B from a $7B peak (The Block, DefiLlama). Sources: Cointelegraph (Nov 2, 2026, 13:21 UTC) and The Block (Nov 2, 2026), plus Binance official recovery update #5, read in full."
+        ]
+      }
+    },
+    {
       "id": "u0KY4Yu9PRY",
       "type": "short",
       "title": "BREAKING: Brazil's Largest Exchange Hacked, $40M Drained",
