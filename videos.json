@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "WsyTqEgOMmg",
+      "type": "longform",
+      "title": "Power 5 Weekly TA: Bitcoin Held Its Net, Cardano Didn't",
+      "date": "2026-11-02",
+      "duration": "13:07",
+      "durationISO": "PT13M7S",
+      "url": "https://www.youtube.com/watch?v=WsyTqEgOMmg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/WsyTqEgOMmg",
+      "thumbnail": "https://i.ytimg.com/vi/WsyTqEgOMmg/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The weekly close split the Power 5: Bitcoin closed the week at $78,230.55, $1,271 above its weekly safety net — the only one of the five that held its line. Cardano closed under $0.20, Ether far under its lost net, Solana was the weakest at -6.8%, and XRP quietly never lost its support. This morning a second exchange hack landed: Mercado Bitcoin, Brazil's largest exchange, drained of an estimated $40M in about 34 minutes, while Binance's 24-hour net outflows passed $7B. Today, Solana's $92.14 support broke intraday and Bitcoin dipped under its new weekly line at $77,020.56 — tonight's closes grade both. All five levels from yesterday, revisited honestly, coin by coin, in the Monday Power 5 TA edition. All of it in plain language."
+        ],
+        "fr": [
+          "La clôture hebdomadaire a partagé les Power 5 : Bitcoin a clos la semaine à 78 230,55 $, soit 1 271 $ au-dessus de son filet de sécurité hebdomadaire — le seul des cinq à avoir tenu sa ligne. Cardano a clos sous 0,20 $, Ether loin sous son filet perdu, Solana le plus faible à -6,8 %, et XRP n'a jamais perdu son support. Ce matin, un deuxième hack d'exchange est tombé : Mercado Bitcoin, la plus grande plateforme du Brésil, drainée d'environ 40 M$ en quelque 34 minutes, pendant que les sorties nettes de Binance sur 24 heures dépassaient 7 milliards $. Aujourd'hui, le support de Solana à 92,14 $ a cassé en intraday et Bitcoin est passé sous sa nouvelle ligne hebdomadaire à 77 020,56 $ — les clôtures de ce soir notent les deux. Les cinq niveaux d'hier, revisités honnêtement, coin par coin, dans l'édition TA du lundi des Power 5. Le tout en langage clair."
+        ]
+      }
+    },
+    {
       "id": "OjdKyemnK78",
       "type": "longform",
       "title": "Binance Reopens: $3.64B Walks Out, Weekly Close Tonight",
