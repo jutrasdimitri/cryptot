@@ -641,6 +641,21 @@
       }
     },
     {
+      "id": "u0KY4Yu9PRY",
+      "type": "short",
+      "title": "BREAKING: Brazil's Largest Exchange Hacked, $40M Drained",
+      "date": "2026-11-02",
+      "duration": "0:37",
+      "durationISO": "PT37S",
+      "url": "https://youtube.com/shorts/u0KY4Yu9PRY",
+      "thumbnail": "https://i.ytimg.com/vi/u0KY4Yu9PRY/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Mercado Bitcoin hack (Nov 2, 2026): Brazil's largest crypto exchange suspended deposits and withdrawals after a security incident it said it identified and swiftly contained overnight, with no harm to customers and no data breach; security firms (Hypernative, relayed by Opsek) estimate more than $40M drained across at least 10 blockchains (Ethereum, Solana, Tron, Polygon, Arbitrum, Avalanche, BSC, Stellar, Bitcoin and others), most outflows in a 34-minute window 06:19-06:53 UTC, in plain transfers (not a smart contract exploit), signing access unknown; attacker holds roughly 2,852 ETH, 106 BTC, 10,700 SOL, 6.7M XLM and 77,000 AVAX plus 200+ other tokens; Tether froze $4.5M in linked USDT (Ardoino). Sources: CoinDesk (Nov 2, 2026, 15:53 UTC) and Unchained (Nov 2, 2026, 10:32 ET), read in full."
+        ]
+      }
+    },
+    {
       "id": "m6NkukI7j_k",
       "type": "short",
       "title": "Weekly Close Split: Bitcoin Held, Cardano Didn't",
