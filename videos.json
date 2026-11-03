@@ -660,6 +660,21 @@
       }
     },
     {
+      "id": "u7OZO6gaWG8",
+      "type": "short",
+      "title": "BREAKING: Binance Says Fake Interview Led to $6.3B Hack",
+      "date": "2026-11-03",
+      "duration": "0:37",
+      "durationISO": "PT37S",
+      "url": "https://youtube.com/shorts/u7OZO6gaWG8",
+      "thumbnail": "https://i.ytimg.com/vi/u7OZO6gaWG8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance full incident report (Nov 3, 2026): the $6.3B hack began with a fake job interview (September, coding assignment with zero-day malware), following a June tampered Homebrew download; on Oct 20 attackers used the compromised machine and an internal AI tool to reach wallet engineers, and on Oct 29 used stolen credentials to run a malicious script; Binance says 98% of affected tokens replenished, $2.85B frozen, users bear no loss; FBI attribution to North Korea. Sources: CoinDesk (Nov 3, 2026) and The Block (Nov 3, 2026), read in full."
+        ]
+      }
+    },
+    {
       "id": "zbcJQq5IqN4",
       "type": "short",
       "title": "BREAKING: Kraken Restricts Accounts in $133M EU Theft",
