@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -656,6 +656,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "ninLjvsGwfo",
+      "type": "short",
+      "title": "BREAKING: Binance Opens Phase Two, Outflows Slow to $2.57B",
+      "date": "2026-11-03",
+      "duration": "0:41",
+      "durationISO": "PT41S",
+      "url": "https://youtube.com/shorts/ninLjvsGwfo",
+      "thumbnail": "https://i.ytimg.com/vi/ninLjvsGwfo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Binance phase two withdrawals (Nov 3, 2026): the second phase of the withdrawal reopening began at 04:00 UTC on Tuesday, restoring withdrawals for additional assets across nine networks (BNB Smart Chain, Ethereum, Solana, XRP Ledger, Sui, Arbitrum, Optimism, Tron, Base), progressively, asset by asset, as security and readiness checks complete, prioritized by user demand over the past week; Monday also reopened fiat withdrawals for USD, AED, VND, PHP and IDR (28 currencies total); DefiLlama net outflows slowed to $2.57B on Monday from $6.1B on Sunday; Binance warned users about withdrawal-acceleration scams. Sources: Cointelegraph (Nov 3, 2026, 03:03 UTC) and Reuters (Nov 2, 2026), read in full."
         ]
       }
     },
