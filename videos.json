@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "OS0ACrPQVho",
+      "type": "longform",
+      "title": "Election Day: Bitcoin Holds $76K as ETFs Lose $399M",
+      "date": "2026-11-03",
+      "duration": "9:49",
+      "durationISO": "PT9M49S",
+      "url": "https://www.youtube.com/watch?v=OS0ACrPQVho",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/OS0ACrPQVho",
+      "thumbnail": "https://i.ytimg.com/vi/OS0ACrPQVho/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Election day in the United States — and crypto spent it on a knife edge. U.S. spot bitcoin ETFs lost $399 million on Monday (BlackRock's IBIT alone shed $405 million, its largest outflow since June), Bitcoin dipped to $76,239 this morning — $97 above its October low — and the floor held: by early afternoon all five Power 5 coins were green, with Binance's cumulative net withdrawals at $4.72B since Sunday and a suspected $133M EU theft landing at Kraken. Every verdict still waits on tonight's close — and on the first election results. All of it in plain language."
+        ],
+        "fr": [
+          "Jour d'élection aux États-Unis — et la crypto l'a passé sur le fil du rasoir. Les ETF bitcoin spot américains ont perdu 399 millions $ lundi (l'IBIT de BlackRock à lui seul a perdu 405 millions $, sa plus grosse sortie depuis juin), Bitcoin est descendu à 76 239 $ ce matin — 97 $ au-dessus de son creux d'octobre — et le plancher a tenu : en début d'après-midi, les cinq coins Power 5 étaient dans le vert, avec les retraits nets cumulatifs de Binance à 4,72 milliards $ depuis dimanche et un vol présumé de 133 millions $ dans l'UE aboutissant chez Kraken. Chaque verdict attend encore la clôture de ce soir — et les premiers résultats de l'élection. Le tout en langage clair."
+        ]
+      }
+    },
+    {
       "id": "WsyTqEgOMmg",
       "type": "longform",
       "title": "Power 5 Weekly TA: Bitcoin Held Its Net, Cardano Didn't",
