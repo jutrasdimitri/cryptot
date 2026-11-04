@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -675,6 +675,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "a7UFmRofNac",
+      "type": "short",
+      "title": "Bitcoin Dipped Below $76K — Then Snapped Back to $78K",
+      "date": "2026-11-04",
+      "duration": "0:55",
+      "durationISO": "PT55S",
+      "url": "https://youtube.com/shorts/a7UFmRofNac",
+      "thumbnail": "https://i.ytimg.com/vi/a7UFmRofNac/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin V-shaped recovery Nov 4 (CoinDesk + CryptoT TA, Coinbase verified): Nov 3 closes BTC $77,336.75 +0.86%, ETH $2,271.64 +0.98%, ADA $0.18979 +0.78%; Nov 4 BTC wick $75,600.64, $540 below October low $76,141.02, bounce to ~$78,300 as midterm uncertainty faded; ADA low $0.18250; Fear and Greed 34."
         ]
       }
     },
