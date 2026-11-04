@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "JniOxRtvRc8",
+      "type": "longform",
+      "title": "Bitcoin Tops $80K: The Rebound Meets Its First Ceiling",
+      "date": "2026-11-04",
+      "duration": "10:41",
+      "durationISO": "PT10M41S",
+      "url": "https://www.youtube.com/watch?v=JniOxRtvRc8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/JniOxRtvRc8",
+      "thumbnail": "https://i.ytimg.com/vi/JniOxRtvRc8/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The day after the midterms, in plain language. Overnight, bitcoin wicked to $75,601 — $540 below its October low — as Democrats won both chambers of Congress. By this afternoon it traded above $80,000 (high $81,131, Coinbase ~2 p.m. ET), ether was back above its old $2,404.60 floor in price, and Cardano had wicked above $0.20. Election-day options traders bought about $420M of call options against about $105M sold, bitcoin ETF outflows slowed to $115.6M (three-day total $1.16B, and Bitwise calls it short-term), the suspected $133M theft got a name — Credit Mutuel Arkea, which confirms the attack — and every afternoon crossing still waits on tonight's close. All of it in plain language."
+        ],
+        "fr": [
+          "Le lendemain des élections de mi-mandat, en langage clair. Pendant la nuit, bitcoin a fait une mèche à 75 601 $ — 540 $ sous son creux d'octobre — alors que les démocrates ont remporté les deux chambres du Congrès. En après-midi, il s'échangeait au-dessus de 80 000 $ (sommet à 81 131 $, Coinbase ~14 h HE), ether était repassé au-dessus de son ancien plancher de 2 404,60 $ en prix, et Cardano avait fait une mèche au-dessus de 0,20 $. Les traders d'options du jour de l'élection ont acheté environ 420 M$ d'options d'achat contre environ 105 M$ vendus, les sorties des ETF bitcoin ont ralenti à 115,6 M$ (total de trois jours : 1,16 G$, et Bitwise parle d'un phénomène à court terme), le vol présumé de 133 M$ a un nom — Crédit Mutuel Arkéa, qui confirme l'attaque — et chaque franchissement de l'après-midi attend encore la clôture de ce soir. Le tout en langage clair."
+        ]
+      }
+    },
+    {
       "id": "OS0ACrPQVho",
       "type": "longform",
       "title": "Election Day: Bitcoin Holds $76K as ETFs Lose $399M",
