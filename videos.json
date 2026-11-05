@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -694,6 +694,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "1CrgXPelYiA",
+      "type": "short",
+      "title": "BREAKING: Ethereum ETH Jumps 8% — What Happened?",
+      "date": "2026-11-05",
+      "duration": "0:38",
+      "durationISO": "PT38S",
+      "url": "https://youtube.com/shorts/1CrgXPelYiA",
+      "thumbnail": "https://i.ytimg.com/vi/1CrgXPelYiA/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Ether jumped 8% in 24 hours to about $2,425, leading the Power 5 rebound after the U.S. midterm results (CoinDesk Nov 5, 2026 citing CoinGecko; CoinGecko via CoinGabbar 04:00 UTC +7.5% to $2,428). Bitcoin rose about 5.7% to roughly $80,484 after briefly falling toward $75,700. Falling oil and a weaker dollar helped markets recover; traders weighed a tougher path for the CLARITY Act."
         ]
       }
     },
