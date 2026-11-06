@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -713,6 +713,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "J6-0QLE-Mhg",
+      "type": "short",
+      "title": "BREAKING: Ethereum ETH Falls 8% to $2,220 — What Happened?",
+      "date": "2026-11-06",
+      "duration": "0:30",
+      "durationISO": "PT30S",
+      "url": "https://youtube.com/shorts/J6-0QLE-Mhg",
+      "thumbnail": "https://i.ytimg.com/vi/J6-0QLE-Mhg/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Ethereum (ETH) fell 8% in 24 hours to about $2,220, after a technology rout on Wall Street spread into crypto (crypto.news, Nov 6, 2026, citing CoinGlass; BusinessToday, Nov 6, 2026). More than $1 billion in leveraged positions were liquidated in 24 hours. Ether alone saw $210 million liquidated, most of it bets on higher prices."
+        ],
+        "fr": [
+          "Ethereum (ETH) a chuté de 8 % en 24 heures, à environ 2 220 $, après qu'une déroute technologique à Wall Street s'est propagée à la crypto (crypto.news, 6 nov. 2026, citant CoinGlass ; BusinessToday, 6 nov. 2026). Plus d'un milliard de dollars de positions à effet de levier ont été liquidées en 24 heures. Ether seul a vu 210 millions de dollars liquidés, la plupart pariant sur la hausse."
         ]
       }
     },
