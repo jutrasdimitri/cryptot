@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "-4lES9VA1KA",
+      "type": "longform",
+      "title": "Bitcoin Closed Below $76K: Tonight's Repair Test",
+      "date": "2026-11-06",
+      "duration": "10:11",
+      "durationISO": "PT10M11S",
+      "url": "https://www.youtube.com/watch?v=-4lES9VA1KA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/-4lES9VA1KA",
+      "thumbnail": "https://i.ytimg.com/vi/-4lES9VA1KA/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The day the October floors broke on the close, in plain language. Thursday's closes settled it: Bitcoin closed at $75,969.06 — its first close below its October floor of $76,141.02 — Cardano closed below $0.18189, Ether below its two lines and Solana below $92.14; only XRP's $1.1975 support held at the close. Friday brought a hot jobs report (+165K against ~65K expected, unemployment 4.1%) and a stock rebound that crypto did not follow, while ETF flows flipped back out ($430.2M out of bitcoin funds, $99.9M out of ether funds on Nov. 5). By the afternoon, Cardano had climbed back above its floor in price while XRP's support was pierced in price — tonight's closes grade the repair. All of it in plain language."
+        ],
+        "fr": [
+          "Le jour où les planchers d'octobre ont cassé à la clôture, en langage clair. Les clôtures de jeudi ont tranché : bitcoin a clôturé à 75 969,06 $ — sa première clôture sous son plancher d'octobre de 76 141,02 $ —, Cardano sous 0,18189 $, ether sous ses deux lignes et Solana sous 92,14 $ ; seul le support de XRP à 1,1975 $ a tenu à la clôture. Vendredi a apporté un rapport sur l'emploi chaud (+165 000 contre ~65 000 attendus, chômage à 4,1 %) et un rebond des actions que la crypto n'a pas suivi, pendant que les flux ETF ressortaient (430,2 M$ sortis des fonds bitcoin, 99,9 M$ des fonds ether le 5 novembre). En après-midi, Cardano était repassé au-dessus de son plancher en prix, tandis que le support de XRP était percé en prix — les clôtures de ce soir notent la réparation. Le tout en langage clair."
+        ]
+      }
+    },
+    {
       "id": "Ave3m-2-zLs",
       "type": "longform",
       "title": "Bitcoin Plunges to $75K: The Holding Test Failed",
