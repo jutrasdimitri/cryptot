@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "l-9bYyZKgMA",
+      "type": "longform",
+      "title": "One Floor Repaired, One Broken: Sunday Decides",
+      "date": "2026-11-07",
+      "duration": "10:30",
+      "durationISO": "PT10M30S",
+      "url": "https://www.youtube.com/watch?v=l-9bYyZKgMA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/l-9bYyZKgMA",
+      "thumbnail": "https://i.ytimg.com/vi/l-9bYyZKgMA/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The split verdict of the Nov 6 closes, in plain language. Cardano closed up 1.8% at $0.18393 — back above its October floor of $0.18189, a busted breakdown, a break that did not stick — while Bitcoin closed at $75,731, below its October floor of $76,141 for a second straight day after dipping to $74,722, within about $367 of its monthly safety net. Ether sat flat at $2,235 and XRP quietly closed below its last support at $1.1975. Overnight, the U.S. Treasury cut the MEXC exchange off from the American financial system, and Friday's final fund flows showed another $411.9M out of bitcoin ETFs — $1.28B for the week. Every level graded honestly before Sunday's weekly close."
+        ],
+        "fr": [
+          "Le verdict partagé des clôtures du 6 novembre, en langage clair. Cardano a clôturé en hausse de 1,8 % à 0,18393 $ — de retour au-dessus de son plancher d'octobre de 0,18189 $, une cassure bustée, une cassure qui n'a pas tenu — pendant que bitcoin clôturait à 75 731 $, sous son plancher d'octobre de 76 141 $ pour une deuxième journée de suite, après un creux à 74 722 $, à environ 367 $ de son filet mensuel. Ether est resté à plat à 2 235 $ et XRP a discrètement clôturé sous son dernier support à 1,1975 $. Pendant la nuit, le Trésor américain a coupé la plateforme MEXC du système financier américain, et les flux finaux de vendredi ont montré 411,9 M$ de plus sortis des ETF bitcoin — 1,28 G$ pour la semaine. Chaque niveau noté honnêtement avant la clôture hebdomadaire de dimanche."
+        ]
+      }
+    },
+    {
       "id": "-4lES9VA1KA",
       "type": "longform",
       "title": "Bitcoin Closed Below $76K: Tonight's Repair Test",
