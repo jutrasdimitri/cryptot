@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "LUw62oQk0nU",
+      "type": "longform",
+      "title": "Sunday's Weekly Close: Every Floor Gets Its Grade",
+      "date": "2026-11-08",
+      "duration": "10:04",
+      "durationISO": "PT10M4S",
+      "url": "https://www.youtube.com/watch?v=LUw62oQk0nU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/LUw62oQk0nU",
+      "thumbnail": "https://i.ytimg.com/vi/LUw62oQk0nU/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The weekly close grades the whole week, in plain language. Bitcoin heads into Sunday's weekly close near $75,850 — below $76,000 all weekend and on course for a fifth straight losing week — after $1.28 billion left the U.S. spot bitcoin ETFs, the worst outflow week since late June, with BlackRock's IBIT accounting for about $1.21 billion of it alone. Cardano's one-day repair already failed: yesterday it closed back below its October floor at $0.18157, and this afternoon it trades near $0.1803. Ether, Solana and XRP all sit under lines they lost this week. Every level graded honestly before the close — and the week ahead: Monday's fund flows, a Strategy update and the U.S. inflation print."
+        ],
+        "fr": [
+          "La clôture hebdomadaire note la semaine entière, en langage clair. Bitcoin aborde la clôture hebdo de dimanche près de 75 850 $ — sous 76 000 $ tout le week-end et en voie d'une cinquième semaine perdante de suite — après la sortie de 1,28 milliard $ des ETF bitcoin américains, la pire semaine de sorties depuis fin juin, dont environ 1,21 milliard $ pour le seul IBIT de BlackRock. La réparation d'un jour de Cardano a déjà échoué : hier, clôture de retour sous son plancher d'octobre à 0,18157 $, et cet après-midi il se négocie près de 0,1803 $. Ether, Solana et XRP sont tous sous des lignes perdues cette semaine. Chaque niveau noté honnêtement avant la clôture — et la semaine à venir : les flux de lundi, une mise à jour de Strategy et le chiffre d'inflation américain."
+        ]
+      }
+    },
+    {
       "id": "l-9bYyZKgMA",
       "type": "longform",
       "title": "One Floor Repaired, One Broken: Sunday Decides",
