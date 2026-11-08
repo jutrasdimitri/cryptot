@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -751,6 +751,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "GqpLHRKuRGU",
+      "type": "short",
+      "title": "Cardano's Repair Failed: Back Below $0.182",
+      "date": "2026-11-08",
+      "duration": "0:53",
+      "durationISO": "PT53S",
+      "url": "https://youtube.com/shorts/GqpLHRKuRGU",
+      "thumbnail": "https://i.ytimg.com/vi/GqpLHRKuRGU/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Nov 7 close (CryptoT TA Nov 8, Coinbase verified): ADA $0.18157 -1.28% close back below October floor $0.18189 (the Nov 6 repair lasted one day), BTC $75,753.96 +0.03% third straight close below October floor $76,141.02 with no new low, ETH $2,236.55 +0.05% flat; Fear and Greed 28 Fear; tonight the weekly close grades the week."
         ]
       }
     },
