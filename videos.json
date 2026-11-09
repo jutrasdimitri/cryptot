@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "6XK_DktdS9c",
+      "type": "longform",
+      "title": "Power 5 Weekly TA: After the Floors Broke, What's Next?",
+      "date": "2026-11-09",
+      "duration": "10:32",
+      "durationISO": "PT10M32S",
+      "url": "https://www.youtube.com/watch?v=6XK_DktdS9c",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/6XK_DktdS9c",
+      "thumbnail": "https://i.ytimg.com/vi/6XK_DktdS9c/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Weekly technical analysis of the Power 5 (Cardano, Ethereum, Solana, XRP, Bitcoin) after every October floor broke at the weekly close; levels and scenarios for the week."
+        ],
+        "fr": [
+          "Analyse technique hebdomadaire des Power 5 (Cardano, Ethereum, Solana, XRP, Bitcoin) après la cassure de tous les planchers d'octobre à la clôture hebdomadaire; niveaux et scénarios pour la semaine."
+        ]
+      }
+    },
+    {
       "id": "LUw62oQk0nU",
       "type": "longform",
       "title": "Sunday's Weekly Close: Every Floor Gets Its Grade",
