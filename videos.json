@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -770,6 +770,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "lzpw-OyCLuQ",
+      "type": "short",
+      "title": "Weekly Verdict In: All Three Floors Broke",
+      "date": "2026-11-09",
+      "duration": "0:45",
+      "durationISO": "PT45S",
+      "url": "https://youtube.com/shorts/lzpw-OyCLuQ",
+      "thumbnail": "https://i.ytimg.com/vi/lzpw-OyCLuQ/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Weekly closes of the Nov 2 week (CryptoT TA Nov 9, Coinbase verified): ADA $0.17512 -9.18% close below October floor $0.18189, new low $0.17101; BTC $74,754.08 -4.44% close below October floor $76,141.02 and weekly net, at monthly net ~$74,256 this morning; ETH $2,125.32 -6.47% first close below October floor $2,170.03, morning low $2,080.35; Fear and Greed 29 Fear."
         ]
       }
     },
