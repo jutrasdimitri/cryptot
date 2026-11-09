@@ -774,6 +774,24 @@
       }
     },
     {
+      "id": "RAjSJDwVcIM",
+      "type": "short",
+      "title": "BREAKING: NYSE Picks Avalanche to Settle Tokenized Stocks",
+      "date": "2026-11-09",
+      "duration": "0:35",
+      "durationISO": "PT35S",
+      "url": "https://youtube.com/shorts/RAjSJDwVcIM",
+      "thumbnail": "https://i.ytimg.com/vi/RAjSJDwVcIM/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The New York Stock Exchange picked Avalanche as the core ledger to clear and settle trades on its planned tokenized stock platform, designed for trading around the clock on a custom chain built on Avalanche technology (CoinDesk, Nov 9, 2026; Ava Labs / PR Newswire, Nov 9, 2026). Avalanche token AVAX rose 8% in 24 hours on the news."
+        ],
+        "fr": [
+          "La Bourse de New York a choisi Avalanche comme registre principal pour compenser et régler les transactions de sa future plateforme d'actions tokenisées, conçue pour des échanges 24 heures sur 24 sur une chaîne sur mesure bâtie sur la technologie Avalanche (CoinDesk, 9 nov. 2026 ; Ava Labs / PR Newswire, 9 nov. 2026). Le jeton AVAX a gagné 8 % en 24 heures sur la nouvelle."
+        ]
+      }
+    },
+    {
       "id": "7AiBlXriCXo",
       "type": "short",
       "title": "BREAKING: XRP Falls 7.3% as $1.1B Gets Liquidated",
