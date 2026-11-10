@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "kO6rT3bSuOM",
+      "type": "longform",
+      "title": "Hot CPI at 0.4%: Bitcoin Falls Below $73K to a New Low",
+      "date": "2026-11-10",
+      "duration": "8:42",
+      "durationISO": "PT8M42S",
+      "url": "https://www.youtube.com/watch?v=kO6rT3bSuOM",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/kO6rT3bSuOM",
+      "thumbnail": "https://i.ytimg.com/vi/kO6rT3bSuOM/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "October CPI came in hot (+0.4% on the month against +0.3% expected), knocking Bitcoin below $73,000 to $72,787, its lowest since August, with over $632 million liquidated and $385.6 million out of bitcoin and ether ETFs on November 9; every Power 5 level graded before tonight's closes."
+        ],
+        "fr": [
+          "Le CPI d'octobre est sorti chaud (+0,4 % sur le mois contre +0,3 % attendu), faisant passer Bitcoin sous 73 000 $ à 72 787 $, son plus bas depuis août, avec plus de 632 M$ liquidés et 385,6 M$ sortis des ETF bitcoin et ether le 9 novembre; chaque niveau des Power 5 noté avant les clôtures de ce soir."
+        ]
+      }
+    },
+    {
       "id": "6XK_DktdS9c",
       "type": "longform",
       "title": "Power 5 Weekly TA: After the Floors Broke, What's Next?",
