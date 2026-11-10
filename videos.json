@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -789,6 +789,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "zDej81JvDyQ",
+      "type": "short",
+      "title": "CPI at 8:30 Today: Cardano Leads Into Inflation Day",
+      "date": "2026-11-10",
+      "duration": "0:59",
+      "durationISO": "PT59S",
+      "url": "https://youtube.com/shorts/zDej81JvDyQ",
+      "thumbnail": "https://i.ytimg.com/vi/zDej81JvDyQ/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Closes of Nov 9 (CryptoT TA Nov 10, Coinbase verified): ADA $0.17732 +1.26%, BTC $75,259.28 +0.68%, ETH $2,132.15 +0.32% — weekend lows defended at the close; October CPI Nov 10 8:30 a.m. ET consensus +0.3% m/m, last print before Dec 9 Fed decision; Fear and Greed 32 Fear."
         ]
       }
     },
