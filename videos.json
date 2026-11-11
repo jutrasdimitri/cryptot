@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "_b7Ok7xsU5M",
+      "type": "longform",
+      "title": "Bitcoin Back Above $74K: ETF Selling Finally Slows",
+      "date": "2026-11-11",
+      "duration": "8:49",
+      "durationISO": "PT8M49S",
+      "url": "https://www.youtube.com/watch?v=_b7Ok7xsU5M",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/_b7Ok7xsU5M",
+      "thumbnail": "https://i.ytimg.com/vi/_b7Ok7xsU5M/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday at the close, every low broke: Cardano closed at $0.1739, Bitcoin at $73,698 and Ether at $2,051, with Ether bottoming at $2,003. This afternoon Bitcoin trades back above $74,400, Ether is back above $2,080 in price and Cardano leads the bounce near $0.179, while the ETF selling slowed hard: bitcoin funds lost $95 million on November 10 against $201 million the day before, and ether funds were almost flat at -$1.3 million. Deutsche Bank switched on crypto custody for paying clients, MSCI publishes tonight the list that could remove Strategy from its indexes, and every Power 5 level is graded."
+        ],
+        "fr": [
+          "Hier a la cloture, tous les creux ont casse : Cardano a clos a 0,1739 $, Bitcoin a 73 698 $ et Ether a 2 051 $, avec un creux a 2 003 $ pour Ether. Cet apres-midi, Bitcoin repasse au-dessus de 74 400 $, Ether au-dessus de 2 080 $ en prix et Cardano mene le rebond pres de 0,179 $, pendant que la vente ETF ralentit fort : les fonds bitcoin ont perdu 95 M$ le 10 novembre contre 201 M$ la veille, et les fonds ether etaient presque plats a -1,3 M$. Deutsche Bank met sa garde crypto en service pour des clients payants, MSCI publie ce soir la liste qui pourrait retirer Strategy de ses indices, et chaque niveau des Power 5 est note."
+        ]
+      }
+    },
+    {
       "id": "kO6rT3bSuOM",
       "type": "longform",
       "title": "Hot CPI at 0.4%: Bitcoin Falls Below $73K to a New Low",
