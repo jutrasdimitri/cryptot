@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "H3u43nvDm0A",
+      "type": "longform",
+      "title": "Bitcoin Hits $71,200: Nvidia Shock Meets MSCI Verdict",
+      "date": "2026-11-12",
+      "duration": "9:19",
+      "durationISO": "PT9M19S",
+      "url": "https://www.youtube.com/watch?v=H3u43nvDm0A",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/H3u43nvDm0A",
+      "thumbnail": "https://i.ytimg.com/vi/H3u43nvDm0A/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Yesterday at the close, every low held: Cardano closed at $0.17424, Bitcoin at $73,927.63 and Ether at $2,053.73. Today a shock from outside crypto broke them in price: Nvidia chief executive Jensen Huang resigned effective immediately after 33 years, Nvidia shares opened down 12%, and Bitcoin fell as low as $71,200, its lowest in nearly 12 weeks, with more than $750 million of positions liquidated. The fund selling re-accelerated too: bitcoin ETFs lost $299.8 million on November 11 and ether ETFs lost $144.8 million. And MSCI confirmed it will remove Strategy from its indexes on November 30. The full day in plain language, plus every Power 5 level graded."
+        ],
+        "fr": [
+          "Hier a la cloture, tous les creux ont tenu : Cardano a clos a 0,17424 $, Bitcoin a 73 927,63 $ et Ether a 2 053,73 $. Aujourd'hui, un choc venu de l'exterieur de la crypto les a casses en prix : le PDG de Nvidia, Jensen Huang, a demissionne avec effet immediat apres 33 ans, l'action Nvidia a ouvert en baisse de 12 %, et Bitcoin est tombe jusqu'a 71 200 $, son plus bas en pres de 12 semaines, avec plus de 750 millions $ de positions liquidees. La vente des fonds a reaccelere elle aussi : les ETF bitcoin ont perdu 299,8 millions $ le 11 novembre et les ETF ether 144,8 millions $. Et MSCI a confirme le retrait de Strategy de ses indices le 30 novembre. La journee complete en langage clair, plus chaque niveau des Power 5 note."
+        ]
+      }
+    },
+    {
       "id": "_b7Ok7xsU5M",
       "type": "longform",
       "title": "Bitcoin Back Above $74K: ETF Selling Finally Slows",
