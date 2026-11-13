@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "r5QQf6QOfKo",
+      "type": "longform",
+      "title": "Bitcoin Below $70K: $1.64B Wiped Out Overnight",
+      "date": "2026-11-13",
+      "duration": "8:20",
+      "durationISO": "PT8M20S",
+      "url": "https://www.youtube.com/watch?v=r5QQf6QOfKo",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/r5QQf6QOfKo",
+      "thumbnail": "https://i.ytimg.com/vi/r5QQf6QOfKo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Overnight, Bitcoin broke below $70,000 for the first time since August 19, fell as low as $67,555, and $1.64 billion of leveraged positions were liquidated — 88.7% of them bets on higher prices. Ether fell below $1,900, Cardano made a fresh low at $0.16589, and the Fear and Greed index hit 20, extreme fear. This morning's producer prices came in cooler on the month but at 6.5% on the year, the hottest annual reading since 2022. The full day in plain language, plus every Power 5 level graded."
+        ],
+        "fr": [
+          "Pendant la nuit, Bitcoin a casse sous 70 000 $ pour la premiere fois depuis le 19 aout, est tombe jusqu'a 67 555 $, et 1,64 milliard $ de positions a levier ont ete liquidees — 88,7 % d'entre elles pariaient sur la hausse. Ether est passe sous 1 900 $, Cardano a fait un nouveau creux a 0,16589 $, et l'indice Fear and Greed a touche 20, peur extreme. Les prix a la production de ce matin sont sortis plus froids sur le mois, mais a 6,5 % sur l'annee, la lecture annuelle la plus chaude depuis 2022. La journee complete en langage clair, plus chaque niveau des Power 5 note."
+        ]
+      }
+    },
+    {
       "id": "H3u43nvDm0A",
       "type": "longform",
       "title": "Bitcoin Hits $71,200: Nvidia Shock Meets MSCI Verdict",
