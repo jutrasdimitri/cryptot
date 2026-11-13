@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -846,6 +846,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "pcSDq1amkmI",
+      "type": "short",
+      "title": "BREAKING: Bitcoin Falls Below $70K, $1.3B Liquidated",
+      "date": "2026-11-13",
+      "duration": "0:37",
+      "durationISO": "PT37S",
+      "url": "https://youtube.com/shorts/pcSDq1amkmI",
+      "thumbnail": "https://i.ytimg.com/vi/pcSDq1amkmI/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin fell below 70,000 dollars early Friday, November 13, 2026, for the first time since August 19, down about 7.5 percent on the day, touching 69,000 dollars as more than 1.3 billion dollars in crypto futures positions were liquidated in 24 hours, 677 million of them in Bitcoin alone (CoinGlass via CoinDesk, Nov 13, 2026; Finnhub market data, Nov 13, 2026). Ether also fell below 2,000 dollars."
+        ],
+        "fr": [
+          "Bitcoin est tombé sous les 70 000 dollars tôt vendredi 13 novembre 2026, pour la première fois depuis le 19 août, en baisse d’environ 7,5 pour cent sur la journée, touchant 69 000 dollars alors que plus de 1,3 milliard de dollars de positions crypto à terme ont été liquidées en 24 heures, dont 677 millions pour Bitcoin seul (CoinGlass via CoinDesk, 13 nov. 2026 ; données de marché Finnhub, 13 nov. 2026). Ether est aussi tombé sous les 2 000 dollars."
         ]
       }
     },
