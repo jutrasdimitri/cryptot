@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -865,6 +865,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "mYPHd00blzo",
+      "type": "short",
+      "title": "Every Floor Broke at the Close: Fear Hits 13",
+      "date": "2026-11-14",
+      "duration": "0:58",
+      "durationISO": "PT58S",
+      "url": "https://youtube.com/shorts/mYPHd00blzo",
+      "thumbnail": "https://i.ytimg.com/vi/mYPHd00blzo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Closes of Nov 13 (CryptoT TA Nov 14, TradingView/Coinbase verified): ADA $0.16838 -3.34% close below Nov 10 low $0.17021, daily bullish cross dead; BTC $68,236.54 -4.39%; ETH $1,928.28 -4.42% close below Nov 10 low $2,003.24. Overnight fresh lows ADA $0.16189, BTC $66,369.12, ETH $1,875. Fear and Greed 13."
         ]
       }
     },
