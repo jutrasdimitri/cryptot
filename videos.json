@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "M6IcrYjyVlc",
+      "type": "longform",
+      "title": "Bitcoin's Second Leg Down: Extreme Fear at 13",
+      "date": "2026-11-14",
+      "duration": "10:12",
+      "durationISO": "PT10M12S",
+      "url": "https://www.youtube.com/watch?v=M6IcrYjyVlc",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/M6IcrYjyVlc",
+      "thumbnail": "https://i.ytimg.com/vi/M6IcrYjyVlc/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin broke below $66,000 and fell as low as $65,011 as the selloff deepened, and another $880.7 million of leveraged positions were liquidated. The Fear and Greed index sits at 13, extreme fear, after yesterday's closes confirmed the break on all five Power 5 coins at once. Tomorrow night's weekly close grades the whole week. The full day in plain language, plus every Power 5 level graded."
+        ],
+        "fr": [
+          "Bitcoin a casse sous 66 000 $ et est tombe jusqu'a 65 011 $ alors que la baisse s'approfondissait, et 880,7 millions $ de positions a levier de plus ont ete liquidees. L'indice Fear and Greed est a 13, peur extreme, apres que les clotures d'hier ont confirme la cassure sur les cinq Power 5 d'un coup. La cloture hebdomadaire de demain soir note toute la semaine. La journee complete en langage clair, plus chaque niveau des Power 5 note."
+        ]
+      }
+    },
+    {
       "id": "r5QQf6QOfKo",
       "type": "longform",
       "title": "Bitcoin Below $70K: $1.64B Wiped Out Overnight",
