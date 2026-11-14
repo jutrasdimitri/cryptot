@@ -55,6 +55,10 @@ src="https://www.facebook.com/tr?id=959540400562975&ev=PageView&noscript=1"
       <p class="links">
         <a href="/ada.html">ADA</a>·<a href="/eth.html">ETH</a>·<a href="/sol.html">SOL</a>·<a href="/xrp.html">XRP</a>·<a href="/btc.html">BTC</a>
       </p>
+      <p>🎄 Collection Noël // Christmas Collection :</p>
+      <p class="links">
+        <a href="/ada-noel.html">ADA</a>·<a href="/eth-noel.html">ETH</a>·<a href="/sol-noel.html">SOL</a>·<a href="/xrp-noel.html">XRP</a>·<a href="/btc-noel.html">BTC</a>
+      </p>
     </noscript>
   </div>
 
@@ -71,7 +75,19 @@ src="https://www.facebook.com/tr?id=959540400562975&ev=PageView&noscript=1"
         var diff = Math.round((today - anchor) / 86400000);
         var coin = ORDER[((diff % 5) + 5) % 5].toLowerCase();
         var lang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
-        var page = (lang.indexOf("fr") === 0 ? "fr-" : "") + coin + ".html";
+        var prefix = (lang.indexOf("fr") === 0 ? "fr-" : "");
+        // SEMAINE DE LANCEMENT NOËL (13 au 20 nov. 2026) : la collection Noël passe
+        // en tête — le lien en bio atterrit sur la page Noël du coin du jour (qui
+        // contient la même info + le produit brodé). UTM instagram pour séparer le
+        // trafic humain du trafic robot. Après le 20 nov., retour automatique à la
+        // page info du coin du jour.
+        var launchStart = new Date(2026, 10, 13);
+        var launchEnd = new Date(2026, 10, 20);
+        if (today >= launchStart && today <= launchEnd) {
+          window.location.replace("/" + prefix + coin + "-noel.html?utm_source=instagram&utm_medium=bio&utm_campaign=noel-2026");
+          return;
+        }
+        var page = prefix + coin + ".html";
         window.location.replace("/" + page);
       } catch (e) {
         document.getElementById("msg").textContent = "Choisis ton coin ci-dessous. // Pick your coin below.";
