@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "hSR7-WGImQo",
+      "type": "longform",
+      "title": "Bitcoin Hit $61,946: Tonight's Weekly Close Decides",
+      "date": "2026-11-15",
+      "duration": "9:32",
+      "durationISO": "PT9M32S",
+      "url": "https://www.youtube.com/watch?v=hSR7-WGImQo",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hSR7-WGImQo",
+      "thumbnail": "https://i.ytimg.com/vi/hSR7-WGImQo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin fell to $61,946 on Coinbase overnight - its lowest price since July 13 - as about $1.96 billion of leveraged positions were liquidated and Fear and Greed fell to 10. Saturday's closes were capitulation (Cardano -12.25%, Ether -8.29%, Bitcoin -6.03%); Sunday bounced, but tonight's weekly close grades the week on the same five lines and decides Bitcoin's 200-week average. The full day in plain language, plus every Power 5 level graded."
+        ],
+        "fr": [
+          "Bitcoin est tombe a 61 946 $ sur Coinbase pendant la nuit - son plus bas depuis le 13 juillet - alors qu'environ 1,96 milliard $ de positions a levier etaient liquidees et que le Fear and Greed tombait a 10. Les clotures de samedi etaient de la capitulation (Cardano -12,25 %, Ether -8,29 %, Bitcoin -6,03 %); dimanche a rebondi, mais la cloture hebdomadaire de ce soir note la semaine sur les memes cinq lignes et decide de la moyenne 200 semaines de Bitcoin. La journee complete en langage clair, plus chaque niveau des Power 5 note."
+        ]
+      }
+    },
+    {
       "id": "M6IcrYjyVlc",
       "type": "longform",
       "title": "Bitcoin's Second Leg Down: Extreme Fear at 13",
