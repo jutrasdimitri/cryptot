@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "tYT1fgm8M1o",
+      "type": "longform",
+      "title": "Power 5 Weekly TA: Divergences After a Red Week",
+      "date": "2026-11-16",
+      "duration": "9:06",
+      "durationISO": "PT9M6S",
+      "url": "https://www.youtube.com/watch?v=tYT1fgm8M1o",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/tYT1fgm8M1o",
+      "thumbnail": "https://i.ytimg.com/vi/tYT1fgm8M1o/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The Monday Power 5 weekly TA edition: the week closed deep red on all five (Cardano -11.30%, Bitcoin -12.63%, Ether -13.68%), with Bitcoin printing a sixth straight red week below its 200-week average - but Sunday's closes were hammers, and all three majors flashed their first bullish daily divergence of the slide. Every level revisited, every coin read, both scenarios for the week, in plain language."
+        ],
+        "fr": [
+          "L'edition TA hebdomadaire du lundi des Power 5 : la semaine a clos tres rouge sur les cinq (Cardano -11,30 %, Bitcoin -12,63 %, Ether -13,68 %), Bitcoin signant une sixieme semaine rouge de suite sous sa moyenne 200 semaines - mais les clotures de dimanche etaient des marteaux, et les trois majeurs ont montre leur premiere divergence haussiere daily de la glissade. Chaque niveau revisite, chaque coin lu, les deux scenarios de la semaine, en langage clair."
+        ]
+      }
+    },
+    {
       "id": "hSR7-WGImQo",
       "type": "longform",
       "title": "Bitcoin Hit $61,946: Tonight's Weekly Close Decides",
