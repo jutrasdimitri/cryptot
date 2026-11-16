@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -903,6 +903,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "zigGY1IdjYo",
+      "type": "short",
+      "title": "First Daily Divergence: Are Sellers Finally Tiring?",
+      "date": "2026-11-16",
+      "duration": "0:51",
+      "durationISO": "PT51S",
+      "url": "https://youtube.com/shorts/zigGY1IdjYo",
+      "thumbnail": "https://i.ytimg.com/vi/zigGY1IdjYo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Closes of Nov 15 verified (CryptoT TA Nov 16, TradingView/Coinbase): ADA $0.15533 +5.12%, BTC $65,315.35 +1.87%, ETH $1,834.54 +3.74%, hammer closes after overnight lows; first daily bullish divergences on all three; weekly closes deep red; Fear and Greed 10."
         ]
       }
     },
