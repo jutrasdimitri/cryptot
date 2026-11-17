@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "5JbYHalELPY",
+      "type": "longform",
+      "title": "Bitcoin Stuck Below $65K: Higher Lows Tested, Nvidia Tonight",
+      "date": "2026-11-17",
+      "duration": "8:24",
+      "durationISO": "PT8M24S",
+      "url": "https://www.youtube.com/watch?v=5JbYHalELPY",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/5JbYHalELPY",
+      "thumbnail": "https://i.ytimg.com/vi/5JbYHalELPY/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin stalls below $65,000, still under its 200-week average near $68,000, with Nvidia reporting after the close and Wintermute warning of pressure into the $50,000s. Yesterday's higher lows were wicked through in price at Cardano, Bitcoin and Ether, while Solana and XRP held theirs - tonight's closes grade the test. Plus: the bitcoin ETF outflow streak just ended (+$7.9M, IBIT +$76.5M), and the Cardano Foundation asks the treasury for about 25 million ADA. Plain language, levels first."
+        ],
+        "fr": [
+          "Bitcoin bloque sous 65 000 $, toujours sous sa moyenne 200 semaines pres de 68 000 $, avec Nvidia qui rapporte apres la cloture et Wintermute qui avertit d'une pression vers les 50 000 $. Les creux plus hauts d'hier ont ete traverses en meche chez Cardano, Bitcoin et Ether, tandis que Solana et XRP ont tenu les leurs - les clotures de ce soir jugent le test. En plus : la serie de sorties des ETF bitcoin vient de se terminer (+7,9 M$, IBIT +76,5 M$), et la Fondation Cardano demande environ 25 millions d'ADA au tresor. En langage clair, les niveaux d'abord."
+        ]
+      }
+    },
+    {
       "id": "tYT1fgm8M1o",
       "type": "longform",
       "title": "Power 5 Weekly TA: Divergences After a Red Week",
