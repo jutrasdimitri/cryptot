@@ -926,6 +926,24 @@
       }
     },
     {
+      "id": "c4nrZ3r_770",
+      "type": "short",
+      "title": "BREAKING: Malware Swapped Wallet Addresses on 178 Sites",
+      "date": "2026-11-16",
+      "duration": "0:41",
+      "durationISO": "PT41S",
+      "url": "https://youtube.com/shorts/c4nrZ3r_770",
+      "thumbnail": "https://i.ytimg.com/vi/c4nrZ3r_770/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "On November 16, 2026, malicious JavaScript was served to visitors of 178 organisations through the Optimizely Web platform, including Zoom, the BBC, CNN, Salesforce, GitLab, HSBC, Equifax and Ledger (Report URI, Nov 16, 2026; TokenPost, Nov 16, 2026). The malware swapped cryptocurrency wallet addresses for the attacker's, skimmed payment cards, stole cookies and screenshots, and delivered iOS exploit kits; crypto was already stolen in verified transactions (about $7,040 received as of 19:25 UTC). Most of the malicious code has now been removed (only 1 of 188 infected snippets remained at 21:52 UTC)."
+        ],
+        "fr": [
+          "Le 16 novembre 2026, un JavaScript malveillant a été servi aux visiteurs de 178 organisations via la plateforme Optimizely Web, dont Zoom, la BBC, CNN, Salesforce, GitLab, HSBC, Equifax et Ledger (Report URI, 16 nov. 2026 ; TokenPost, 16 nov. 2026). Le maliciel remplaçait les adresses de portefeuilles crypto par celles de l'attaquant, dérobait les données de cartes de paiement, volait cookies et captures d'écran et livrait des kits d'exploitation iOS ; de la crypto a déjà été volée dans des transactions vérifiées (environ 7 040 $ reçus à 19 h 25 UTC). La majeure partie du code malveillant a maintenant été retirée (plus que 1 extrait infecté sur 188 à 21 h 52 UTC)."
+        ]
+      }
+    },
+    {
       "id": "R9WqDAI7l-o",
       "type": "short",
       "title": "What Is a Hammer Candle? A Wick That Fought Back",
