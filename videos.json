@@ -3,6 +3,25 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "uKsyAPBT70E",
+      "type": "longform",
+      "title": "Bitcoin Dips to $62K as Fed Minutes Land: Nvidia Beat Ignored",
+      "date": "2026-11-18",
+      "duration": "9:23",
+      "durationISO": "PT9M23S",
+      "url": "https://www.youtube.com/watch?v=uKsyAPBT70E",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/uKsyAPBT70E",
+      "thumbnail": "https://i.ytimg.com/vi/uKsyAPBT70E/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The October FOMC minutes, published at 2:00 PM, describe a divided Fed leaning toward another hike (10-2 hold in October, two dissenters for a hike; Waller floated +50bp on Dec 9; December hike odds at 96%). Nvidia beat by about $6.7B (revenue $115.8B vs ~$109B expected, Q4 guidance $130B) and crypto did not move. Bitcoin ETF outflows resumed on Tuesday (-$239.9M, IBIT -$209.5M) and Ether outflows too (-$29.1M): Monday was a pause, not a turn. Plus derivatives (liquidations $377.4M, puts leading) and the daily Power 5 TA block. Plain language, levels first."
+        ],
+        "fr": [
+          "Les minutes du FOMC d'octobre, publiees a 14 h 00, decrivent une Fed divisee qui penche vers une autre hausse (maintien 10-2 en octobre, deux dissidentes pour une hausse; Waller evoque +50 pb le 9 dec.; probabilite de hausse en decembre a 96 %). Nvidia a battu les attentes d'environ 6,7 G$ (revenus 115,8 G$ contre ~109 G$ attendus, guidance T4 de 130 G$) sans faire bouger la crypto. Les sorties des ETF bitcoin ont repris mardi (-239,9 M$, IBIT -209,5 M$) et celles d'Ether aussi (-29,1 M$) : lundi etait une pause, pas un retour. En plus : les derives (liquidations 377,4 M$, puts en tete) et le bloc TA Power 5 du jour. En langage clair, les niveaux d'abord."
+        ]
+      }
+    },
+    {
       "id": "5JbYHalELPY",
       "type": "longform",
       "title": "Bitcoin Stuck Below $65K: Higher Lows Tested, Nvidia Tonight",
