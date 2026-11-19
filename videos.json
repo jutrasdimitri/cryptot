@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -960,6 +960,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "A3C0aA1VG8A",
+      "type": "short",
+      "title": "Price Fell, Momentum Didn't: Crosses Survived a Red Day",
+      "date": "2026-11-19",
+      "duration": "0:57",
+      "durationISO": "PT57S",
+      "url": "https://youtube.com/shorts/A3C0aA1VG8A",
+      "thumbnail": "https://i.ytimg.com/vi/A3C0aA1VG8A/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Closes of Nov 18 verified (CryptoT TA Nov 19, TradingView/Coinbase): ADA $0.15131 -2.51%, BTC $62,981.71 -2.92%, ETH $1,774.64 -2.64%; monthly floors held; all three bullish daily WaveTrend crosses survived; daily divergence gone; Fear and Greed 10."
         ]
       }
     },
