@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -985,6 +985,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "8WKS-fJj2tY",
+      "type": "short",
+      "title": "Bitcoin Broke Its Floor, Cardano Held: A Split Close",
+      "date": "2026-11-20",
+      "duration": "0:59",
+      "durationISO": "PT59S",
+      "url": "https://youtube.com/shorts/8WKS-fJj2tY",
+      "thumbnail": "https://i.ytimg.com/vi/8WKS-fJj2tY/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Closes of Nov 19 verified (CryptoT TA Nov 20, TradingView/Coinbase): ADA $0.15175 +0.32% only green close, BTC $61,913.23 -1.70% closed below monthly floor $61,946.17, ETH $1,755.38 -1.09%; daily WT crosses survived; Fear and Greed 12."
         ]
       }
     },
