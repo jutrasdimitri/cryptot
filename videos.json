@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "OVdO5l3rbHg",
+      "type": "longform",
+      "title": "Bitcoin Breaks Below $62K as ETFs Lose $306M",
+      "date": "2026-11-19",
+      "duration": "10:21",
+      "durationISO": "PT10M21S",
+      "url": "https://www.youtube.com/watch?v=OVdO5l3rbHg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/OVdO5l3rbHg",
+      "thumbnail": "https://i.ytimg.com/vi/OVdO5l3rbHg/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin broke below $62,000 late in the day — low $61,428, through the November 15 floor at $61,946 in price — before climbing back to fight around it; tonight's close is the verdict",
+          "Wednesday's final ETF print: -$306.5M with not one bitcoin fund buying; ether ETFs -$39.8M",
+          "Anthropic's record IPO started trading today — did it drain crypto, or is the Fed still the story?",
+          "Power 5 levels and the three surviving bullish daily WaveTrend crosses — ADA, ETH, SOL, XRP, BTC — graded by tonight's closes"
+        ],
+        "fr": [
+          "Bitcoin a cassé sous 62 000 $ en fin de journée — bas de 61 428 $, à travers le plancher du 15 novembre à 61 946 $ en prix — avant de remonter se battre autour; la clôture de ce soir est le verdict",
+          "Le chiffre final des ETF de mercredi : −306,5 M$ sans un seul fonds acheteur; ETF ether −39,8 M$",
+          "L'IPO record d'Anthropic a commencé à se négocier aujourd'hui — a-t-elle drainé la crypto, ou la Fed reste-t-elle l'histoire?",
+          "Les niveaux Power 5 et les trois croisements haussiers quotidiens WaveTrend survivants — ADA, ETH, SOL, XRP, BTC — jugés par les clôtures de ce soir"
+        ]
+      }
+    },
+    {
       "id": "uKsyAPBT70E",
       "type": "longform",
       "title": "Bitcoin Dips to $62K as Fed Minutes Land: Nvidia Beat Ignored",
