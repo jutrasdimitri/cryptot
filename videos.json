@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "Buuv57xqtcE",
+      "type": "longform",
+      "title": "Bitcoin Below $59K: Cardano Tests Its Last Line",
+      "date": "2026-11-20",
+      "duration": "9:54",
+      "durationISO": "PT9M54S",
+      "url": "https://www.youtube.com/watch?v=Buuv57xqtcE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Buuv57xqtcE",
+      "thumbnail": "https://i.ytimg.com/vi/Buuv57xqtcE/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin fell below $59,000 — low $57,911, within about $200 of its summer low — as about $1.5 billion of leveraged bets were wiped out",
+          "Cardano wicked just under its $0.139 double-bottom base and came back above it — only a daily close below $0.139 breaks the thesis",
+          "Thursday's final ETF print: -$582.3M, with BlackRock's IBIT posting its biggest one-day outflow since launch; ether ETFs -$131.2M",
+          "Anthropic fell 14% on its second day of trading, and the Power 5 levels — ADA, ETH, SOL, XRP, BTC — get graded by tonight's closes and the weekend"
+        ],
+        "fr": [
+          "Bitcoin est passé sous 59 000 $ — bas de 57 911 $, à environ 200 $ de son creux d'été — pendant qu'environ 1,5 G$ de positions à effet de levier étaient liquidées",
+          "Cardano a méché juste sous la base de son double creux à 0,139 $ avant de revenir au-dessus — seule une clôture quotidienne sous 0,139 $ brise la thèse",
+          "Le chiffre final des ETF de jeudi : -582,3 M$, avec la plus grosse sortie en un jour d'IBIT depuis son lancement; ETF ether -131,2 M$",
+          "Anthropic a chuté de 14 % à son deuxième jour de bourse, et les niveaux Power 5 — ADA, ETH, SOL, XRP, BTC — sont jugés par les clôtures de ce soir et la fin de semaine"
+        ]
+      }
+    },
+    {
       "id": "OVdO5l3rbHg",
       "type": "longform",
       "title": "Bitcoin Breaks Below $62K as ETFs Lose $306M",
