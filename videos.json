@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -1010,6 +1010,24 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "ODFcc1PKyec",
+      "type": "short",
+      "title": "BREAKING: Bitcoin Below $56K — $2.4B Liquidated",
+      "date": "2026-11-21",
+      "duration": "0:42",
+      "durationISO": "PT42S",
+      "url": "https://youtube.com/shorts/ODFcc1PKyec",
+      "thumbnail": "https://i.ytimg.com/vi/ODFcc1PKyec/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Breaking Nov 21, 2026: BTC below $56K, -8.5%, lowest since Sept 2024 ($55,830 at 11:13 p.m. ET Nov 20), through the July 1 low; ADA at about 13.6 cents, under its 13.9-cent macro low (wick, not a close); ETH about -9.7%, $2.4B liquidated in 24h."
+        ],
+        "fr": [
+          "Breaking 21 nov. 2026 : BTC sous 56 000 $, -8,5 %, plus bas depuis sept. 2024 (55 830 $ a 23 h 13 HE le 20 nov.), a travers le creux du 1er juillet; ADA a environ 13,6 cents, sous son creux macro de 13,9 cents (meche, pas une cloture); ETH environ -9,7 %, 2,4 G$ liquides en 24 h."
         ]
       }
     },
