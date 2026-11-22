@@ -3,6 +3,56 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "Wgt0oBgcNbw",
+      "type": "longform",
+      "title": "Sunday's Weekly Close: Ether Retakes $1,709 in Price",
+      "date": "2026-11-22",
+      "duration": "8:38",
+      "durationISO": "PT8M38S",
+      "url": "https://www.youtube.com/watch?v=Wgt0oBgcNbw",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Wgt0oBgcNbw",
+      "thumbnail": "https://i.ytimg.com/vi/Wgt0oBgcNbw/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Ether retook $1,709.48 in price today after closing Nov 21 at $1,682.30, up 3.89% - still below that floor on the close, so tonight's weekly close decides whether the repair counts",
+          "Cardano closed Nov 21 at $0.14416, up 0.92% - above $0.139, so its double-bottom test PASSED on the close",
+          "Bitcoin closed Nov 21 just above $60,000 at $60,086, up 2.16%, after wicking to $55,106 - tonight grades a seventh straight red week, with spot bitcoin ETF outflows of about $1.24B on the week",
+          "Daily bullish divergences printed on Cardano, Bitcoin and Ether at once, Fear and Greed sits at 11 (extreme fear), and the week ahead brings the US reopen Monday, PCE on Nov 25 and Thanksgiving"
+        ],
+        "fr": [
+          "Ether a repris 1 709,48 $ en prix aujourd'hui après une clôture du 21 nov. à 1 682,30 $, +3,89 % - encore sous ce plancher en clôture, donc la clôture hebdo de ce soir décide si la réparation compte",
+          "Cardano a clôturé le 21 nov. à 0,14416 $, +0,92 % - au-dessus de 0,139 $, donc son test de double creux est PASSÉ en clôture",
+          "Bitcoin a clôturé le 21 nov. juste au-dessus de 60 000 $ à 60 086 $, +2,16 %, après une mèche à 55 106 $ - ce soir juge une septième semaine rouge de suite, avec des sorties d'ETF bitcoin spot d'environ 1,24 G$ sur la semaine",
+          "Des divergences daily haussières se sont gravées chez Cardano, Bitcoin et Ether en même temps, le Fear and Greed est à 11 (peur extrême), et la semaine à venir amène la réouverture US lundi, le PCE le 25 nov. et Thanksgiving"
+        ]
+      }
+    },
+    {
+      "id": "joZWFuuvsq0",
+      "type": "longform",
+      "title": "Bitcoin Bounces 9% Off $55K: Sunday's Close Decides",
+      "date": "2026-11-21",
+      "duration": "9:27",
+      "durationISO": "PT9M27S",
+      "url": "https://www.youtube.com/watch?v=joZWFuuvsq0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/joZWFuuvsq0",
+      "thumbnail": "https://i.ytimg.com/vi/joZWFuuvsq0/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Bitcoin bounced about 9% off $55,130 - its lowest since September 2024 - back above $60,000 while crypto traded alone on Saturday",
+          "Cardano wicked below its $0.139 double-bottom base to $0.13319 and came back above it in price - only a daily close below $0.139 breaks the thesis",
+          "Extreme capitulation: $1.8B liquidated in 24 hours and $11.3B in realized losses over 7 days, with spot bitcoin ETFs at about -$1.1B on the week",
+          "Fear and Greed at 12 (extreme fear), and tonight's closes plus Sunday's weekly close grade the Power 5 levels - ADA, ETH, SOL, XRP, BTC"
+        ],
+        "fr": [
+          "Bitcoin a rebondi d'environ 9 % depuis 55 130 $ - son plus bas depuis septembre 2024 - de retour au-dessus de 60 000 $ pendant que la crypto tradait seule samedi",
+          "Cardano a méché sous la base de son double creux à 0,139 $ jusqu'à 0,13319 $ avant de revenir au-dessus en prix - seule une clôture quotidienne sous 0,139 $ brise la thèse",
+          "Capitulation extrême : 1,8 G$ liquidés en 24 heures et 11,3 G$ de pertes réalisées sur 7 jours, avec les ETF bitcoin spot à environ -1,1 G$ sur la semaine",
+          "Fear and Greed à 12 (peur extrême), et les clôtures de ce soir plus la clôture hebdo de dimanche jugent les niveaux Power 5 - ADA, ETH, SOL, XRP, BTC"
+        ]
+      }
+    },
+    {
       "id": "Buuv57xqtcE",
       "type": "longform",
       "title": "Bitcoin Below $59K: Cardano Tests Its Last Line",
