@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -1010,6 +1010,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "c7qX4a1SG2Q",
+      "type": "short",
+      "title": "Cardano Passed Its Test: Tonight's Weekly Close Decides",
+      "date": "2026-11-22",
+      "duration": "0:51",
+      "durationISO": "PT51S",
+      "url": "https://youtube.com/shorts/c7qX4a1SG2Q",
+      "thumbnail": "https://i.ytimg.com/vi/c7qX4a1SG2Q/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Closes of Nov 21 verified (CryptoT TA Nov 22, TradingView/Coinbase): ADA $0.14416 +0.92% - $0.139 test passed in the close; BTC $60,086 +2.16%; ETH $1,682.30 +3.89%; daily bullish divergences on all three; tonight: the weekly close; Fear and Greed 11."
         ]
       }
     },
