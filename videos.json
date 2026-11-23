@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "Phy_MPatM9o",
+      "type": "longform",
+      "title": "Power 5 Weekly TA: Nvidia Spike, Then the Retest",
+      "date": "2026-11-23",
+      "duration": "10:27",
+      "durationISO": "PT10M27S",
+      "url": "https://www.youtube.com/watch?v=Phy_MPatM9o",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Phy_MPatM9o",
+      "thumbnail": "https://i.ytimg.com/vi/Phy_MPatM9o/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Weekly closes of Nov 22 held everywhere: Cardano $0.14458 above $0.139, Bitcoin $61,163 above $60,000, Ether $1,721.29 repairing its $1,709.48 floor in the daily and weekly close",
+          "Nvidia brought back Jensen Huang Monday morning: NVDA about +31% premarket, Bitcoin spiked to $64,520.30 and Solana jumped 8% - then the spike faded into a retest, with Bitcoin back near $61,327 under the $61,946 ceiling by the afternoon",
+          "Full Power 5 TA grading, level by level: ADA, ETH, SOL, XRP and BTC - Ether's $1,709 retest, Solana's approach to $81.34 and XRP's approach to $1.03",
+          "Fear and Greed at 11 (extreme fear); the week ahead brings PCE on Nov 25, Thanksgiving (US markets closed Nov 26, early close Nov 27) and the monthly close on Nov 30"
+        ],
+        "fr": [
+          "Les clôtures hebdo du 22 nov. ont tenu partout : Cardano 0,14458 $ au-dessus de 0,139 $, Bitcoin 61 163 $ au-dessus de 60 000 $, Ether 1 721,29 $ réparant son plancher de 1 709,48 $ en clôture daily et hebdo",
+          "Nvidia a réintégré Jensen Huang lundi matin : NVDA environ +31 % pré-marché, Bitcoin a piqué à 64 520,30 $ et Solana a bondi de 8 % - puis le pic s'est replié en retest, Bitcoin de retour près de 61 327 $ sous le plafond de 61 946 $ en après-midi",
+          "TA Power 5 complet, niveau par niveau : ADA, ETH, SOL, XRP et BTC - le retest des 1 709 $ d'Ether, l'approche des 81,34 $ de Solana et des 1,03 $ de XRP",
+          "Fear and Greed à 11 (peur extrême); la semaine à venir amène le PCE le 25 nov., Thanksgiving (marchés US fermés le 26 nov., clôture hâtive le 27) et la clôture mensuelle le 30 nov."
+        ]
+      }
+    },
+    {
       "id": "Wgt0oBgcNbw",
       "type": "longform",
       "title": "Sunday's Weekly Close: Ether Retakes $1,709 in Price",
