@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -1060,6 +1060,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "OaMaceBGPys",
+      "type": "short",
+      "title": "Weekly Close Held: Ether Repaired $1,709, Bitcoin $60K",
+      "date": "2026-11-23",
+      "duration": "0:48",
+      "durationISO": "PT48S",
+      "url": "https://youtube.com/shorts/OaMaceBGPys",
+      "thumbnail": "https://i.ytimg.com/vi/OaMaceBGPys/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Weekly closes of Nov 22 verified (CryptoT TA Nov 23, TradingView/Coinbase): ADA $0.14458 +0.29% - weekly close above $0.139; BTC $61,163.01 +1.79%; ETH $1,721.29 +2.32% - $1,709.48 floor repaired in daily and weekly close; US markets reopen today; Fear and Greed 11."
         ]
       }
     },
