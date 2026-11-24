@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "Bdm5WfRhk8w",
+      "type": "longform",
+      "title": "DOJ Moves on $1.1B: Bitcoin Loses $60K in Price",
+      "date": "2026-11-24",
+      "duration": "10:42",
+      "durationISO": "PT10M42S",
+      "url": "https://www.youtube.com/watch?v=Bdm5WfRhk8w",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/Bdm5WfRhk8w",
+      "thumbnail": "https://i.ytimg.com/vi/Bdm5WfRhk8w/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "The Justice Department filed Monday for civil forfeiture of more than $1.1 billion in USDC frozen by Circle after the October 29 Binance hack (36 addresses, 18 blockchains, North Korean TraderTraitor/Lazarus actors) - the legal step that turns a freeze into ownership, with Circle set to mint replacement Substitute USDC on a court order",
+          "More than $2.9 billion of the roughly $6.3 billion stolen has been frozen, seized or returned so far; about $2.35 billion still sits in hacker-linked wallets (Elliptic); Binance already reimbursed users",
+          "Bitcoin slipped below $60,000 in price today (low $59,189.67) after yesterday's $64,534 spike was rejected in the wick; full Power 5 TA grading of the Nov 23 closes, level by level: ADA, ETH, SOL, XRP, BTC",
+          "Fear and Greed at 11 (extreme fear); tomorrow's PCE report (Nov 25, 8:30 a.m. EST) is the week's verdict, ahead of the Dec 8-9 FOMC and the Nov 30 monthly close"
+        ],
+        "fr": [
+          "Le département de la Justice a déposé lundi une demande de confiscation civile de plus de 1,1 milliard $ en USDC gelés par Circle après le hack Binance du 29 oct. (36 adresses, 18 blockchains, acteurs nord-coréens TraderTraitor/Lazarus) - l'étape légale qui transforme un gel en propriété, Circle devant émettre des USDC de remplacement sur ordre du tribunal",
+          "Plus de 2,9 milliards $ sur environ 6,3 milliards $ volés ont été gelés, saisis ou retournés jusqu'ici; environ 2,35 milliards $ restent dans des portefeuilles liés aux pirates (Elliptic); Binance a déjà remboursé les utilisateurs",
+          "Bitcoin est passé sous 60 000 $ en prix aujourd'hui (creux 59 189,67 $) après le rejet en mèche du pic d'hier à 64 534 $; TA Power 5 complet des clôtures du 23 nov., niveau par niveau : ADA, ETH, SOL, XRP, BTC",
+          "Fear and Greed à 11 (peur extrême); le rapport PCE de demain (25 nov., 8 h 30 EST) est le verdict de la semaine, avant le FOMC des 8-9 déc. et la clôture mensuelle du 30 nov."
+        ]
+      }
+    },
+    {
       "id": "Phy_MPatM9o",
       "type": "longform",
       "title": "Power 5 Weekly TA: Nvidia Spike, Then the Retest",
