@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -1085,6 +1085,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "K787Ids2Jos",
+      "type": "short",
+      "title": "Bitcoin Hit $64.5K, Then Closed Flat: Wick Rejected",
+      "date": "2026-11-24",
+      "duration": "0:58",
+      "durationISO": "PT58S",
+      "url": "https://youtube.com/shorts/K787Ids2Jos",
+      "thumbnail": "https://i.ytimg.com/vi/K787Ids2Jos/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Daily closes of Nov 23 verified (CryptoT TA Nov 24, TradingView/Coinbase): BTC high $64,533.96, close $61,189.97 +0.04% - spike rejected in the wick; ETH close $1,708.50 -0.74% - a hair below the repaired $1,709.48 floor; ADA close $0.14846 +2.68% - kept its gain; WT 4H flipped bearish on all three; Fear and Greed 11."
         ]
       }
     },
