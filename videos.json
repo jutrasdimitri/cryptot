@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -1110,6 +1110,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "guNQMtSGiVg",
+      "type": "short",
+      "title": "Bitcoin Closed Below $60K: PCE Lands at 8:30",
+      "date": "2026-11-25",
+      "duration": "0:52",
+      "durationISO": "PT52S",
+      "url": "https://youtube.com/shorts/guNQMtSGiVg",
+      "thumbnail": "https://i.ytimg.com/vi/guNQMtSGiVg/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Daily closes of Nov 24 verified (CryptoT TA Nov 25, TradingView/Coinbase): BTC close $59,740.87 -2.37% - first close below $60,000; ETH close $1,677.59 -1.81% - below the repaired $1,709.48 floor; ADA close $0.14437 -2.75% - still above $0.14245 and $0.139; PCE due Nov 25 8:30 AM ET; Fear and Greed 13."
         ]
       }
     },
