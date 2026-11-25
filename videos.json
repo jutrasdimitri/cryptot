@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "-t3RyXxvPBU",
+      "type": "longform",
+      "title": "Hot PCE at 3.3%: Bitcoin Dived to $57,300",
+      "date": "2026-11-25",
+      "duration": "8:53",
+      "durationISO": "PT8M53S",
+      "url": "https://www.youtube.com/watch?v=-t3RyXxvPBU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/-t3RyXxvPBU",
+      "thumbnail": "https://i.ytimg.com/vi/-t3RyXxvPBU/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "October PCE landed hot: headline inflation 3.8% over the year and core PCE at 3.3% year over year - the highest core reading since November 2023, above the 3.2% expected - while third-quarter GDP was revised up to 4.3%",
+          "Bitcoin dived to $57,300.38 intraday and Cardano wicked to $0.1356 below its 13.9-cent base; Ether's low was $1,608.86, Solana's $65.84 and XRP's $0.8889 - every pierce happened in price only, none at a close",
+          "By the afternoon most of the dive had been bought back: Bitcoin near $59,700 (rechecked at $60,090 at 3:56 p.m. EST), Cardano near $0.1444, Ether near $1,680, Solana near $69.82 and XRP near $0.9291",
+          "Full Power 5 TA revisiting the Nov 24 levels, coin by coin - ADA, ETH, SOL, XRP, BTC - with Fear and Greed at 13 (extreme fear); tonight's closes grade every floor tested today"
+        ],
+        "fr": [
+          "Le PCE d'octobre est sorti chaud : inflation totale de 3,8 % sur un an et core PCE a 3,3 % sur un an - le core le plus eleve depuis novembre 2023, au-dessus des 3,2 % attendus - pendant que le PIB du T3 etait revise a la hausse a 4,3 %",
+          "Bitcoin a plonge a 57 300,38 $ en intrajournalier et Cardano a meche a 0,1356 $ sous sa base de 13,9 cents; creux d'Ether a 1 608,86 $, de Solana a 65,84 $ et de XRP a 0,8889 $ - toutes les percees en prix seulement, aucune en cloture",
+          "En apres-midi, la majeure partie de la plongee avait ete rachetee : Bitcoin pres de 59 700 $ (reverifie a 60 090 $ a 15 h 56 EST), Cardano pres de 0,1444 $, Ether pres de 1 680 $, Solana pres de 69,82 $ et XRP pres de 0,9291 $",
+          "TA Power 5 complet en revisite des niveaux du 24 nov., coin par coin - ADA, ETH, SOL, XRP, BTC - avec Fear and Greed a 13 (peur extreme); les clotures de ce soir notent chaque plancher teste aujourd'hui"
+        ]
+      }
+    },
+    {
       "id": "Bdm5WfRhk8w",
       "type": "longform",
       "title": "DOJ Moves on $1.1B: Bitcoin Loses $60K in Price",
