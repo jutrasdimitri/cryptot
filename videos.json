@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -1135,6 +1135,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "qPW513QLVGs",
+      "type": "short",
+      "title": "Bitcoin Back Above $60K: $143M in Shorts Burned",
+      "date": "2026-11-26",
+      "duration": "0:56",
+      "durationISO": "PT56S",
+      "url": "https://youtube.com/shorts/qPW513QLVGs",
+      "thumbnail": "https://i.ytimg.com/vi/qPW513QLVGs/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Daily closes of Nov 25 verified (CryptoT TA Nov 26, TradingView/Coinbase): BTC close $60,383.51 +1.08% - back above $60,000 after a $57,208.75 low; ETH close $1,690.38 +0.76%; ADA close $0.14563 +0.87% - dip below $0.139 bought back; about $143M in BTC short liquidations; US markets closed Nov 26 for Thanksgiving; Fear and Greed 11."
         ]
       }
     },
