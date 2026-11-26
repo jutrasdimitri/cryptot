@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "7N2t1GpMEjo",
+      "type": "longform",
+      "title": "Cardano Jumps 7.8%: A Green Day, A Scared Crowd",
+      "date": "2026-11-26",
+      "duration": "9:26",
+      "durationISO": "PT9M26S",
+      "url": "https://www.youtube.com/watch?v=7N2t1GpMEjo",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/7N2t1GpMEjo",
+      "thumbnail": "https://i.ytimg.com/vi/7N2t1GpMEjo/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Cardano jumped 7.8% to about $0.1505 and led the Power 5 bounce, powered by roughly $143 million in liquidated Bitcoin shorts, while the Fear and Greed index sat at 11 (extreme fear) and U.S. markets stayed closed for Thanksgiving",
+          "Bitcoin reclosed above $60,000 on November 25 at $60,383.51 (+1.08%, low $57,208.75) - the break below lasted one day - and held near $60,800 today",
+          "Ether knocked on its $1,709.48 repair door in price only (high $1,728.32); Solana traded near $71.35 and XRP near $0.9537, with about $6.9 billion in Bitcoin options expiring Friday",
+          "Full Power 5 TA revisiting the November 25 levels coin by coin - ADA, ETH, SOL, XRP, BTC; tonight's closes grade whether this bounce is a recovery starting or just fuel burning off"
+        ],
+        "fr": [
+          "Cardano a bondi de 7,8 % a environ 0,1505 $ et mene le rebond du Power 5, alimente par environ 143 millions $ de shorts Bitcoin liquides, pendant que le Fear and Greed restait a 11 (peur extreme) et que les marches americains etaient fermes pour Thanksgiving",
+          "Bitcoin a recloture au-dessus de 60 000 $ le 25 novembre a 60 383,51 $ (+1,08 %, creux 57 208,75 $) - la cassure n'a dure qu'un jour - et tenait pres de 60 800 $ aujourd'hui",
+          "Ether a cogne a sa porte de reparation de 1 709,48 $ en prix seulement (haut 1 728,32 $); Solana pres de 71,35 $ et XRP pres de 0,9537 $, avec environ 6,9 milliards $ d'options Bitcoin qui expirent vendredi",
+          "TA Power 5 complet en revisite des niveaux du 25 novembre, coin par coin - ADA, ETH, SOL, XRP, BTC; les clotures de ce soir notent si ce rebond est un debut de reprise ou juste du carburant qui brule"
+        ]
+      }
+    },
+    {
       "id": "-t3RyXxvPBU",
       "type": "longform",
       "title": "Hot PCE at 3.3%: Bitcoin Dived to $57,300",
