@@ -3,6 +3,31 @@
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
+      "id": "CYNnGyycHvA",
+      "type": "longform",
+      "title": "Options Expired, No Pin: Bitcoin Slips Below $60K",
+      "date": "2026-11-27",
+      "duration": "11:03",
+      "durationISO": "PT11M3S",
+      "url": "https://www.youtube.com/watch?v=CYNnGyycHvA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/CYNnGyycHvA",
+      "thumbnail": "https://i.ytimg.com/vi/CYNnGyycHvA/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "About $6.8 billion in Bitcoin options expired on Deribit with max pain near $70,000 and the price was never pinned there, settling near $61,600 instead",
+          "Bitcoin held above $60,000 at recording time and Ether knocked on its $1,709.48 repair line in price for a third straight day (high $1,753.10), with Fear and Greed at 12",
+          "Afternoon update appended at 4 p.m. Eastern: Bitcoin slipped below $60,000 intraday near $59,800 (low near $58,800) and Ether pulled back near $1,667 - tonight's closes are the judges",
+          "Full Power 5 TA revisiting the November 26 levels coin by coin - ADA, ETH, SOL, XRP, BTC; promo day 16 with the Power 5 guide segment included"
+        ],
+        "fr": [
+          "Environ 6,8 G$ d options Bitcoin ont expire sur Deribit avec un max pain pres de 70 000 $ et le prix ne s y est jamais ancre, reglement pres de 61 600 $",
+          "Bitcoin tenait au-dessus de 60 000 $ a l enregistrement et Ether a cogne a sa ligne de reparation de 1 709,48 $ en prix pour un 3e jour (haut 1 753,10 $), Fear and Greed a 12",
+          "Mise a jour de 16 h HNE ajoutee a la fin : Bitcoin a glisse sous 60 000 $ en intra-seance pres de 59 800 $ (creux pres de 58 800 $) et Ether est revenu pres de 1 667 $ - les clotures de ce soir jugent",
+          "TA Power 5 complet en revisite des niveaux du 26 novembre, coin par coin - ADA, ETH, SOL, XRP, BTC; jour promo 16 avec le segment du guide Power 5 inclus"
+        ]
+      }
+    },
+    {
       "id": "7N2t1GpMEjo",
       "type": "longform",
       "title": "Cardano Jumps 7.8%: A Green Day, A Scared Crowd",
