@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -1160,6 +1160,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "YFoGTaP_Bek",
+      "type": "short",
+      "title": "Bitcoin Holds $60K as $6.8B in Options Expire",
+      "date": "2026-11-27",
+      "duration": "0:59",
+      "durationISO": "PT59S",
+      "url": "https://youtube.com/shorts/YFoGTaP_Bek",
+      "thumbnail": "https://i.ytimg.com/vi/YFoGTaP_Bek/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Daily closes of Nov 26 verified (CryptoT TA Nov 27, TradingView/Coinbase): BTC close $60,495.57 +0.19% - second straight close above $60,000; ADA close $0.14844 +1.93%; ETH close $1,687.61 -0.16% - still below its $1,709.48 repair line; about $6.8B in Bitcoin options expired Nov 27, max pain near $70,000; US markets reopen for a shortened Black Friday session; Fear and Greed 12."
         ]
       }
     },
