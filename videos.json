@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "channel": "https://www.youtube.com/@cryptoTshop",
   "videos": [
     {
@@ -1185,6 +1185,21 @@
           "Les niveaux Power 5 en langage clair : ADA, ETH, SOL, XRP, BTC",
           "Ce que les analystes surveillent : Dan Gambardello, George (CryptosRUs), CoinsKid, Ben Cowen, CryptoFace",
           "Les niveaux à surveiller cette semaine : clôture ADA au-dessus de 0,2564 $, BTC au-dessus de 85 300 $, ETH au mur des 2 800 $"
+        ]
+      }
+    },
+    {
+      "id": "b5GcCWakrrc",
+      "type": "short",
+      "title": "Bitcoin Loses $60K Close: Cardano Alone Holds",
+      "date": "2026-11-28",
+      "duration": "1:01",
+      "durationISO": "PT1M1S",
+      "url": "https://youtube.com/shorts/b5GcCWakrrc",
+      "thumbnail": "https://i.ytimg.com/vi/b5GcCWakrrc/hqdefault.jpg",
+      "topics": {
+        "en": [
+          "Daily closes of Nov 27 verified (CryptoT TA Nov 28, TradingView/Coinbase): BTC close $59,858.49 -1.05% (back below $60,000 after a $62,140.28 high and a $58,700 low); ADA close $0.14829 -0.10% (fourth straight close above its $0.14245/$0.139 floors); ETH close $1,660.84 -1.59% (below its $1,709.48 repair line, third failed repair); 4H momentum flipped bearish on all three; Fear and Greed 10 (extreme fear); corroborated by crypto.news (BTC closed at $59,857 on Nov 27)."
         ]
       }
     },
